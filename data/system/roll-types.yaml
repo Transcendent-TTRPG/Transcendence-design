@@ -1,0 +1,80 @@
+base_die: d10
+
+evolutionary_advantage:
+  applies_to: [AR, DR, SR]
+  options:
+    execution:
+      description: Roll 2d10, take the higher result
+      trade_off: No learning opportunity
+    learning:
+      description: Roll 2d10, take the lower for the action; use higher for learning check
+      learning_condition: higher_die > lower_die + competency_rank
+      reward: 1 progress point in associated competency
+
+rolls:
+  - id: AR
+    name: Attack Roll
+    code: A.R.
+    formula: "1d10 + competency_level(weapon) + associated_characteristic"
+    competency: weapon_or_object
+    used_for: Landing an effective strike with a weapon, maneuver, or object
+
+  - id: DR
+    name: Defense Roll
+    code: D.R.
+    formula: "1d10 + evasion_level + AGI + armor"
+    competency: evasion
+    used_for: Avoiding an incoming attack through reflexes, mobility, armor
+
+  - id: IR
+    name: Impact Roll
+    code: I.R.
+    formula: "(competency_rank * weapon_damage) + (associated_characteristic * weapon_grade)"
+    formula_untrained: "((1 * weapon_damage) + (associated_characteristic * grade)) / 2"
+    competency: weapon_rank
+    weapon_damage_dice: [d4, d6, d8, d10, d12]
+    used_for: Damage dealt after attack surpasses defense
+
+  - id: CR
+    name: Characteristic Roll
+    code: C.R.
+    formula: "1d10 + characteristic + resonance_level + bonuses"
+    competency: none
+    used_for: Actions depending on general aptitude without specific training
+
+  - id: RR
+    name: Resistance Roll
+    code: R.R.
+    competency: resistance_type
+    variants:
+      - trigger: poison_or_infection
+        formula: "1d10 + TEN + resistances + bonuses"
+      - trigger: affliction_or_curses
+        formula: "1d10 + CMP + resistances + bonuses"
+      - trigger: alteration
+        formula: "1d10 + resilience + resistances + bonuses"
+    used_for: Withstanding harmful effects
+
+  - id: SR
+    name: Specialization Roll
+    code: S.R.
+    formula: "1d10 + specialization_level + competency_rank + associated_characteristic + bonuses"
+    competency: specialization
+    used_for: Mastery in a specific skill (climbing, swimming, trap disarming)
+
+  - id: PR
+    name: Personality Trait Roll
+    code: P.R.
+    formula: "2d10"
+    competency: none
+    requires_narrator_approval: true
+    used_for: When a personality trait decisively influences a situation
+
+roll_competency_map:
+  AR: weapon_or_object_competency
+  DR: evasion_competency
+  IR: weapon_competency_rank
+  CR: none
+  RR: resistance_matching_threat_type
+  SR: specialization_competency
+  PR: none

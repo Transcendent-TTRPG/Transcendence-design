@@ -1,0 +1,162 @@
+vigor:
+  id: vigor
+  name: Vigor
+  associated_characteristic: TEN
+  category: physical
+  universal_starting: true
+  starting_level: 1
+  starting_rank: 1
+  synapsis_effect: "+1 TEN per rank gained"
+  description: >
+    Physical specialization representing the capacity to sustain prolonged effort,
+    endure adverse conditions, and keep operating when the body is already being pushed.
+    Vigor feeds the Endurance formula and is the universal starting specialization for
+    all characters.
+  rolls_improved: [S.R.]
+  dual_role:
+    - improves S.R. tests related to sustained physical effort
+    - increases character Endurance via rank contribution to formula
+
+endurance:
+  id: endurance
+  name: Endurance
+  name_es: Aguante
+  type: derived_attribute
+  formula: "3 + TEN + vigor_rank"
+  components:
+    base_reserve: 3
+    base_reserve_rationale: "Represents minimum operational capacity across three conflict planes: body, mind, and composure"
+    characteristic: TEN
+    specialization_rank: vigor_rank
+  starting_minimum: 5  # TEN=1, Vigor Rank=1 → 3 + 1 + 1
+
+fatigue_thresholds:
+  comparison: accumulated_attrition vs endurance
+  levels:
+    - id: fatigue_0
+      name: No Fatigue
+      condition: "attrition < endurance"
+    - id: fatigue_1
+      name: Fatigue 1
+      condition: "attrition >= endurance"
+    - id: fatigue_2
+      name: Fatigue 2
+      condition: "attrition >= 2 * endurance"
+    - id: fatigue_3
+      name: Fatigue 3
+      condition: "attrition >= 3 * endurance"
+
+fatigue_timing:
+  structural_rule: >
+    Fatigue 1 must arrive after the enemy's main logic has become actionable,
+    but before that logic has been fully exploited and the threat has already collapsed.
+  projected:
+    id: projected_fatigue
+    name_es: Fatiga proyectada
+    description: >
+      During an active hostile scene, the player tracks accumulated Attrition and
+      can see what Fatigue level would apply if the scene ended at that moment.
+      Penalties are not yet applied. The character is pushing their margin.
+    applies: false
+    visible: true
+    trigger: scene_active
+  settled:
+    id: settled_fatigue
+    name_es: Fatiga asentada
+    description: >
+      When the hostile scene ends or clearly drops in intensity, adrenaline stops
+      sustaining performance artificially. Projected Fatigue becomes real Fatigue
+      and its effects are applied.
+    applies: true
+    visible: true
+    trigger: scene_ends_or_intensity_drops
+
+attrition_cost_scale:
+  name: Attrition Cost Scale
+  name_es: Escala de Desgaste
+  description: >
+    Actions are classified by functional demand within the scene, not by attribute type.
+    Physical, mental, and social actions can all generate Attrition if they impose
+    real effort under pressure.
+  levels:
+    - cost: 0
+      label: trivial
+      description: Non-significant or purely narrative action with no real scene demand
+      examples:
+        - obvious observation with no risk
+        - brief remark with no tactical weight
+        - minor interaction with no pressure
+    - cost: 1
+      label: standard
+      description: Standard meaningful action in a hostile scene
+      examples:
+        - standard attack
+        - simple defense
+        - meaningful movement under pressure
+        - active enemy observation
+        - basic creature behavior reading
+        - moderate tactical use of mental or social action
+    - cost: 2
+      label: high_demand
+      description: Action of significant exertion that alters the scene's rhythm or absorbs serious pressure
+      examples:
+        - intercepting a charge
+        - protecting another character by absorbing pressure
+        - deep enemy analysis during combat
+        - maneuver that genuinely changes scene rhythm
+        - mental or social action that removes a key advantage
+        - especially demanding reaction
+    - cost: 3
+      label: extreme
+      description: Extreme or overextension action beyond the character's normal operating margin
+      examples:
+        - limit effort when already under heavy pressure
+        - heroic intervention clearly beyond safe margin
+        - maneuver that forces the character past their normal pace
+
+reactions:
+  cost_basis: demand_not_category
+  description: >
+    Reactions are not more costly because they are reactions, but because
+    they are typically executed under high pressure with little margin.
+  cost_guidelines:
+    simple: 1
+    demanding: 2
+    limit: 3
+
+conditions_and_environment:
+  principle: >
+    Conditions and environmental pressure accelerate Fatigue but do not replace
+    Attrition. Their role is to make continued effective action harder, not to
+    duplicate the Attrition system.
+  progression_model:
+    - stage: hinder
+      description: Condition imposes penalties but does not add Attrition cost
+    - stage: restrict
+      description: Condition limits available actions or imposes difficulty modifiers
+    - stage: accelerate
+      description: Severe condition adds +1 Attrition cost to relevant actions
+  example_condition:
+    id: cold
+    levels:
+      - level: 1
+        attrition_modifier: 0
+        effect: "+1 difficulty to physical precision actions"
+      - level: 2
+        attrition_modifier: 0
+        effect: "+1 difficulty to all physical actions; no sprint or dash"
+      - level: 3
+        attrition_modifier: "+1 to attrition cost of physical actions"
+        effect: "+2 difficulty to all physical actions; half movement"
+
+encounter_category_and_pressure:
+  principle: >
+    Encounter category does not change a character's Endurance.
+    What changes between categories is the pressure of the encounter:
+    the number of attrition sources, the frequency of high-demand actions,
+    the environmental pressure, and how difficult it is to reach a phase
+    of operational control.
+  endurance_belongs_to: character
+  attrition_belongs_to: scene
+  fatigue_belongs_to: consequence_of_excess
+  category_effect: pressure_shape_and_speed  # not threshold value

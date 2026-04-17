@@ -1,0 +1,49 @@
+groups:
+  physical:
+    - id: STR
+      name: Strength
+      description: Physical power, force application, grappling, striking
+    - id: AGI
+      name: Agility
+      description: Coordination, reaction speed, bodily precision, dodging
+    - id: TEN
+      name: Tenacity
+      description: Endurance, pain resistance, recovery, sustained effort
+
+  mental:
+    - id: INT
+      name: Intellect
+      description: Reasoning, memory, academic knowledge, structured problem-solving
+    - id: CUN
+      name: Cunning
+      description: Improvisation, deception, reading intentions, adaptability
+    - id: WIS
+      name: Wisdom
+      description: Perception, intuition, judgment, interpreting nuance
+
+  social:
+    - id: CMP
+      name: Composure
+      description: Self-control, emotional stability, resistance to manipulation
+    - id: AUR
+      name: Aura
+      description: Passive involuntary impression projected onto others
+    - id: PRE
+      name: Presence
+      description: Active intentional projection; imposing, persuading, inspiring
+
+derived_attributes:
+  - id: preparation
+    name: Preparation
+    formula: "(AGI + CUN + CMP) / 3"
+    rounding: up
+    components: [AGI, CUN, CMP]
+  - id: resilience
+    name: Resilience
+    formula: "(TEN + WIS + CMP) / 3"
+    rounding: up
+    components: [TEN, WIS, CMP]
+
+starting_value: 0
+synapsis_rule: "+1 to associated characteristic per specialization rank gained"
+final_formula: "species_bonus + sum(associated_specialization_ranks)"

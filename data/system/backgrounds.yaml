@@ -1,0 +1,71 @@
+starting_specializations_count: 3        # from background
+total_starting_specializations: 4        # 3 from background + 1 universal (Vigor)
+starting_level: 1
+starting_rank: novice
+same_specialization_twice: false
+
+universal_starting_specialization:
+  id: vigor
+  name: Vigor
+  associated_characteristic: TEN
+  starting_level: 1
+  starting_rank: novice
+  synapsis_at_creation: "+1 TEN"
+  stacks_with_species_bonus: true
+  description: Minimum physical endurance required to survive in this world; granted to every character regardless of background
+
+backgrounds:
+  - id: martial_artist
+    name: Martial Artist
+    major_affinity: physical
+    starting_specializations:
+      - category: physical
+        count: 2
+      - category: mental
+        count: 1
+    special_rule: May replace any starting natural weapon competencies with crafted weapon competencies
+    description: Devoted to bodily perfection through combat schools, warrior clans, arenas, or discipline rituals
+
+  - id: artisan
+    name: Artisan
+    major_affinity: arts_and_crafts
+    starting_specializations:
+      - category: arts_and_crafts
+        count: 2
+      - category: lore_or_social
+        count: 1
+    description: Dedicated to transforming matter into useful, beautiful, or dangerous objects
+
+  - id: wanderer
+    name: Wanderer
+    major_affinity: mental
+    starting_specializations:
+      - category: mental
+        count: 2
+      - category: physical
+        count: 1
+    description: Formed by the road — developed ingenuity, intuition, and adaptation across frontiers and ruins
+
+  - id: custodian
+    name: Custodian
+    major_affinity: lore
+    starting_specializations:
+      - category: lore
+        count: 2
+      - category: social_or_mental
+        count: 1
+    description: Heir to traditions tasked with preserving knowledge — archives, temples, libraries, guardian orders
+
+  - id: noble
+    name: Noble
+    major_affinity: social
+    starting_specializations:
+      - category: social
+        count: 1
+      - category: any
+        count: 2
+    description: Born or raised in privilege, education, hierarchy, and social ties
+
+affinity_progression:
+  in_affinity: 5    # progress points to level up
+  out_of_affinity: 10

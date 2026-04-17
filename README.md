@@ -50,8 +50,14 @@ Architecture and design decisions. These explain why important decisions were ma
 ### `data/`
 Structured content that may later feed tools, automation, or Foundry pipelines.
 
+### `playtests/`
+Filled-in playtest records organized by encounter type (`combat/`, `exploration/`, `social/`).
+Each file is a completed instance of a template. See `playtests/README.md` for naming conventions and workflow.
+
 ### `templates/`
 Standardized templates for new content.
+
+- `combat-playtest.md` — reusable template for combat encounter playtesting; covers enemy role, vital points, reading paths, attrition pressure, phase structure, calibration signals, and post-playtest log
 
 ### `references/`
 Reference material and inspiration used during development.
