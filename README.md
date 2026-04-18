@@ -58,6 +58,7 @@ Each file is a completed instance of a template. See `playtests/README.md` for n
 Standardized templates for new content.
 
 - `combat-playtest.md` — reusable template for combat encounter playtesting; covers enemy role, vital points, reading paths, attrition pressure, phase structure, calibration signals, and post-playtest log
+- `encounter-creation.md` — full encounter design template; covers identity, core threat, vital points, secondary systems, environment, readability, signals, fatigue, phase structure, and table load check
 
 ### `references/`
 Reference material and inspiration used during development.
