@@ -5,6 +5,7 @@
 **Related systems:** Combat, ATB, Enemy Readability, Vital Points, Fatigue, Environmental Pressure, Team Tactics
 **Related files:**
 
+- `docs/adr/combat-atb-timeline.md`
 - `docs/adr/combat-enemy-readability.md`
 - `docs/adr/combat-champion-encounter.md`
 
