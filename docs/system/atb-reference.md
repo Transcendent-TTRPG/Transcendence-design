@@ -18,7 +18,34 @@ Cuando una entidad actúa, su ficha se mueve a la **derecha** según el costo de
 
 ---
 
-## 2. Qué representa una ficha
+## 2. Posición inicial en el track
+
+Al comienzo del combate, cada entidad recibe una **posición inicial** en el track según su grado de preparación en ese momento.
+
+Posición inicial = **Preparación** + modificadores de situación
+
+Mayor puntuación → ficha más a la izquierda → actúa antes.
+
+### Modificadores de situación
+
+| Situación | Modificador |
+| --- | --- |
+| Emboscando | +2 |
+| Arma lista / postura preparada | +1 |
+| Cobertura o posición dominante | +1 |
+| Objetivo expuesto o distraído | +1 |
+| Sorprendido | −2 |
+| Desenfundando o reorganizándose | −1 |
+| Terreno inmediato malo | −1 |
+| Dormido, herido, desorientado o mal posicionado | −1 a −3 según el caso |
+
+Una vez fijadas las posiciones iniciales, el combate fluye con normalidad: cada acción mueve la ficha hacia la derecha según su costo de ritmo. Los costos se acumulan sobre esta posición de partida.
+
+> **Posición inicial:** No es un sistema aparte del track — es el estado de partida. Los costos de ritmo se acumulan sobre ella desde la primera activación.
+
+---
+
+## 3. Qué representa una ficha
 
 Una ficha en el track representa el momento en que una entidad estará lista para volver a actuar.
 
@@ -33,7 +60,7 @@ Puede representar:
 
 ---
 
-## 3. Cómo se resuelve una activación
+## 4. Cómo se resuelve una activación
 
 Cuando una ficha es la más a la izquierda:
 
@@ -44,17 +71,17 @@ Cuando una ficha es la más a la izquierda:
 
 ---
 
-## 4. Desempates
+## 5. Desempates
 
-Si dos o más fichas están en la misma posición más a la izquierda:
+Si dos o más fichas quedan en la misma posición — al inicio o durante el combate —:
 
-- actúa primero quien tenga mayor **Preparación**
+- actúa primero quien tenga mayor **Preparación bruta** (antes de modificadores situacionales)
 
-Si también empatan en Preparación, el grupo puede usar una regla secundaria fija o el Narrador puede resolver el orden de la manera más clara para la mesa.
+Si también empatan en Preparación bruta, el grupo puede usar una regla secundaria fija o el Narrador puede resolver el orden de la manera más clara para la mesa.
 
 ---
 
-## 5. Costos de ritmo
+## 6. Costos de ritmo
 
 Cada acción significativa tiene un **costo de ritmo**.
 
@@ -71,7 +98,7 @@ Bandas estructurales:
 
 ---
 
-## 6. Ritmo y Desgaste
+## 7. Ritmo y Desgaste
 
 Toda acción importante puede tener dos costos distintos:
 
@@ -93,7 +120,7 @@ Una acción puede ser:
 
 ---
 
-## 7. Reacciones
+## 8. Reacciones
 
 Las reacciones existen dentro del ATB, pero no son gratis.
 
@@ -105,7 +132,7 @@ Una reacción sigue teniendo costo de ritmo, puede generar Desgaste y no es grat
 
 ---
 
-## 8. Amenazas importantes: telegraph → ventana → resolución
+## 9. Amenazas importantes: telegraph → ventana → resolución
 
 Las amenazas grandes deberían funcionar, cuando sea posible, en tres momentos:
 
@@ -138,7 +165,7 @@ Esta estructura hace que el combate sea interactivo y legible.
 
 ---
 
-## 9. Cuándo algo merece su propio track
+## 10. Cuándo algo merece su propio track
 
 No todo debe tener una ficha propia.
 
@@ -159,7 +186,7 @@ Ejemplos de buenos tracks secundarios:
 
 ---
 
-## 10. Puntos vitales y ATB
+## 11. Puntos vitales y ATB
 
 Un punto vital no solo debería cambiar daño. También puede cambiar **el ritmo del encuentro**.
 
@@ -176,7 +203,7 @@ Un punto vital puede:
 
 ---
 
-## 11. Categorías de encuentro y capas recomendadas
+## 12. Categorías de encuentro y capas recomendadas
 
 ### Común — capas
 
@@ -202,7 +229,7 @@ Un punto vital puede:
 
 ---
 
-## 12. Qué hace diferente a cada categoría
+## 13. Qué hace diferente a cada categoría
 
 ### Común — identidad
 
@@ -218,7 +245,7 @@ Presión multifrontal. El grupo pelea contra un cuerpo, sus funciones, su espaci
 
 ---
 
-## 13. Competencia y ritmo
+## 14. Competencia y ritmo
 
 La competencia puede reducir la fricción de ciertas acciones.
 
@@ -239,7 +266,7 @@ Ejemplos:
 
 ---
 
-## 14. Movimiento
+## 15. Movimiento
 
 Moverse no es gratis por defecto.
 
@@ -255,7 +282,7 @@ Moverse importa especialmente en un sistema donde el entorno presiona, los teleg
 
 ---
 
-## 15. Lectura rápida del combate en mesa
+## 16. Lectura rápida del combate en mesa
 
 Cuando mires el track, pregúntate:
 
@@ -281,7 +308,7 @@ Tanto en ritmo como en Desgaste.
 
 ---
 
-## 16. Mini ejemplo de track
+## 17. Mini ejemplo de track
 
 ### Estado inicial del track
 
@@ -314,7 +341,7 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 
 ---
 
-## 17. Preguntas rápidas al diseñar un encuentro
+## 18. Preguntas rápidas al diseñar un encuentro
 
 ### 1. ¿Cuál es el track principal?
 
@@ -342,12 +369,15 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 
 ---
 
-## 18. Reglas resumidas
+## 19. Reglas resumidas
 
 - La ficha más a la izquierda actúa primero.
 - Actuar mueve la ficha a la derecha.
+- Posición inicial = Preparación + modificadores de situación.
+- Mayor puntuación → más a la izquierda → actúa antes.
+- Los costos de ritmo se acumulan sobre la posición inicial.
 - No hay rondas fijas.
-- Preparación desempata.
+- Preparación bruta desempata en caso de empate.
 - Reacciones también cuestan ritmo.
 - Ritmo y Desgaste no son lo mismo.
 - Los subsistemas importantes pueden tener su propio track.

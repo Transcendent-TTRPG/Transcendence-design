@@ -96,6 +96,35 @@ After resolving an action, that marker moves right by the action's rhythm cost.
 
 ---
 
+## Initial Track Position
+
+Combat does not begin from a neutral state. Before the first activation, every entity receives an **initial position on the track** based on their readiness at the moment the scene begins.
+
+### Calculating initial position
+
+Initial position = **Preparación** + situational modifiers
+
+Preparación is the derived characteristic that expresses readiness, alertness, and combat composure. A higher value means the entity is better positioned to act first.
+
+Situational modifiers adjust this based on conditions at the start of the scene:
+
+| Situation | Modifier |
+| --- | --- |
+| Ambushing | +2 |
+| Weapon drawn / prepared stance | +1 |
+| Cover or dominant position | +1 |
+| Target exposed or distracted | +1 |
+| Surprised | −2 |
+| Drawing weapon or reorganizing | −1 |
+| Unfavorable immediate terrain | −1 |
+| Asleep, wounded, disoriented, or poorly positioned | −1 to −3 depending on severity |
+
+Entities with a **higher readiness score** are placed **further left** on the track and therefore act sooner. From that starting position, all subsequent movement follows the normal rhythm cost rules — actions move markers to the right.
+
+The initial positioning phase is not separate from the track. It is the track's starting state. Rhythm costs stack on top of it from the first activation onward.
+
+---
+
 ## What a Marker Represents
 
 A marker does not represent abstract "initiative score" in a static sense.
@@ -161,15 +190,15 @@ This produces a combat flow where:
 
 ## Tie Resolution
 
-If two or more markers occupy the same leftmost position, resolve the tie by **Preparation**.
+Two entities may occupy the same track position in two situations: at the start of the scene, if their Preparación + situational modifiers produce the same readiness score; or during combat, if rhythm costs bring two markers to the same point.
 
-The entity with higher Preparation acts first.
+In both cases, resolve the tie by **raw Preparación value** (before situational modifiers are applied). The entity with the higher base Preparación acts first.
 
-If Preparation is also tied, the Narrator or table may break the tie according to the needs of clarity, consistency, or a fixed secondary rule chosen by the group.
+If raw Preparación is also tied, the Narrator or table may break the tie according to the needs of clarity, consistency, or a fixed secondary rule chosen by the group.
 
-### Why Preparation matters here
+### Why raw Preparación matters here
 
-Preparation is already a derived value that expresses readiness, alertness, adaptability, and combat composure. It is therefore the correct stat to break timing deadlocks without replacing the track itself.
+Using base Preparación as the tiebreaker ensures that the entity who is fundamentally more alert and composed gets the edge — independent of situational luck. Preparación already expresses readiness, alertness, adaptability, and combat composure, making it the correct stat to resolve deadlocks without overriding the track structure.
 
 ---
 
@@ -529,6 +558,7 @@ Is this still easy enough to read and run?
 8. Boss pressure should be solved through layered timing, not only HP inflation or filler adds.
 9. Vital points should alter encounter rhythm and pressure, not only damage values.
 10. The number of active tracks should remain proportional to encounter category and table readability.
+11. Initial track position = Preparación + situational modifiers. Higher readiness score = placed further left. Rhythm costs stack on top of this initial state from the first activation onward. Ties resolved by raw Preparación, then narrator discretion.
 
 ---
 
