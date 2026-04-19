@@ -15,6 +15,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [general-rules.md](general-rules.md) | Core rules, dice, Adventure Cycle phases, Conflict flow |
 | [attrition-fatigue.md](attrition-fatigue.md) | Desgaste, Aguante y Fatiga — attrition model, Endurance formula, Fatigue thresholds, action cost scale |
 | [atb-reference.md](atb-reference.md) | ATB quick reference — timeline model, rhythm cost, reactions, subsystem tracks, encounter layers, table prompts |
+| [mechanics-overview.md](mechanics-overview.md) | Horizontal view of all systems organized by ability design surfaces — use this when designing abilities |
 
 ## Structured Data (`/data/system/`)
 
