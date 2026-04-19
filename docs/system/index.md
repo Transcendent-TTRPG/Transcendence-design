@@ -26,6 +26,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `competencies.yaml` | Ranks, progression costs, competency type bonuses |
 | `backgrounds.yaml` | Background definitions with affinity and specialization rules |
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Vigor definition, condition interaction model |
+| `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
 
 ## Key Numbers
 

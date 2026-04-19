@@ -87,14 +87,31 @@ Cada acción significativa tiene un **costo de ritmo**.
 
 Ese costo representa cuánto retrasa la siguiente oportunidad de actuar.
 
-Bandas estructurales:
+### Bandas de ritmo
 
-- **Acción rápida** → costo bajo
-- **Acción estándar** → costo medio
-- **Acción pesada** → costo alto
-- **Acción extrema** → costo muy alto
+| Banda | Costo | Efecto en el tempo |
+| --- | ---: | --- |
+| Acción libre | 0 | No mueve la ficha |
+| Acción rápida | 3 | La ficha vuelve pronto |
+| Acción estándar | 5 | Retraso normal |
+| Acción pesada | 7 | Otros actúan antes de tu recuperación |
+| Acción extrema | 9 | Reservada para habilidades mayores — no se usa en el nivel base |
 
-> El costo de ritmo y el Desgaste están relacionados, pero no son lo mismo.
+### Acciones base universales
+
+| Acción | Costo de ritmo | Desgaste |
+| --- | ---: | ---: |
+| Acción libre (soltar, hablar) | 0 | 0 |
+| Interactuar | 3 | 1 * |
+| Moverse | 5 | 1 |
+| Leer / entender (básico) | 5 | — |
+| Atacar con arma a una mano | 5 | 1 |
+| Atacar con arma a dos manos | 7 | 2 |
+| Atacar con dos armas a una mano | 7 | 2 |
+
+\* Solo cuando la interacción es significativa y ocurre bajo presión real. \— Desgaste de Leer/entender pendiente de definición de capa cognitiva/social.
+
+> **Regla estructural de Desgaste:** acciones estándar bajo presión → 1 Desgaste · acciones pesadas → 2 Desgaste · acciones extremas → 3 Desgaste (pendiente definición específica). El costo de ritmo y el Desgaste están relacionados, pero no son lo mismo.
 
 ---
 

@@ -186,14 +186,29 @@ Tiebreak: raw Preparation before situational modifiers. If still tied: Narrator 
 
 ### Action bands
 
-Exact rhythm cost values are pending final calibration. Structural order:
+**Authoritative values:** `data/system/atb-combat.yaml`
 
-| Band | Relative cost | Effect on tempo |
-| --- | --- | --- |
-| Quick action | Lowest | Marker returns soonest |
-| Standard action | Mid | Normal delay |
-| Heavy action | High | Others act before you recover |
-| Extreme action | Highest | Decisive; leaves a wide window of exposure |
+| Band | Cost | Effect on tempo |
+| --- | ---: | --- |
+| Free | 0 | Does not advance the marker |
+| Quick | 3 | Marker returns soonest |
+| Standard | 5 | Normal delay |
+| Heavy | 7 | Others act before you recover |
+| Extreme | 9 | Reserved for major abilities; not used at base layer |
+
+### Base action costs
+
+| Base Action | Rhythm Cost | Attrition |
+| --- | ---: | ---: |
+| Free action (Drop, Speak) | 0 | 0 |
+| Interact | 3 | 1 * |
+| Move | 5 | 1 |
+| Basic Read / Understand | 5 | — |
+| Attack with One-Handed Weapon | 5 | 1 |
+| Attack with Two-Handed Weapon | 7 | 2 |
+| Attack with Two One-Handed Weapons | 7 | 2 |
+
+\* Only under meaningful scene pressure. \- Basic Read Attrition pending cognitive/social layer.
 
 ### Reactions
 

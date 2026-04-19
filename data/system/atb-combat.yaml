@@ -1,0 +1,142 @@
+rhythm_scale:
+  description: >
+    The five rhythm cost bands of the ATB combat timeline.
+    Base costs are assigned by action family, not by specific weapon or specialization.
+  bands:
+    - cost: 0
+      label: free
+      description: No meaningful time cost — does not advance the ATB marker
+    - cost: 3
+      label: quick
+      description: Light, immediate action with minimal commitment
+    - cost: 5
+      label: standard
+      description: Normal committed action within standard combat pace
+    - cost: 7
+      label: heavy
+      description: High-commitment action with significant recovery time
+    - cost: 9
+      label: extreme
+      description: >
+        Maximum commitment. Reserved for extreme actions, major abilities,
+        or specialized maneuvers. No universal base action uses this band.
+
+base_actions:
+  description: >
+    Universal action families with their base rhythm and Attrition costs.
+    These apply when no specific ability, aptitude, or competency bonus modifies them.
+    Attrition costs assume the action is performed under meaningful scene pressure.
+  actions:
+    - id: free_action
+      label: Free Action
+      examples: [drop, speak]
+      rhythm_cost: 0
+      attrition_cost: 0
+      constraints:
+        drop: >
+          Releasing an item actively part of a grip, hold, or committed joint maneuver
+          is not free — it requires Interact (cost 3) instead.
+        speak: >
+          Communication intended to deceive, persuade, negotiate, or apply social
+          pressure is not free. Brief tactical utterances and short phrases only.
+
+    - id: interact
+      label: Interact
+      rhythm_cost: 3
+      attrition_cost: 1
+      attrition_note: >
+        Generates 1 Attrition only when performed under meaningful scene pressure.
+        Trivial or non-pressured interactions generate 0.
+      examples:
+        - grabbing something within reach
+        - opening or closing something simple
+        - activating a small mechanism
+        - quick practical adjustment to equipment
+        - picking up a nearby item
+
+    - id: move
+      label: Move
+      rhythm_cost: 5
+      attrition_cost: 1
+      notes: >
+        Terrain does not change rhythm cost. Terrain affects distance covered,
+        required checks, safety, and consequences of movement.
+
+    - id: basic_read
+      label: Basic Read / Understand
+      rhythm_cost: 5
+      attrition_cost: null  # Pending cognitive/social layer definition
+      notes: >
+        Universal observation or interpretation attempt without a specific advanced ability.
+        Does not grant tactical bonuses on its own. Specialized reading abilities may later
+        replace or improve this with distinct rhythm values and stronger effects.
+
+    - id: attack_one_handed
+      label: Attack with One-Handed Weapon
+      rhythm_cost: 5
+      attrition_cost: 1
+      notes: >
+        Covers all one-handed offensive weapon families at the base layer.
+        Distinct weapon identity emerges through impact, effects, traits, and specific abilities.
+
+    - id: attack_two_handed
+      label: Attack with Two-Handed Weapon
+      rhythm_cost: 7
+      attrition_cost: 2
+      notes: >
+        Covers all two-handed offensive weapon families.
+        Higher cost reflects body commitment, slower recovery, and heavier offensive rhythm.
+
+    - id: attack_dual_wield
+      label: Attack with Two One-Handed Weapons
+      rhythm_cost: 7
+      attrition_cost: 2
+      notes: >
+        Dual-wield at Heavy baseline due to coordination and offensive commitment,
+        not weight. Distinct from single one-handed attacks without fragmenting the base layer.
+
+attrition_structural_rule:
+  description: >
+    Default Attrition cost by action commitment level, consistent with the
+    Fatigue timing principle (Fatigue 1 should arrive after the enemy's main logic
+    is actionable but before the threat has collapsed).
+  standard: 1   # Standard meaningful actions under pressure
+  heavy: 2      # Heavy or strongly committed actions
+  extreme: 3    # Pending specific ability definitions
+
+competency_and_rhythm:
+  principle: >
+    Competency rank interacts with rhythm in two ways only.
+    The base action family rhythm is never automatically reduced by rank level.
+  modes:
+    - id: ability_unlock
+      description: >
+        A competency rank unlocks new abilities with their own rhythm values
+        (faster or slower than the base family). The base action is unchanged;
+        a new option is added.
+    - id: friction_reduction
+      description: >
+        A specific competency bonus may reduce the rhythm cost of a specific
+        ability or action. This is always ability-specific, not family-wide.
+
+initial_position:
+  formula: "Preparation + situational_modifiers"
+  rule: Higher score → placed further left → acts sooner
+  tiebreak: Raw Preparation before situational modifiers. If still tied, Narrator uses a fixed secondary criterion.
+  situational_modifiers:
+    - situation: Ambushing
+      modifier: +2
+    - situation: Weapon ready or prepared stance
+      modifier: +1
+    - situation: Cover or dominant position
+      modifier: +1
+    - situation: Target exposed or distracted
+      modifier: +1
+    - situation: Surprised
+      modifier: -2
+    - situation: Drawing weapon or reorganizing
+      modifier: -1
+    - situation: Poor immediate terrain
+      modifier: -1
+    - situation: Asleep, wounded, disoriented, or poorly positioned
+      modifier: "-1 to -3"
