@@ -15,6 +15,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Roll types | `roll-types.yaml` | Bonus to specific roll, conditional reroll, formula modifier |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
+| Rest & Recovery | `attrition-fatigue.yaml` | Recovery amount modifier, additional task access, favorable condition criteria |
 | ATB combat timeline | `combat-atb-timeline.md` (ADR) | Rhythm cost reduction, initial position bonus, reaction access |
 | Conditions & Resistances | `attrition-fatigue.yaml` | R.R. bonus by type, condition immunity, progression block |
 
@@ -66,7 +67,7 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Attack Roll | A.R. | 1d10 + competency level + characteristic | Landing an effective strike |
 | Defense Roll | D.R. | 1d10 + evasion level + AGI + armor | Avoiding an incoming attack |
 | Impact Roll | I.R. | (competency rank × weapon damage) + (characteristic × weapon grade) | Damage after AR beats DR |
-| Characteristic Roll | C.R. | 1d10 + characteristic + resonance + bonuses | General aptitude without specific training |
+| Characteristic Roll | C.R. | 1d10 + characteristic + Reference Level + bonuses | General aptitude without specific training |
 | Resistance Roll | R.R. | Varies by threat type (see below) | Withstanding harmful effects |
 | Specialization Roll | S.R. | 1d10 + specialization level + competency rank + characteristic + bonuses | Mastery in a specific skill |
 | Personality Roll | P.R. | 2d10 | When a personality trait decisively influences a situation |
@@ -113,7 +114,7 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Elemental | +1 R.R. vs elemental effects |
 | Poison | +1 R.R. vs poisons |
 | Infection | +1 R.R. vs infections |
-| Affliction | +1 R.R. vs afflictions; +1 per rank during cognitive meditation |
+| Affliction | +1 R.R. vs afflictions; +1 per rank during meditation |
 | Alteration | +1 R.R. vs alterations |
 | Curses | +1 to detect or resist curses |
 
@@ -159,6 +160,44 @@ Conditions accelerate Fatigue but do not replace Attrition. Three stages:
 
 ---
 
+## Rest & Recovery
+
+**Authoritative values:** `attrition-fatigue.yaml`
+
+### Short Rest
+
+Brief pause after a hostile scene. Only the first Short Rest reduces Attrition normally.
+
+| Duration | Attrition recovered | Tasks |
+| --- | --- | --- |
+| 15 minutes | 1 | 1 brief task |
+| 30 minutes | 2 | 1 significant task |
+| 60 minutes | 3 (+1 if conditions favorable) | 2 significant tasks |
+
+### Full Rest
+
+8-hour recovery. Requires reasonably adequate conditions.
+
+| Component | Effect |
+| --- | --- |
+| Attrition recovery | 2 × Endurance |
+| Affliction progression | −1 intensity per active affliction |
+| Equipment durability | +5 per relevant item (on successful roll) |
+| Daily resources | All "per day" or "after full rest" abilities recovered |
+
+Fatigue levels automatically drop when Attrition recovery pushes the total below the relevant thresholds.
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| +N Attrition recovered during Short Rest | Recovery boost |
+| Unlock additional tasks during rest | Access expansion |
+| Expand favorable condition criteria | Condition flexibility |
+| Reduce Attrition recovery threshold for Full Rest | Efficiency boost |
+
+---
+
 ## ATB Combat Timeline
 
 **Authoritative reference:** `docs/adr/combat-atb-timeline.md`
@@ -167,9 +206,13 @@ No fixed rounds. The leftmost marker on the track acts first. After acting, the 
 
 ### Initial position
 
-Initial position = **Preparation + situational modifiers**
+Derived in three steps:
 
-Higher score → placed further left → acts sooner.
+1. **Opening Value** = Preparation + situational modifiers
+2. **Reference Point** = highest Opening Value among all participants
+3. **Initial Position** = Reference Point − Opening Value
+
+Highest Opening Value → Initial Position 0 → acts first.
 
 | Situation | Modifier |
 | --- | --- |
@@ -203,12 +246,12 @@ Tiebreak: raw Preparation before situational modifiers. If still tied: Narrator 
 | Free action (Drop, Speak) | 0 | 0 |
 | Interact | 3 | 1 * |
 | Move | 5 | 1 |
-| Basic Read / Understand | 5 | — |
+| Specialization | 5 | 1 |
 | Attack with One-Handed Weapon | 5 | 1 |
-| Attack with Two-Handed Weapon | 7 | 2 |
-| Attack with Two One-Handed Weapons | 7 | 2 |
+| Attack with Two-Handed Weapon | 7 | 1 |
+| Attack with Two One-Handed Weapons | 7 | 1 |
 
-\* Only under meaningful scene pressure. \- Basic Read Attrition pending cognitive/social layer.
+\* Only under meaningful scene pressure.
 
 ### Reactions
 

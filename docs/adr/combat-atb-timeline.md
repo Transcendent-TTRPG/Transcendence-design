@@ -32,7 +32,7 @@ The ATB model exists to solve several design goals at once:
 
 Combat is not divided into rounds.
 
-Combat is represented by a **timeline of action readiness**.
+Combat is represented by a **continuous combat timeline**.
 
 Each creature, subsystem, or encounter element that matters in combat occupies a position on the timeline. The entity whose marker is currently furthest to the left is the next one able to act.
 
@@ -98,15 +98,29 @@ After resolving an action, that marker moves right by the action's rhythm cost.
 
 ## Initial Track Position
 
-Combat does not begin from a neutral state. Before the first activation, every entity receives an **initial position on the track** based on their readiness at the moment the scene begins.
+Combat does not begin from a neutral state. Before the first activation, every entity receives an **initial position on the track** based on their Preparation at the moment the scene begins.
 
 ### Calculating initial position
 
-Initial position = **Preparación** + situational modifiers
+The Narrator collects two values from every participant: their **Preparation** characteristic and any **situational modifiers** that apply to this specific encounter.
 
-Preparación is the derived characteristic that expresses readiness, alertness, and combat composure. A higher value means the entity is better positioned to act first.
+### Step 1 — Opening Value
 
-Situational modifiers adjust this based on conditions at the start of the scene:
+Each participant calculates their individual score:
+
+Opening Value = **Preparation** + situational modifiers
+
+### Step 2 — Reference Point
+
+The Narrator identifies the highest Opening Value among all participants. That value is the **Reference Point** for this encounter.
+
+### Step 3 — Initial Position
+
+Initial Position = Reference Point − Opening Value
+
+The participant with the highest Opening Value is placed at position **0** — the leftmost point on the track — and acts first. All others are placed to the right at a distance equal to the difference between the Reference Point and their own Opening Value.
+
+Situational modifiers adjust Opening Values based on conditions at the start of the scene:
 
 | Situation | Modifier |
 | --- | --- |
@@ -119,7 +133,18 @@ Situational modifiers adjust this based on conditions at the start of the scene:
 | Unfavorable immediate terrain | −1 |
 | Asleep, wounded, disoriented, or poorly positioned | −1 to −3 depending on severity |
 
-Entities with a **higher readiness score** are placed **further left** on the track and therefore act sooner. From that starting position, all subsequent movement follows the normal rhythm cost rules — actions move markers to the right.
+#### Example
+
+A wolf with Preparation 5 is ambushing (modifier +2). Opening Value = 7. Three players have Preparation 3, 2, and 4 — no modifiers. Reference Point = 7.
+
+| Participant | Preparation | Modifiers | Opening Value | Initial Position |
+| --- | ---: | ---: | ---: | ---: |
+| Wolf | 5 | +2 | 7 | 7 − 7 = **0** |
+| Player C | 4 | 0 | 4 | 7 − 4 = **3** |
+| Player A | 3 | 0 | 3 | 7 − 3 = **4** |
+| Player B | 2 | 0 | 2 | 7 − 2 = **5** |
+
+Wolf acts first. After a Standard action (rhythm cost 5), its marker moves to 5. Player C at position 3 acts next.
 
 The initial positioning phase is not separate from the track. It is the track's starting state. Rhythm costs stack on top of it from the first activation onward.
 
@@ -190,7 +215,7 @@ This produces a combat flow where:
 
 ## Tie Resolution
 
-Two entities may occupy the same track position in two situations: at the start of the scene, if their Preparación + situational modifiers produce the same readiness score; or during combat, if rhythm costs bring two markers to the same point.
+Two entities may occupy the same track position in two situations: at the start of the scene, if their Opening Values produce the same Initial Position after normalization; or during combat, if rhythm costs bring two markers to the same point.
 
 In both cases, resolve the tie by **raw Preparación value** (before situational modifiers are applied). The entity with the higher base Preparación acts first.
 
@@ -558,7 +583,7 @@ Is this still easy enough to read and run?
 8. Boss pressure should be solved through layered timing, not only HP inflation or filler adds.
 9. Vital points should alter encounter rhythm and pressure, not only damage values.
 10. The number of active tracks should remain proportional to encounter category and table readability.
-11. Initial track position = Preparación + situational modifiers. Higher readiness score = placed further left. Rhythm costs stack on top of this initial state from the first activation onward. Ties resolved by raw Preparación, then narrator discretion.
+11. Initial position is derived in three steps: Opening Value = Preparation + situational modifiers; Reference Point = highest Opening Value among all participants; Initial Position = Reference Point − Opening Value. The participant with the highest Opening Value is placed at position 0 and acts first. Rhythm costs stack on top from the first activation onward. Ties at the same Initial Position are resolved by raw Preparation, then Narrator discretion.
 
 ---
 

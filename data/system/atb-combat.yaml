@@ -62,14 +62,16 @@ base_actions:
         Terrain does not change rhythm cost. Terrain affects distance covered,
         required checks, safety, and consequences of movement.
 
-    - id: basic_read
-      label: Basic Read / Understand
+    - id: specialization
+      label: Specialization
       rhythm_cost: 5
-      attrition_cost: null  # Pending cognitive/social layer definition
+      attrition_cost: 1
       notes: >
-        Universal observation or interpretation attempt without a specific advanced ability.
-        Does not grant tactical bonuses on its own. Specialized reading abilities may later
-        replace or improve this with distinct rhythm values and stronger effects.
+        Use of any specialization in a hostile scene: jumping, acrobatics, perception,
+        interpretation, tracking, social reading, crafting under pressure, etc.
+        The cost is the same regardless of specialization type because the reason is the same:
+        the character is under active scene pressure and the action requires real attention and effort.
+        Techniques may later modify this cost up or down.
 
     - id: attack_one_handed
       label: Attack with One-Handed Weapon
@@ -82,18 +84,22 @@ base_actions:
     - id: attack_two_handed
       label: Attack with Two-Handed Weapon
       rhythm_cost: 7
-      attrition_cost: 2
+      attrition_cost: 1
       notes: >
-        Covers all two-handed offensive weapon families.
-        Higher cost reflects body commitment, slower recovery, and heavier offensive rhythm.
+        Covers all two-handed offensive weapon families. Rhythm cost 7 already creates
+        a natural Attrition disadvantage over time (fewer activations). Adding 2 Attrition
+        would double-penalize heavy styles — instead, lower cadence means lower total
+        Attrition accumulation, which rewards sustained heavy combat appropriately.
 
     - id: attack_dual_wield
       label: Attack with Two One-Handed Weapons
       rhythm_cost: 7
-      attrition_cost: 2
+      attrition_cost: 1
       notes: >
-        Dual-wield at Heavy baseline due to coordination and offensive commitment,
-        not weight. Distinct from single one-handed attacks without fragmenting the base layer.
+        Dual-wield at Heavy baseline due to coordination and offensive commitment.
+        Attrition 1 for the same reason as two-handed: rhythm cost already governs
+        the trade-off. With sufficient competency, coordinating two weapons is no more
+        exhausting per action than a single committed strike.
 
 attrition_structural_rule:
   description: >
@@ -120,9 +126,21 @@ competency_and_rhythm:
         ability or action. This is always ability-specific, not family-wide.
 
 initial_position:
-  formula: "Preparation + situational_modifiers"
-  rule: Higher score → placed further left → acts sooner
-  tiebreak: Raw Preparation before situational modifiers. If still tied, Narrator uses a fixed secondary criterion.
+  steps:
+    - step: 1
+      label: Opening Value
+      formula: "Preparation + situational_modifiers"
+      description: Each participant calculates their individual score.
+    - step: 2
+      label: Reference Point
+      formula: "max(Opening Value) across all participants"
+      description: The Narrator identifies the highest Opening Value. This is the Reference Point.
+    - step: 3
+      label: Initial Position
+      formula: "Reference Point − Opening Value"
+      description: Highest Opening Value → position 0 → acts first. All others placed further right by their difference from the Reference Point.
+  rule: The participant with the highest Opening Value is placed at 0 and acts first. Rhythm costs stack on top from the first activation onward.
+  tiebreak: Raw Preparation (before situational modifiers). If still tied, Narrator uses a fixed secondary criterion.
   situational_modifiers:
     - situation: Ambushing
       modifier: +2

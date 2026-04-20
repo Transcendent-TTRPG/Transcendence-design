@@ -78,6 +78,6 @@ Withstanding specific types of danger. Often develops through exposure and survi
 | Elemental damage  | +1 to R.R. against elemental effects |
 | Poison            | +1 to R.R. against poisons |
 | Infection         | +1 to R.R. against infections |
-| Affliction        | +1 to R.R. against afflictions; +1 to Affliction R.R. per rank during cognitive meditation |
+| Affliction        | +1 to R.R. against afflictions; +1 to Affliction R.R. per rank during meditation |
 | Alteration        | +1 to R.R. against alterations |
 | Curses            | +1 to detect or resist curses |

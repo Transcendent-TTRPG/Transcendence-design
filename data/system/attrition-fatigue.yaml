@@ -149,6 +149,35 @@ conditions_and_environment:
         attrition_modifier: "+1 to attrition cost of physical actions"
         effect: "+2 difficulty to all physical actions; half movement"
 
+rest_recovery:
+  short_rest:
+    description: >
+      Brief pause to catch breath and stabilize. Only the first Short Rest after
+      a hostile scene reduces Attrition normally. Subsequent pauses allow tasks
+      but do not reduce Attrition again unless a specific rule allows it.
+    durations:
+      - minutes: 15
+        attrition_recovery: 1
+        tasks: 1
+        task_type: brief
+      - minutes: 30
+        attrition_recovery: 2
+        tasks: 1
+        task_type: significant
+      - minutes: 60
+        attrition_recovery: 3
+        tasks: 2
+        task_type: significant
+        favorable_condition_bonus: 1
+  full_rest:
+    description: >
+      8-hour recovery requiring reasonably adequate conditions. Reduces Attrition,
+      progresses affliction relief, allows equipment repair, and recovers daily resources.
+    attrition_recovery: "2 × Endurance"
+    affliction_progression: -1  # per active affliction, per day of Full Rest
+    equipment_durability_recovery: 5  # per relevant item, on successful specialization roll
+    daily_resources: "all abilities marked 'per day' or 'after full rest'"
+
 encounter_category_and_pressure:
   principle: >
     Encounter category does not change a character's Endurance.

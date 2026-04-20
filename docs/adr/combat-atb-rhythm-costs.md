@@ -129,13 +129,13 @@ Movement matters too much tactically to be trivial or universally free. It is tr
 
 ---
 
-### Basic Read / Understand (Cost 5 — Standard)
+### Specialization (Cost 5 — Standard)
 
-Universal action for observing with intent, attempting to understand what is happening, or making a basic interpretive attempt without invoking a specific advanced ability.
+Use of any specialization in a hostile scene: jumping, acrobatics, perception, interpretation, tracking, social reading, crafting under pressure, and any other specialization a character can use.
 
-This action does not itself grant special tactical bonuses. It represents spending time and attention trying to understand an enemy, object, environment, or situation.
+The cost is uniform across all specialization types because the reason is the same: the character is under active scene pressure and the action requires real attention and effort, regardless of whether the specialization is physical, mental, or social.
 
-Later, specialized abilities may replace or improve this action with distinct rhythm values and stronger effects. The universal read action ensures any character can attempt interpretation even before specific abilities are defined.
+This action does not itself grant special tactical bonuses beyond what the specialization's narrative result supports. Techniques may later replace or improve this with distinct rhythm values and direct mechanical effects.
 
 ---
 
@@ -193,14 +193,14 @@ These values assume the action is performed under meaningful scene pressure. Spe
 | Free action (Drop, Speak) | 0 | 0 |
 | Interact | 3 | 1 * |
 | Move | 5 | 1 |
-| Basic Read / Understand | 5 | — |
+| Specialization | 5 | 1 |
 | Attack with One-Handed Weapon | 5 | 1 |
-| Attack with Two-Handed Weapon | 7 | 2 |
-| Attack with Two One-Handed Weapons | 7 | 2 |
+| Attack with Two-Handed Weapon | 7 | 1 |
+| Attack with Two One-Handed Weapons | 7 | 1 |
 
 \* Interact generates 1 Attrition only when the interaction is meaningful and performed under real pressure. Trivial or non-pressured interactions generate 0.
 
-— Basic Read / Understand: Attrition cost to be determined when the cognitive/social action layer is defined.
+Specialization generates 1 Attrition. Any use of a specialization in a hostile scene has real cost — the character diverts attention from active threats to execute the skill. Not as demanding as attacking or defending, but not free. Covers jumping, acrobatics, perception, interpretation, tracking, and all other specialization types equally.
 
 ### Structural rule
 
@@ -231,10 +231,10 @@ This keeps the base layer stable while allowing competency to create meaningful 
 | Free action | 0 | 0 |
 | Interact | 3 | 1 * |
 | Move | 5 | 1 |
-| Basic Read / Understand | 5 | — |
+| Specialization | 5 | 1 |
 | Attack with One-Handed Weapon | 5 | 1 |
-| Attack with Two-Handed Weapon | 7 | 2 |
-| Attack with Two One-Handed Weapons | 7 | 2 |
+| Attack with Two-Handed Weapon | 7 | 1 |
+| Attack with Two One-Handed Weapons | 7 | 1 |
 
 ---
 
@@ -258,4 +258,4 @@ This keeps the base layer stable while allowing competency to create meaningful 
 2. Should certain shields or defensive styles become their own base action family?
 3. Should aimed attacks remain within weapon families or become a separate rhythm category?
 4. At what point should movement split into controlled movement vs. forced or desperate movement?
-5. What is the Attrition cost of Basic Read / Understand once the cognitive/social layer is defined?
+5. Should certain high-demand specialization uses (e.g. a complex crafting action mid-combat) warrant a Heavy band instead of Standard?

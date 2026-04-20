@@ -78,7 +78,7 @@ types:
       - id: infection
         bonus: "+1 to R.R. against infections"
       - id: affliction
-        bonus: "+1 to R.R. against afflictions; +1 to Affliction R.R. per rank during cognitive meditation"
+        bonus: "+1 to R.R. against afflictions; +1 to Affliction R.R. per rank during meditation"
       - id: alteration
         bonus: "+1 to R.R. against alterations"
       - id: curses

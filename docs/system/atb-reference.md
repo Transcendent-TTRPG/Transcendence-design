@@ -20,11 +20,23 @@ Cuando una entidad actúa, su ficha se mueve a la **derecha** según el costo de
 
 ## 2. Posición inicial en el track
 
-Al comienzo del combate, cada entidad recibe una **posición inicial** en el track según su grado de preparación en ese momento.
+Al comienzo del combate, el Narrador establece la posición inicial de cada entidad en tres pasos.
 
-Posición inicial = **Preparación** + modificadores de situación
+### Paso 1 — Valor de Apertura
 
-Mayor puntuación → ficha más a la izquierda → actúa antes.
+Cada participante calcula su puntuación individual:
+
+Valor de Apertura = **Preparación** + modificadores de situación
+
+### Paso 2 — Punto de Referencia
+
+El Narrador identifica el Valor de Apertura más alto entre todos los participantes. Ese es el **Punto de Referencia** del encuentro.
+
+### Paso 3 — Posición inicial
+
+Posición inicial = Punto de Referencia − Valor de Apertura
+
+El participante con el Valor de Apertura más alto queda en la posición **0** — el extremo izquierdo del track — y actúa primero. Los demás quedan a la derecha, a una distancia igual a la diferencia entre el Punto de Referencia y su propio Valor de Apertura.
 
 ### Modificadores de situación
 
@@ -39,7 +51,18 @@ Mayor puntuación → ficha más a la izquierda → actúa antes.
 | Terreno inmediato malo | −1 |
 | Dormido, herido, desorientado o mal posicionado | −1 a −3 según el caso |
 
-Una vez fijadas las posiciones iniciales, el combate fluye con normalidad: cada acción mueve la ficha hacia la derecha según su costo de ritmo. Los costos se acumulan sobre esta posición de partida.
+#### Ejemplo
+
+Un lobo con Preparación 5 embosca (+2). Valor de Apertura = 7. Tres jugadores tienen Preparación 4, 3 y 2 sin modificadores. Punto de Referencia = 7.
+
+| Participante | Preparación | Modificadores | Valor de Apertura | Posición inicial |
+| --- | ---: | ---: | ---: | ---: |
+| Lobo | 5 | +2 | 7 | 7 − 7 = **0** |
+| Jugador C | 4 | 0 | 4 | 7 − 4 = **3** |
+| Jugador A | 3 | 0 | 3 | 7 − 3 = **4** |
+| Jugador B | 2 | 0 | 2 | 7 − 2 = **5** |
+
+El lobo actúa primero. Tras una acción estándar (costo 5), su ficha se mueve a 5. El Jugador C en posición 3 actúa a continuación.
 
 > **Posición inicial:** No es un sistema aparte del track — es el estado de partida. Los costos de ritmo se acumulan sobre ella desde la primera activación.
 
@@ -390,8 +413,10 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 
 - La ficha más a la izquierda actúa primero.
 - Actuar mueve la ficha a la derecha.
-- Posición inicial = Preparación + modificadores de situación.
-- Mayor puntuación → más a la izquierda → actúa antes.
+- Valor de Apertura = Preparación + modificadores de situación.
+- Punto de Referencia = Valor de Apertura más alto entre todos los participantes.
+- Posición inicial = Punto de Referencia − Valor de Apertura.
+- Mayor Valor de Apertura → posición 0 → actúa primero.
 - Los costos de ritmo se acumulan sobre la posición inicial.
 - No hay rondas fijas.
 - Preparación bruta desempata en caso de empate.
