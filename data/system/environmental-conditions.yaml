@@ -30,16 +30,21 @@ tipos:
     nombre_es: Extranatural
     nombre_en: Extranatural
     descripcion: >
-      Condiciones que violan la lógica del mundo natural. Ocurren cuando fuerzas
-      taumáticas de alta intensidad tocan el entorno desde el Vacío. Se reconocen
-      por combinaciones de elementos físicamente imposibles o por fenómenos que
-      no pueden ocurrir de forma natural.
-    marcador_de_presencia:
-      - dos o más elementos en conflicto activo simultáneo (p.ej. fuego + hielo)
-      - luz y oscuridad operando al mismo tiempo con efectos propios
+      Condiciones que violan la lógica del mundo natural. Ocurren cuando el Vacío toca
+      el entorno. Se reconocen por estados físicamente contradictorios simultáneos —
+      no por la combinación de elementos en sí, sino por la coexistencia imposible de
+      estados opuestos en el mismo punto del espacio.
+    origen: >
+      Kaodis, deidad del Vacío — hijo de Lampsi (Luz) y Nytha (Oscuridad). Su presencia
+      es el origen de toda condición extranatural. La combinación Luz+Oscuridad
+      simultáneas es el marcador primario de su influencia directa.
+    marcador_primario: luz y oscuridad activas simultáneamente en el mismo espacio
+    marcadores_secundarios:
+      - estados físicamente contradictorios en el mismo punto (fuego+hielo, calor+nieve)
+      - nota: fuego+agua produciendo vapor es NATURAL (Atmos); fuego+hielo simultáneo es EXTRANATURAL
+      - tres o más elementos en conflicto activo en el mismo punto
       - fenómenos sin causa visible o con causalidad invertida
       - reglas físicas del entorno inestables o contradictorias
-    origen: influencia del Vacío — ver diseño del sistema del Vacío cuando se desarrolle
 
 # ──────────────────────────────────────────────────────
 # ELEMENTOS
@@ -106,36 +111,78 @@ elementos:
 # ──────────────────────────────────────────────────────
 
 combinaciones:
+  nota_naturales: >
+    Las combinaciones naturales corresponden al panteón de deidades menores — fenómenos
+    físicamente posibles reconocidos en la religión elemental. Son intensos pero coherentes
+    con la lógica del mundo.
   naturales:
     - elementos: [agua, viento]
-      resultado: tormenta, huracán, temporal marino
-    - elementos: [agua, tierra]
-      resultado: inundación, barro, terreno pantanoso, alud de lodo
+      resultado: niebla, tormenta, huracán, temporal marino
+      deidad_menor: Nefos (Agua+Viento)
+    - elementos: [fuego, viento]
+      resultado: relámpago, tormenta eléctrica, incendio con viento
+      deidad_menor: Brontios (Fuego+Viento)
+    - elementos: [fuego, agua]
+      resultado: vapor, géiser, volcán que encuentra el mar
+      deidad_menor: Atmos (Fuego+Agua)
+      nota_critica: >
+        Fuego+Agua produciendo vapor es NATURAL. Solo es EXTRANATURAL cuando los estados son
+        simultáneamente contradictorios en el mismo punto (fuego activo + hielo activo).
     - elementos: [fuego, tierra]
-      resultado: erupción volcánica, campo de lava, ceniza en el aire
+      resultado: erupción volcánica, campo de lava, ceniza densa
+      deidades_menores: [Pilysis (Fuego+Tierra), Fakos (Tierra+Fuego → cristal)]
+    - elementos: [tierra, agua]
+      resultado: inundación, barro, terreno pantanoso, alud de lodo
+      deidad_menor: Philos (Tierra+Agua)
+    - elementos: [tierra, oscuridad]
+      resultado: cueva profunda, grietas sin fondo visible, terreno que absorbe la luz
+      deidad_menor: Petra (Tierra+Oscuridad)
+    - elementos: [oscuridad, agua]
+      resultado: lluvia ácida, aguas corrosivas, pantano sin fondo
+      deidad_menor: Oxy (Oscuridad+Agua)
     - elementos: [oscuridad, viento]
-      resultado: tormenta de arena o polvo, niebla densa con viento
+      resultado: tormenta de arena, niebla densa con viento
+    - elementos: [fuego, luz]
+      resultado: resplandor cegador, plasma solar, calor radiante extremo
+      deidad_menor: Helios (Fuego+Luz)
+    - elementos: [viento, luz]
+      resultado: aurora, fenómenos de luz en el cielo, refracción extrema
+      deidad_menor: Eos (Viento+Luz)
     - elementos: [agua, viento, tierra]
       resultado: tormenta con derrumbes, inundación con corrientes fuertes
 
   extranaturales:
-    nota: >
-      Las combinaciones extranaturales son físicamente imposibles en condiciones naturales.
-      Su presencia indica influencia del Vacío. Los personajes pueden reconocerlas
-      con Percepción (notarlas), Taumaturgia (entender su origen) o Instinto (respuesta primaria).
+    origen: >
+      Las condiciones extranaturales son manifestaciones de Kaodis (deidad del Vacío,
+      hijo de Lampsi y Nytha) tocando el mundo. Lo que las define no es la combinación
+      de elementos sino la coexistencia de ESTADOS CONTRADICTORIOS en el mismo espacio —
+      lo que ningún fenómeno natural puede sostener.
+    marcador_primario:
+      elementos: [luz, oscuridad]
+      descripcion: >
+        Presencia directa de Kaodis. Luminosidad que no ilumina; sombras donde hay fuente
+        de luz visible; ambos activos con efectos físicos propios y simultáneos.
     ejemplos:
       - elementos: [fuego, agua]
-        resultado: vapor abrasador simultáneo con hielo — temperatura físicamente incoherente
+        estado_contradictorio: fuego activo + hielo activo en el mismo punto
+        resultado: temperatura físicamente incoherente — quema y congela simultáneamente
+        distincion: fuego+agua → vapor (Atmos, natural) ≠ fuego+hielo simultáneo (extranatural)
       - elementos: [luz, oscuridad]
-        resultado: luminosidad que no ilumina; sombras proyectadas sin fuente de luz; ambas activas
-      - elementos: [fuego, agua, viento, tierra]
-        resultado: tormenta elemental completa — todos los elementos en conflicto simultáneo
+        estado_contradictorio: luminosidad y oscuridad activas simultáneamente
+        resultado: sombras proyectadas sin ausencia de luz; luz visible sin efecto iluminador
+        nota: marcador primario de Kaodis
       - elementos: [tierra, oscuridad]
-        resultado: suelo que no sostiene; terreno que se comporta como líquido sin serlo
+        estado_contradictorio: suelo físicamente sólido que no sostiene peso
+        resultado: terreno que se comporta como líquido sin serlo; grietas que absorben materia
       - elementos: [luz, oscuridad, agua]
-        resultado: lluvia que no refleja luz; cielo con ambos fenómenos activos sin resolución
-      - elementos: [cualquier tres o más en conflicto activo]
-        resultado: condición extranatural por definición — ver marcador_de_presencia
+        resultado: lluvia que no refleja luz; cielo con ambos fenómenos sin resolución física
+      - elementos: [cualquier tres o más en conflicto activo simultáneo]
+        resultado: condición extranatural por definición — Kaodis presente
+    deteccion:
+      - Percepción — nota que algo no se comporta como debería
+      - Instinto — respuesta primaria no racional ante la presencia del Vacío
+      - Taumaturgia — identifica el origen taumático y la estructura del fenómeno
+      - Teología — reconoce la presencia de Kaodis por las señales canónicas de su culto
 
 # ──────────────────────────────────────────────────────
 # SEVERIDADES — relación con niveles de dificultad

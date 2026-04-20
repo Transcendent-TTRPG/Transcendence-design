@@ -10,7 +10,7 @@ Environmental conditions set the NR the Narrator assigns to fixed-threshold test
 
 **Natural** conditions follow the physical laws of the world. They can be extreme — a hurricane, a volcanic field, a cave-in — but they operate within coherent rules.
 
-**Extranatural** conditions do not. They occur when high-intensity taumatic forces reach the environment from the Void. Their defining marker is the combination of physically incompatible elements: fire and ice simultaneously, light and darkness both active with distinct effects, three or more elements in active conflict. Normal environmental adaptation may not apply to extranatural conditions — this is an open design question (D-08).
+**Extranatural** conditions do not. They occur when Kaodis — deity of the Void, born of Lampsi (Light) and Nytha (Darkness) — touches the environment. Their defining marker is not the combination of elements but the **simultaneous coexistence of contradictory states** in the same space: fire and ice at the same point, not fire and water producing steam (which is natural). Light and Darkness both active with distinct effects is the primary marker of Kaodis's direct presence. Normal environmental adaptation may not apply to extranatural conditions — this is an open design question (D-08).
 
 ---
 
@@ -27,18 +27,36 @@ Six base elements produce all environmental conditions, natural and extranatural
 | **Light** | Extreme solar glare on snow or water; continuous lightning breaking night vision |
 | **Darkness** | Moonless night, unlighted cave, impenetrable fog, heavy smoke |
 
-**Natural combinations** follow physical logic: Water + Wind = storm; Fire + Earth = eruption; Darkness + Wind = sandstorm.
+**Natural combinations** correspond to the minor deity pantheon — physically possible phenomena the elemental religion recognizes by name:
 
-**Extranatural combinations** are physically impossible — their presence indicates Void influence:
+| Elements | Natural result | Minor deity |
+| --- | --- | --- |
+| Water + Wind | Storm, hurricane, fog | Nefos |
+| Fire + Wind | Lightning, electrical storm | Brontios |
+| Fire + Water | Steam, geyser, volcano meeting sea | Atmos |
+| Fire + Earth | Eruption, lava field, ash | Pilysis / Fakos |
+| Earth + Water | Flood, mud, marshy terrain | Philos |
+| Earth + Darkness | Deep cave, light-absorbing cracks | Petra |
+| Darkness + Water | Acid rain, corrosive water | Oxy |
+| Fire + Light | Blinding radiance, plasma, radiant heat | Helios |
+| Wind + Light | Aurora, sky light phenomena | Eos |
 
-| Combination | Effect |
-| --- | --- |
-| Fire + Water | Scalding steam and ice simultaneously — incoherent temperature |
-| Light + Darkness | Luminosity that does not illuminate; shadows cast without a light source; both active |
-| Fire + Water + Wind + Earth | Complete elemental storm — all elements in active conflict |
-| Any three or more in active conflict | Extranatural by definition |
+**Extranatural conditions** are not defined by element combinations but by **contradictory simultaneous states** — what no natural phenomenon can sustain. Their source is Kaodis (Void, son of Lampsi + Nytha):
 
-Characters can recognize extranatural conditions through: Perception (noticing), Thaumaturgy (understanding the origin), Instinct (primal response).
+| Contradictory state | Effect | Note |
+| --- | --- | --- |
+| Fire + Ice (same point) | Incoherent temperature — burns and freezes | Fire+Water → steam is natural (Atmos). Fire+Ice is not. |
+| Light + Darkness (simultaneous) | Luminosity that does not illuminate; shadows without absent light | **Primary Kaodis marker** |
+| Earth (solid) that does not support weight | Terrain behaves like liquid without being liquid | |
+| Light + Darkness + Water | Rain that does not reflect light; sky with both unresolved | |
+| Three or more elements in active conflict | Extranatural by definition — Kaodis present | |
+
+Characters can recognize extranatural conditions through:
+
+- **Perception** — notices something is not behaving as expected
+- **Instinct** — primal non-rational response to the Void's presence
+- **Thaumaturgy** — identifies the taumatic origin and structure of the phenomenon
+- **Theology** — recognizes Kaodis's presence through the canonical signs of the Void cult
 
 ---
 
