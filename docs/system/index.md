@@ -11,6 +11,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [roll-types.md](roll-types.md) | All 7 roll types with formulas, Evolutionary Advantage, roll→competency map |
 | [competencies.md](competencies.md) | Ranks, progression requirements, all competency types and bonuses |
 | [difficulty-thresholds.md](difficulty-thresholds.md) | 5 universal difficulty tiers (Fundamentos–Extrema), base values, formula (Base + NR), opposed roll vs. fixed threshold distinction |
+| [environmental-conditions.md](environmental-conditions.md) | Two condition types (natural/extranatural), 6 elements + combinations, 5 severity levels with examples, Hinder/Restrict/Accelerate model, Narrator NR guidance |
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
 | [backgrounds.md](backgrounds.md) | All 5 backgrounds with major affinity and starting specialization rules |
 | [general-rules.md](general-rules.md) | Core rules, dice, Adventure Cycle phases, Conflict flow |
@@ -29,6 +30,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Vigor definition, condition interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
 | `difficulty-thresholds.yaml` | 5 difficulty tiers with base values and formula — applies to all roll-based systems |
+| `environmental-conditions.yaml` | Two condition types, 6 elements and combinations, 5 severity levels with NR guidance |
 
 ## Key Numbers
 

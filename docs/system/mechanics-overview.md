@@ -14,6 +14,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Characteristics | `characteristics.yaml` | Bonus to characteristic, bonus to derived attribute |
 | Roll types | `roll-types.yaml` | Bonus to specific roll, conditional reroll, formula modifier |
 | Difficulty Thresholds | `difficulty-thresholds.yaml` | Tier selection, base modifier, NR contribution |
+| Environmental Conditions | `environmental-conditions.yaml` | Severity tier, natural vs. extranatural, element combinations, effect model |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
 | Specializations | `specializations.yaml` | S.R. bonus, Technique access, Synapsis path unlock |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |

@@ -80,6 +80,7 @@ Decisiones que no han sido tomadas todavía. El sistema no puede estar completo 
 | D-05 | ¿Ciertos usos de especialización de alta demanda (fabricación compleja en combate) merecen banda Pesada en lugar de Estándar? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-06 | ¿Qué restricciones tiene la acción Correr? | Referenciado en `acciones.md` sin definir |
 | D-07 | ¿Cómo funcionan los combates en movimiento (pursuits, combate en desplazamiento sostenido)? | Marcha aparece como reactiva secundaria en esos escenarios; Equitación, Acrobacias y Equilibrio también son candidatas; la mecánica no existe todavía |
+| D-08 | ¿Aclimatación y otras especializaciones naturales aplican igual a condiciones extranaturales? | Una tormenta elemental no es solo frío extremo — puede requerir Instinto, Resonancia o Taumaturgia; no puede cerrarse sin el sistema del Vacío — ver `data/system/environmental-conditions.yaml` |
 
 ---
 

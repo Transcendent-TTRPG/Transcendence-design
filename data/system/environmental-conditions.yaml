@@ -1,0 +1,292 @@
+# Condiciones del Entorno — autoridad de diseño
+#
+# Referencia cruzada:
+#   - data/system/difficulty-thresholds.yaml  → fórmula de umbral (Base + NR)
+#   - data/system/attrition-fatigue.yaml      → modelo Entorpecer/Limitar/Acelerar
+#   - data/system/specializations-catalog.yaml → Aclimatación, Tolerancia, Vigor
+#
+# Las condiciones del entorno contribuyen al NR que el Narrador asigna en las pruebas
+# de umbral fijo. La severidad de la condición determina el nivel de dificultad base;
+# el NR del entorno ajusta el umbral dentro de ese nivel según la intensidad específica.
+
+meta:
+  version: "1.0"
+  status: draft
+  last_updated: "2026-04-20"
+
+# ──────────────────────────────────────────────────────
+# TIPOS DE CONDICIÓN
+# ──────────────────────────────────────────────────────
+
+tipos:
+  - id: natural
+    nombre_es: Natural
+    nombre_en: Natural
+    descripcion: >
+      Condiciones climáticas, de terreno y atmosféricas que se ajustan a las leyes
+      del mundo. Pueden ser extremas pero no violan la lógica física del entorno.
+
+  - id: extranatural
+    nombre_es: Extranatural
+    nombre_en: Extranatural
+    descripcion: >
+      Condiciones que violan la lógica del mundo natural. Ocurren cuando fuerzas
+      taumáticas de alta intensidad tocan el entorno desde el Vacío. Se reconocen
+      por combinaciones de elementos físicamente imposibles o por fenómenos que
+      no pueden ocurrir de forma natural.
+    marcador_de_presencia:
+      - dos o más elementos en conflicto activo simultáneo (p.ej. fuego + hielo)
+      - luz y oscuridad operando al mismo tiempo con efectos propios
+      - fenómenos sin causa visible o con causalidad invertida
+      - reglas físicas del entorno inestables o contradictorias
+    origen: influencia del Vacío — ver diseño del sistema del Vacío cuando se desarrolle
+
+# ──────────────────────────────────────────────────────
+# ELEMENTOS
+# ──────────────────────────────────────────────────────
+
+elementos:
+  - id: agua
+    nombre_es: Agua
+    nombre_en: Water
+    manifestaciones_naturales:
+      - lluvia ligera o intensa
+      - inundación, río desbordado
+      - nieve, hielo, granizo
+      - mar agitado, oleaje alto
+      - neblina densa
+
+  - id: viento
+    nombre_es: Viento
+    nombre_en: Wind
+    manifestaciones_naturales:
+      - viento fuerte que dificulta el movimiento
+      - tormenta, temporal
+      - tornado o huracán
+      - corrientes de aire extremas en altura
+
+  - id: fuego
+    nombre_es: Fuego
+    nombre_en: Fire
+    manifestaciones_naturales:
+      - calor extremo, desierto en su pico
+      - incendio forestal o urbano activo
+      - campo de lava, ambiente volcánico
+      - fuego de combate (estructuras ardiendo)
+
+  - id: tierra
+    nombre_es: Tierra
+    nombre_en: Earth
+    manifestaciones_naturales:
+      - terremoto activo
+      - avalancha, derrumbe, hundimiento
+      - terreno muy accidentado o inestable
+      - arena movediza, pantano denso
+      - cueva parcialmente derrumbada
+
+  - id: luz
+    nombre_es: Luz
+    nombre_en: Light
+    manifestaciones_naturales:
+      - deslumbramiento solar extremo sobre nieve o agua
+      - relámpagos continuos que eliminan la visión nocturna
+    nota: la Luz rara vez es una condición severa por sí sola en el mundo natural
+
+  - id: oscuridad
+    nombre_es: Oscuridad
+    nombre_en: Darkness
+    manifestaciones_naturales:
+      - noche cerrada sin luna ni estrellas
+      - cueva o túnel sin fuente de luz
+      - niebla densa impenetrable
+      - humo espeso que bloquea la visión
+
+# ──────────────────────────────────────────────────────
+# COMBINACIONES
+# ──────────────────────────────────────────────────────
+
+combinaciones:
+  naturales:
+    - elementos: [agua, viento]
+      resultado: tormenta, huracán, temporal marino
+    - elementos: [agua, tierra]
+      resultado: inundación, barro, terreno pantanoso, alud de lodo
+    - elementos: [fuego, tierra]
+      resultado: erupción volcánica, campo de lava, ceniza en el aire
+    - elementos: [oscuridad, viento]
+      resultado: tormenta de arena o polvo, niebla densa con viento
+    - elementos: [agua, viento, tierra]
+      resultado: tormenta con derrumbes, inundación con corrientes fuertes
+
+  extranaturales:
+    nota: >
+      Las combinaciones extranaturales son físicamente imposibles en condiciones naturales.
+      Su presencia indica influencia del Vacío. Los personajes pueden reconocerlas
+      con Percepción (notarlas), Taumaturgia (entender su origen) o Instinto (respuesta primaria).
+    ejemplos:
+      - elementos: [fuego, agua]
+        resultado: vapor abrasador simultáneo con hielo — temperatura físicamente incoherente
+      - elementos: [luz, oscuridad]
+        resultado: luminosidad que no ilumina; sombras proyectadas sin fuente de luz; ambas activas
+      - elementos: [fuego, agua, viento, tierra]
+        resultado: tormenta elemental completa — todos los elementos en conflicto simultáneo
+      - elementos: [tierra, oscuridad]
+        resultado: suelo que no sostiene; terreno que se comporta como líquido sin serlo
+      - elementos: [luz, oscuridad, agua]
+        resultado: lluvia que no refleja luz; cielo con ambos fenómenos activos sin resolución
+      - elementos: [cualquier tres o más en conflicto activo]
+        resultado: condición extranatural por definición — ver marcador_de_presencia
+
+# ──────────────────────────────────────────────────────
+# SEVERIDADES — relación con niveles de dificultad
+# ──────────────────────────────────────────────────────
+# NR sugerido: valor de NR del entorno que el Narrador puede asignar al umbral.
+# El umbral final = Base del nivel de dificultad + NR del entorno.
+# NR 0 = condición en su mínima expresión para ese nivel.
+# NR alto = condición especialmente intensa o con influencia extranatural.
+
+severidades:
+  - id: leve
+    nivel_dificultad: fundamentos
+    base: 5
+    nr_sugerido: "0"
+    tipo: natural
+    descripcion: >
+      Condiciones estándar con pocos factores disruptivos. Manejables con atención básica.
+      No requieren adaptación especializada, pero sí presencia de ánimo.
+    ejemplos_naturales:
+      - lluvia ligera con viento suave
+      - terreno irregular pero familiar
+      - visibilidad reducida (niebla leve)
+      - temperatura incómoda pero soportable
+      - ruido ambiental moderado (río cercano, viento entre árboles)
+    efecto_sobre_personajes: entorpecer  # ver attrition-fatigue.yaml
+
+  - id: moderada
+    nivel_dificultad: desafiante
+    base: 8
+    nr_sugerido: "0–1"
+    tipo: natural
+    descripcion: >
+      Retos menores pero reales. Requieren adaptación activa y afectan la concentración,
+      la coordinación o la comunicación.
+    ejemplos_naturales:
+      - tormenta moderada con visibilidad reducida
+      - terreno muy irregular o pantanoso
+      - calor o frío intensos (no extremos)
+      - ruido que dificulta la comunicación verbal
+      - oscuridad parcial (antorchas insuficientes, luna tapada)
+    efecto_sobre_personajes: entorpecer → limitar  # puede escalar en contextos específicos
+
+  - id: severa
+    nivel_dificultad: rigurosa
+    base: 11
+    nr_sugerido: "1–2"
+    tipo: natural
+    descripcion: >
+      Factores ambientales significativos. Las acciones requieren mayor esfuerzo.
+      Algunas opciones tácticas se limitan activamente.
+    ejemplos_naturales:
+      - tormenta fuerte con viento que impide proyectiles y dificulta el movimiento
+      - terreno muy accidentado con riesgo de caída
+      - temperatura extrema sostenida (gran frío o calor)
+      - oscuridad casi total con visibilidad mínima
+      - combate en agua o superficie inestable
+    efecto_sobre_personajes: limitar
+
+  - id: desastrosa
+    nivel_dificultad: exigente
+    base: 14
+    nr_sugerido: "2–3"
+    tipo: natural_o_extranatural_incipiente
+    descripcion: >
+      Condiciones casi inhabilitantes. Pueden ser fenómenos naturales en su punto más extremo
+      o la primera manifestación de influencia extranatural. A este nivel, la distinción
+      entre natural y extranatural comienza a ser relevante mecánicamente.
+    ejemplos_naturales:
+      - terremoto activo con derrumbes
+      - huracán de máxima intensidad
+      - incendio forestal activo con dirección imprevisible
+      - tormenta marina con olas que superan estructuras
+    ejemplos_extranaturales:
+      - dos elementos en conflicto activo (calor extremo con nieve simultánea)
+      - terreno que cambia de forma activamente
+      - oscuridad con fuente de luz visible pero sin efecto iluminador
+      - temperatura que varía varios grados en segundos sin causa
+    efecto_sobre_personajes: limitar → acelerar
+
+  - id: extrema
+    nivel_dificultad: extrema
+    base: 17
+    nr_sugerido: "3–5"
+    tipo: natural_o_extranatural
+    descripcion: >
+      Límite de lo supervivible o ejecutable. Los fenómenos extranaturales son comunes
+      en este rango. Tres o más elementos en conflicto activo, o fenómenos que el entorno
+      no puede sostener bajo lógica natural.
+    ejemplos_naturales:
+      - tormenta marina con abordaje simultáneo y estructuras colapsando
+      - terremoto combinado con erupción volcánica próxima
+    ejemplos_extranaturales:
+      - tormenta elemental completa (todos los elementos en conflicto activo)
+      - luz y oscuridad simultáneas con efectos físicos propios
+      - entorno en colapso dimensional activo (el Vacío tocando directamente)
+      - reglas físicas del entorno inestables: gravedad irregular, tiempo perceptivamente alterado
+    efecto_sobre_personajes: acelerar  # condiciones acumuladas; puede generar Desgaste pasivo
+
+# ──────────────────────────────────────────────────────
+# MODELO DE EFECTO
+# ──────────────────────────────────────────────────────
+
+modelo_de_efecto:
+  referencia: data/system/attrition-fatigue.yaml (conditions_and_environment)
+  etapas:
+    - id: entorpecer
+      nombre_en: hinder
+      descripcion: La condición impone penalizaciones pero no añade Desgaste
+    - id: limitar
+      nombre_en: restrict
+      descripcion: La condición limita acciones disponibles o impone modificadores de dificultad
+    - id: acelerar
+      nombre_en: accelerate
+      descripcion: La condición severa añade +1 al costo de Desgaste de acciones relevantes
+  nota: >
+    Una misma condición puede escalar entre etapas durante un encuentro si la situación
+    se deteriora o si el personaje no actúa para mitigarla.
+
+# ──────────────────────────────────────────────────────
+# ASIGNACIÓN DE NR POR EL NARRADOR
+# ──────────────────────────────────────────────────────
+
+nr_del_entorno:
+  principio: >
+    El Narrador asigna el NR del entorno según la intensidad específica de la condición
+    dentro de su nivel de severidad. No es un valor fijo — refleja cuánto presiona
+    ese entorno particular comparado con la condición "estándar" de su nivel.
+  guia:
+    - nr: 0
+      descripcion: Condición en su expresión mínima para ese nivel de severidad
+    - nr: 1
+      descripcion: Condición notable dentro de su nivel; algunos factores compuestos
+    - nr: 2
+      descripcion: Condición intensa; múltiples factores simultáneos o duración prolongada
+    - nr: 3
+      descripcion: Condición en su pico o con primer marcador extranatural confirmado
+    - nr: 4-5
+      descripcion: Influencia extranatural clara; reservado para nivel Extrema
+
+# ──────────────────────────────────────────────────────
+# PREGUNTAS DE DISEÑO ABIERTAS
+# ──────────────────────────────────────────────────────
+
+open_questions:
+  - id: D-08
+    pregunta: >
+      ¿Aclimatación y otras especializaciones naturales aplican igual a condiciones
+      extranaturales? Una tormenta elemental no es solo "frío extremo" — puede
+      requerir capacidades distintas (Instinto, Resonancia, Taumaturgia).
+    contexto: >
+      No puede cerrarse sin diseñar el sistema del Vacío. Provisoriamente:
+      Aclimatación aplica a condiciones Desastrosas con componente extranatural,
+      pero no garantiza reducción completa en condiciones Extremas de origen vacual.
+    destino: sistema del Vacío — cuando se diseñe
