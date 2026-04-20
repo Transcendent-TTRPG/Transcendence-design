@@ -14,6 +14,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Characteristics | `characteristics.yaml` | Bonus to characteristic, bonus to derived attribute |
 | Roll types | `roll-types.yaml` | Bonus to specific roll, conditional reroll, formula modifier |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
+| Specializations | `specializations.yaml` | S.R. bonus, Technique access, Synapsis path unlock |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
 | Rest & Recovery | `attrition-fatigue.yaml` | Recovery amount modifier, additional task access, favorable condition criteria |
 | ATB combat timeline | `combat-atb-timeline.md` (ADR) | Rhythm cost reduction, initial position bonus, reaction access |
@@ -86,15 +87,21 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 
 ### Rank structure
 
-| Rank | Level range | Progression cost |
-| --- | --- | --- |
-| Untrained | 0 | — |
-| Novice | 1–3 | 10 pts (5 pts if major affinity) |
-| Adept | 4–6 | 10 pts (5 pts if major affinity) |
-| Expert | 7–9 | 10 pts (5 pts if major affinity) |
-| Master | 10+ | 10 pts (5 pts if major affinity) |
+2 levels per rank. Progress points earned through the learning advantage option (not execution).
+Synapsis triggers on reaching the threshold level of each new rank (specializations only).
 
-3 levels per rank. Progress points earned through the learning advantage option (not execution).
+| Rank | Name (ES / EN) | Level range | Threshold level | Synapsis |
+| --- | --- | --- | --- | --- |
+| 0 | No entrenado / Untrained | 0 | — | — |
+| 1 | Novato / Novice | 1–2 | 1 | +1 characteristic |
+| 2 | Adepto / Adept | 3–4 | 3 | +1 characteristic |
+| 3 | Experto / Expert | 5–6 | 5 | +1 characteristic |
+| 4 | Maestro / Master | 7–8 | 7 | +1 characteristic |
+| 5 | Consumado / Consummate | 9–10 | 9 | +1 characteristic |
+| 6 | Trascendente / Transcendent | 11+ | 11 | +1 characteristic |
+
+Cost per level: 10 pts (5 pts if major affinity). Major affinity determined by background.
+Untrained characters can still roll any specialization: formula = 1d10 + characteristic only.
 
 ### Competency types and bonuses
 
@@ -117,6 +124,52 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Affliction | +1 R.R. vs afflictions; +1 per rank during meditation |
 | Alteration | +1 R.R. vs alterations |
 | Curses | +1 to detect or resist curses |
+
+---
+
+## Specializations
+
+**Authority:** `data/system/specializations.yaml`
+**Full framework:** `docs/system/specializations.md`
+
+A specialization is a trainable technical, practical, or methodological domain tied to one attribute. Raw use produces a narrative effect only. Mechanical effects require follow-up actions or a specific Technique.
+
+### Specialization Roll
+
+```text
+S.R. = 1d10 + Specialization Level + Competency Rank + Associated Characteristic + Bonuses
+```
+
+### Starting specializations
+
+4 at Level 1 / Novice: 3 from background + 1 universal (Vigor → +1 TEN).
+
+### Design clauses (all four must pass)
+
+| Clause | Rule |
+| --- | --- |
+| Raw Attribute | A situation fully resolvable by raw attribute roll alone should not become a specialization |
+| Technique | Must be broad enough to generate multiple Techniques |
+| Differentiation | Two characters with the same attribute must feel different if only one has it |
+| Trainability | Must represent a domain that can be practiced, failed, refined, and improved |
+
+### Attribute distribution notes
+
+| Attribute | Distribution guidance |
+| --- | --- |
+| Wisdom, Intellect | May carry more specializations — absorb crafts, knowledge, field interpretation |
+| Tenacity | Keep smaller — broadly exercised by most characters; overloading makes it too easy to raise |
+| Aura | Careful framing needed — partly passive/involuntary; domains should reflect resonance and attunement, not generic social skills |
+| Composure | Focus on practiced regulation (concentration, containment, poise) — not abstract virtues |
+
+### Specialization ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| +N to S.R. (specific specialization) | Skill mastery |
+| Reduce S.R. difficulty threshold for Technique unlock | Access expansion |
+| Treat specialization as one rank higher for Technique prerequisites | Effective rank bonus |
+| Unlock cross-specialization Technique (requires two specializations) | Multi-domain access |
 
 ---
 

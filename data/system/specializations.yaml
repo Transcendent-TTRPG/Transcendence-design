@@ -1,0 +1,124 @@
+# Specializations — authority definition
+# Related: docs/system/specializations.md, competencies.yaml, characteristics.yaml, roll-types.yaml
+# Rank structure: 6 ranks / 2 levels per rank — see competencies.yaml and docs/adr/system-specialization-rank-restructure.md
+
+roll_formula: "1d10 + specialization_level + competency_rank + associated_characteristic + bonuses"
+untrained_formula: "1d10 + associated_characteristic (no level or rank bonus)"
+
+rank_structure:
+  note: "Canonical rank structure for all competency types. See competencies.yaml for full definition."
+  ranks:
+    - { rank: 0, name_es: "No entrenado", name_en: "Untrained", threshold_level: 0, synapsis: false }
+    - { rank: 1, name_es: "Novato",       name_en: "Novice",     threshold_level: 1, synapsis: true }
+    - { rank: 2, name_es: "Adepto",       name_en: "Adept",      threshold_level: 3, synapsis: true }
+    - { rank: 3, name_es: "Experto",      name_en: "Expert",     threshold_level: 5, synapsis: true }
+    - { rank: 4, name_es: "Maestro",      name_en: "Master",     threshold_level: 7, synapsis: true }
+    - { rank: 5, name_es: "Consumado",    name_en: "Consummate", threshold_level: 9, synapsis: true }
+    - { rank: 6, name_es: "Trascendente", name_en: "Transcendent", threshold_level: 11, synapsis: true }
+
+progression:
+  untrained_can_roll: true
+  narrative_fit_required: true
+  narrator_validates: true
+  progress_method: learning_advantage   # take lower die result to generate progress, not execution
+  note: >
+    Any character can roll any specialization, even untrained (1d10 + characteristic only).
+    Progress points accumulate through learning-advantage rolls. The Narrator validates whether
+    the domain used fits the narrative intent of the action.
+  breadth_vs_depth: >
+    Reaching Rank 1 in many specializations generates more Synapsis points across characteristics.
+    Reaching higher ranks in one specialization generates higher S.R. bonuses and unlocks more
+    powerful Techniques but at high opportunity cost. This tension is a core character-building decision.
+
+group_rolls:
+  name_es: Tácticas
+  name_en: Tactics
+  description: >
+    When multiple characters contribute to a shared outcome, each rolls their own specialization
+    separately. The result is an average of all individual rolls. Different characters may
+    use different specializations for the same tactic.
+
+technique_prerequisites:
+  note: >
+    Techniques may require any combination of competency types — weapon + specialization,
+    resistance + specialization, two specializations, or other combinations. There is no
+    structural restriction that limits Techniques to a single competency type.
+
+starting_specializations:
+  total: 4
+  from_background: 3
+  universal: 1
+  universal_name: Vigor
+  all_at: { level: 1, rank: Novice }
+  note: "Same specialization cannot be chosen twice at creation. All others begin at Level 0 (Untrained)."
+
+vigor:
+  associated_characteristic: Tenacity
+  starting_level: 1
+  starting_rank: Novice
+  synapsis_grant: "+1 Tenacity at creation"
+  stacks_with: species_bonuses
+  note: "Universal starting specialization. Every character gains at least +1 to Tenacity from Vigor unless a specific rule states otherwise."
+
+core_definition:
+  what_it_is: "A trainable technical, practical, or methodological domain tied to one attribute."
+  what_it_enables:
+    - techniques (advanced mechanically-defined applications)
+    - attribute growth via Synapsis
+    - character differentiation without class structure
+  what_it_produces_on_raw_use: "Narrative effect only. Mechanical state change requires follow-up actions."
+
+design_clauses:
+  raw_attribute:
+    rule: "A specialization should not exist if the situation can already be resolved completely and sufficiently by a direct attribute roll."
+    purpose: "Prevents specializations from duplicating raw attribute logic."
+  technique:
+    rule: "A specialization must be broad enough to generate multiple techniques or advanced applications."
+    purpose: "Prevents overly narrow specializations that are really single maneuvers or one-trick effects."
+  differentiation:
+    rule: "A specialization must allow two characters with the same base attribute to feel meaningfully different."
+    purpose: "Ensures identity value — why this specialization exists alongside others tied to the same attribute."
+  trainability:
+    rule: "A specialization must represent a domain that can reasonably be trained, repeated, and improved."
+    purpose: "Excludes passive states, instinctive conditions, or abstract virtues that cannot be practiced as a discipline."
+
+structural_relationship:
+  attribute: "Broad natural capacity. Answers: how strong, how fast, how perceptive, how steady, how much presence."
+  specialization: "Trainable domain tied to one attribute. Structured growth path through practice."
+  technique: "Specific advanced application enabled by a specialization. Narrower, more situational, produces narrative + mechanical effect in one action."
+
+attribute_distribution:
+  principle: "Not every attribute needs the same number of specializations. Distribution reflects practical need and Synapsis balance."
+  special_notes:
+    Wisdom:
+      note: "May legitimately carry more specializations."
+      reason: "Absorbs crafts, knowledge systems, and field interpretation."
+    Intellect:
+      note: "May legitimately carry more specializations."
+      reason: "Absorbs structured knowledge and academic domains."
+    Tenacity:
+      note: "Should not be overloaded."
+      reason: "Its domains are broadly and frequently exercised by most characters. Too many specializations would make Tenacity too easy to raise through normal play."
+    Aura:
+      note: "Requires careful framing."
+      reason: "Aura is partly passive or involuntary. Domains must remain trainable while preserving the innate, resonant, or projected nature of the attribute. Should reflect instinct, resonance, link, attunement, involuntary influence — not generic social skills."
+    Composure:
+      note: "Should focus on practiced inner regulation."
+      reason: "Concentration, containment, meditation, poise under visible strain — not abstract virtues or vague personality ideals."
+
+categories:
+  - Physical
+  - Mental
+  - Social
+  - Arts and Crafts
+  - Knowledge
+note: "Categories are organizational only. Primary truth of every specialization: which attribute it belongs to and whether it passes all four design clauses."
+
+design_test:
+  questions:
+    - "Can this be resolved sufficiently with a raw attribute roll? If yes, probably not a specialization."
+    - "Does this represent a trainable domain? If no, not a specialization."
+    - "Can this generate several techniques? If no, likely too narrow."
+    - "Would two characters with the same base attribute feel different if only one had this? If no, may not be meaningful enough."
+    - "Is this actually a maneuver, technique, or core mechanic disguised as a specialization? If yes, belongs elsewhere."
+    - "Does this specialization create a valid path for Synapsis? If no, its structural purpose is weak."

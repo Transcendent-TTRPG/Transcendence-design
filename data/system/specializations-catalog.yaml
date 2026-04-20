@@ -1,0 +1,897 @@
+# Catálogo de especializaciones — Transcendence
+# Nivel: diseño. No es contenido de corebook todavía.
+# Fuente de autoridad del marco: data/system/specializations.yaml
+#
+# Campos por entrada:
+#   nombre               — nombre canónico en español
+#   categoría            — física | mental | social | artes-y-oficios | conocimiento
+#   característica_asociada — característica vinculada para la T.E.
+#   dominio_central      — descripción concisa de lo que entrena este dominio
+#   cubre                — qué abarca (límite superior)
+#   no_cubre             — qué queda fuera (límite inferior y lateral)
+#   contextos.combate    — aparece relevantemente en combate ATB
+#   contextos.exploración — aparece relevantemente en exploración
+#   contextos.narrativo  — aparece relevantemente en capa narrativa / social / tiempo libre
+#   tipo_en_combate      — activa | reactiva | activa+reactiva | pasiva | no_aplica
+#   tipo_en_exploración  — activa | reactiva | automática | no_aplica
+#   técnicas_habilitadas — lista de Técnicas conocidas que requieren esta especialización (vacía hasta redacción de Ch07)
+#
+# Nota sobre combates en movimiento (D-07):
+#   Marcha aparece en combate como reactiva secundaria solo en escenarios de combat-in-movement.
+#   La mecánica de combate en movimiento aún no existe — ver docs/pending.md D-07.
+
+meta:
+  version: "1.0"
+  status: draft
+  authority: data/system/specializations.yaml
+  last_updated: "2026-04-20"
+  total: 58
+
+especializaciones:
+
+  # ─────────────────────────────────────────────
+  # FUERZA
+  # Identidad: potencia bruta, salida explosiva, palanca física, fuerza corporal aplicada con intención.
+  # ─────────────────────────────────────────────
+
+  - nombre: Saltar
+    categoría: física
+    característica_asociada: Fuerza
+    dominio_central: usar la fuerza para proyectar el cuerpo en espacio vertical u horizontal
+    cubre: saltos, despegue explosivo, cruce forzado, movimiento basado en salto
+    no_cubre: control aéreo, aterrizaje elegante, redirección corporal evasiva
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Trepar
+    categoría: física
+    característica_asociada: Fuerza
+    dominio_central: ascender o descender superficies mediante colocación corporal basada en fuerza
+    cubre: escalar, colgarse, izarse hacia arriba, descender bajo control
+    no_cubre: equilibrio en superficies inestables, reposicionamiento acrobático, saltar
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Lanzamiento
+    categoría: física
+    característica_asociada: Fuerza
+    dominio_central: lanzar con fuerza, ángulo y proyección entrenados
+    cubre: objetos lanzados, armas arrojadizas, proyección a distancia mediante técnica
+    no_cubre: sistemas de armas a distancia con mecánica propia, empuje bruto, concursos de agarre
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Nadar
+    categoría: física
+    característica_asociada: Fuerza
+    dominio_central: mover el cuerpo a través del agua mediante propulsión y control entrenados
+    cubre: nadar, mantenerse a flote, cruzar masas de agua, movimiento corporal subacuático
+    no_cubre: control de respiración como sistema abstracto separado, adaptación climática, supervivencia marítima en sentido amplio
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Agarre
+    categoría: física
+    característica_asociada: Fuerza
+    dominio_central: agarre entrenado, sujeción, retención y aplicación de fuerza por contacto
+    cubre: sostener, restringir, torcer, controlar mediante agarre, estabilizar peso a través de manos y cuerpo
+    no_cubre: lucha libre como categoría universal de combate, concursos de fuerza bruta sin manejo técnico
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa+reactiva
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # AGILIDAD
+  # Identidad: fineza corporal, coordinación, ejecución limpia, movimiento controlado, equilibrio responsivo.
+  # ─────────────────────────────────────────────
+
+  - nombre: Acrobacias
+    categoría: física
+    característica_asociada: Agilidad
+    dominio_central: movimiento corporal complejo mediante coordinación entrenada
+    cubre: volteretas, rollos, movimiento evasivo, redirección corporal dinámica
+    no_cubre: equilibrio simple, ocultación silenciosa, técnica ecuestre
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa+reactiva
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Destreza
+    categoría: física
+    característica_asociada: Agilidad
+    dominio_central: precisión motora fina y control corporal delicado
+    cubre: manipulaciones precisas pequeñas, uso técnico de las manos, ejecución delicada bajo presión
+    no_cubre: acrobacias de cuerpo entero, sigilo como ocultación, movimiento atlético amplio
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Equilibrio
+    categoría: física
+    característica_asociada: Agilidad
+    dominio_central: mantener la estabilidad corporal y la postura controlada
+    cubre: superficies inestables, apoyos estrechos, resistir pérdida de equilibrio, postura controlada
+    no_cubre: estabilidad emocional, silencio de movimiento, control montado
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: reactiva
+    tipo_en_exploración: reactiva
+    técnicas_habilitadas: []
+
+  - nombre: Sigilo
+    categoría: física
+    característica_asociada: Agilidad
+    dominio_central: evitar la detección física mediante movimiento silencioso, ocultación y discreción corporal
+    cubre: moverse silenciosamente, esconderse físicamente, minimizar presencia en el espacio
+    no_cubre: mezclarse socialmente, identidad falsa, engaño mediante actuación
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Equitación
+    categoría: física
+    característica_asociada: Agilidad
+    dominio_central: controlar y actuar desde una montura mediante coordinación corporal entrenada
+    cubre: movimiento montado, estabilidad montada, maniobra montada, posicionamiento de combate montado
+    no_cubre: vínculo con animales como tal, manejo amplio de animales, liderazgo sobre compañeros
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # TENACIDAD
+  # Identidad: resistencia corporal, funcionamiento sostenido, persistencia bajo estrés, supervivencia del esfuerzo interno o externo.
+  # ─────────────────────────────────────────────
+
+  - nombre: Vigor
+    categoría: física
+    característica_asociada: Tenacidad
+    dominio_central: sostener el esfuerzo corporal exigente
+    cubre: esfuerzo físico, carga sostenida, esfuerzo muscular prolongado, mantenerse funcional bajo carga física
+    no_cubre: ritmo de viaje a larga distancia, adaptación climática, tolerancia al dolor en sentido amplio
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: reactiva
+    tipo_en_exploración: automática
+    notas_diseño: >
+      Especialización de inicio universal. Todo personaje comienza con Vigor en Nivel 1 / Novato.
+      En combate se activa como reactiva cuando se acumula carga física sostenida.
+      En exploración funciona de forma automática como condición de fondo durante esfuerzo prolongado.
+    técnicas_habilitadas: []
+
+  - nombre: Marcha
+    categoría: física
+    característica_asociada: Tenacidad
+    dominio_central: locomoción sostenida en el tiempo
+    cubre: ritmo de viaje, movimiento prolongado, transportarse a lo largo de la distancia, mantener el paso
+    no_cubre: explosiones de esfuerzo bruto, adaptación climática, soportar dolor severo o shock fisiológico
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: reactiva
+    tipo_en_exploración: automática
+    notas_diseño: >
+      En combate aparece solo como reactiva secundaria en escenarios de combate en movimiento (persecuciones,
+      desplazamiento sostenido durante combate). La mecánica de combate en movimiento aún no existe — ver D-07.
+    técnicas_habilitadas: []
+
+  - nombre: Aclimatación
+    categoría: física
+    característica_asociada: Tenacidad
+    dominio_central: adaptar el cuerpo a entornos hostiles o extremos
+    cubre: funcionar en frío, calor, altitud, humedad, atmósfera severa, adaptación ambiental sostenida
+    no_cubre: ritmo de viaje en sí, esfuerzo bruto, resistencia al dolor no relacionada con el entorno
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: reactiva
+    tipo_en_exploración: automática
+    notas_diseño: >
+      Complementa a Tolerancia en escenarios extremos: Aclimatación cubre la condición ambiental
+      (no debilitarse por el entorno), Tolerancia cubre la respuesta fisiológica al daño recibido.
+    técnicas_habilitadas: []
+
+  - nombre: Tolerancia
+    categoría: física
+    característica_asociada: Tenacidad
+    dominio_central: soportar el dolor, el estrés interno, el castigo fisiológico y la agravación corporal acumulada
+    cubre: soportar dolor, resistir el colapso, mantenerse funcional con aflicciones físicas, soportar múltiples cargas corporales
+    no_cubre: colapso emocional, control del pánico, calma bajo presión social
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: reactiva
+    tipo_en_exploración: reactiva
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # ASTUCIA
+  # Identidad: oportunismo, inteligencia adaptativa, inferencia rápida, explotación situacional, resolución de problemas indirecta.
+  # ─────────────────────────────────────────────
+
+  - nombre: Orientación
+    categoría: mental
+    característica_asociada: Astucia
+    dominio_central: entender la dirección, posición y estructura de rutas
+    cubre: navegación, elección de rutas, evitar perderse, dirección espacial
+    no_cubre: seguir rastros, logística de supervivencia, interpretación ambiental profunda
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: false
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Rastreo
+    categoría: mental
+    característica_asociada: Astucia
+    dominio_central: seguir huellas, señales y pasos a través del mundo
+    cubre: pisadas, sendas, señales de perturbación, historial de movimiento
+    no_cubre: orientación de ruta general, supervivencia amplia de campo, pura intuición
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Intuición
+    categoría: mental
+    característica_asociada: Astucia
+    dominio_central: sentido inferencial rápido sobre motivos ocultos, peligro o estructura no vista
+    cubre: lectura visceral, sospecha indirecta, detectar cuando algo está mal
+    no_cubre: percepción formal, interpretación académica, empatía emocional
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: reactiva
+    tipo_en_exploración: reactiva
+    técnicas_habilitadas: []
+
+  - nombre: Engaño
+    categoría: social
+    característica_asociada: Astucia
+    dominio_central: engañar a otros mediante mentiras, omisión, encuadre o manipulación de apariencias
+    cubre: mentir, farolear, desviar la atención, implicación falsa
+    no_cubre: mezclarse socialmente, actuación pública, presión coercitiva directa
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Improvisación
+    categoría: mental
+    característica_asociada: Astucia
+    dominio_central: resolver problemas inmediatos mediante invención adaptativa
+    cubre: soluciones rápidas, método improvisado, uso oportunista de medios disponibles
+    no_cubre: razonamiento académico profundo, maestría artesanal, procedimiento planificado estable
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Hurto
+    categoría: social
+    característica_asociada: Astucia
+    dominio_central: adquirir objetos o recursos mediante sigilo, desvío de atención o sustracción oportunista
+    cubre: carterismo, hurto leve, toma inadvertida, adquisición oportunista
+    no_cubre: técnica manual fina en general, movimiento sigiloso amplio, apropiación forzada
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # SABIDURÍA
+  # Identidad: comprensión atenta de lo real, juicio práctico, conciencia de campo, lectura aplicada de la vida y el entorno.
+  # ─────────────────────────────────────────────
+
+  - nombre: Percepción
+    categoría: mental
+    característica_asociada: Sabiduría
+    dominio_central: notar activamente detalles significativos
+    cubre: observar, detectar, reconocer inputs sensoriales relevantes
+    no_cubre: interpretación profunda, rastreo, sospecha intuitiva
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa+reactiva
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Supervivencia
+    categoría: mental
+    característica_asociada: Sabiduría
+    dominio_central: vivir y tomar decisiones de forma práctica en entornos hostiles o inciertos
+    cubre: elección de refugio, juicio sobre comida y agua, respuesta a peligros, mantener personas con vida en el campo
+    no_cubre: rastreo preciso, navegación como habilidad separada, medicina como ciencia de tratamiento
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Medicina
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: tratar el daño corporal mediante práctica curativa entrenada
+    cubre: estabilización, cuidado, tratamiento, diagnóstico en sentido curativo
+    no_cubre: recolección de hierbas en sí, preparación alquímica, pura tolerancia o resistencia
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Herboristería
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: identificar, recolectar y usar plantas de forma práctica medicinal o material
+    cubre: hierbas, raíces, propiedades de plantas, preparación de plantas
+    no_cubre: medicina completa, alquimia completa, supervivencia silvestre amplia
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Alquimia
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: preparar compuestos mediante transformación aprendida de ingredientes
+    cubre: pociones, toxinas, extractos, mezclas reactivas
+    no_cubre: recolección de hierbas por sí sola, tratamiento curativo por sí solo, dispositivos de ingeniería
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Trampas
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: construir, identificar, preparar e interactuar con sistemas de trampas
+    cubre: lógica de trampas, colocación, mantenimiento, interacción con trampas
+    no_cubre: destreza manual general, ingeniería más amplia, uso simple de objetos
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: false
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Minería
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: extraer y entender material de la tierra en términos prácticos
+    cubre: vetas, lógica de excavación, juicio práctico de extracción
+    no_cubre: geología como conocimiento amplio, herrería, arquitectura
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: false
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Herrería
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: dar forma y trabajar el metal para función práctica
+    cubre: forjado, reparación de objetos metálicos, trabajo práctico de metales
+    no_cubre: trabajo de joyería en detalle, teoría de arquitectura, lógica de ingeniería general
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Sastrería
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: fabricar y reparar prendas y vestimentas de material flexible
+    cubre: costura, ajuste, trabajo textil, función de prendas
+    no_cubre: forjado de armaduras, actuación de disfraz, trabajo de joyería decorativa
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Joyería
+    categoría: artes-y-oficios
+    característica_asociada: Sabiduría
+    dominio_central: trabajo fino en objetos pequeños preciosos o elaborados
+    cubre: gemas, engastes delicados, piezas artesanales de pequeño valor
+    no_cubre: herrería, ingeniería general, trabajo textil
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Ingeniería
+    categoría: conocimiento
+    característica_asociada: Sabiduría
+    dominio_central: diseño estructurado y lógica práctica de mecanismos, estructuras o dispositivos funcionales complejos
+    cubre: mecanismos, planificación técnica, lógica de diseño estructural
+    no_cubre: especialización en trampas en particular, herrería, arquitectura como análisis cultural o constructivo
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # INTELECTO
+  # Identidad: comprensión formal, sistemas aprendidos, interpretación estructurada, memoria y conocimiento organizado.
+  # ─────────────────────────────────────────────
+
+  - nombre: Identificación
+    categoría: mental
+    característica_asociada: Intelecto
+    dominio_central: reconocer qué es algo mediante análisis informado
+    cubre: reconocimiento de objetos, reconocimiento de tipo de criatura, identificar clases conocidas de cosas
+    no_cubre: significado más profundo, interpretación simbólica, lectura intuitiva
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Interpretación
+    categoría: mental
+    característica_asociada: Intelecto
+    dominio_central: extraer significado de señales, contexto, patrones o estructuras
+    cubre: entender la significancia, leer implicaciones, conectar sentido
+    no_cubre: notar crudo, instinto visceral, decodificación de lenguaje por sí sola
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Lingüística
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: estructura de lenguaje, uso, decodificación y sistemas de comunicación formal
+    cubre: análisis de lenguaje, escrituras, gramática, interpretación lingüística
+    no_cubre: persuasión social, actuación, contexto simbólico más allá del lenguaje en sí
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Taumaturgia
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal del tauma y sus leyes, manifestaciones y sistemas
+    cubre: teoría del tauma, estructura taumática, comprensión arcana
+    no_cubre: resonancia de aura cruda, teología amplia, resistencia física a la exposición taumática
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Historia
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: conocimiento formal de eventos pasados, períodos, pueblos y desarrollos
+    cubre: cronología, precedente histórico, estructuras pasadas conocidas
+    no_cubre: arqueología de campo, teología, geografía
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Geografía
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de regiones, terreno, lugares y su estructura más amplia
+    cubre: regiones mapeadas, zonas climáticas, divisiones territoriales, lógica de lugares conocidos
+    no_cubre: navegación de rutas en la práctica, rastreo, movimiento de supervivencia
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Astronomía
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de estrellas, cuerpos celestes, ciclos y lógica del cielo
+    cubre: lectura celestial, sistemas astronómicos, interpretación basada en el cielo
+    no_cubre: religión, geografía, instinto de presagio
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Teología
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de dioses, doctrina, sistemas sagrados y estructuras teológicas
+    cubre: conocimiento religioso, doctrina, interpretación divina en forma estructurada
+    no_cubre: respuesta de aura instintiva, persuasión, historia general
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Criptología
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: lenguaje codificado, estructura oculta, lógica de cifrado
+    cubre: descifrado, reconocimiento de cifras, sistemas encriptados
+    no_cubre: fluidez lingüística general, engaño social, simbolismo en términos culturales amplios
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Arqueología
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de ruinas, pasado material, culturas perdidas y vestigios físicos
+    cubre: interpretación de excavación, restos antiguos, vestigios culturales
+    no_cubre: historia pura como texto, arquitectura como estructura sola, geología o minería
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Arquitectura
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de espacios construidos, forma estructural y entornos edificados
+    cubre: edificios, lógica de disposición, patrones de construcción, lectura estructural
+    no_cubre: mecanismos de ingeniería en general, herrería, geografía
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Belicología
+    categoría: conocimiento
+    característica_asociada: Intelecto
+    dominio_central: comprensión formal de la guerra, sistemas de conflicto, doctrina militar y organización del combate
+    cubre: estructura de batalla, lógica militar, patrones de guerra, método de conflicto
+    no_cubre: liderazgo como comando social, uso bruto de armas, improvisación táctica directa
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # COMPOSTURA
+  # Identidad: regulación interna, claridad mantenida, control bajo presión, firmeza deliberada.
+  # ─────────────────────────────────────────────
+
+  - nombre: Enfoque
+    categoría: mental
+    característica_asociada: Compostura
+    dominio_central: sostener la atención en un objetivo o tarea elegido
+    cubre: concentración, fijación, estrechamiento mental deliberado
+    no_cubre: contención emocional, reinicio meditativo, mantener la compostura visible
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Contención
+    categoría: mental
+    característica_asociada: Compostura
+    dominio_central: evitar que el colapso emocional, mental o volicional se derrame hacia afuera
+    cubre: no entrar en pánico, no quebrarse, no perder el control interno
+    no_cubre: tolerancia al dolor corporal, concentración amplia, proyectar calma socialmente
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: reactiva
+    tipo_en_exploración: reactiva
+    técnicas_habilitadas: []
+
+  - nombre: Meditación
+    categoría: mental
+    característica_asociada: Compostura
+    dominio_central: regulación interna practicada mediante centrado deliberado y aquietamiento mental
+    cubre: centrado, regulación, respiración controlada y asentamiento, firmeza interior cultivada
+    no_cubre: fijación atencional sola, aplomo exterior solo, resistencia al dolor
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Aplomo
+    categoría: social
+    característica_asociada: Compostura
+    dominio_central: mantener la firmeza exterior, el porte y el control visible bajo tensión
+    cubre: no mostrar miedo, no revelar dolor, preservar la compostura bajo presión
+    no_cubre: engaño social en general, supresión emocional interna sola, regulación meditativa interna
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: reactiva
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # AURA
+  # Identidad: proyección innata, resonancia instintiva, presencia involuntaria de esencia, conexión sentida.
+  # ─────────────────────────────────────────────
+
+  - nombre: Instinto
+    categoría: mental
+    característica_asociada: Aura
+    dominio_central: respuesta instintiva profunda ligada a la naturaleza innata más que a la inferencia aprendida
+    cubre: conocimiento primario, atracción natural, respuesta no racional inmediata
+    no_cubre: razonamiento estructurado, percepción formal, empatía social
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: reactiva
+    tipo_en_exploración: reactiva
+    técnicas_habilitadas: []
+
+  - nombre: Resonancia
+    categoría: mental
+    característica_asociada: Aura
+    dominio_central: detectar o entrar en armonía significativa con seres, fuerzas, lugares o estados
+    cubre: detección de afinidad, respuesta simpática, sintonía energética o esencial
+    no_cubre: teoría formal del tauma, teología, actuación de presencia
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Vínculo
+    categoría: social
+    característica_asociada: Aura
+    dominio_central: sostener un lazo significativo de esencia, confianza instintiva o conexión profunda
+    cubre: relación vinculada, conexión espiritual o esencial duradera, afinidad no verbal
+    no_cubre: liderazgo, negociación, proyección social general
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Domesticación
+    categoría: social
+    característica_asociada: Aura
+    dominio_central: relacionarse con bestias o criaturas guiadas por instinto mediante manejo entrenado enraizado en aura y respuesta
+    cubre: domar, calmar, vincular en términos prácticos, manejar seres vivos instintivos
+    no_cubre: técnica ecuestre, liderazgo general, persuasión social amplia
+    contextos:
+      combate: true
+      exploración: true
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  # ─────────────────────────────────────────────
+  # PRESENCIA
+  # Identidad: proyección exterior, influencia, comando de atención, uno mismo actuado o impuesto.
+  # ─────────────────────────────────────────────
+
+  - nombre: Liderazgo
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: dirigir a otros mediante autoridad, estructura y fuerza de mando
+    cubre: guía, mando, reunir fuerzas, dirigir acción coordinada
+    no_cubre: empatía pura, actuación personal, mezclarse discretamente
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Negociación
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: dar forma a acuerdos mediante intercambio, apalancamiento y balance social controlado
+    cubre: regateo, compromiso, acuerdo, intercambio persuasivo
+    no_cubre: intimidación, engaño, identidad de actuación
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Intimidación
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: imponer presión mediante amenaza, fuerza de presencia o miedo
+    cubre: presión coercitiva, proyección de miedo, dominación mediante presencia
+    no_cubre: estructura de liderazgo, manipulación engañosa, mezcla calmada
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Imitación
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: reproducir comportamiento, voz, maneras o patrones sociales
+    cubre: mímica, copia de modales, reproducción conductual falsa
+    no_cubre: actuación como expresión artística plena, ocultación como sigilo, engaño crudo como mentir
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []
+
+  - nombre: Actuación
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: expresión interpretada deliberada para una audiencia u observador
+    cubre: actuación de roles, expresión dramática, presentación corporizada
+    no_cubre: mezclarse discretamente, persuasión vocal pura, copiar a alguien exactamente
+    contextos:
+      combate: false
+      exploración: false
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Oratoria
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: influencia hablada mediante discurso estructurado y comando vocal
+    cubre: discursos, alocución formal, inspirar o persuadir mediante palabras
+    no_cubre: estructura de negociación, actuación, manipulación oculta
+    contextos:
+      combate: true
+      exploración: false
+      narrativo: true
+    tipo_en_combate: activa
+    tipo_en_exploración: no_aplica
+    técnicas_habilitadas: []
+
+  - nombre: Disimulo
+    categoría: social
+    característica_asociada: Presencia
+    dominio_central: pasar desapercibido o inofensivo en sentido social o público
+    cubre: mezclarse con la expectativa social, reducir la importancia aparente, parecer ordinario
+    no_cubre: sigilo físico, silencio de movimiento, falsedad plena como engaño
+    contextos:
+      combate: false
+      exploración: true
+      narrativo: true
+    tipo_en_combate: no_aplica
+    tipo_en_exploración: activa
+    técnicas_habilitadas: []

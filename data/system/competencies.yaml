@@ -1,35 +1,97 @@
+# Competencies — authority definition
+# Rank structure revised after playtesting: 3 levels/rank → 2 levels/rank, 4 ranks → 6 ranks
+# Reason: 20 sessions of real play showed no character ever left Novice under the old structure.
+# Fix: major affinity reduction + halved levels per rank + extended ceiling (Consummate, Transcendent)
+# See: docs/adr/system-specialization-rank-restructure.md
+
 ranks:
   - id: untrained
+    rank_number: 0
     level_range: [0, 0]
-    display: Untrained
-  - id: novice
-    level_range: [1, 3]
-    display: Novice
-  - id: adept
-    level_range: [4, 6]
-    display: Adept
-  - id: expert
-    level_range: [7, 9]
-    display: Expert
-  - id: master
-    level_range: [10, null]
-    display: Master
+    display_es: No entrenado
+    display_en: Untrained
+    synapsis: false
 
-levels_per_rank: 3
+  - id: novice
+    rank_number: 1
+    level_range: [1, 2]
+    threshold_level: 1
+    display_es: Novato
+    display_en: Novice
+    synapsis: true
+
+  - id: adept
+    rank_number: 2
+    level_range: [3, 4]
+    threshold_level: 3
+    display_es: Adepto
+    display_en: Adept
+    synapsis: true
+
+  - id: expert
+    rank_number: 3
+    level_range: [5, 6]
+    threshold_level: 5
+    display_es: Experto
+    display_en: Expert
+    synapsis: true
+
+  - id: master
+    rank_number: 4
+    level_range: [7, 8]
+    threshold_level: 7
+    display_es: Maestro
+    display_en: Master
+    synapsis: true
+
+  - id: consummate
+    rank_number: 5
+    level_range: [9, 10]
+    threshold_level: 9
+    display_es: Consumado
+    display_en: Consummate
+    synapsis: true
+
+  - id: transcendent
+    rank_number: 6
+    level_range: [11, null]
+    threshold_level: 11
+    display_es: Trascendente
+    display_en: Transcendent
+    synapsis: true
+
+levels_per_rank: 2
+
+synapsis:
+  trigger: entering_new_rank   # +1 to associated characteristic on reaching threshold_level
+  effect: "+1 to the characteristic associated with the specialization"
+  note: >
+    Synapsis rewards breadth as much as depth. Reaching Rank 1 in six different specializations
+    gives +6 across characteristics. Reaching Rank 6 in one specialization gives +6 in one
+    characteristic but at high Technique opportunity cost.
 
 progression:
-  major_affinity_cost: 5   # progress points
-  default_cost: 10          # progress points
-  method: learning_advantage_on_AR_DR_SR
+  major_affinity_cost: 5    # progress points per level (with major affinity)
+  default_cost: 10           # progress points per level (without major affinity)
+  method: learning_advantage  # use the lower die result; generates progress, not execution
+  note: >
+    Major affinity is determined by background. Any character can make a specialization roll
+    in any domain — even untrained. Untrained formula: 1d10 + characteristic only.
+    Progress is accumulated through any successful learning-advantage roll in that domain,
+    provided the Narrator validates the narrative fit of the specialization used.
   min_test_difficulty_by_rank:
+    untrained: any
     novice: any
     adept: fundamental
     expert: challenging
     master: rigorous
+    consummate: demanding   # placeholder — difficulty tier names TBD
+    transcendent: extreme   # placeholder — difficulty tier names TBD
 
 types:
   - id: weapons
-    name: Weapons
+    name_es: Armas
+    name_en: Weapons
     description: Mastery with a specific weapon type
     bonuses:
       per_level: "+1 to A.R."
@@ -37,7 +99,8 @@ types:
     progression_trigger: hit_and_deal_damage_with_weapon_in_relevant_encounter
 
   - id: armors
-    name: Armors
+    name_es: Armaduras
+    name_en: Armors
     description: Efficient use of armor
     bonuses:
       per_level: "block +1"
@@ -46,29 +109,36 @@ types:
     progression_trigger: receive_hit_where_armor_reduces_damage
 
   - id: shields
-    name: Shields
+    name_es: Escudos
+    name_en: Shields
     description: Technical mastery of shield use
     bonuses:
       per_rank: "access to additional shield maneuvers (type-dependent)"
     progression_trigger: successfully_use_martial_shield_maneuvers
 
   - id: evasion
-    name: Evasion
+    name_es: Evasión
+    name_en: Evasion
     description: Anticipating and avoiding attacks
     bonuses:
       per_level: "+1 to D.R."
     progression_trigger: successfully_avoid_relevant_attacks
 
   - id: specialization
-    name: Specialization
-    description: Technical mastery in a specific skill
+    name_es: Especialización
+    name_en: Specialization
+    description: Trainable technical, practical, or methodological domain
     bonuses:
       per_level: "+1 to S.R."
-      per_rank: "+1 to S.R."
-    progression_trigger: overcome_tests_appropriate_to_current_rank
+      per_rank: "+1 to associated characteristic via Synapsis"
+    progression_trigger: >
+      Make a specialization roll (even untrained) with learning advantage,
+      accumulate progress points; Narrator validates narrative fit of the domain used.
+    untrained_formula: "1d10 + associated characteristic (no level or rank bonus)"
 
   - id: resistances
-    name: Resistances
+    name_es: Resistencias
+    name_en: Resistances
     description: Withstanding specific types of danger
     subtypes:
       - id: elemental

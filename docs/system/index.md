@@ -10,7 +10,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [characteristics.md](characteristics.md) | All 9 characteristics, groups, abbreviations, derived attributes, Synapsis rule |
 | [roll-types.md](roll-types.md) | All 7 roll types with formulas, Evolutionary Advantage, roll→competency map |
 | [competencies.md](competencies.md) | Ranks, progression requirements, all competency types and bonuses |
-| [specializations.md](specializations.md) | Specialization categories with associated characteristics |
+| [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
 | [backgrounds.md](backgrounds.md) | All 5 backgrounds with major affinity and starting specialization rules |
 | [general-rules.md](general-rules.md) | Core rules, dice, Adventure Cycle phases, Conflict flow |
 | [attrition-fatigue.md](attrition-fatigue.md) | Desgaste, Aguante y Fatiga — attrition model, Endurance formula, Fatigue thresholds, action cost scale |
