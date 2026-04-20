@@ -13,6 +13,7 @@ For detailed system descriptions, see the individual files in this folder.
 | --- | --- | --- |
 | Characteristics | `characteristics.yaml` | Bonus to characteristic, bonus to derived attribute |
 | Roll types | `roll-types.yaml` | Bonus to specific roll, conditional reroll, formula modifier |
+| Difficulty Thresholds | `difficulty-thresholds.yaml` | Tier selection, base modifier, NR contribution |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
 | Specializations | `specializations.yaml` | S.R. bonus, Technique access, Synapsis path unlock |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
@@ -80,6 +81,30 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Poison / infection | 1d10 + TEN + resistances + bonuses |
 | Affliction / curses | 1d10 + CMP + resistances + bonuses |
 | Alteration | 1d10 + Resilience + resistances + bonuses |
+
+---
+
+## Difficulty Thresholds
+
+**Authority:** `data/system/difficulty-thresholds.yaml`
+
+Five tiers apply to all roll-based systems (S.R., C.R., R.R., fabrication, afflictions, etc.).
+
+```text
+Threshold = Base + NR
+```
+
+**NR** = Nivel de Referencia of the opposing creature, environmental condition, or task complexity (Narrator-assigned when no creature is directly opposing).
+
+| Tier | Name (ES / EN) | Base | Formula |
+| --- | --- | --- | --- |
+| 1 | Fundamentos / Fundamental | 5 | 5 + NR |
+| 2 | Desafiante / Challenging | 8 | 8 + NR |
+| 3 | Rigurosa / Rigorous | 11 | 11 + NR |
+| 4 | Exigente / Demanding | 14 | 14 + NR |
+| 5 | Extrema / Extreme | 17 | 17 + NR |
+
+When the challenge is a direct opposed roll (another character), both sides roll and compare — no fixed threshold is used.
 
 ---
 

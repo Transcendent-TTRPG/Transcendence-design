@@ -1,0 +1,89 @@
+# Umbrales de Dificultad — autoridad del sistema universal
+#
+# Estos 5 niveles de dificultad aplican a TODOS los sistemas del juego:
+# T.E. (Tirada de Especialización), T.C. (Tirada de Característica), T.R. (Tirada de Resistencia),
+# fabricación, agravios, y cualquier otro sistema que requiera superar un umbral fijo.
+#
+# Cuando el desafío es una tirada opuesta (otra criatura), no se usa umbral fijo —
+# ambas partes tiran y se comparan resultados directamente.
+
+meta:
+  version: "1.0"
+  status: canonical
+  applies_to: all roll-based systems
+  last_updated: "2026-04-20"
+
+formula:
+  structure: "base + NR"
+  components:
+    base: valor fijo del nivel de dificultad elegido por el Narrador o el sistema
+    NR: >
+      Nivel de Referencia del contexto. Puede ser:
+        - El NR de la criatura u oponente que pone el reto (sin ser tirada opuesta directa)
+        - Un NR equivalente asignado por el Narrador para condiciones ambientales
+        - Un NR equivalente asignado por el Narrador para la complejidad intrínseca de la tarea
+
+tiers:
+  - id: fundamental
+    name_es: Fundamentos
+    name_en: Fundamental
+    tier: 1
+    base: 5
+    formula: "5 + NR"
+    context: >
+      Condiciones estándar, pocos factores disruptivos. Umbral accesible para personajes
+      entrenados en el dominio correspondiente.
+
+  - id: challenging
+    name_es: Desafiante
+    name_en: Challenging
+    tier: 2
+    base: 8
+    formula: "8 + NR"
+    context: >
+      Retos menores. Ruido ambiental, visibilidad parcial, circunstancias impredecibles
+      pero manejables. Requiere atención y adaptación.
+
+  - id: rigorous
+    name_es: Rigurosa
+    name_en: Rigorous
+    tier: 3
+    base: 11
+    formula: "11 + NR"
+    context: >
+      Factores ambientales o de tarea significativos. Tormenta activa, terreno muy
+      accidentado, complejidad técnica real. Exige competencia y presencia de ánimo.
+
+  - id: demanding
+    name_es: Exigente
+    name_en: Demanding
+    tier: 4
+    base: 14
+    formula: "14 + NR"
+    context: >
+      Condiciones casi inhabilitantes o tarea de alta complejidad intrínseca. Combinación
+      de múltiples factores adversos simultáneos. Solo personajes con entrenamiento profundo
+      tienen margen real.
+
+  - id: extreme
+    name_es: Extrema
+    name_en: Extreme
+    tier: 5
+    base: 17
+    formula: "17 + NR"
+    context: >
+      Límite de lo ejecutable. Escenarios al borde de la supervivencia o tareas que
+      requieren maestría absoluta. Reservado para los momentos más exigentes del juego.
+
+usage:
+  opposed_roll_note: >
+    Cuando el desafío es directamente otra criatura o personaje (tirada opuesta), ambas partes
+    realizan su tirada y se comparan resultados. El umbral fijo se usa solo cuando no hay un
+    agente activo oponiéndose, o cuando el sistema lo requiere explícitamente.
+  NR_sources:
+    - creature: NR de la criatura o entidad que impone el reto
+    - environment: NR equivalente asignado al entorno por el Narrador (ver docs/system/environmental-difficulty.md)
+    - task: NR equivalente asignado a la complejidad intrínseca de la tarea por el Narrador o el sistema
+  narrator_guidance: >
+    El Narrador elige el nivel de dificultad antes de pedir la tirada. El jugador conoce la
+    dificultad antes de decidir si tira con Ventaja de Ejecución o Ventaja de Aprendizaje.

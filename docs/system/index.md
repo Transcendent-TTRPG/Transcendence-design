@@ -10,6 +10,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [characteristics.md](characteristics.md) | All 9 characteristics, groups, abbreviations, derived attributes, Synapsis rule |
 | [roll-types.md](roll-types.md) | All 7 roll types with formulas, Evolutionary Advantage, roll→competency map |
 | [competencies.md](competencies.md) | Ranks, progression requirements, all competency types and bonuses |
+| [difficulty-thresholds.md](difficulty-thresholds.md) | 5 universal difficulty tiers (Fundamentos–Extrema), base values, formula (Base + NR), opposed roll vs. fixed threshold distinction |
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
 | [backgrounds.md](backgrounds.md) | All 5 backgrounds with major affinity and starting specialization rules |
 | [general-rules.md](general-rules.md) | Core rules, dice, Adventure Cycle phases, Conflict flow |
@@ -27,6 +28,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `backgrounds.yaml` | Background definitions with affinity and specialization rules |
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Vigor definition, condition interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
+| `difficulty-thresholds.yaml` | 5 difficulty tiers with base values and formula — applies to all roll-based systems |
 
 ## Key Numbers
 
@@ -34,7 +36,12 @@ All content here is extracted from and must remain consistent with `transcendenc
 | --- | --- |
 | Base die | d10 |
 | Characteristics start at | 0 |
-| Levels per competency rank | 3 |
+| Levels per competency rank | 2 |
+| Difficulty tier 1 — Fundamentos | 5 + NR |
+| Difficulty tier 2 — Desafiante | 8 + NR |
+| Difficulty tier 3 — Rigurosa | 11 + NR |
+| Difficulty tier 4 — Exigente | 14 + NR |
+| Difficulty tier 5 — Extrema | 17 + NR |
 | Progress points (affinity) | 5 |
 | Progress points (default) | 10 |
 | Starting specializations | 4 at Level 1 / Rank 1 (3 from background + 1 universal: Vigor) |

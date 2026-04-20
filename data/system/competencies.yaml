@@ -85,8 +85,8 @@ progression:
     adept: fundamental
     expert: challenging
     master: rigorous
-    consummate: demanding   # placeholder — difficulty tier names TBD
-    transcendent: extreme   # placeholder — difficulty tier names TBD
+    consummate: demanding   # base 14 + NR — see data/system/difficulty-thresholds.yaml
+    transcendent: extreme   # base 17 + NR — see data/system/difficulty-thresholds.yaml
 
 types:
   - id: weapons
