@@ -1,0 +1,178 @@
+# Equipment Overview — authority data
+# Related docs:
+#   - docs/system/equipment-overview.md
+#   - docs/system/competencies.md
+#   - docs/system/roll-types.md
+
+meta:
+  version: "1.0"
+  status: draft
+  last_updated: "2026-04-21"
+
+equipment_model:
+  principle: >
+    Equipment is structural. Armor is piece-based and zone-based, not a single abstract
+    value. Characters may mix armor types across slots.
+  slots:
+    - id: head
+      name_en: Helmet
+      name_es: Casco
+    - id: torso
+      name_en: Chestpiece
+      name_es: Peto
+    - id: arms
+      name_en: Bracers
+      name_es: Brazales
+    - id: legs
+      name_en: Trousers
+      name_es: Pantalones
+    - id: feet
+      name_en: Boots
+      name_es: Botas
+
+armor_types:
+  - id: light
+    name_en: Light
+    name_es: Ligera
+    base_block: 2
+    dr_agility_rule: full
+  - id: medium
+    name_en: Medium
+    name_es: Intermedia
+    base_block: 4
+    dr_agility_rule: half_min_1
+  - id: heavy
+    name_en: Heavy
+    name_es: Pesada
+    base_block: 6
+    dr_agility_rule: none
+
+armor_competencies:
+  - light_armor
+  - medium_armor
+  - heavy_armor
+  progression_rule: >
+    Failed D.R. with Learning Advantage can grant progress to the armor type present
+    in the resolved hit zone, if that armor actually participates in reducing impact.
+
+zone_block:
+  formula: "BC + BM + CA + CO"
+  terms:
+    BC: "Base by armor category"
+    BM: "Material bonus"
+    CA: "Armor competency level in relevant armor type"
+    CO: "Piece grade"
+  material_bonus_formula: "floor(durability / 5)"
+  piece_grade_range: [1, 3]
+
+defense_resolution:
+  model: hybrid
+  formula: "1d10 + evasion_level + applicable_agility + defense_bonuses"
+  order_npc_to_pc:
+    - determine_hit_zone
+    - identify_zone_armor_type
+    - resolve_DR_with_zone_agility_rule
+    - if_hit_connects_apply_zone_block
+  applicable_agility:
+    light: "full_AGI"
+    medium: "floor(AGI / 2), minimum 1"
+    heavy: "none"
+    unarmored: "full_AGI"
+  note: >
+    The hit zone determines both the armor type that constrains Agility in D.R. and the
+    zone block that mitigates impact if defense fails.
+
+shield_types:
+  light:
+    defense_formula: "grade"
+  medium:
+    defense_formula: "grade + 1"
+  heavy:
+    defense_formula: "grade * 2"
+  note: >
+    Shield value applies as a general bonus to D.R. Shield competency is tied primarily
+    to Techniques (intercept, protect, redirect, cover) rather than scaling the passive
+    shield value directly.
+
+hit_location:
+  scope: npc_to_pc_only
+  note: >
+    Random hit location exists to reduce Narrator bias when NPCs or enemies strike PCs.
+    PCs do not use this table; player targeting follows player-facing mechanics.
+  creature_note: >
+    Creatures also use internal slots or equivalent anatomical regions for D.R., block,
+    and vulnerabilities. No universal random table is required for PC attacks against
+    creatures; targeting follows available information and player-facing mechanics.
+  table_1d100:
+    - range: "01-04"
+      zone: head
+      slot: head
+    - range: "05-10"
+      zone: feet
+      slot: feet
+    - range: "11-45"
+      zone: torso
+      slot: torso
+    - range: "46-65"
+      zone: arms
+      slot: arms
+    - range: "66-100"
+      zone: legs
+      slot: legs
+
+slot_effects:
+  passive_rule: "All slot effects are passive unless a later rule explicitly states otherwise."
+  legs:
+    light: "bonus to Agility-related S.R. equal to piece grade"
+    medium: "bonus to Strength-related S.R. equal to piece grade"
+    heavy: "bonus to Tenacity-related S.R. equal to piece grade"
+  feet:
+    light: "movement speed bonus equal to piece grade"
+    medium: "bonus to reactive checks such as Balance or dodging area effects equal to piece grade"
+    heavy: "bonus to R.R. against forced movement, knockdown, and displacement equal to piece grade"
+  arms:
+    light: "bonus to S.R. when bracers are used as part of a Technique's attack structure equal to piece grade"
+    medium: "bonus to A.R. in active Techniques equal to piece grade"
+    heavy: "bonus to A.R. in active Techniques equal to piece grade"
+  head:
+    light: "Preparation increase equal to piece grade"
+    medium: "bonus to Composure-related S.R. equal to piece grade"
+    heavy: "bonus to R.R. against concussion, blindness, and stun-like effects equal to piece grade"
+  torso:
+    dependency: sanity_system
+    sanity_formula: "Composure * 2"
+    light: "Sanity bonus = grade"
+    medium: "Sanity bonus = grade * 2"
+    heavy: "Sanity bonus = grade * 3"
+
+weapon_assignment:
+  categories:
+    - id: primary
+      role: "main damage source"
+      traits:
+        - higher damage dice
+        - stronger single-hit pressure
+    - id: auxiliary
+      role: "supportive / sequence / combination weapon"
+      traits:
+        - lower damage dice
+        - lower single-hit impact
+        - supports rapid or chained attack structures
+
+equipment_handling:
+  armor_removal:
+    light:
+      combat: "interaction-scale removal is practical"
+      out_of_combat: "quick"
+    medium:
+      combat: "partial loosening is practical; full removal is not"
+      out_of_combat: "moderate"
+    heavy:
+      combat: "not practical"
+      out_of_combat: "slow; often requires help"
+
+open_questions:
+  - id: E-02
+    question: "How are internal slots grouped across major creature anatomies in the bestiary layer?"
+  - id: E-06
+    question: "How does Sanity integrate with torso armor once the horror/corruption system is defined?"

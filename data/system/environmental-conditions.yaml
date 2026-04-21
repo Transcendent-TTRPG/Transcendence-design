@@ -8,6 +8,8 @@
 # Las condiciones del entorno contribuyen al NR que el Narrador asigna en las pruebas
 # de umbral fijo. La severidad de la condición determina el nivel de dificultad base;
 # el NR del entorno ajusta el umbral dentro de ese nivel según la intensidad específica.
+# "Entorno" no significa solo clima o terreno: incluye cualquier presión externa al actor
+# que domine la escena, incluida presencia hostil o influencia extranatural.
 
 meta:
   version: "1.0"
@@ -23,8 +25,9 @@ tipos:
     nombre_es: Natural
     nombre_en: Natural
     descripcion: >
-      Condiciones climáticas, de terreno y atmosféricas que se ajustan a las leyes
-      del mundo. Pueden ser extremas pero no violan la lógica física del entorno.
+      Condiciones climáticas, de terreno, atmosféricas o de presencia hostil material
+      que se ajustan a las leyes del mundo. Pueden ser extremas pero no violan la lógica
+      física del entorno.
 
   - id: extranatural
     nombre_es: Extranatural
@@ -49,6 +52,27 @@ tipos:
       - tres o más elementos en conflicto activo en el mismo punto
       - fenómenos sin causa visible o con causalidad invertida
       - reglas físicas del entorno inestables o contradictorias
+
+fuentes_de_presion:
+  - id: ambiental
+    nombre_es: Ambiental
+    nombre_en: Ambient
+    descripcion: >
+      Terreno, clima, oscuridad, exposición, temperatura, agua, humo, altura, ruido
+      u otros factores físicos del lugar.
+  - id: hostil
+    nombre_es: Hostil
+    nombre_en: Hostile
+    descripcion: >
+      Una presencia que domina la escena aunque no exista todavía una regla puntual
+      resolviéndola: un depredador superior, una criatura mortal abrumadora, una entidad
+      anómala, una presencia primordial o una persecución activa.
+  - id: extranatural
+    nombre_es: Extranatural
+    nombre_en: Extranatural
+    descripcion: >
+      Alteración del mundo perceptible causada por filtración del Limbo o por Tauma
+      actuando sobre algo ya existente.
 
 # Nota de alcance:
 # La taxonomía elemental, las deidades asociadas y otras capas de worldbuilding no forman
@@ -204,7 +228,7 @@ nr_del_entorno:
       La fuente dominante determina el nivel de severidad. Las fuentes secundarias
       pueden añadir NR, con un tope de +2. No se acumulan más de dos fuentes.
     ejemplo: >
-      Tormenta Desastrosa (14+NR) + terreno secundario severo → 14+2 = 16. No 14+4.
+      Tormenta Desastrosa (14+NR) + presencia hostil secundaria → 14+2 = 16. No 14+4.
   regla_especifica:
     principio: >
       Si otro sistema tiene un DC o mecánica definida para la acción, ese sistema

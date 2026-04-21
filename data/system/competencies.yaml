@@ -96,16 +96,24 @@ types:
     bonuses:
       per_level: "+1 to A.R."
       per_rank: "+1 to A.R., +1 die to I.R."
-    progression_trigger: hit_and_deal_damage_with_weapon_in_relevant_encounter
+    progression_trigger: >
+      Successful A.R. with Learning Advantage, when the attack hits and deals damage
+      with the weapon or object used in a relevant encounter.
 
   - id: armors
     name_es: Armaduras
     name_en: Armors
-    description: Efficient use of armor
+    description: Efficient use of armor by type
+    split_by_type:
+      - light_armor
+      - medium_armor
+      - heavy_armor
     bonuses:
-      per_level: "block +1"
-      master: "movement speed penalty reduced by one category"
-    progression_trigger: receive_hit_where_armor_reduces_damage
+      per_level: "+1 to zone block when that armor type is present in the resolved hit zone"
+      master: "reduce movement penalty of that armor type by one step where applicable"
+    progression_trigger: >
+      Failed D.R. with Learning Advantage, when the hit resolves through an armored zone
+      and that armor actually reduces impact.
 
   - id: shields
     name_es: Escudos
@@ -113,7 +121,7 @@ types:
     description: Technical mastery of shield use
     bonuses:
       per_rank: "access to additional shield maneuvers (type-dependent)"
-    progression_trigger: successfully_use_martial_shield_maneuvers
+    progression_trigger: successfully_use_shield_techniques_or_dedicated_shield_maneuvers
 
   - id: evasion
     name_es: Evasión
@@ -121,7 +129,8 @@ types:
     description: Anticipating and avoiding attacks
     bonuses:
       per_level: "+1 to D.R."
-    progression_trigger: successfully_avoid_relevant_attacks
+      per_rank: "+1 to D.R."
+    progression_trigger: successful_D.R._with_learning_advantage
 
   - id: specialization
     name_es: Especialización
@@ -129,10 +138,11 @@ types:
     description: Trainable technical, practical, or methodological domain
     bonuses:
       per_level: "+1 to S.R."
-      per_rank: "+1 to associated characteristic via Synapsis"
+      per_rank: "+1 to S.R."
+      rank_entry: "+1 to associated characteristic via Synapsis"
     progression_trigger: >
-      Make a specialization roll (even untrained) with learning advantage,
-      accumulate progress points; Narrator validates narrative fit of the domain used.
+      Successful specialization roll with learning advantage; Narrator validates narrative
+      fit of the domain used.
     untrained_formula: "1d10 + associated characteristic (no level or rank bonus)"
 
   - id: resistances
@@ -140,6 +150,8 @@ types:
     name_en: Resistances
     description: Withstanding specific types of danger
     subtypes:
+      - id: physical
+        bonus: "+1 to R.R. against broad physical resistance cases"
       - id: elemental
         bonus: "+1 to R.R. against elemental effects"
       - id: poison
@@ -152,3 +164,19 @@ types:
         bonus: "+1 to R.R. against alterations"
       - id: curses
         bonus: "+1 to detect or resist curses"
+    progression_trigger: >
+      Failed R.R. with Learning Advantage, when the corresponding effect is actually
+      suffered and survived as meaningful exposure.
+
+progression_map:
+  attack_roll:
+    success_with_learning_advantage: weapon_or_object_competency_used
+  defense_roll:
+    success_with_learning_advantage: evasion
+    failure_with_learning_advantage: armor_type_of_resolved_armored_zone_if_armor_absorbs_impact
+  specialization_roll:
+    success_with_learning_advantage: specialization_used
+  resistance_roll:
+    failure_with_learning_advantage: matching_resistance_if_effect_is_suffered
+  shield_technique:
+    success_with_learning_advantage: shield_competency

@@ -1,15 +1,15 @@
 base_die: d10
 
 evolutionary_advantage:
-  applies_to: [AR, DR, SR]
+  applies_to: [AR, DR, RR, SR]
   options:
     execution:
       description: Roll 2d10, take the higher result
       trade_off: No learning opportunity
     learning:
       description: Roll 2d10, take the lower for the action; use higher for learning check
-      learning_condition: higher_die > lower_die + competency_rank
-      reward: 1 progress point in associated competency
+      learning_condition: higher_die > lower_die + rank_of_competency_designated_by_progression_rule
+      reward: 1 progress point in the competency allowed by that roll's progression rule
 
 rolls:
   - id: AR
@@ -22,8 +22,19 @@ rolls:
   - id: DR
     name: Defense Roll
     code: D.R.
-    formula: "1d10 + evasion_level + AGI + armor"
+    formula: "1d10 + evasion_level + applicable_agility + defense_bonuses"
     competency: evasion
+    zone_resolution:
+      npc_to_pc_order:
+        - determine_hit_zone
+        - identify_zone_armor_type
+        - resolve_DR_with_zone_agility_rule
+        - if_hit_connects_apply_zone_block
+      applicable_agility:
+        light: full_AGI
+        medium: "floor(AGI / 2), minimum 1"
+        heavy: none
+        unarmored: full_AGI
     used_for: Avoiding an incoming attack through reflexes, mobility, armor
 
   - id: IR
@@ -78,3 +89,38 @@ roll_competency_map:
   RR: resistance_matching_threat_type
   SR: specialization_competency
   PR: none
+
+progression_map:
+  AR:
+    learning_advantage:
+      success: weapon_or_object_competency_used
+  DR:
+    learning_advantage:
+      success: evasion
+      failure: armor_type_of_resolved_armored_zone_if_armor_absorbs_impact
+  IR:
+    learning_advantage:
+      success: none
+      failure: none
+  CR:
+    learning_advantage:
+      success: none
+      failure: none
+  RR:
+    learning_advantage:
+      success: none
+      failure: matching_resistance_if_effect_is_suffered
+  SR:
+    learning_advantage:
+      success: specialization_used
+      failure: none
+  PR:
+    learning_advantage:
+      success: none
+      failure: none
+
+shield_progression:
+  note: >
+    Shield value contributes generally to D.R. as equipment. Shield competency does not
+    progress from generic D.R. alone; it progresses through explicit shield Techniques,
+    shield interceptions, and dedicated shield maneuvers.

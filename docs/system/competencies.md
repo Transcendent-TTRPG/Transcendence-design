@@ -45,33 +45,37 @@ Mastery with a specific weapon type.
 
 - Each **level**: +1 to A.R.
 - Each **rank**: +1 to A.R. + one additional die to I.R.
-- Progression: hit and deal damage with the weapon in relevant encounters.
+- Progression: successful `A.R.` with Learning Advantage, when the attack hits and deals damage using that weapon or object competency.
 
 ### Armors
-Efficient use of armor.
+Efficient use of armor by type.
 
-- Each **level**: block +1
-- Reaching **Master**: movement speed penalty reduced by one category
-- Progression: receive a hit where armor effectively reduces damage.
+- Split into **Light Armor**, **Medium Armor**, and **Heavy Armor**
+- Each **level**: +1 to zone block when that armor type is present in the resolved hit zone
+- Reaching **Master**: reduce the movement penalty of that armor type by one step where applicable
+- Progression: failed `D.R.` with Learning Advantage, when the hit resolves through an armored zone and that armor actually reduces impact
 
 ### Shields
 Technical mastery of shield use.
 
+- Shield value contributes generally to `D.R.` as equipment
 - Each **rank**: access to additional shield maneuvers (type-dependent)
-- Progression: successfully use martial shield maneuvers.
+- Progression: successfully use shield Techniques, interceptions, or dedicated shield maneuvers
 
 ### Evasion
 Anticipating and avoiding attacks.
 
 - Each **level**: +1 to D.R.
-- Progression: successfully avoid relevant attacks through mobility and reflexes.
+- Each **rank**: +1 to D.R.
+- Progression: successful `D.R.` with Learning Advantage through mobility and reflexes
 
 ### Specialization
 Technical mastery in a specific skill.
 
 - Each **level**: +1 to S.R.
-- Each new **rank** grants Synapsis: +1 to the associated characteristic.
-- Progression: overcome tests appropriate to current rank.
+- Each **rank**: +1 to S.R.
+- Each new **rank** also grants Synapsis: +1 to the associated characteristic.
+- Progression: successful `S.R.` with Learning Advantage in tests appropriate to current rank.
 
 ### Resistances
 Withstanding specific types of danger. Often develops through exposure and survival.
@@ -79,8 +83,24 @@ Withstanding specific types of danger. Often develops through exposure and survi
 | Resistance type   | Bonus per level |
 |---|---|
 | Elemental damage  | +1 to R.R. against elemental effects |
+| Physical          | +1 to R.R. against broad physical resistance cases |
 | Poison            | +1 to R.R. against poisons |
 | Infection         | +1 to R.R. against infections |
 | Affliction        | +1 to R.R. against afflictions; +1 to Affliction R.R. per rank during meditation |
 | Alteration        | +1 to R.R. against alterations |
 | Curses            | +1 to detect or resist curses |
+
+Progression: failed `R.R.` with Learning Advantage, when the corresponding effect is actually suffered and survived as meaningful exposure.
+
+## Progression Map by Roll
+
+| Roll | Learning Advantage outcome | Competency that progresses |
+|---|---|---|
+| `A.R.` | success | weapon or object competency used |
+| `D.R.` | success | evasion |
+| `D.R.` | failure | armor competency of the resolved armored zone, if armor actually absorbs impact |
+| `S.R.` | success | specialization used |
+| `R.R.` | failure | matching resistance, if the effect is suffered |
+| shield Technique / shield action | success | shield competency |
+
+`I.R.`, `C.R.`, and `P.R.` do not directly generate competency progress under the current model.

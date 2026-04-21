@@ -7,7 +7,7 @@ All checks use a `d10` base modified by characteristics, competencies, equipment
 | Code | Name                  | Formula | Uses Competency |
 |---|---|---|---|
 | A.R. | Attack Roll           | 1d10 + Competency Level + Associated Characteristic | Yes — weapon/object |
-| D.R. | Defense Roll          | 1d10 + Evasion Level + AGI + Armor | Yes — Evasion |
+| D.R. | Defense Roll          | 1d10 + Evasion Level + Applicable Agility + Defense Bonuses | Yes — Evasion |
 | I.R. | Impact Roll           | (Competency Rank × Weapon Damage) + (Associated Characteristic × Weapon Grade) | Yes — weapon rank |
 | C.R. | Characteristic Roll   | 1d10 + Characteristic + Reference Level + Bonuses | No (unless specific rule) |
 | R.R. | Resistance Roll       | varies by threat type (see below) | Yes — Resistances |
@@ -24,7 +24,16 @@ Represents ability to land an effective strike with a weapon, maneuver, or objec
 ### D.R. — Defense Roll
 Represents ability to avoid an incoming attack through reflexes, mobility, and armor.
 
-`D.R. = 1d10 + Evasion Competency Level + AGI + Armor`
+`D.R. = 1d10 + Evasion Competency Level + Applicable Agility + Defense Bonuses`
+
+`Applicable Agility` depends on the armor type of the resolved hit zone:
+
+- Light armor zone -> full `AGI`
+- Medium armor zone -> `floor(AGI / 2)`, minimum 1
+- Heavy armor zone -> no `AGI`
+- Unarmored zone -> full `AGI`
+
+For `NPC -> PC`, hit location is rolled first. That resolved zone determines which armor type constrains Agility in `D.R.`. If defense fails, the zone's block value still mitigates the impact.
 
 ### I.R. — Impact Roll
 Determines real damage dealt after an attack surpasses defense.
@@ -63,23 +72,25 @@ No competencies involved. Purely narrative/psychological.
 
 ## Evolutionary Advantage
 
-Applies to A.R., D.R., and S.R. Player chooses one approach before rolling:
+Applies to A.R., D.R., R.R., and S.R. Player chooses one approach before rolling:
 
 | Option | Mechanic | Trade-off |
 |---|---|---|
 | Execution Advantage | Roll 2d10, take the **higher** | No learning opportunity |
 | Learning Advantage  | Roll 2d10, take the **lower** for the action; higher die used for learning check | Risk of failure, potential competency progress |
 
-**Learning condition:** if the higher die exceeds (lower die + competency rank), mark 1 progress point.
+**Learning condition:** if the higher die exceeds (lower die + the rank of the competency designated by that roll's progression rule), mark 1 progress point in that competency.
 
 ## Roll → Competency Relationship
 
-| Roll | Competency used |
-|---|---|
-| A.R. | Weapon or object competency |
-| D.R. | Evasion competency |
-| I.R. | Weapon competency rank |
-| C.R. | None (unless specific rule) |
-| R.R. | Resistance matching threat type |
-| S.R. | Specialization competency |
-| P.R. | None |
+| Roll | Competency used | Progression target with Learning Advantage |
+|---|---|---|
+| A.R. | Weapon or object competency | Weapon/object competency, on successful attack resolution |
+| D.R. | Evasion competency | Evasion on successful defense; armor type in resolved zone on failed defense where armor absorbs impact |
+| I.R. | Weapon competency rank | None directly |
+| C.R. | None (unless specific rule) | None |
+| R.R. | Resistance matching threat type | Matching resistance, on failed resistance where the effect is actually suffered |
+| S.R. | Specialization competency | Used specialization, on successful roll |
+| P.R. | None | None |
+
+Shield value contributes generally to `D.R.` as equipment. Shield competency does not progress from generic `D.R.` alone; it progresses through explicit shield Techniques and shield-specific defensive actions.

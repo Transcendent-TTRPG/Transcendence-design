@@ -2,7 +2,7 @@
 
 **Authority:** `data/system/environmental-conditions.yaml`
 
-Environmental conditions give the Narrator a framework for assigning difficulty when the challenge comes from the world itself — terrain, weather, atmospheric pressure, or the threat level of the overall situation. The severity level determines the difficulty tier and NR. Beyond that, the Narrator has two tools (Restrict and Accelerate) to apply when the narrative warrants it — neither is automatic.
+Environmental conditions give the Narrator a framework for assigning difficulty when the challenge comes from pressure external to the actor — terrain, weather, atmospheric pressure, a dominant hostile presence, or the threat level of the overall situation. The severity level determines the difficulty tier and NR. Beyond that, the Narrator has two tools (Restrict and Accelerate) to apply when the narrative warrants it — neither is automatic.
 
 ---
 
@@ -11,6 +11,8 @@ Environmental conditions give the Narrator a framework for assigning difficulty 
 **Natural** conditions follow the physical laws of the world. They can be extreme — a hurricane, a volcanic field, a cave-in — but they operate within coherent rules.
 
 **Extranatural** conditions are phenomena in the perceptible world that involve Limbo energy. Tauma does not generate phenomena from nothing: it transforms, modifies, amplifies what already exists in the material world. What distinguishes an extranatural condition from a natural one is not intensity or element combination, but origin — any reaction that does not follow the natural logic of the world, produced by the imperceptible dimension filtering into the perceptible one. Observable markers (physically contradictory states, Light and Darkness simultaneously active) are signs of Limbo presence, not its definition. Not every extranatural condition produces visible contradictions; it may manifest as amplification or transformation of something natural. Normal environmental adaptation may not apply to extranatural conditions — open design question (D-08).
+
+Hostile presence may belong to either group. Mortal creatures and material predators create natural pressure. Anomalous entities, primordial presences, or visible manifestations made of Limbo energy create extranatural pressure.
 
 ---
 
@@ -115,7 +117,7 @@ The environmental NR reflects how much a specific instance of a condition presse
 
 ### When multiple sources of difficulty combine
 
-Identify the dominant source — the one that defines the tier. Secondary sources (a second environmental factor, a threat level differential) can add NR up to a maximum of +2 on top of the dominant tier. Do not stack NR from more than two sources.
+Identify the dominant source — the one that defines the tier. Secondary sources (a second environmental factor, a dominant hostile presence, an extranatural marker) can add NR up to a maximum of +2 on top of the dominant tier. Do not stack NR from more than two sources.
 
 Example: a Disastrous storm (14 + NR) combined with a secondary severe terrain factor → 14 + 2 = 16. Not 14 + 4.
 

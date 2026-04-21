@@ -18,6 +18,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [general-rules.md](general-rules.md) | Core rules, dice, Adventure Cycle phases, Conflict flow |
 | [attrition-fatigue.md](attrition-fatigue.md) | Desgaste, Aguante y Fatiga — attrition model, Endurance formula, Fatigue thresholds, action cost scale |
 | [atb-reference.md](atb-reference.md) | ATB quick reference — timeline model, rhythm cost, reactions, subsystem tracks, encounter layers, table prompts |
+| [equipment-overview.md](equipment-overview.md) | Equipment structure: armor slots and types, zone block formula, shield role, weapon assignment, NPC→PC hit table |
 | [mechanics-overview.md](mechanics-overview.md) | Horizontal view of all systems organized by ability design surfaces — use this when designing abilities |
 
 ## Structured Data (`/data/system/`)
@@ -30,6 +31,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `backgrounds.yaml` | Background definitions with affinity and specialization rules |
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Vigor definition, condition interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
+| `equipment.yaml` | Equipment slots, armor types, zone block formula, shield formulas, hit-location table, slot effects |
 | `difficulty-thresholds.yaml` | 5 difficulty tiers with base values and formula — applies to all roll-based systems |
 | `environmental-conditions.yaml` | Two condition types, 6 elements and combinations, 5 severity levels with NR guidance |
 | `limbo-manifestations.yaml` | El Limbo definition, three manifestation types with characteristics and detection, inter-manifestation relationships |
@@ -60,6 +62,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | Personality trait factors | 5 (Big Five) |
 | Roll types | 7 (AR, DR, IR, CR, RR, SR, PR) |
 | Competency types | 6 (Weapons, Armors, Shields, Evasion, Specialization, Resistances) |
+| Armor slots | 5 (Helmet, Chestpiece, Bracers, Trousers, Boots) |
 
 ## Source Documents
 

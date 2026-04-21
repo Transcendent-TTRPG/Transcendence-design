@@ -94,6 +94,8 @@ Decisiones que no han sido tomadas todavía. El sistema no puede estar completo 
 | D-09 | ¿Cómo interactúa el uso de Tauma con las tres manifestaciones del Limbo? | ¿Necesita el practicante un flujo o vínculo, o la energía es interna? — ver `data/system/limbo-manifestations.yaml` |
 | D-10 | ¿Cuál es la tasa de disipación de vestigios? | ¿Depende del material del objeto, del tiempo, de la intensidad original, de la proximidad a un vínculo? — ver `data/system/limbo-manifestations.yaml` |
 | D-11 | ¿Los vínculos tienen NR? ¿Ese NR afecta los umbrales de condiciones extranaturales del área? | Parámetro del vínculo vs. parámetro del entorno — ver `data/system/limbo-manifestations.yaml` |
+| E-02 | ¿Cómo se agrupan los slots internos de las criaturas por gran familia anatómica? | La lógica de zonas existe; falta taxonomía por anatomía para bestiario |
+| E-06 | ¿Cómo se integra Cordura con el peto cuando el sistema de cosmic horror/corruption esté definido? | Dependencia futura del capítulo 11 |
 
 ---
 
@@ -110,3 +112,8 @@ Para referencia — ítems que estaban abiertos y ya se cerraron.
 | 2026-04 | Conflicto de costo de Movimiento | `atb-linea-de-tiempo.md` corregido — costo siempre 5, terreno no altera ritmo |
 | 2026-04 | Reacciones definidas dos veces | Sección en ATB reducida a referencia; definición canónica en `acciones.md` |
 | 2026-04 | Características usadas antes de definirse | Nota de forward-reference añadida al inicio de "Tipos de Tirada" en cap. 03 |
+| 2026-04 | Modelo de T.D. para armadura por piezas | Cerrado como modelo híbrido: Evasión + Agilidad según zona resuelta + bloqueo por zona si el golpe conecta |
+| 2026-04 | Progresión de armadura | Cerrada por tipo de armadura en `T.D` fallida con Ventaja de Aprendizaje, cuando la armadura de la zona realmente absorbe impacto |
+| 2026-04 | Rol sistémico del escudo | Cerrado: el escudo aporta un bono general a `T.D.` por equipo; su competencia progresa por Técnicas y maniobras específicas |
+| 2026-04 | Naturaleza de los bonos de slot | Cerrado: todos los bonos de slot son pasivos |
+| 2026-04 | Fórmula base de Cordura | Cerrado provisionalmente: `Cordura = Compostura × 2` |

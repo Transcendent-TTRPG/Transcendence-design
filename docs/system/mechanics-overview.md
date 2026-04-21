@@ -69,7 +69,7 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Roll | Code | Formula | Used for |
 | --- | --- | --- | --- |
 | Attack Roll | A.R. | 1d10 + competency level + characteristic | Landing an effective strike |
-| Defense Roll | D.R. | 1d10 + evasion level + AGI + armor | Avoiding an incoming attack |
+| Defense Roll | D.R. | 1d10 + evasion level + applicable Agility + defense bonuses | Avoiding an incoming attack |
 | Impact Roll | I.R. | (competency rank × weapon damage) + (characteristic × weapon grade) | Damage after AR beats DR |
 | Characteristic Roll | C.R. | 1d10 + characteristic + Reference Level + bonuses | General aptitude without specific training |
 | Resistance Roll | R.R. | Varies by threat type (see below) | Withstanding harmful effects |
@@ -130,21 +130,24 @@ Synapsis triggers on reaching the threshold level of each new rank (specializati
 Cost per level: 10 pts (5 pts if major affinity). Major affinity determined by background.
 Untrained characters can still roll any specialization: formula = 1d10 + characteristic only.
 
+`D.R.` uses a hybrid defensive model. For `NPC -> PC`, hit zone is determined first; that zone determines which armor type constrains Agility and which zone block applies if defense fails.
+
 ### Competency types and bonuses
 
 | Type | Per level bonus | Per rank bonus | Progression trigger |
 | --- | --- | --- | --- |
-| Weapons | +1 A.R. | +1 A.R. + 1 damage die | Hit and deal damage with weapon in relevant encounter |
-| Armors | block +1 | Expert: reduce movement penalty; Master: reduce further | Receive hit where armor reduces damage |
-| Shields | — | Access to additional shield maneuvers (type-dependent) | Use martial shield maneuvers successfully |
-| Evasion | +1 D.R. | — | Successfully avoid relevant attacks |
-| Specialization | +1 S.R. | +1 S.R. | Overcome tests appropriate to current rank |
-| Resistances | +1 R.R. (specific type) | (see resistance subtypes) | Various — threat exposure |
+| Weapons | +1 A.R. | +1 A.R. + 1 damage die | Successful `A.R.` with Learning Advantage, if the attack hits and deals damage |
+| Armors | +1 zone block (relevant type) | Master: reduce that armor type's movement penalty where applicable | Failed `D.R.` with Learning Advantage, if armor in the resolved zone absorbs impact |
+| Shields | — | Access to additional shield maneuvers (type-dependent) | Successful shield Techniques or shield maneuvers |
+| Evasion | +1 D.R. | +1 D.R. | Successful `D.R.` with Learning Advantage |
+| Specialization | +1 S.R. | +1 S.R.; on entering a new rank, +1 characteristic via Synapsis | Successful `S.R.` with Learning Advantage |
+| Resistances | +1 R.R. (specific type) | (see resistance subtypes) | Failed `R.R.` with Learning Advantage, if the effect is actually suffered |
 
 ### Resistance subtypes
 
 | Subtype | Bonus |
 | --- | --- |
+| Physical | +1 R.R. vs broad physical resistance cases |
 | Elemental | +1 R.R. vs elemental effects |
 | Poison | +1 R.R. vs poisons |
 | Infection | +1 R.R. vs infections |
