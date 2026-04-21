@@ -10,11 +10,10 @@ Estos capítulos existen como carpetas vacías en el repo de publicaciones. El c
 
 | Capítulo | Título | Notas |
 | --- | --- | --- |
-| 05 | Species | Requerido para creación de personaje — Ch04 asume que el lector ya conoce su especie |
-| 06 | Backgrounds and Origins | Requerido para creación de personaje — Ch04 asume que el lector ya conoce su trasfondo |
-| 07 | Techniques | Catálogo de Técnicas desbloqueables por competencia — contenido principal del capítulo |
-| 08 | Skills and Proficiencies | Referenciado como destino del catálogo de Técnicas y especializaciones |
-| 09 | Equipment and Resources | — |
+| 06 | Species | Requerido para creación de personaje — Ch05 asume que el lector ya conoce su especie |
+| 07 | Backgrounds and Origins | Requerido para creación de personaje — Ch05 asume que el lector ya conoce su trasfondo |
+| 09 | Techniques | Catálogo de Técnicas desbloqueables por competencia — contenido principal del capítulo |
+| 10 | Equipment and Resources | — |
 | 11 | Cosmic Horror and Corruption | — |
 | 12 | GM Toolkit | Destino natural de reglas de escalado con NR/NRg |
 | 13 | Adversaries and Bestiary | — |
@@ -31,9 +30,9 @@ Estas mecánicas están referenciadas en el texto existente pero no tienen regla
 
 ### Catálogo de Técnicas
 
-- **Referenciado en:** `03-core-rules`, `10-conflict-and-combat/acciones.md`
+- **Referenciado en:** `03-core-rules`, `08-conflict-and-combat/acciones.md`
 - **Descripción:** Lista completa de Técnicas desbloqueables por competencia, con su tipo (Acción Activa / Reacción), costo de ritmo, Desgaste y efecto mecánico directo
-- **Destino sugerido:** Cap. 08 (Skills and Proficiencies) o cap. dedicado dentro de Ch10
+- **Destino sugerido:** Cap. 09 (Techniques) o cap. dedicado dentro de Ch08
 
 ### Condiciones y presión ambiental
 
@@ -54,13 +53,13 @@ Estas mecánicas están referenciadas en el texto existente pero no tienen regla
 
 ### Lista de Rasgos de Personalidad
 
-- **Referenciado en:** `04-character-creation` (sección de rasgos)
+- **Referenciado en:** `05-character-creation` (sección de rasgos)
 - **Descripción:** Lista completa de rasgos sugeridos con sus Factores e Intensidades
 - **Destino sugerido:** Cap. 04 (Character Creation) o apéndice dedicado
 
 ### Penalizaciones de Fatiga 1 / 2 / 3
 
-- **Referenciado en:** `desgaste-aguante-fatiga.md` — los umbrales están definidos, los efectos no
+- **Referenciado en:** `08-conflict-and-combat/desgaste-aguante-fatiga.md` — los umbrales están definidos, los efectos no
 - **Descripción:** Qué penalizaciones concretas aplica cada nivel de Fatiga asentada
 - **Nota:** Pregunta de diseño abierta — ver sección siguiente
 
@@ -68,7 +67,7 @@ Estas mecánicas están referenciadas en el texto existente pero no tienen regla
 
 - **Referenciado en:** `01-general-rules.md` — eliminado del capítulo hasta que Ch09 exista
 - **Descripción:** Actividades de fabricación, reparación y refinamiento requieren herramientas específicas; uso de herramientas alternativas aumenta la dificultad de la prueba
-- **Destino sugerido:** Cap. 09 (Equipment and Resources)
+- **Destino sugerido:** Cap. 10 (Equipment and Resources)
 
 ### Condiciones de Correr
 
