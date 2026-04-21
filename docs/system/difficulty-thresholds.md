@@ -2,7 +2,7 @@
 
 **Authority:** `data/system/difficulty-thresholds.yaml`
 
-Five universal difficulty tiers apply to every roll-based system in Transcendence — Specialization Rolls, Characteristic Rolls, Resistance Rolls, fabrication, afflictions, and any other system that requires beating a fixed number. The tiers are not system-specific. The same table is always the same table.
+Five universal difficulty tiers apply to every roll-based system in Transcendence — Specialization Rolls, Characteristic Rolls, Resistance Rolls, fabrication, ailments, and any other system that requires beating a fixed number. The tiers are not system-specific. The same table is always the same table.
 
 ---
 
@@ -53,7 +53,7 @@ Fixed threshold cases:
 When a creature's ability sets the difficulty without a direct opposed roll — such as detecting a Sigilo roll result rather than rolling Perception against it — the creature's NR contributes to the threshold.
 
 ### Environmental NR
-The intensity of environmental conditions can be expressed as an NR equivalent. A mild forest path may have NR 0. A hurricane at sea may have NR 4. The Narrator assigns this.
+The intensity of environmental conditions can be expressed as an NR equivalent. A mild forest path may have NR 1. A hurricane at sea may have NR 4. The Narrator assigns this.
 
 This is the foundation of the **dificultad del entorno** system. Environmental conditions are classified by tier, and the NR equivalent reflects how demanding those conditions are relative to the characters present.
 

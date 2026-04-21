@@ -6,15 +6,17 @@ Characteristics express potential. Competencies express how much that potential 
 
 ## Ranks
 
-A new rank is gained every 3 competency levels.
+A new rank is gained every 2 competency levels.
 
-| Rank      | Level Range | Notes |
+| Rank        | Level Range | Notes |
 |---|---|---|
-| Untrained | 0           | Starting level for most competencies |
-| Novice    | 1–3         | Granted by background specializations at creation |
-| Adept     | 4–6         | |
-| Expert    | 7–9         | |
-| Master    | 10+         | |
+| Untrained   | 0           | Starting level for most competencies |
+| Novice      | 1–2         | Granted by background specializations at creation |
+| Adept       | 3–4         | |
+| Expert      | 5–6         | |
+| Master      | 7–8         | |
+| Consummate  | 9–10        | |
+| Transcendent| 11+         | |
 
 ## Progression Requirements
 
@@ -27,12 +29,14 @@ Progression only occurs through Learning Advantage and only when the challenge i
 
 ### Appropriate test difficulty by rank
 
-| Rank      | Minimum test difficulty |
+| Rank        | Minimum test difficulty |
 |---|---|
-| Novice    | Any |
-| Adept     | Fundamental or higher |
-| Expert    | Challenging or higher |
-| Master    | Rigorous or higher |
+| Novice      | Any |
+| Adept       | Fundamental or higher |
+| Expert      | Challenging or higher |
+| Master      | Rigorous or higher |
+| Consummate  | Demanding or higher |
+| Transcendent| Extreme |
 
 ## Competency Types
 
@@ -47,8 +51,7 @@ Mastery with a specific weapon type.
 Efficient use of armor.
 
 - Each **level**: block +1
-- Reaching **Expert**: movement speed penalty reduced by one category
-- Reaching **Master**: penalty reduced by one additional category
+- Reaching **Master**: movement speed penalty reduced by one category
 - Progression: receive a hit where armor effectively reduces damage.
 
 ### Shields
@@ -67,7 +70,7 @@ Anticipating and avoiding attacks.
 Technical mastery in a specific skill.
 
 - Each **level**: +1 to S.R.
-- Each **rank**: +1 to S.R.
+- Each new **rank** grants Synapsis: +1 to the associated characteristic.
 - Progression: overcome tests appropriate to current rank.
 
 ### Resistances

@@ -104,8 +104,7 @@ types:
     description: Efficient use of armor
     bonuses:
       per_level: "block +1"
-      expert: "movement speed penalty reduced by one category"
-      master: "movement speed penalty reduced by one additional category"
+      master: "movement speed penalty reduced by one category"
     progression_trigger: receive_hit_where_armor_reduces_damage
 
   - id: shields

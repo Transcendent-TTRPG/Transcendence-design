@@ -30,173 +30,44 @@ tipos:
     nombre_es: Extranatural
     nombre_en: Extranatural
     descripcion: >
-      Condiciones que violan la lógica del mundo natural. Ocurren cuando el Vacío toca
-      el entorno. Se reconocen por estados físicamente contradictorios simultáneos —
-      no por la combinación de elementos en sí, sino por la coexistencia imposible de
-      estados opuestos en el mismo punto del espacio.
+      Fenómenos del mundo perceptible que involucran la energía del Limbo. El Tauma no
+      genera fenómenos de la nada: transforma, modifica, amplifica lo que ya existe en
+      el mundo material. Lo que las distingue de las condiciones naturales no es la
+      intensidad ni los elementos involucrados, sino el origen: cualquier reacción que
+      no corresponda a la lógica natural del mundo y que provenga de la dimensión
+      imperceptible filtrándose en la perceptible.
     origen: >
-      Kaodis, deidad del Vacío — hijo de Lampsi (Luz) y Nytha (Oscuridad). Su presencia
-      es el origen de toda condición extranatural. La combinación Luz+Oscuridad
-      simultáneas es el marcador primario de su influencia directa.
+      El Limbo — dimensión paralela impercibible para las criaturas normales, origen del
+      Tauma. Los marcadores observables (estados contradictorios simultáneos, Luz+Oscuridad
+      con efectos físicos propios) son señales de presencia del Limbo, no su definición.
+      No toda condición extranatural produce contradicciones visibles; puede manifestarse
+      como amplificación o transformación de algo que ya existe en el mundo natural.
     marcador_primario: luz y oscuridad activas simultáneamente en el mismo espacio
     marcadores_secundarios:
       - estados físicamente contradictorios en el mismo punto (fuego+hielo, calor+nieve)
-      - nota: fuego+agua produciendo vapor es NATURAL (Atmos); fuego+hielo simultáneo es EXTRANATURAL
+      - nota: fuego+agua produciendo vapor es natural; fuego+hielo simultáneo es extranatural
       - tres o más elementos en conflicto activo en el mismo punto
       - fenómenos sin causa visible o con causalidad invertida
       - reglas físicas del entorno inestables o contradictorias
 
-# ──────────────────────────────────────────────────────
-# ELEMENTOS
-# ──────────────────────────────────────────────────────
-
-elementos:
-  - id: agua
-    nombre_es: Agua
-    nombre_en: Water
-    manifestaciones_naturales:
-      - lluvia ligera o intensa
-      - inundación, río desbordado
-      - nieve, hielo, granizo
-      - mar agitado, oleaje alto
-      - neblina densa
-
-  - id: viento
-    nombre_es: Viento
-    nombre_en: Wind
-    manifestaciones_naturales:
-      - viento fuerte que dificulta el movimiento
-      - tormenta, temporal
-      - tornado o huracán
-      - corrientes de aire extremas en altura
-
-  - id: fuego
-    nombre_es: Fuego
-    nombre_en: Fire
-    manifestaciones_naturales:
-      - calor extremo, desierto en su pico
-      - incendio forestal o urbano activo
-      - campo de lava, ambiente volcánico
-      - fuego de combate (estructuras ardiendo)
-
-  - id: tierra
-    nombre_es: Tierra
-    nombre_en: Earth
-    manifestaciones_naturales:
-      - terremoto activo
-      - avalancha, derrumbe, hundimiento
-      - terreno muy accidentado o inestable
-      - arena movediza, pantano denso
-      - cueva parcialmente derrumbada
-
-  - id: luz
-    nombre_es: Luz
-    nombre_en: Light
-    manifestaciones_naturales:
-      - deslumbramiento solar extremo sobre nieve o agua
-      - relámpagos continuos que eliminan la visión nocturna
-    nota: la Luz rara vez es una condición severa por sí sola en el mundo natural
-
-  - id: oscuridad
-    nombre_es: Oscuridad
-    nombre_en: Darkness
-    manifestaciones_naturales:
-      - noche cerrada sin luna ni estrellas
-      - cueva o túnel sin fuente de luz
-      - niebla densa impenetrable
-      - humo espeso que bloquea la visión
-
-# ──────────────────────────────────────────────────────
-# COMBINACIONES
-# ──────────────────────────────────────────────────────
-
-combinaciones:
-  nota_naturales: >
-    Las combinaciones naturales corresponden al panteón de deidades menores — fenómenos
-    físicamente posibles reconocidos en la religión elemental. Son intensos pero coherentes
-    con la lógica del mundo.
-  naturales:
-    - elementos: [agua, viento]
-      resultado: niebla, tormenta, huracán, temporal marino
-      deidad_menor: Nefos (Agua+Viento)
-    - elementos: [fuego, viento]
-      resultado: relámpago, tormenta eléctrica, incendio con viento
-      deidad_menor: Brontios (Fuego+Viento)
-    - elementos: [fuego, agua]
-      resultado: vapor, géiser, volcán que encuentra el mar
-      deidad_menor: Atmos (Fuego+Agua)
-      nota_critica: >
-        Fuego+Agua produciendo vapor es NATURAL. Solo es EXTRANATURAL cuando los estados son
-        simultáneamente contradictorios en el mismo punto (fuego activo + hielo activo).
-    - elementos: [fuego, tierra]
-      resultado: erupción volcánica, campo de lava, ceniza densa
-      deidades_menores: [Pilysis (Fuego+Tierra), Fakos (Tierra+Fuego → cristal)]
-    - elementos: [tierra, agua]
-      resultado: inundación, barro, terreno pantanoso, alud de lodo
-      deidad_menor: Philos (Tierra+Agua)
-    - elementos: [tierra, oscuridad]
-      resultado: cueva profunda, grietas sin fondo visible, terreno que absorbe la luz
-      deidad_menor: Petra (Tierra+Oscuridad)
-    - elementos: [oscuridad, agua]
-      resultado: lluvia ácida, aguas corrosivas, pantano sin fondo
-      deidad_menor: Oxy (Oscuridad+Agua)
-    - elementos: [oscuridad, viento]
-      resultado: tormenta de arena, niebla densa con viento
-    - elementos: [fuego, luz]
-      resultado: resplandor cegador, plasma solar, calor radiante extremo
-      deidad_menor: Helios (Fuego+Luz)
-    - elementos: [viento, luz]
-      resultado: aurora, fenómenos de luz en el cielo, refracción extrema
-      deidad_menor: Eos (Viento+Luz)
-    - elementos: [agua, viento, tierra]
-      resultado: tormenta con derrumbes, inundación con corrientes fuertes
-
-  extranaturales:
-    origen: >
-      Las condiciones extranaturales son manifestaciones de Kaodis (deidad del Vacío,
-      hijo de Lampsi y Nytha) tocando el mundo. Lo que las define no es la combinación
-      de elementos sino la coexistencia de ESTADOS CONTRADICTORIOS en el mismo espacio —
-      lo que ningún fenómeno natural puede sostener.
-    marcador_primario:
-      elementos: [luz, oscuridad]
-      descripcion: >
-        Presencia directa de Kaodis. Luminosidad que no ilumina; sombras donde hay fuente
-        de luz visible; ambos activos con efectos físicos propios y simultáneos.
-    ejemplos:
-      - elementos: [fuego, agua]
-        estado_contradictorio: fuego activo + hielo activo en el mismo punto
-        resultado: temperatura físicamente incoherente — quema y congela simultáneamente
-        distincion: fuego+agua → vapor (Atmos, natural) ≠ fuego+hielo simultáneo (extranatural)
-      - elementos: [luz, oscuridad]
-        estado_contradictorio: luminosidad y oscuridad activas simultáneamente
-        resultado: sombras proyectadas sin ausencia de luz; luz visible sin efecto iluminador
-        nota: marcador primario de Kaodis
-      - elementos: [tierra, oscuridad]
-        estado_contradictorio: suelo físicamente sólido que no sostiene peso
-        resultado: terreno que se comporta como líquido sin serlo; grietas que absorben materia
-      - elementos: [luz, oscuridad, agua]
-        resultado: lluvia que no refleja luz; cielo con ambos fenómenos sin resolución física
-      - elementos: [cualquier tres o más en conflicto activo simultáneo]
-        resultado: condición extranatural por definición — Kaodis presente
-    deteccion:
-      - Percepción — nota que algo no se comporta como debería
-      - Instinto — respuesta primaria no racional ante la presencia del Vacío
-      - Taumaturgia — identifica el origen taumático y la estructura del fenómeno
-      - Teología — reconoce la presencia de Kaodis por las señales canónicas de su culto
+# Nota de alcance:
+# La taxonomía elemental, las deidades asociadas y otras capas de worldbuilding no forman
+# parte de esta autoridad mecánica. Si se necesitan para setting o lore, deben vivir en
+# documentación de canon o worldbuilding, no en la definición sistémica de condiciones.
 
 # ──────────────────────────────────────────────────────
 # SEVERIDADES — relación con niveles de dificultad
 # ──────────────────────────────────────────────────────
 # NR sugerido: valor de NR del entorno que el Narrador puede asignar al umbral.
 # El umbral final = Base del nivel de dificultad + NR del entorno.
-# NR 0 = condición en su mínima expresión para ese nivel.
+# NR 1 = condición en su mínima expresión para ese nivel (NR 0 no es válido — todas las competencias iniciales son 1).
 # NR alto = condición especialmente intensa o con influencia extranatural.
 
 severidades:
   - id: leve
     nivel_dificultad: fundamentos
     base: 5
-    nr_sugerido: "0"
+    nr_sugerido: "1"
     tipo: natural
     descripcion: >
       Condiciones estándar con pocos factores disruptivos. Manejables con atención básica.
@@ -207,12 +78,12 @@ severidades:
       - visibilidad reducida (niebla leve)
       - temperatura incómoda pero soportable
       - ruido ambiental moderado (río cercano, viento entre árboles)
-    efecto_sobre_personajes: entorpecer  # ver attrition-fatigue.yaml
+    efecto_sobre_personajes: ninguno  # el umbral (5+NR) expresa la dificultad directamente
 
   - id: moderada
     nivel_dificultad: desafiante
     base: 8
-    nr_sugerido: "0–1"
+    nr_sugerido: "1–2"
     tipo: natural
     descripcion: >
       Retos menores pero reales. Requieren adaptación activa y afectan la concentración,
@@ -223,13 +94,13 @@ severidades:
       - calor o frío intensos (no extremos)
       - ruido que dificulta la comunicación verbal
       - oscuridad parcial (antorchas insuficientes, luna tapada)
-    efecto_sobre_personajes: entorpecer → limitar  # puede escalar en contextos específicos
+    efecto_sobre_personajes: narrador puede limitar  # si el contexto lo justifica
 
   - id: severa
     nivel_dificultad: rigurosa
     base: 11
-    nr_sugerido: "1–2"
-    tipo: natural
+    nr_sugerido: "2–3"
+    tipo: natural_o_extranatural
     descripcion: >
       Factores ambientales significativos. Las acciones requieren mayor esfuerzo.
       Algunas opciones tácticas se limitan activamente.
@@ -239,13 +110,13 @@ severidades:
       - temperatura extrema sostenida (gran frío o calor)
       - oscuridad casi total con visibilidad mínima
       - combate en agua o superficie inestable
-    efecto_sobre_personajes: limitar
+    efecto_sobre_personajes: narrador puede limitar
 
   - id: desastrosa
     nivel_dificultad: exigente
     base: 14
-    nr_sugerido: "2–3"
-    tipo: natural_o_extranatural_incipiente
+    nr_sugerido: "3–4"
+    tipo: natural_o_extranatural
     descripcion: >
       Condiciones casi inhabilitantes. Pueden ser fenómenos naturales en su punto más extremo
       o la primera manifestación de influencia extranatural. A este nivel, la distinción
@@ -256,16 +127,16 @@ severidades:
       - incendio forestal activo con dirección imprevisible
       - tormenta marina con olas que superan estructuras
     ejemplos_extranaturales:
-      - dos elementos en conflicto activo (calor extremo con nieve simultánea)
+      - lluvia que cae en dirección contraria al viento o hacia arriba
       - terreno que cambia de forma activamente
       - oscuridad con fuente de luz visible pero sin efecto iluminador
       - temperatura que varía varios grados en segundos sin causa
-    efecto_sobre_personajes: limitar → acelerar
+    efecto_sobre_personajes: narrador puede limitar y/o acelerar
 
   - id: extrema
     nivel_dificultad: extrema
     base: 17
-    nr_sugerido: "3–5"
+    nr_sugerido: "4–5"
     tipo: natural_o_extranatural
     descripcion: >
       Límite de lo supervivible o ejecutable. Los fenómenos extranaturales son comunes
@@ -275,11 +146,11 @@ severidades:
       - tormenta marina con abordaje simultáneo y estructuras colapsando
       - terremoto combinado con erupción volcánica próxima
     ejemplos_extranaturales:
-      - tormenta elemental completa (todos los elementos en conflicto activo)
+      - múltiples fenómenos amplificados y transformados simultáneamente sin lógica causal entre ellos
       - luz y oscuridad simultáneas con efectos físicos propios
       - entorno en colapso dimensional activo (el Vacío tocando directamente)
       - reglas físicas del entorno inestables: gravedad irregular, tiempo perceptivamente alterado
-    efecto_sobre_personajes: acelerar  # condiciones acumuladas; puede generar Desgaste pasivo
+    efecto_sobre_personajes: narrador puede acelerar  # probable en este rango; puede generar Desgaste pasivo
 
 # ──────────────────────────────────────────────────────
 # MODELO DE EFECTO
@@ -287,19 +158,26 @@ severidades:
 
 modelo_de_efecto:
   referencia: data/system/attrition-fatigue.yaml (conditions_and_environment)
-  etapas:
-    - id: entorpecer
-      nombre_en: hinder
-      descripcion: La condición impone penalizaciones pero no añade Desgaste
+  principio: >
+    El NR del entorno expresa la dificultad de las tiradas — es la única regla mecánica
+    fija. Limitar y Acelerar son herramientas narrativas del Narrador: puede aplicarlas
+    cuando tenga sentido en la escena, no hay un trigger automático. No todos los
+    escenarios con una severidad dada requieren ambas.
+  herramientas_del_narrador:
     - id: limitar
       nombre_en: restrict
-      descripcion: La condición limita acciones disponibles o impone modificadores de dificultad
+      descripcion: >
+        El Narrador puede eliminar opciones de acción cuando la condición lo justifica
+        narrativamente. No las hace más difíciles — las elimina directamente.
     - id: acelerar
       nombre_en: accelerate
-      descripcion: La condición severa añade +1 al costo de Desgaste de acciones relevantes
+      descripcion: >
+        El Narrador puede cobrar +1 Desgaste a cualquier acción no gratuita cuando
+        la condición justifica un drenaje activo. Se aplica mientras dure esa presión.
   nota: >
-    Una misma condición puede escalar entre etapas durante un encuentro si la situación
-    se deteriora o si el personaje no actúa para mitigarla.
+    La severidad orienta al Narrador — una condición Extrema hace más probable que use
+    ambas herramientas; una condición Leve hace improbable que use alguna. La decisión
+    es siempre narrativa y contextual.
 
 # ──────────────────────────────────────────────────────
 # ASIGNACIÓN DE NR POR EL NARRADOR
@@ -311,16 +189,27 @@ nr_del_entorno:
     dentro de su nivel de severidad. No es un valor fijo — refleja cuánto presiona
     ese entorno particular comparado con la condición "estándar" de su nivel.
   guia:
-    - nr: 0
-      descripcion: Condición en su expresión mínima para ese nivel de severidad
     - nr: 1
-      descripcion: Condición notable dentro de su nivel; algunos factores compuestos
+      descripcion: Condición en su expresión mínima para ese nivel de severidad
     - nr: 2
-      descripcion: Condición intensa; múltiples factores simultáneos o duración prolongada
+      descripcion: Condición notable dentro de su nivel; algunos factores compuestos
     - nr: 3
+      descripcion: Condición intensa; múltiples factores simultáneos o duración prolongada
+    - nr: 4
       descripcion: Condición en su pico o con primer marcador extranatural confirmado
-    - nr: 4-5
+    - nr: 5
       descripcion: Influencia extranatural clara; reservado para nivel Extrema
+  multiples_fuentes:
+    regla: >
+      La fuente dominante determina el nivel de severidad. Las fuentes secundarias
+      pueden añadir NR, con un tope de +2. No se acumulan más de dos fuentes.
+    ejemplo: >
+      Tormenta Desastrosa (14+NR) + terreno secundario severo → 14+2 = 16. No 14+4.
+  regla_especifica:
+    principio: >
+      Si otro sistema tiene un DC o mecánica definida para la acción, ese sistema
+      toma precedencia. Las condiciones del entorno son el recurso del Narrador
+      para situaciones sin regla propia — el fallback, no la regla primaria.
 
 # ──────────────────────────────────────────────────────
 # PREGUNTAS DE DISEÑO ABIERTAS

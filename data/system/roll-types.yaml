@@ -38,7 +38,7 @@ rolls:
   - id: CR
     name: Characteristic Roll
     code: C.R.
-    formula: "1d10 + characteristic + resonance_level + bonuses"
+    formula: "1d10 + characteristic + reference_level + bonuses"
     competency: none
     used_for: Actions depending on general aptitude without specific training
 

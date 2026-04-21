@@ -2,7 +2,7 @@
 
 **Authority:** `data/system/environmental-conditions.yaml`
 
-Environmental conditions set the NR the Narrator assigns to fixed-threshold tests when the challenge comes from the world itself — terrain, weather, atmospheric pressure — rather than from an active opponent. They do not replace the Attrition system. They contribute pressure that accelerates Fatigue and constrains action.
+Environmental conditions give the Narrator a framework for assigning difficulty when the challenge comes from the world itself — terrain, weather, atmospheric pressure, or the threat level of the overall situation. The severity level determines the difficulty tier and NR. Beyond that, the Narrator has two tools (Restrict and Accelerate) to apply when the narrative warrants it — neither is automatic.
 
 ---
 
@@ -10,53 +10,11 @@ Environmental conditions set the NR the Narrator assigns to fixed-threshold test
 
 **Natural** conditions follow the physical laws of the world. They can be extreme — a hurricane, a volcanic field, a cave-in — but they operate within coherent rules.
 
-**Extranatural** conditions do not. They occur when Kaodis — deity of the Void, born of Lampsi (Light) and Nytha (Darkness) — touches the environment. Their defining marker is not the combination of elements but the **simultaneous coexistence of contradictory states** in the same space: fire and ice at the same point, not fire and water producing steam (which is natural). Light and Darkness both active with distinct effects is the primary marker of Kaodis's direct presence. Normal environmental adaptation may not apply to extranatural conditions — this is an open design question (D-08).
+**Extranatural** conditions are phenomena in the perceptible world that involve Limbo energy. Tauma does not generate phenomena from nothing: it transforms, modifies, amplifies what already exists in the material world. What distinguishes an extranatural condition from a natural one is not intensity or element combination, but origin — any reaction that does not follow the natural logic of the world, produced by the imperceptible dimension filtering into the perceptible one. Observable markers (physically contradictory states, Light and Darkness simultaneously active) are signs of Limbo presence, not its definition. Not every extranatural condition produces visible contradictions; it may manifest as amplification or transformation of something natural. Normal environmental adaptation may not apply to extranatural conditions — open design question (D-08).
 
 ---
 
-## Elements
-
-Six base elements produce all environmental conditions, natural and extranatural.
-
-| Element | Natural manifestations |
-| --- | --- |
-| **Water** | Rain, flood, snow, ice, rough sea, dense fog |
-| **Wind** | Strong wind, storm, tornado, hurricane, high-altitude currents |
-| **Fire** | Extreme heat, active wildfire, volcanic field, burning structures |
-| **Earth** | Earthquake, avalanche, cave-in, very rough terrain, quicksand |
-| **Light** | Extreme solar glare on snow or water; continuous lightning breaking night vision |
-| **Darkness** | Moonless night, unlighted cave, impenetrable fog, heavy smoke |
-
-**Natural combinations** correspond to the minor deity pantheon — physically possible phenomena the elemental religion recognizes by name:
-
-| Elements | Natural result | Minor deity |
-| --- | --- | --- |
-| Water + Wind | Storm, hurricane, fog | Nefos |
-| Fire + Wind | Lightning, electrical storm | Brontios |
-| Fire + Water | Steam, geyser, volcano meeting sea | Atmos |
-| Fire + Earth | Eruption, lava field, ash | Pilysis / Fakos |
-| Earth + Water | Flood, mud, marshy terrain | Philos |
-| Earth + Darkness | Deep cave, light-absorbing cracks | Petra |
-| Darkness + Water | Acid rain, corrosive water | Oxy |
-| Fire + Light | Blinding radiance, plasma, radiant heat | Helios |
-| Wind + Light | Aurora, sky light phenomena | Eos |
-
-**Extranatural conditions** are not defined by element combinations but by **contradictory simultaneous states** — what no natural phenomenon can sustain. Their source is Kaodis (Void, son of Lampsi + Nytha):
-
-| Contradictory state | Effect | Note |
-| --- | --- | --- |
-| Fire + Ice (same point) | Incoherent temperature — burns and freezes | Fire+Water → steam is natural (Atmos). Fire+Ice is not. |
-| Light + Darkness (simultaneous) | Luminosity that does not illuminate; shadows without absent light | **Primary Kaodis marker** |
-| Earth (solid) that does not support weight | Terrain behaves like liquid without being liquid | |
-| Light + Darkness + Water | Rain that does not reflect light; sky with both unresolved | |
-| Three or more elements in active conflict | Extranatural by definition — Kaodis present | |
-
-Characters can recognize extranatural conditions through:
-
-- **Perception** — notices something is not behaving as expected
-- **Instinct** — primal non-rational response to the Void's presence
-- **Thaumaturgy** — identifies the taumatic origin and structure of the phenomenon
-- **Theology** — recognizes Kaodis's presence through the canonical signs of the Void cult
+Environmental conditions can be described with elemental language in setting or lore documents, but that taxonomy is not part of the mechanical definition of this system. This document only defines how the Narrator classifies pressure, sets thresholds, and distinguishes natural from extranatural origin.
 
 ---
 
@@ -66,11 +24,11 @@ Each severity level maps directly to one difficulty tier. The Narrator sets the 
 
 | Severity | Difficulty tier | Base | NR range | Type |
 | --- | --- | --- | --- | --- |
-| Mild | Fundamental | 5 | 0 | Natural |
-| Moderate | Challenging | 8 | 0–1 | Natural |
-| Severe | Rigorous | 11 | 1–2 | Natural |
-| Disastrous | Demanding | 14 | 2–3 | Natural or early extranatural |
-| Extreme | Extreme | 17 | 3–5 | Natural or extranatural |
+| Mild | Fundamental | 5 | 1 | Natural |
+| Moderate | Challenging | 8 | 1–2 | Natural |
+| Severe | Rigorous | 11 | 2–3 | Natural or extranatural |
+| Disastrous | Demanding | 14 | 3–4 | Natural or early extranatural |
+| Extreme | Extreme | 17 | 4–5 | Natural or extranatural |
 
 ---
 
@@ -80,7 +38,7 @@ Few disruptive factors. Manageable with basic attention.
 
 **Natural:** light rain with gentle wind; irregular but familiar terrain; reduced visibility (light fog); uncomfortable but tolerable temperature; ambient noise (nearby river, wind through trees).
 
-**Effect model:** Hinder — penalties without added Attrition cost.
+**Effect model:** None — threshold (5 + NR) expresses the difficulty directly.
 
 ---
 
@@ -90,7 +48,7 @@ Active disruption. Requires adaptation. Affects concentration, coordination, or 
 
 **Natural:** moderate storm with reduced visibility; very irregular or marshy terrain; intense but not extreme heat or cold; noise that prevents verbal coordination; partial darkness (insufficient torches, covered moon).
 
-**Effect model:** Hinder, escalating to Restrict in specific contexts.
+**Effect model:** Narrator may Restrict if the context justifies it.
 
 ---
 
@@ -100,7 +58,7 @@ Significant factors. Actions demand greater effort. Some tactical options are ac
 
 **Natural:** strong storm with wind that prevents light projectiles and impedes movement; very rough terrain with fall risk; sustained extreme temperature; near-total darkness with minimal visibility; combat in water or on unstable surface.
 
-**Effect model:** Restrict.
+**Effect model:** Narrator may Restrict.
 
 ---
 
@@ -112,7 +70,7 @@ Near-disabling conditions. May be natural phenomena at their extreme, or the fir
 
 **Extranatural (early):** two elements in active conflict (extreme heat with simultaneous snow); actively shifting terrain; darkness with a visible light source that produces no illumination; temperature varying several degrees in seconds.
 
-**Effect model:** Restrict → Accelerate.
+**Effect model:** Narrator may Restrict and/or Accelerate.
 
 ---
 
@@ -124,19 +82,20 @@ Limit of what is survivable or executable. Extranatural conditions are common at
 
 **Extranatural:** complete elemental storm (all elements in simultaneous active conflict); light and darkness with simultaneous physical effects; environment in active dimensional collapse (the Void touching directly); unstable physical rules — irregular gravity, perceptible time distortion.
 
-**Effect model:** Accelerate — may generate passive Attrition.
+**Effect model:** Narrator may Accelerate — probable at this range; may generate passive Attrition.
 
 ---
 
 ## Effect model
 
-Environmental conditions apply pressure through three stages. A single condition may escalate between stages during an encounter if not mitigated.
+The environmental NR expresses difficulty through the threshold (Base + NR) — that is the only fixed mechanical rule. Beyond the threshold, the Narrator has two narrative tools that can be applied when the situation justifies it. There is no automatic trigger; the Narrator decides when and whether to use them.
 
-| Stage | Mechanical effect |
+| Tool | What it does |
 | --- | --- |
-| **Hinder** (Entorpecer) | Penalties on affected rolls; no additional Attrition cost |
-| **Restrict** (Limitar) | Limits available actions or imposes difficulty modifiers |
-| **Accelerate** (Acelerar) | Adds +1 to the Attrition cost of relevant actions |
+| **Restrict** (Limitar) | Eliminates available actions — not harder, unavailable |
+| **Accelerate** (Acelerar) | Adds +1 Attrition cost to all non-free actions |
+
+Severity is a guide: Extreme conditions make it likely the Narrator uses both; Mild conditions make it unlikely they use either. Not every scenario at a given severity requires either tool.
 
 Full model: `data/system/attrition-fatigue.yaml (conditions_and_environment)`
 
@@ -148,11 +107,21 @@ The environmental NR reflects how much a specific instance of a condition presse
 
 | Environmental NR | Meaning |
 | --- | --- |
-| 0 | Condition at its minimum expression for the severity level |
-| 1 | Notable condition within its level; some compound factors |
-| 2 | Intense condition; multiple simultaneous factors or extended duration |
-| 3 | Condition at its peak, or first confirmed extranatural marker |
-| 4–5 | Clear extranatural influence; reserved for Extreme severity |
+| 1 | Condition at its minimum expression for the severity level |
+| 2 | Notable condition within its level; some compound factors |
+| 3 | Intense condition; multiple simultaneous factors or extended duration |
+| 4 | Condition at its peak, or first confirmed extranatural marker |
+| 5 | Clear extranatural influence; reserved for Extreme severity |
+
+### When multiple sources of difficulty combine
+
+Identify the dominant source — the one that defines the tier. Secondary sources (a second environmental factor, a threat level differential) can add NR up to a maximum of +2 on top of the dominant tier. Do not stack NR from more than two sources.
+
+Example: a Disastrous storm (14 + NR) combined with a secondary severe terrain factor → 14 + 2 = 16. Not 14 + 4.
+
+### When a specific system already defines the difficulty
+
+If another system provides a defined DC or mechanic for the action, use that. Environmental conditions are the fallback — the Narrator's tool for situations that have no rule of their own. The specific rule always takes precedence.
 
 ---
 

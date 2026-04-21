@@ -30,38 +30,48 @@ Estos capítulos existen como carpetas vacías en el repo de publicaciones. El c
 Estas mecánicas están referenciadas en el texto existente pero no tienen reglas definidas todavía. El corebook las menciona sin describirlas.
 
 ### Catálogo de Técnicas
+
 - **Referenciado en:** `03-core-rules`, `10-conflict-and-combat/acciones.md`
 - **Descripción:** Lista completa de Técnicas desbloqueables por competencia, con su tipo (Acción Activa / Reacción), costo de ritmo, Desgaste y efecto mecánico directo
 - **Destino sugerido:** Cap. 08 (Skills and Proficiencies) o cap. dedicado dentro de Ch10
 
-### Condiciones y presión ambiental (Entorpecer / Limitar / Acelerar)
+### Condiciones y presión ambiental
 
-- **Estaba en:** `desgaste-aguante-fatiga.md` — removido del corebook
-- **Preservado en:** `docs/system/mechanics-overview.md` (sección Conditions and environment)
-- **Descripción:** Marco de tres etapas (Hinder/Restrict/Accelerate) + ejemplo de condición de frío
-- **Destino sugerido:** Capítulo de dificultad del entorno (dentro de GM Toolkit o capítulo propio)
+- **Estado:** Escrito — `03-core-rules/es/environmental-conditions.md` y `en/environmental-conditions.md`
+- **Nota:** Modelo reducido a dos herramientas del Narrador (Limitar / Acelerar); Entorpecer eliminado — el NR del umbral lo reemplaza. Ver D-08 para el caso extranatural.
 
 ### Sistema de Aflicciones
+
 - **Referenciado en:** `rolling-system-and-competencies.md` (T.R. de Aflicciones), `desgaste-aguante-fatiga.md`
 - **Descripción:** Qué son las Aflicciones, cómo se aplican, cómo progresan, cómo se resuelven
 - **Destino sugerido:** Cap. 11 (Cosmic Horror and Corruption) o sección dentro de Ch10
 
 ### Sistema de Maldiciones
+
 - **Referenciado en:** `rolling-system-and-competencies.md` (T.R. de Maldiciones y Aflicciones)
 - **Descripción:** Distinción entre Aflicciones y Maldiciones; mecánicas propias
 - **Nota:** Puede diseñarse junto con el sistema de Aflicciones
 
 ### Lista de Rasgos de Personalidad
+
 - **Referenciado en:** `04-character-creation` (sección de rasgos)
 - **Descripción:** Lista completa de rasgos sugeridos con sus Factores e Intensidades
 - **Destino sugerido:** Cap. 04 (Character Creation) o apéndice dedicado
 
 ### Penalizaciones de Fatiga 1 / 2 / 3
+
 - **Referenciado en:** `desgaste-aguante-fatiga.md` — los umbrales están definidos, los efectos no
 - **Descripción:** Qué penalizaciones concretas aplica cada nivel de Fatiga asentada
 - **Nota:** Pregunta de diseño abierta — ver sección siguiente
 
+### Regla de Herramientas
+
+- **Referenciado en:** `01-general-rules.md` — eliminado del capítulo hasta que Ch09 exista
+- **Descripción:** Actividades de fabricación, reparación y refinamiento requieren herramientas específicas; uso de herramientas alternativas aumenta la dificultad de la prueba
+- **Destino sugerido:** Cap. 09 (Equipment and Resources)
+
 ### Condiciones de Correr
+
 - **Referenciado en:** `acciones.md` — tabla de terreno muestra "Velocidad al doble" sin condiciones
 - **Descripción:** Restricciones o consecuencias adicionales al correr (¿no se puede atacar?, ¿T.E. requerida en terreno difícil?, ¿Desgaste adicional?)
 
@@ -73,7 +83,7 @@ Decisiones que no han sido tomadas todavía. El sistema no puede estar completo 
 
 | # | Pregunta | Contexto |
 | --- | --- | --- |
-| D-01 | ¿Qué penalizaciones concretas aplica Fatiga 1, 2 y 3? | Umbrales definidos en `desgaste-aguante-fatiga.md`; efectos pendientes |
+| D-01 | ¿Qué efectos concretos aplica cada nivel de Fatiga? | El sistema puede escalar a 5 niveles en lugar de 3; los umbrales están definidos pero los efectos no — requiere vocabulario mecánico más amplio (condiciones, restricciones, modificadores) antes de cerrarse |
 | D-02 | ¿Los ataques apuntados (aimed) se quedan dentro de las familias de arma o se vuelven una categoría de ritmo separada? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-03 | ¿En qué punto el movimiento se divide en movimiento controlado vs. forzado o desesperado? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-04 | ¿Los escudos se convierten en su propia familia de acción base? | Ver open question en `combat-atb-rhythm-costs.md` |
@@ -81,6 +91,9 @@ Decisiones que no han sido tomadas todavía. El sistema no puede estar completo 
 | D-06 | ¿Qué restricciones tiene la acción Correr? | Referenciado en `acciones.md` sin definir |
 | D-07 | ¿Cómo funcionan los combates en movimiento (pursuits, combate en desplazamiento sostenido)? | Marcha aparece como reactiva secundaria en esos escenarios; Equitación, Acrobacias y Equilibrio también son candidatas; la mecánica no existe todavía |
 | D-08 | ¿Aclimatación y otras especializaciones naturales aplican igual a condiciones extranaturales? | Una tormenta elemental no es solo frío extremo — puede requerir Instinto, Resonancia o Taumaturgia; no puede cerrarse sin el sistema del Vacío — ver `data/system/environmental-conditions.yaml` |
+| D-09 | ¿Cómo interactúa el uso de Tauma con las tres manifestaciones del Limbo? | ¿Necesita el practicante un flujo o vínculo, o la energía es interna? — ver `data/system/limbo-manifestations.yaml` |
+| D-10 | ¿Cuál es la tasa de disipación de vestigios? | ¿Depende del material del objeto, del tiempo, de la intensidad original, de la proximidad a un vínculo? — ver `data/system/limbo-manifestations.yaml` |
+| D-11 | ¿Los vínculos tienen NR? ¿Ese NR afecta los umbrales de condiciones extranaturales del área? | Parámetro del vínculo vs. parámetro del entorno — ver `data/system/limbo-manifestations.yaml` |
 
 ---
 

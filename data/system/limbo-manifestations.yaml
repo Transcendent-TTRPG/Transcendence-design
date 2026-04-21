@@ -1,0 +1,154 @@
+# Manifestaciones del Limbo — autoridad de diseño
+#
+# Referencia cruzada:
+#   - data/system/environmental-conditions.yaml  → condiciones extranaturales generadas por filtración
+#   - docs/system/environmental-conditions.md    → impacto mecánico en entorno
+#   - docs/system/limbo-manifestations.md        → referencia de diseño
+#
+# El Limbo es la dimensión de origen del Tauma. Su energía se filtra al mundo físico
+# a través de tres manifestaciones. Las condiciones extranaturales son consecuencia de
+# la filtración intensa. Kaodis es la capa interpretativa religiosa, no la causa mecánica.
+
+meta:
+  version: "1.0"
+  status: draft
+  last_updated: "2026-04-20"
+
+limbo:
+  nombre_es: El Limbo
+  nombre_en: the Limbo
+  descripcion: >
+    Dimensión paralela impercibible para las criaturas normales. Origen del Tauma.
+    Su energía puede filtrarse al mundo físico de tres formas: flujo ambiental,
+    vestigios y vínculos.
+  nota_teologica: >
+    En la religión elemental, los fenómenos del Limbo se atribuyen a Kaodis
+    (deidad del Vacío, hijo de Lampsi y Nytha). Kaodis es la interpretación
+    religiosa, no la causa mecánica.
+  perceptibilidad:
+    criaturas_normales: no perciben el Limbo directamente
+    capacidades_de_deteccion:
+      - id: instinto
+        descripcion: respuesta primaria no racional; siente que algo no pertenece
+      - id: taumaturgia
+        descripcion: identifica la estructura taumática y su origen dimensional
+      - id: teologia
+        descripcion: interpreta las señales por las señales canónicas del culto de Kaodis
+
+# ──────────────────────────────────────────────────────
+# MANIFESTACIONES
+# ──────────────────────────────────────────────────────
+
+manifestaciones:
+  - id: flujo_ambiental
+    nombre_es: Flujo ambiental
+    nombre_en: Ambient flow
+    descripcion: >
+      Filtración continua y pasiva de energía del Limbo en un área física.
+      No está anclada a un objeto ni entidad — es energía ambiental difusa.
+      Puede ser constante (zona naturalmente permeable) o temporal.
+    caracteristicas:
+      - pasiva — no requiere agente activo
+      - difusa — permea el área, no un punto específico
+      - variable en intensidad
+      - no necesariamente genera condiciones extranaturales; solo cuando la intensidad es suficiente
+    relacion_con_entorno: >
+      Un flujo ambiental intenso puede elevar la severidad de condiciones extranaturales
+      en el área. Ver environmental-conditions.yaml → severidades.
+    deteccion:
+      instinto: primer sentido de que el área tiene algo; sin precisión
+      taumaturgia: puede medir la intensidad y homogeneidad del flujo
+    open_questions:
+      - ¿El flujo ambiental facilita o amplifica el uso de Tauma en el área?
+      - ¿Puede un flujo ambiental sostenido crear un vínculo pasivo con el tiempo?
+
+  - id: vestigio
+    nombre_es: Vestigio
+    nombre_en: Vestige
+    descripcion: >
+      Energía taumática residual depositada en un objeto o lugar por contacto pasado con
+      el Limbo. No hay entidad ni vínculo activo — es la huella de una presencia anterior.
+      Se disipa gradualmente; no es permanente.
+    caracteristicas:
+      - residual — la fuente ya no está presente
+      - en disipación — se debilita con el tiempo
+      - localizado — en un objeto o lugar específico, no difuso
+      - inerte — no genera efectos activos por sí solo
+    distincion_critica: >
+      Un vestigio no es un vínculo. No hay conexión activa al Limbo. Es la impresión
+      que dejó la energía, no la energía misma.
+    deteccion:
+      taumaturgia: >
+        distingue la firma "antigua" o "decreciente" de un vestigio vs. la firma activa
+        de un flujo o vínculo
+      instinto: puede sentir algo residual pero sin precisión
+    open_questions:
+      - ¿Los vestigios tienen usos taumáticos? ¿Pueden ser fuente de energía para un practicante?
+      - ¿Cuál es la tasa de disipación? ¿Depende del objeto, del tiempo, de la intensidad original?
+      - ¿Un vestigio muy intenso puede convertirse en un vínculo bajo ciertas condiciones?
+
+  - id: vinculo
+    nombre_es: Vínculo
+    nombre_en: Link
+    descripcion: >
+      Puente activo entre el mundo físico y el Limbo. La energía fluye continuamente
+      a través de él. Puede ser un objeto o un lugar que sirve como punto de anclaje
+      entre dimensiones.
+    caracteristicas:
+      - activo — la conexión con el Limbo es continua
+      - anclado — a un objeto o lugar específico
+      - genera flujo ambiental en su entorno como efecto secundario
+      - más potente y peligroso que un vestigio
+    origen_posible:
+      natural: zonas donde las dimensiones son naturalmente delgadas
+      creado: por acción taumática — requiere diseño del sistema Tauma (D-11-a)
+    relacion_con_entorno: >
+      Un vínculo activo genera flujo ambiental en su área circundante. Si es
+      suficientemente intenso, puede producir condiciones extranaturales persistentes.
+    deteccion:
+      taumaturgia: firma claramente activa y direccional; puede medir intensidad y estabilidad
+      instinto: reacción fuerte — claramente algo que no pertenece
+      teologia: reconoce las señales canónicas de presencia del Limbo
+    open_questions:
+      - ¿Pueden los vínculos ser creados intencionalmente por practicantes de Tauma?
+      - ¿Pueden los vínculos ser cerrados o sellados? ¿Por quién?
+      - ¿Los vínculos tienen NR? ¿Ese NR contribuye al NR de condiciones extranaturales del área?
+
+# ──────────────────────────────────────────────────────
+# RELACIONES ENTRE MANIFESTACIONES
+# ──────────────────────────────────────────────────────
+
+relaciones:
+  flujo_puede_dejar_vestigios: >
+    Un flujo ambiental intenso puede depositar vestigios en objetos del área incluso
+    después de que el flujo cese.
+  vinculos_generan_flujo: >
+    Todo vínculo activo genera flujo ambiental en su entorno. La intensidad del flujo
+    depende de la potencia del vínculo.
+  vestigios_vs_vinculos: >
+    Un vestigio no tiene conexión activa al Limbo. La distinción es mecánicamente
+    relevante para detección (Taumaturgia) y para condiciones extranaturales: un
+    vestigio no genera condiciones activas; un vínculo sí puede.
+
+# ──────────────────────────────────────────────────────
+# PREGUNTAS DE DISEÑO ABIERTAS
+# ──────────────────────────────────────────────────────
+
+open_questions:
+  - id: D-09
+    pregunta: >
+      ¿Cómo interactúa el uso de Tauma con las tres manifestaciones? ¿Un practicante
+      necesita un flujo o vínculo para usar Tauma, o la energía es interna?
+    destino: sistema de Tauma — cuando se diseñe
+
+  - id: D-10
+    pregunta: >
+      ¿Cuál es la tasa de disipación de vestigios? ¿Depende del material del objeto,
+      del tiempo, de la intensidad original, o de la proximidad a un vínculo?
+    destino: sistema de Tauma — cuando se diseñe
+
+  - id: D-11
+    pregunta: >
+      ¿Los vínculos tienen NR? ¿Este NR afecta directamente los umbrales de condiciones
+      extranaturales en el área, o es un parámetro independiente?
+    destino: sistema de Tauma / sistema de condiciones extranaturales

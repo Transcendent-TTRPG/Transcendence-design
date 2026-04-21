@@ -9,7 +9,7 @@ All checks use a `d10` base modified by characteristics, competencies, equipment
 | A.R. | Attack Roll           | 1d10 + Competency Level + Associated Characteristic | Yes — weapon/object |
 | D.R. | Defense Roll          | 1d10 + Evasion Level + AGI + Armor | Yes — Evasion |
 | I.R. | Impact Roll           | (Competency Rank × Weapon Damage) + (Associated Characteristic × Weapon Grade) | Yes — weapon rank |
-| C.R. | Characteristic Roll   | 1d10 + Characteristic + Resonance Level + Bonuses | No (unless specific rule) |
+| C.R. | Characteristic Roll   | 1d10 + Characteristic + Reference Level + Bonuses | No (unless specific rule) |
 | R.R. | Resistance Roll       | varies by threat type (see below) | Yes — Resistances |
 | S.R. | Specialization Roll   | 1d10 + Specialization Level + Rank + Associated Characteristic + Bonuses | Yes — specialization |
 | P.R. | Personality Trait Roll| 2d10 | No |
@@ -38,7 +38,7 @@ Weapon damage dice: d4, d6, d8, d10, d12
 ### C.R. — Characteristic Roll
 Used when an action depends on a general aptitude, without specific training.
 
-`C.R. = 1d10 + Characteristic + Resonance Level + Additional Bonuses`
+`C.R. = 1d10 + Characteristic + Reference Level + Additional Bonuses`
 
 ### R.R. — Resistance Roll
 Represents ability to withstand harmful effects.

@@ -126,28 +126,26 @@ reactions:
 
 conditions_and_environment:
   principle: >
-    Conditions and environmental pressure accelerate Fatigue but do not replace
-    Attrition. Their role is to make continued effective action harder, not to
-    duplicate the Attrition system.
-  progression_model:
-    - stage: hinder
-      description: Condition imposes penalties but does not add Attrition cost
-    - stage: restrict
-      description: Condition limits available actions or imposes difficulty modifiers
-    - stage: accelerate
-      description: Severe condition adds +1 Attrition cost to relevant actions
+    Environmental NR expresses difficulty through the threshold (Base + NR) — the only
+    fixed rule. Restrict and Accelerate are Narrator tools applied when narratively
+    justified. No automatic trigger; not every severity requires both.
+  narrator_tools:
+    - id: restrict
+      description: Narrator eliminates available actions when the condition justifies it
+    - id: accelerate
+      description: Narrator adds +1 Attrition cost to all non-free actions when the condition justifies it
   example_condition:
     id: cold
     levels:
       - level: 1
         attrition_modifier: 0
-        effect: "+1 difficulty to physical precision actions"
+        effect: "threshold (Mild, 5+NR) expresses difficulty; no action restrictions"
       - level: 2
         attrition_modifier: 0
-        effect: "+1 difficulty to all physical actions; no sprint or dash"
+        effect: "no sprint or dash (Restrict)"
       - level: 3
         attrition_modifier: "+1 to attrition cost of physical actions"
-        effect: "+2 difficulty to all physical actions; half movement"
+        effect: "half movement (Restrict); +1 Attrition cost (Accelerate)"
 
 rest_recovery:
   short_rest:

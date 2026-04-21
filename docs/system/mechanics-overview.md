@@ -15,6 +15,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Roll types | `roll-types.yaml` | Bonus to specific roll, conditional reroll, formula modifier |
 | Difficulty Thresholds | `difficulty-thresholds.yaml` | Tier selection, base modifier, NR contribution |
 | Environmental Conditions | `environmental-conditions.yaml` | Severity tier, natural vs. extranatural, element combinations, effect model |
+| Limbo Manifestations | `limbo-manifestations.yaml` | Manifestation type (flow/vestige/link), detection method, proximity to link |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
 | Specializations | `specializations.yaml` | S.R. bonus, Technique access, Synapsis path unlock |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
@@ -89,7 +90,7 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 
 **Authority:** `data/system/difficulty-thresholds.yaml`
 
-Five tiers apply to all roll-based systems (S.R., C.R., R.R., fabrication, afflictions, etc.).
+Five tiers apply to all roll-based systems (S.R., C.R., R.R., fabrication, ailments, etc.).
 
 ```text
 Threshold = Base + NR
