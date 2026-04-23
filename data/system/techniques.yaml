@@ -1,0 +1,445 @@
+taxonomy:
+  canonical_term:
+    es: Tecnicas
+    en: Techniques
+  definition: >
+    A competency-rooted, explicitly costed, mechanically-defined application
+    that produces a narrative and mechanical consequence in the same use.
+  spectacle_rule:
+    intent: >
+      Techniques should feel spectacular, thematic, and memorable rather than
+      flat or purely procedural.
+    allowed:
+      - exaggerated
+      - dramatic
+      - cinematic
+      - heightened_but_grounded
+    required_grounding:
+      - trained_timing
+      - body_control
+      - leverage
+      - force_transfer
+      - pressure_management
+      - positioning
+      - equipment_interaction
+      - practiced_perception
+      - conditioned_survival_response
+      - social_projection
+      - environmental_exploitation
+    prohibited_as_source:
+      - magical_manifestation
+      - occult_projection
+      - energy_from_nothing
+      - unexplained_supernatural_causation
+    authoring_test:
+      - Is it exciting enough to feel worth learning?
+      - Is its identity primarily thematic, not just numerical?
+      - Can its effect be traced to a trained non-magical cause?
+      - Would it still make sense if all magic were removed from the scene?
+  raw_use_vs_technique:
+    raw_competency_use: narrative_effect_only
+    technique_use: narrative_plus_mechanical_effect
+  combat_profile_layer:
+    used_for:
+      - weapon_rooted_techniques
+      - shield_rooted_combat_techniques
+      - ranged_attack_profiles
+      - flexible_attack_profiles
+      - natural_attack_forms
+    note: >
+      Combat Techniques should usually pass through shared Weapon Technique
+      Profiles instead of creating a separate Technique tree for every
+      individual weapon item or a disconnected natural-weapon subsystem.
+
+required_fields:
+  - name
+  - origin
+  - category
+  - type
+  - trigger
+  - requirements
+  - learning
+  - target
+  - range
+  - area
+  - duration
+  - cost
+  - saving_roll
+  - description
+  - effect
+  - scaling
+  - restrictions
+  - tags
+
+categories:
+  - attack
+  - utility
+
+types:
+  - active
+  - reactive
+  - passive
+
+canonical_targets:
+  - self
+  - ally
+  - enemy
+  - creature
+  - group
+  - object
+  - device
+  - structure
+  - zone
+  - route
+  - text
+  - message
+  - site
+  - formation
+  - mount
+  - phenomenon
+  - environment
+
+noncanonical_target_shorthand:
+  - scene
+  - time
+  - sky
+  - campaign
+  - task
+  - presence
+
+duration_models:
+  - instant
+  - until_trigger
+  - until_next_turn
+  - for_n_rounds
+  - for_n_atb_cycles
+  - scene
+  - sustained
+  - permanent
+
+cost_model:
+  mandatory:
+    - rhythm_cost
+    - attrition_cost
+  optional:
+    - durability_trade
+    - per_scene_uses
+    - per_rest_uses
+    - per_day_uses
+    - charge_cost
+    - drawback
+
+saving_roll_models:
+  examples:
+    - none
+    - dr_negates
+    - rr_reduces
+    - sr_opposed
+    - contextual
+
+learning_models:
+  standard_paths:
+    - self_study
+    - guided_training
+  core_rule: >
+    Techniques are learned through study and practice, but they do not create
+    a separate per-Technique mastery ladder by default. A Technique is either
+    learned or not yet learned.
+  valid_components:
+    - study_hours
+    - practice_hours
+    - text_or_manual_required
+    - mentor_required
+    - material_cost
+    - access_notes
+    - final_validation
+  validation_examples:
+    - one_successful_supervised_execution
+    - one_successful_practice_scene_under_pressure
+    - one_final_relevant_roll_after_required_hours
+  prohibited_patterns:
+    - technique_xp_track
+    - technique_rank_tree
+    - repeated_per_technique_leveling
+
+origin_models:
+  single_competency: true
+  dual_competency: true
+  competency_plus_equipment: true
+  competency_plus_state: true
+  resistance_as_single_origin: false
+  resistance_requires_hybrid_origin: true
+  resistance_note: >
+    Resistances never generate pure Techniques on their own. Any
+    Resistance-rooted Technique must be hybridized with another competency,
+    specialization, equipment competency, or tightly bounded state logic.
+
+authoring_questions:
+  - What competency domain makes this possible?
+  - Why is this not just raw competency use?
+  - What direct mechanical change does it create?
+  - What non-magical cause inside the fiction makes this believable?
+  - How is it actually learned: self-study, guided training, or both?
+  - What timing window does it occupy?
+  - What does it cost?
+  - How can it be resisted, if at all?
+  - How does it end?
+  - How does it scale?
+
+tag_examples:
+  core:
+    - utility
+    - attack
+    - defense
+    - mobility
+    - control
+    - stability
+    - mitigation
+    - recovery
+    - setup
+    - disruption
+    - pressure
+    - support
+    - stealth
+    - precision
+    - survival_window
+    - condition_reduction
+  restricted:
+    - interception
+    - anti_displacement
+    - counter_positioning
+    - counter_read
+    - reposition
+    - escape
+    - pattern_exploitation
+  avoid_as_authority:
+    - spacing
+    - fine_precision
+    - reading
+    - exploitation
+    - protection
+    - posture
+    - reach
+    - displacement
+    - mobility_denial
+    - delayed_shrug_off
+    - self_cleansing
+
+competency_domains:
+  weapons:
+    primary: [attack, setup, pressure]
+    secondary: [mobility, disruption, precision]
+    rare_or_limited: [recovery, support]
+  armors:
+    primary: [defense, mitigation, stability]
+    secondary: [anti_displacement, survival_window, control]
+    rare_or_limited: [attack, mobility]
+  shields:
+    primary: [defense, interception, control]
+    secondary: [disruption, anti_displacement, setup]
+    rare_or_limited: [attack, support]
+  evasion:
+    primary: [mobility, defense, counter_positioning]
+    secondary: [setup, disruption, survival_window]
+    rare_or_limited: [mitigation, attack]
+  specializations:
+    primary: [setup, control, recovery, disruption]
+    secondary: [attack, defense, mobility, support, utility]
+    rare_or_limited: [pressure]
+  resistances:
+    primary: [defense, recovery, condition_reduction, survival_window]
+    secondary: [mitigation, control]
+    rare_or_limited: [attack, support]
+    role: hybrid_only
+    pure_techniques_allowed: false
+    note: >
+      Resistances are adaptation modifiers, not a standalone Technique school.
+      They should alter how another chosen domain behaves under a learned threat.
+
+access_model:
+  access_is_separate_from_scaling: true
+  note: >
+    Technique access should usually depend on origin plus minimum competency
+    rank and, when needed, profile, specialization, equipment, or state
+    conditions. Competency growth improves execution; access controls what kind
+    of trained expression is available.
+  common_access_factors:
+    - origin
+    - minimum_rank
+    - weapon_profile
+    - support_specialization
+    - equipment_requirement
+    - state_requirement
+
+technique_tiers:
+  - tier: 1
+    name: novice_access
+    minimum_rank: Novice
+    identity:
+      - one_clear_fantasy
+      - one_primary_interaction_surface
+      - simple_execution
+      - strong_constraints_or_narrow_window
+    typical_qualities:
+      - active_use
+      - short_duration
+      - low_systemic_complexity
+      - little_or_no_scene_warping_control
+  - tier: 2
+    name: adept_access
+    minimum_rank: Adept
+    identity:
+      - one_primary_interaction_surface
+      - one_meaningful_secondary_surface
+      - cleaner_reliability_or_broader_window_than_tier_1
+    typical_qualities:
+      - stronger_timing_access
+      - better_setup_conversion
+      - moderate_control_disruption_or_conditional_defense
+  - tier: 3
+    name: expert_access
+    minimum_rank: Expert
+    identity:
+      - multiple_coherent_system_surfaces
+      - stronger_reaction_persistence_or_zone_pressure
+      - higher_permission_to_alter_tempo_position_or_behavior
+    typical_qualities:
+      - serious_scene_leverage
+      - better_setup_to_consequence_conversion
+      - hybrid_requirements_more_common
+  - tier: 4
+    name: master_plus_access
+    minimum_rank: Master
+    identity:
+      - rare_high_impact_expression
+      - major_scene_or_encounter_influence
+      - strong_persistence_layered_timing_or_structural_control
+    typical_qualities:
+      - should_be_few
+      - should_be_costly_or_restricted
+      - should_gain_permission_not_just_output
+
+qa_budget:
+  purpose: >
+    First-pass balance control for Technique authoring. This does not prove
+    perfect balance, but it identifies Techniques whose pressure exceeds their
+    intended tier.
+  major_pressure_sources:
+    - strong_reactive_access
+    - position_or_lane_control
+    - zone_influence
+    - persistent_condition_pressure
+    - rhythm_manipulation
+    - attrition_manipulation
+    - threshold_manipulation_on_follow_up
+    - reliable_mitigation_or_stability
+    - multiple_major_surfaces_without_real_tradeoff
+  minor_pressure_sources:
+    - narrow_flat_bonus
+    - one_bounded_reroll_clause
+    - small_setup_clause
+    - short_lived_support_rider
+    - tightly_restricted_secondary_interaction
+  compensation_factors:
+    - higher_minimum_rank
+    - stronger_equipment_restriction
+    - narrow_trigger_window
+    - visible_setup_requirement
+    - meaningful_counterplay
+    - saving_roll_or_mitigation_window
+    - higher_rhythm_or_attrition_cost
+    - once_per_window_or_once_per_scene_limit
+  tier_expectations:
+    tier_1:
+      expected:
+        - one_major_surface
+        - at_most_one_minor_secondary_surface
+      avoid:
+        - strong_reactive_control_plus_persistence
+        - multiple_major_surfaces
+        - broad_scene_shaping
+    tier_2:
+      expected:
+        - one_major_surface
+        - one_secondary_surface
+      may_have:
+        - moderate_reactive_access
+        - moderate_setup_conversion
+    tier_3:
+      may_have:
+        - two_major_surfaces_if_coherent
+        - stronger_timing_and_control_permission
+        - hybrid_leverage
+      must_pay_with:
+        - access_difficulty
+        - cost
+        - restriction_load
+    tier_4:
+      may_have:
+        - large_scene_pressure
+        - layered_timing_logic
+        - heavy_persistence_or_encounter_leverage
+      expected:
+        - rare
+        - expensive
+        - restricted
+        - clearly_upper_tier
+  review_states:
+    - OK
+    - Watch
+    - Outlier
+
+template:
+  name: ""
+  name_es: ""
+  origin:
+    main: ""
+    secondary: []
+  category: utility
+  type: active
+  trigger: ""
+  requirements:
+    level: null
+    rank: null
+    technique_tier: null
+    weapon_profile: null
+    support_specializations: []
+    equipment: []
+    states: []
+    prerequisite_techniques: []
+  learning:
+    self_study:
+      allowed: true
+      study_hours: null
+      practice_hours: null
+      text_or_manual_required: false
+      notes: ""
+    guided_training:
+      allowed: true
+      study_hours: null
+      practice_hours: null
+      mentor_required: true
+      notes: ""
+    material_cost: null
+    access_notes: ""
+    final_validation: null
+  target: self
+  range: self
+  area: single
+  duration:
+    model: instant
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: null
+    attrition_cost: null
+    other: []
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: ""
+  effect: ""
+  scaling: ""
+  restrictions: []
+  tags: []

@@ -131,7 +131,7 @@ Fine distinctions matter because identity is built from practice. For example:
 
 - two characters with similar Wisdom may still feel very different if one has **Medicina** and the other has **Supervivencia**
 - two characters with similar Cunning may differ strongly through **Rastreo**, **Improvisación**, or **Engaño**
-- two characters with similar Tenacity may not become identical if their growth paths diverge through **Vigor**, **Marcha**, or **Aclimatación**
+- two characters with similar Tenacity may not become identical if their growth paths diverge through **Marcha**, **Aclimatación**, or **Tolerancia**
 
 ### Trainability Clause
 
@@ -179,22 +179,23 @@ A specialization does not mean a character is the only one allowed to attempt so
 Every character begins with **4 specializations at Level 1 / Novice**:
 
 - 3 from background (according to background category restrictions)
-- 1 universal: **Vigor**
+- 1 universal choice from **Tenacity**: **Marcha**, **Aclimatación**, or **Tolerancia**
 
 The same specialization cannot be chosen twice at creation. All others begin at Level 0 (Untrained).
 
-### Vigor — Universal Starting Specialization
+### Universal Starting Tenacity Specialization
 
 | Property | Value |
 | --- | --- |
 | Associated characteristic | Tenacity |
 | Starting level | 1 / Novice |
 | Synapsis at creation | +1 Tenacity |
+| Allowed choices | Marcha, Aclimatación, Tolerancia |
 | Stacks with | Species bonuses to Tenacity |
 
-Vigor represents the minimum physical endurance, effort adaptation, and tolerance to adverse conditions required to survive in this world. Every playable creature has developed at least an elemental degree of Vigor before becoming an adventurer.
+Every playable character begins with one Tenacity specialization at Rank 1. This reflects a basic truth of the setting: surviving in the world always requires some trained relation to effort, pain, endurance, or adverse conditions, but not every life expresses that resilience in the same way.
 
-Does not replace species bonuses to Tenacity — both accumulate. Unless a specific rule states otherwise, every character gains at least +1 to Tenacity from Vigor.
+This choice does not replace species bonuses to Tenacity — both accumulate. Because all eligible options are linked to Tenacity, every character still gains at least +1 Tenacity through starting Synapsis, but the expression of that resilience now differs by history.
 
 ---
 
@@ -207,8 +208,47 @@ The catalog uses broad content categories for organization. These are secondary 
 | Physical | STR, AGI, TEN | Bodily technique, movement, exertion, practical bodily control |
 | Mental | CUN, WIS, INT | Interpretation, cunning, attention, reading, situational reasoning |
 | Social | CMP, AUR, PRE | Influence, expression, projection, deception, interpersonal control |
-| Arts and Crafts | WIS | Making, repairing, preparing, extracting, applied practical work |
+| Arts and Crafts | WIS | Making, repairing, preparing, extracting, applied practical work, and concrete arts such as performance, music, dance, juggling, or puppetry |
 | Knowledge | INT | Formal study, academic interpretation, structured lore, technical intellectual understanding |
+
+### Artistic Domains Inside Arts and Crafts
+
+Artistic disciplines belong inside **Arts and Crafts**, not inside Presence by default.
+
+In the current model they should be treated as Wisdom-linked trainable practices, not as pure charisma expressions. Typical examples include:
+
+- `Performance`
+- `Music`
+- `Dance`
+- `Juggling`
+- `Puppetry`
+
+This preserves the distinction between:
+
+- **Presence** as social weight, projection, command, or suppression of attention
+- **Arts and Crafts** as practiced production, execution, rehearsal, and applied technique
+
+### Artistic and Craft Downtime Activity
+
+Characters may dedicate a `4-hour` block to producing an artistic or crafted piece.
+
+- The acting specialization must belong to **Arts and Crafts**
+- The chosen specialization must match the actual work produced
+- Minimum tools and materials are required
+- Each `4-hour` block grants one attempt
+- Failure grants no payout for that block
+
+The player chooses a named difficulty tier representing the complexity of the piece:
+
+| Difficulty | Reward |
+| --- | --- |
+| Foundational | `2d4` Obsidian Shekels |
+| Challenging | `2d6` Obsidian Shekels |
+| Rigorous | `2d8` Obsidian Shekels |
+| Demanding | `2d10` Obsidian Shekels |
+| Extreme | `2d12` Jade Shekels |
+
+The exact money chapter can later define how those currencies circulate, but this table already establishes the specialization-side procedure for downtime artistic and craft production.
 
 ---
 
@@ -361,12 +401,6 @@ This catalog establishes working identities and design boundaries. Full player-f
 - **Covers:** unstable surfaces, narrow supports, resisting loss of balance, controlled stance
 - **Does not cover:** emotional steadiness, silence, mounted control
 
-**Sigilo** · Physical
-
-- **Core domain:** avoiding physical detection through quiet movement, concealment, and bodily discretion
-- **Covers:** moving silently, hiding physically, minimizing presence in space
-- **Does not cover:** social blending, false identity, deception through acting
-
 **Equitación** · Physical
 
 - **Core domain:** controlling and acting through a mount with trained bodily coordination
@@ -378,12 +412,6 @@ This catalog establishes working identities and design boundaries. Full player-f
 ### Tenacity
 
 **Attribute identity:** bodily endurance, sustained functioning, persistence through stress, survival of internal or external strain.
-
-**Vigor** · Physical *(universal starting specialization)*
-
-- **Core domain:** sustaining demanding bodily effort
-- **Covers:** exertion, carrying strain, sustained muscular effort, remaining functional under physical load
-- **Does not cover:** long-distance travel pacing, adaptation to climate, pain tolerance in the broader sense
 
 **Marcha** · Physical
 
@@ -510,6 +538,11 @@ This catalog establishes working identities and design boundaries. Full player-f
 - **Core domain:** fine material work in small precious or intricate crafted objects
 - **Covers:** gems, delicate settings, small-value crafted pieces
 - **Does not cover:** blacksmithing, broad engineering, textile work
+
+**Note on artistic domains**
+
+- Performative arts are not Presence specializations by default.
+- Artistic domains belong inside **Arts and Crafts**. Typical examples include `Interpretation/Performance`, `Music`, `Dance`, `Juggling`, and `Puppetry`.
 
 **Ingeniería** · Knowledge
 
@@ -685,20 +718,34 @@ This catalog establishes working identities and design boundaries. Full player-f
 - **Covers:** mimicry, copying mannerisms, false behavioral reproduction
 - **Does not cover:** full acting as expressive performance, concealment as stealth, raw deception as lying
 
-**Actuación** · Social
+**Sigilo** · Social
 
-- **Core domain:** deliberate performed expression for an audience or observer
-- **Covers:** role performance, dramatic expression, embodied presentation
-- **Does not cover:** hidden blending, pure vocal persuasion, copying someone exactly
+- **Core domain:** reducing how much attention and perceptual registration the character generates in a scene
+- **Covers:** going unnoticed, minimizing visible or audible presence, slipping beneath active notice
+- **Does not cover:** false identity, explicit lying, fine motor execution by itself
 
-**Oratoria** · Social
+---
 
-- **Core domain:** spoken influence through structured speech and vocal command
-- **Covers:** speeches, formal address, inspiring or swaying through words
-- **Does not cover:** negotiation structure, acting, hidden manipulation
+## Catalog Depth Requirement
 
-**Disimulo** · Social
+The specialization catalog should not remain only a list of names and boundary notes.
 
-- **Core domain:** passing unnoticed or harmless in a social or public sense
-- **Covers:** blending into social expectation, lowering apparent importance, seeming ordinary
-- **Does not cover:** physical stealth, silence of movement, full falsehood as deception
+Each specialization entry in the authority catalog should eventually carry enough detail to support:
+
+- reader-facing prose in the corebook
+- consistent Narrator adjudication
+- clear differentiation from adjacent domains
+- later Technique prerequisite writing
+
+At minimum, each entry should define:
+
+- short functional description
+- full narrative / design description
+- usage fantasy
+- scope boundary
+- taxonomic placement
+- relationship to nearby domains
+- criterion of use for the Narrator
+- brief example situations
+
+Technique lists may remain empty until the Techniques chapter exists, but the specialization should already be rich enough to stand on its own as a trainable domain.

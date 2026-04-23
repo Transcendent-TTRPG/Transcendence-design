@@ -2,6 +2,8 @@
 
 This document provides a horizontal view of all mechanical systems in Transcendence, organized for ability design. Use it when designing an ability to see every system it can interact with and every surface it can modify.
 
+For the explicit doctrine of how Techniques should touch those systems, see [technique-interaction-framework.md](/Users/juangomez/Transcendence-workspace/Transcendence-design/docs/system/technique-interaction-framework.md).
+
 For authoritative numeric values, see [`data/system/`](../../data/system/).
 For detailed system descriptions, see the individual files in this folder.
 
@@ -22,6 +24,122 @@ For detailed system descriptions, see the individual files in this folder.
 | Rest & Recovery | `attrition-fatigue.yaml` | Recovery amount modifier, additional task access, favorable condition criteria |
 | ATB combat timeline | `combat-atb-timeline.md` (ADR) | Rhythm cost reduction, initial position bonus, reaction access |
 | Conditions & Resistances | `attrition-fatigue.yaml` | R.R. bonus by type, condition immunity, progression block |
+| General Rules | `general-rules.md` | Specific-over-general priority, strongest-condition replacement, rounding, tool dependency |
+| Action Structure | `atb-combat.yaml` + `atb-reference.md` | Action type gating, trigger windows, free/active/reactive classification |
+| Equipment | `equipment.yaml` | Weapon assignment, shield role, armor interaction, zone-based defense surfaces |
+| NPC / Creature Logic | `general-rules.md` | Trait-based exceptions, subsystem timing, encounter-layer pressure |
+
+---
+
+## Design Rule For Techniques
+
+Techniques in Transcendence should not be authored as:
+
+- flavor text plus damage
+- flavor text plus Rhythm discount
+- isolated named actions with no systemic consequences
+
+A good Technique should interact with at least one real system surface.
+
+Their main scope is:
+
+- exploration under pressure
+- combat and conflict
+- scene-level tactical or investigative action
+
+They are not the main design layer for:
+
+- broad interlude subsystems
+- personality-trait expression
+- long-form crafting or extraction loops
+
+Strong Techniques usually interact with:
+
+- `1` primary surface
+- `1` secondary surface
+
+and sometimes a third bounded surface if the fiction clearly supports it.
+
+The important point is that the interaction must come from the Technique's actual logic:
+
+- motion
+- pressure
+- equipment
+- trained method
+- bodily structure
+- timing
+- environment
+- social or perceptual leverage
+
+If a Technique cannot explain why it touches a system, it should not touch it.
+
+### Common Technique interaction surfaces
+
+| Surface | Typical use |
+| --- | --- |
+| Roll | Bonus, penalty, reroll gate, altered opposition |
+| Threshold | Raise/lower effective difficulty, change task pressure |
+| ATB | Rhythm, timing windows, reaction access, follow-up windows |
+| Attrition / Fatigue | Cost increase/reduction, strain acceleration, endurance pressure |
+| Conditions | Apply, worsen, suspend, exploit, or remove states |
+| Resistances | Call or modify `R.R.` logic through hybrid or delivery-based effects |
+| Position / Zone | Reposition, deny movement, expose lane, alter target zone logic |
+| Equipment | Change how weapon, shield, armor, or natural form matters |
+| Competency / Specialization | Require, amplify, or combine trained domains |
+| Recovery | Secondary surface: stabilize, restore, or extend post-scene function |
+| Environment | Use terrain, surfaces, weather, elements, or severity stage |
+| Manifestation | Rare and bounded: support detection or safe handling without becoming magic |
+
+### Good default pattern
+
+A strong Technique usually has:
+
+- one clear fantasy
+- one primary system interaction
+- one secondary interaction
+- one real cost, limitation, or access condition
+
+That gives the Technique identity without turning it into an arbitrary stack of modifiers.
+
+### System hygiene rule
+
+Not every valid interaction is a good interaction.
+
+When a Technique touches a system, also check:
+
+- whether a more specific rule should override a general one
+- whether it replaces or stacks with an existing effect
+- whether it depends on tools, equipment, or a valid physical interface
+- whether it changes what kind of action the user is actually taking
+
+This prevents good Technique ideas from becoming bad rules text.
+
+---
+
+## General Rules
+
+**Authority:** `docs/system/general-rules.md`
+
+These rules are not just editorial background. They are active design constraints for Techniques.
+
+### Core principles
+
+| Principle | Meaning for Technique design |
+| --- | --- |
+| Specific over general | A Technique may override a baseline rule, but only inside its own clearly bounded scope |
+| Round up | Any derived Technique value using fractions should assume upward rounding unless its own text says otherwise |
+| Strongest condition | A Technique should usually replace, refresh, or fail to stack against a stronger same-type effect |
+| Tool handling | Some Techniques should explicitly require valid tools, implements, or interfaces to function properly |
+| Narrative flexibility | Not a blank check for vagueness; Techniques still need stable default resolution |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Override a baseline rule in a narrow case | Specific-rule exception |
+| Refresh or replace an existing effect | Effect handling |
+| Require exact or substitute tools | Access and feasibility |
+| Create a bounded exception to rounding or timing | Technical override |
 
 ---
 
@@ -74,7 +192,7 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Characteristic Roll | C.R. | 1d10 + characteristic + Reference Level + bonuses | General aptitude without specific training |
 | Resistance Roll | R.R. | Varies by threat type (see below) | Withstanding harmful effects |
 | Specialization Roll | S.R. | 1d10 + specialization level + competency rank + characteristic + bonuses | Mastery in a specific skill |
-| Personality Roll | P.R. | 2d10 | When a personality trait decisively influences a situation |
+| Personality Roll | P.R. | 2d10 | Narrative pressure surface, but not a primary Technique-authoring target |
 
 ### R.R. variants by threat type
 
@@ -83,6 +201,15 @@ Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take hig
 | Poison / infection | 1d10 + TEN + resistances + bonuses |
 | Affliction / curses | 1d10 + CMP + resistances + bonuses |
 | Alteration | 1d10 + Resilience + resistances + bonuses |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Flat bonus or penalty to a named roll | Direct roll pressure |
+| Conditional reroll | Reliability shift |
+| Change which roll opposes the effect | Resolution change |
+| Convert direct opposition into threshold logic or the reverse | Contest structure change |
 
 ---
 
@@ -107,6 +234,93 @@ Threshold = Base + NR
 | 5 | Extrema / Extreme | 17 | 17 + NR |
 
 When the challenge is a direct opposed roll (another character), both sides roll and compare — no fixed threshold is used.
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Shift tier up or down | Difficulty pressure |
+| Modify effective `NR` | Scales task or environmental threat |
+| Reduce threshold for a narrow action family | Specialist access |
+| Increase threshold for a follow-up resisted action | Set-up pressure |
+
+---
+
+## Environmental Conditions
+
+**Authority:** `data/system/environmental-conditions.yaml`
+
+Environmental Conditions are a major Technique surface because they govern scene pressure when no narrower subsystem already owns the resolution.
+
+### Key structure
+
+| Layer | What it does |
+| --- | --- |
+| Natural vs. extranatural | Distinguishes world-consistent pressure from Limbo-derived distortion |
+| Severity | Sets the difficulty tier family |
+| `NR` | Scales the specific intensity of the current scene |
+| Hinder / Restrict / Accelerate | Changes what is penalized, limited, or made more exhausting |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Ignore or reduce a severity expression | Environmental mitigation |
+| Change whether a condition only hinders or fully restricts | Access preservation |
+| Prevent or trigger acceleration | Attrition pressure control |
+| Function differently in natural vs. extranatural scenes | World-logic interaction |
+| Require terrain, weather, heat, cold, water, darkness, or unstable footing | Context gating |
+
+---
+
+## Limbo Manifestations
+
+**Authority:** `data/system/limbo-manifestations.yaml`
+
+Techniques should stay non-magical, but some may still interact with manifestation logic in cautious, bounded ways.
+
+### Allowed interaction space
+
+| Surface | Effect type |
+| --- | --- |
+| Detection support | Help identify flow, vestige, or link presence |
+| Safe approach or handling | Improve interaction with manifestation-linked scenes |
+| Interpretation aid | Clarify what kind of manifestation is present |
+
+### Out of bounds for standard Techniques
+
+| Surface | Why not here |
+| --- | --- |
+| Creating supernatural energy or effects from nothing | Belongs to later Limbo / magic design |
+| Full manifestation control | Too far beyond trained non-magical Technique scope |
+
+---
+
+## Equipment
+
+**Authority:** `data/system/equipment.yaml`
+
+Equipment is not just a prerequisite list. It changes what kinds of Technique interactions make sense.
+
+### Key equipment surfaces
+
+| Surface | Meaning |
+| --- | --- |
+| Weapon assignment | Primary vs. auxiliary shapes cadence and sequence logic |
+| Armor type | Changes how Agility contributes to `D.R.` and what defended Techniques look like |
+| Shield role | Shared defensive equipment surface plus its own Technique identity |
+| Zone-based defense | Changes how attacks and defended reactions matter per body area |
+| Natural weapons | Use the same combat authoring layer through shared profiles |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Interact with a specific armor type | Defense expression |
+| Reward auxiliary/off-hand use | Sequence or support logic |
+| Change zone pressure | Body-area interaction |
+| Use shield value or block surfaces indirectly | Guard logic |
+| Require or exploit natural attack form | Shared profile access |
 
 ---
 
@@ -137,8 +351,8 @@ Untrained characters can still roll any specialization: formula = 1d10 + charact
 | Type | Per level bonus | Per rank bonus | Progression trigger |
 | --- | --- | --- | --- |
 | Weapons | +1 A.R. | +1 A.R. + 1 damage die | Successful `A.R.` with Learning Advantage, if the attack hits and deals damage |
-| Armors | +1 zone block (relevant type) | Master: reduce that armor type's movement penalty where applicable | Failed `D.R.` with Learning Advantage, if armor in the resolved zone absorbs impact |
-| Shields | — | Access to additional shield maneuvers (type-dependent) | Successful shield Techniques or shield maneuvers |
+| Armors | +1 zone block (relevant type) | No passive per-rank block bonus | Failed `D.R.` with Learning Advantage, if armor in the resolved zone absorbs impact |
+| Shields | — | Access to additional shield maneuvers; Master reduces equipped shield movement penalty by grade | Successful shield Techniques or shield maneuvers |
 | Evasion | +1 D.R. | +1 D.R. | Successful `D.R.` with Learning Advantage |
 | Specialization | +1 S.R. | +1 S.R.; on entering a new rank, +1 characteristic via Synapsis | Successful `S.R.` with Learning Advantage |
 | Resistances | +1 R.R. (specific type) | (see resistance subtypes) | Failed `R.R.` with Learning Advantage, if the effect is actually suffered |
@@ -154,6 +368,27 @@ Untrained characters can still roll any specialization: formula = 1d10 + charact
 | Affliction | +1 R.R. vs afflictions; +1 per rank during meditation |
 | Alteration | +1 R.R. vs alterations |
 | Curses | +1 to detect or resist curses |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Treat a competency as effectively higher for one Technique | Temporary expertise |
+| Unlock a Technique only with dual-root competency logic | Hybrid access |
+| Change what counts as the relevant competency in a narrow case | Resolution remapping |
+| Interact with progression trigger conditions | Growth-facing design |
+
+### NPC / Creature note
+
+Not all hostile entities use player-style progression.
+
+Creature Traits and encounter subsystems are valid Technique targets or interaction points when the fiction supports it.
+
+| Surface | Effect type |
+| --- | --- |
+| Delay or weaken a hostile subsystem | Encounter interaction |
+| Disable a creature Trait window | Targeted disruption |
+| Force a phase or behavior shift | Encounter pacing change |
 
 ---
 
@@ -172,7 +407,7 @@ S.R. = 1d10 + Specialization Level + Competency Rank + Associated Characteristic
 
 ### Starting specializations
 
-4 at Level 1 / Novice: 3 from background + 1 universal (Vigor → +1 TEN).
+4 at Level 1 / Novice: 3 from background + 1 universal Tenacity choice (+1 TEN via Synapsis).
 
 ### Design clauses (all four must pass)
 
@@ -205,7 +440,7 @@ S.R. = 1d10 + Specialization Level + Competency Rank + Associated Characteristic
 
 ## Attrition & Fatigue
 
-**Endurance formula:** 3 + TEN + Vigor rank (minimum 5 at creation)
+**Endurance formula:** 3 + (TEN × 2) (minimum 7 at creation after initial Tenacity Synapsis)
 
 Endurance is the character's. Attrition belongs to the scene. Fatigue is the consequence of excess.
 
@@ -241,11 +476,22 @@ Conditions accelerate Fatigue but do not replace Attrition. Three stages:
 | Restrict | Limits available actions or adds difficulty |
 | Accelerate | Adds +1 Attrition cost to relevant actions |
 
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Reduce or increase Attrition cost | Strain manipulation |
+| Delay, project, or settle pressure differently | Scene pacing |
+| Function while under Fatigue pressure | Endurance expression |
+| Make hostile scene pressure matter sooner or later | Tempo through exhaustion |
+
 ---
 
 ## Rest & Recovery
 
 **Authoritative values:** `attrition-fatigue.yaml`
+
+For Techniques, this is a secondary surface only. It supports scene continuity and short-term stabilization, not full interlude-system authoring.
 
 ### Short Rest
 
@@ -275,9 +521,9 @@ Fatigue levels automatically drop when Attrition recovery pushes the total below
 | Surface | Effect type |
 | --- | --- |
 | +N Attrition recovered during Short Rest | Recovery boost |
-| Unlock additional tasks during rest | Access expansion |
 | Expand favorable condition criteria | Condition flexibility |
 | Reduce Attrition recovery threshold for Full Rest | Efficiency boost |
+| Reduce interruption risk during rest | Safety extension |
 
 ---
 
@@ -344,11 +590,28 @@ A reaction intervenes outside normal activation at a trigger (incoming attack, t
 - Attrition cost: higher than the equivalent proactive action — executed under pressure with little margin
 - Consequence: marker advances; future ATB position shifts accordingly
 
+### Action structure surfaces
+
+The corebook's action taxonomy matters for Technique design.
+
+| Action type | Design implication |
+| --- | --- |
+| Active | Uses normal activation space and standard timing assumptions |
+| Reactive | Needs a trigger and changes future ATB position |
+| Free | Must remain small enough not to replace a real action |
+
+| Surface | Effect type |
+| --- | --- |
+| Change an action from active to reactive in a narrow case | Triggered access |
+| Turn a meaningful act into a free action only with strong restriction | Tempo exception |
+| Add or remove trigger windows | Reaction design |
+| Make a free action stop being free under pressure | Scene escalation |
+
 ---
 
 ## Backgrounds
 
-Starting point for all characters: 4 specializations at Level 1 / Novice (3 from background + 1 universal: Vigor).
+Starting point for all characters: 4 specializations at Level 1 / Novice (3 from background + 1 universal Tenacity choice).
 
 | Background | Major affinity | Starting specializations |
 | --- | --- | --- |
@@ -358,7 +621,7 @@ Starting point for all characters: 4 specializations at Level 1 / Novice (3 from
 | Custodian | Lore | 2 lore + 1 social or mental |
 | Noble | Social | 1 social + 2 any |
 
-Vigor (universal): +1 TEN at creation. Stacks with species bonuses.
+Universal Tenacity choice: +1 TEN at creation. Stacks with species bonuses.
 
 ---
 

@@ -1,18 +1,23 @@
 starting_specializations_count: 3        # from background
-total_starting_specializations: 4        # 3 from background + 1 universal (Vigor)
+total_starting_specializations: 4        # 3 from background + 1 universal (any Tenacity choice)
 starting_level: 1
 starting_rank: novice
 same_specialization_twice: false
 
 universal_starting_specialization:
-  id: vigor
-  name: Vigor
+  category: tenacity
   associated_characteristic: TEN
+  choice: any_tenacity_specialization
+  options: [Marcha, Aclimatación, Tolerancia]
   starting_level: 1
   starting_rank: novice
   synapsis_at_creation: "+1 TEN"
   stacks_with_species_bonus: true
-  description: Minimum physical endurance required to survive in this world; granted to every character regardless of background
+  description: >
+    Every character begins with one Tenacity specialization of their choice at Level 1/Novice.
+    This represents the foundation of their physical resilience — how they endure the world,
+    not a single universal trait. A seasoned traveler may choose Marcha; a soldier who has
+    taken many hits may choose Tolerancia; a wilderness survivor may choose Aclimatación.
 
 backgrounds:
   - id: martial_artist
@@ -21,7 +26,7 @@ backgrounds:
     starting_specializations:
       - category: physical
         count: 2
-      - category: mental
+      - category: mental, social or lore
         count: 1
     special_rule: May replace any starting natural weapon competencies with crafted weapon competencies
     description: Devoted to bodily perfection through combat schools, warrior clans, arenas, or discipline rituals
@@ -32,7 +37,7 @@ backgrounds:
     starting_specializations:
       - category: arts_and_crafts
         count: 2
-      - category: lore_or_social
+      - category: any
         count: 1
     description: Dedicated to transforming matter into useful, beautiful, or dangerous objects
 
@@ -42,7 +47,7 @@ backgrounds:
     starting_specializations:
       - category: mental
         count: 2
-      - category: physical
+      - category: physical, social or lore
         count: 1
     description: Formed by the road — developed ingenuity, intuition, and adaptation across frontiers and ruins
 
@@ -52,7 +57,7 @@ backgrounds:
     starting_specializations:
       - category: lore
         count: 2
-      - category: social_or_mental
+      - category: physical, mental or social
         count: 1
     description: Heir to traditions tasked with preserving knowledge — archives, temples, libraries, guardian orders
 

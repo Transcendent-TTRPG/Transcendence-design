@@ -1,0 +1,285 @@
+taxonomy:
+  canonical_term: "Natural Attack Form"
+  purpose: "Inverse mapping layer for natural combat that links bodily attack logic to compatible Weapon Technique Profiles."
+  reading_rule:
+    - "A natural attack form does not create a separate Technique school by itself."
+    - "Each form should map to existing Weapon Technique Profiles whenever possible."
+    - "If a form cannot map cleanly, that may justify a new profile, a species-specific exception, or a restriction note, but not a separate subsystem by default."
+  required_fields:
+    - name
+    - contact_logic
+    - combat_role
+    - damage_identity
+    - compatible_profiles
+    - restricted_profiles
+    - identity_notes
+  optional_fields:
+    - species_notes
+    - delivery_notes
+    - environmental_dependence
+    - profile_specific_caveats
+  template:
+    name: "Canonical natural form name"
+    contact_logic: "What kind of bodily contact the form creates"
+    combat_role: "Main offensive or defensive role"
+    damage_identity: "What kind of harm or pressure it tends to produce"
+    compatible_profiles: []
+    restricted_profiles: []
+    identity_notes: "Why those mappings make sense"
+
+forms:
+  - id: bite
+    name: "Bite"
+    contact_logic: "Close puncture, clamp, tearing bite, or bite-driven hold"
+    combat_role: "Committed close threat"
+    damage_identity: "Puncture, tear, pressure, invasive contact"
+    compatible_profiles:
+      - "Perforation"
+      - "Charge"
+      - "Rend"
+      - "Shadow Pressure"
+    restricted_profiles:
+      - "Bastion"
+      - "Ricochet"
+      - "Precision"
+    identity_notes: "Bite supports deep entry, brutal close pressure, and predatory commitment. It maps well to piercing or tearing profiles, but usually not to stationary defense or ranged geometry."
+
+  - id: tail
+    name: "Tail"
+    contact_logic: "Sweep, push, spoil, off-line collision, or flexible redirection depending on anatomy"
+    combat_role: "Space denial, interruption, repositioning"
+    damage_identity: "Displacement, disruption, side-angle impact"
+    compatible_profiles:
+      - "Interception"
+      - "Line Control"
+      - "Torsion"
+      - "Interruption"
+      - "Impact"
+    restricted_profiles:
+      - "Precision"
+      - "Ricochet"
+      - "Bastion"
+    identity_notes: "Tail forms are excellent at changing lanes and angles. Some tails can also slam, but most are better at control and spoil than at precise or ballistic delivery."
+
+  - id: claw
+    name: "Claw"
+    contact_logic: "Rake, hook, slash, tear, or fast contact from short reach"
+    combat_role: "Aggressive close pressure"
+    damage_identity: "Cut, tear, opportunistic opening"
+    compatible_profiles:
+      - "Flow"
+      - "Shadow Pressure"
+      - "Rend"
+      - "Skirmish"
+      - "Unpredictability"
+    restricted_profiles:
+      - "Bastion"
+      - "Precision"
+      - "Ricochet"
+    identity_notes: "Claws sit naturally between light predation and tearing offense. They map strongly to mobile and invasive profiles."
+
+  - id: shell
+    name: "Shell"
+    contact_logic: "Brace, cover, absorb, slam, or hold through mass and structure"
+    combat_role: "Anchor, protect, absorb, occasional impact"
+    damage_identity: "Protected endurance, blunt contact, defended collision"
+    compatible_profiles:
+      - "Bastion"
+      - "Interception"
+      - "Impact"
+      - "Line Control"
+    restricted_profiles:
+      - "Shadow Pressure"
+      - "Precision"
+      - "Torsion"
+    identity_notes: "Shells are structural. They naturally support holding, covering, and body-first impact, not deceptive or highly flexible play."
+
+  - id: beak
+    name: "Beak"
+    contact_logic: "Puncture, snap, peck, or hooked edge contact depending on form"
+    combat_role: "Precise strike or tearing pick"
+    damage_identity: "Puncture, cut, invasive point pressure"
+    compatible_profiles:
+      - "Perforation"
+      - "Deflection"
+      - "Rend"
+      - "Precision"
+    restricted_profiles:
+      - "Bastion"
+      - "Torsion"
+      - "Volley"
+    identity_notes: "Beaks can behave like points or sharp edges. They fit accuracy and tearing better than anchoring or flexible redirection."
+
+  - id: trunk
+    name: "Trunk"
+    contact_logic: "Grab, push, sweep, wrap, and short-range structural manipulation"
+    combat_role: "Control, interruption, positional dominance"
+    damage_identity: "Displacement, crush, redirection"
+    compatible_profiles:
+      - "Line Control"
+      - "Torsion"
+      - "Interruption"
+      - "Bastion"
+    restricted_profiles:
+      - "Precision"
+      - "Ricochet"
+      - "Shadow Pressure"
+    identity_notes: "Trunks excel at spatial authority and manipulative contact. They are poor fits for stealthy or ballistic profiles."
+
+  - id: tusk
+    name: "Tusk"
+    contact_logic: "Committed forward puncture with body follow-through"
+    combat_role: "Breakthrough, brutal entry"
+    damage_identity: "Puncture, wedge force, structural opening"
+    compatible_profiles:
+      - "Perforation"
+      - "Charge"
+      - "Sunder"
+    restricted_profiles:
+      - "Torsion"
+      - "Ricochet"
+      - "Bastion"
+    identity_notes: "Tusks are excellent at forcing entry and breaking resistant lines, but they do not support flexible or ranged logic well."
+
+  - id: horn
+    name: "Horn"
+    contact_logic: "Forward-drive wedge, puncture, or heavy committed impact"
+    combat_role: "Breakthrough, collision, structural breach"
+    damage_identity: "Puncture, impact, breaking force"
+    compatible_profiles:
+      - "Perforation"
+      - "Charge"
+      - "Sunder"
+      - "Impact"
+    restricted_profiles:
+      - "Shadow Pressure"
+      - "Ricochet"
+      - "Torsion"
+    identity_notes: "Horns naturally bridge piercing and crashing entries. They are one of the clearest natural matches for committed assault profiles."
+
+  - id: stinger
+    name: "Stinger"
+    contact_logic: "Fast puncture delivery of invasive or degrading contact"
+    combat_role: "Inject, weaken, punish brief openings"
+    damage_identity: "Puncture, toxin, persistence"
+    compatible_profiles:
+      - "Perforation"
+      - "Corrosion"
+      - "Shadow Pressure"
+      - "Precision"
+    restricted_profiles:
+      - "Bastion"
+      - "Impact"
+      - "Line Control"
+    identity_notes: "Stingers are ideal for puncture plus hostile residue. They are usually too small or specialized for anchoring or blunt-force roles."
+
+  - id: quills_spines
+    name: "Quills / Spines"
+    contact_logic: "Projected shard, repeated spine release, or embedded puncture"
+    combat_role: "Ranged harassment or pressure"
+    damage_identity: "Puncture, persistence, repeated ranged threat"
+    compatible_profiles:
+      - "Precision"
+      - "Volley"
+      - "Ricochet"
+      - "Corrosion"
+    restricted_profiles:
+      - "Bastion"
+      - "Torsion"
+      - "Charge"
+    identity_notes: "Quills and spines sit naturally in the ranged family. If they carry toxin or residue, Corrosion also fits well."
+
+  - id: tongue_tendril
+    name: "Tongue / Tendril"
+    contact_logic: "Lash, wrap, snap, redirect, fake line, or off-axis contact"
+    combat_role: "Disruption, unusual angle entry, control"
+    damage_identity: "Flexible contact, interference, angle theft"
+    compatible_profiles:
+      - "Torsion"
+      - "Interruption"
+      - "Unpredictability"
+      - "Skirmish"
+    restricted_profiles:
+      - "Bastion"
+      - "Perforation"
+      - "Sunder"
+    identity_notes: "Tongues and tendrils are ideal for weird contact geometry and timing spoils, but generally poor for rigid force-through profiles."
+
+  - id: forelimb_smash
+    name: "Forelimb Smash"
+    contact_logic: "Blunt committed strike through body or limb mass"
+    combat_role: "Collapse posture, punish contact, shock the line"
+    damage_identity: "Impact, disruption, force transfer"
+    compatible_profiles:
+      - "Impact"
+      - "Charge"
+      - "Line Control"
+    restricted_profiles:
+      - "Precision"
+      - "Ricochet"
+      - "Shadow Pressure"
+    identity_notes: "Heavy forelimb forms excel at mass and collision. They are bad fits for precision or stealth-driven play."
+
+  - id: fluid_projection
+    name: "Fluid Projection"
+    contact_logic: "Projected spit, acid, toxin, or pressurized biological discharge"
+    combat_role: "Ranged weakening, harassment, residue delivery"
+    damage_identity: "Precision hit, persistent degradation, repeated pressure"
+    compatible_profiles:
+      - "Precision"
+      - "Volley"
+      - "Ricochet"
+      - "Corrosion"
+    restricted_profiles:
+      - "Bastion"
+      - "Charge"
+      - "Flow"
+    identity_notes: "Fluid projection covers both clean targeted shots and degrading residues. Its profile spread depends on whether the biology emphasizes aim, cadence, rebound logic, or hostile substance."
+
+  - id: pincer_mandible_clamp
+    name: "Pincer / Mandible Clamp"
+    contact_logic: "Seize, clamp, crush, pin, or punish escape through rigid opposing force"
+    combat_role: "Capture, hold, positional punishment"
+    damage_identity: "Crush, retention, trap pressure"
+    compatible_profiles:
+      - "Interruption"
+      - "Line Control"
+      - "Impact"
+      - "Sunder"
+    restricted_profiles:
+      - "Ricochet"
+      - "Precision"
+      - "Skirmish"
+    identity_notes: "Pincers and crushing mandibles excel at committing to a target and denying clean escape. They are strong fits for stop-and-hold combat, not for light mobility or ballistic logic."
+
+  - id: hoof_trample
+    name: "Hoof / Trample"
+    contact_logic: "Stomp, overrun, drive-through impact, or repeated body-weight strike through locomotion"
+    combat_role: "Pressure by advance, collapse footing, punish prone or crowded targets"
+    damage_identity: "Impact, anti-displacement, shock through mass and motion"
+    compatible_profiles:
+      - "Charge"
+      - "Impact"
+      - "Line Control"
+      - "Sunder"
+    restricted_profiles:
+      - "Precision"
+      - "Torsion"
+      - "Shadow Pressure"
+    identity_notes: "Hooves and trampling forms are about momentum and grounded force. They work well when movement itself becomes the attack, not when the fiction asks for fine control or deceptive entry."
+
+  - id: wing_buffet
+    name: "Wing Buffet"
+    contact_logic: "Broad off-line impact, gust-like spoil through massed wing motion, or balance-breaking contact from the side"
+    combat_role: "Disrupt approach, reposition others, destabilize clusters"
+    damage_identity: "Displacement, disruption, broad impact pressure"
+    compatible_profiles:
+      - "Interception"
+      - "Line Control"
+      - "Skirmish"
+      - "Interruption"
+    restricted_profiles:
+      - "Perforation"
+      - "Sunder"
+      - "Precision"
+    identity_notes: "Wing buffets are excellent at ruining tempo and lane control without needing deep penetration. They fit mobile spatial control far better than rigid breakthrough or exact strike profiles."

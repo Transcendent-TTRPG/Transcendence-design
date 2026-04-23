@@ -85,14 +85,18 @@ defense_resolution:
 shield_types:
   light:
     defense_formula: "grade"
+    movement_penalty_formula: "0"
   medium:
     defense_formula: "grade + 1"
+    movement_penalty_formula: "grade"
   heavy:
     defense_formula: "grade * 2"
+    movement_penalty_formula: "grade * 2"
   note: >
     Shield value applies as a general bonus to D.R. Shield competency is tied primarily
     to Techniques (intercept, protect, redirect, cover) rather than scaling the passive
-    shield value directly.
+    shield value directly. Reaching Master with shield competency reduces the equipped
+    shield's movement penalty by grade (minimum 0).
 
 hit_location:
   scope: npc_to_pc_only

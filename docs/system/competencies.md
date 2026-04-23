@@ -45,6 +45,7 @@ Mastery with a specific weapon type.
 
 - Each **level**: +1 to A.R.
 - Each **rank**: +1 to A.R. + one additional die to I.R.
+- Weapon-rooted Techniques should normally pass through shared **Weapon Technique Profiles** rather than requiring a separate Technique tree for every individual item
 - Progression: successful `A.R.` with Learning Advantage, when the attack hits and deals damage using that weapon or object competency.
 
 ### Armors
@@ -52,14 +53,14 @@ Efficient use of armor by type.
 
 - Split into **Light Armor**, **Medium Armor**, and **Heavy Armor**
 - Each **level**: +1 to zone block when that armor type is present in the resolved hit zone
-- Reaching **Master**: reduce the movement penalty of that armor type by one step where applicable
+- Armor competency does **not** gain a passive per-rank block bonus; block already stacks with base category, material, and grade
 - Progression: failed `D.R.` with Learning Advantage, when the hit resolves through an armored zone and that armor actually reduces impact
 
 ### Shields
 Technical mastery of shield use.
 
-- Shield value contributes generally to `D.R.` as equipment
 - Each **rank**: access to additional shield maneuvers (type-dependent)
+- Reaching **Master**: reduce the movement penalty imposed by the equipped shield by `grade` (minimum 0)
 - Progression: successfully use shield Techniques, interceptions, or dedicated shield maneuvers
 
 ### Evasion

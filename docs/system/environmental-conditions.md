@@ -135,7 +135,6 @@ The following specializations interact directly with environmental conditions:
 | --- | --- | --- |
 | Aclimatación (Tenacity) | Natural — environmental | Adapting to hostile or extreme environments |
 | Tolerancia (Tenacity) | Natural — physiological | Enduring pain and physical strain from conditions |
-| Vigor (Tenacity) | Natural — sustained effort | Maintaining function under physical load |
 | Equilibrio (Agility) | Natural — terrain | Reactive response to involuntary balance loss |
 | Supervivencia (Wisdom) | Natural — field | Practical decision-making in hostile environments |
 

@@ -1,0 +1,1617 @@
+taxonomy:
+  canonical_term:
+    es: Perfiles de Tecnica de Arma
+    en: Weapon Technique Profiles
+  definition: >
+    A thematic and functional combat layer between weapon competency and
+    concrete Techniques. Profiles group Techniques by combat fantasy, effect
+    family, timing identity, and compatibility with weapon families or natural
+    attack forms.
+
+design_intent:
+  main_uses:
+    - avoid_per_item_technique_trees
+    - support_natural_weapons_inside_the_same_technique_ecosystem
+    - create_combat_identity_without_reintroducing_old_action_point_combo_logic
+  not_for:
+    - single_item_variants
+    - isolated_species_only_schools_by_default
+    - global_combo_rules
+
+connection_rules:
+  sits_between:
+    - weapon_competency
+    - technique_authoring
+    - natural_attack_forms
+  depends_on:
+    - techniques_taxonomy
+    - competency_domains
+    - atb_timing_model
+  note: >
+    Profiles shape timing identity and Technique clustering, but they do not
+    grant automatic repeated-use bonuses or generic combo exceptions.
+
+atb_rule:
+  old_combo_descriptor_model_carried_over: false
+  profiles_are_not_global_combo_engines: true
+  explicit_chain_logic_must_live_in_technique: true
+
+required_fields:
+  - name
+  - family
+  - fantasy_core
+  - compatible_origins
+  - natural_weapon_compatibility
+  - primary_tags
+  - secondary_tags
+  - rare_or_limited_tags
+  - typical_types
+  - usual_cost_profile
+  - timing_identity
+  - identity_notes
+  - should_not_do
+
+authoring_questions:
+  - Does this belong to an existing combat profile?
+  - If not, is the gap really a new profile and not just a new Technique?
+  - Could a natural attack form use this same profile?
+  - Does the profile shape ATB timing without creating a global combo rule?
+
+template:
+  name: ""
+  family: ""
+  fantasy_core: ""
+  compatible_origins:
+    weapon_competencies: []
+    weapon_families: []
+    natural_attack_forms: []
+    secondary_requirements: []
+  natural_weapon_compatibility:
+    allowed: false
+    notes: ""
+  primary_tags: []
+  secondary_tags: []
+  rare_or_limited_tags: []
+  typical_types: []
+  usual_cost_profile:
+    rhythm_tendency: ""
+    attrition_tendency: ""
+    notes: ""
+  timing_identity: ""
+  identity_notes: ""
+  should_not_do: []
+
+profiles:
+  - name: Perforation
+    family: Spear / thrusting reach / piercing natural impact
+    fantasy_core: >
+      Driving force through a narrow line to break distance, threaten entry,
+      and punish exposed forward commitment.
+    compatible_origins:
+      weapon_competencies:
+        - Spear
+      weapon_families:
+        - thrusting_polearms
+        - long_thrusting_weapons
+        - dedicated_piercing_reach_weapons
+      natural_attack_forms:
+        - horn
+        - tusk
+        - fang
+        - beak
+        - stinger
+      secondary_requirements:
+        - may_pair_with_evasion
+        - may_pair_with_shield
+        - may_pair_with_tracking
+        - may_pair_with_tolerance
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when they create a committed
+        piercing line rather than broad tearing, blunt crashing, or flexible
+        constriction.
+    primary_tags:
+      - attack
+      - pressure
+      - precision
+    secondary_tags:
+      - setup
+      - mobility
+      - disruption
+    rare_or_limited_tags:
+      - control
+      - defense
+      - recovery
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition when used as disciplined threat projection; medium when
+        built around repeated committed drives or harsh body-weight transfer.
+    timing_identity: >
+      Best in entry denial, lane control, decisive extension, and punish
+      windows created by enemy advance, overreach, or exposed line.
+    identity_notes: >
+      Perforation Techniques should feel linear, committed, and exact. They
+      are about reach discipline, point-first pressure, body alignment, and
+      decisive forward authority. The user wins by claiming the line before the
+      opponent can safely cross it.
+    should_not_do:
+      - wide_sweeping_multi_target_control
+      - heavy_blunt_impact_identity
+      - concealment_or_shadow_play
+      - abstract_condition_removal
+      - purely_defensive_bastion_play
+  - name: Interception
+    family: Shield interception / line denial / protective redirection
+    fantasy_core: >
+      Stepping into the hostile line at the last moment to catch, divert,
+      absorb, or spoil what was meant for someone else or for a more vulnerable
+      opening.
+    compatible_origins:
+      weapon_competencies:
+        - Shield
+      weapon_families:
+        - shields
+        - guard_tools
+        - dedicated_protective_off_hand_structures
+      natural_attack_forms:
+        - tail
+        - shell
+        - heavy_forelimb
+        - plated_crest
+      secondary_requirements:
+        - may_pair_with_armor
+        - may_pair_with_evasion
+        - may_pair_with_leadership
+        - may_pair_with_tolerance
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can meaningfully
+        cover, catch, block, or spoil a hostile line. It should not be used by
+        natural attacks whose identity is only tearing, piercing, or pure
+        offense.
+    primary_tags:
+      - defense
+      - interception
+      - control
+    secondary_tags:
+      - setup
+      - disruption
+      - anti_displacement
+    rare_or_limited_tags:
+      - attack
+      - mobility
+      - recovery
+    typical_types:
+      - reactive
+      - active
+      - passive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition when used as disciplined coverage; medium when
+        repeatedly absorbing force or protecting others under heavy pressure.
+    timing_identity: >
+      Lives in reaction windows, ally coverage, lane denial, body-first
+      protection, and spoil timing against incoming strikes, charges, or hostile
+      entry attempts.
+    identity_notes: >
+      Interception Techniques should feel protective without becoming static.
+      They are about reading the line early enough to occupy it, turning
+      defense into spatial control, and making hostile momentum hit the wrong
+      surface, angle, or timing. The user alters what reaches the target rather
+      than merely enduring it.
+    should_not_do:
+      - stealth_or_concealment_identity
+      - pure_ranged_pressure
+      - long_form_recovery_as_primary_role
+      - wide_offensive_sweeping_damage
+      - abstract_nonspatial_condition_cleansing
+  - name: Flow
+    family: Long-blade flow / continuous edge control / elegant offensive transition
+    fantasy_core: >
+      Maintaining dangerous continuity through stance, edge, and movement so
+      that one action naturally opens the next without losing authority over
+      spacing.
+    compatible_origins:
+      weapon_competencies:
+        - Long Blades
+      weapon_families:
+        - swords
+        - sabres
+        - curved_long_blades
+        - balanced_cutting_weapons
+      natural_attack_forms:
+        - claw
+        - forelimb_blade
+        - elongated_edge_like_appendage
+      secondary_requirements:
+        - may_pair_with_evasion
+        - may_pair_with_balance
+        - may_pair_with_focus
+        - may_pair_with_leadership
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when they sustain controlled
+        cutting continuity or edge-like directional pressure. It should not be
+        used by forms whose identity is only blunt crashing, constriction, or
+        committed piercing.
+    primary_tags:
+      - attack
+      - mobility
+      - setup
+    secondary_tags:
+      - pressure
+      - defense
+      - disruption
+    rare_or_limited_tags:
+      - recovery
+      - interception
+      - control
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition when movement stays clean; medium when the user
+        keeps chaining transitions under hard pressure or extended commitment.
+    timing_identity: >
+      Lives in tempo carry, repositioning between exchanges, angle-taking,
+      continuation after contact, and techniques that turn a successful
+      movement or cut into the next advantageous state.
+    identity_notes: >
+      Flow Techniques should feel graceful without becoming decorative. They
+      are about continuity, edge authority, and the ability to keep a blade
+      alive through transitions so that the opponent keeps answering the
+      previous threat while the next one is already forming. The user should
+      feel mobile, composed, and dangerous in motion.
+    should_not_do:
+      - static_bastion_identity
+      - heavy_impact_breaking_play
+      - concealment_or_assassination_identity
+      - pure_ranged_projection
+      - abstract_condition_removal
+  - name: Shadow Pressure
+    family: Short-blade shadow pressure / opportunistic close-range exploitation
+    fantasy_core: >
+      Staying close, hard to read, and immediately dangerous by turning
+      concealment, distraction, angle, or hesitation into fast pressure before
+      the opponent can reset.
+    compatible_origins:
+      weapon_competencies:
+        - Short Blades
+        - Daggers
+      weapon_families:
+        - knives
+        - daggers
+        - short_stabbing_blades
+        - concealment_ready_close_weapons
+      natural_attack_forms:
+        - fang
+        - claw
+        - small_stinger
+        - hooked_beak
+      secondary_requirements:
+        - may_pair_with_stealth
+        - may_pair_with_deception
+        - may_pair_with_imitation
+        - may_pair_with_intuition
+        - may_pair_with_evasion
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when they create opportunistic
+        close pressure through speed, angle, concealment, or sudden insertion.
+        It should not be used by natural forms whose identity is broad tearing,
+        heavy impact, or open frontal domination.
+    primary_tags:
+      - attack
+      - stealth
+      - pressure
+    secondary_tags:
+      - mobility
+      - setup
+      - disruption
+    rare_or_limited_tags:
+      - defense
+      - control
+      - recovery
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition for short opportunistic bursts; medium Attrition when
+        repeatedly forcing entry, concealment transitions, or unstable close
+        pressure under heavy awareness.
+    timing_identity: >
+      Lives in surprise windows, blind-side entry, post-distraction pressure,
+      punishment of hesitation, and rapid close exchanges where the user
+      strikes before the enemy reorients.
+    identity_notes: >
+      Shadow Pressure Techniques should feel predatory, intimate, and
+      immediate. They are about owning the moment when the opponent loses clean
+      read, not about long duels of visible dominance. The user should feel
+      like a threat that appears from the wrong angle, exploits a tiny lapse,
+      and keeps the pressure too close to comfortably answer.
+    should_not_do:
+      - open_line_reach_dueling
+      - static_guardian_play
+      - heavy_blast_or_impact_identity
+      - broad_multi_target_sweeps
+      - abstract_noncontact_support
+  - name: Line Control
+    family: Line control / spatial denial / forced repositioning
+    fantasy_core: >
+      Deciding where bodies can safely stand, pass, or commit by shaping
+      lanes, edges, and collision points through pressure applied to space
+      rather than to damage alone.
+    compatible_origins:
+      weapon_competencies:
+        - Shield
+      weapon_families:
+        - shields
+        - broad_control_surfaces
+        - push_oriented_defensive_tools
+      natural_attack_forms:
+        - tail
+        - heavy_forelimb
+        - shell
+        - trunk
+      secondary_requirements:
+        - may_pair_with_armor
+        - may_pair_with_strength
+        - may_pair_with_balance
+        - may_pair_with_interception
+        - may_pair_with_engineering
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can push, redirect,
+        block passage, sweep space, or create enforced movement without relying
+        on pure damage as the main identity.
+    primary_tags:
+      - control
+      - anti_displacement
+      - disruption
+    secondary_tags:
+      - defense
+      - setup
+      - pressure
+    rare_or_limited_tags:
+      - attack
+      - recovery
+      - stealth
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: medium
+      notes: >
+        Medium Attrition when repeatedly contesting space, shifting bodies, or
+        holding denial under pressure.
+    timing_identity: >
+      Lives in choke points, ally protection geometry, hostile path denial,
+      trap shaping, push timing, and moments where one forced step or blocked
+      lane changes the whole exchange.
+    identity_notes: >
+      Line Control Techniques should feel territorial and positional. They are
+      about making the battlefield narrower, worse, or more dangerous for the
+      opponent and safer or more useful for allies. The user should feel like
+      someone who governs movement and commitment, not like someone who merely
+      tanks hits.
+    should_not_do:
+      - pure_stationary_bastion_identity
+      - concealment_or_assassination_play
+      - long_range_projectile_pressure
+      - abstract_condition_cleansing
+      - high_precision_dueling_as_primary_identity
+  - name: Ricochet
+    family: Thrown ricochet / angled projection / rebound pressure
+    fantasy_core: >
+      Using angle, impact surface, and projectile behavior to create pressure
+      that does not follow the most obvious direct line.
+    compatible_origins:
+      weapon_competencies:
+        - Thrown Weapons
+        - Ranged Weapons
+      weapon_families:
+        - throwing_blades
+        - throwing_spikes
+        - rebound_capable_projectiles
+        - hard_small_missiles
+      natural_attack_forms:
+        - projected_quill
+        - shard_burst
+        - hardened_fluid_shot
+      secondary_requirements:
+        - may_pair_with_precision
+        - may_pair_with_focus
+        - may_pair_with_engineering
+        - may_pair_with_perception
+        - may_pair_with_intuition
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when the projectile or expelled
+        attack can realistically skip, rebound, fragment in a controlled line,
+        or continue through shaped impact logic. It should not be used by
+        natural attacks whose identity is only spray, mist, or pure
+        magical-seeming spread.
+    primary_tags:
+      - attack
+      - setup
+      - disruption
+    secondary_tags:
+      - pressure
+      - precision
+      - control
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - stealth
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition when geometry is favorable; medium when
+        repeated angle calculation, environmental exploitation, or chained
+        projection is forced under pressure.
+    timing_identity: >
+      Lives in indirect lines, cover-denial, rebound setups, multi-angle
+      threat, and moments where the environment itself becomes part of the
+      hostile trajectory.
+    identity_notes: >
+      Ricochet Techniques should feel clever, sharp, and materially grounded.
+      They are about weaponizing surfaces, rebounds, skips, and continuation
+      paths so that the enemy is threatened from a line they did not fully own
+      or expect. The user should feel like someone who sees the battlefield as
+      geometry, not just as straight-line range.
+    should_not_do:
+      - pure_volume_fire_identity
+      - magical_homing_behavior
+      - concealment_or_melee_assassination_identity
+      - massive_area_blast_as_primary_mode
+      - abstract_condition_removal
+  - name: Precision
+    family: Precision shot / selective impact / exact ranged pressure
+    fantasy_core: >
+      Placing force exactly where it matters by reading distance, movement,
+      exposure, and target structure better than the opponent can deny it.
+    compatible_origins:
+      weapon_competencies:
+        - Ranged Weapons
+        - Thrown Weapons
+      weapon_families:
+        - bows
+        - crossbows
+        - firearms_if_later_present
+        - precise_thrown_weapons
+        - direct_line_projectile_systems
+      natural_attack_forms:
+        - spine_shot
+        - needle_spit
+        - focused_fluid_jet
+      secondary_requirements:
+        - may_pair_with_focus
+        - may_pair_with_perception
+        - may_pair_with_identification
+        - may_pair_with_intuition
+        - may_pair_with_tracking
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when they produce a direct,
+        aimable, repeatable projectile or projected strike. It should not be
+        used by diffuse sprays, broad clouds, or uncontrolled scatter attacks.
+    primary_tags:
+      - attack
+      - precision
+      - pressure
+    secondary_tags:
+      - setup
+      - disruption
+      - control
+    rare_or_limited_tags:
+      - mobility
+      - defense
+      - recovery
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition for disciplined single-shot execution; low-to-medium
+        Attrition when repeated under movement, range distortion, or hard
+        target-read pressure.
+    timing_identity: >
+      Lives in exposed moments, weak-point lines, punish shots after movement
+      errors, and any exchange where one exact impact can alter the next state
+      more than raw volume would.
+    identity_notes: >
+      Precision Techniques should feel calm, exact, and surgically decisive.
+      They are about certainty of placement, not volume of fire. The user
+      should feel like someone who understands distance, angle, and target
+      vulnerability well enough to make one shot matter more than several
+      careless ones.
+    should_not_do:
+      - chaotic_multi_angle_rebound_identity
+      - broad_suppression_fire_as_primary_mode
+      - concealment_melee_entry_play
+      - wide_area_blast_logic
+      - abstract_condition_removal
+  - name: Charge
+    family: Charge / committed entry / momentum impact
+    fantasy_core: >
+      Converting movement, mass, and forward commitment into a decisive
+      collision that breaks position, forces reaction, or overwhelms the line
+      before the enemy can stabilize.
+    compatible_origins:
+      weapon_competencies:
+        - Spear
+        - Heavy Weapons
+      weapon_families:
+        - spears
+        - lances
+        - heavy_impact_weapons
+        - mounted_charge_weapons
+        - committed_rush_tools
+      natural_attack_forms:
+        - horn
+        - tusk
+        - headbutt_crest
+        - trampling_forebody
+      secondary_requirements:
+        - may_pair_with_balance
+        - may_pair_with_tolerance
+        - may_pair_with_armor
+        - may_pair_with_mount_handling
+        - may_pair_with_line_control
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can deliver
+        meaningful forward-drive impact through mass, speed, leverage, or
+        body-first commitment. It should not be used by light opportunistic
+        attacks whose identity is only angle theft or concealment.
+    primary_tags:
+      - attack
+      - pressure
+      - anti_displacement
+    secondary_tags:
+      - disruption
+      - mobility
+      - control
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - stealth
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium_to_high
+      attrition_tendency: medium_to_high
+      notes: >
+        Medium Attrition by default, and potentially high Attrition when
+        repeated under terrain resistance, body contact, or failed breakthrough
+        conditions.
+    timing_identity: >
+      Lives in engagement openings, rush windows, committed approach, mounted
+      entry, and moments where breaking the opponent's line or posture matters
+      more than clean sustained exchange.
+    identity_notes: >
+      Charge Techniques should feel forceful, committed, and difficult to
+      ignore. They are about arriving with enough momentum that the opponent
+      must yield space, absorb impact, or be structurally disrupted. The user
+      should feel like a dangerous advancing mass, not a delicate duelist
+      extending a line.
+    should_not_do:
+      - static_defensive_guardian_play
+      - concealment_or_shadow_identity
+      - fine_precision_targeting_as_primary_mode
+      - indirect_ranged_geometry
+      - abstract_condition_removal
+  - name: Bastion
+    family: Bastion / anchored defense / protected endurance
+    fantasy_core: >
+      Becoming the point that does not easily yield, using structure, stance,
+      shield mass, and disciplined endurance to hold a line that others would
+      lose.
+    compatible_origins:
+      weapon_competencies:
+        - Shield
+        - Armor
+      weapon_families:
+        - tower_shields
+        - heavy_shields
+        - defensive_guard_assemblies
+        - fixed_protection_structures
+      natural_attack_forms:
+        - shell
+        - plated_crest
+        - heavy_forelimb
+        - braced_body_frame
+      secondary_requirements:
+        - may_pair_with_tolerance
+        - may_pair_with_armor
+        - may_pair_with_containment
+        - may_pair_with_interception
+        - may_pair_with_leadership
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can genuinely brace,
+        cover, endure, and protect through mass or structure. It should not be
+        used by purely agile or opportunistic forms with no credible holding
+        surface.
+    primary_tags:
+      - defense
+      - stability
+      - mitigation
+    secondary_tags:
+      - control
+      - support
+      - survival_window
+    rare_or_limited_tags:
+      - attack
+      - mobility
+      - stealth
+    typical_types:
+      - active
+      - reactive
+      - passive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition for disciplined holding; medium Attrition when
+        repeatedly absorbing force, guarding others, or maintaining posture
+        under concentrated pressure.
+    timing_identity: >
+      Lives in hold-the-line moments, ally shelter, attritional exchanges,
+      last-stand windows, and phases where surviving the next impact matters
+      more than taking the next step.
+    identity_notes: >
+      Bastion Techniques should feel weighty, disciplined, and reassuring to
+      allies. They are about becoming a defended point in the field, not just
+      blocking one strike. The user should feel like someone who can anchor
+      pressure, hold formation, and keep collapse from spreading.
+    should_not_do:
+      - fast_skirmish_mobility_identity
+      - concealment_or_assassination_play
+      - precise_dueling_as_primary_mode
+      - indirect_ranged_geometry
+      - abstract_condition_cleansing
+  - name: Torsion
+    family: Torsion / flexible reach / angular redirection
+    fantasy_core: >
+      Using bend, wrap, whip, or redirection of trajectory to threaten from
+      difficult angles and reshape how force travels through contact.
+    compatible_origins:
+      weapon_competencies:
+        - Flexible Weapons
+      weapon_families:
+        - whips
+        - chains
+        - segmented_weapons
+        - rope_dart_analogues
+        - flexible_striking_tools
+      natural_attack_forms:
+        - tongue
+        - tentacle
+        - tail
+        - flexible_tendril
+      secondary_requirements:
+        - may_pair_with_balance
+        - may_pair_with_dexterity
+        - may_pair_with_control
+        - may_pair_with_intuition
+        - may_pair_with_line_control
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can bend, wrap,
+        lash, coil, or redirect contact through flexible motion. It should not
+        be used by rigid forms whose identity depends on straight-line impact
+        or fixed guarding surfaces.
+    primary_tags:
+      - control
+      - mobility
+      - disruption
+    secondary_tags:
+      - attack
+      - setup
+      - pressure
+    rare_or_limited_tags:
+      - mitigation
+      - recovery
+      - stability
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition for clean flexible handling; medium Attrition
+        when repeated under unstable spacing, wrapping strain, or multi-angle
+        commitment.
+    timing_identity: >
+      Lives in off-line entries, wraparound pressure, angular redirection,
+      space-bending attacks, and exchanges where the attack path matters as
+      much as the impact itself.
+    identity_notes: >
+      Torsion Techniques should feel strange, difficult to map, and materially
+      believable. They are about curvature, wrap, and unexpected contact
+      geometry, not supernatural extension. The user should feel like someone
+      who attacks through the path itself, making straight defensive
+      assumptions unreliable.
+    should_not_do:
+      - rigid_line_dueling_identity
+      - heavy_static_bastion_play
+      - clean_ballistic_projection
+      - abstract_condition_removal
+      - pure_blunt_collision_as_primary_mode
+  - name: Impact
+    family: Impact / blunt trauma / structural shock
+    fantasy_core: >
+      Delivering force so heavily and cleanly that posture, guard, breath, or
+      body structure absorbs the hit before intent can recover.
+    compatible_origins:
+      weapon_competencies:
+        - Heavy Weapons
+      weapon_families:
+        - maces
+        - hammers
+        - clubs
+        - crushing_poles
+        - impact_first_striking_tools
+      natural_attack_forms:
+        - shell_slam
+        - forelimb_smash
+        - headbutt
+        - tail_slam
+      secondary_requirements:
+        - may_pair_with_strength
+        - may_pair_with_tolerance
+        - may_pair_with_balance
+        - may_pair_with_line_control
+        - may_pair_with_bastion
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can deliver
+        meaningful blunt collision through mass, leverage, or hardened
+        structure. It should not be used by forms whose identity is precision
+        puncture, concealment, or flexible redirection.
+    primary_tags:
+      - attack
+      - disruption
+      - pressure
+    secondary_tags:
+      - anti_displacement
+      - control
+      - setup
+    rare_or_limited_tags:
+      - stealth
+      - recovery
+      - precision
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: medium_to_high
+      notes: >
+        Medium Attrition by default, and medium-to-high Attrition when repeated
+        under heavy body commitment, recoil, or armored resistance.
+    timing_identity: >
+      Lives in break moments, posture collapse, shield punishment, guard
+      cracking, and exchanges where one hard impact can ruin the enemy's
+      structure even without fine placement.
+    identity_notes: >
+      Impact Techniques should feel brutal, grounded, and physically
+      undeniable. They are about shock transfer, not elegance. The user should
+      feel like someone who can break the body's organization or the enemy's
+      confidence through one heavy committed hit.
+    should_not_do:
+      - fine_line_precision_dueling
+      - concealment_or_shadow_entry
+      - indirect_projectile_geometry
+      - flexible_wrap_identity
+      - abstract_condition_removal
+  - name: Rend
+    family: Rend / tearing force / persistent bodily degradation
+    fantasy_core: >
+      Opening flesh, structure, or protection in a way that does not end at
+      contact, leaving the target worse after the strike than the immediate
+      impact alone would suggest.
+    compatible_origins:
+      weapon_competencies:
+        - Axes
+        - Short Blades
+      weapon_families:
+        - axes
+        - hooked_blades
+        - tearing_edges
+        - ripping_tools
+      natural_attack_forms:
+        - claw
+        - fang
+        - hooked_beak
+        - serrated_mandible
+      secondary_requirements:
+        - may_pair_with_strength
+        - may_pair_with_precision
+        - may_pair_with_tracking
+        - may_pair_with_tolerance
+        - may_pair_with_shadow_pressure
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can rip, tear,
+        shred, or leave persistent bodily compromise through edge, hook, or
+        bite structure. It should not be used by blunt forms or by attacks
+        whose identity is clean puncture without tearing follow-through.
+    primary_tags:
+      - attack
+      - pressure
+      - disruption
+    secondary_tags:
+      - setup
+      - precision
+      - control
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - stealth
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: medium
+      notes: >
+        Medium Attrition when repeated aggressively, especially if the user
+        keeps committing to close bodily follow-through or target mauling.
+    timing_identity: >
+      Lives in finish pressure, wound-opening moments, prey-tracking
+      continuation, armor gap exploitation, and exchanges where damage quality
+      matters more than single-hit force.
+    identity_notes: >
+      Rend Techniques should feel savage, invasive, and hard to ignore after
+      the fact. They are about damage that keeps mattering because something
+      was torn open, destabilized, or left exposed. The user should feel like
+      someone who makes the enemy progressively worse to inhabit.
+    should_not_do:
+      - clean_linear_dueling_identity
+      - pure_blunt_collision_play
+      - indirect_projectile_geometry
+      - static_guardian_defense
+      - abstract_condition_removal
+  - name: Sunder
+    family: Sunder / breaking force / material opening
+    fantasy_core: >
+      Attacking structure itself so that armor, guard, cover, weapon
+      integrity, or bodily stability give way under targeted destructive
+      force.
+    compatible_origins:
+      weapon_competencies:
+        - Axes
+        - Heavy Weapons
+      weapon_families:
+        - axes
+        - splitting_tools
+        - cleaving_weapons
+        - breaker_heads
+        - armor_opening_implements
+      natural_attack_forms:
+        - horn
+        - tusk
+        - crushing_mandible
+        - wedge_skull
+      secondary_requirements:
+        - may_pair_with_strength
+        - may_pair_with_engineering
+        - may_pair_with_identification
+        - may_pair_with_impact
+        - may_pair_with_line_control
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can crack, split,
+        wedge, or break through resistant material or guarded structure. It
+        should not be used by light tearing attacks whose identity is only
+        flesh damage without structural breach.
+    primary_tags:
+      - attack
+      - disruption
+      - control
+    secondary_tags:
+      - pressure
+      - anti_displacement
+      - setup
+    rare_or_limited_tags:
+      - stealth
+      - recovery
+      - mobility
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium_to_high
+      attrition_tendency: medium_to_high
+      notes: >
+        Medium-to-high Attrition when repeatedly committed against armor,
+        shields, hard cover, or resistant bodies.
+    timing_identity: >
+      Lives in armor-breaking moments, guard collapse, cover denial, weapon
+      punishment, and exchanges where opening the structure matters more than
+      landing the cleanest wound.
+    identity_notes: >
+      Sunder Techniques should feel destructive in a material sense, not just
+      painful. They are about making something that was protecting,
+      stabilizing, or resisting stop doing that job. The user should feel like
+      someone who forces entry by breaking what made resistance possible.
+    should_not_do:
+      - elegant_precision_dueling
+      - concealment_or_shadow_entry
+      - indirect_projectile_geometry
+      - soft_flexible_wrap_identity
+      - abstract_condition_removal
+  - name: Volley
+    family: Volley / sustained ranged pressure / repeated release
+    fantasy_core: >
+      Maintaining ranged initiative through cadence, repeated release, and
+      pressure accumulation so the opponent has to keep answering the next shot
+      instead of reclaiming tempo.
+    compatible_origins:
+      weapon_competencies:
+        - Ranged Weapons
+        - Thrown Weapons
+      weapon_families:
+        - bows
+        - slings
+        - light_crossbows
+        - repeated_throw_sets
+        - fast_release_projectile_systems
+      natural_attack_forms:
+        - quill_volley
+        - repeated_spine_shot
+        - rapid_fluid_spit
+      secondary_requirements:
+        - may_pair_with_focus
+        - may_pair_with_rhythm_control
+        - may_pair_with_tracking
+        - may_pair_with_precision
+        - may_pair_with_ricochet
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can repeatedly
+        project aimed attacks in meaningful sequence. It should not be used by
+        single-shot anatomies with long reset or by diffuse area emission that
+        is not truly repeat-fire pressure.
+    primary_tags:
+      - attack
+      - pressure
+      - setup
+    secondary_tags:
+      - disruption
+      - control
+      - precision
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - stealth
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: medium_to_high
+      notes: >
+        Medium Attrition when maintaining release cadence, and medium-to-high
+        Attrition when pressure is sustained through movement, unstable
+        footing, or target-rich exchanges.
+    timing_identity: >
+      Lives in repeated firing windows, pursuit pressure, suppressive
+      exchanges, forced cover, and sequences where keeping initiative at range
+      matters more than any single perfect shot.
+    identity_notes: >
+      Volley Techniques should feel relentless and rhythmic rather than
+      chaotic. They are about making the enemy live under the next release,
+      not just the current one. The user should feel like someone who controls
+      ranged tempo through cadence and persistence.
+    should_not_do:
+      - single_shot_surgical_identity
+      - rebound_geometry_as_primary_mode
+      - concealment_melee_entry
+      - wide_blast_logic
+      - abstract_condition_removal
+  - name: Deflection
+    family: Deflection / redirection by edge / active off-line defense
+    fantasy_core: >
+      Spoiling hostile force through angle, timing, and contact redirection so
+      the incoming line fails to land cleanly and may open a countering
+      advantage.
+    compatible_origins:
+      weapon_competencies:
+        - Long Blades
+        - Short Blades
+        - Daggers
+      weapon_families:
+        - swords
+        - sabres
+        - side_blades
+        - defensive_knives
+        - parrying_capable_edges
+      natural_attack_forms:
+        - forelimb_blade
+        - hooked_claw
+        - rigid_beak_edge
+      secondary_requirements:
+        - may_pair_with_evasion
+        - may_pair_with_balance
+        - may_pair_with_flow
+        - may_pair_with_intuition
+        - may_pair_with_interception
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can meaningfully
+        catch, glance, guide away, or spoil a hostile line through rigid edge
+        or precise contact. It should not be used by soft flexible forms or
+        blunt structures whose identity is absorption rather than redirection.
+    primary_tags:
+      - defense
+      - disruption
+      - precision
+    secondary_tags:
+      - setup
+      - mobility
+      - attack
+    rare_or_limited_tags:
+      - mitigation
+      - support
+      - recovery
+    typical_types:
+      - reactive
+      - active
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition for clean single spoils; medium Attrition when repeatedly
+        contesting incoming lines under heavy tempo pressure.
+    timing_identity: >
+      Lives in contact windows, hostile overreach, parry moments, angle
+      steals, and exchanges where turning the line a few degrees is enough to
+      save the body and open the reply.
+    identity_notes: >
+      Deflection Techniques should feel sharp, disciplined, and responsive.
+      They are not about enduring impact like a bastion or occupying space
+      like a shield wall. They are about making the hostile line miss its
+      clean purpose through edge, angle, and timing. The user should feel like
+      someone who survives by changing where force goes.
+    should_not_do:
+      - static_guardian_anchor_play
+      - pure_body_absorption_identity
+      - broad_spatial_denial_as_primary_mode
+      - indirect_projectile_geometry
+      - abstract_condition_removal
+  - name: Interruption
+    family: Interruption / execution break / hostile action spoil
+    fantasy_core: >
+      Breaking the enemy's process before it resolves cleanly by striking
+      timing, focus, structure, or commitment at the vulnerable moment of
+      execution.
+    compatible_origins:
+      weapon_competencies:
+        - Shields
+        - Short Blades
+        - Flexible Weapons
+        - Thrown Weapons
+      weapon_families:
+        - shields
+        - interruptive_off_hand_tools
+        - fast_sidearms
+        - hooking_weapons
+        - quick_thrown_counters
+      natural_attack_forms:
+        - tail
+        - tongue
+        - hooked_claw
+        - snapping_mandible
+      secondary_requirements:
+        - may_pair_with_intuition
+        - may_pair_with_focus
+        - may_pair_with_interception
+        - may_pair_with_torsion
+        - may_pair_with_deflection
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can quickly spoil,
+        jab, hook, snap, or disrupt an enemy's active process in a believable
+        timing window. It should not be used by slow mass-dominant forms whose
+        identity is only impact or endurance.
+    primary_tags:
+      - disruption
+      - control
+      - setup
+    secondary_tags:
+      - attack
+      - defense
+      - pressure
+    rare_or_limited_tags:
+      - recovery
+      - stealth
+      - mitigation
+    typical_types:
+      - reactive
+      - active
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition for clean spoils; medium Attrition when
+        repeatedly contesting enemy execution under dense timing pressure.
+    timing_identity: >
+      Lives in cast breaks, action spoil windows, long-motion punishment,
+      readied-action denial, and moments where stopping the enemy matters more
+      than damaging them directly.
+    identity_notes: >
+      Interruption Techniques should feel sharp, intrusive, and opportunistic.
+      They are not about guarding space in the abstract, but about ruining a
+      process while it is happening. The user should feel like someone who
+      senses the vulnerable instant in another's action and tears it apart
+      before it resolves.
+    should_not_do:
+      - static_line_holding_identity
+      - pure_endurance_absorption
+      - long_form_attrition_without_timing
+      - indirect_projectile_geometry_as_primary_mode
+      - abstract_condition_removal
+  - name: Corrosion
+    family: Corrosion / degrading contact / persistent hostile residue
+    fantasy_core: >
+      Applying a contact that keeps making the target worse after impact
+      through poison, acid, toxin, caustic residue, or another materially
+      grounded degrading agent.
+    compatible_origins:
+      weapon_competencies:
+        - Short Blades
+        - Thrown Weapons
+        - Ranged Weapons
+      weapon_families:
+        - venom_bearing_light_weapons
+        - delivery_weapons
+        - acid_carriers
+        - residue_applying_projectiles
+      natural_attack_forms:
+        - stinger
+        - venom_fang
+        - acid_spit
+        - corrosive_fluid_jet
+      secondary_requirements:
+        - may_pair_with_tolerance
+        - may_pair_with_resistance_hybrids
+        - may_pair_with_precision
+        - may_pair_with_rend
+        - may_pair_with_tracking
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy or secretion can
+        credibly deliver a degrading substance or residue that continues to
+        matter after impact. It should not be used for purely magical decay or
+        for clean physical damage with no degrading follow-through.
+    primary_tags:
+      - pressure
+      - disruption
+      - control
+    secondary_tags:
+      - attack
+      - setup
+      - condition_reduction
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - mobility
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition for prepared delivery; medium Attrition when
+        repeated under pressure or when maintaining hostile persistence
+        through multiple contacts.
+    timing_identity: >
+      Lives in weakening contact, delayed consequence, follow-up pressure,
+      pursuit degradation, and exchanges where making the enemy progressively
+      worse matters more than immediate burst.
+    identity_notes: >
+      Corrosion Techniques should feel invasive, lingering, and materially
+      ugly. They are about making a contact remain relevant because something
+      is now inside, on, or against the target that continues to degrade
+      function. The user should feel like someone who wins by worsening the
+      enemy over time through real hostile residue, not by invoking
+      unexplained magical decay.
+    should_not_do:
+      - pure_clean_precision_identity
+      - blunt_collision_identity
+      - abstract_curse_or_magic_decay
+      - broad_instant_blast_logic
+      - condition_removal_as_primary_mode
+  - name: Unpredictability
+    family: Unpredictability / false read / non-obvious attack logic
+    fantasy_core: >
+      Defeating the opponent's expectation by making the next line, angle,
+      rhythm, or mode of contact resolve from the wrong assumption.
+    compatible_origins:
+      weapon_competencies:
+        - Short Blades
+        - Daggers
+        - Flexible Weapons
+      weapon_families:
+        - deceptive_sidearms
+        - flexible_trick_weapons
+        - feint_capable_close_weapons
+        - odd_angle_tools
+      natural_attack_forms:
+        - tongue
+        - hooked_claw
+        - feinting_tail
+        - snapping_beak
+      secondary_requirements:
+        - may_pair_with_intuition
+        - may_pair_with_deception
+        - may_pair_with_imitation
+        - may_pair_with_torsion
+        - may_pair_with_deflection
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can credibly fake
+        line, alter angle late, present false rhythm, or resolve from a
+        non-obvious contact path. It should not be used by purely
+        straightforward mass-impact forms.
+    primary_tags:
+      - disruption
+      - setup
+      - mobility
+    secondary_tags:
+      - attack
+      - control
+      - pressure
+    rare_or_limited_tags:
+      - mitigation
+      - recovery
+      - support
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition for isolated read breaks; medium Attrition when
+        repeated under high cognitive pressure or multi-step deceptive
+        sequencing.
+    timing_identity: >
+      Lives in feints, expectation traps, late angle shifts, read breaks, and
+      exchanges where winning the interpretation layer matters more than brute
+      force.
+    identity_notes: >
+      Unpredictability Techniques should feel slippery, intelligent, and hard
+      to map in the moment. They are not random; they are deliberately hard to
+      read. The user should feel like someone who makes the enemy commit to
+      the wrong answer and then resolves through that mistake.
+    should_not_do:
+      - pure_brutal_collision_identity
+      - static_guardian_anchor_play
+      - clean_straight_line_precision_as_primary_mode
+      - broad_ranged_suppression
+      - abstract_condition_removal
+  - name: Skirmish
+    family: Skirmish / light engagement / hit-and-reposition
+    fantasy_core: >
+      Entering fast, striking in a meaningful but limited window, and changing
+      position before the enemy can convert contact into stable control.
+    compatible_origins:
+      weapon_competencies:
+        - Short Blades
+        - Spears
+        - Flexible Weapons
+      weapon_families:
+        - light_sidearms
+        - agile_reach_weapons
+        - mobile_skirmish_tools
+        - light_flexible_weapons
+      natural_attack_forms:
+        - claw
+        - fang
+        - light_tail
+        - quick_forelimb
+      secondary_requirements:
+        - may_pair_with_evasion
+        - may_pair_with_balance
+        - may_pair_with_flow
+        - may_pair_with_shadow_pressure
+        - may_pair_with_line_control
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy supports fast entry,
+        light contact, repositioning, and repeated engagement without relying
+        on static hold or pure brute collision.
+    primary_tags:
+      - mobility
+      - attack
+      - setup
+    secondary_tags:
+      - pressure
+      - disruption
+      - defense
+    rare_or_limited_tags:
+      - mitigation
+      - recovery
+      - stability
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition for clean light engagements; medium Attrition when
+        repeatedly forcing entry and exit under heavy attention or broken
+        terrain.
+    timing_identity: >
+      Lives in touch-and-go exchanges, approach-and-break windows, tempo
+      theft, brief lane entry, and sequences where changing position matters
+      as much as landing the hit.
+    identity_notes: >
+      Skirmish Techniques should feel agile, opportunistic, and tactically
+      light. They are not about standing and winning a sustained exchange, but
+      about touching the fight at the right moment and leaving it changed
+      before the opponent settles. The user should feel difficult to pin down,
+      but not invisible or magical.
+    should_not_do:
+      - static_line_holding_identity
+      - heavy_collision_break_play
+      - prolonged_attritional_anchor
+      - broad_ranged_suppression
+      - abstract_condition_removal
+  - name: Ward
+    family: Ward / reach discipline / pre-contact denial
+    fantasy_core: >
+      Keeping hostile entry uncomfortable by maintaining a dangerous ready
+      line that punishes overstep before full contact ever settles.
+    compatible_origins:
+      weapon_competencies:
+        - Spear
+        - Long Blades
+      weapon_families:
+        - spears
+        - polearms
+        - stance_disciplined_long_blades
+        - guard_reach_weapons
+      natural_attack_forms:
+        - horn
+        - beak
+        - tusk
+      secondary_requirements:
+        - may_pair_with_balance
+        - may_pair_with_focus
+        - may_pair_with_perception
+        - may_pair_with_deflection
+        - may_pair_with_line_control
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can credibly hold a
+        threatening forward line and punish entry before full body commitment.
+        It should not be used by soft flexible forms or purely brute-impact
+        attacks.
+    primary_tags:
+      - defense
+      - pressure
+      - control
+    secondary_tags:
+      - setup
+      - precision
+      - anti_displacement
+    rare_or_limited_tags:
+      - mobility
+      - recovery
+      - stealth
+    typical_types:
+      - reactive
+      - active
+    usual_cost_profile:
+      rhythm_tendency: low_to_medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low Attrition for disciplined ready-line play; medium Attrition when
+        maintaining denial under repeated committed entry or shifting angles.
+    timing_identity: >
+      Lives in first-step punish, measured denial, keep-out exchanges, lane
+      preservation, and moments where threatening the answer matters more than
+      taking the initiative first.
+    identity_notes: >
+      Ward Techniques should feel calm, exact, and structurally disciplined.
+      They are about preserving a line the opponent does not want to cross,
+      not about crashing through it. The user should feel like someone who
+      wins by making approach costly before the exchange fully begins.
+    should_not_do:
+      - shield_cover_interception_identity
+      - concealment_or_assassination_play
+      - heavy_collision_break_play
+      - indirect_projectile_geometry
+      - abstract_condition_removal
+  - name: Lethality
+    family: Lethality / vital exploitation / finishing authority
+    fantasy_core: >
+      Turning one clean opening into a decisive end-state through anatomical
+      targeting, committed finishing mechanics, and exact exploitation of
+      vulnerability.
+    compatible_origins:
+      weapon_competencies:
+        - Long Blades
+        - Daggers
+        - Short Blades
+      weapon_families:
+        - dueling_swords
+        - killing_blades
+        - stilettos
+        - execution_edges
+        - vital_target_sidearms
+      natural_attack_forms:
+        - fang
+        - beak
+        - stinger
+        - hooked_claw
+      secondary_requirements:
+        - may_pair_with_precision
+        - may_pair_with_identification
+        - may_pair_with_intuition
+        - may_pair_with_shadow_pressure
+        - may_pair_with_focus
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can credibly
+        resolve through a precise kill line, vital puncture, or decisive
+        finishing cut. It should not be used by broad smashing forms or
+        diffuse degrading attacks.
+    primary_tags:
+      - attack
+      - precision
+      - pressure
+    secondary_tags:
+      - setup
+      - disruption
+      - mobility
+    rare_or_limited_tags:
+      - defense
+      - recovery
+      - control
+    typical_types:
+      - active
+      - reactive
+    usual_cost_profile:
+      rhythm_tendency: medium
+      attrition_tendency: low_to_medium
+      notes: >
+        Low-to-medium Attrition when used as selective finish pressure; medium
+        Attrition when repeatedly forced through guarded or collapsing
+        openings.
+    timing_identity: >
+      Lives in exposed vitals, finishing windows, punishment of decisive
+      mistakes, and exchanges where one exact close-range resolution matters
+      more than prolonged pressure.
+    identity_notes: >
+      Lethality Techniques should feel final, surgical, and dangerous in a
+      way distinct from ranged Precision. They are about ending the fight
+      because the right opening was exploited at the right depth and angle.
+      The user should feel like someone who recognizes when one exact
+      committed strike can decide everything.
+    should_not_do:
+      - broad_attritional_mauling
+      - blunt_collision_identity
+      - static_guardian_anchor_play
+      - indirect_projectile_geometry
+      - abstract_condition_removal
+  - name: Unstoppable
+    family: Unstoppable / drive-through commitment / refusal to stall
+    fantasy_core: >
+      Continuing offense through partial contact, resistance, obstruction, or
+      pain so that the first collision fails to halt the advance.
+    compatible_origins:
+      weapon_competencies:
+        - Heavy Weapons
+        - Axes
+        - Spear
+      weapon_families:
+        - heavy_axes
+        - breaker_weapons
+        - driving_spears
+        - mass_forward_assault_tools
+      natural_attack_forms:
+        - horn
+        - tusk
+        - forelimb_smash
+        - hoof_trample
+      secondary_requirements:
+        - may_pair_with_tolerance
+        - may_pair_with_armor
+        - may_pair_with_charge
+        - may_pair_with_bastion
+        - may_pair_with_balance
+    natural_weapon_compatibility:
+      allowed: true
+      notes: >
+        Natural forms can access this profile when anatomy can keep driving
+        through contact, resistance, or stagger without losing offensive
+        structure. It should not be used by light opportunistic forms whose
+        identity depends on quick withdrawal or deceptive spacing.
+    primary_tags:
+      - attack
+      - pressure
+      - stability
+    secondary_tags:
+      - anti_displacement
+      - disruption
+      - mitigation
+    rare_or_limited_tags:
+      - stealth
+      - recovery
+      - precision
+    typical_types:
+      - active
+      - passive
+    usual_cost_profile:
+      rhythm_tendency: medium_to_high
+      attrition_tendency: medium_to_high
+      notes: >
+        Medium Attrition by default, and high Attrition when repeatedly
+        maintained through dense obstruction, armor, or pain-heavy exchanges.
+    timing_identity: >
+      Lives after first impact, during stalled breakthrough, under body-check
+      resistance, and in exchanges where not being stopped matters more than
+      clean first contact.
+    identity_notes: >
+      Unstoppable Techniques should feel relentless rather than explosive.
+      They are not about the opening crash itself, but about what happens when
+      the crash fails to end the matter and the user keeps coming anyway. The
+      user should feel like forward commitment remains dangerous even after
+      collision.
+    should_not_do:
+      - light_touch_skirmish_identity
+      - concealment_or_shadow_entry
+      - elegant_dueling_precision
+      - indirect_projectile_geometry
+      - abstract_condition_removal

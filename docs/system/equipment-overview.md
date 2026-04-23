@@ -1,7 +1,7 @@
 # Equipment Overview
 
 **Authority data:** `data/system/equipment.yaml`
-**Related docs:** `docs/system/competencies.md`, `docs/system/roll-types.md`, `docs/system/attrition-fatigue.md`
+**Related docs:** `docs/system/competencies.md`, `docs/system/roll-types.md`, `docs/system/attrition-fatigue.md`, `docs/system/weapon-technique-profiles.md`
 
 ---
 
@@ -20,6 +20,8 @@ This document defines the stable structural rules for:
 
 It does **not** define the full item catalog yet. Specific weapons, armors, materials, powers, and durability tables belong in later equipment data.
 
+Natural weapons are also outside the full item catalog, but they should connect to the same combat authoring layer through compatible Weapon Technique Profiles rather than through an isolated parallel system.
+
 ---
 
 ## Core Principle
@@ -35,6 +37,8 @@ A character may mix different armor types across body slots:
 - feet / boots
 
 This is intentional. Different cultures, roles, and tactical needs may favor heavier protection in one zone and lighter mobility in another.
+
+For offensive identity, Transcendence should also avoid a one-tree-per-item model. Concrete weapon items, natural attack forms, and combat Techniques should connect through shared combat profiles when possible.
 
 ---
 
@@ -226,6 +230,14 @@ Shield competency should support actions such as:
 - Heavy shield = grade × 2
 
 This shield value applies as a general `D.R.` bonus.
+
+### Shield Movement Penalty by Type
+
+- **Light shield:** no movement penalty
+- **Medium shield:** movement penalty = grade
+- **Heavy shield:** movement penalty = grade × 2
+
+Shield competency does not increase this passive `D.R.` value directly. Its progression supports shield maneuvers, and reaching **Master** reduces the active movement penalty of the equipped shield by `grade` (minimum 0).
 
 ---
 

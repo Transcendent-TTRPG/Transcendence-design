@@ -1,34 +1,14 @@
-vigor:
-  id: vigor
-  name: Vigor
-  associated_characteristic: TEN
-  category: physical
-  universal_starting: true
-  starting_level: 1
-  starting_rank: 1
-  synapsis_effect: "+1 TEN per rank gained"
-  description: >
-    Physical specialization representing the capacity to sustain prolonged effort,
-    endure adverse conditions, and keep operating when the body is already being pushed.
-    Vigor feeds the Endurance formula and is the universal starting specialization for
-    all characters.
-  rolls_improved: [S.R.]
-  dual_role:
-    - improves S.R. tests related to sustained physical effort
-    - increases character Endurance via rank contribution to formula
-
 endurance:
   id: endurance
   name: Endurance
   name_es: Aguante
   type: derived_attribute
-  formula: "3 + TEN + vigor_rank"
+  formula: "3 + (TEN * 2)"
   components:
     base_reserve: 3
     base_reserve_rationale: "Represents minimum operational capacity across three conflict planes: body, mind, and composure"
     characteristic: TEN
-    specialization_rank: vigor_rank
-  starting_minimum: 5  # TEN=1, Vigor Rank=1 → 3 + 1 + 1
+  starting_minimum: 7  # TEN reaches at least 2 at creation after the universal Tenacity Synapsis
 
 fatigue_thresholds:
   comparison: accumulated_attrition vs endurance

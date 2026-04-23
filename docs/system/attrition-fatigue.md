@@ -2,7 +2,7 @@
 
 **Status:** Adopted (structural model)
 **Calibration status:** Initial numeric baseline adopted; further tuning open
-**Related systems:** Combat, ATB, Vigor, Tenacity, Conditions, Environmental Pressure, Enemy Readability
+**Related systems:** Combat, ATB, Tenacity, Tenacity specializations, Conditions, Environmental Pressure, Enemy Readability
 
 ---
 
@@ -75,7 +75,7 @@ No deberían generar Desgaste, salvo regla especial, las acciones triviales o pu
 
 El **Aguante** es el atributo derivado que representa cuánta carga acumulada puede absorber un personaje antes de comenzar a sufrir Fatiga.
 
-No es una característica base independiente. Es el resultado de una **reserva mínima universal** más la resistencia corporal del personaje y su desarrollo en **Vigor**.
+No es una característica base independiente. Es el resultado de una **reserva mínima universal** más la resistencia corporal real del personaje, expresada en **Tenacidad**.
 
 ### Reserva Base de Aguante
 
@@ -95,64 +95,37 @@ Estos tres planos justifican el valor base común del sistema:
 
 La Reserva Base no pretende reflejar entrenamiento, sino la capacidad mínima de funcionamiento de cualquier personaje jugable que puede entrar en una escena de conflicto y seguir actuando.
 
-### Relación con Tenacidad y Vigor
+### Relación con Tenacidad
 
-A la Reserva Base se suman dos fuentes propias del personaje:
+A la Reserva Base se suma **Tenacidad**, que expresa la resistencia física real del personaje.
 
-- **Tenacidad**, que expresa su resistencia física real
-- **Rango de Vigor**, que expresa su grado de entrenamiento para sostener esfuerzo continuado
-
-Esto conserva el papel central de Vigor dentro del sistema. Vigor no solo mejora las pruebas ligadas al esfuerzo corporal, sino que además incrementa la capacidad total de soportar Desgaste. Esto es coherente con la creación de personaje ya adoptada: todo personaje comienza con **Vigor Nivel 1 / Rango 1**, y esa especialización inicial incrementa su Tenacidad mediante Sinapsis.
+La especialización inicial universal de Tenacidad sigue siendo importante, pero lo es a través de **Sinapsis**: como esa elección otorga +1 a Tenacidad desde la creación, el Aguante ya refleja indirectamente esa trayectoria sin depender de una sola especialización fija.
 
 ### Fórmula de Aguante
 
-**Aguante = 3 + Tenacidad + Rango de Vigor**
+**Aguante = 3 + (Tenacidad × 2)**
 
 ### Interpretación práctica
 
 Con esta fórmula:
 
-- un personaje mínimo, con **Tenacidad 1** y **Vigor Rango 1**, comienza con **Aguante 5**
+- un personaje mínimo, tras recibir su Sinapsis inicial de Tenacidad, comienza con **Aguante 7**
 - una especie con bonificación adicional a Tenacidad eleva ese valor desde el inicio
-- personajes que desarrollen más Vigor o Tenacidad aumentarán su capacidad de absorber Desgaste antes de entrar en Fatiga
+- personajes que desarrollen más Tenacidad aumentarán su capacidad de absorber Desgaste antes de entrar en Fatiga
 
 Esto encaja con la hipótesis de trabajo ya respaldada por los playtests: la primera Fatiga en combates relevantes debe aparecer después de varias acciones significativas, no inmediatamente, y todavía con la amenaza activa.
 
 ---
 
-## Vigor
+### Relación con la creación
 
-**Vigor** es una especialización física asociada a **Tenacidad**. Representa entrenamiento del esfuerzo, resistencia prolongada, adaptación corporal y capacidad de sostener actividad exigente en condiciones adversas.
+Todo personaje comienza con una especialización inicial de **Tenacidad** en Nivel 1 / Rango 1:
 
-No es una simple medida abstracta de "stamina". Es una especialización real que se ejecuta y progresa dentro del sistema.
+- **Marcha**
+- **Aclimatación**
+- **Tolerancia**
 
-### Qué cubre Vigor
-
-Vigor se usa en situaciones como:
-
-- cargar o sostener peso
-- resistir marcha o esfuerzo prolongado
-- soportar ambientes hostiles
-- mantener actividad física en condiciones adversas
-- seguir operando cuando el cuerpo ya está siendo exigido de forma seria
-
-### Rol doble de Vigor
-
-Vigor cumple dos funciones estructurales:
-
-1. mejora directamente las pruebas relacionadas con sostener esfuerzo físico
-2. alimenta el eje de Aguante y Fatiga
-
-Esto está alineado con la lógica general de Sinapsis: las características no suben de forma separada, sino a través de la práctica de especializaciones relevantes. Vigor es precisamente la especialización que permite que el personaje aumente su Tenacidad al exponerse una y otra vez a pruebas de esfuerzo significativo.
-
-### Regla inicial universal
-
-Todo personaje comienza con:
-
-- **Vigor Nivel 1**
-- **Vigor Rango 1**
-
-Esto refleja que sobrevivir en el mundo de Transcendence exige una base mínima de resistencia física y adaptación al entorno. No es un rasgo racial particular, sino una condición estructural de cualquier personaje jugable.
+Esto refleja que sobrevivir en el mundo de Transcendence exige alguna forma entrenada de resistencia, pero no una manifestación única e idéntica para todas las historias de personaje.
 
 ---
 
@@ -194,12 +167,12 @@ La Fatiga se determina comparando el **Desgaste acumulado** con el **Aguante** d
 
 ### Ejemplo
 
-Si un personaje tiene **Aguante 5**:
+Si un personaje tiene **Aguante 7**:
 
-- Desgaste 0–4 → sin Fatiga
-- Desgaste 5–9 → Fatiga 1
-- Desgaste 10–14 → Fatiga 2
-- Desgaste 15+ → Fatiga 3
+- Desgaste 0–6 → sin Fatiga
+- Desgaste 7–13 → Fatiga 1
+- Desgaste 14–20 → Fatiga 2
+- Desgaste 21+ → Fatiga 3
 
 Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear.
 
@@ -351,12 +324,11 @@ Este principio es coherente con los hallazgos ya adoptados para comunes: los gru
 
 Personaje recién creado:
 
-- Tenacidad 1
-- Vigor Rango 1
+- Tenacidad final 2 tras aplicar la Sinapsis inicial de Tenacidad
 
 Entonces:
 
-**Aguante = 3 + 1 + 1 = 5**
+**Aguante = 3 + (2 × 2) = 7**
 
 Interpretación:
 
@@ -379,12 +351,12 @@ Capacidad total del personaje para absorber Desgaste antes de sufrir Fatiga.
 ### Fatiga
 Deterioro progresivo del rendimiento cuando el Desgaste iguala o supera el Aguante.
 
-### Vigor
-Especialización universal inicial asociada a Tenacidad, que mejora la capacidad del personaje para sostener esfuerzo y amplía su Aguante.
+### Especialización inicial de Tenacidad
+Toda hoja comienza con una especialización inicial de Tenacidad, elegida según la historia del personaje. Esa elección mejora la Sinapsis inicial de Tenacidad, pero no modifica la fórmula de Aguante de forma separada.
 
 ### Fórmulas clave
 
-**Aguante = 3 + Tenacidad + Rango de Vigor**
+**Aguante = 3 + (Tenacidad × 2)**
 
 | Umbral | Condición |
 | --- | --- |
@@ -399,7 +371,7 @@ Especialización universal inicial asociada a Tenacidad, que mejora la capacidad
 
 1. El Desgaste modela esfuerzo significativo bajo presión, no solo cansancio físico.
 2. El Aguante se justifica por una Reserva Base de 3 ligada a cuerpo, mente y compostura.
-3. Vigor es la especialización estructural del esfuerzo y alimenta el Aguante.
+3. La especialización inicial de Tenacidad justifica la Sinapsis temprana de Tenacidad, pero el Aguante deriva directamente de la característica resultante.
 4. La Fatiga aparece por hitos de Desgaste respecto al Aguante.
 5. Las acciones mentales y sociales significativas en combate también pueden generar Desgaste.
 6. La categoría del encuentro modifica la presión, no el umbral del personaje.

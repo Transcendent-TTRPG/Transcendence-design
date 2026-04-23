@@ -110,7 +110,7 @@ types:
       - heavy_armor
     bonuses:
       per_level: "+1 to zone block when that armor type is present in the resolved hit zone"
-      master: "reduce movement penalty of that armor type by one step where applicable"
+      note: "no passive per-rank block bonus; block already stacks with category, material, and grade"
     progression_trigger: >
       Failed D.R. with Learning Advantage, when the hit resolves through an armored zone
       and that armor actually reduces impact.
@@ -121,6 +121,7 @@ types:
     description: Technical mastery of shield use
     bonuses:
       per_rank: "access to additional shield maneuvers (type-dependent)"
+      master: "reduce movement penalty imposed by the equipped shield by grade (minimum 0)"
     progression_trigger: successfully_use_shield_techniques_or_dedicated_shield_maneuvers
 
   - id: evasion

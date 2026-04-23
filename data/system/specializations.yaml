@@ -48,17 +48,16 @@ starting_specializations:
   total: 4
   from_background: 3
   universal: 1
-  universal_name: Vigor
+  universal_choice_group: Tenacity
+  universal_options:
+    - Marcha
+    - Aclimatación
+    - Tolerancia
   all_at: { level: 1, rank: Novice }
-  note: "Same specialization cannot be chosen twice at creation. All others begin at Level 0 (Untrained)."
-
-vigor:
-  associated_characteristic: Tenacity
-  starting_level: 1
-  starting_rank: Novice
-  synapsis_grant: "+1 Tenacity at creation"
-  stacks_with: species_bonuses
-  note: "Universal starting specialization. Every character gains at least +1 to Tenacity from Vigor unless a specific rule states otherwise."
+  note: >
+    Same specialization cannot be chosen twice at creation. All others begin at Level 0
+    (Untrained). The universal starting slot must be filled by one Tenacity specialization
+    chosen according to character history.
 
 core_definition:
   what_it_is: "A trainable technical, practical, or methodological domain tied to one attribute."

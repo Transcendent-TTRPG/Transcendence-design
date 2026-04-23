@@ -1,0 +1,1092 @@
+meta:
+  version: "0.1"
+  status: draft
+  authority_sources:
+    - data/system/specializations-catalog.yaml
+    - data/system/techniques.yaml
+  purpose: >
+    Defines the Technique identity space of each specialization so future Technique
+    writing remains differentiated, consistent, and structurally tied to practiced domains.
+
+schema:
+  fields:
+    - specialization
+    - specialization_en
+    - associated_characteristic
+    - fantasy_core
+    - primary_tags
+    - secondary_tags
+    - rare_or_limited_tags
+    - typical_targets
+    - typical_types
+    - usual_cost_profile
+    - identity_notes
+    - should_not_do
+
+domains:
+  - specialization: Saltar
+    specialization_en: Jumping
+    associated_characteristic: Fuerza
+    fantasy_core: explosive projection, forced gap-crossing, sudden entry through bodily launch
+    primary_tags: [mobility, setup, pressure]
+    secondary_tags: [attack, escape, reposition]
+    rare_or_limited_tags: [control, recovery, support]
+    typical_targets: [self, route, enemy]
+    typical_types: [active]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, occasionally high on overextension
+    identity_notes: >
+      Jumping Techniques should begin from the launch. They are about commitment, angle,
+      forced entry, and explosive repositioning — not aerial refinement or balance.
+    should_not_do:
+      - sustained balance
+      - subtle concealment
+      - broad control
+      - prolonged defense
+
+  - specialization: Trepar
+    specialization_en: Climbing
+    associated_characteristic: Fuerza
+    fantasy_core: vertical progress, sustained body placement, controlled ascent or descent under pressure
+    primary_tags: [mobility, escape, setup]
+    secondary_tags: [stability, reposition, utility]
+    rare_or_limited_tags: [attack, support, pressure]
+    typical_targets: [self, route, object, environment]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, environment-shaped more than hostility-shaped
+    identity_notes: >
+      Climbing Techniques should reward vertical access, route control, anchors, and suspension.
+      They should feel like progress against a surface, not generic grip dominance.
+    should_not_do:
+      - direct immobilization
+      - broad enemy control
+      - ranged pressure
+      - social utility
+
+  - specialization: Lanzamiento
+    specialization_en: Throwing
+    associated_characteristic: Fuerza
+    fantasy_core: projecting objects with trained force, angle, and timing to create distance pressure or utility
+    primary_tags: [attack, pressure, setup]
+    secondary_tags: [disruption, utility, precision]
+    rare_or_limited_tags: [defense, recovery, support]
+    typical_targets: [enemy, object, route, zone]
+    typical_types: [active]
+    usual_cost_profile: low-to-medium rhythm, low Attrition for standard projection, higher for scene-altering throws
+    identity_notes: >
+      Throwing Techniques should remain tied to bodily launch. They may open angles, disarm
+      by distance, pin routes, or trigger objects, but should not drift into device-based shooting logic.
+    should_not_do:
+      - constant passive defense
+      - sustained mitigation
+      - non_physical_control_without_projectile_logic
+
+  - specialization: Nadar
+    specialization_en: Swimming
+    associated_characteristic: Fuerza
+    fantasy_core: maintaining agency in water, crossing hostile water space, and staying functional where others lose movement
+    primary_tags: [mobility, survival_window, escape]
+    secondary_tags: [reposition, setup, stability]
+    rare_or_limited_tags: [attack, support, control]
+    typical_targets: [self, route, environment]
+    typical_types: [active, reactive]
+    usual_cost_profile: medium rhythm, medium Attrition, highly scene-dependent
+    identity_notes: >
+      Swimming Techniques should feel like command of an aquatic medium: route holding,
+      diving, surfacing, aquatic infiltration, or maintaining function in water pressure.
+    should_not_do:
+      - generic_environmental_resistance
+      - direct_mitigation_without_water_logic
+      - long_range_offense
+
+  - specialization: Agarre
+    specialization_en: Gripping
+    associated_characteristic: Fuerza
+    fantasy_core: contact dominance, hold retention, immobilizing or stabilizing through trained force at close range
+    primary_tags: [control, interception, anti_displacement]
+    secondary_tags: [defense, setup, pressure]
+    rare_or_limited_tags: [mobility, recovery, support]
+    typical_targets: [enemy, ally, object, self]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-medium rhythm, medium Attrition when sustaining contact under resistance
+    identity_notes: >
+      Gripping Techniques should feel like mastery of contact points: retention, restraint,
+      stabilization, weapon control, and immediate physical denial.
+    should_not_do:
+      - ranged_pressure
+      - broad_battlefield_control
+      - abstract_mobility_bonus
+
+  - specialization: Acrobacias
+    specialization_en: Acrobatics
+    associated_characteristic: Agilidad
+    fantasy_core: dynamic bodily redirection, rolling, recovery, and fluid traversal through unstable movement
+    primary_tags: [mobility, escape, reposition]
+    secondary_tags: [defense, setup, spacing]
+    rare_or_limited_tags: [control, support, recovery]
+    typical_targets: [self, route, zone, enemy]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, higher when chained under pressure
+    identity_notes: >
+      Acrobatics Techniques should feel like continuity of motion: redirection, recovery from bad
+      angles, traversal through danger, and elegant evasion through dynamic body control.
+    should_not_do:
+      - static_balance
+      - fine_hand_manipulation
+      - mounted_command
+      - pure_force_projection
+
+  - specialization: Destreza
+    specialization_en: Dexterity
+    associated_characteristic: Agilidad
+    fantasy_core: fine technical manipulation through precise hand and body control under real pressure
+    primary_tags: [utility, setup, precision]
+    secondary_tags: [control, disruption, support]
+    rare_or_limited_tags: [attack, mobility, pressure]
+    typical_targets: [object, self, ally, enemy]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-medium rhythm, low Attrition for controlled work, medium under danger or extreme precision pressure
+    identity_notes: >
+      Dexterity Techniques should express exactness, careful placement, delicate manipulation,
+      and technical execution. They should feel hand-driven, not acrobatic or opportunistic.
+    should_not_do:
+      - broad_locomotion
+      - generic_stealth
+      - brute_force_control
+      - social_influence
+
+  - specialization: Equilibrio
+    specialization_en: Balance
+    associated_characteristic: Agilidad
+    fantasy_core: maintaining operational posture when footing, support, or external force tries to break bodily stability
+    primary_tags: [defense, stability, anti_displacement]
+    secondary_tags: [mobility, setup, reposition]
+    rare_or_limited_tags: [attack, support, pressure]
+    typical_targets: [self, route, enemy, environment]
+    typical_types: [reactive, active]
+    usual_cost_profile: low rhythm, low-to-medium Attrition, often triggered by hostile force or unstable terrain
+    identity_notes: >
+      Balance Techniques should feel like staying functional on bad footing, resisting forced
+      loss of posture, and preserving tactical continuity where others would yield space.
+    should_not_do:
+      - complex_dynamic_traversal
+      - fine_manipulation
+      - mounted_control
+      - inner_emotional_stability
+
+  - specialization: Equitación
+    specialization_en: Riding
+    associated_characteristic: Agilidad
+    fantasy_core: turning mount and rider into a single tactical system under speed, pressure, and unstable positioning
+    primary_tags: [mobility, setup, pressure]
+    secondary_tags: [reposition, escape, control]
+    rare_or_limited_tags: [recovery, support, precision]
+    typical_targets: [self, creature, route, enemy]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, medium Attrition when maneuvering hard or fighting for mounted control
+    identity_notes: >
+      Riding Techniques should express mounted line control, charge angles, mounted repositioning,
+      and maintaining rider-mount integrity under threat. They should feel tactical, not bonded or pastoral.
+    should_not_do:
+      - aura_bonding
+      - animal_training_in_general
+      - broad_party_support
+      - static_defense_without_mount_logic
+
+  - specialization: Marcha
+    specialization_en: March
+    associated_characteristic: Tenacidad
+    fantasy_core: sustained forward progress, route endurance, and keeping operational pace across long exertion
+    primary_tags: [survival_window, mobility, stability]
+    secondary_tags: [recovery, setup, escape]
+    rare_or_limited_tags: [attack, control, support]
+    typical_targets: [self, ally, route, environment]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, medium Attrition, often escalating over long scenes or journeys
+    identity_notes: >
+      March Techniques should preserve movement continuity over time: keeping pace, extending travel
+      function, and refusing collapse during prolonged displacement. They are not about pain already
+      inside the body.
+    should_not_do:
+      - direct_pain_resistance
+      - environmental_adaptation_without_travel_logic
+      - burst_offense
+      - static_defense
+
+  - specialization: Aclimatación
+    specialization_en: Acclimation
+    associated_characteristic: Tenacidad
+    fantasy_core: maintaining bodily function under hostile climate, altitude, exposure, or environmental pressure
+    primary_tags: [defense, mitigation, survival_window]
+    secondary_tags: [recovery, stability, utility]
+    rare_or_limited_tags: [attack, mobility, control]
+    typical_targets: [self, ally, environment, zone]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low-to-medium Attrition, often passive or triggered by exposure thresholds
+    identity_notes: >
+      Acclimation Techniques should resist what the environment is doing to the body: heat, cold,
+      thin air, corrosive atmosphere, pressure, or exposure. They should not drift into generic
+      toughness once suffering is already internalized.
+    should_not_do:
+      - prolonged_locomotion_support
+      - direct_offensive_pressure
+      - emotional_stabilization
+      - generic_healing
+
+  - specialization: Tolerancia
+    specialization_en: Tolerance
+    associated_characteristic: Tenacidad
+    fantasy_core: remaining functional while pain, poison, wounds, or active physiological degradation are already inside the body
+    primary_tags: [defense, mitigation, condition_reduction]
+    secondary_tags: [survival_window, stability, recovery]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [self, ally]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low-to-medium Attrition, sometimes high when Techniques override severe bodily collapse windows
+    identity_notes: >
+      Tolerance Techniques should feel like refusing physiological shutdown under suffering already
+      in progress. They belong to pain endurance, poison resistance, wound function, and bodily
+      persistence under internal damage, not to travel pacing or climate adaptation.
+    should_not_do:
+      - travel_acceleration
+      - environmental_adjustment_before_harm_lands
+      - mental_composure
+      - broad_ally_support
+
+  - specialization: Orientación
+    specialization_en: Orientation
+    associated_characteristic: Astucia
+    fantasy_core: constructing usable direction from uncertain terrain, incomplete references, and shifting positional information
+    primary_tags: [utility, setup, survival_window]
+    secondary_tags: [mobility, reposition, stability]
+    rare_or_limited_tags: [attack, control, support]
+    typical_targets: [self, ally, route, environment]
+    typical_types: [active, reactive]
+    usual_cost_profile: low rhythm, low Attrition, usually shaped by uncertainty rather than hostility
+    identity_notes: >
+      Orientation Techniques should restore direction, secure route sense, avoid disorientation,
+      or convert confusing space into actionable movement logic. They should not feel like reading
+      another creature's trail.
+    should_not_do:
+      - pursuit_reading
+      - deception
+      - broad_offensive_pressure
+      - direct_environmental_resistance
+
+  - specialization: Rastreo
+    specialization_en: Tracking
+    associated_characteristic: Astucia
+    fantasy_core: reconstructing another being's path from marks, disturbances, and residual traces left in the world
+    primary_tags: [utility, pressure, setup]
+    secondary_tags: [survival_window, reposition, control]
+    rare_or_limited_tags: [attack, recovery, support]
+    typical_targets: [enemy, route, environment, object]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often escalating over distance or degraded traces
+    identity_notes: >
+      Tracking Techniques should convert remnants into pursuit logic: holding a trail, reading
+      movement history, predicting route continuation, or preventing escape through trace reading.
+      They should not become generic navigation.
+    should_not_do:
+      - self_navigation_without_traces
+      - broad_social_manipulation
+      - direct_damage
+      - abstract_deduction_without_world_signs
+
+  - specialization: Intuición
+    specialization_en: Intuition
+    associated_characteristic: Astucia
+    fantasy_core: reaching useful conclusions before evidence becomes explicit by reading dissonance, pattern tension, and incomplete signals
+    primary_tags: [utility, counter_read, setup]
+    secondary_tags: [defense, survival_window, pattern_exploitation]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [self, enemy, ally, zone]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low Attrition, often triggered by ambiguity, hidden intent, or unseen danger
+    identity_notes: >
+      Intuition Techniques should catch structure before it fully appears: reading motive, sensing
+      a trap, anticipating an angle, or exploiting a pattern not yet visible in full. They should
+      not drift into raw sensory detection or mystical instinct.
+    should_not_do:
+      - direct_perception
+      - bodily_survival
+      - overt_social_pressure
+      - formal_scholarship
+
+  - specialization: Engaño
+    specialization_en: Deception
+    associated_characteristic: Astucia
+    fantasy_core: imposing a false frame on another mind through convincing lies, omissions, and deliberate narrative control
+    primary_tags: [utility, control, setup]
+    secondary_tags: [pressure, disruption, counter_read]
+    rare_or_limited_tags: [attack, recovery, mobility]
+    typical_targets: [enemy, ally, group, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, rising when layered or sustained under suspicion
+    identity_notes: >
+      Deception Techniques should make a false version of events function long enough to alter
+      action, trust, or tempo. They should manipulate belief, not fear, disguise, or bodily concealment.
+    should_not_do:
+      - identity_replication
+      - direct_terror_pressure
+      - generic_stealth
+      - precision_theft
+
+  - specialization: Improvisación
+    specialization_en: Improvisation
+    associated_characteristic: Astucia
+    fantasy_core: producing a workable answer under immediate pressure with poor tools, incomplete plans, and whatever the scene allows
+    primary_tags: [utility, setup, disruption]
+    secondary_tags: [survival_window, control, recovery]
+    rare_or_limited_tags: [attack, support, precision]
+    typical_targets: [self, ally, object, environment, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, often paid through risk, fragility, or resource consumption
+    identity_notes: >
+      Improvisation Techniques should make something usable out of the wrong conditions. They
+      should create temporary answers, unstable fixes, opportunistic tools, or scene turns without
+      becoming formal engineering or fine manual mastery.
+    should_not_do:
+      - robust_long_term_construction
+      - exact_handcraft
+      - pure_social_manipulation
+      - reliable_healing
+
+  - specialization: Hurto
+    specialization_en: Theft
+    associated_characteristic: Astucia
+    fantasy_core: taking control of something that is not yours through opportunity, timing, distraction, and exit before response closes
+    primary_tags: [utility, setup, pressure]
+    secondary_tags: [control, disruption, escape]
+    rare_or_limited_tags: [attack, support, recovery]
+    typical_targets: [enemy, object, zone, self]
+    typical_types: [active, reactive]
+    usual_cost_profile: low rhythm, low Attrition, but often high exposure if the window closes or alert rises
+    identity_notes: >
+      Theft Techniques should feel like opportunistic acquisition under risk: lift, slip, remove,
+      transfer, or strip access without open confrontation. They should not become generic fine
+      manipulation or broad stealth identity.
+    should_not_do:
+      - pure_manual_precision_without_acquisition
+      - open_combat_pressure
+      - identity_deception
+      - broad_navigation
+
+  - specialization: Percepción
+    specialization_en: Perception
+    associated_characteristic: Sabiduría
+    fantasy_core: extracting actionable detail from what is already present in the scene before it slips away or stays unnoticed
+    primary_tags: [utility, counter_read, setup]
+    secondary_tags: [defense, survival_window, pattern_exploitation]
+    rare_or_limited_tags: [attack, recovery, support]
+    typical_targets: [self, enemy, environment, object, zone]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low rhythm, low Attrition, usually paid through timing and line of exposure rather than bodily strain
+    identity_notes: >
+      Perception Techniques should catch what is already there before it is lost: exposed detail,
+      hidden motion, faint signal, or dangerous presence. They should not drift into inference,
+      formal interpretation, or trace-based pursuit.
+    should_not_do:
+      - abstract_deduction
+      - historical_analysis
+      - environmental_resistance
+      - deception
+
+  - specialization: Supervivencia
+    specialization_en: Survival
+    associated_characteristic: Sabiduría
+    fantasy_core: making the right practical decision to keep people alive and functional in hostile terrain or natural pressure
+    primary_tags: [survival_window, utility, setup]
+    secondary_tags: [recovery, mitigation, stability]
+    rare_or_limited_tags: [attack, control, pressure]
+    typical_targets: [self, ally, route, environment, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low-to-medium Attrition, often extended over scenes of scarcity or exposure
+    identity_notes: >
+      Survival Techniques should feel like field judgment: shelter choice, water logic, immediate
+      resource use, route safety, and practical adaptation to natural threat. They should not
+      become internal bodily resistance or clinical treatment.
+    should_not_do:
+      - direct_body_adaptation
+      - formal_healing
+      - abstract_navigation_without_field_logic
+      - broad_offense
+
+  - specialization: Medicina
+    specialization_en: Medicine
+    associated_characteristic: Sabiduría
+    fantasy_core: intervening on bodily harm with trained care to stabilize, restore function, or buy time before collapse
+    primary_tags: [recovery, mitigation, survival_window]
+    secondary_tags: [utility, condition_reduction, stability]
+    rare_or_limited_tags: [attack, mobility, pressure]
+    typical_targets: [self, ally, enemy]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, often constrained by tools, time, and patient state
+    identity_notes: >
+      Medicine Techniques should feel like practiced intervention on damage already present:
+      stabilizing, treating, reducing consequences, or restoring immediate bodily function. They
+      should not become pain endurance, ingredient identification, or compound production by themselves.
+    should_not_do:
+      - passive_toughness
+      - environmental_adaptation
+      - raw_ingredient_recognition
+      - broad_mechanical_control
+
+  - specialization: Herboristería
+    specialization_en: Herbalism
+    associated_characteristic: Sabiduría
+    fantasy_core: recognizing, gathering, and putting plant matter to practical use before it spoils, is misread, or goes unfound
+    primary_tags: [utility, setup, recovery]
+    secondary_tags: [mitigation, survival_window, support]
+    rare_or_limited_tags: [attack, control, precision]
+    typical_targets: [self, ally, object, environment, ingredient]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, usually shaped by access, season, and specimen quality
+    identity_notes: >
+      Herbalism Techniques should feel like plant-resource mastery: finding, classifying,
+      preserving, and preparing flora for use. They should not drift into clinical treatment or
+      elaborate compound engineering.
+    should_not_do:
+      - direct_surgery
+      - complex_reagent_transformation
+      - structural_mechanics
+      - pure_sensory_detection
+
+  - specialization: Alquimia
+    specialization_en: Alchemy
+    associated_characteristic: Sabiduría
+    fantasy_core: transforming ingredients into functional compounds through process, preparation, and controlled reaction
+    primary_tags: [utility, setup, condition_reduction]
+    secondary_tags: [recovery, attack, mitigation]
+    rare_or_limited_tags: [mobility, pressure, support]
+    typical_targets: [self, ally, enemy, object, ingredient]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, often paid through ingredient value, preparation time, and failure risk
+    identity_notes: >
+      Alchemy Techniques should feel like making effects through compounds: antitoxins, toxins,
+      reactive agents, extracts, and prepared responses. They should not become ingredient gathering,
+      direct healing procedure, or structural engineering.
+    should_not_do:
+      - raw_resource_identification
+      - clinical_body_work
+      - terrain_navigation
+      - broad_social_control
+
+  - specialization: Trampas
+    specialization_en: Traps
+    associated_characteristic: Sabiduría
+    fantasy_core: shaping a delayed or conditional response that turns space, passage, or interaction into a controlled danger or lock
+    primary_tags: [control, setup, pressure]
+    secondary_tags: [disruption, utility, counter_positioning]
+    rare_or_limited_tags: [recovery, support, mobility]
+    typical_targets: [enemy, route, zone, object, environment]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, often paid through preparation, material, and placement constraints
+    identity_notes: >
+      Traps Techniques should feel like conditional mechanism logic: arming, disarming, redirecting
+      triggers, weaponizing passage, or securing an approach. They should not become broad
+      engineering or mere fine-hand execution.
+    should_not_do:
+      - generic_precision_work
+      - long_term_architecture
+      - direct_healing
+      - open_melee_pressure
+
+  - specialization: Minería
+    specialization_en: Mining
+    associated_characteristic: Sabiduría
+    fantasy_core: reading and extracting the earth without losing the material, the route, or the stability that makes extraction possible
+    primary_tags: [utility, setup, stability]
+    secondary_tags: [survival_window, recovery, control]
+    rare_or_limited_tags: [attack, mobility, pressure]
+    typical_targets: [environment, object, route]
+    typical_types: [active, reactive]
+    usual_cost_profile: moderate rhythm, medium Attrition, strongly shaped by tool load, collapse risk, and extraction duration
+    identity_notes: >
+      Mining Techniques should feel like subsurface judgment and extraction discipline: reading
+      seams, preserving tunnels, securing access, and recovering material from stone. They should
+      not become forging, general engineering, or broad exploration logic.
+    should_not_do:
+      - metal_shaping
+      - abstract_system_design
+      - direct_social_influence
+      - bodily_resistance
+
+  - specialization: Herrería
+    specialization_en: Smithing
+    associated_characteristic: Sabiduría
+    fantasy_core: shaping or restoring functional metal through heat, force, timing, and material judgment
+    primary_tags: [utility, recovery, setup]
+    secondary_tags: [mitigation, attack, stability]
+    rare_or_limited_tags: [mobility, pressure, counter_read]
+    typical_targets: [object]
+    typical_types: [active]
+    usual_cost_profile: moderate rhythm, medium Attrition, often paid through labor load, heat access, and material stakes
+    identity_notes: >
+      Smithing Techniques should feel like functional metalwork: repair, reinforcement, reshaping,
+      stress reading, or forging under pressure. They should not become fine luxury detail work or
+      general system design.
+    should_not_do:
+      - jewel_precision
+      - broad_mechanical_architecture
+      - terrain_survival
+      - deception
+
+  - specialization: Sastrería
+    specialization_en: Tailoring
+    associated_characteristic: Sabiduría
+    fantasy_core: restoring or configuring flexible material so it keeps function, fit, and integrity under use
+    primary_tags: [utility, recovery, mitigation]
+    secondary_tags: [setup, support, stability]
+    rare_or_limited_tags: [attack, pressure, control]
+    typical_targets: [object, ally, self]
+    typical_types: [active]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, shaped by material quality, time, and precision of adjustment
+    identity_notes: >
+      Tailoring Techniques should feel like practical textile mastery: fit correction, fabric
+      restoration, strap or seam function, and flexible gear readiness. They should not drift into
+      jewelry-scale finesse or metalwork.
+    should_not_do:
+      - fine_gem_work
+      - structural_mechanics
+      - direct_damage
+      - pursuit_logic
+
+  - specialization: Joyería
+    specialization_en: Jewelry
+    associated_characteristic: Sabiduría
+    fantasy_core: preserving value and function in small, delicate, high-precision crafted pieces
+    primary_tags: [utility, precision, setup]
+    secondary_tags: [recovery, support, control]
+    rare_or_limited_tags: [attack, mobility, survival_window]
+    typical_targets: [object]
+    typical_types: [active]
+    usual_cost_profile: low rhythm, low Attrition, but high consequence on mistakes because of scale and value
+    identity_notes: >
+      Jewelry Techniques should feel like exact fine-scale craft: setting, separating, restoring,
+      concealing detail in precious work, or manipulating small high-value pieces without ruining
+      them. They should not become heavy forge labor or broad engineering.
+    should_not_do:
+      - structural_forging
+      - field_survival
+      - large_scale_repair
+      - open_combat_pressure
+
+  - specialization: Ingeniería
+    specialization_en: Engineering
+    associated_characteristic: Sabiduría
+    fantasy_core: understanding and altering how a complex physical system functions as a whole under load, access, and failure pressure
+    primary_tags: [utility, control, setup]
+    secondary_tags: [mitigation, disruption, recovery]
+    rare_or_limited_tags: [attack, pressure, stealth]
+    typical_targets: [object, device, structure, route, environment]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: moderate rhythm, medium Attrition, often paid through complexity, tool demands, and cascade-failure risk
+    identity_notes: >
+      Engineering Techniques should feel like system logic under intervention: understanding load
+      paths, bypassing mechanisms, stabilizing or redirecting function, and altering structure as a
+      coherent whole. They should not become improvisation, trap logic alone, or single-material craft.
+    should_not_do:
+      - fragile_temporary_fix_as_identity
+      - fine_manual_pickwork
+      - botanical_resource_work
+      - broad_party_leadership
+
+  - specialization: Identificación
+    specialization_en: Identification
+    associated_characteristic: Intelecto
+    fantasy_core: naming exactly what something is before action misfires through category error or false assumption
+    primary_tags: [utility, counter_read, setup]
+    secondary_tags: [survival_window, disruption, pattern_exploitation]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [object, enemy, creature, phenomenon, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: low rhythm, low Attrition, usually paid through sample quality and observation time
+    identity_notes: >
+      Identification Techniques should feel like precise classification under uncertainty: knowing
+      what stands before you, what category it belongs to, and what framework applies next. They
+      should not become interpretive meaning-making or pure detection.
+    should_not_do:
+      - symbolic_analysis_as_primary
+      - sensory_search
+      - direct_healing
+      - route_navigation
+
+  - specialization: Interpretación
+    specialization_en: Interpretation
+    associated_characteristic: Intelecto
+    fantasy_core: extracting implication, structure, and meaning from information that is already present but not yet understood
+    primary_tags: [utility, pattern_exploitation, setup]
+    secondary_tags: [counter_read, disruption, survival_window]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [zone, object, text, enemy, structure]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often constrained by ambiguity and analysis time
+    identity_notes: >
+      Interpretation Techniques should turn evidence into implication: what the pattern means, what
+      the layout implies, what the sign points toward. They should not become raw intuition,
+      linguistic decoding, or mere classification.
+    should_not_do:
+      - direct_classification_without_meaning
+      - pure_detection
+      - social_deception
+      - bodily_resistance
+
+  - specialization: Lingüística
+    specialization_en: Linguistics
+    associated_characteristic: Intelecto
+    fantasy_core: opening real language systems so speech, text, or inscription becomes legible enough to act on
+    primary_tags: [utility, setup, counter_read]
+    secondary_tags: [disruption, support, pattern_exploitation]
+    rare_or_limited_tags: [attack, mobility, mitigation]
+    typical_targets: [text, creature, message]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, usually shaped by exposure length, language distance, and text quality
+    identity_notes: >
+      Linguistics Techniques should unlock language as language: grammar, register, structure,
+      semantic pattern, and translation opening. They should not become cryptographic breakwork or
+      social rhetoric.
+    should_not_do:
+      - deliberate_codebreaking_as_primary
+      - negotiation_pressure
+      - battlefield_command
+      - direct_damage
+
+  - specialization: Taumaturgia
+    specialization_en: Thaumaturgy
+    associated_characteristic: Intelecto
+    fantasy_core: understanding thaumic logic as a formal system before manifestation, distortion, or contact becomes uncontrollable
+    primary_tags: [utility, mitigation, condition_reduction]
+    secondary_tags: [counter_read, setup, disruption]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [phenomenon, object, zone, structure]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: moderate rhythm, low-to-medium Attrition, often raised by instability, contamination, or volatility
+    identity_notes: >
+      Thaumaturgy Techniques should feel like formal contact-through-understanding: reading laws,
+      identifying distortion patterns, suppressing or redirecting thaumic behavior through knowledge.
+      They should not become resonance, doctrine, or instinctive aura response.
+    should_not_do:
+      - faith_interpretation
+      - emotional_alignment
+      - raw_aura_contact
+      - mundane_navigation
+
+  - specialization: Historia
+    specialization_en: History
+    associated_characteristic: Intelecto
+    fantasy_core: bringing organized precedent to bear so present action benefits from what similar systems, peoples, or crises have already done
+    primary_tags: [utility, setup, pattern_exploitation]
+    secondary_tags: [counter_read, support, disruption]
+    rare_or_limited_tags: [attack, mobility, recovery]
+    typical_targets: [zone, group, object]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, usually dependent on contextual fit rather than pressure cost
+    identity_notes: >
+      History Techniques should feel like using precedent as leverage: recognizing cycles, recalling
+      prior methods, anticipating inherited patterns, or exposing continuity with the past. They
+      should not become archaeology or immediate tactical reading.
+    should_not_do:
+      - material_site_excavation
+      - direct_social_command
+      - physical_repair
+      - live_tracking
+
+  - specialization: Geografía
+    specialization_en: Geography
+    associated_characteristic: Intelecto
+    fantasy_core: using organized knowledge of regions, terrain systems, and large-scale spatial relations to shape present movement or strategy
+    primary_tags: [utility, setup, survival_window]
+    secondary_tags: [mobility, support, pattern_exploitation]
+    rare_or_limited_tags: [attack, recovery, control]
+    typical_targets: [route, environment, group, zone]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, mostly paid through precision demands and incomplete references
+    identity_notes: >
+      Geography Techniques should feel like macro-spatial knowledge becoming actionable: regional
+      layout, chokepoints, territorial logic, and broad terrain structure. They should not become
+      immediate route finding or field survival judgment.
+    should_not_do:
+      - real_time_navigation_without_knowledge_base
+      - subsurface_extraction
+      - direct_healing
+      - deception
+
+  - specialization: Astronomía
+    specialization_en: Astronomy
+    associated_characteristic: Intelecto
+    fantasy_core: reading celestial order as a stable information system for timing, orientation, and large-cycle inference
+    primary_tags: [utility, setup, pattern_exploitation]
+    secondary_tags: [survival_window, counter_read, support]
+    rare_or_limited_tags: [attack, mobility, control]
+    typical_targets: [environment, phenomenon, route, zone]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, often constrained by visibility, timing, and precision of observation
+    identity_notes: >
+      Astronomy Techniques should feel like extracting usable order from the sky: timing windows,
+      celestial correlation, macro-pattern reading, or night-based orientation by formal knowledge.
+      They should not become theology or immediate instinctive sky-reading.
+    should_not_do:
+      - doctrinal_meaning_as_primary
+      - bodily_resistance
+      - direct_combat_pressure
+      - raw_language_decoding
+
+  - specialization: Teología
+    specialization_en: Theology
+    associated_characteristic: Intelecto
+    fantasy_core: understanding religious systems, doctrines, rites, and sacred authority as structured knowledge that shapes behavior and interpretation
+    primary_tags: [utility, counter_read, setup]
+    secondary_tags: [support, disruption, pattern_exploitation]
+    rare_or_limited_tags: [attack, mobility, mitigation]
+    typical_targets: [ritual, symbol, group, zone]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, shaped mostly by obscurity, syncretism, and doctrinal depth
+    identity_notes: >
+      Theology Techniques should feel like doctrinal literacy becoming leverage: recognizing
+      authority structures, ritual implications, symbolic consistency, and sacred logic. They
+      should not become thaumic science or aura-born response.
+    should_not_do:
+      - direct_taumic_analysis
+      - resonance_contact
+      - battlefield_force_projection
+      - practical_crafting
+
+  - specialization: Criptología
+    specialization_en: Cryptology
+    associated_characteristic: Intelecto
+    fantasy_core: breaking systems intentionally designed to deny access, using structure, repetition, and concealed order against themselves
+    primary_tags: [utility, counter_read, disruption]
+    secondary_tags: [setup, pattern_exploitation, control]
+    rare_or_limited_tags: [attack, mobility, recovery]
+    typical_targets: [message, device, text, phenomenon]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often paid through sample scarcity, urgency, and cognitive load
+    identity_notes: >
+      Cryptology Techniques should feel like opening what was deliberately sealed: code, cipher,
+      obfuscation, or patterned concealment. They should not become ordinary language work or broad
+      interpretation after the code is already open.
+    should_not_do:
+      - natural_language_translation_as_primary
+      - doctrinal_analysis
+      - route_planning
+      - direct_damage
+
+  - specialization: Arqueología
+    specialization_en: Archaeology
+    associated_characteristic: Intelecto
+    fantasy_core: reading material remains as evidence of lost use, culture, sequence, and intent
+    primary_tags: [utility, pattern_exploitation, counter_read]
+    secondary_tags: [setup, support, survival_window]
+    rare_or_limited_tags: [attack, mobility, recovery]
+    typical_targets: [site, object, structure]
+    typical_types: [active, passive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, usually shaped by access, preservation state, and sample breadth
+    identity_notes: >
+      Archaeology Techniques should feel like reconstructing vanished life from physical remainder:
+      sequence, usage, maker, culture, and loss. They should not become document-based history or
+      structural engineering.
+    should_not_do:
+      - text_only_historical_analysis
+      - mechanism_override
+      - direct_social_pressure
+      - clinical_restoration
+
+  - specialization: Arquitectura
+    specialization_en: Architecture
+    associated_characteristic: Intelecto
+    fantasy_core: reading built space as intention, flow, concealment, and structural habitability
+    primary_tags: [utility, setup, control]
+    secondary_tags: [mitigation, pattern_exploitation, counter_positioning]
+    rare_or_limited_tags: [attack, recovery, pressure]
+    typical_targets: [structure, route, zone, site, environment]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often paid through access limits and complexity of the built form
+    identity_notes: >
+      Architecture Techniques should feel like understanding how built space wants movement,
+      concealment, and habitation to happen: hidden volumes, intended circulation, structural logic,
+      and design intent. They should not become engineering of mechanisms or archaeological culture reading.
+    should_not_do:
+      - device_level_mechanics
+      - excavation_logic
+      - direct_offense
+      - botanical_resource_handling
+
+  - specialization: Belicología
+    specialization_en: Belicology
+    associated_characteristic: Intelecto
+    fantasy_core: understanding conflict as doctrine, deployment, logistics, and war-system rather than isolated combat moments
+    primary_tags: [utility, setup, pattern_exploitation]
+    secondary_tags: [control, pressure, counter_read]
+    rare_or_limited_tags: [recovery, mobility, attack]
+    typical_targets: [enemy, group, zone, formation]
+    typical_types: [active, passive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, usually paid through information gaps and scale complexity
+    identity_notes: >
+      Belicology Techniques should feel like formal war literacy becoming tactical leverage:
+      reading deployment, anticipating doctrine, understanding logistical posture, or identifying
+      systemic weakness in organized conflict. They should not become live leadership or raw weapon execution.
+    should_not_do:
+      - real_time_command_as_primary
+      - direct_weapon_mastery
+      - healing_work
+      - stealth_infiltration
+
+  - specialization: Enfoque
+    specialization_en: Focus
+    associated_characteristic: Compostura
+    fantasy_core: keeping the mind fixed on one necessary line of action while distraction, danger, or overload tries to break it
+    primary_tags: [utility, setup, stability]
+    secondary_tags: [counter_read, mitigation, survival_window]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [self, object, zone]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low rhythm, low Attrition, often paid through sustained cognitive strain under pressure
+    identity_notes: >
+      Focus Techniques should feel like directed continuity of attention: holding the thread,
+      ignoring noise, and locking onto one operational line until it is done. They should not
+      become emotional recovery or social façade control.
+    should_not_do:
+      - emotional_restoration
+      - visible_social_masking
+      - direct_damage
+      - broad_group_support
+
+  - specialization: Contención
+    specialization_en: Containment
+    associated_characteristic: Compostura
+    fantasy_core: preventing internal breakage from panic, horror, or emotional overload before action collapses from within
+    primary_tags: [mitigation, survival_window, condition_reduction]
+    secondary_tags: [stability, utility, counter_read]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [self, ally]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low-to-medium Attrition, higher when Techniques suppress severe internal rupture windows
+    identity_notes: >
+      Containment Techniques should feel like holding the inside together under mental or emotional
+      threat: not panicking, not collapsing, and not losing agency to inner rupture. They should
+      not become bodily toughness, calm restoration, or outward acting.
+    should_not_do:
+      - physical_pain_endurance
+      - slow_restorative_practice
+      - social_deception
+      - travel_support
+
+  - specialization: Meditación
+    specialization_en: Meditation
+    associated_characteristic: Compostura
+    fantasy_core: deliberately restoring clarity and inner balance through pause, practice, and cultivated return to center
+    primary_tags: [recovery, condition_reduction, stability]
+    secondary_tags: [mitigation, utility, support]
+    rare_or_limited_tags: [attack, pressure, mobility]
+    typical_targets: [self, ally, zone]
+    typical_types: [active, passive]
+    usual_cost_profile: low rhythm, low Attrition, but strongly dependent on time, calm window, and environmental safety
+    identity_notes: >
+      Meditation Techniques should feel like deliberate inward recomposition: quieting noise,
+      reducing internal residue, regaining clarity, and preparing the self to act cleanly again.
+      They should not become emergency panic resistance or mere concentration locking.
+    should_not_do:
+      - immediate_crisis_hold_as_primary
+      - visible_status_management
+      - direct_offense
+      - trap_logic
+
+  - specialization: Aplomo
+    specialization_en: Poise
+    associated_characteristic: Compostura
+    fantasy_core: preserving outward composure so pressure, pain, shock, or fear do not become legible to others at the wrong moment
+    primary_tags: [utility, control, counter_read]
+    secondary_tags: [mitigation, setup, pressure]
+    rare_or_limited_tags: [attack, recovery, mobility]
+    typical_targets: [self, enemy, group, zone]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low Attrition, often paid through sustained visible strain under scrutiny
+    identity_notes: >
+      Poise Techniques should feel like controlling what escapes outward: expression, bearing,
+      tension, and visible fracture under pressure. They should not become the inner work of not
+      breaking, nor full false-narrative deception.
+    should_not_do:
+      - internal_emotional_repair
+      - deliberate_lie_construction
+      - direct_weapon_pressure
+      - structural_analysis
+
+  - specialization: Instinto
+    specialization_en: Instinct
+    associated_characteristic: Aura
+    fantasy_core: responding from the deepest layer of self before analysis finishes or conscious certainty exists
+    primary_tags: [counter_read, survival_window, setup]
+    secondary_tags: [utility, mitigation, pattern_exploitation]
+    rare_or_limited_tags: [attack, support, pressure]
+    typical_targets: [self, enemy, zone, phenomenon]
+    typical_types: [reactive, passive, active]
+    usual_cost_profile: low rhythm, low Attrition, usually triggered by exposure rather than deliberate exertion
+    identity_notes: >
+      Instinct Techniques should feel like primary essential response: recoil, pull, recognition,
+      refusal, or readiness before reason. They should not become trained inference, formal
+      analysis, or deliberate attunement rituals.
+    should_not_do:
+      - structured_deduction
+      - doctrinal_reading
+      - explicit_social_control
+      - mechanical_repair
+
+  - specialization: Resonancia
+    specialization_en: Resonance
+    associated_characteristic: Aura
+    fantasy_core: actively tuning the aura toward a force, place, presence, or state until contact becomes meaningful
+    primary_tags: [utility, counter_read, condition_reduction]
+    secondary_tags: [setup, mitigation, pattern_exploitation]
+    rare_or_limited_tags: [attack, mobility, support]
+    typical_targets: [phenomenon, zone, self, object]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low-to-moderate rhythm, low-to-medium Attrition, often paid through exposure to dissonance, interference, or intensity
+    identity_notes: >
+      Resonance Techniques should feel like deliberate aura contact: tuning, sensing, aligning,
+      or gently pushing into essential fields or beings. They should not become formal thaumic
+      theory, involuntary instinct alone, or social persuasion.
+    should_not_do:
+      - academic_taumic_analysis
+      - pure_reflex_response
+      - direct_command_of_groups
+      - brute_force_damage
+
+  - specialization: Vínculo
+    specialization_en: Bond
+    associated_characteristic: Aura
+    fantasy_core: operating through a real sustained essential link that already exists between the self and a specific being
+    primary_tags: [support, setup, counter_read]
+    secondary_tags: [utility, mitigation, survival_window]
+    rare_or_limited_tags: [attack, pressure, mobility]
+    typical_targets: [self, ally, creature]
+    typical_types: [active, passive, reactive]
+    usual_cost_profile: low rhythm, low Attrition, usually shaped by distance, strain on the bond, and the state of the linked being
+    identity_notes: >
+      Bond Techniques should feel like leveraging continuity of connection: sensing across distance,
+      stabilizing relation, sharing warning, or acting through a deep established tie. They should
+      not become broad leadership, generic animal handling, or momentary aura touch.
+    should_not_do:
+      - crowd_influence
+      - practical_beast_management
+      - instant_contact_without_prior_link
+      - direct_weapon_pressure
+
+  - specialization: Domesticación
+    specialization_en: Domestication
+    associated_characteristic: Aura
+    fantasy_core: entering the response logic of an instinctive creature well enough to calm, guide, train, or prevent escalation
+    primary_tags: [control, support, mitigation]
+    secondary_tags: [setup, utility, survival_window]
+    rare_or_limited_tags: [attack, pattern_exploitation, pressure]
+    typical_targets: [creature, mount, self, zone]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often paid through exposure risk, emotional agitation, and repeated handling pressure
+    identity_notes: >
+      Domestication Techniques should feel like practical creature handling through instinctive
+      communication and response shaping: calming, directing, familiarizing, and preventing a break
+      into chaos. They should not become mounted technique, deep essential link by itself, or abstract social authority.
+    should_not_do:
+      - mounted_line_control
+      - bond_depth_as_primary
+      - doctrinal_understanding
+      - battlefield_command
+
+  - specialization: Liderazgo
+    specialization_en: Leadership
+    associated_characteristic: Presencia
+    fantasy_core: turning your presence into recognized direction so multiple others move under a common line instead of fragmenting
+    primary_tags: [support, control, setup]
+    secondary_tags: [pressure, mitigation, survival_window]
+    rare_or_limited_tags: [attack, stealth, recovery]
+    typical_targets: [ally, group, formation, zone]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, often paid through sustained command strain and responsibility pressure
+    identity_notes: >
+      Leadership Techniques should feel like authority becoming structure: rallying, re-centering,
+      assigning, synchronizing, and preserving cohesion under stress. They should not become
+      coercion by fear or abstract war scholarship.
+    should_not_do:
+      - terror_submission
+      - doctrinal_analysis
+      - identity_disguise
+      - hidden_presence
+
+  - specialization: Negociación
+    specialization_en: Negotiation
+    associated_characteristic: Presencia
+    fantasy_core: reshaping a contested social situation into an acceptable exchange before the window for agreement collapses
+    primary_tags: [utility, control, support]
+    secondary_tags: [setup, disruption, counter_read]
+    rare_or_limited_tags: [attack, stealth, direct_mitigation]
+    typical_targets: [enemy, ally, group, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: low rhythm, low Attrition, shaped by leverage, urgency, and exposed position
+    identity_notes: >
+      Negotiation Techniques should feel like building agreement through structured exchange:
+      concession, leverage, framing of terms, and converting hostility into deal-space. They should
+      not become lies, intimidation, or command.
+    should_not_do:
+      - false_narrative_as_primary
+      - fear_coercion
+      - battlefield_leadership
+      - stealth_entry
+
+  - specialization: Intimidación
+    specialization_en: Intimidation
+    associated_characteristic: Presencia
+    fantasy_core: making consequences feel immediate and credible enough that another party yields under your projected threat
+    primary_tags: [pressure, control, disruption]
+    secondary_tags: [setup, counter_read, survival_window]
+    rare_or_limited_tags: [recovery, stealth, support]
+    typical_targets: [enemy, group, zone, self]
+    typical_types: [active, reactive]
+    usual_cost_profile: low rhythm, low Attrition, but often high exposure if the threat fails or must be sustained
+    identity_notes: >
+      Intimidation Techniques should feel like coercive presence: credible menace, dominance
+      display, immediate pressure, and collapse of resistance through fear. They should not become
+      voluntary coordination or negotiated reciprocity.
+    should_not_do:
+      - mutual_agreement_building
+      - doctrine_reading
+      - identity_performance
+      - quiet_concealment
+
+  - specialization: Imitación
+    specialization_en: Imitation
+    associated_characteristic: Presencia
+    fantasy_core: reproducing a recognizable person or social pattern convincingly enough to be treated as that thing instead of yourself
+    primary_tags: [utility, setup, counter_read]
+    secondary_tags: [control, disruption, pressure]
+    rare_or_limited_tags: [attack, recovery, mobility]
+    typical_targets: [self, group, creature, zone]
+    typical_types: [active, reactive]
+    usual_cost_profile: low-to-moderate rhythm, low Attrition, increasing with scrutiny, exposure time, and fidelity demands
+    identity_notes: >
+      Imitation Techniques should feel like embodied substitution: voice, manner, timing, and
+      social pattern becoming persuasive enough to pass. They should not become broad lying without
+      embodiment or simple invisibility to attention.
+    should_not_do:
+      - pure_verbal_deception_without_embodiment
+      - hidden_presence_without_role
+      - coercive_command
+      - physical_damage
+
+  - specialization: Sigilo
+    specialization_en: Stealth
+    associated_characteristic: Presencia
+    fantasy_core: reducing how much the social and perceptual field registers you until you stop becoming a meaningful point of attention
+    primary_tags: [stealth, setup, counter_read]
+    secondary_tags: [mobility, survival_window, disruption]
+    rare_or_limited_tags: [attack, support, recovery]
+    typical_targets: [self, creature, route, zone]
+    typical_types: [active, reactive, passive]
+    usual_cost_profile: low rhythm, low Attrition, often paid through sustained restraint, timing, and exposure management
+    identity_notes: >
+      Stealth Techniques should feel like shrinking your perceptual footprint: softening presence,
+      controlling rhythm, avoiding fixation, and sliding beneath active notice. They should not
+      become impersonation, verbal deceit, or pure physical dexterity alone.
+    should_not_do:
+      - identity_substitution
+      - explicit_bargaining
+      - open_threat_projection
+      - fine_manual_acquisition

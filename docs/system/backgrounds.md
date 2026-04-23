@@ -4,7 +4,7 @@ Background represents the character's life before adventuring. It determines:
 - **Major affinity**: the specialization category where the character progresses faster (5 progress points to level up instead of 10)
 - **Starting specializations**: 3 competencies at Level 1 / Rank 1 from restricted categories
 
-> Every character also receives **Vigor** as a universal starting specialization (Level 1 / Rank 1), independent of background. Total starting specializations: 4.
+> Every character also receives **one Tenacity specialization of choice** as a universal starting specialization (Level 1 / Rank 1), independent of background. Total starting specializations: 4.
 
 ## Backgrounds
 
@@ -40,5 +40,5 @@ Trained to move through influence structures, negotiation, prestige, and duty.
 
 Since all starting specializations begin at Rank 1, they immediately activate Synapsis:
 - Each of the 3 background specializations grants +1 to its associated characteristic.
-- Vigor grants +1 to Tenacity.
+- The universal Tenacity specialization grants +1 to Tenacity.
 - Total minimum Synapsis bonus at creation: +4 across characteristics (distribution depends on choices).

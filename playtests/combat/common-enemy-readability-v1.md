@@ -336,7 +336,7 @@ Simulated panel — 4 player archetypes (Martial, Tactical, Specialist, Conserva
 4 simulated roles. No Narrator player — Narrator role operated as referee throughout.
 
 **Group level / state:**
-Characters with no prior knowledge of the Ice Wolf. Standard starting specializations including Vigor. No informational advantage before the encounter. Frozen terrain, open ground, difficult footing.
+Characters with no prior knowledge of the Ice Wolf. Standard starting specializations including a Tenacity choice such as March, Acclimation, or Tolerance. No informational advantage before the encounter. Frozen terrain, open ground, difficult footing.
 
 **Actual combat duration:**
 6 significant exchanges across 3 distinct phases.

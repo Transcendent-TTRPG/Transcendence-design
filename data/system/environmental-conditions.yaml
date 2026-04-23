@@ -3,7 +3,7 @@
 # Referencia cruzada:
 #   - data/system/difficulty-thresholds.yaml  → fórmula de umbral (Base + NR)
 #   - data/system/attrition-fatigue.yaml      → modelo Entorpecer/Limitar/Acelerar
-#   - data/system/specializations-catalog.yaml → Aclimatación, Tolerancia, Vigor
+#   - data/system/specializations-catalog.yaml → Aclimatación, Tolerancia
 #
 # Las condiciones del entorno contribuyen al NR que el Narrador asigna en las pruebas
 # de umbral fijo. La severidad de la condición determina el nivel de dificultad base;
