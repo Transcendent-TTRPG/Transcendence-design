@@ -1,0 +1,703 @@
+taxonomy:
+  canonical_term:
+    es: Agravios
+    en: Ailments
+  definition: >
+    Harmful altered states that settle on a creature and change how it
+    functions until they are removed, relieved, or naturally end.
+  core_families:
+    - Alteration
+    - Infection
+    - Affliction
+    - Poison
+    - Curse
+  source_rule: >
+    An Ailment is classified by the harmful state it creates, not by the
+    source that applied it. The same Ailment may come from environment,
+    creature actions, hazards, exposure, gear, or other causes.
+
+severity_model:
+  universal_levels:
+    - id: minor
+      es: Leve
+      en: Minor
+    - id: moderate
+      es: Moderado
+      en: Moderate
+    - id: severe
+      es: Grave
+      en: Severe
+  rule: >
+    All Ailments use the same three severity levels. What severity changes is
+    specific to each Ailment entry.
+  note: >
+    Severity does not always increase the ongoing penalty. Some Ailments use
+    severity mainly to define application pressure, resistance difficulty, or
+    removal difficulty while the settled result remains functionally the same.
+
+duration_models:
+  preferred:
+    - until_removed
+    - until_trigger
+    - scene
+    - while_source_persists
+    - while_condition_persists
+    - sustained_by_environment
+  rule: >
+    Do not default to rounds. Duration and recovery are separate fields.
+
+shared_condition_rule:
+  name: strongest_condition
+  rule: >
+    Equal effects never stack. A stronger application replaces a weaker one.
+    An equal application usually refreshes or resets the existing one if it
+    lasts longer or is harder to remove.
+  does_not_allow:
+    - parallel_copies_of_the_same_effect
+    - additive_penalty_stacking_from_identical_condition_types
+
+required_fields:
+  - name
+  - family
+  - description
+  - severity_levels
+  - application_requirements
+  - effect
+  - duration
+  - recovery
+  - resistance_or_escape
+  - stacking_rule
+
+families:
+  alteration:
+    definition: >
+      Physiological disruptions that directly compromise bodily function.
+    resistance_formula: "1d10 + Resilience + Resistances + Bonuses"
+    source_note: >
+      Alterations may come from environmental exposure, creature actions,
+      hazards, impacts, electricity, cold, restraint, or other causes.
+    scope_note: >
+      Alterations are also the main combat-facing bodily state layer of the
+      system. If the result is a direct operational disruption of the body
+      during play, it belongs here even when the source was environmental,
+      mental, anomalous, or creature-driven.
+  affliction:
+    definition: >
+      Mental, perceptual, or inner-state disruptions that compromise judgment,
+      clarity, emotional stability, or sensory coherence.
+    resistance_formula: "1d10 + Composure + Resistances + Bonuses"
+    source_note: >
+      Afflictions may come from terror, psychological shock, hostile presence,
+      psychic pressure, or other causes that settle into inner dysfunction.
+    scope_note: >
+      Afflictions are a deeper subsystem tied to anomalous perception,
+      trauma, and prolonged exposure. Transient states like terror,
+      disorientation, confusion, or overload should usually be treated as
+      transient bodily states or downstream effects, not as standalone
+      Afflictions.
+
+template:
+  name: ""
+  family: ""
+  description: ""
+  severity_levels:
+    minor: []
+    moderate: []
+    severe: []
+  application_requirements: []
+  effect: ""
+  duration:
+    model: ""
+    notes: ""
+  recovery:
+    notes: ""
+  resistance_or_escape:
+    notes: ""
+  stacking_rule: ""
+
+entries:
+  - name: Electrizado
+    family: Alteration
+    description: >
+      Electrical disruption causes unstable motor continuity, involuntary shock
+      response, and degraded physical execution.
+    severity_levels:
+      minor:
+        - "+1 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
+        - "-1 to physical Specialization Rolls"
+      moderate:
+        - "+2 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
+        - "-2 to physical Specialization Rolls"
+      severe:
+        - "+3 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
+        - "-3 to physical Specialization Rolls"
+    application_requirements:
+      - meaningful_electrical_discharge
+      - prolonged_conductive_exposure
+      - other_fictionally_credible_bodily_shock_source
+    effect: >
+      The target loses clean physical continuity. Actions tied to attacks and
+      movement become slower and physical Specialization execution degrades.
+    duration:
+      model: while_condition_persists
+      notes: >
+        The state lasts while the electrical disruption remains actively
+        compromising bodily continuity.
+    recovery:
+      notes: >
+        Usually ends when the discharge is grounded, discharged, or otherwise
+        interrupted long enough for the body to recover continuity. Once the
+        source is no longer actively shocking the target, a successful
+        Tolerancia Specialization Roll against the original severity usually
+        ends the state.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, recovery is primarily governed by bodily recovery rather than
+        precision or mental control.
+    stacking_rule: >
+      The same effect never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Atrapado
+    family: Alteration
+    description: >
+      The target is physically restrained or structurally impeded from moving
+      freely.
+    severity_levels:
+      minor:
+        - "movement becomes 0"
+        - "-1 to A.R., I.R., D.R., and physical Specialization Rolls"
+      moderate:
+        - "movement becomes 0"
+        - "-2 to A.R., I.R., D.R., and physical Specialization Rolls"
+      severe:
+        - "movement becomes 0"
+        - "-3 to A.R., I.R., D.R., and physical Specialization Rolls"
+    application_requirements:
+      - creature_grapple_or_hold
+      - restraining_net_or_mechanism
+      - adhesive_or_binding_hazard
+      - other_fictionally_credible_restraint_source
+    effect: >
+      The target loses bodily freedom and cannot move until the restraint is
+      broken, released, or removed.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the restraining source stops holding the target.
+    recovery:
+      notes: >
+        Ends when the target breaks free, is released, or the source no longer
+        restrains them. The preferred self-recovery is an Agarre
+        Specialization Roll against a living hold, or another physical
+        Specialization Roll if the fiction is more about slipping out or
+        disentangling than overpowering contact.
+    resistance_or_escape:
+      notes: >
+        Usually escaped with an Agarre Specialization Roll, though some
+        sources may instead call for another physical Specialization Roll or a
+        Strength Characteristic Roll if no trained bodily technique clearly
+        applies.
+    stacking_rule: >
+      The restrained effect never creates parallel copies. Stronger restraint
+      replaces the weaker state; equal restraint usually refreshes persistence.
+
+  - name: Congelado
+    family: Alteration
+    description: >
+      Cold has settled into the body deeply enough to compromise temperature,
+      motor response, and agile movement.
+    severity_levels:
+      minor:
+        - "-1 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "movement reduced by half"
+      moderate:
+        - "-2 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "movement reduced by half"
+      severe:
+        - "-3 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "movement reduced by half"
+    application_requirements:
+      - prolonged_freezing_exposure
+      - ice_based_hostile_effect
+      - other_fictionally_credible_source_of_bodily_cold_impairment
+    effect: >
+      The body loses agile responsiveness and movement efficiency because cold
+      has settled into the target itself rather than remaining external.
+    duration:
+      model: while_condition_persists
+      notes: >
+        Persists while the body remains functionally compromised by cold.
+    recovery:
+      notes: >
+        Ends when body temperature is raised and the target is no longer
+        functionally impaired by the cold. If the cold source is no longer
+        actively forcing the state, a successful Aclimatación Specialization
+        Roll against the original severity usually ends the Alteration;
+        Medicina can assist when treatment is part of the fiction.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, recovery is mainly environmental or physiological rather than
+        positional.
+    stacking_rule: >
+      The same cold impairment never creates separate copies. Repeated pressure
+      usually escalates severity or refreshes persistence instead.
+
+  - name: Derribado
+    family: Alteration
+    description: >
+      The target loses stable footing or bodily posture and is brought to the
+      ground.
+    severity_levels:
+      minor:
+        - "-3 to all rolls"
+        - "the first movement action is spent getting up"
+      moderate:
+        - "-3 to all rolls"
+        - "the first movement action is spent getting up"
+      severe:
+        - "-3 to all rolls"
+        - "the first movement action is spent getting up"
+    application_requirements:
+      - impact_or_sweep
+      - force_transfer_or_collision
+      - terrain_failure
+      - other_fictionally_credible_knockdown_source
+    effect: >
+      The target is on the ground, loses stable posture, and must spend the
+      first movement action to stand.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the target stands up.
+    recovery:
+      notes: >
+        Ends when the target stands up.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        suffered, removal is usually achieved by spending the first movement
+        action to rise.
+    stacking_rule: >
+      The knocked-down effect never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      the state.
+
+  - name: Conmocionado
+    family: Alteration
+    description: >
+      A destabilizing blow or shock has compromised the target's clarity,
+      mental steadiness, and cognitive continuity.
+    severity_levels:
+      minor:
+        - "-1 to Composure and Intellect Characteristic Rolls"
+        - "-1 to Composure and Intellect Specialization Rolls"
+      moderate:
+        - "-2 to Composure and Intellect Characteristic Rolls"
+        - "-2 to Composure and Intellect Specialization Rolls"
+      severe:
+        - "-3 to Composure and Intellect Characteristic Rolls"
+        - "-3 to Composure and Intellect Specialization Rolls"
+    application_requirements:
+      - impact_or_internal_shock
+      - blast_force_or_collision
+      - other_fictionally_credible_concussion_like_source
+    effect: >
+      The target's clarity and mental continuity are destabilized, degrading
+      Composure- and Intellect-based execution.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the target stabilizes.
+    recovery:
+      notes: >
+        Ends when the target regains enough internal steadiness to restore
+        clarity. The preferred self-recovery is a Contención Specialization
+        Roll against the original severity; Medicina can also end the state
+        through treatment, and full rest may clear it between scenes if the
+        fiction supports it.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        suffered, recovery is mainly about regaining internal steadiness or
+        receiving treatment rather than simply enduring pain.
+    stacking_rule: >
+      The same cognitive destabilization never creates parallel copies.
+      Stronger application replaces a weaker one; equal application usually
+      refreshes persistence.
+
+  - name: Paralizado
+    family: Alteration
+    description: >
+      The body loses the ability to execute meaningful action through
+      neuromuscular shutdown, rigid lock, or equivalent bodily arrest.
+    severity_levels:
+      minor:
+        - "the target cannot perform meaningful actions"
+      moderate:
+        - "the target cannot perform meaningful actions"
+      severe:
+        - "the target cannot perform meaningful actions"
+    application_requirements:
+      - electricity_or_neuromuscular_shutdown
+      - venom_or_cold_lock
+      - forceful_bodily_suppression
+      - other_fictionally_credible_action_arrest_source
+    effect: >
+      The target cannot perform meaningful actions until bodily control returns.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until bodily control returns or the source no longer enforces
+        the paralysis.
+    recovery:
+      notes: >
+        Ends when bodily control returns. The preferred self-recovery is a
+        Tolerancia Specialization Roll against the original severity once the
+        source is no longer fully locking the body; some sources may instead
+        require their own release condition before any roll is possible.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. If
+        already suffered, recovery is mainly physiological unless a specific
+        source overrides it.
+    stacking_rule: >
+      The paralyzed state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Ensordecido
+    family: Alteration
+    description: >
+      The target's hearing is functionally impaired or lost.
+    severity_levels:
+      minor:
+        - "cannot perform Characteristic Rolls or Specialization Rolls that require hearing"
+        - "cannot rely on auditory cues for responses to threats not seen"
+      moderate:
+        - "cannot perform Characteristic Rolls or Specialization Rolls that require hearing"
+        - "cannot rely on auditory cues for responses to threats not seen"
+      severe:
+        - "cannot perform Characteristic Rolls or Specialization Rolls that require hearing"
+        - "cannot rely on auditory cues for responses to threats not seen"
+    application_requirements:
+      - sonic_trauma_or_pressure_shock
+      - blast_force
+      - environmental_overload
+      - other_fictionally_credible_hearing_disruption_source
+    effect: >
+      The target loses auditory function needed for hearing-based perception,
+      reaction, and task resolution.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until auditory function returns or the source no longer
+        functionally deafens the target.
+    recovery:
+      notes: >
+        Ends when auditory function returns or the target is no longer
+        functionally deafened. If the source is no longer actively deafening
+        the target, a Medicina Specialization Roll is the preferred way to
+        restore function; otherwise the state lasts until time, treatment, or
+        source removal make recovery credible.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+        Recovery is primarily medical or source-dependent rather than a matter
+        of concentration.
+    stacking_rule: >
+      The deafened state never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Cegado
+    family: Alteration
+    description: >
+      The target cannot see.
+    severity_levels:
+      minor:
+        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+      moderate:
+        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+      severe:
+        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+    application_requirements:
+      - light_or_vision_obscuration
+      - trauma_or_debris
+      - ocular_damage
+      - other_fictionally_credible_loss_of_sight
+    effect: >
+      The target is functionally blind and suffers major penalties to combat
+      and specialization execution.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the blinding source dissipates or vision is restored.
+    recovery:
+      notes: >
+        Usually ends when the blinding source is removed, dissipates, or is
+        overcome through treatment, cleansing, or time as appropriate. When
+        actual bodily restoration is needed, Medicina is the preferred
+        recovery Specialization Roll.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The blinded state never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Confundido
+    family: Alteration
+    description: >
+      The target loses clean judgment and cannot reliably distinguish friend,
+      foe, or intent in the immediate scene.
+    severity_levels:
+      minor:
+        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+      moderate:
+        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+      severe:
+        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+    application_requirements:
+      - bodily_shock_or_sensory_overload
+      - neural_disruption_or_concussion
+      - toxins_or_other_fictionally_credible_operational_judgment_break
+    effect: >
+      The target cannot reliably direct intent during the scene and may
+      misdirect aggression.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until enough operational clarity returns.
+    recovery:
+      notes: >
+        At the start of each activation, before the confusion roll, the target
+        may attempt an Enfoque Specialization Roll against the original
+        severity. On success, Confundido ends.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The confused state never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Desequilibrado
+    family: Alteration
+    description: >
+      The target's posture and bodily stability are compromised.
+    severity_levels:
+      minor:
+        - "-1 to D.R. and physical Specialization Rolls"
+      moderate:
+        - "-2 to D.R. and physical Specialization Rolls"
+      severe:
+        - "-3 to D.R. and physical Specialization Rolls"
+    application_requirements:
+      - footing_or_momentum_loss
+      - bodily_shock_or_unstable_ground
+      - other_fictionally_credible_stability_loss_source
+    effect: >
+      The target loses stable defensive and physical execution.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until balance is recovered.
+    recovery:
+      notes: >
+        Ends with a successful Equilibrio Specialization Roll against the
+        original severity.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The unbalanced state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Aturdido
+    family: Alteration
+    description: >
+      The target is stunned badly enough to lose its next meaningful activation.
+    severity_levels:
+      minor:
+        - "-1 to Resistance Rolls and Characteristic Rolls"
+        - "lose the next meaningful ATB activation"
+      moderate:
+        - "-2 to Resistance Rolls and Characteristic Rolls"
+        - "lose the next meaningful ATB activation"
+      severe:
+        - "-3 to Resistance Rolls and Characteristic Rolls"
+        - "lose the next meaningful ATB activation"
+    application_requirements:
+      - impact_or_neural_shock
+      - concussive_force_or_overload
+      - other_fictionally_credible_brief_action_shutdown_source
+    effect: >
+      The target loses its next meaningful activation and suffers reduced
+      resistance and characteristic performance.
+    duration:
+      model: until_next_activation_resolves
+      notes: >
+        Ends immediately after the lost activation is consumed.
+    recovery:
+      notes: >
+        No additional recovery roll is required unless a specific source says
+        otherwise. The condition ends after the skipped activation is spent.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The stunned state never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes which
+      upcoming activation is lost.
+
+  - name: Desorientado
+    family: Alteration
+    description: >
+      The target loses directional certainty and mental orientation.
+    severity_levels:
+      minor:
+        - "-1 to mental Specialization Rolls"
+        - "-1 Preparation"
+      moderate:
+        - "-2 to mental Specialization Rolls"
+        - "-2 Preparation"
+      severe:
+        - "-3 to mental Specialization Rolls"
+        - "-3 Preparation"
+    application_requirements:
+      - spatial_disruption_or_sensory_scramble
+      - dizziness_or_unstable_perspective
+      - other_fictionally_credible_direction_loss_source
+    effect: >
+      The target loses directional certainty, mental orientation, and clean
+      readiness.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until orientation is recovered.
+    recovery:
+      notes: >
+        Ends with a successful Orientación Specialization Roll against the
+        original severity.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The disoriented state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Asfixiado
+    family: Alteration
+    description: >
+      The target cannot breathe properly and is fighting to remain operational.
+    severity_levels:
+      minor:
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
+      moderate:
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
+      severe:
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
+    application_requirements:
+      - choking_or_drowning
+      - smoke_inhalation_or_crushing_pressure
+      - other_fictionally_credible_breath_prevention_source
+    effect: >
+      The target must keep fighting to breathe and degrades the longer the
+      state persists.
+    duration:
+      model: while_source_persists
+      notes: >
+        Persists while the source continues to prevent proper breathing.
+    recovery:
+      notes: >
+        Ends when the choking, drowning, crushing, smoke, or other
+        asphyxiating source no longer prevents breathing. The cumulative
+        penalty resets when the condition ends.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The asphyxiated state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Impedido
+    family: Alteration
+    description: >
+      The target cannot execute weapon-rooted Techniques cleanly.
+    severity_levels:
+      minor:
+        - "cannot use Techniques tied to weapon competencies"
+      moderate:
+        - "cannot use Techniques tied to weapon competencies"
+      severe:
+        - "cannot use Techniques tied to weapon competencies"
+    application_requirements:
+      - bodily_disruption_or_neural_interference
+      - pain_lock_or_unstable_grip
+      - other_fictionally_credible_weapon_execution_break
+    effect: >
+      The target cannot use weapon-rooted Techniques cleanly even if it can
+      still act in other ways.
+    duration:
+      model: until_removed
+      notes: >
+        Persists while the source prevents clean combat execution.
+    recovery:
+      notes: >
+        Ends with a successful Enfoque Specialization Roll against the original
+        severity once the target can re-establish a clean execution line, or
+        when the source preventing clean execution no longer applies.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The impaired state never creates parallel copies. A stronger application
+      replaces a weaker one; an equal application usually refreshes
+      persistence.
+
+  - name: Sobrecargado
+    family: Alteration
+    description: >
+      The target is overloaded by excessive sensory, neural, or internal
+      pressure.
+    severity_levels:
+      minor:
+        - "-1 to Resistance Rolls"
+      moderate:
+        - "-2 to Resistance Rolls"
+      severe:
+        - "-3 to Resistance Rolls"
+    application_requirements:
+      - sensory_saturation_or_internal_overload
+      - psychic_spillover_expressed_through_the_body
+      - other_fictionally_credible_regulation_break_source
+    effect: >
+      The target is overloaded and loses resistance stability.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the target regains enough inner regulation to stop being
+        overloaded.
+    recovery:
+      notes: >
+        Ends with a successful Contención Specialization Roll against the
+        original severity, or when the overloading source ends and the target
+        regains enough internal regulation to stop being overloaded.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied.
+    stacking_rule: >
+      The overloaded state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
