@@ -73,6 +73,47 @@ It must always be possible to point to a non-magical cause such as:
 
 If the only explanation is supernatural emergence, occult projection, or impossible energy creation, it does not belong here. That belongs to later Limbo / magic design, not to Techniques.
 
+### Metaphysical is not automatically magical
+
+Not every hard-to-explain or uncanny phenomenon is automatically:
+
+- magical
+- taumatic
+- extranatural
+
+Transcendence should allow room for effects that feel:
+
+- uncanny
+- metaphysical
+- paranormal
+- difficult to measure or prove
+
+without treating them as Limbo-derived or Tauma-driven by default.
+
+This is especially important for domains such as:
+
+- `Aura`
+- `Instinct`
+- `Bond`
+- some forms of presence, intuition, or human connection
+
+A Technique may therefore feel improbable, eerie, or deeply non-mechanical in a scientific sense and still remain inside the natural order of the setting, as long as it does **not** rely on:
+
+- Tauma sources
+- Limbo leakage
+- elemental emanation
+- extranatural causation
+- energy appearing from nowhere
+
+In other words:
+
+- not fully explainable does not mean magical
+- not measurable does not mean extranatural
+- not ordinary does not mean Limbo
+
+The forbidden boundary is not "anything unusual."
+The forbidden boundary is **taumatic or extranatural causation without belonging to that subsystem**.
+
 ### Authoring test
 
 When writing a Technique, ask:
@@ -80,9 +121,10 @@ When writing a Technique, ask:
 1. Is it exciting enough to feel worth learning?
 2. Is its identity primarily thematic, not just numerical?
 3. Can its effect be traced to a real trained cause inside the fiction?
-4. Would it still make sense if all magic were removed from the scene?
+4. If it feels uncanny or metaphysical, can it still be explained without Tauma or extranatural causation?
+5. Would it still make sense if all overt magic were removed from the scene?
 
-If the answer to `3` or `4` is no, the Technique is drifting out of bounds.
+If the answer to `3`, `4`, or `5` is no, the Technique is drifting out of bounds.
 
 ---
 
@@ -120,6 +162,57 @@ This is why Techniques need strict structure.
 
 ---
 
+## Base Action Rule
+
+Universal base actions exist as a **common floor**, not as the main reward structure of play.
+
+They are intentionally:
+
+- broadly accessible
+- low-identity
+- low-differentiation
+- structurally reliable
+
+They should remain valid when:
+
+- the character does not have the right trigger
+- the player wants to conserve resources
+- the scene does not justify a more specialized execution
+- the character has not yet learned a stronger expressive option for that moment
+
+But they should **not** be the most desirable or expressive form of play over time.
+
+In Transcendence, the primary source of tactical identity should come from **Techniques**, not from repeating generic base actions.
+
+### Design implication
+
+When judging a new Technique, the main question is **not**:
+
+- does it simply outperform the base attack in raw efficiency?
+
+The main question is:
+
+- does it let this character solve a moment in a more specific, thematic, and differentiated way?
+
+### Practical rule
+
+Base actions should usually be:
+
+- the fallback option
+- the low-expression option
+- the low-commitment option when no stronger line is available
+- the onboarding option used to teach the system before authored Techniques become the real play language
+
+Techniques should usually be:
+
+- the identity-bearing option
+- the tactically richer option
+- the main vehicle for expressing personal build decisions without relying on fixed class structure
+
+If a proposed Technique is only a renamed base action with minor numerical tuning, it has probably failed its authoring goal.
+
+---
+
 ## Combat Profile Layer
 
 For combat Techniques rooted in weapons, shields, thrown attacks, flexible attacks, ranged attacks, or natural attack forms, authoring should usually pass through the **Weapon Technique Profile** layer defined in [weapon-technique-profiles.md](/Users/juangomez/Transcendence-workspace/Transcendence-design/docs/system/weapon-technique-profiles.md).
@@ -137,6 +230,53 @@ In practice:
 - the Technique defines the actual action, cost, trigger, and resolution
 
 Combat Techniques do not need a profile in every case, but they should prefer one whenever the missing differentiation is about combat style rather than about a single isolated Technique.
+
+---
+
+## Authoring Order
+
+The full Technique skeleton exists for:
+
+- storage
+- QA
+- consistency
+- balance review
+
+It should **not** dictate the creative order in which a Technique is conceived.
+
+If authors begin by filling fields mechanically, the result can become formulaic even if the framework itself is sound.
+
+### Recommended order
+
+When creating a Technique, start in this order:
+
+1. **Identity**
+   - What is the memorable trained expression here?
+   - Why would a player want this Technique specifically?
+2. **Scene function**
+   - What does it actually change in exploration or combat?
+   - What moment is it for?
+3. **Primary interaction**
+   - What real system surface does it mainly touch?
+4. **Secondary interaction**
+   - What second system surface naturally follows from the same fiction?
+5. **Restrictions and cost**
+   - Why can't this be used freely all the time?
+6. **Formal fields**
+   - Only after the above, fill `trigger`, `range`, `area`, `duration`, `saving_roll`, `requirements`, and the rest
+
+### Important principle
+
+The skeleton should capture the Technique after its identity is clear.
+
+It should not replace:
+
+- voice
+- fantasy
+- trained cause
+- dramatic role
+
+If a Technique only exists because its fields can be filled cleanly, it is probably not ready yet.
 
 ---
 
@@ -893,6 +1033,288 @@ Optional additional costs:
 
 If a Technique changes the scene mechanically, it should not feel costless unless it is deliberately built as a passive or highly constrained effect.
 
+### Rhythm authoring standard
+
+Technique `rhythm_cost` should be calibrated **against** the existing ATB anchor bands:
+
+- `0` free
+- `3` quick
+- `5` standard
+- `7` heavy
+- `9` extreme
+
+These are **anchor values**, not the only legal values.
+
+Intermediate values such as:
+
+- `1`
+- `2`
+- `4`
+- `6`
+- `8`
+
+are valid when a Technique needs finer timing calibration between the base anchors.
+
+This is **not** a damage table and should not be treated like one rigidly.
+
+Rhythm measures:
+
+- how much tactical time the Technique occupies
+- how much commitment or recovery it creates
+- how large its timing permission is inside the ATB flow
+
+It should be judged by scene function, not by flavor intensity alone.
+
+### Rhythm range rule
+
+For authored Techniques, treat `0` to `9` as the normal design range.
+
+Inside that range:
+
+- anchors communicate broad timing identity
+- intermediate values communicate finer distinctions inside the same timing family
+
+Examples:
+
+- `2` may sit between almost-free and fully quick
+- `4` may sit between quick and standard
+- `6` may sit between standard and heavy
+- `8` may sit between heavy and extreme
+
+Do not use an intermediate value just to fake precision.
+Use it only when the Technique clearly lands between two anchors in actual play feel.
+
+#### Rhythm 0 — Free
+
+Use only when the Technique:
+
+- is passive, always-on, or extremely constrained
+- does not meaningfully consume timing in the current exchange
+- does not create strong new permission by itself
+
+This should be rare.
+
+If a Technique creates a meaningful reactive or offensive event, it should almost never be `0`.
+
+#### Rhythm 3 — Quick anchor
+
+Use when the Technique is:
+
+- brief and sharply bounded
+- usually instant
+- tied to a narrow trigger or precise moment
+- built around one main surface
+- not strongly persistent
+
+Typical examples:
+
+- tight reactive answers
+- short setup conversions
+- brief entry denial
+- small defensive spoils
+
+Avoid the quick band if the Technique also:
+
+- creates broad control
+- strongly alters position or lane state beyond the immediate moment
+- adds significant follow-up leverage
+- persists in time
+- carries multiple major surfaces
+
+#### Rhythm 5 — Standard anchor
+
+Use when the Technique is:
+
+- a normal committed authored action
+- broader than a quick answer
+- allowed to carry one strong surface and one meaningful secondary surface
+- clearly more than a narrow interruption
+
+Typical examples:
+
+- authored offensive Techniques
+- reliable setup-to-effect conversions
+- conditional repositioning or disruption
+- standard active utility under pressure
+
+`5` is the default anchor for Techniques that matter but do not require extreme commitment.
+
+#### Rhythm 7 — Heavy anchor
+
+Use when the Technique:
+
+- demands real bodily, tactical, or positional commitment
+- creates serious control, denial, or disruption
+- carries multiple coherent pressure surfaces
+- opens major leverage if it lands
+- occupies a large window in the exchange
+
+Typical examples:
+
+- hard commitment attacks
+- strong protected interventions
+- significant lane or target control
+- large disruption with follow-through consequences
+
+If the Technique feels like the user is betting a visible chunk of tempo on one meaningful move, `7` is often appropriate.
+
+#### Rhythm 9 — Extreme anchor
+
+Use only when the Technique is:
+
+- rare
+- highly permissioned
+- encounter-shaping
+- clearly above normal authored actions
+
+Typical examples:
+
+- major scene-turning expressions
+- rare upper-tier Techniques
+- actions whose timing cost must be felt immediately as exceptional commitment
+
+This band should remain uncommon and should usually come with high rank, strong restrictions, or both.
+
+### Attrition authoring standard
+
+Technique `attrition_cost` should be calibrated **against** the existing functional demand anchors:
+
+- `0` trivial or negligible demand
+- `1` standard meaningful demand
+- `2` high demand
+- `3` extreme overextension
+
+These are **anchor values**, not a hard cap.
+
+Higher values such as:
+
+- `4`
+- `5`
+- or more
+
+are valid when a Technique should push projected Fatigue much faster than the base authored scale.
+
+Attrition does **not** mean:
+
+- physical exertion only
+- damage taken
+- "heavy weapon tax"
+
+Attrition measures how much strain the Technique creates across body, mind, and composure while performed under real pressure.
+
+### Attrition range rule
+
+For normal authored Techniques, `0` to `3` is the main working band.
+
+However, unlike the base action layer, authored Techniques may exceed that range when needed.
+
+Use `Attrition > 3` only when the Technique:
+
+- clearly exceeds ordinary operating margin
+- is meant to feel unsafe to repeat immediately
+- should accelerate projected Fatigue as a defining balancing factor
+- belongs to a rare, desperate, heroic, or upper-tier expression
+
+If a Technique uses `Attrition > 3`, the burden of justification is high and the effect should visibly earn it.
+
+#### Attrition 0 — Trivial or negligible demand
+
+Use only when the Technique:
+
+- is passive
+- creates no meaningful active strain
+- or is so tightly bounded that the scene cost is effectively negligible
+
+If a Technique is an authored active move that changes the scene, `0` should be uncommon.
+
+#### Attrition 1 — Standard meaningful demand
+
+Use when the Technique:
+
+- is a normal meaningful action under pressure
+- does not push the user beyond ordinary operating margin
+- asks for focus, control, or effort, but not severe strain
+
+This should be the baseline for many authored Techniques, including many `Rhythm 3` and `Rhythm 5` Techniques.
+
+#### Attrition 2 — High demand
+
+Use when the Technique:
+
+- absorbs serious pressure
+- protects, intercepts, or commits the body heavily
+- forces difficult processing under immediate threat
+- meaningfully bends the rhythm of the scene
+- remains clearly above normal sustainable effort
+
+This is appropriate for Techniques that should feel expensive to repeat even if their `rhythm_cost` is not maximal.
+
+#### Attrition 3 — Extreme overextension anchor
+
+Use only when the Technique:
+
+- goes beyond the user's normal safe operating margin
+- represents heroic intervention, limit effort, or severe overcommitment
+- should accelerate projected Fatigue very aggressively
+
+This should stay rare and should usually belong to upper-tier Techniques or clearly desperate uses.
+
+Values above `3` represent overextension beyond the base authored anchor scale and should be treated as exceptional, not routine.
+
+### Rhythm and Attrition are related, but separate
+
+Do not assume:
+
+- high Rhythm always means high Attrition
+- low Rhythm always means low Attrition
+
+A Technique may be:
+
+- quick but demanding
+- slow but mechanically sustainable
+- rhythm-heavy because of commitment, not because of strain
+- strain-heavy because of pressure absorption, not because of long execution time
+
+### Cost assignment rule
+
+When assigning `rhythm_cost` and `attrition_cost`, use this order:
+
+1. What timing permission does the Technique occupy or create?
+2. How much commitment or recovery should that timing imply?
+3. How much real strain does the Technique impose if used under pressure?
+4. Does the Technique's trigger, restriction set, or counterplay reduce what it should cost?
+
+### Escalation rule
+
+Raise cost when a Technique adds one or more of the following without strong compensation:
+
+- broad or reliable reactive access
+- lane or position denial
+- persistent pressure
+- multiple major interaction surfaces
+- strong follow-up conversion
+- major protection or mitigation
+- rhythm or Attrition manipulation
+
+Typical escalation patterns:
+
+- narrow one-surface reactive Technique: often `Rhythm 3 / Attrition 1`
+- standard authored Technique with one strong surface and one secondary surface: often `Rhythm 5 / Attrition 1`
+- strong intervention, serious denial, or multi-surface committed Technique: often `Rhythm 7 / Attrition 2`
+- rare upper-tier overextensions: often include `Rhythm 9`, `Attrition 3+`, or both
+
+### Calibration rule
+
+If a Technique looks correct in fiction but its cost is uncertain, default to the more conservative band during first-pass authoring.
+
+Then review it against:
+
+- tier
+- trigger width
+- repetition risk
+- counterplay
+- how early projected Fatigue should appear in the intended scene
+
 ---
 
 ## Saving Roll / Resistance
@@ -1014,6 +1436,136 @@ Before writing a Technique, answer these questions:
 8. How does it scale?
 
 If these are not clear, the Technique is still a concept, not an authored rule.
+
+---
+
+## Pilot Technique Example
+
+The following Technique is a **pilot example** used to validate the current authoring path.
+
+It is not meant to imply that the final catalog should be written inline in this document. Its purpose is to test whether the framework produces a Technique that is:
+
+- thematically clear
+- mechanically distinct from a base attack
+- properly rooted in a combat profile
+- legible at the table
+
+### Cerrar la Línea
+
+| Field | Value |
+| --- | --- |
+| `name` | Cerrar la Línea |
+| `name_en` | Close the Line |
+| `origin` | Spear |
+| `category` | attack |
+| `type` | reactive |
+| `trigger` | An enemy advances into your line or tries to convert forward movement into immediate melee contact against you. |
+| `requirements` | Minimum rank: Novice; weapon profile: Perforation; equipment: a spear or other weapon that credibly sustains a committed piercing line |
+| `target` | enemy |
+| `range` | weapon reach |
+| `area` | single |
+| `duration` | instant |
+| `cost` | Rhythm 4; Attrition 1 |
+| `saving_roll` | contextual — resolved through the hostile exchange that the Technique intercepts |
+| `tags` | attack, pressure, precision, setup |
+
+**Fantasy:** The user does not win by hitting harder, but by making entry itself unsafe. The point arrives where the enemy must pass, turning committed forward motion into a liability.
+
+**Why this is not a base attack:** A base spear attack is a generic offensive action. `Cerrar la Línea` exists to solve a specific combat moment: hostile entry into your line. Its identity is not "attack, but slightly better." Its identity is "deny clean entry through exact forward authority."
+
+**Primary interaction surface:** position and lane ownership.
+
+**Secondary interaction surface:** timing pressure inside ATB, because the Technique punishes a movement window rather than waiting for a generic turn trade.
+
+**Cost note:** `Rhythm 4 / Attrition 1` is intentional. `Cerrar la Línea` is narrower than a standard authored Technique, but stronger than a pure quick reactive strike because it also denies clean entry conversion on success. It sits between the `3` quick anchor and the `5` standard anchor.
+
+**Effect:** Make a reactive attack against the triggering enemy. If the Technique resolves successfully, that enemy does not complete a clean melee entry against you through the same forward commitment. The hostile advance still happened, but it fails to convert into an immediate clean offensive contact window against your position.
+
+**Restrictions:**
+
+- requires a clear line and enough space to present the point properly
+- cannot be used if the enemy is already established at very close range
+- should not function while the user is fully compromised, surrounded, or unable to align the weapon
+
+**Authoring note:** This is a good pilot because it validates the intended rule that Techniques should differentiate play through moment-specific tactical identity, not through flat improvement to a universal action.
+
+### Recuperar la Distancia
+
+| Field | Value |
+| --- | --- |
+| `name` | Recuperar la Distancia |
+| `name_en` | Recover the Distance |
+| `origin` | Spear |
+| `category` | attack |
+| `type` | active |
+| `trigger` | Your line is being contested, compressed, or threatened by an enemy preparing to enter or remain in close pressure. |
+| `requirements` | Minimum rank: Novice; weapon profile: Perforation; equipment: a spear or other weapon that credibly sustains a committed piercing line |
+| `target` | enemy |
+| `range` | weapon reach |
+| `area` | single |
+| `duration` | instant |
+| `cost` | Rhythm 5; Attrition 1 |
+| `saving_roll` | contextual — resolved through the hostile exchange created by the thrust |
+| `tags` | attack, pressure, setup, precision |
+
+**Fantasy:** The user does not wait for the enemy to cross the line. They drive the point forward with enough authority to reclaim the distance on their own turn, re-establishing the spear's preferred geometry before close pressure settles.
+
+**Why this is not a base attack:** A base spear attack simply strikes. `Recuperar la Distancia` is specifically about restoring the weapon's ideal fighting space when the line is being compressed. It is not generic offense. It is active reassertion of reach discipline through committed forward control.
+
+**Primary interaction surface:** position and lane state.
+
+**Secondary interaction surface:** setup conversion, because the Technique restores a cleaner line for the spear user instead of only resolving one hostile moment.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is intentional. The Technique is broader than `Cerrar la Línea` because it is not tied to a single narrow reactive window and it actively tries to reclaim the encounter geometry, so its main increase is in timing commitment. At `Novice`, it does not yet need to punish repetition through heavier strain.
+
+**Effect:** Make an active attack against the target. If the Technique resolves successfully, the target does not remain in a clean close-pressure position against you at the end of that exchange. The exact fiction may be a forced hesitation, a checked step, a spoiled commitment, or a defensive recoil, but the result is the same: you re-establish a cleaner spear line instead of merely trading one hit.
+
+**Restrictions:**
+
+- requires enough space to drive the point and body alignment forward
+- should not function in conditions where the spear cannot credibly recover line geometry
+- should not grant broad zone control or multi-target denial by itself
+
+**Comparison note:** `Cerrar la Línea` is a narrower reactive denial and now sits at `4 / 1`. `Recuperar la Distancia` is a broader active reclaiming action and sits at `5 / 1`. The difference isolates timing commitment first, without forcing a higher strain cost at the same novice tier.
+
+### Clavar el Paso
+
+| Field | Value |
+| --- | --- |
+| `name` | Clavar el Paso |
+| `name_en` | Pin the Step |
+| `origin` | Spear |
+| `category` | attack |
+| `type` | active |
+| `trigger` | An enemy is already pressing the line or is about to force a committed close entry that you want to stop through sheer forward authority. |
+| `requirements` | Minimum rank: Novice; weapon profile: Perforation; equipment: a spear or other weapon that credibly sustains a committed piercing line |
+| `target` | enemy |
+| `range` | weapon reach |
+| `area` | single |
+| `duration` | instant |
+| `cost` | Rhythm 5; Attrition 2 |
+| `saving_roll` | contextual — resolved through the hostile exchange created by the committed thrust |
+| `tags` | attack, pressure, precision, disruption |
+
+**Fantasy:** The user does not merely reassert spacing. They drive the spear with enough commitment that the enemy's next step becomes unsafe to complete. This is not patient reach discipline. It is a forceful line claim that spends the body to stop the step before it settles.
+
+**Why this is not a base attack:** A base spear attack threatens or wounds. `Clavar el Paso` is specifically about making the enemy's forward step fail as a stable offensive commitment. Its identity is not raw damage. Its identity is committed denial through body-forward piercing authority.
+
+**Primary interaction surface:** position and lane denial.
+
+**Secondary interaction surface:** disruption, because the Technique is trying to spoil the enemy's forward commitment rather than simply trade one clean strike.
+
+**Cost note:** `Rhythm 5 / Attrition 2` is intentional. Its timing is still in the standard active band, but its strain rises because the user is not just acting on their turn. They are forcefully contesting the enemy's step with visible bodily commitment, harsher pressure handling, and a worse margin for repeated safe use.
+
+**Effect:** Make an active attack against the target. If the Technique resolves successfully, the target's current forward step or immediate close-entry attempt does not settle into a stable offensive position against you. The enemy may still remain present, but their step is checked, spoiled, or forced into hesitation rather than becoming a clean close-pressure state.
+
+**Restrictions:**
+
+- requires enough space and posture to drive the spear with committed alignment
+- should not function as broad zone control or as a free answer to multiple enemies
+- should leave the user meaningfully committed if the exchange goes poorly
+
+**Comparison note:** `Recuperar la Distancia` at `5 / 1` restores geometry with cleaner economy. `Clavar el Paso` stays at the same timing band but rises to `Attrition 2` because it buys its denial through harsher bodily expenditure and lower repetition safety.
 
 ---
 

@@ -39,6 +39,26 @@ taxonomy:
   raw_use_vs_technique:
     raw_competency_use: narrative_effect_only
     technique_use: narrative_plus_mechanical_effect
+  base_action_rule:
+    role_of_base_actions: common_floor
+    base_actions_should_be:
+      - broadly_accessible
+      - low_identity
+      - low_differentiation
+      - structurally_reliable
+      - useful_for_onboarding_before_authored_techniques_take_over
+    base_actions_remain_valid_when:
+      - no_relevant_trigger_is_available
+      - the_user_wants_to_conserve_resources
+      - the_scene_does_not_justify_a_specialized_execution
+      - the_character_has_not_learned_a_better_expressive_option_for_that_moment
+    core_principle: >
+      Base actions are fallback options, not the primary reward structure of
+      play. The main source of tactical identity should come from Techniques.
+    technique_authoring_test:
+      - Does this create a more specific and thematic solution than a generic base action?
+      - Does this express personal build decisions rather than flat universal access?
+      - Is this more than a renamed base action with minor numerical tuning?
   combat_profile_layer:
     used_for:
       - weapon_rooted_techniques
@@ -128,6 +148,166 @@ cost_model:
     - per_day_uses
     - charge_cost
     - drawback
+  rhythm_authoring_standard:
+    normal_range: "0-9"
+    anchor_values: [0, 3, 5, 7, 9]
+    intermediate_values_allowed: true
+    intermediate_value_examples: [1, 2, 4, 6, 8]
+    note: >
+      The anchor values define broad timing families, but they are not the
+      only legal Technique costs. Intermediate values are valid when a
+      Technique clearly lands between two anchors in play feel.
+    bands:
+      - cost: 0
+        label: free
+        use_when:
+          - passive_or_always_on
+          - timing_cost_is_effectively_negligible
+          - no_strong_new_permission_is_created
+        warnings:
+          - rare_for_authored_active_techniques
+      - cost: 3
+        label: quick_anchor
+        use_when:
+          - brief_and_sharply_bounded
+          - narrow_trigger_or_precise_moment
+          - one_main_surface
+          - little_or_no_persistence
+        common_cases:
+          - tight_reactive_answers
+          - short_setup_conversions
+          - brief_entry_denial
+          - small_defensive_spoils
+        avoid_when:
+          - broad_control
+          - significant_lane_or_position_state_change
+          - strong_follow_up_leverage
+          - persistence
+          - multiple_major_surfaces
+      - cost: 5
+        label: standard_anchor
+        use_when:
+          - normal_committed_authored_action
+          - broader_than_a_quick_answer
+          - one_strong_surface_plus_one_meaningful_secondary_surface
+        common_cases:
+          - authored_offensive_techniques
+          - reliable_setup_to_effect_conversion
+          - conditional_reposition_or_disruption
+          - active_utility_under_pressure
+      - cost: 7
+        label: heavy_anchor
+        use_when:
+          - real_bodily_tactical_or_positional_commitment
+          - serious_control_denial_or_disruption
+          - multiple_coherent_pressure_surfaces
+          - major_leverage_if_successful
+        common_cases:
+          - hard_commitment_attacks
+          - strong_protected_interventions
+          - significant_lane_or_target_control
+          - large_disruption_with_follow_through
+      - cost: 9
+        label: extreme_anchor
+        use_when:
+          - rare_and_highly_permissioned
+          - encounter_shaping
+          - clearly_above_normal_authored_actions
+        common_cases:
+          - major_scene_turning_expressions
+          - rare_upper_tier_techniques
+        warnings:
+          - should_remain_uncommon
+          - usually_requires_high_rank_or_strong_restrictions
+  attrition_authoring_standard:
+    anchor_values: [0, 1, 2, 3]
+    hard_cap: false
+    normal_working_band: "0-3"
+    values_above_anchor_allowed: true
+    note: >
+      The base authored scale uses 0 to 3 as anchor values, but authored
+      Techniques may exceed 3 when the intended balance relies on severe
+      strain and aggressive projected Fatigue acceleration.
+    bands:
+      - cost: 0
+        label: trivial
+        use_when:
+          - passive
+          - no_meaningful_active_strain
+          - tightly_bounded_negligible_scene_cost
+        warnings:
+          - uncommon_for_active_scene_changing_techniques
+      - cost: 1
+        label: standard_meaningful_demand
+        use_when:
+          - normal_meaningful_action_under_pressure
+          - focus_or_effort_without_severe_strain
+        common_cases:
+          - many_rhythm_3_techniques
+          - many_rhythm_5_techniques
+      - cost: 2
+        label: high_demand
+        use_when:
+          - absorbs_serious_pressure
+          - heavily_commits_body_or_control
+          - difficult_processing_under_immediate_threat
+          - meaningfully_bends_scene_rhythm
+        common_cases:
+          - expensive_reactive_protection
+          - high_commitment_interventions
+          - demanding_multi_surface_actions
+      - cost: 3
+        label: extreme_overextension_anchor
+        use_when:
+          - beyond_normal_safe_operating_margin
+          - heroic_intervention_or_limit_effort
+          - should_accelerate_fatigue_aggressively
+        warnings:
+          - rare
+          - usually_upper_tier_or_desperate
+    above_anchor_rule:
+      use_when:
+        - clearly_exceeds_ordinary_operating_margin
+        - unsafe_to_repeat_immediately
+        - projected_fatigue_acceleration_is_a_primary_balance_factor
+        - rare_desperate_heroic_or_upper_tier_expression
+      warning:
+        - burden_of_justification_is_high
+        - should_not_be_routine
+  separation_rule:
+    principle: >
+      Rhythm and Attrition are related but separate. High Rhythm does not
+      automatically require high Attrition, and low Rhythm does not
+      automatically mean low strain.
+    valid_patterns:
+      - quick_but_demanding
+      - slow_but_sustainable
+      - rhythm_heavy_due_to_commitment
+      - attrition_heavy_due_to_pressure_absorption
+  cost_assignment_order:
+    - What timing permission does the Technique occupy or create?
+    - How much commitment or recovery should that timing imply?
+    - How much real strain does the Technique impose under pressure?
+    - Do trigger width, restrictions, or counterplay reduce what it should cost?
+  escalation_rule:
+    raise_cost_when:
+      - broad_or_reliable_reactive_access
+      - lane_or_position_denial
+      - persistent_pressure
+      - multiple_major_interaction_surfaces
+      - strong_follow_up_conversion
+      - major_protection_or_mitigation
+      - rhythm_or_attrition_manipulation
+    typical_patterns:
+      - narrow_one_surface_reactive: "Rhythm 3 / Attrition 1"
+      - standard_one_strong_plus_one_secondary: "Rhythm 5 / Attrition 1"
+      - serious_denial_or_multi_surface_commitment: "Rhythm 7 / Attrition 2"
+      - rare_upper_tier_overextension: "Often includes Rhythm 9, Attrition 3+, or both"
+  calibration_rule:
+    principle: >
+      When cost is uncertain, prefer the more conservative band during first-pass
+      authoring, then review against tier, trigger width, repetition risk,
+      counterplay, and projected Fatigue timing in the intended scene.
 
 saving_roll_models:
   examples:
@@ -443,3 +623,276 @@ template:
   scaling: ""
   restrictions: []
   tags: []
+
+pilot_examples:
+  - name: Cerrar la Línea
+    name_en: Close the Line
+    status: pilot_example
+    purpose: >
+      Validate the current Technique framework with a first authored combat
+      Technique that is clearly distinct from a generic base attack.
+    origin:
+      main: Spear
+      secondary: []
+    category: attack
+    type: reactive
+    trigger: >
+      An enemy advances into the user's line or tries to convert forward
+      movement into immediate melee contact against the user.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Perforation
+      support_specializations: []
+      equipment:
+        - spear
+        - other_committed_piercing_reach_weapon
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 4
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling of line presentation, distance judgment,
+          and entry punishment against a moving partner.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A trained lancer or comparable combat instructor can shorten the
+          learning curve by correcting timing and point alignment.
+      material_cost: null
+      access_notes: >
+        Best learned through controlled sparring where the learner must read
+        committed entry and answer before the opponent stabilizes in close
+        range.
+      final_validation: one_successful_supervised_execution
+    target: enemy
+    range: weapon_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile exchange that the Technique intercepts.
+        If the target answers successfully, the entry is not denied.
+    description: >
+      The user places the point exactly where the opponent must pass, making
+      committed entry dangerous before close pressure can settle.
+    effect: >
+      Make a reactive attack against the triggering enemy. If the Technique
+      resolves successfully, that enemy does not complete a clean melee entry
+      against the user through the same forward commitment.
+    scaling: >
+      Higher Spear competency may improve reliability, entry denial clarity, or
+      cost efficiency, but should not turn the Technique into broad zone control
+      by default.
+    cost_note: >
+      Rhythm 4 / Attrition 1 is deliberate. The Technique is narrower than a
+      standard authored action, but stronger than a pure quick reactive strike
+      because it also denies clean entry conversion on success.
+    restrictions:
+      - requires_a_clear_line_and_enough_space_to_present_the_point
+      - cannot_be_used_if_the_enemy_is_already_established_at_very_close_range
+      - cannot_be_used_when_the_user_cannot_align_the_weapon_credibly
+    tags:
+      - attack
+      - pressure
+      - precision
+      - setup
+  - name: Clavar el Paso
+    name_en: Pin the Step
+    status: pilot_example
+    purpose: >
+      Provide a novice Perforation pilot that justifies Attrition 2 through
+      visible bodily overcommitment and harsher pressure handling, not through
+      higher timing alone.
+    origin:
+      main: Spear
+      secondary: []
+    category: attack
+    type: active
+    trigger: >
+      An enemy is already pressing the line or is about to force a committed
+      close entry that the user wants to stop through sheer forward authority.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Perforation
+      support_specializations: []
+      equipment:
+        - spear
+        - other_committed_piercing_reach_weapon
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling committed step-stopping thrusts, body alignment
+          under pressure, and safe recovery from overextension.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A trained lancer helps prevent the learner from turning the Technique
+          into a wasteful lunge that collapses after the first answer.
+      material_cost: null
+      access_notes: >
+        Best learned under sparring pressure where the learner must stop real
+        forward commitment without drifting into generic stabbing exchanges.
+      final_validation: one_successful_practice_scene_under_pressure
+    target: enemy
+    range: weapon_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile exchange created by the committed thrust.
+        If the target answers successfully, the enemy's step is not pinned and
+        the user's heavy commitment was spent without securing the denial.
+    description: >
+      The user drives the spear with enough commitment that the enemy's next
+      step becomes unsafe to complete cleanly.
+    effect: >
+      Make an active attack against the target. If the Technique resolves
+      successfully, the target's current forward step or immediate close-entry
+      attempt does not settle into a stable offensive position against the user.
+    scaling: >
+      Higher Spear competency may improve stability after the thrust, denial
+      clarity, or recovery economy, but should not remove the Technique's
+      committed identity or turn it into broad control.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is deliberate. The timing remains in the standard
+      active band, but the strain rises because the Technique buys denial
+      through harsher bodily expenditure and lower repetition safety.
+    restrictions:
+      - requires_enough_space_and_posture_to_drive_the_spear_with_committed_alignment
+      - should_not_function_as_broad_zone_control_or_a_free_answer_to_multiple_enemies
+      - should_leave_the_user_meaningfully_committed_if_the_exchange_goes_poorly
+    tags:
+      - attack
+      - pressure
+      - precision
+      - disruption
+  - name: Recuperar la Distancia
+    name_en: Recover the Distance
+    status: pilot_example
+    purpose: >
+      Provide a second Perforation pilot to compare against Cerrar la Línea and
+      validate the difference between a narrow reactive denial and a broader
+      active line-recovery Technique.
+    origin:
+      main: Spear
+      secondary: []
+    category: attack
+    type: active
+    trigger: >
+      The user's line is being contested, compressed, or threatened by an enemy
+      preparing to enter or remain in close pressure.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Perforation
+      support_specializations: []
+      equipment:
+        - spear
+        - other_committed_piercing_reach_weapon
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling of distance recovery, committed line
+          reassertion, and body-forward point control against pressure.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A trained lancer can help the learner distinguish clean distance
+          recovery from wasteful overcommitment.
+      material_cost: null
+      access_notes: >
+        Best learned in sparring where the enemy repeatedly contests spear space
+        and the learner must reclaim line without collapsing into generic close
+        striking.
+      final_validation: one_successful_practice_scene_under_pressure
+    target: enemy
+    range: weapon_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile exchange created by the thrust. If the
+        target answers successfully, the spear user does not recover a clean
+        line through this Technique.
+    description: >
+      The user drives the point forward with enough authority to reclaim the
+      distance and restore the weapon's preferred fighting geometry.
+    effect: >
+      Make an active attack against the target. If the Technique resolves
+      successfully, the target does not remain in a clean close-pressure
+      position against the user at the end of that exchange.
+    scaling: >
+      Higher Spear competency may improve reliability, recovery clarity, or
+      cost efficiency, but should not turn the Technique into automatic broad
+      control or unconditional repositioning.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is broader than
+      Cerrar la Línea because it is an active reclaiming action rather than a
+      narrow reactive denial, so its main increase is in timing commitment.
+      At Novice tier, it does not yet need heavier strain to stay distinct.
+    restrictions:
+      - requires_enough_space_to_drive_the_point_and_body_alignment_forward
+      - should_not_function_when_the_spear_cannot_credibly_recover_line_geometry
+      - should_not_grant_broad_zone_control_or_multi_target_denial_by_itself
+    tags:
+      - attack
+      - pressure
+      - precision
+      - setup

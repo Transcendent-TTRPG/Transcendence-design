@@ -1,7 +1,10 @@
 rhythm_scale:
   description: >
-    The five rhythm cost bands of the ATB combat timeline.
+    The base anchor bands of the ATB combat timeline.
     Base costs are assigned by action family, not by specific weapon or specialization.
+    These anchor bands define the common timing language for base actions, but
+    authored Techniques may use intermediate values between anchors when finer
+    timing calibration is needed.
   bands:
     - cost: 0
       label: free
@@ -103,9 +106,11 @@ base_actions:
 
 attrition_structural_rule:
   description: >
-    Default Attrition cost by action commitment level, consistent with the
-    Fatigue timing principle (Fatigue 1 should arrive after the enemy's main logic
-    is actionable but before the threat has collapsed).
+    Default Attrition anchors for base action commitment level, consistent with
+    the Fatigue timing principle (Fatigue 1 should arrive after the enemy's
+    main logic is actionable but before the threat has collapsed). Authored
+    Techniques may exceed these anchors when exceptional strain is a deliberate
+    balancing factor.
   standard: 1   # Standard meaningful actions under pressure
   heavy: 2      # Heavy or strongly committed actions
   extreme: 3    # Pending specific ability definitions
