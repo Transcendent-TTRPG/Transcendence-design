@@ -74,6 +74,7 @@ taxonomy:
 required_fields:
   - name
   - origin
+  - world_origin
   - category
   - type
   - trigger
@@ -354,10 +355,91 @@ origin_models:
     Resistance-rooted Technique must be hybridized with another competency,
     specialization, equipment competency, or tightly bounded state logic.
 
+world_origin_models:
+  primary_fronts:
+    - Species
+    - Doctrine
+    - Region
+  secondary_front_allowed: true
+  required_fields:
+    - primary_front
+    - source
+    - seed
+    - transmission
+    - availability
+  availability_levels:
+    - Common
+    - Restricted
+    - Secret
+    - Sacred
+    - Lost
+  rule: >
+    The origin field defines what competency makes the Technique executable.
+    The world_origin block defines why the Technique exists in the world and
+    how a character can encounter it.
+  species_origin_adaptation_rule: >
+    Species-origin Techniques are not automatically species-locked. If a
+    Technique was invented from a natural weapon, anatomy, sensory habit, venom,
+    shell, horn, tail, or other biological surface, the Technique should define
+    what a non-member needs to perform an analogous method, such as a
+    manufactured weapon, prepared ammunition, kit-based delivery, tool,
+    apparatus, training analogue, or environmental setup. The species origin
+    explains why the method exists; requirements explain what the current user
+    needs to execute it. Only mark a species-origin Technique as biologically
+    exclusive when no credible non-magical substitute exists and that
+    exclusivity is intentional.
+  species_rank_coverage:
+    scope: full_species_origin_pass
+    current_rank_band: Novice
+    target_total: 20
+    core_attack_surfaces: 3
+    techniques_per_core_attack_surface: 4
+    target_counts:
+      attack_weapons: 12
+      defense: 2
+      resistance_hybrids: 2
+      specializations: 4
+    section_definitions:
+      attack_weapons: >
+        Three core attack surfaces, four Techniques each. A core attack
+        surface may be a manufactured weapon competency, a natural weapon
+        form, a shield used as a combat tool, or a manufactured weapon
+        competency that deliberately mirrors a natural weapon form. These
+        Techniques do not need to be purely damaging, but their executable root
+        is a weapon, natural weapon, or weapon profile.
+      defense: >
+        Armor or Evasion. These Techniques express how the species avoids,
+        absorbs, redirects, or survives pressure according to its actual armor
+        and movement identity.
+      resistance_hybrids: >
+        A Resistance plus another competency, specialization, equipment
+        competency, or bounded state. Resistances never stand alone.
+      specializations: >
+        One specific specialization or a tightly paired specialization
+        expression that carries non-weapon identity.
+    notes:
+      - The quota is an authoring target, not a list of Techniques every member of the species knows.
+      - Species with fewer natural weapons should not be padded with fake anatomy.
+      - Attack coverage should come from three core attack surfaces connected to natural weapons, culturally valued manufactured weapons, or compensating combat traditions.
+      - Define natural weapon access, cultural arsenal, defense identity, resistance pressures, and specialization surfaces before filling the quota.
+
+required_reading:
+  before_any_technique:
+    - data/system/techniques.yaml
+  before_specialization_technique:
+    - docs/system/specialization-technique-domains.md
+  before_condition_applying_technique:
+    - data/system/ailments.yaml
+  before_species_technique:
+    - docs/canon/species/<species_file>.md
+
 authoring_questions:
   - What competency domain makes this possible?
+  - What world origin created this Technique: Species, Doctrine, or Region?
+  - What seed, doctrine, or regional pressure explains why this method exists?
   - Why is this not just raw competency use?
   - What direct mechanical change does it create?
+  - If this is an information or reading Technique, what actionable truth does it reveal?
   - What non-magical cause inside the fiction makes this believable?
   - How is it actually learned: self-study, guided training, or both?
   - What timing window does it occupy?
@@ -365,6 +447,7 @@ authoring_questions:
   - How can it be resisted, if at all?
   - How does it end?
   - How does it scale?
+  - For specialization Techniques only — does this produce something the raw S.R. cannot?
 
 tag_examples:
   core:
@@ -435,6 +518,39 @@ competency_domains:
     note: >
       Resistances are adaptation modifiers, not a standalone Technique school.
       They should alter how another chosen domain behaves under a learned threat.
+
+information_technique_rule:
+  applies_to_domains:
+    - Perception
+    - Interpretation
+    - Identification
+    - Tracking
+    - Theology
+    - Astronomy
+    - Cryptology
+    - Archaeology
+    - Architecture
+    - similar_reading_domains
+  default_output: actionable_information
+  good_outputs:
+    - reveal_one_immediate_tactical_truth
+    - identify_relevant_absence_or_contradiction
+    - expose_next_likely_route_state_risk_or_pressure
+    - classify_sign_pattern_creature_state_structure_or_threat_in_bounded_way
+    - rule_out_unsafe_conclusion
+  should_not_default_to:
+    - passive_bonus_to_another_roll
+    - generic_modifier_without_information
+  bonus_only_allowed_when:
+    - explicitly_authored_as_setup_technique
+    - clear_target_roll_or_action_family
+    - narrow_trigger
+    - defined_duration_or_consumption_point
+    - reason_direct_information_is_not_better
+  rule: >
+    If a reading Technique only grants a bonus, it should be rewritten unless
+    it is deliberately a bounded setup Technique. The read itself should usually
+    change play by producing a concrete actionable truth.
 
 access_model:
   access_is_separate_from_scaling: true
@@ -575,6 +691,14 @@ template:
   origin:
     main: ""
     secondary: []
+  world_origin:
+    primary_front: null
+    secondary_front: null
+    source: ""
+    seed: ""
+    transmission: ""
+    availability: null
+    adaptation_notes: ""
   category: utility
   type: active
   trigger: ""
@@ -634,6 +758,18 @@ pilot_examples:
     origin:
       main: Spear
       secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Threshold Denial
+      transmission: archive_guard_spear_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Naghii principle that crossing a protected
+        threshold is the vulnerable moment. Non-Naghii can learn it through
+        Naghii guard instruction or adapted spear schools that preserve the
+        entry-denial logic.
     category: attack
     type: reactive
     trigger: >
@@ -694,9 +830,12 @@ pilot_examples:
       The user places the point exactly where the opponent must pass, making
       committed entry dangerous before close pressure can settle.
     effect: >
-      Make a reactive attack against the triggering enemy. If the Technique
-      resolves successfully, that enemy does not complete a clean melee entry
-      against the user through the same forward commitment.
+      Make a reactive attack against the triggering enemy. The point meets the
+      advance before it settles — the enemy absorbs the thrust at the worst
+      moment of their commitment or is forced to abort the entry. If the
+      Technique resolves successfully, the advance does not convert into clean
+      melee contact: the enemy's forward motion ends at the point rather than
+      past it.
     scaling: >
       Higher Spear competency may improve reliability, entry denial clarity, or
       cost efficiency, but should not turn the Technique into broad zone control
@@ -714,6 +853,810 @@ pilot_examples:
       - pressure
       - precision
       - setup
+  - name: Cerrar la Compuerta
+    name_en: Close the Sluice
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Shield Technique that uses active Line Control to
+      make attacking through a protected route less efficient without becoming a
+      guaranteed interception.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Procession Of Force
+      transmission: river_warden_shield_drills_and_temple_gate_defense
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri idea that movement is pressure moving
+        through a channel and that a shield can become the gate that closes the
+        route. Non-Sauri shield users can learn it through Sauri river-warden
+        instruction, temple guard service, or adapted shield schools that
+        preserve the lane-closure logic.
+    category: utility
+    type: active
+    trigger: >
+      The user sets their shield to govern a readable lane, flank, doorway,
+      bridge, corridor, formation gap, or other route before an enemy commits
+      through it.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Line Control
+      support_specializations: []
+      equipment:
+        - shield
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling of route reading, shield placement, and
+          making attacks through the protected route less efficient without
+          claiming the whole battlefield.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A trained shield instructor, river warden, or temple guard can shorten
+          the learning curve by correcting lane choice and shield timing.
+      material_cost: null
+      access_notes: >
+        Best learned in drills with doorways, corridors, formation gaps, bridges,
+        riverbank edges, or other readable routes that force the learner to
+        close one path without claiming the whole battlefield.
+      final_validation: one_successful_supervised_execution
+    target: route
+    range: shield_reach
+    area: single_readable_route
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends after the next hostile activation that could plausibly use or
+        attack through the chosen route resolves, even if the user's own marker
+        becomes ready first. Also ends early if the user leaves the route, loses
+        shield posture, takes a non-free action that abandons the shield line,
+        or becomes unable to maintain the shield line.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The user sets the shield like a stone gate in a canal, making one route
+      costly to ignore before the enemy chooses a target through it.
+    effect: >
+      Choose one readable route within shield reach. The compuerta remains in
+      place until the next hostile activation that could plausibly use or attack
+      through that route resolves, even if the user's own marker becomes ready
+      first. During that window, an enemy that uses the chosen route or attacks
+      through that route against a target other than the user treats the action
+      as obstructed by the user's shield line. The obstructed action suffers a
+      penalty to its Attack Roll equal to 1 + the user's Shield rank. Instead of
+      accepting the penalty, the enemy may choose to attack the user or the
+      user's shield line as the cleaner target. This does not stop the attack.
+      It makes ignoring the shield line worse.
+    scaling: >
+      Higher Shield competency increases the Attack Roll penalty through Shield
+      rank. It should not turn the Technique into persistent zone control by
+      default.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is an active setup,
+      not a guaranteed interception. It costs little because it changes enemy
+      incentives for the next relevant hostile activation through the chosen
+      route rather than stopping the next attack by itself.
+    restrictions:
+      - requires_a_real_lane_doorway_flank_bridge_corridor_riverbank_edge_formation_gap_or_other_readable_route_to_govern
+      - requires_the_user_to_physically_occupy_or_cover_the_chosen_route_with_shield_reach
+      - does_not_create_a_persistent_zone_by_itself
+      - does_not_prevent_the_enemy_from_attacking_through_the_route
+      - ends_after_the_next_hostile_activation_that_could_use_or_attack_through_the_route_resolves
+      - ends_early_if_the_user_leaves_the_route_loses_shield_posture_takes_a_non_free_action_that_abandons_the_shield_line_or_cannot_maintain_the_shield_line
+      - should_not_stack_with_another_copy_of_the_same_technique_on_the_same_route
+    tags:
+      - defense
+      - control
+      - anti_displacement
+      - setup
+  - name: Levantar el Dique
+    name_en: Raise the Dike
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Shield Technique that protects another target by
+      intercepting a blockable incoming line.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Procession Of Force
+      transmission: temple_escort_drills_and_river_warden_protection_rites
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri idea that a protected body, relic, or
+        witness is a vessel under public responsibility. Non-Sauri shield users
+        can learn it through bodyguard, escort, or temple guard traditions.
+    category: attack
+    type: reactive
+    trigger: >
+      An enemy attack or movement-linked strike would reach an ally, protected
+      creature, carried witness, relic, or designated charge within the user's
+      shield reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interception
+      support_specializations: []
+      equipment:
+        - shield
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires drilling clear shield paths, target substitution, and the
+          difference between protecting oneself and taking responsibility for a
+          protected charge.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A shield instructor, escort trainer, river warden, or temple guard can
+          correct timing and line placement.
+      material_cost: null
+      access_notes: >
+        Best learned in drills where the learner protects one visible target
+        from one incoming blockable threat.
+      final_validation: one_successful_supervised_interception_of_a_protected_target
+    target: ally_creature_or_object
+    range: shield_reach
+    area: single_protected_target
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile attack or movement-linked strike that the
+        Technique intercepts.
+    description: >
+      The user raises the shield as a dike for someone or something that must
+      not be reached.
+    effect: >
+      Contest the triggering attack or movement-linked strike with a shield
+      response. If the Technique resolves successfully, the attack does not
+      affect its intended target. The shield-bearing user becomes the point of
+      contact for the hostile force; the attack is blocked, redirected, or
+      resolved against the user's shield defense as the scene requires. If the
+      intercepted attack carries a non-damage rider, such as forced movement, a
+      condition, or a grab, that rider does not transfer automatically to the
+      protected target. The Narrator resolves whether the rider can affect the
+      shield-bearing user based on the fiction of the contact.
+    scaling: >
+      Higher Shield competency may improve reliability, protected-target
+      breadth, or rider mitigation, but should not become persistent bodyguard
+      coverage by default.
+    cost_note: >
+      Rhythm 4 / Attrition 1 is deliberate. The Technique protects one target
+      against one incoming threat and requires a clear shield path.
+    restrictions:
+      - requires_a_clear_physical_path_for_the_shield_to_enter_the_attack_line
+      - protects_one_target_from_one_triggering_threat_only
+      - cannot_intercept_effects_that_do_not_travel_through_a_blockable_line_surface_body_projectile_or_contact_path
+      - cannot_protect_a_target_already_separated_by_sealed_terrain_closed_barrier_or_an_occupied_route_the_shield_cannot_cross
+      - should_not_become_persistent_bodyguard_coverage_without_a_higher_rank_technique
+    tags:
+      - defense
+      - interception
+      - support
+      - mitigation
+  - name: Romper el Caudal
+    name_en: Break the Flow
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Shield Technique that interrupts a committed
+      execution and creates a counterattack only on a clean defensive margin.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Release At The Correct Gate / Tail Keeps The Channel
+      transmission: river_warden_breach_drills_and_temple_guard_interruption_forms
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine of breaking pressure while it
+        is still becoming an action. Non-Sauri users can learn it through shield
+        interruption and counter-positioning schools.
+    category: attack
+    type: reactive
+    trigger: >
+      An enemy within shield reach begins a Technique, heavy action,
+      telegraphed action, or movement-linked execution that requires visible
+      commitment before it resolves.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interruption
+      support_specializations: []
+      equipment:
+        - shield
+        - ready_manufactured_weapon_or_natural_weapon_or_shield_with_attack_stats
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling readable windups, contact jamming, and counterattack
+          restraint so the learner only counters from a clean defensive margin.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A shield instructor, river warden, temple guard, or counter-fighting
+          trainer can correct interruption timing.
+      material_cost: null
+      access_notes: >
+        Best learned against committed but readable attacks, not instant or
+        hidden actions.
+      final_validation: one_successful_supervised_interruption_with_or_without_counter
+    target: enemy
+    range: shield_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: defense_roll_margin
+      effect_on_success: >
+        The shield breaks the execution cleanly. Counterattack requires the
+        user's D.R. to exceed the enemy roll by 3 or more.
+    description: >
+      The user drives the shield into the moment where the enemy's action has
+      begun but has not yet become inevitable.
+    effect: >
+      Contest the triggering execution with a shield-based D.R. If the enemy's
+      attack or execution still beats the user's D.R., the Technique fails and
+      the enemy resolves normally. If the user's D.R. equals or exceeds the
+      enemy's relevant attack or execution roll, the shield breaks the execution
+      cleanly. The enemy's action still consumes its declared Rhythm and any
+      declared cost, but it does not damage the user through that contact. If
+      the user's D.R. exceeds the enemy's roll by 3 or more, the user may
+      immediately make one counterattack against that enemy with one ready
+      manufactured weapon, one natural weapon, or a shield item that has
+      explicit attack stats. Resolve the counterattack normally with its own
+      A.R. and I.R. This counterattack does not add another Rhythm cost, but it
+      cannot include movement, a second Technique, or a follow-up window. If the
+      triggering action was telegraphed rather than a direct attack, use the
+      same margin logic against the action's relevant execution roll, fixed
+      threat value, or declared interruption threshold. If no such value exists,
+      this Technique can spoil the setup but cannot produce the counterattack.
+    scaling: >
+      Higher Shield competency may improve defensive reliability or future
+      interruption windows, but counter access should remain tied to a clean
+      margin.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique can create damage, but
+      the counter only happens on a clean defensive margin and requires a ready
+      credible striking surface.
+    restrictions:
+      - requires_a_readable_committed_execution_not_a_trivial_instant_hidden_or_purely_mental_action
+      - requires_shield_reach_and_a_credible_contact_point_to_jam_strike_or_break
+      - counterattack_requires_a_ready_weapon_natural_weapon_or_shield_item_with_explicit_attack_stats
+      - affects_one_enemy_action_only
+      - should_not_cancel_an_entire_boss_or_champion_subsystem_unless_it_exposes_a_vulnerable_interruption_window
+      - shield_only_damage_should_not_be_assumed_unless_shields_later_receive_explicit_offensive_stats_or_the_specific_shield_item_can_attack
+    tags:
+      - attack
+      - defense
+      - disruption
+      - counter_positioning
+  - name: Asentar la Piedra
+    name_en: Settle the Stone
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Bastion stance that improves anchored defense
+      while preserving the ability to act from the held point.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Sovereign Weight
+      transmission: temple_bastion_stances_and_sovereign_guard_anchoring_rites
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri idea that a defended point can become
+        part of the structure. Non-Sauri shield users can learn it through
+        bastion, gate guard, and formation-holding traditions.
+    category: utility
+    type: active stance
+    trigger: >
+      The user plants themselves with a shield to hold a point, line, doorway,
+      flank, formation gap, or protected space.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Bastion
+      support_specializations: []
+      equipment:
+        - shield
+      states:
+        - standing
+        - able_to_brace
+        - shield_oriented_toward_pressure
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires drilling point commitment, shield orientation, and fighting
+          without abandoning the anchored space.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A shield instructor, temple guard, or formation trainer can correct
+          posture, stance recovery, and overcommitment.
+      material_cost: null
+      access_notes: >
+        Best learned in doorway, gate, corridor, formation, or marked-point
+        drills where movement choices matter.
+      final_validation: one_successful_supervised_hold_against_physical_pressure
+    target: self
+    range: self
+    area: anchored_point
+    duration:
+      model: sustained_while_condition_holds
+      value: anchored_point
+      sustain_rule: >
+        The user may still attack, use Techniques, intercept, speak, pressure
+        enemies, and defend while the stance is active, as long as those actions
+        do not abandon the anchored point or break shield posture.
+      end_rule: >
+        Ends if the user voluntarily moves more than 1 meter from the anchored
+        point, is forced out of posture, loses footing, turns the shield away
+        from the pressure being held, or no longer has the shield ready.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The user settles into the ground like fitted stone, making one place
+      harder to take from them.
+    effect: >
+      Choose the point or small space the user is anchoring. While the stance
+      remains active, the user gains a bonus equal to their Shield rank to D.R.
+      against attacks that come through the shield line or anchored front, and
+      to R.R. against forced movement, knockdown, shove, drag, destabilization,
+      crushing pressure, and physical Alterations caused by impact or bodily
+      displacement. The user may still attack, use Techniques, intercept, speak,
+      pressure enemies, and defend while the stance is active, as long as those
+      actions do not abandon the anchored point or break shield posture.
+    scaling: >
+      Higher Shield competency increases the stance bonus through Shield rank.
+      It should not become broad route control or ally interception by itself.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. Entering the stance is quick; the
+      real cost is positional and attritional.
+    restrictions:
+      - ends_if_the_user_voluntarily_moves_more_than_1_meter_from_the_anchored_point
+      - ends_if_forced_movement_knockdown_loss_of_footing_or_another_effect_breaks_posture
+      - ends_if_the_user_turns_the_shield_away_from_the_pressure_being_held_or_no_longer_has_the_shield_ready
+      - does_not_apply_against_poison_fear_curses_sensory_effects_mental_influence_or_alterations_not_caused_by_physical_impact_or_displacement
+      - does_not_create_a_protected_route_by_itself_use_cerrar_la_compuerta_for_route_pressure
+      - does_not_intercept_attacks_against_others_by_itself_use_levantar_el_dique_for_interception
+    tags:
+      - defense
+      - stability
+      - mitigation
+      - anti_displacement
+  - name: Cerrar el Juicio
+    name_en: Close the Judgment
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Impact Technique that expands break-validation
+      range against a declared breakable target without increasing Potency.
+    origin:
+      main: Impact
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Jaw As Judgment / Vessel Under Pressure
+      transmission: jaw_closing_rites_execution_drills_and_temple_predator_discipline
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri idea of jaw closure as judgment made
+        physical. Non-Sauri users can learn it through mace schools, execution
+        drills, or other Impact traditions that close force into a structure.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Impact-profile attack against a declared
+      breakable target within reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Impact
+      support_specializations: []
+      equipment:
+        - sauri_bite
+        - mace
+        - heavy_blunt_weapon
+        - other_credible_impact_surface
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling declared target selection and structural impact
+          delivery without treating every hit as a break attempt.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri jaw instructor, mace instructor, execution trainer, or
+          armor-break specialist can correct target declaration and force
+          closure.
+      material_cost: null
+      access_notes: >
+        Depends on the critical / break subsystem being formalized before final
+        balance.
+      final_validation: one_successful_supervised_attack_against_a_declared_breakable_target
+    target: enemy
+    range: weapon_or_natural_weapon_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: defense_roll
+      effect_on_success: >
+        D.R. resolves normally against the attack.
+    description: >
+      The user closes force into a declared structure, piece, or body part and
+      widens the moment where the Impact Roll can validate a break.
+    effect: >
+      Before rolling, declare one breakable target the attack can plausibly
+      reach: a weapon, shield, armor piece, carried object, exposed natural
+      armor, limb, jaw, horn, shell edge, tail segment, or other creature part
+      the encounter has made targetable. Make an active Impact-profile attack
+      against that target and resolve damage normally if the attack hits. For
+      this attack only, reduce the Impact Roll result needed to validate a break
+      by 1 per rank in the competency used for the attack. For example, if a
+      d12 Impact die normally validates break only on 12, a rank 3 user
+      validates break on 9-12 while using this Technique. If the Impact Roll
+      lands inside that expanded break-validation range, resolve break
+      validation using the target's Durability, the attack surface's Potency,
+      and the future break formula. Until the critical / break subsystem is
+      formally adopted, test this as: hit and Impact Roll inside the expanded
+      range allows break validation; hit outside the range does not; miss or no
+      damage does not.
+    scaling: >
+      Higher competency expands the break-validation range by 1 per rank. The
+      Technique does not increase Potency by itself.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is deliberate. The Technique is not slower than a
+      normal committed attack, but it directs force into precise structural
+      failure rather than simply landing a hit.
+    restrictions:
+      - requires_a_valid_impact_profile_surface_and_a_target_with_a_body_or_structure_the_impact_can_meaningfully_affect
+      - breakable_target_must_be_declared_before_the_attack_roll
+      - cannot_target_an_abstract_creature_as_a_whole
+      - cannot_force_break_validation_on_purely_soft_tissue_unless_established_as_targetable_structure_or_vital_point
+      - does_not_increase_potency_by_itself
+      - does_not_create_a_grapple_restraint_or_sustained_hold_by_itself
+      - should_not_replace_dedicated_called_shot_or_vital_point_rules_once_defined
+    tags:
+      - attack
+      - pressure
+      - disruption
+      - setup
+  - name: Abrir la Vasija
+    name_en: Open the Vessel
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Rend Technique that applies the generic Lacerado
+      Alteration to create Rhythm pressure through wound-stressed actions.
+    origin:
+      main: Rend
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Jaw As Judgment / Vessel Under Pressure
+      transmission: predator_restraint_drills_execution_tearing_rites_and_wound_reading_practice
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri idea that once a vessel opens, every
+        careless motion spills something. Non-Sauri users can learn it through
+        axes, hooked blades, serrated weapons, claw methods, or other tearing
+        traditions that preserve the wound-pressure logic.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Rend-profile attack against a target with
+      flesh, hide, natural armor, bindings, or worn protection that can be torn
+      open.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Rend
+      support_specializations: []
+      equipment:
+        - sauri_bite
+        - axe
+        - hooked_blade
+        - serrated_natural_weapon
+        - tearing_edge
+        - other_credible_rend_surface
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling contact angle, follow-through, and target selection
+          so the learner opens a wound that actually stresses future movement.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri jaw instructor, axe instructor, hunter, execution trainer, or
+          tearing-weapon specialist can correct wound pressure and restraint.
+      material_cost: null
+      access_notes: >
+        Best learned against targets or drills that distinguish shallow cuts
+        from openings that alter how the body can move.
+      final_validation: one_successful_supervised_laceration_application
+    target: enemy
+    range: weapon_or_natural_weapon_reach
+    area: single_enemy
+    duration:
+      model: until_removed
+      value: Lacerado
+      sustain_rule: null
+      end_rule: >
+        Ends when Lacerado is removed, stabilized, treated, or no longer
+        functionally stressed by the scene.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: alteration_resistance
+      effect_on_success: >
+        Lacerado is not applied, but the attack still resolves its normal damage
+        if it hit.
+    description: >
+      The user opens the target like a vessel under pressure, making future
+      strenuous physical actions slower while the wound remains unstabilized.
+    effect: >
+      Make an active Rend-profile attack against the target. If the attack hits,
+      resolve damage normally. Then the target makes an Alteration Resistance
+      Roll against Lacerado. The Lacerado severity is determined by the
+      competency rank used for the attack: ranks 1-2 are Minor, ranks 3-4 are
+      Moderate, and ranks 5-6 are Severe. On a failed R.R., the target gains
+      Lacerado at that severity. While Lacerado is active, strenuous physical
+      actions that stress the wound cost additional Rhythm according to
+      severity: Minor adds +1 Rhythm, Moderate adds +2 Rhythm, and Severe adds
+      +3 Rhythm. Strenuous physical actions include attacks, movement bursts,
+      weapon Techniques, forced movement attempts, grapples, heavy defenses, or
+      similar actions that clearly put pressure through the opened wound.
+    scaling: >
+      Higher competency increases the Lacerado severity in two-rank bands. The
+      Technique does not create ongoing automatic damage by itself.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is deliberate. The Technique is a committed
+      tearing attack that asks the user to maintain contact angle and
+      follow-through long enough to open a meaningful wound.
+    restrictions:
+      - requires_a_valid_rend_profile_surface_and_a_target_with_material_flesh_protection_binding_hide_or_natural_armor_that_can_be_meaningfully_torn
+      - does_not_apply_to_targets_without_a_credible_tearable_body_or_structure
+      - applies_lacerado_a_generic_alteration_not_a_sauri_only_condition
+      - cannot_stack_multiple_copies_of_lacerado_on_the_same_target
+      - stronger_lacerado_replaces_weaker_lacerado_and_equal_lacerado_refreshes_persistence
+      - does_not_create_ongoing_automatic_damage_by_itself
+      - does_not_bypass_armor_or_durability_unless_the_attack_already_has_rules_that_allow_that
+      - should_not_replace_formal_bleeding_wound_or_injury_subsystems_if_later_defined
+    tags:
+      - attack
+      - pressure
+      - disruption
+      - wound_pressure
+  - name: La Corriente No Retrocede
+    name_en: The Current Does Not Recede
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Unstoppable Technique that breaks defensive
+      posture through forced displacement instead of adding generic damage.
+    origin:
+      main: Unstoppable
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Release At The Correct Gate / Jaw As Judgment
+      transmission: breach_rites_mace_processions_and_jaw_commitment_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that stored pressure must go
+        somewhere once released. Non-Sauri users can learn it through mace
+        schools, heavy-weapon breach drills, or any training tradition that
+        preserves the logic of carrying force through resistance.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Unstoppable-profile attack against an enemy
+      that is guarding, bracing, blocking, or trying to hold a defensive line.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Unstoppable
+      support_specializations: []
+      equipment:
+        - sauri_bite
+        - mace
+        - heavy_blunt_weapon
+        - other_credible_unstoppable_surface
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling against guards, braces, shield lines, and
+          active postures so the learner distinguishes real defensive commitment
+          from an open target.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri jaw instructor, breach master, mace instructor, or heavy-weapon
+          trainer can correct body commitment and contact angle.
+      material_cost: null
+      access_notes: >
+        Best learned against partners or training rigs that can brace, block,
+        and hold a line without turning the drill into raw damage trading.
+      final_validation: one_successful_supervised_execution_against_a_braced_defense
+    target: enemy
+    range: weapon_or_natural_weapon_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: alteration_resistance
+      effect_on_success: >
+        The target holds its position and keeps any posture benefits, but the
+        attack still resolves its normal damage if it hit.
+    description: >
+      The user releases force like water through a gate, making a held defense
+      give ground if the target cannot resist the displacement.
+    effect: >
+      Make an active Unstoppable-profile attack against the target. If the
+      target is not guarding, bracing, blocking, holding a line, using a shield
+      defense, using an active armor posture, or otherwise relying on a
+      defensive posture, resolve the attack as a normal hit with no additional
+      effect. If the target is relying on a defensive posture and the attack
+      hits, the target must make an Alteration Resistance Roll against forced
+      displacement. The forced displacement severity and distance are determined
+      by the competency rank used for the attack: ranks 1-2 are Minor and push
+      up to 1 meter; ranks 3-4 are Moderate and push up to 2 meters; ranks 5-6
+      are Severe and push up to 3 meters. On a failed Resistance Roll, the
+      target is pushed away from the held line by the appropriate distance. If
+      that displacement happens, the target also loses the benefit of any active
+      guard, brace, stance, shield-line effect, active armor posture, or similar
+      posture effect that depended on holding that position.
+    scaling: >
+      Higher competency increases both the forced displacement severity and the
+      distance pushed in two-rank bands. The Technique should not gain generic
+      bonus damage by default.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is intentional. The Technique does not add movement
+      or create a persistent state, but it asks the user to commit force through
+      a prepared defensive answer.
+    restrictions:
+      - requires_a_valid_unstoppable_profile_surface_and_enough_space_or_contact_logic_to_carry_force_through_resistance
+      - only_creates_its_additional_effect_against_a_target_relying_on_a_defensive_posture_held_line_shield_guard_brace_active_armor_posture_or_similar_resistance
+      - cannot_push_a_target_through_a_solid_barrier_or_into_an_impossible_position
+      - cannot_remove_passive_armor_values_or_permanent_equipment_benefits
+      - should_not_cancel_boss_or_champion_defensive_subsystems_unless_that_subsystem_exposes_a_normal_guard_brace_or_posture_layer
+    tags:
+      - attack
+      - pressure
+      - forced_movement
+      - posture_break
   - name: Clavar el Paso
     name_en: Pin the Step
     status: pilot_example
@@ -724,11 +1667,23 @@ pilot_examples:
     origin:
       main: Spear
       secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Committed Compression
+      transmission: kha_enforcement_and_breach_response_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Naghii moment when observation ends and a
+        precise costly commitment collapses the interval. It is especially
+        associated with Kha enforcement and archive breach response.
     category: attack
     type: active
     trigger: >
-      An enemy is already pressing the line or is about to force a committed
-      close entry that the user wants to stop through sheer forward authority.
+      The user wants to close distance and attack in a single committed action,
+      pressing into the enemy's space without spending a separate movement
+      action first.
     requirements:
       level: null
       rank: Novice
@@ -781,20 +1736,23 @@ pilot_examples:
         If the target answers successfully, the enemy's step is not pinned and
         the user's heavy commitment was spent without securing the denial.
     description: >
-      The user drives the spear with enough commitment that the enemy's next
-      step becomes unsafe to complete cleanly.
+      The user closes up to 2 meters and attacks in one committed action,
+      pressing into the enemy's space without a separate movement action.
     effect: >
-      Make an active attack against the target. If the Technique resolves
-      successfully, the target's current forward step or immediate close-entry
-      attempt does not settle into a stable offensive position against the user.
+      Close up to 2 meters toward the target as part of this action — no
+      separate movement action required — then make an active attack from your
+      new position at full weapon reach. You are left committed forward after
+      the exchange.
     scaling: >
-      Higher Spear competency may improve stability after the thrust, denial
-      clarity, or recovery economy, but should not remove the Technique's
-      committed identity or turn it into broad control.
+      Higher Spear competency may improve reliability, closing stability, or
+      cost efficiency, but should not remove the Technique's committed identity
+      or extend the closing distance beyond the authored 2 meters at base.
     cost_note: >
-      Rhythm 5 / Attrition 2 is deliberate. The timing remains in the standard
-      active band, but the strain rises because the Technique buys denial
-      through harsher bodily expenditure and lower repetition safety.
+      Rhythm 5 / Attrition 2 is deliberate. The Technique packages movement
+      and attack into a single action, which justifies the higher strain. The
+      2-meter close combined with the spear's 2-meter reach means the effective
+      threat range is up to 4 meters — that disguised reach is part of the
+      Technique's tactical value and part of why the body cost is real.
     restrictions:
       - requires_enough_space_and_posture_to_drive_the_spear_with_committed_alignment
       - should_not_function_as_broad_zone_control_or_a_free_answer_to_multiple_enemies
@@ -814,6 +1772,18 @@ pilot_examples:
     origin:
       main: Spear
       secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Preserved Distance
+      transmission: archive_guard_range_discipline
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Naghii idea that proper distance is a
+        maintained condition for reading, control, and safe response. Outsiders
+        can learn the movement, but the original doctrine treats distance as
+        interpretive authority rather than mere reach advantage.
     category: attack
     type: active
     trigger: >
@@ -875,9 +1845,13 @@ pilot_examples:
       The user drives the point forward with enough authority to reclaim the
       distance and restore the weapon's preferred fighting geometry.
     effect: >
-      Make an active attack against the target. If the Technique resolves
-      successfully, the target does not remain in a clean close-pressure
-      position against the user at the end of that exchange.
+      Make an active attack against the target. The thrust and the step are one
+      committed action — you drive the point to cover your own displacement as
+      you move approximately 1 meter in any direction to re-establish your
+      spear's preferred reach. If the Technique resolves successfully, the
+      repositioning completes without yielding a reaction opportunity: the
+      target is now outside close-pressure range and must spend movement to
+      close again before they can threaten you in melee.
     scaling: >
       Higher Spear competency may improve reliability, recovery clarity, or
       cost efficiency, but should not turn the Technique into automatic broad
@@ -896,3 +1870,2783 @@ pilot_examples:
       - pressure
       - precision
       - setup
+  - name: Anudar el Paso
+    name_en: Knot the Step
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Technique outside the spear/Perforation
+      starter set, using Torsion to express flexible contact and coiled
+      readiness as anti-disengagement rather than entry denial.
+    origin:
+      main: Flexible Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Coiled Readiness
+      transmission: temple_guard_torsion_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii tail and flexible-weapon practice:
+        stillness stores a curved answer until the opponent commits a step.
+        Non-Naghii can learn it with whips, chains, cords, hooked flexible
+        tools, or other weapons that can credibly catch a moving limb or line.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy already inside the user's flexible reach tries to withdraw,
+      circle to a better angle, disengage from a contested position, or turn
+      partial contact into clean separation.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Torsion
+      support_specializations: []
+      equipment:
+        - flexible_weapon
+        - functional_tail_or_tendril
+        - other_credible_torsion_contact_surface
+      states:
+        - target_is_already_inside_flexible_reach
+        - user_has_a_credible_held_contact_or_coiled_threat
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires drilling still guard posture, curved contact paths, and
+          timing against a partner who repeatedly tries to step out of the
+          held line.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii guard instructor or trained flexible-weapon teacher can
+          correct the learner's timing so the Technique catches the step
+          without becoming a crude grapple.
+      material_cost: null
+      access_notes: >
+        Common in Naghii martial training that uses the tail or flexible tools
+        to punish enemies who try to leave or improve position after entering
+        a guarded space.
+      final_validation: one_successful_supervised_execution
+    target: enemy
+    range: flexible_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile movement exchange that the Technique
+        catches. If the target answers successfully, the enemy clears the
+        flexible contact and their movement resolves normally.
+    description: >
+      The user releases a held curve of tail, cord, chain, or flexible weapon
+      around a target that is trying to leave or improve position, knotting
+      the escape route before it becomes clean separation.
+    effect: >
+      Make a reactive Torsion check against the triggering enemy. If the
+      Technique resolves successfully, the flexible contact catches the enemy's
+      step, wrist, weapon line, or lower body before separation completes. The
+      triggering movement does not create clean withdrawal, a clean flank, or a
+      superior angle. The enemy remains in their current contested position or
+      in the nearest position that still leaves them inside the user's flexible
+      reach, and must spend a later movement commitment or action to clear the
+      contact before treating that path as open.
+    scaling: >
+      Higher Flexible Weapons competency may improve reliability, contact
+      clarity, or cost efficiency, but should not turn the Technique into full
+      restraint, damage, multi-target denial, or sustained immobilization by
+      default.
+    cost_note: >
+      Rhythm 4 / Attrition 1 matches a narrow reactive anti-disengagement
+      window. Unlike Cerrar la Linea, this does not stop an enemy from entering;
+      it punishes an enemy who is already inside flexible reach and tries to
+      leave, circle, or cleanly improve position.
+    restrictions:
+      - requires_a_flexible_contact_surface_that_can_credibly_catch_the_step_or_line
+      - cannot_be_used_against_an_enemy_entering_from_outside_flexible_reach
+      - cannot_be_used_if_the_user_has_no_credible_held_contact_or_coiled_threat
+      - cannot_create_full_immobilization_or_grappling_control_by_itself
+      - should_not_function_as_broad_zone_control_or_multi_target_denial
+    tags:
+      - control
+      - disruption
+      - counter_positioning
+      - setup
+  - name: Robar el Ángulo
+    name_en: Steal the Angle
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Flexible Weapons Technique using the
+      Unpredictability profile, giving the tail/flexible-weapon core a false
+      line expression that creates a concrete positional or response consequence
+      instead of a generic attack bonus.
+    origin:
+      main: Flexible Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Controlled Misreading
+      transmission: tail_feint_and_flexible_line_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii tail and flexible-weapon practice:
+        the visible curve teaches the target to defend the wrong path.
+        Non-Naghii can learn it with whips, chains, cords, hooked flexible
+        tools, or other weapons that can credibly present one line and resolve
+        through another without supernatural extension.
+    category: attack
+    type: active
+    trigger: >
+      The user attacks a creature that can perceive the visible flexible line
+      and is close enough for the user's curve, wrap, or snap to threaten an
+      off-angle contact.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Unpredictability
+      support_specializations: []
+      equipment:
+        - flexible_weapon
+        - functional_tail_or_tendril
+        - other_credible_flexible_false_line_surface
+      states:
+        - target_can_perceive_the_visible_line
+        - user_has_space_to_resolve_from_a_different_angle
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires drilling visible false curves, delayed snaps, and off-angle
+          contact without relying on random flailing.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii tail instructor or flexible-weapon teacher can correct the
+          learner when the false line becomes too obvious or too uncontrolled.
+      material_cost: null
+      access_notes: >
+        Common among Naghii guards and duelists who favor tail analogues,
+        flexible tools, and controlled misreading over heavy force.
+      final_validation: one_successful_supervised_false_line_execution
+    target: creature
+    range: flexible_reach
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the user resolves the chosen false-line consequence, the
+        target re-centers without answering the user, or the scene no longer
+        tracks the immediate exchange.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile exchange created by the false line. If the
+        target answers successfully, the contact may still be a normal attack
+        if appropriate, but the false-line consequence does not apply.
+    description: >
+      The user shows one curve and resolves through another, making the target
+      answer the visible line while the real contact steals the useful angle.
+    effect: >
+      Make a Flexible Weapons attack or equivalent tail/tendril Technique check
+      against the target. If the Technique resolves successfully, choose one
+      false-line consequence: steal position, letting the user shift up to 1
+      meter around the target within flexible reach without provoking a reaction
+      from that target; or spoil response, giving the target a situational
+      penalty equal to the user's Flexible Weapons rank bonus (+1 at Novice, +2
+      at Adept, +3 at Expert, +4 at Master, +5 at Consummate, +6 at
+      Transcendent) on its next immediate reaction, counterattack, or opposed
+      exchange against the user before it re-centers. This does not force the
+      target to move, does not immobilize it, and does not create broad zone
+      control.
+    scaling: >
+      The spoil response penalty scales by Flexible Weapons rank: +1 at Novice,
+      +2 at Adept, +3 at Expert, +4 at Master, +5 at Consummate, and +6 at
+      Transcendent. Higher rank may allow subtler false lines or tighter
+      positional shifts, but Novice use chooses one false-line consequence only.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is broader than a
+      narrow reactive catch: it is an active attack that creates either a small
+      positional conversion or a bounded response penalty. It should not be as
+      cheap as a pure quick strike, but it does not carry enough control or
+      persistence to require higher strain.
+    restrictions:
+      - requires_a_flexible_surface_that_can_present_one_line_and_resolve_through_another
+      - requires_the_target_to_perceive_the_visible_line
+      - requires_space_to_resolve_from_a_different_angle
+      - applies_to_one_creature_only
+      - choose_one_false_line_consequence_only
+      - does_not_force_target_movement
+      - does_not_immobilize_or_grapple_by_itself
+      - does_not_create_broad_zone_control
+      - does_not_function_against_targets_that_cannot_be_misled_by_visible_contact_geometry
+    tags:
+      - attack
+      - disruption
+      - mobility
+      - false_read
+  - name: Leer el Calor del Paso
+    name_en: Read the Heat of the Step
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin utility Technique rooted in Perception and
+      Layered Sensing, giving the species a non-weapon rank 1 expression that
+      produces immediate tactical information from a present creature's living
+      signals instead of becoming a passive bonus.
+    origin:
+      main: Perception
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Layered Sensing
+      transmission: ruin_scout_trace_reading_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii tongue, heat, vibration, and scent
+        reading, but outsiders can learn analogues through dust reading, sound
+        discipline, heat tools, scent practice, or other methods that preserve
+        the principle that living bodies reveal pressure through layered signs.
+    category: utility
+    type: active
+    trigger: >
+      The user can observe or sense a living creature's immediate physical
+      signs: heat shift, breath, scent, pressure, vibration, posture, blood,
+      tremor, or movement residue.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - living_creature_present_or_immediate_living_trace_available
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated practice reading bodily pressure through multiple
+          physical signs and confirming the read against what the creature does
+          next.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii ruin-scout, guard, or sensory instructor can teach the
+          learner to separate living signal from irrelevant environmental noise.
+      material_cost: null
+      access_notes: >
+        Common among Naghii scouts, archive couriers, and temple guards who must
+        quickly read whether a creature is wounded, fleeing, bracing, hiding, or
+        about to move.
+      final_validation: one_successful_practice_scene_under_pressure
+    target: creature
+    range: sensory_reach
+    area: single_creature_or_trace
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        If the target is actively masking its state or movement, resolve against
+        that opposing method. On a successful answer, the user receives no clear
+        read.
+    description: >
+      The user reads heat, breath, scent, vibration, posture, and pressure as a
+      single living signal, extracting one immediate truth about what the
+      creature is doing or about to do.
+    effect: >
+      Make a Perception-based Technique check against one living creature or one
+      immediate living trace within sensory reach. On success, the Narrator
+      provides one immediate truth about what the creature is doing or about to
+      do — such as whether the target is moving toward, away from, or around a
+      protected point; whether the target is wounded, exhausted, poisoned, or
+      physically impaired; whether the target is preparing immediate movement,
+      attack, withdrawal, or concealment; or which of several fresh exits or
+      hiding places the living signal most likely continued through. These are
+      examples of the kind of truth this Technique produces, not a closed list:
+      the Narrator chooses whichever truth is most immediately relevant and may
+      provide other truths of the same quality and immediacy that the signs
+      support. The read is concrete and immediate, but not exhaustive: it does
+      not identify exact statistics, reveal full intention, diagnose precise
+      conditions, or track a target beyond the signs currently present.
+    scaling: >
+      Higher Perception rank may improve reliability, allow fainter signs to
+      qualify, or let the user choose from subtler read options at higher tiers,
+      but Novice use should reveal only one immediate truth and should never
+      become automatic target detection, full condition diagnosis, or long-range
+      tracking without evidence.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique takes a quick but
+      focused read under pressure and produces information immediately. These
+      costs apply only during ATB or another active-threat scene; in normal
+      exploration, where Rhythm and Attrition are not active costs, the
+      Technique resolves as the user's Perception action. It does not add a
+      bonus to another roll by itself, and it does not sustain a tracking state.
+    restrictions:
+      - requires_a_living_creature_or_immediate_living_trace_within_sensory_reach
+      - cannot_be_used_without_physical_signs_to_read
+      - reveals_one_immediate_truth_only
+      - does_not_reveal_exact_statistics_full_intent_or_precise_condition_names
+      - does_not_create_a_bonus_to_another_roll_by_itself
+      - does_not_create_persistent_tracking_or_detection
+      - does_not_bypass_active_masking_without_contextual_opposition
+    tags:
+      - utility
+      - counter_read
+      - survival_window
+  - name: Pesar el Umbral
+    name_en: Weigh the Threshold
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin social Technique rooted in Intimidation and
+      Ritualized Access, giving the species a rank 1 way to make forced access
+      socially and tactically costly without creating mind control.
+    origin:
+      main: Intimidation
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Ritualized Access
+      transmission: gatekeeper_challenge_protocols
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii archive gatekeeping: access is a
+        sequence, and skipping the sequence carries consequence. Outsiders can
+        learn the method as a formal challenge practice if they preserve the
+        visible boundary, consequence, and demand for acknowledgement.
+    category: utility
+    type: reactive
+    trigger: >
+      A creature that can perceive the user's challenge and read basic threat
+      attempts to cross a guarded boundary, enter a protected place, push past
+      the user, ignore a stated prohibition, or attack as the way of violating
+      that boundary.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - visible_boundary_or_declared_prohibition
+        - target_can_perceive_the_challenge_and_read_basic_threat
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 4
+        text_or_manual_required: false
+        notes: >
+          Requires practicing formal challenge posture, visible boundary
+          declaration, and the timing of pressure before another creature
+          converts defiance into action.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii gatekeeper, priestly examiner, or trained social enforcer can
+          teach the learner to make the next step feel consequential without
+          drifting into empty threat display.
+      material_cost: null
+      access_notes: >
+        Common among Naghii gatekeepers, archive guards, priestly examiners, and
+        officials who control entry into restricted spaces or procedures.
+      final_validation: one_successful_supervised_execution
+    target: creature
+    range: line_of_sight_or_clear_hearing
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the target either halts/acknowledges the challenge, completes
+        the challenged action despite the pressure, or the boundary/prohibition
+        is no longer relevant.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_opposed
+      specialization: Containment
+      effect_on_success: >
+        The target opposes with Containment. On a successful answer, the target
+        keeps their decision intact and may proceed without the hesitation
+        choice or penalty. Creatures without formal specializations should use
+        their closest NPC composure/instinct resistance as a Containment
+        equivalent.
+    description: >
+      The user names or embodies the boundary at the moment another creature
+      tries to cross it, making the next step feel like a choice with weight
+      instead of a casual advance.
+    effect: >
+      Make an Intimidation-based Technique check against the triggering target.
+      If the Technique resolves successfully, the target must choose before
+      completing the triggering action: halt or acknowledge the challenge, ending
+      the current attempt to force access cleanly; or proceed through the
+      challenge and take a situational penalty equal to the user's Intimidation
+      rank bonus (+1 at Novice, +2 at Adept, +3 at Expert, +4 at Master, +5 at
+      Consummate, +6 at Transcendent) on the immediate roll or opposed exchange
+      used to cross the boundary, push past, enter the protected place, attack
+      as the boundary violation, force entry, or ignore the prohibition. This is
+      not a taunt that redirects the target's aggression to the user; it only
+      pressures the action that violates the challenged boundary. The penalty
+      applies only to that immediate boundary-violating action.
+    scaling: >
+      The penalty scales by Intimidation rank: +1 at Novice, +2 at Adept, +3 at
+      Expert, +4 at Master, +5 at Consummate, and +6 at Transcendent. Higher
+      rank may broaden what counts as a credible social boundary, but should not
+      turn the Technique into obedience, fear aura, or long-duration control.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a quick challenge
+      window that creates a single choice: stop cleanly or proceed under
+      pressure. These costs apply only during ATB or another active-threat
+      scene; in normal social or exploration scenes, where Rhythm and Attrition
+      are not active costs, the Technique resolves as the user's Intimidation
+      action. It does not physically restrain the target or prevent action by
+      itself.
+    restrictions:
+      - requires_a_visible_boundary_or_declared_prohibition
+      - requires_the_target_to_perceive_the_challenge_and_read_basic_threat
+      - does_not_work_on_mindless_targets_or_targets_with_no_relevant_self_preservation_instinct_or_social_read
+      - does_not_force_obedience_or_prevent_the_target_from_acting
+      - does_not_redirect_attacks_or_force_the_target_to_attack_the_user
+      - penalty_only_applies_to_the_immediate_boundary_violating_action
+      - cannot_be_used_as_a_general_penalty_to_all_actions_in_the_scene
+    tags:
+      - utility
+      - pressure
+      - control
+      - disruption
+  - name: Leer la Línea Ausente
+    name_en: Read the Absent Line
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin knowledge Technique rooted in Interpretation
+      and Absence As Evidence, giving the species a rank 1 way to extract a
+      concrete negative truth from incomplete evidence without simply granting a
+      bonus or full answer.
+    origin:
+      main: Interpretation
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Absence As Evidence
+      transmission: outer_archive_gap_reading_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive practice, where damaged
+        records, missing marks, broken sequences, and incomplete ruins are
+        treated as evidence rather than ignored. Outsiders can learn it through
+        archive study if they preserve the discipline of reading absence without
+        inventing certainty.
+    category: utility
+    type: active
+    trigger: >
+      The user is examining an incomplete pattern, record, route, ritual,
+      scene, testimony, formation, or sequence where something appears missing,
+      interrupted, removed, or too clean.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - incomplete_or_suspicious_pattern_present
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 4
+        text_or_manual_required: false
+        notes: >
+          Requires repeated study of incomplete records, broken procedures, and
+          staged scenes where the learner must identify what kind of absence
+          matters without filling it with a false answer.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii archivist, ruin-reader, or priestly instructor can correct
+          the learner when they mistake speculation for evidence.
+      material_cost: null
+      access_notes: >
+        Usually taught to outer archive initiates before they are trusted with
+        deeper translations or ruin reports.
+      final_validation: one_successful_supervised_interpretation
+    target: site
+    range: observed_evidence
+    area: single_pattern_or_scene
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        If another creature deliberately falsified, staged, or concealed the
+        absence, resolve against that opposing method. On a successful answer,
+        the user identifies that the evidence is unreliable but does not get a
+        clean absence category.
+    description: >
+      The user studies what is not there: a missing mark, a broken step, a
+      silence in testimony, a route with no return trace, a ritual sequence with
+      one gesture absent.
+    effect: >
+      Make an Interpretation-based Technique check against one incomplete or
+      suspicious pattern. On success, the Narrator reveals one absence category
+      relevant to the current pattern — such as a missing actor, missing route,
+      missing object or tool, missing step in a sequence, missing warning or
+      sign, or missing consequence that should have followed. These are examples
+      of the kind of absence this Technique surfaces, not a closed list: the
+      Narrator chooses whichever absence is most structurally significant and
+      may identify other absence types of the same quality that the evidence
+      supports. The read tells the user what kind of absence matters and what
+      immediate conclusion is unsafe. It does not reveal the full missing
+      content, name the responsible party, reconstruct the entire event, or
+      prove intent by itself.
+    scaling: >
+      Higher Interpretation rank may improve reliability, allow subtler or more
+      damaged patterns to qualify, or let later higher-tier versions ask for
+      richer absence categories. Novice use reveals one absence category only.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate under pressure. The Technique
+      produces information immediately: it tells the user what kind of absence
+      matters and what conclusion is unsafe. These costs apply only during ATB
+      or another active-threat scene; in normal exploration, the Technique
+      resolves as the user's Interpretation action.
+    restrictions:
+      - requires_an_incomplete_or_suspicious_pattern_to_read
+      - reveals_one_absence_category_only
+      - does_not_reveal_the_full_missing_content
+      - does_not_identify_the_responsible_party_by_itself
+      - does_not_reconstruct_the_entire_event
+      - does_not_create_a_bonus_to_another_roll_by_itself
+      - does_not_bypass_deliberate_staging_without_contextual_opposition
+    tags:
+      - utility
+      - counter_read
+      - pattern_exploitation
+  - name: Marcar la Lectura
+    name_en: Mark the Reading
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin ranged Technique rooted in Ranged Weapons and
+      Projection Of Interpretation, giving the Saa/projection side of the
+      species a rank 1 attack expression that marks a target's immediate line
+      instead of functioning as a flat damage shot.
+    origin:
+      main: Ranged Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Projection Of Interpretation
+      transmission: saa_projection_and_archive_scout_marking_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Saa-Naghii projection practice: a reading
+        is not complete until it can be made consequential at distance.
+        Outsiders can learn analogous methods with pigment darts, venom
+        projectors, marked arrows, chemical tracers, prepared marking
+        ammunition, or other visible or scent-bearing ranged delivery tools.
+    category: attack
+    type: active
+    trigger: >
+      The user has a ranged line to a creature whose movement, concealment, or
+      immediate route must remain readable.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Precision
+      support_specializations: []
+      equipment:
+        - ranged_weapon_with_prepared_marking_ammunition_or_natural_fluid_projection
+        - readable_marking_delivery_such_as_pigment_scent_phosphorescent_residue_or_tracer
+      states:
+        - target_can_be_physically_marked
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires practice placing a mark where it will remain readable during
+          movement instead of merely aiming for center mass.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Saa-Naghii scout, archive marksman, or trained projection warden can
+          teach the learner to connect target reading, delivery angle, and
+          trace persistence.
+      material_cost: null
+      access_notes: >
+        Common among Saa-influenced scouts and projection wardens, but usually
+        restricted outside Naghii communities because it teaches archive
+        pursuit and marking procedure.
+      final_validation: one_successful_supervised_marking_shot
+    target: creature
+    range: weapon_or_projection_range
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the target completes its next movement or concealment attempt,
+        spends an action clearing or neutralizing the mark, leaves the user's
+        sensory reach behind a sealed barrier, or the scene no longer tracks
+        immediate position.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: dr_negates
+      effect_on_success: >
+        If the target's defense prevents contact, the mark does not apply. If
+        the delivery method hits but deals no meaningful damage, the mark can
+        still apply as long as physical contact or residue is established.
+    description: >
+      The user does not simply shoot where the target is. They place a visible,
+      scented, irritating, or phosphorescent mark where the target's next
+      movement will reveal the line it is trying to make disappear.
+    effect: >
+      Make a Ranged Weapons attack with prepared marking ammunition, a marking
+      kit delivery, or equivalent natural fluid-projection Technique check
+      against the target. If the Technique resolves
+      successfully, the target becomes read-marked until the duration ends.
+      While read-marked, ordinary movement, partial cover, darkness, smoke,
+      crowding, or a quick attempt to duck out of sight cannot make the target's
+      immediate route ambiguous to the user: if the target moves or tries to
+      conceal itself, the user knows which route, cover, doorway, or hiding line
+      the marked target used, provided the mark remains within sensory reach.
+      The Technique does not grant an attack bonus, ignore cover, reveal exact
+      statistics, make the target visible through sealed barriers, or share the
+      read with allies who cannot perceive the mark.
+    scaling: >
+      Higher Ranged Weapons rank may improve reliability, allow subtler
+      marking deliveries, or let later higher-tier versions extend the read to
+      allied observers or more difficult movement conditions. Novice use marks
+      one creature and preserves one immediate route read only.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique combines a ranged
+      attack with a short-lived tracking consequence, giving it one strong
+      surface and one secondary information-control surface. These costs apply
+      only during ATB or another active-threat scene; in normal exploration,
+      the Technique resolves as the user's ranged marking action without
+      Attrition.
+    restrictions:
+      - requires_a_ranged_delivery_that_can_leave_a_readable_physical_mark
+      - non_natural_users_need_prepared_marking_ammunition_or_a_marking_kit_delivery
+      - requires_the_target_to_be_physically_markable
+      - applies_to_one_creature_only
+      - preserves_the_immediate_route_read_only
+      - does_not_grant_an_attack_bonus
+      - does_not_ignore_cover_or_defense_benefits
+      - does_not_reveal_exact_statistics_or_full_intent
+      - does_not_reveal_through_sealed_barriers_or_impossible_sensory_blocks
+      - does_not_share_the_read_with_allies_who_cannot_perceive_the_mark
+    tags:
+      - attack
+      - precision
+      - marking
+      - counter_concealment
+  - name: Nublar la Señal
+    name_en: Blur the Signal
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin ranged Technique rooted in Ranged Weapons and
+      Venom As Commitment, giving the Saa/fluid-projection side a Corrosion
+      expression that pressures the target's next clean read instead of acting
+      as generic poison damage.
+    origin:
+      main: Ranged Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Venom As Commitment
+      transmission: saa_irritant_projection_and_warden_suppression_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Saa-Naghii venom projection, where contact
+        is used to degrade the next decision rather than simply harm the body.
+        Outsiders can adapt it with irritant dust, venom capsules, caustic
+        darts, prepared residue ammunition, or other ranged tools that leave a
+        short-lived sensory residue.
+    category: attack
+    type: active
+    trigger: >
+      The user has a ranged line to a creature that relies on a clean sensory
+      read to aim, react, pursue, identify, or maintain pressure.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Corrosion
+      support_specializations: []
+      equipment:
+        - ranged_weapon_with_prepared_residue_ammunition_or_natural_fluid_projection
+        - irritating_venom_caustic_dust_or_sensory_residue_delivery
+      states:
+        - target_has_a_relevant_sensory_surface_or_exposed_reading_channel
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires practice placing residue where it disrupts a target's next
+          clean read without relying on lasting injury or uncontrolled spread.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Saa-Naghii projection warden, venom handler, or archive guard can
+          teach the timing between contact, irritation, and the target's next
+          decision.
+      material_cost: null
+      access_notes: >
+        Restricted because it teaches controlled sensory suppression and venom
+        handling procedure.
+      final_validation: one_successful_supervised_sensory_suppression_shot
+    target: creature
+    range: weapon_or_projection_range
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the target clears or neutralizes the residue, resolves one
+        affected sight/read-dependent action, loses the residue through
+        environmental conditions, or the scene no longer tracks the immediate
+        sensory pressure.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: dr_negates
+      effect_on_success: >
+        If the target's defense prevents contact, the residue does not apply.
+        Sealed protection, lack of relevant sensory surface, or immunity to the
+        chosen irritant may prevent use or require a different delivery.
+    description: >
+      The user projects venom, dust, caustic residue, or another hostile trace
+      across the target's reading surface, making the next clean look, aim, or
+      pursuit decision arrive through irritation and false signal.
+    effect: >
+      Make a Ranged Weapons attack with prepared residue ammunition, a residue
+      kit delivery, or equivalent natural fluid-projection Technique check
+      against the target. If the Technique resolves
+      successfully, the target becomes signal-blurred until the duration ends.
+      Before resolving its next action or reaction that depends on clean sight,
+      scent, aim, identification, pursuit, or precise read, the target must
+      choose: spend that opportunity clearing or neutralizing the residue,
+      ending the effect; or act through it and take a situational penalty equal
+      to the user's Ranged Weapons rank bonus (+1 at Novice, +2 at Adept, +3 at
+      Expert, +4 at Master, +5 at Consummate, +6 at Transcendent) on that one
+      affected roll or opposed exchange. The penalty applies only to that single
+      sight/read-dependent action. The Technique does not blind the target
+      completely, does not prevent movement, and does not impose a general
+      scene-wide penalty.
+    scaling: >
+      The penalty scales by Ranged Weapons rank: +1 at Novice, +2 at Adept, +3
+      at Expert, +4 at Master, +5 at Consummate, and +6 at Transcendent. Higher
+      rank may allow subtler residues or more difficult delivery angles, but
+      Novice use affects one immediate sight/read-dependent action only.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is an attack that
+      also creates a bounded sensory-pressure choice, giving it one strong
+      surface and one secondary disruption surface. These costs apply only
+      during ATB or another active-threat scene; in normal exploration, the
+      Technique resolves as the user's ranged residue action without Attrition.
+    restrictions:
+      - requires_a_ranged_delivery_that_can_leave_irritating_or_degrading_residue
+      - non_natural_users_need_prepared_residue_ammunition_or_a_residue_kit_delivery
+      - requires_a_relevant_sensory_surface_or_reading_channel
+      - applies_to_one_creature_only
+      - affects_one_sight_or_read_dependent_action_only
+      - does_not_blind_the_target_completely
+      - does_not_prevent_movement
+      - does_not_create_a_general_scene_wide_penalty
+      - does_not_stack_with_itself_on_the_same_target
+      - sealed_protection_or_irritant_immunity_may_prevent_the_effect
+    tags:
+      - attack
+      - corrosion
+      - sensory_pressure
+      - disruption
+  - name: Doblar el Tiro
+    name_en: Bend the Shot
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Ranged Weapons Technique using the Ricochet
+      profile, giving the projection core a material geometry expression that
+      attacks through a surface angle instead of marking, blurring, or applying
+      a penalty to a later action.
+    origin:
+      main: Ranged Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Projection Of Interpretation
+      transmission: ruin_geometry_and_projection_angle_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii ruin-scout and projection practice,
+        where walls, steps, tablets, doorframes, and polished stone become part
+        of the shot's interpretation. Outsiders can learn it with rebound-
+        capable projectiles, hard darts, sling stones, angled arrowheads,
+        hardened fluid shots, or other ranged tools that can plausibly skip,
+        glance, or continue through a shaped surface.
+    category: attack
+    type: active
+    trigger: >
+      The user has a ranged line to a usable surface that can redirect,
+      rebound, skip, or carry the projectile toward a creature that is not
+      cleanly available through the direct line.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Ricochet
+      support_specializations: []
+      equipment:
+        - ranged_weapon_with_rebound_capable_projectile_or_natural_hardened_projection
+      states:
+        - usable_rebound_surface_present
+        - indirect_path_to_target_is_physically_plausible
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated practice reading surface angle, projectile behavior,
+          and continuation path without treating the shot as magical homing.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii ruin scout, projection warden, or trained marksman can teach
+          the learner to read architecture as part of the shot.
+      material_cost: null
+      access_notes: >
+        Common among scouts and wardens who fight in ruins, corridors,
+        ziggurat steps, archives, or other built spaces with readable surfaces.
+      final_validation: one_successful_supervised_rebound_shot
+    target: creature
+    range: weapon_or_projection_range_via_surface
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: dr_negates
+      effect_on_success: >
+        The target defends against the indirect attack normally once the shot's
+        path reaches them. If the surface read is invalid, unstable, soft, or
+        physically unable to carry the projectile, the Technique cannot be
+        declared.
+    description: >
+      The user reads a wall, step, pillar, tablet, shield edge, or other hard
+      surface as part of the shot, striking the surface so the projectile bends
+      into a line the target did not fully own.
+    effect: >
+      Make a Ranged Weapons attack through one declared rebound or skip surface.
+      If the Technique resolves successfully, the attack may reach a target
+      that has partial cover, an offset doorway, an angled corner, or a blocked
+      direct line, as long as a physically plausible indirect path exists. The
+      target still receives any defense that makes sense against the final
+      incoming path, but cannot claim protection from the original direct-line
+      cover if the declared rebound path genuinely bypasses that edge. This
+      does not hit through sealed barriers, ignore total cover, curve freely in
+      open air, or seek a target the user cannot reasonably locate.
+    scaling: >
+      Higher Ranged Weapons rank may allow more difficult surface reads,
+      smaller viable angles, or later higher-tier versions with chained
+      surfaces. Novice use allows one declared rebound or skip surface only.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is a standard active
+      attack with an indirect-line permission. It changes the attack geometry,
+      but it does not add persistent state, deny future action, or bypass
+      defense wholesale.
+    restrictions:
+      - requires_one_usable_rebound_or_skip_surface
+      - requires_a_projectile_or_projection_that_can_physically_rebound_skip_or_continue
+      - requires_a_physically_plausible_indirect_path
+      - one_rebound_or_skip_surface_only_at_novice
+      - does_not_ignore_total_cover_or_sealed_barriers
+      - does_not_curve_freely_in_open_air
+      - does_not_seek_targets_the_user_cannot_reasonably_locate
+      - does_not_remove_defense_against_the_final_incoming_path
+    tags:
+      - attack
+      - ricochet
+      - geometry
+      - cover_denial
+  - name: Clavar la Cadencia
+    name_en: Pin the Cadence
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Ranged Weapons Technique using the Volley
+      profile, completing the first Ranged Weapons profile set with a disciplined
+      reactive movement-disruption expression rather than raw volume fire or
+      narrow route denial.
+    origin:
+      main: Ranged Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Preserved Distance
+      transmission: archive_warden_cadence_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii archive-warden and Saa projection
+        practice, where repeated release is used to keep a creature's immediate
+        movement unstable rather than to flood an area with shots or wait for a
+        perfect choke point.
+        Outsiders can learn it with bows, slings, darts, repeated projectors,
+        prepared fluid pulses, or any ranged tool that can sustain a controlled
+        short cadence.
+    category: attack
+    type: reactive
+    trigger: >
+      A creature within ranged line declares or begins a movement action,
+      approach, withdrawal, cover change, line break, or other action that
+      physically moves it before the immediate exchange settles. The Technique
+      interrupts that declared movement, not a fixed doorway, gap, or corridor.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Volley
+      support_specializations: []
+      equipment:
+        - ranged_weapon_or_natural_projection_capable_of_controlled_repeated_release
+      states:
+        - target_is_within_ranged_line
+        - user_can_sustain_a_short_cadence
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated practice placing shots around a moving target's
+          next likely line without turning the method into wasteful volume
+          fire.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii archive warden, scout, or projection instructor can teach the
+          learner to read when a moving target needs cadence rather than a
+          single exact shot.
+      material_cost: null
+      access_notes: >
+        Common among archive wardens, ruin scouts, escort guards, and Saa-
+        influenced projection schools that preserve distance by breaking the
+        cadence of hostile movement.
+      final_validation: one_successful_supervised_movement_cadence
+    target: creature
+    range: weapon_or_projection_range
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        The target may answer with appropriate defense, movement timing, cover
+        use, or balance. On a successful answer, the movement resolves normally
+        and the Technique does not reduce it.
+    description: >
+      The user lays a measured sequence of shots, spits, or projected pulses
+      into a moving creature's next steps, forcing it to break rhythm, guard
+      its body, or correct its footing before the movement completes.
+    effect: >
+      Make a reactive Ranged Weapons attack or Technique check against the
+      moving target before the triggering movement finishes. If the Technique
+      resolves successfully, the attack resolves normally and the target's
+      remaining distance for that triggering movement is reduced by 1 meter per
+      Ranged Weapons rank bonus. If the reduction prevents the target from
+      reaching its declared position, it stops at the last legal position it can
+      still reach. This can leave the target short of cover, short of melee
+      contact, or short of a clean line break if the lost distance matters. The
+      Technique affects only that triggering movement; it does not reduce the
+      target's speed for the rest of the round, attack multiple targets, or
+      create area suppression.
+    scaling: >
+      The movement reduction is 1 meter per Ranged Weapons rank bonus. Higher-
+      tier versions may affect more complex movement windows, but Novice use
+      affects one target and one triggering movement only.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is a ranged reactive
+      attack that can also cut distance from one declared movement. It does not
+      create a persistent slow, make multiple attacks, or sustain broad
+      suppression.
+    restrictions:
+      - requires_line_of_effect_to_one_target
+      - requires_a_ranged_tool_or_projection_capable_of_controlled_repeated_release
+      - affects_one_target_only
+      - affects_the_triggering_movement_only
+      - movement_reduction_is_one_meter_per_ranged_weapons_rank_bonus
+      - does_not_deal_extra_damage_beyond_the_reactive_attack
+      - does_not_attack_multiple_targets
+      - does_not_reduce_speed_after_the_triggering_movement_resolves
+      - does_not_create_broad_suppression_or_area_denial
+      - does_not_force_a_choice_between_stopping_and_accepting_consequence
+    tags:
+      - attack
+      - volley
+      - movement_control
+      - pressure
+  - name: Tocar y Ceder
+    name_en: Touch and Yield
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Flexible Weapons Technique using the Skirmish
+      profile, completing the flexible-weapon core with a movement-as-technique
+      expression where the user enters briefly, strikes, and withdraws to
+      preferred distance before the target can convert the contact into a stable
+      close exchange.
+    origin:
+      main: Flexible Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Preserved Distance
+      transmission: archive_warden_skirmish_contact_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique originates in Naghii guard and scout practice: the correct
+        distance is a condition of safety and interpretation, and brief contact
+        that restores that distance is not hesitation but trained completion.
+        Non-Naghii can learn it with whips, chains, cords, hooked flexible tools,
+        or other weapons that can credibly enter a target's immediate space and
+        withdraw without requiring sustained close contact.
+    category: attack
+    type: active
+    trigger: >
+      The user wants to make contact with a target at or within 1 meter outside
+      flexible reach and return to a preferred position in a single trained
+      sequence — entering, striking, and withdrawing before the target can
+      convert the contact into a stable close exchange.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Skirmish
+      support_specializations: []
+      equipment:
+        - flexible_weapon
+        - functional_tail_or_tendril
+        - other_credible_skirmish_flexible_surface
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling of brief approach, controlled contact, and
+          deliberate withdrawal so that entry and return become a single trained
+          motion rather than two separate decisions.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii guard instructor or trained flexible-weapon teacher can
+          correct the learner when the withdrawal becomes hesitation or when the
+          approach collapses into uncontrolled entry at close range.
+      material_cost: null
+      access_notes: >
+        Common among Naghii archive wardens and ruin scouts who need to make
+        contact without committing to a sustained close exchange.
+      final_validation: one_successful_supervised_execution
+    target: enemy
+    range: flexible_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        Resolve through the hostile exchange created by the approach and
+        contact. If the target answers successfully, the attack does not land
+        and the return movement does not complete: the user's approach was spent
+        without securing the contact or the restoration of distance.
+    description: >
+      The user enters briefly, places contact, and withdraws to their preferred
+      geometry before the target can build a response on it. The withdrawal is
+      not retreat — it is the completion of the technique. The distance the
+      user returns to is the distance they chose to fight from.
+    effect: >
+      As part of this action, approach up to 1 meter toward the target — no
+      separate movement action required. Then make a Flexible Weapons attack or
+      equivalent tail or tendril Technique check against the target. If the
+      Technique resolves successfully, immediately reposition up to 1 meter in
+      any direction as part of the same action. This repositioning does not grant
+      the target a reaction opportunity triggered by the movement. The user
+      returns to their preferred distance before the target can convert the brief
+      contact into a stable close exchange.
+    scaling: >
+      Higher Flexible Weapons competency may improve reliability, allow subtler
+      timing of the entry window, or improve cost efficiency, but should not
+      extend the approach or return distance beyond 1 meter at base or remove
+      the contingency that the return requires a successful attack.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique packages a brief
+      approach and a conditional return into a single active attack. It does not
+      create persistent control, deny the target future movement, or allow the
+      user to attack multiple targets. It is broader than a pure reactive catch
+      but does not carry enough positional pressure to require heavier strain.
+    restrictions:
+      - approach_is_up_to_1m_only_not_a_full_movement_action
+      - return_is_contingent_on_a_successful_attack
+      - does_not_create_zone_control_or_deny_target_movement
+      - does_not_allow_approach_beyond_1m_without_a_separate_movement_action
+      - applies_to_one_target_only
+      - should_not_function_if_terrain_prevents_credible_approach_and_withdrawal
+      - return_movement_does_not_grant_a_reaction_opportunity_on_success
+    tags:
+      - attack
+      - mobility
+      - pressure
+      - reposition
+  - name: Trabar el Gesto
+    name_en: Snare the Stroke
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Flexible Weapons Technique using the
+      Interruption profile, completing the Flexible Weapons set with a reactive
+      action-break expression that applies Impedido through the alteration
+      system rather than inventing a custom disruption state.
+    origin:
+      main: Flexible Weapons
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Threshold Denial
+      transmission: temple_guard_execution_break_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive guard practice: every
+        committed action has a threshold moment where it is locked in and most
+        interruptible. Non-Naghii can learn it with whips, chains, cords, or
+        other flexible tools that can credibly reach a weapon arm or weapon
+        execution line fast enough to catch the commitment before it resolves.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy within flexible reach declares or begins a weapon-rooted attack
+      or Technique — the commitment arc of the action is visible and within
+      reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interruption
+      support_specializations: []
+      equipment:
+        - flexible_weapon
+        - functional_tail_or_tendril
+        - other_credible_interruption_flexible_surface
+      states:
+        - target_is_within_flexible_reach
+        - user_has_a_credible_flexible_contact_line_to_the_targets_weapon_or_weapon_arm
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the recognition of weapon commitment arcs and the
+          timing of the flexible contact so that it reaches the arm or weapon
+          line before the action locks in rather than after.
+      guided_training:
+        allowed: true
+        study_hours: 6
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Naghii archive guard or trained flexible-weapon instructor can
+          correct the learner's timing so the catch lands on commitment rather
+          than reacting to what is already past interception.
+      material_cost: null
+      access_notes: >
+        Restricted to Naghii guard and warden training where intercepting
+        hostile weapon use in confined archive spaces is a specific discipline.
+      final_validation: one_successful_supervised_execution
+    target: enemy
+    range: flexible_reach
+    area: single
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: rr_reduces
+      effect_on_success: >
+        If the target succeeds on its Alteration Resistance Roll, Impedido is
+        not applied and the triggering weapon action resolves normally.
+    description: >
+      The user reads the commitment arc of the enemy's weapon action and sends
+      the flexible weapon into that line before the stroke can lock in. The
+      catch lands on the arm, the grip, or the execution line — not to hold,
+      but to break the moment the action needed to become unstoppable.
+    effect: >
+      Make a reactive Flexible Weapons check or equivalent tail or tendril
+      Technique check against the triggering enemy. If the Technique resolves
+      successfully, the target immediately makes an Alteration Resistance Roll.
+      On a failed R.R., the target becomes Impedido (Minor): the triggering
+      weapon action does not complete, and the target cannot use weapon-rooted
+      Techniques until it succeeds on an Enfoque Specialization Roll against
+      the original severity. On a successful R.R., Impedido is not applied and
+      the triggering action resolves normally.
+    scaling: >
+      Higher Flexible Weapons competency may improve reliability, allow subtler
+      commitment-arc reading, or improve cost efficiency. Higher tiers may
+      apply Impedido at higher severity or broaden the trigger to non-weapon
+      committed actions.
+    cost_note: >
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is a reactive action
+      with a condition-application surface: Impedido Minor on a failed
+      Alteration R.R. The condition is recoverable through Enfoque, the trigger
+      is narrow (weapon execution only), and the target has an R.R. window to
+      resist. These constraints prevent the cost from rising above the standard
+      anchor despite the condition output.
+    restrictions:
+      - target_must_be_within_flexible_reach
+      - user_must_have_a_credible_contact_line_to_the_targets_weapon_or_weapon_arm
+      - applies_to_one_target_only
+      - does_not_create_full_restraint_or_movement_restriction
+      - does_not_apply_to_non_weapon_actions_or_purely_social_commitments
+      - does_not_prevent_the_target_from_taking_non_weapon_actions_while_impedido
+      - impedido_minor_is_removed_by_a_successful_enfoque_sr_against_the_original_severity
+    tags:
+      - utility
+      - control
+      - disruption
+      - pressure
+  - name: Plantar la Guardia
+    name_en: Stand Guard
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin Spear Technique using the Ward profile,
+      completing the Spear set with a zone-control expression that makes the
+      user's position a sustained Rhythm tax for any enemy acting within the
+      declared area — mechanically distinct from the three Perforation
+      techniques by operating before contact rather than at the entry moment.
+    origin:
+      main: Spear
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Coiled Readiness
+      transmission: archive_guard_ward_formation_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive guard formation doctrine:
+        stillness held at a threshold is stored threat, not inactivity. A
+        planted position with a spear declares the surrounding space as
+        contested before any entry is attempted. Non-Naghii can learn it with
+        any committed reach weapon that can credibly present a sustained
+        threat posture across a zone rather than at a single target.
+    category: utility
+    type: active
+    trigger: >
+      The user chooses to establish a spear ward zone around their current
+      position, declaring the area as contested space and holding the posture
+      rather than advancing or attacking.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Ward
+      support_specializations: []
+      equipment:
+        - spear
+        - other_committed_reach_weapon_capable_of_sustained_threat_posture
+      states:
+        - user_has_stable_footing_and_can_hold_the_position
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the discipline of holding a ward position under
+          approaching pressure without breaking the posture prematurely to
+          strike or retreat.
+      guided_training:
+        allowed: true
+        study_hours: 6
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Naghii archive guard or warden instructor can teach the learner
+          when to plant and hold rather than advance, and how to read when the
+          zone is working versus when it must be abandoned.
+      material_cost: null
+      access_notes: >
+        Restricted to Naghii guard and warden formation training where holding
+        a threshold against multiple enemies is a specific tactical discipline.
+      final_validation: one_successful_supervised_execution
+    target: zone
+    range: self
+    area: self-zone
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: >
+        The zone remains active as long as the user does not move beyond a
+        negligible shift from the declared position and does not make an attack.
+      end_rule: >
+        Ends when the user moves more than a negligible distance from the
+        declared position, makes an attack, or is forced off the position by
+        a hostile action such as a successful knockdown or displacement.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The user plants the spear and holds. The point is already where the
+      enemy needs to pass. There is no strike yet — only the declared
+      condition that acting in this space will cost more than acting outside
+      it. Stillness here is not patience. It is stored threat made spatial.
+    effect: >
+      Establish a ward zone centered on the user extending to weapon reach
+      plus 1 meter. While the zone is active, any enemy that performs an
+      active action within the zone — including entering the zone through
+      movement, attacking from within it, or using a Technique inside it —
+      pays an additional Rhythm cost equal to 1 plus the user's Spear
+      competency rank bonus on top of that action's normal cost. At Novice
+      the additional cost is 2; at Adept 3; at Expert 4; at Master 5; at
+      Consummate 6; at Transcendent 7. Allies within or passing through the
+      zone do not pay this cost. Enemies may leave the zone freely without
+      penalty; the cost applies only to active actions performed within or
+      through the zone, not to clean withdrawal.
+    scaling: >
+      The Rhythm cost increase scales with Spear competency rank: 1 plus the
+      rank bonus. Higher tiers may allow the zone to persist through limited
+      repositioning or resist displacement attempts more reliably, but Novice
+      use requires the user to remain at the declared position to maintain the
+      zone.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique produces no
+      immediate attack or movement — its value is entirely in the Rhythm tax
+      it imposes on enemy actions within the zone over time. At Rhythm 3, a
+      single enemy paying the Novice-tier cost of 2 on their next action
+      approaches break-even; multiple enemies or repeated actions within the
+      zone create a meaningful timeline advantage. The posture ends the moment
+      the user moves or attacks, which keeps the technique in Ward identity
+      and forces a genuine choice between holding the zone and committing to
+      a strike.
+    restrictions:
+      - requires_stable_footing_to_hold_the_ward_position
+      - ends_when_user_moves_beyond_negligible_distance_from_declared_position
+      - ends_when_user_makes_an_attack
+      - ends_when_user_is_forced_off_position_by_knockdown_or_displacement
+      - does_not_affect_allies_within_the_zone
+      - does_not_prevent_enemies_from_leaving_the_zone_freely
+      - rhythm_cost_applies_only_to_active_actions_within_or_through_the_zone
+      - cannot_be_maintained_while_suffering_Derribado_or_Desequilibrado
+    tags:
+      - utility
+      - control
+      - pressure
+      - setup
+  - name: Leer el Arco
+    name_en: Read the Arc
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin specialization Technique rooted in Astronomía,
+      completing the specialization set with a support expression that uses
+      trajectory projection — the cognitive tool underlying astronomical study
+      — to reveal where a moving target is going rather than where it is,
+      giving the user's team actionable information before the declared action
+      executes.
+    origin:
+      main: Astronomía
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Projection Of Interpretation
+      transmission: outer_archive_trajectory_and_projection_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii astronomical training, where the
+        primary skill is not identifying what is visible but projecting where
+        it will be. The same cognitive tools — arc reading, vector extension,
+        endpoint calculation — transfer to any moving target. Non-Naghii can
+        learn analogous methods through ballistic study, hunting projection,
+        fluid-movement reading, or other disciplines that teach trajectory
+        calculation rather than position observation.
+    category: utility
+    type: active
+    trigger: >
+      A creature or object within observable range is in movement, about to
+      act, or has a discernible vector that can be projected to a next
+      position or endpoint.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - target_has_a_discernible_movement_vector_or_imminent_declared_action
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated practice projecting trajectories from observed
+          starting vectors — learning to read where something is going rather
+          than where it is, and confirming those projections against what
+          actually happens.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Naghii archive astronomer or trained projection reader can teach
+          the learner to separate genuine movement intent from noise, feint,
+          or incomplete vectors.
+      material_cost: null
+      access_notes: >
+        Restricted to outer archive astronomical training where projection and
+        trajectory reading are taught as practical tools before deeper
+        celestial study is permitted.
+      final_validation: one_successful_supervised_trajectory_read
+    target: creature
+    range: line_of_sight
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the target completes the revealed action, significantly
+        changes their intent before executing it, or the scene no longer
+        tracks the projected trajectory.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        If the target is actively feinting, using a deception technique, or
+        otherwise concealing their movement intent, they may oppose with the
+        relevant Specialization Roll or Technique. On a successful answer,
+        the read is inaccurate or reveals only that the target's visible
+        vector is not their real one.
+    description: >
+      The astronomer does not look at where the object is. They look at the
+      arc. Every vector has an endpoint, and the discipline of projecting
+      celestial movement — tracing where something must be, not just where
+      it appears — applies to anything in motion. The user reads the arc
+      and declares where it ends.
+    effect: >
+      Make an Astronomía Specialization Roll against one target in motion or
+      about to act. On success, the Narrator must declare one trajectory truth
+      about the target's next action or movement before it executes — such as
+      where the target will be at the end of their next movement; the landing
+      destination or path of a ranged attack they are about to make; what
+      cover, position, or creature the target's current movement vector leads
+      them toward; or whether the target's current direction brings them into
+      reach of an ally, a hazard, or a dead end. These are examples of the kind
+      of truth this Technique produces, not a closed list: the Narrator chooses
+      whichever truth is most structurally meaningful and may declare other
+      trajectory truths of the same quality and specificity that the vector
+      supports. This declared truth is available to the user and any ally within
+      clear hearing range before the target's action executes — giving the team
+      the window between the user's turn and the target's execution to act on
+      the information. The technique does not prevent the target from acting,
+      does not grant any roll bonus against the target, and does not reveal more
+      than one trajectory truth at Novice. If the target's intent changes
+      dramatically before execution due to scene events, the accuracy of the
+      read reflects what was true when the projection was made.
+    scaling: >
+      Higher Astronomía rank may improve reliability, allow subtler or faster
+      trajectory reads, or let later higher-tier versions project two targets
+      in the same action. Novice use reveals one trajectory truth for one
+      target only.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a quick read
+      under pressure that produces a single concrete trajectory truth. Its
+      value is entirely in the information and the window between the user's
+      turn and the target's execution — giving the team time to act on what
+      is coming rather than react to what has arrived. These costs apply only
+      during ATB or active-threat scenes; in exploration, the Technique
+      resolves as the user's Astronomía action without Attrition.
+    restrictions:
+      - requires_an_observable_target_with_a_discernible_vector_or_imminent_action
+      - reveals_one_trajectory_truth_only
+      - does_not_prevent_the_target_from_acting
+      - does_not_grant_roll_bonuses_against_the_target
+      - does_not_reveal_statistics_conditions_or_intent_beyond_movement_trajectory
+      - accuracy_depends_on_target_not_dramatically_changing_intent_before_execution
+      - shared_only_with_allies_within_clear_hearing_range
+    tags:
+      - utility
+      - support
+      - counter_read
+      - setup
+  - name: Leer el Propósito
+    name_en: Read the Purpose
+    status: authored_example
+    purpose: >
+      Add a novice Naghii-origin specialization Technique rooted in Architecture,
+      giving the species a rank 1 expression that uses the cognitive tool of
+      reading built space as intention — not just form — to extract one structural
+      truth about circulation, concealment, or design intent that the raw
+      Architecture S.R. could surface but cannot guarantee at ATB speed or force
+      the Narrator to declare.
+    origin:
+      main: Architecture
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: The Archive Must Continue
+      transmission: outer_archive_structural_intent_reading_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive training where every built
+        space — ruin, archive, passage, vault — is read as a record of intent:
+        where the builders needed people to go, what they needed to hide, and
+        what the structure was designed to protect. Outsiders can learn analogous
+        methods through any architectural study tradition that teaches design
+        intent reading over surface observation.
+    category: utility
+    type: active
+    trigger: >
+      The user is present in or adjacent to a built space with enough legible
+      architectural features — walls, passages, volumes, thresholds, constructed
+      surfaces — to read the original design intent rather than just the
+      current condition.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - built_space_with_legible_architectural_features_present
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 4
+        text_or_manual_required: false
+        notes: >
+          Requires repeated practice distinguishing what a space was designed to
+          do from what it looks like now — learning to read layout, threshold
+          placement, and volume as records of intent rather than accidents.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Naghii archive architect, structural reader, or ruin-access
+          instructor can teach the learner to separate construction intent from
+          later modification, collapse, and use-drift.
+      material_cost: null
+      access_notes: >
+        Restricted to outer archive architectural training where design-intent
+        reading is taught as a practical access and security discipline before
+        deeper structural study is permitted.
+      final_validation: one_successful_supervised_structural_intent_read
+    target: structure
+    range: present_space
+    area: single_structure_or_zone
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        If the space has been deliberately altered to mislead a reader —
+        false passages, disguised structural logic, or intentionally planted
+        wrong cues — another character may oppose with Architecture or the
+        relevant masking Technique. On a successful answer, the user identifies
+        that the space does not read cleanly but does not receive the intended
+        truth.
+    description: >
+      The builder always left a record. The user reads it: where the space was
+      designed to move people, what it was designed to hide, which volumes were
+      built to carry meaning and which to carry nothing. Design intent is
+      structural grammar — it does not disappear when the builders do.
+    effect: >
+      Make an Architecture Specialization Roll against the built space. On
+      success, the Narrator provides one structural intent truth about how the
+      space was designed — such as where the original circulation was built to
+      lead; whether a volume, passage, threshold, or exit was intentionally
+      concealed in the design; which structural feature was built for
+      observation, controlled access, or defense rather than habitation; or
+      which part of the structure was designed as load-bearing and permanent
+      versus decorative or removable. These are examples of the kind of truth
+      this Technique produces, not a closed list: the Narrator chooses
+      whichever truth is most immediately relevant and may declare other
+      structural intent truths of the same quality that the built form supports.
+      The read concerns original design intent, not current state: it does not
+      reveal present occupants, post-construction modifications, current traps,
+      or contents placed after the structure was built.
+    scaling: >
+      Higher Architecture rank may improve reliability, allow more damaged or
+      fragmentary spaces to qualify, or let later higher-tier versions read two
+      connected spaces in the same action. Novice use reveals one structural
+      intent truth for one space only.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a fast structural
+      read under pressure that produces one concrete intent truth. Its value is
+      entirely in the information — where the space was built to lead or hide —
+      immediately available to act on. These costs apply only during ATB or
+      active-threat scenes; in normal exploration, the Technique resolves as
+      the user's Architecture action without Attrition.
+    restrictions:
+      - requires_built_space_with_legible_architectural_features
+      - reveals_one_structural_intent_truth_only
+      - concerns_original_design_intent_not_current_state
+      - does_not_reveal_current_occupants_traps_or_post_construction_modifications
+      - does_not_function_against_natural_formations_or_fully_collapsed_rubble_with_no_readable_design
+      - does_not_create_roll_bonuses_by_itself
+      - does_not_reconstruct_the_full_building_history_or_builder_identity
+    tags:
+      - utility
+      - setup
+      - counter_positioning
+      - pattern_exploitation
+  - name: Cruzar la Punta
+    name_en: Cross the Point
+    status: authored_example
+    purpose: >
+      Add a novice Naghii defense Technique that expresses the species' trained
+      threshold-crossing discipline — entering a committed attack rather than
+      retreating from it, closing past the attacker's planned range and denying
+      them the position they committed to. Distinct from Vaciar el Blanco (which
+      moves away) and the weapon-attack set (which punish enemy entry instead
+      of practicing it).
+    origin:
+      main: Evasion
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: Doctrine
+      source: Naghii
+      seed: Ritualized Access
+      transmission: archive_guard_threshold_crossing_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive-guard training where
+        controlled threshold crossing — passing through a guarded line without
+        hesitation at the exact right moment — is taught as a deliberate,
+        disciplined act. The combat application transfers to any committed
+        attack: the user crosses into it rather than away from it. Non-Naghii
+        can learn analogous methods through any tradition that trains decisive
+        closing into committed attacks.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy commits a single-target physical attack or physical Technique
+      against the user with a discernible forward vector.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - user_is_not_fully_restrained_or_immobilized
+        - user_has_enough_space_to_close_toward_the_attacker
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drilling of commitment reads — learning to identify
+          the exact moment a forward attack is irreversible, then closing into
+          it rather than retreating. The instinct to yield must be replaced
+          with a trained decision to enter.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Naghii guard instructor can help the learner overcome the instinct
+          to retreat and build the timing needed to close cleanly into the
+          committed path without colliding with the weapon.
+      material_cost: null
+      access_notes: >
+        Restricted to archive guard threshold-crossing training where the
+        discipline of passing through dangerous lines is taught as a formal
+        subject before full combat application.
+      final_validation: one_successful_supervised_execution
+    target: self
+    range: self
+    area: self
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: contextual
+      effect_on_success: >
+        If the attacker anticipated the close — using a Technique that covers
+        inside range, or a read that tracks the approach — they may contest
+        with the relevant Technique or roll. On success, the closing movement
+        does not deny the attack's angle and the attack resolves normally.
+    description: >
+      The attacker commits forward. The expected answer is to yield. The
+      Naghii enters instead — flowing into the committed path at the exact
+      moment it cannot redirect. Inside now, the attacker's position is no
+      longer what they planned.
+    effect: >
+      Make an Evasion check. On success, close up to 2 meters toward the
+      attacker as the strike arrives — entering rather than yielding. The
+      attack resolves against the user's new position, inside the attacker's
+      committed range and angle. The attacker is out of their optimal striking
+      geometry: their A.R. for the triggering attack is contested at raised
+      threshold. Closing does not disarm or neutralize the attacker — a
+      skilled opponent will adjust grip, use the butt end of a reach weapon,
+      or reorient their body. What the user has gained is denying the attacker
+      their preferred range, leaving them with the burden of re-establishing it.
+      The user does not attack as part of this Technique.
+    scaling: >
+      Higher Evasion competency may improve reliability, allow closing from
+      greater initial distance, or reduce Attrition cost under sustained
+      pressure. Higher-tier versions may let the user exploit the inside
+      position with an immediate counter opportunity.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a narrow reactive
+      close — its value is denying the attacker their planned range and raising
+      their threshold, not damage or conditions. Attrition reflects the genuine
+      body effort of closing into a committed attack rather than away from it.
+    restrictions:
+      - functions_only_against_committed_single_target_physical_attacks_with_forward_vector
+      - does_not_function_against_area_effects_or_attacks_that_track_user_movement
+      - does_not_function_when_user_is_fully_restrained_or_immobilized
+      - does_not_grant_an_attack_or_apply_a_condition
+      - attacker_retains_all_other_action_options_from_the_new_close_range_position
+      - closing_into_an_anticipated_attack_can_be_countered
+    tags:
+      - defense
+      - mobility
+      - counter_positioning
+      - survival_window
+  - name: Vaciar el Blanco
+    name_en: Empty the Target
+    status: authored_example
+    purpose: >
+      Add the second novice Naghii defense Technique, using Evasion to express
+      the Naghii doctrine that absence is itself a form of control — not a
+      reactive dodge of a specific strike but a proactive displacement that
+      removes the body from readable position and opens a brief defensive window
+      where the new position is not yet settled in the attacker's tracking.
+    origin:
+      main: Evasion
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: Doctrine
+      source: Naghii
+      seed: Absence As Evidence
+      transmission: outer_archive_countertracking_and_displacement_doctrine
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archival doctrine: the principle
+        that what is not present cannot be struck, and that deliberate
+        displacement is a form of denial, not retreat. Non-Naghii can learn
+        the movement discipline through any tradition that teaches
+        countertracking, position-reading, and deliberate self-removal from
+        acquired target locks.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy commits a single-target physical attack or physical Technique
+      against the user.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - user_is_not_fully_restrained_or_immobilized
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling deliberate displacement against partners actively
+          tracking — learning to move cleanly without providing a legible new
+          target position during the transition.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Naghii doctrine instructor can help the learner understand when
+          displacement reads as denial versus retreat — the tactical distinction
+          is not obvious without careful instruction.
+      material_cost: null
+      access_notes: >
+        Restricted to outer archive countertracking doctrine where displacement
+        theory is taught as a formal subject before full tactical practice.
+      final_validation: one_successful_practice_scene_under_pressure
+    target: self
+    range: self
+    area: self
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Ends when the first attack against the user after this Technique
+        resolves, or at the start of the user's next turn, whichever comes first.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+    description: >
+      The body leaves the readable position before the attacker settles their
+      read. No block. No contest. The target has moved, and for a moment the
+      new position is not yet fully mapped in the attacker's tracking. That
+      moment is the window.
+    effect: >
+      Move up to 2 meters in any direction without granting reaction
+      opportunities. Until the first attack against the user resolves after
+      this Technique, or until the start of the user's next turn — whichever
+      comes first — the user gains a bonus to their D.R. equal to their Evasion
+      competency rank: +1 at Novice, +2 at Adept, +3 at Expert, +4 at Master,
+      +5 at Consummate, +6 at Transcendent. This bonus reflects that the
+      new position has not yet settled in the attacker's tracking. Once the
+      first attack resolves, the window closes regardless of outcome.
+    scaling: >
+      The D.R. bonus scales directly with Evasion rank — deeper investment
+      in the competency produces a wider unsettled-tracking window. At Novice
+      the bonus is modest (+1); at higher tiers it becomes a meaningful
+      defensive edge that rewards specialization.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a quick bounded
+      repositioning — shorter range than a full movement action — with a
+      single defensive window that closes on the first attack. Attrition
+      reflects that deliberate full-body displacement under pressure is a
+      real physical effort, not a passive stance shift.
+    restrictions:
+      - user_must_have_enough_space_to_move_2_meters_in_the_chosen_direction
+      - does_not_function_when_user_is_fully_restrained_or_immobilized
+      - dr_bonus_applies_to_the_first_attack_only_then_closes
+      - does_not_grant_an_attack_or_produce_damage
+      - window_also_closes_at_start_of_users_next_turn_if_no_attack_came
+    tags:
+      - defense
+      - mobility
+      - counter_positioning
+      - reposition
+  - name: Templar el Veneno
+    name_en: Temper the Venom
+    status: authored_example
+    purpose: >
+      Add a novice Kha-Naghii resistance hybrid Technique rooted in Tolerancia
+      and Venom Resistance, expressing the species' biological venom conditioning
+      as a passive floor modifier that automatically reduces the settled severity
+      of any Veneno family ailment by one step — distinct from the standard
+      Alteration R.R. because it fires after the roll resolves and requires no
+      action, decision, or ATB cost.
+    origin:
+      main: Tolerancia
+      secondary:
+        - Venom_Resistance
+    world_origin:
+      primary_front: Species
+      secondary_front: Doctrine
+      source: Naghii
+      seed: Venom As Commitment
+      transmission: kha_venom_conditioning_and_endurance_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Kha-Naghii biological conditioning: the
+        body has carried its own venom since before conscious memory, and
+        formal training teaches the practitioner to metabolize external venom
+        through the same disciplined endurance used in initiation and field
+        exposure. Outsiders can learn an analogue if they have earned Venom
+        Resistance through documented systematic conditioning — long-term
+        antidote work, initiated venom-handling traditions, or significant
+        recorded field exposure — combined with Tolerancia training at Novice
+        or higher. The biology does not need to be Kha-Naghii; what matters
+        is that both the resistance and the endurance discipline are real and
+        earned, not improvised.
+    category: utility
+    type: passive
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Tolerancia
+      equipment: []
+      states:
+        - venom_resistance_at_novice_rank_or_higher
+        - tolerancia_specialization_at_novice_rank_or_higher
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: false
+        notes: >
+          Cannot be self-studied: the metabolic conditioning requires guided
+          exposure under controlled and progressively increased venom contact.
+          Solo exposure without instruction produces unpredictable tolerance,
+          not the systematic Technique.
+      guided_training:
+        allowed: true
+        study_hours: 0
+        practice_hours: 40
+        mentor_required: true
+        notes: >
+          Requires a Kha-Naghii conditioning instructor or an equivalent venom
+          handler with formal training to administer progressively increasing
+          venom exposures while the learner trains Tolerancia discipline in
+          parallel. The practice hours are distributed across many sessions
+          over time — this is not a single training block.
+      material_cost: null
+      access_notes: >
+        Restricted to Kha-Naghii initiation tracks and formally supervised
+        venom conditioning programs. Not available through archive libraries
+        or standard martial teaching.
+      final_validation: documented_stable_venom_tolerance_at_novice_rank_with_tolerancia_at_novice_rank
+    target: self
+    range: self
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Always active while the character retains both Venom Resistance at
+        Novice or higher and Tolerancia at Novice or higher. If either drops
+        below Novice through injury, extended isolation, or narrative loss,
+        the passive no longer applies until both are restored.
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other:
+        - no_atb_cost_the_body_responds_without_a_declared_action
+        - access_cost_paid_through_conditioning_and_learning_requirements
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The body does not fight what it already carries. A Kha-Naghii who has
+      trained under their own venom — and trained the discipline to hold
+      adverse physical states without losing function — reaches a point where
+      external venom finds familiar terms. The metabolic adjustment is not a
+      decision. It is the body's response to a known adversary.
+    effect: >
+      When a Veneno family ailment settles on the user after all R.R.
+      processing, reduce the final settled severity by one step automatically:
+      Severe becomes Moderate, Moderate becomes Minor, Minor does not settle.
+      This reduction requires no check, no declared action, and no Rhythm or
+      Attrition cost. It applies after the standard Alteration Resistance Roll
+      resolves — the R.R. processes normally, and then the passive floor
+      modifier reduces the result by one additional step. This means a Kha-Naghii
+      who fails their R.R. still receives a better outcome than an untrained
+      character who fails the same roll. The effect applies to Veneno family
+      ailments only. Other degrading states that are not classified under the
+      Veneno family are not affected, even if they involve toxic substances,
+      unless the Narrator determines that the biological familiarity
+      credibly extends to the specific source.
+    scaling: >
+      Higher Tolerancia rank may allow the passive to reduce severity by one
+      additional step at higher tiers, or extend its coverage to adjacent
+      Veneno-adjacent states at the Narrator's discretion. Novice use reduces
+      by one step only.
+    cost_note: >
+      Rhythm 0 / Attrition 0 is deliberate and correct for a passive Technique.
+      The cost of this Technique was paid during conditioning and learning, not
+      in the ATB. This should not be mistaken for a "free active benefit" —
+      it is a permanent passive floor that the character earned through a
+      restricted, mentor-gated acquisition process that cannot be shortcut.
+    restrictions:
+      - applies_to_veneno_family_ailments_only
+      - requires_venom_resistance_at_novice_rank_or_higher
+      - requires_tolerancia_at_novice_rank_or_higher
+      - does_not_negate_veneno_ailments_completely_by_itself
+      - does_not_apply_to_alteration_affliction_or_other_family_effects_from_venom_sources
+      - does_not_stack_with_other_automatic_severity_reduction_passives_of_the_same_type
+      - outsiders_require_documented_systematic_conditioning_not_improvised_exposure
+    tags:
+      - utility
+      - mitigation
+      - condition_reduction
+      - stability
+  - name: Sostener el Canal
+    name_en: Hold the Channel
+    status: authored_example
+    purpose: >
+      Add a novice Naghii resistance hybrid Technique rooted in Meditación and
+      Contención, expressing the igi-an practitioner's learned capacity to manage
+      the open Abzu channel through disciplined recovery — not closing it but
+      holding it stable, so that meditation directed at an active Abzu-origin or
+      mental Affliction produces a better outcome than raw Meditación alone.
+    origin:
+      main: Meditación
+      secondary:
+        - Contención
+        - Mental_Resistance_Abzu
+    world_origin:
+      primary_front: Species
+      secondary_front: Doctrine
+      source: Naghii
+      seed: Holding Dangerous Knowledge
+      transmission: igi_an_channel_management_and_containment_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in the deepest layer of Naghii igi-an training,
+        where the practitioner learns that the Abzu channel cannot and should not
+        be closed — closing it destroys the capacity for celestial reading. What
+        can be learned is management: holding the threshold, acknowledging what
+        enters without being absorbed by it, and finding the return path through
+        Contención discipline. Outsiders can learn an analogue if they have
+        documented susceptibility to mental or Abzu-origin influence through
+        practice or exposure, meaningful Mental Resistance (Abzu), and both
+        Meditación and Contención at Novice rank or higher.
+    category: utility
+    type: active
+    trigger: >
+      The user performs a meditation action specifically directed at reducing
+      the intensity of an active Abzu-origin or mental Affliction.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Meditación
+        - Contención
+      equipment: []
+      states:
+        - meditacion_at_novice_rank_or_higher
+        - contencion_at_novice_rank_or_higher
+        - mental_resistance_abzu_at_novice_rank_or_higher
+        - active_abzu_origin_or_mental_affliction_present
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 12
+        practice_hours: 0
+        text_or_manual_required: true
+        notes: >
+          Requires access to igi-an practice records and significant personal
+          experience with Abzu-origin influence — cannot be theorized from
+          the outside. The learner must already have sustained mental or
+          Abzu-origin states and recovered from them enough times to
+          recognize the channel's behavior from the inside.
+      guided_training:
+        allowed: true
+        study_hours: 6
+        practice_hours: 0
+        mentor_required: true
+        notes: >
+          A senior Naghii igi-an practitioner or inner-archive priest can
+          teach the learner to distinguish between absorption and holding —
+          the critical distinction that makes this Technique possible rather
+          than simply deepening the Affliction.
+      material_cost: null
+      access_notes: >
+        Restricted to inner archive priestly training where igi-an channel
+        management is a formal subject. Diaspora Naghii who developed the
+        susceptibility without the doctrine may need to find a practitioner
+        willing to teach it outside formal initiation.
+      final_validation: one_successful_supervised_affliction_recovery_session
+    target: self
+    range: self
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Always active while the character retains Meditación, Contención, and
+        Mental Resistance (Abzu) each at Novice or higher.
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other:
+        - no_additional_cost_beyond_the_meditation_action_itself
+        - the_meditation_action_has_its_own_time_and_focus_cost
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The igi-an practice was never about closing the channel. Closing it would
+      mean losing the capacity to read the sky, sense the Abzu's movements, hear
+      what the records mean in the present. What the deepest practitioners learn
+      is not closure — it is management. The channel is held at the threshold.
+      What enters can be acknowledged without being absorbed. And when it has
+      absorbed too much, Contención gives it a route out — not through force,
+      but through the practiced discipline of knowing where the boundary is and
+      returning to it.
+    effect: >
+      When the user meditates specifically to reduce the intensity of an active
+      Abzu-origin or mental Affliction, add a bonus to the Meditación roll equal
+      to the user's Contención competency rank bonus: +1 at Novice, +2 at
+      Adept, +3 at Expert, +4 at Master, +5 at Consummate, +6 at Transcendent.
+      This bonus applies only when the meditation is directed at an Abzu-origin
+      or mental Affliction — general meditation or meditation aimed at other
+      purposes does not benefit. The technique does not change what the
+      meditation action costs in time or focus; it improves the quality of the
+      recovery that action produces.
+    scaling: >
+      The bonus scales directly with Contención rank — deeper investment in the
+      discipline of holding the channel produces a stronger recovery capacity.
+      Higher tiers may broaden the Affliction types that qualify or reduce the
+      minimum meditation time required, but Novice use applies only to
+      Abzu-origin or mental Afflictions and only during a dedicated meditation
+      action.
+    cost_note: >
+      No additional cost beyond the meditation action itself. Like Templar el
+      Veneno, the cost of this Technique was paid in training: it is
+      mentor-gated at its deepest layer, requires documented susceptibility and
+      recovery experience, and demands concurrent development of both Meditación
+      and Contención. The meditation session that activates the bonus has its
+      own cost in time and focus — this Technique does not add to it.
+    restrictions:
+      - applies_only_to_meditation_directed_at_abzu_origin_or_mental_afflictions
+      - requires_meditacion_contencion_and_mental_resistance_abzu_each_at_novice_or_higher
+      - does_not_apply_to_physical_alteration_or_veneno_family_afflictions
+      - does_not_change_what_the_meditation_action_costs
+      - does_not_reduce_affliction_intensity_outside_a_dedicated_meditation_action
+      - general_meditation_does_not_receive_the_bonus
+    tags:
+      - utility
+      - recovery
+      - condition_reduction
+      - stability
+  - name: Fijar el Umbral
+    name_en: Fix the Threshold
+    status: authored_example
+    purpose: >
+      Add a novice Naghii Agarre specialization Technique that expresses the
+      species' contact dominance discipline — catching an enemy exit at close
+      range before the movement resolves, applying Atrapado through the
+      alteration system rather than merely producing narrative control. Distinct
+      from Trabar el Gesto (which stops an attack on the enemy's turn) and from
+      raw Agarre use (which produces narrative hold without a defined mechanical
+      condition). The defining property is that the hold fires even against
+      movement that explicitly does not provoke reactions.
+    origin:
+      main: Agarre
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Archive Arrest
+      transmission: temple_guard_hold_and_access_point_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive guard training where
+        controlling the exit of a target at a threshold — a doorway, a
+        corridor crossing, a ritual boundary — is a formal discipline. The
+        guard holds the point of consequence rather than pursuing; the hold
+        is applied at the moment of attempted departure before the exit is
+        complete. Non-Naghii can learn analogous methods through any tradition
+        that specifically drills hold application at close-range exit moments
+        rather than mid-engagement restraint.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy at close range attempts to move away, disengage, withdraw, or
+      pass through the user's position — fires even when the movement explicitly
+      declares it does not provoke reactions.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Agarre
+      equipment: []
+      states:
+        - user_is_at_close_range_with_the_target
+        - user_has_a_free_gripping_limb_tail_or_coiled_body_segment
+        - user_is_not_fully_restrained_or_immobilized
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the recognition of exit-moment timing — learning
+          to distinguish the instant before a target's weight shifts toward
+          departure from the moment after the movement is already in progress.
+          The hold must be placed before the exit resolves, not as a pursuit
+          after.
+      guided_training:
+        allowed: true
+        study_hours: 6
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Naghii archive guard instructor can calibrate the learner's
+          sense of exit-moment timing so the grip reaches the target's body
+          before the departure window closes, even on movement that does not
+          create an obvious reaction opening.
+      material_cost: null
+      access_notes: >
+        Restricted to archive guard threshold-control training where holding
+        exits rather than chasing them is taught as a formal discipline.
+      final_validation: one_successful_supervised_execution
+    target: enemy
+    range: close
+    area: single
+    duration:
+      model: condition_duration
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Atrapado Minor persists until the target succeeds on an Agarre
+        Specialization Roll at the start of its turn or spends an action
+        to break free.
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: rr_reduces
+      effect_on_success: >
+        If the target succeeds on its Alteration Resistance Roll, Atrapado is
+        not applied and the movement proceeds normally.
+    description: >
+      The target shifts weight to leave. The Naghii has already decided they
+      are not going. The grip closes at the point of departure — before the
+      exit is complete, before the safe window opens — and holds. The motion
+      stops where the hold lands.
+    effect: >
+      Make an Agarre check against the triggering enemy. On success, the
+      target must make an Alteration Resistance Roll. On a failed R.R., the
+      target gains Atrapado Minor: movement reduced to 0 and −1 to physical
+      rolls. Atrapado Minor persists until the target succeeds on an Agarre
+      Specialization Roll at the start of its turn or spends an action to
+      break free. On a successful R.R., the movement proceeds normally and
+      Atrapado is not applied.
+      This Technique may be declared against movement that explicitly states
+      it does not provoke reactions — the grip is placed at the departure
+      threshold before the safe-exit window would open.
+    scaling: >
+      Higher Agarre competency may improve reliability, allow the hold to be
+      applied from a slightly greater reach, or reduce Attrition cost under
+      sustained engagement pressure. Higher tiers may apply Atrapado at
+      greater severity or broaden the trigger to include non-movement exits.
+    cost_note: >
+      Rhythm 4 / Attrition 1 is deliberate. Trabar el Gesto (Rhythm 5)
+      negates the triggering action outright on a failed R.R.; Fijar el
+      Umbral applies Atrapado Minor — a condition the target can clear on
+      subsequent turns through an Agarre S.R. or an action spent. The
+      narrower outcome justifies the lower cost. The override permission
+      (fires against declared no-reaction movement) prevents further
+      reduction: the Technique can fire in windows normally closed to
+      reactions, which is a meaningful advantage the R.R. gate and Atrapado
+      Minor's recoverable nature balance against.
+    restrictions:
+      - user_must_be_at_close_range_when_trigger_occurs
+      - user_must_have_a_free_gripping_limb_tail_or_coiled_body_segment
+      - applies_to_one_target_only
+      - does_not_deal_damage
+      - does_not_prevent_the_target_from_using_non_movement_actions_while_atrapado
+      - does_not_function_when_user_is_fully_restrained_or_immobilized
+      - does_not_function_against_targets_with_no_grippable_anatomy
+    tags:
+      - utility
+      - control
+      - hold
+      - pressure
+  - name: Sentar el Tercer Punto
+    name_en: Set the Third Point
+    status: authored_example
+    purpose: >
+      Add a novice Naghii Equilibrio specialization Technique that expresses the
+      species' tail-assisted balance discipline on unstable terrain — placing a
+      third contact point to move cleanly through collapsed ruins, angled steps,
+      or damaged surfaces that would penalize or stop anyone relying on two
+      points alone. Distinct from Acrobacias expressions (dynamic traversal and
+      repositioning under threat) and from raw Equilibrio use (narrative
+      stability without a defined mechanical benefit). The defining property is
+      that the technique converts 2 spaces of difficult terrain into free
+      movement, gated by an Equilibrio check.
+    origin:
+      main: Equilibrio
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Ziggurat Body Logic
+      transmission: archive_survey_and_ruin_reading_field_training
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii archive survey training where
+        reading and moving through partially collapsed ziggurats, flooded
+        antechambers, and rubble-covered record vaults is a routine field
+        requirement. The Naghii practitioner learns to use the tail as a
+        third contact point — extending it to a low wall, a broken block,
+        or a door frame while the upper body and legs cross the unstable
+        surface. Non-Naghii can learn an equivalent through any tradition
+        that trains third-contact navigation on bad terrain: using a weapon
+        or staff as a low brace, a deliberate hand placement on a surface
+        while moving, or an equivalent trained reflex that achieves the same
+        weight redistribution across three points.
+    category: utility
+    type: reactive
+    trigger: >
+      The user attempts to move through terrain that would impose a speed
+      penalty, difficulty increase, or mandatory Balance check due to
+      unstable, angled, collapsed, or damaged footing.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Equilibrio
+      equipment: []
+      states:
+        - user_can_reach_at_least_one_stable_anchor_point_within_the_movement_path
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 12
+        text_or_manual_required: false
+        notes: >
+          Possible but slow. The instinct under sudden footing loss is to
+          retract or plant both feet rather than extend a third contact point
+          outward. Self-study on graduated terrain can build the reflex, but
+          most learners underestimate how far in advance the anchor must be
+          identified — it cannot be found after the slip has begun.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 10
+        mentor_required: true
+        notes: >
+          A trainer who can interrupt the retraction instinct on real terrain
+          significantly accelerates progress. For Naghii, this is typically
+          an archive field trainer on graduated ruin terrain. For non-Naghii,
+          any balance instructor with a third-contact method can teach the
+          underlying reflex through a different anatomical or equipment
+          expression.
+      material_cost: null
+      access_notes: >
+        Standard in Naghii archive survey training wherever ruin fieldwork
+        is expected. Non-Naghii can access equivalent instruction through any
+        martial or survival tradition that explicitly trains third-contact
+        balance navigation on bad terrain.
+      final_validation: clean_passage_through_certified_unstable_terrain_course
+    target: self
+    range: self
+    area: self
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The floor shifts. Everyone else slows or stops to reassess. The
+      practitioner finds the third point — tail against a broken block,
+      weapon butt on the lower step, a hand to the wall — and moves through
+      the broken surface as if it were level. The instability never reaches
+      the upper body. Two steps cross terrain that should have cost three.
+    effect: >
+      Make an Equilibrio check. On success, identify and use a stable anchor
+      point along the movement path — extending the tail, bracing a weapon,
+      placing a hand, or using whatever contact surface is available — and
+      move up to 2 spaces through the triggering terrain as if on stable
+      ground. Terrain speed penalties, difficulty increases, and mandatory
+      Balance checks do not apply to those 2 spaces. On failure, terrain
+      effects apply normally.
+    scaling: >
+      Higher Equilibrio competency may improve reliability on more extreme
+      terrain or reduce Attrition under sustained unstable engagement. Higher
+      tiers may increase the number of free spaces, extend the technique to
+      cover non-movement actions performed on difficult terrain, or allow
+      the benefit to apply to an adjacent ally in the same movement path.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique grants 2 spaces of
+      free terrain movement — enough to cross meaningful obstacles and engage
+      or reposition from terrain that would penalize other combatants. The
+      Equilibrio check is its own gate (a failed check provides no benefit),
+      and the effect is purely positional with no condition output. One extra
+      rhythm over a simple one-action negation reflects that movement through
+      terrain applies over 2 spaces rather than a single action moment.
+    restrictions:
+      - requires_at_least_one_reachable_stable_anchor_point_along_the_movement_path
+      - grants_free_movement_for_2_spaces_only
+      - does_not_negate_terrain_effects_beyond_the_2_free_spaces
+      - does_not_function_against_non_terrain_instability_at_novice_tier
+      - failed_equilibrio_check_provides_no_benefit
+    tags:
+      - defense
+      - stability
+      - mobility
+      - terrain
+  - name: Marcar la Grieta
+    name_en: Mark the Crack
+    status: authored_example
+    purpose: >
+      Add a novice Naghii Arqueología specialization Technique with a combat
+      surface and an exploration surface — reading material wear, construction
+      joints, and damage patterns on armor or structures to identify the point
+      of maximum vulnerability. In combat: setup that reduces the difficulty of
+      the user's next attack on the identified zone. In exploration: locates the
+      most structurally weak point of an examined element. Distinct from raw
+      Arqueología use (which produces narrative context without a defined
+      mechanical benefit) and from Leer el Propósito (which reads built-space
+      intention and circulation, not construction faults or material failure
+      points).
+    origin:
+      main: Arqueología
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: The Archive Must Continue
+      transmission: igi_an_ruin_field_reading_and_firstborn_remnant_cataloguing
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Naghii ruin field training where reading
+        structural failure patterns is a survival discipline: a practitioner
+        who cannot identify which stone will give way or which vault section
+        is about to collapse cannot safely work in active ruins. The combat
+        application transfers the same discipline to fabricated armor and
+        equipment — worn armor carries the same evidence of stress, repair,
+        and previous impact as any other artifact. Non-Naghii can learn an
+        equivalent through any tradition that trains systematic material
+        failure reading: structural engineering fieldwork, armorers who
+        learn to find construction faults, or siege engineers who read
+        wall weakness before placement.
+    category: utility
+    type: active
+    trigger: >
+      The user observes an enemy at close range with the intent to read
+      construction faults, wear patterns, or damage history on their armor or
+      equipment — or exposed joints, previous injury patterns, or anatomical
+      gaps on an unarmored or naturally protected target — or examines a static
+      structural element in exploration.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Arqueología
+      equipment: []
+      states:
+        - in_combat_user_must_be_at_close_range_with_line_of_sight_to_the_target
+        - in_exploration_user_must_have_physical_access_to_the_structural_element
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires deliberate practice reading wear patterns and joint failures
+          under time pressure. The skill is identifying which crack or wear mark
+          represents a structural fault versus surface damage — an error of
+          judgment sends an attack into well-reinforced material.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Naghii ruin field instructor, an experienced armorer, or a
+          structural damage reader corrects the learner's judgment on which
+          patterns indicate genuine fault lines versus surface deterioration.
+          The distinction is not obvious from appearance alone.
+      material_cost: null
+      access_notes: >
+        Standard in Naghii ruin field training. Non-Naghii can access
+        equivalent instruction through any field discipline that teaches
+        systematic reading of material failure indicators.
+      final_validation: correct_identification_of_fault_line_in_novel_material_sample
+    target: enemy
+    range: close
+    area: single
+    duration:
+      model: until_trigger
+      value: null
+      sustain_rule: null
+      end_rule: >
+        In combat: the identified fault mark expires when the user makes their
+        next attack against the target's identified zone, or at the end of the
+        scene. In exploration: the information is retained until circumstances
+        change.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_atb_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      Everything has a point where it gives. Armor: the dent never fully
+      hammered out, the joint re-riveted too tight, the section where two
+      plates meet at an angle the maker compromised on. Unarmored: the joint
+      that absorbed a previous blow and never fully recovered, the gap between
+      scale plates at maximum extension, the ridge of scar tissue that sits
+      over bone rather than muscle. The practitioner reads which one of those
+      is in range. Not where to hit. Where the material has already decided
+      it will give.
+    effect: >
+      Make an Arqueología check at difficulty set by the Narrator based on
+      the target's protective complexity, wear or injury state, and observation
+      conditions.
+      In combat — on success, identify one zone of the target where material
+      structure creates a fault: for armored targets, a construction gap,
+      wear point, or repair compromise in fabricated protection; for unarmored
+      or naturally protected targets, an exposed joint, a previous injury
+      site, or an anatomical gap where protection is thinnest. The difficulty
+      of the user's next attack against the identified zone is reduced by 1
+      step. The mark expires when the attack is made or at the end of the scene.
+      In exploration — on success, the Narrator identifies the most structurally
+      vulnerable point of the examined element — such as: the stone block with
+      the widest joint gap, the pillar base showing the deepest erosion, or the
+      floor section covering a hollow beneath. The Narrator chooses the specific
+      fact; the examples above are illustrative, not a closed menu.
+      On a failed check in either surface: no fault is identified. The material
+      does not yield a readable pattern at this examination.
+    scaling: >
+      Higher Arqueología competency may improve reliability against well-
+      maintained or recently repaired armor, reduce difficulty on complex
+      construction, or allow the technique to be used at short range rather
+      than close range. Higher tiers may allow identifying multiple fault zones
+      or extend the mark's duration beyond one attack.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The combat surface produces a
+      1-step difficulty reduction on one follow-up attack — meaningful but
+      bounded, and it costs the user an action plus the check before the
+      benefit applies. The exploration surface functions as a standard
+      information technique with no ATB cost. The cost matches the established
+      Naghii information technique anchor and reflects that the combat benefit
+      requires a setup action rather than producing immediate effect.
+    restrictions:
+      - combat_use_requires_close_range_with_line_of_sight_to_the_target
+      - exploration_use_requires_physical_access_to_the_structural_element
+      - combat_mark_applies_to_one_zone_of_one_target_only
+      - combat_mark_expires_on_use_or_end_of_scene
+      - does_not_function_against_targets_with_no_readable_material_structure_such_as_purely_fluid_or_incorporeal_forms
+      - failed_check_yields_no_benefit_in_either_surface
+    tags:
+      - utility
+      - pattern_exploitation
+      - setup
+      - counter_read

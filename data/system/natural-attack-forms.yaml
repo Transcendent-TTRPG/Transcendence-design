@@ -3,7 +3,8 @@ taxonomy:
   purpose: "Inverse mapping layer for natural combat that links bodily attack logic to compatible Weapon Technique Profiles."
   reading_rule:
     - "A natural attack form does not create a separate Technique school by itself."
-    - "Each form should map to existing Weapon Technique Profiles whenever possible."
+    - "Each form maps to four existing Weapon Technique Profiles whenever possible."
+    - "Those four profiles may come from different manufactured weapon families, because anatomy inherits combat logic by contact, not by item category."
     - "If a form cannot map cleanly, that may justify a new profile, a species-specific exception, or a restriction note, but not a separate subsystem by default."
   required_fields:
     - name
@@ -14,12 +15,16 @@ taxonomy:
     - restricted_profiles
     - identity_notes
   optional_fields:
+    - species
+    - species_profile_expressions
     - species_notes
     - delivery_notes
     - environmental_dependence
     - profile_specific_caveats
   template:
     name: "Canonical natural form name"
+    name_es: "Canonical Spanish form name"
+    species: []
     contact_logic: "What kind of bodily contact the form creates"
     combat_role: "Main offensive or defensive role"
     damage_identity: "What kind of harm or pressure it tends to produce"
@@ -30,6 +35,21 @@ taxonomy:
 forms:
   - id: bite
     name: "Bite"
+    name_es: "Mordisco"
+    species:
+      - "Naghii"
+      - "Sauri"
+      - "Zarnag"
+      - "Drak'kai"
+      - "Formix"
+      - "Panin"
+      - "Luphran"
+      - "Ursari"
+      - "Arakhel"
+      - "Vesper"
+      - "Manto"
+      - "Telpi"
+      - "Myo"
     contact_logic: "Close puncture, clamp, tearing bite, or bite-driven hold"
     combat_role: "Committed close threat"
     damage_identity: "Puncture, tear, pressure, invasive contact"
@@ -43,9 +63,48 @@ forms:
       - "Ricochet"
       - "Precision"
     identity_notes: "Bite supports deep entry, brutal close pressure, and predatory commitment. It maps well to piercing or tearing profiles, but usually not to stationary defense or ranged geometry."
+    species_profile_expressions:
+      - species: "Naghii"
+        expression_id: "naghii_fang_bite"
+        availability: "Kha-Naghii only"
+        contact_logic: "Retractable fang entry with venom delivery through precise close contact"
+        compatible_profiles:
+          - "Perforation"
+          - "Corrosion"
+          - "Shadow Pressure"
+          - "Precision"
+        restricted_profiles:
+          - "Bastion"
+          - "Impact"
+          - "Unstoppable"
+        identity_notes: >
+          Naghii bite Techniques should emphasize fang insertion, controlled
+          venom delivery, exact contact, and punishment of hesitation. They
+          should not become raw mauling or heavy jaw-crush identity.
+      - species: "Sauri"
+        expression_id: "sauri_jaw_closure"
+        availability: "All Sauri"
+        contact_logic: "Heavy jaw closure, clamp, crush, drag, and sustained pressure"
+        compatible_profiles:
+          - "Impact"
+          - "Bastion"
+          - "Rend"
+          - "Unstoppable"
+        restricted_profiles:
+          - "Precision"
+          - "Ricochet"
+          - "Shadow Pressure"
+        identity_notes: >
+          Sauri bite Techniques should emphasize closure, crushing pressure,
+          sustained hold, and structural break. They are closer to heavy impact
+          and containment than to small-fang precision.
 
   - id: tail
     name: "Tail"
+    name_es: "Cola"
+    species:
+      - "Naghii"
+      - "Sauri"
     contact_logic: "Sweep, push, spoil, off-line collision, or flexible redirection depending on anatomy"
     combat_role: "Space denial, interruption, repositioning"
     damage_identity: "Displacement, disruption, side-angle impact"
@@ -54,15 +113,60 @@ forms:
       - "Line Control"
       - "Torsion"
       - "Interruption"
-      - "Impact"
     restricted_profiles:
       - "Precision"
       - "Ricochet"
       - "Bastion"
     identity_notes: "Tail forms are excellent at changing lanes and angles. Some tails can also slam, but most are better at control and spoil than at precise or ballistic delivery."
+    species_profile_expressions:
+      - species: "Naghii"
+        expression_id: "naghii_prehensile_tail"
+        availability: "All Naghii"
+        contact_logic: "Prehensile restraint, off-line contact, wrap, balance, and flexible redirection"
+        compatible_profiles:
+          - "Interception"
+          - "Line Control"
+          - "Torsion"
+          - "Interruption"
+        restricted_profiles:
+          - "Impact"
+          - "Unstoppable"
+          - "Bastion"
+        identity_notes: >
+          Naghii tail Techniques should emphasize restraint, curved contact,
+          angle theft, and crossing disruption rather than raw mass.
+      - species: "Sauri"
+        expression_id: "sauri_heavy_tail"
+        availability: "All Sauri"
+        contact_logic: "Heavy lateral sweep, off-line collision, balance disruption, and lane denial"
+        compatible_profiles:
+          - "Impact"
+          - "Line Control"
+          - "Interception"
+          - "Interruption"
+        restricted_profiles:
+          - "Precision"
+          - "Ricochet"
+          - "Shadow Pressure"
+        identity_notes: >
+          Sauri tail Techniques should emphasize heavy side pressure, sweeping
+          disruption, and preventing clean passage around the body. They are
+          less flexible than Naghii tail methods but carry more mass.
 
   - id: claw
     name: "Claw"
+    name_es: "Garra"
+    species:
+      - "Zarnag"
+      - "Rokhart"
+      - "Chelicer"
+      - "Luphran"
+      - "Ursari"
+      - "Vesper"
+      - "Lupinni"
+      - "Erin"
+      - "Talpi"
+      - "Myo"
     contact_logic: "Rake, hook, slash, tear, or fast contact from short reach"
     combat_role: "Aggressive close pressure"
     damage_identity: "Cut, tear, opportunistic opening"
@@ -71,7 +175,6 @@ forms:
       - "Shadow Pressure"
       - "Rend"
       - "Skirmish"
-      - "Unpredictability"
     restricted_profiles:
       - "Bastion"
       - "Precision"
@@ -80,6 +183,9 @@ forms:
 
   - id: shell
     name: "Shell"
+    name_es: "Caparazon"
+    species:
+      - "Drak'kai"
     contact_logic: "Brace, cover, absorb, slam, or hold through mass and structure"
     combat_role: "Anchor, protect, absorb, occasional impact"
     damage_identity: "Protected endurance, blunt contact, defended collision"
@@ -96,6 +202,9 @@ forms:
 
   - id: beak
     name: "Beak"
+    name_es: "Pico"
+    species:
+      - "Rokhart"
     contact_logic: "Puncture, snap, peck, or hooked edge contact depending on form"
     combat_role: "Precise strike or tearing pick"
     damage_identity: "Puncture, cut, invasive point pressure"
@@ -112,6 +221,9 @@ forms:
 
   - id: trunk
     name: "Trunk"
+    name_es: "Trompa"
+    species:
+      - "Loxod"
     contact_logic: "Grab, push, sweep, wrap, and short-range structural manipulation"
     combat_role: "Control, interruption, positional dominance"
     damage_identity: "Displacement, crush, redirection"
@@ -128,6 +240,9 @@ forms:
 
   - id: tusk
     name: "Tusk"
+    name_es: "Colmillos"
+    species:
+      - "Loxod"
     contact_logic: "Committed forward puncture with body follow-through"
     combat_role: "Breakthrough, brutal entry"
     damage_identity: "Puncture, wedge force, structural opening"
@@ -135,6 +250,7 @@ forms:
       - "Perforation"
       - "Charge"
       - "Sunder"
+      - "Unstoppable"
     restricted_profiles:
       - "Torsion"
       - "Ricochet"
@@ -143,6 +259,9 @@ forms:
 
   - id: horn
     name: "Horn"
+    name_es: "Cuerno"
+    species:
+      - "Ceratox"
     contact_logic: "Forward-drive wedge, puncture, or heavy committed impact"
     combat_role: "Breakthrough, collision, structural breach"
     damage_identity: "Puncture, impact, breaking force"
@@ -159,6 +278,10 @@ forms:
 
   - id: stinger
     name: "Stinger"
+    name_es: "Aguijon"
+    species:
+      - "Formix"
+      - "Chelicer"
     contact_logic: "Fast puncture delivery of invasive or degrading contact"
     combat_role: "Inject, weaken, punish brief openings"
     damage_identity: "Puncture, toxin, persistence"
@@ -173,8 +296,11 @@ forms:
       - "Line Control"
     identity_notes: "Stingers are ideal for puncture plus hostile residue. They are usually too small or specialized for anchoring or blunt-force roles."
 
-  - id: quills_spines
-    name: "Quills / Spines"
+  - id: spines
+    name: "Spines"
+    name_es: "Puas"
+    species:
+      - "Erin"
     contact_logic: "Projected shard, repeated spine release, or embedded puncture"
     combat_role: "Ranged harassment or pressure"
     damage_identity: "Puncture, persistence, repeated ranged threat"
@@ -189,8 +315,11 @@ forms:
       - "Charge"
     identity_notes: "Quills and spines sit naturally in the ranged family. If they carry toxin or residue, Corrosion also fits well."
 
-  - id: tongue_tendril
-    name: "Tongue / Tendril"
+  - id: tongue
+    name: "Tongue"
+    name_es: "Lengua"
+    species:
+      - "Bufoni"
     contact_logic: "Lash, wrap, snap, redirect, fake line, or off-axis contact"
     combat_role: "Disruption, unusual angle entry, control"
     damage_identity: "Flexible contact, interference, angle theft"
@@ -205,23 +334,13 @@ forms:
       - "Sunder"
     identity_notes: "Tongues and tendrils are ideal for weird contact geometry and timing spoils, but generally poor for rigid force-through profiles."
 
-  - id: forelimb_smash
-    name: "Forelimb Smash"
-    contact_logic: "Blunt committed strike through body or limb mass"
-    combat_role: "Collapse posture, punish contact, shock the line"
-    damage_identity: "Impact, disruption, force transfer"
-    compatible_profiles:
-      - "Impact"
-      - "Charge"
-      - "Line Control"
-    restricted_profiles:
-      - "Precision"
-      - "Ricochet"
-      - "Shadow Pressure"
-    identity_notes: "Heavy forelimb forms excel at mass and collision. They are bad fits for precision or stealth-driven play."
-
   - id: fluid_projection
     name: "Fluid Projection"
+    name_es: "Fluidos Proyectados"
+    species:
+      - "Naghii"
+      - "Formix"
+      - "Chelicer"
     contact_logic: "Projected spit, acid, toxin, or pressurized biological discharge"
     combat_role: "Ranged weakening, harassment, residue delivery"
     damage_identity: "Precision hit, persistent degradation, repeated pressure"
@@ -236,8 +355,11 @@ forms:
       - "Flow"
     identity_notes: "Fluid projection covers both clean targeted shots and degrading residues. Its profile spread depends on whether the biology emphasizes aim, cadence, rebound logic, or hostile substance."
 
-  - id: pincer_mandible_clamp
-    name: "Pincer / Mandible Clamp"
+  - id: pincers
+    name: "Pincers"
+    name_es: "Tenazas"
+    species:
+      - "Manto"
     contact_logic: "Seize, clamp, crush, pin, or punish escape through rigid opposing force"
     combat_role: "Capture, hold, positional punishment"
     damage_identity: "Crush, retention, trap pressure"
@@ -251,35 +373,3 @@ forms:
       - "Precision"
       - "Skirmish"
     identity_notes: "Pincers and crushing mandibles excel at committing to a target and denying clean escape. They are strong fits for stop-and-hold combat, not for light mobility or ballistic logic."
-
-  - id: hoof_trample
-    name: "Hoof / Trample"
-    contact_logic: "Stomp, overrun, drive-through impact, or repeated body-weight strike through locomotion"
-    combat_role: "Pressure by advance, collapse footing, punish prone or crowded targets"
-    damage_identity: "Impact, anti-displacement, shock through mass and motion"
-    compatible_profiles:
-      - "Charge"
-      - "Impact"
-      - "Line Control"
-      - "Sunder"
-    restricted_profiles:
-      - "Precision"
-      - "Torsion"
-      - "Shadow Pressure"
-    identity_notes: "Hooves and trampling forms are about momentum and grounded force. They work well when movement itself becomes the attack, not when the fiction asks for fine control or deceptive entry."
-
-  - id: wing_buffet
-    name: "Wing Buffet"
-    contact_logic: "Broad off-line impact, gust-like spoil through massed wing motion, or balance-breaking contact from the side"
-    combat_role: "Disrupt approach, reposition others, destabilize clusters"
-    damage_identity: "Displacement, disruption, broad impact pressure"
-    compatible_profiles:
-      - "Interception"
-      - "Line Control"
-      - "Skirmish"
-      - "Interruption"
-    restricted_profiles:
-      - "Perforation"
-      - "Sunder"
-      - "Precision"
-    identity_notes: "Wing buffets are excellent at ruining tempo and lane control without needing deep penetration. They fit mobile spatial control far better than rigid breakthrough or exact strike profiles."

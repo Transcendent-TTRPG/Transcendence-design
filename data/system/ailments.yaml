@@ -160,6 +160,52 @@ entries:
       replaces a weaker one; an equal application usually refreshes
       persistence.
 
+  - name: Lacerado
+    family: Alteration
+    description: >
+      The target has been torn, cut open, or otherwise wounded in a way that
+      makes strenuous physical execution slower because movement must protect,
+      compensate for, or push through the damaged tissue.
+    severity_levels:
+      minor:
+        - "+1 rhythm cost to strenuous physical actions that stress the wound"
+      moderate:
+        - "+2 rhythm cost to strenuous physical actions that stress the wound"
+      severe:
+        - "+3 rhythm cost to strenuous physical actions that stress the wound"
+    application_requirements:
+      - deep_cut_or_laceration
+      - tearing_bite_or_claw
+      - hooked_or_serrated_weapon_contact
+      - open_wound_under_physical_pressure
+      - other_fictionally_credible_source_of_painful_tissue_disruption
+    effect: >
+      The target can still act, but actions that put pressure through the
+      lacerated area become slower. Strenuous physical actions include attacks,
+      movement bursts, weapon Techniques, forced movement attempts, grapples,
+      heavy defenses, or similar actions that clearly stress the wound.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the wound is stabilized, bound, closed, treated, or no
+        longer functionally stressed by the scene.
+    recovery:
+      notes: >
+        Ends when the target spends a suitable action to bind, brace, close,
+        harden, or otherwise stabilize the wound pressure. Medicina can end the
+        state when treatment is part of the fiction; some natural armor,
+        regeneration, or hardening effects may provide their own recovery route.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, recovery is usually practical or medical rather than mental:
+        stabilize the wound, change how the body is moving, or receive
+        treatment.
+    stacking_rule: >
+      The same lacerated state never creates parallel copies. A stronger
+      application replaces a weaker one; an equal application usually refreshes
+      persistence.
+
   - name: Atrapado
     family: Alteration
     description: >

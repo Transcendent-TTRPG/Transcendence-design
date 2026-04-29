@@ -33,6 +33,35 @@ Estas mecánicas están referenciadas en el texto existente pero no tienen regla
 - **Referenciado en:** `03-core-rules`, `08-conflict-and-combat/acciones.md`
 - **Descripción:** Lista completa de Técnicas desbloqueables por competencia, con su tipo (Acción Activa / Reacción), costo de ritmo, Desgaste y efecto mecánico directo
 - **Destino sugerido:** Cap. 09 (Techniques) o cap. dedicado dentro de Ch08
+- **Estado:** Pase Novice Naghii en progreso — ver sección **Naghii — Pase de Técnicas Novice** abajo
+
+---
+
+## Naghii — Pase de Técnicas Novice
+
+Objetivo: 20 técnicas Novice para la especie. Target breakdown según `data/system/techniques.yaml`.
+
+| Bloque | Target | Hecho | Pendiente |
+| --- | --- | --- | --- |
+| attack_weapons | 12 | 12 ✓ | 0 |
+| defense | 2 | 2 ✓ | 0 |
+| resistance_hybrids | 2 | 2 ✓ | 0 |
+| specializations | 8 | 8 | 0 |
+| **Total** | **24** | **24** | **0** |
+
+### Técnicas completadas (21)
+
+**Spear (4/4):** Cerrar la Línea (Perforation), Recuperar la Distancia (Perforation), Clavar el Paso (Perforation), Plantar la Guardia (Ward)
+
+**Flexible Weapons (4/4):** Anudar el Paso (Torsion), Robar el Ángulo (Unpredictability), Tocar y Ceder (Skirmish), Trabar el Gesto (Interruption)
+
+**Ranged Weapons (4/4):** Marcar la Lectura (Precision), Nublar la Señal (Corrosion), Doblar el Tiro (Ricochet), Clavar la Cadencia (Volley)
+
+**Defense (2/2):** Cruzar la Punta (Evasion — reactive threshold crossing, closes into attack), Vaciar el Blanco (Evasion — reactive displacement, moves away)
+
+**Specializations (8/4+4):** Leer el Calor del Paso (Perception), Leer la Línea Ausente (Interpretation), Pesar el Umbral (Intimidation), Leer el Arco (Astronomía), Leer el Propósito (Architecture), Fijar el Umbral (Agarre), Sentar el Tercer Punto (Equilibrio), Marcar la Grieta (Arqueología)
+
+**Resistance Hybrids (2/2):** Templar el Veneno (Tolerancia + Venom Resistance — passive, Kha-Naghii venom metabolic floor), Sostener el Canal (Meditación + Contención + Mental Resistance Abzu — active, igi-an channel management recovery bonus)
 
 ### Condiciones y presión ambiental
 

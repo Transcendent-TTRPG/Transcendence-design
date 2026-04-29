@@ -30,6 +30,13 @@ connection_rules:
   note: >
     Profiles shape timing identity and Technique clustering, but they do not
     grant automatic repeated-use bonuses or generic combo exceptions.
+  access_balance_rule: >
+    Manufactured weapon competencies use a uniform core access model: each
+    weapon competency grants access to four core Weapon Technique Profiles.
+    Specific weapon items may modify range, damage, requirements, or narrow
+    Technique permissions, but they do not create extra profile access by
+    default. Natural attack forms later inherit from the same shared profiles
+    through anatomy, not through a separate natural-only profile list.
 
 atb_rule:
   old_combo_descriptor_model_carried_over: false
@@ -80,6 +87,126 @@ template:
   timing_identity: ""
   identity_notes: ""
   should_not_do: []
+
+weapon_competency_profile_access:
+  access_count_per_weapon_competency: 4
+  note: >
+    This is the canonical manufactured-weapon access map for Technique
+    authoring. The older combo-descriptor model is not carried forward; only
+    the profile names and combat concepts survive as identity anchors. Old
+    names that implied magic or planar behavior are treated as retired labels,
+    not as Technique permissions.
+  competencies:
+    Spear:
+      profiles:
+        - Perforation
+        - Ward
+        - Charge
+        - Skirmish
+      old_concept_anchors:
+        - Perforador
+        - Defensivo
+        - Carga
+        - Agil
+    Axes:
+      profiles:
+        - Rend
+        - Sunder
+        - Unstoppable
+        - Line Control
+      old_concept_anchors:
+        - Desgarrador
+        - Demoledor
+        - Impulso
+        - Barredor
+    Maces:
+      profiles:
+        - Impact
+        - Sunder
+        - Unstoppable
+        - Bastion
+      old_concept_anchors:
+        - Aplastante
+        - Imparable
+        - Golpe Sordo
+        - Fortificado
+    Long Blades:
+      profiles:
+        - Flow
+        - Rend
+        - Lethality
+        - Deflection
+      old_concept_anchors:
+        - Fluyente
+        - Cortante
+        - Letal
+        - Deflectante
+    Short Blades:
+      profiles:
+        - Shadow Pressure
+        - Corrosion
+        - Lethality
+        - Skirmish
+      old_concept_anchors:
+        - Sombrio
+        - Erosivo
+        - Implacable
+        - Veloz
+    Daggers:
+      profiles:
+        - Unpredictability
+        - Shadow Pressure
+        - Lethality
+        - Deflection
+      old_concept_anchors:
+        - Enganoso
+        - Brumoso
+        - Penetrante
+        - Disruptivo
+    Thrown Weapons:
+      profiles:
+        - Precision
+        - Ricochet
+        - Volley
+        - Interruption
+      old_concept_anchors:
+        - Preciso
+        - Ricochete
+        - Propulsion
+        - Intercepcion
+    Ranged Weapons:
+      profiles:
+        - Precision
+        - Ricochet
+        - Volley
+        - Corrosion
+      old_concept_anchors:
+        - Aguijon
+        - Sigiloso
+        - Rafaga
+        - Desgaste
+    Flexible Weapons:
+      profiles:
+        - Torsion
+        - Unpredictability
+        - Skirmish
+        - Interruption
+      old_concept_anchors:
+        - Torsion
+        - Impredecible
+        - Fluctuante
+        - Persistente
+    Shield:
+      profiles:
+        - Interception
+        - Interruption
+        - Line Control
+        - Bastion
+      old_concept_anchors:
+        - Interceptacion
+        - Interrupcion
+        - Control de Campo
+        - Bastion
 
 profiles:
   - name: Perforation
@@ -361,6 +488,7 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Shield
+        - Axes
       weapon_families:
         - shields
         - broad_control_surfaces
@@ -567,7 +695,6 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Spear
-        - Heavy Weapons
       weapon_families:
         - spears
         - lances
@@ -639,6 +766,7 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Shield
+        - Maces
         - Armor
       weapon_families:
         - tower_shields
@@ -778,7 +906,7 @@ profiles:
       body structure absorbs the hit before intent can recover.
     compatible_origins:
       weapon_competencies:
-        - Heavy Weapons
+        - Maces
       weapon_families:
         - maces
         - hammers
@@ -848,7 +976,7 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Axes
-        - Short Blades
+        - Long Blades
       weapon_families:
         - axes
         - hooked_blades
@@ -917,7 +1045,7 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Axes
-        - Heavy Weapons
+        - Maces
       weapon_families:
         - axes
         - splitting_tools
@@ -1057,7 +1185,6 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Long Blades
-        - Short Blades
         - Daggers
       weapon_families:
         - swords
@@ -1127,8 +1254,7 @@ profiles:
       execution.
     compatible_origins:
       weapon_competencies:
-        - Shields
-        - Short Blades
+        - Shield
         - Flexible Weapons
         - Thrown Weapons
       weapon_families:
@@ -1201,7 +1327,6 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Short Blades
-        - Thrown Weapons
         - Ranged Weapons
       weapon_families:
         - venom_bearing_light_weapons
@@ -1272,7 +1397,6 @@ profiles:
       rhythm, or mode of contact resolve from the wrong assumption.
     compatible_origins:
       weapon_competencies:
-        - Short Blades
         - Daggers
         - Flexible Weapons
       weapon_families:
@@ -1343,7 +1467,7 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Short Blades
-        - Spears
+        - Spear
         - Flexible Weapons
       weapon_families:
         - light_sidearms
@@ -1413,7 +1537,6 @@ profiles:
     compatible_origins:
       weapon_competencies:
         - Spear
-        - Long Blades
       weapon_families:
         - spears
         - polearms
@@ -1552,9 +1675,8 @@ profiles:
       pain so that the first collision fails to halt the advance.
     compatible_origins:
       weapon_competencies:
-        - Heavy Weapons
+        - Maces
         - Axes
-        - Spear
       weapon_families:
         - heavy_axes
         - breaker_weapons

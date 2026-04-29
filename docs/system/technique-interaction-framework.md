@@ -1,7 +1,7 @@
 # Technique Interaction Framework
 
 **Primary references:** `docs/system/techniques.md`, `docs/system/mechanics-overview.md`
-**Related docs:** `docs/system/roll-types.md`, `docs/system/atb-reference.md`, `docs/system/attrition-fatigue.md`, `docs/system/environmental-conditions.md`, `docs/system/equipment-overview.md`, `docs/system/specializations.md`
+**Related docs:** `docs/system/roll-types.md`, `docs/system/atb-reference.md`, `docs/system/attrition-fatigue.md`, `docs/system/ailments.md`, `docs/system/environmental-conditions.md`, `docs/system/equipment-overview.md`, `docs/system/specializations.md`
 
 ---
 

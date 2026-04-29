@@ -17,6 +17,13 @@ You are working in the Transcendence design repository, which is the source of t
 - Check `docs/frameworks/` before creating structured content
 - Check `docs/qa/` before finalizing
 
+## Technique Authoring Rules
+
+- Before authoring ANY technique, read `data/system/techniques.yaml` (taxonomy, cost model, authoring_questions)
+- Before authoring a SPECIALIZATION technique, also read the relevant domain entry in `docs/system/specialization-technique-domains.md`
+- Before authoring a technique that applies a condition, read `data/system/ailments.yaml`
+- Before authoring a technique for a species, read that species' file in `docs/canon/species/`
+
 ## Avoid
 - Do not redefine canon casually
 - Do not create implementation-specific assumptions unless documented

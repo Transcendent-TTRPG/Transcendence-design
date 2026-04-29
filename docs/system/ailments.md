@@ -246,6 +246,20 @@ that an Affliction, Alteration, encounter, or Technique may cause.
 - **Resistance or escape:** Normally resisted with `R.R.` against Alterations when first applied; once active, recovery is primarily governed by bodily recovery rather than precision or mental control.
 - **Stacking rule:** The same effect never creates parallel copies. A stronger application replaces a weaker one; an equal application usually refreshes persistence.
 
+### Lacerado
+
+- **Family:** Alteration
+- **Description:** The target has been torn, cut open, or otherwise wounded in a way that makes strenuous physical execution slower because movement must protect, compensate for, or push through the damaged tissue.
+- **Application requirements:** Valid when the target suffers a deep cut, tearing bite, claw wound, hooked or serrated weapon contact, open wound under physical pressure, or another fictionally credible source of painful tissue disruption.
+- **Severity effects:**
+  - Minor: `+1` Rhythm cost to strenuous physical actions that stress the wound
+  - Moderate: `+2` Rhythm cost to strenuous physical actions that stress the wound
+  - Severe: `+3` Rhythm cost to strenuous physical actions that stress the wound
+- **Duration:** `until_removed`
+- **Recovery:** Ends when the target spends a suitable action to bind, brace, close, harden, or otherwise stabilize the wound pressure. `Medicina` can end the state when treatment is part of the fiction; some natural armor, regeneration, or hardening effects may provide their own recovery route.
+- **Resistance or escape:** Normally resisted with `R.R.` against Alterations when first applied. Once active, recovery is usually practical or medical rather than mental: stabilize the wound, change how the body is moving, or receive treatment.
+- **Stacking rule:** The same lacerated state never creates parallel copies. A stronger application replaces a weaker one; an equal application usually refreshes persistence.
+
 ### Atrapado
 
 - **Family:** Alteration

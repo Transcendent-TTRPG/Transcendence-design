@@ -17,6 +17,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
 | [techniques.md](techniques.md) | Technique taxonomy: canonical fields, cost model, timing, duration, resistance, scaling, and authoring rules |
 | [technique-interaction-framework.md](technique-interaction-framework.md) | Cross-system doctrine for Techniques — what systems they should touch, how they should touch them, and how to avoid arbitrary bonus-stacking |
+| [technique-origins.md](technique-origins.md) | World-grounding framework for Techniques — origin fronts (Species, Doctrine, Region), transmission logic, access levels, and design checklist |
 | [weapon-technique-profiles.md](weapon-technique-profiles.md) | Combat profile layer between weapon competency and concrete Techniques — shared by weapon families and natural attack forms |
 | [natural-attack-forms.md](natural-attack-forms.md) | Inverse mapping for natural combat — attack forms, contact logic, and compatible Weapon Technique Profiles |
 | [competency-technique-domains.md](competency-technique-domains.md) | Technique domain matrix by competency type — primary, secondary, and limited effect families |

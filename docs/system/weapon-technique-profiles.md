@@ -188,6 +188,31 @@ No global combo-by-profile rule should be assumed.
 
 ---
 
+## Weapon Access Balance
+
+Manufactured weapon competencies use a uniform core access model: each weapon competency grants access to **four** core Weapon Technique Profiles.
+
+Specific weapon items may modify range, damage, requirements, or narrow Technique permissions, but they do not create extra profile access by default. `Yari`, `Lancea`, `Labrys`, `Urumi`, and similar item names matter as equipment, not as separate Technique trees.
+
+The older combo-descriptor model is not carried forward mechanically. Only the names and combat concepts survive as identity anchors. Old names that implied magic or planar behavior are treated as retired labels, not as Technique permissions.
+
+| Weapon competency | Core profiles | Old concept anchors |
+| --- | --- | --- |
+| `Spear` | `Perforation`, `Ward`, `Charge`, `Skirmish` | Perforador, Defensivo, Carga, Agil |
+| `Axes` | `Rend`, `Sunder`, `Unstoppable`, `Line Control` | Desgarrador, Demoledor, Impulso, Barredor |
+| `Maces` | `Impact`, `Sunder`, `Unstoppable`, `Bastion` | Aplastante, Imparable, Golpe Sordo, Fortificado |
+| `Long Blades` | `Flow`, `Rend`, `Lethality`, `Deflection` | Fluyente, Cortante, Letal, Deflectante |
+| `Short Blades` | `Shadow Pressure`, `Corrosion`, `Lethality`, `Skirmish` | Sombrio, Erosivo, Implacable, Veloz |
+| `Daggers` | `Unpredictability`, `Shadow Pressure`, `Lethality`, `Deflection` | Enganoso, Brumoso, Penetrante, Disruptivo |
+| `Thrown Weapons` | `Precision`, `Ricochet`, `Volley`, `Interruption` | Preciso, Ricochete, Propulsion, Intercepcion |
+| `Ranged Weapons` | `Precision`, `Ricochet`, `Volley`, `Corrosion` | Aguijon, Sigiloso, Rafaga, Desgaste |
+| `Flexible Weapons` | `Torsion`, `Unpredictability`, `Skirmish`, `Interruption` | Torsion, Impredecible, Fluctuante, Persistente |
+| `Shield` | `Interception`, `Interruption`, `Line Control`, `Bastion` | Interceptacion, Interrupcion, Control de Campo, Bastion |
+
+Natural attack forms inherit from these same shared profiles through anatomy and species logic. They do not use this table as a rigid count requirement, because a natural form may be narrower or broader depending on its body logic.
+
+---
+
 ## Canonical Fields
 
 Each Weapon Technique Profile should declare at minimum:
@@ -357,7 +382,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Line control / spatial denial / forced repositioning
 - **Fantasy core:** deciding where bodies can safely stand, pass, or commit by shaping lanes, edges, and collision points through pressure applied to space rather than to damage alone
 - **Compatible origins:**
-  - weapon competencies: Shield
+  - weapon competencies: Shield, Axes
   - weapon families: shields, broad control surfaces, push-oriented defensive tools
   - natural attack forms: tail, heavy forelimb, shell, trunk
   - secondary requirements: may pair well with Armor, Strength, Balance, Interception, or Engineering depending on whether the Technique leans toward push control, body positioning, stable occupation, or environmental shaping
@@ -432,7 +457,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Charge / committed entry / momentum impact
 - **Fantasy core:** converting movement, mass, and forward commitment into a decisive collision that breaks position, forces reaction, or overwhelms the line before the enemy can stabilize
 - **Compatible origins:**
-  - weapon competencies: Spear, Heavy Weapons
+  - weapon competencies: Spear
   - weapon families: spears, lances, heavy impact weapons, mounted charge weapons, committed rush tools
   - natural attack forms: horn, tusk, headbutt crest, trampling forebody
   - secondary requirements: may pair well with Balance, Tolerance, Armor, Mount handling, or Line Control depending on whether the Technique leans toward impact integrity, pain endurance, mounted delivery, or post-impact occupation
@@ -457,7 +482,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Bastion / anchored defense / protected endurance
 - **Fantasy core:** becoming the point that does not easily yield, using structure, stance, shield mass, and disciplined endurance to hold a line that others would lose
 - **Compatible origins:**
-  - weapon competencies: Shield, Armor
+  - weapon competencies: Shield, Maces, Armor
   - weapon families: tower shields, heavy shields, defensive guard assemblies, fixed protection structures
   - natural attack forms: shell, plated crest, heavy forelimb, braced body frame
   - secondary requirements: may pair well with Tolerance, Armor, Containment, Interception, or Leadership depending on whether the Technique leans toward sustained hold, pain endurance, formation stability, protected reaction, or allied confidence
@@ -507,7 +532,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Impact / blunt trauma / structural shock
 - **Fantasy core:** delivering force so heavily and cleanly that posture, guard, breath, or body structure absorbs the hit before intent can recover
 - **Compatible origins:**
-  - weapon competencies: Heavy Weapons
+  - weapon competencies: Maces
   - weapon families: maces, hammers, clubs, crushing poles, impact-first striking tools
   - natural attack forms: shell slam, forelimb smash, headbutt, tail slam
   - secondary requirements: may pair well with Strength, Tolerance, Balance, Line Control, or Bastion depending on whether the Technique leans toward break force, body commitment, stance integrity, forced displacement, or defended collision
@@ -532,7 +557,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Rend / tearing force / persistent bodily degradation
 - **Fantasy core:** opening flesh, structure, or protection in a way that does not end at contact, leaving the target worse after the strike than the immediate impact alone would suggest
 - **Compatible origins:**
-  - weapon competencies: Axes, Short Blades
+  - weapon competencies: Axes, Long Blades
   - weapon families: axes, hooked blades, tearing edges, ripping tools
   - natural attack forms: claw, fang, hooked beak, serrated mandible
   - secondary requirements: may pair well with Strength, Precision, Tracking, Tolerance, or Shadow Pressure depending on whether the Technique leans toward brutal tearing, weak-point opening, pursuit damage, pain endurance, or close predatory follow-through
@@ -557,7 +582,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Sunder / breaking force / material opening
 - **Fantasy core:** attacking structure itself so that armor, guard, cover, weapon integrity, or bodily stability give way under targeted destructive force
 - **Compatible origins:**
-  - weapon competencies: Axes, Heavy Weapons
+  - weapon competencies: Axes, Maces
   - weapon families: axes, splitting tools, cleaving weapons, breaker heads, armor-opening implements
   - natural attack forms: horn, tusk, crushing mandible, wedge skull
   - secondary requirements: may pair well with Strength, Engineering, Identification, Impact, or Line Control depending on whether the Technique leans toward material break, weak-point reading, structural punishment, or opening a lane by destroying what held it
@@ -607,7 +632,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Deflection / redirection by edge / active off-line defense
 - **Fantasy core:** spoiling hostile force through angle, timing, and contact redirection so the incoming line fails to land cleanly and may open a countering advantage
 - **Compatible origins:**
-  - weapon competencies: Long Blades, Short Blades, Daggers
+  - weapon competencies: Long Blades, Daggers
   - weapon families: swords, sabres, side blades, defensive knives, parrying-capable edges
   - natural attack forms: forelimb blade, hooked claw, rigid beak edge
   - secondary requirements: may pair well with Evasion, Balance, Flow, Intuition, or Interception depending on whether the Technique leans toward contact redirection, evasive angle, rhythm spoil, or protective response
@@ -632,7 +657,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Interruption / execution break / hostile action spoil
 - **Fantasy core:** breaking the enemy's process before it resolves cleanly by striking timing, focus, structure, or commitment at the vulnerable moment of execution
 - **Compatible origins:**
-  - weapon competencies: Shields, Short Blades, Flexible Weapons, Thrown Weapons
+  - weapon competencies: Shield, Flexible Weapons, Thrown Weapons
   - weapon families: shields, interruptive off-hand tools, fast sidearms, hooking weapons, quick thrown counters
   - natural attack forms: tail, tongue, hooked claw, snapping mandible
   - secondary requirements: may pair well with Intuition, Focus, Interception, Torsion, or Deflection depending on whether the Technique leans toward timing read, execution spoil, wrap interruption, or contact redirection into failure
@@ -657,7 +682,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Corrosion / degrading contact / persistent hostile residue
 - **Fantasy core:** applying a contact that keeps making the target worse after impact through poison, acid, toxin, caustic residue, or another materially grounded degrading agent
 - **Compatible origins:**
-  - weapon competencies: Short Blades, Thrown Weapons, Ranged Weapons
+  - weapon competencies: Short Blades, Ranged Weapons
   - weapon families: venom-bearing light weapons, delivery weapons, acid carriers, residue-applying projectiles
   - natural attack forms: stinger, venom fang, acid spit, corrosive fluid jet
   - secondary requirements: may pair well with Tolerance, Resistance hybrids, Precision, Rend, or Tracking depending on whether the Technique leans toward delivery, persistence, prey weakening, or sustained deterioration after contact
@@ -682,7 +707,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Unpredictability / false read / non-obvious attack logic
 - **Fantasy core:** defeating the opponent's expectation by making the next line, angle, rhythm, or mode of contact resolve from the wrong assumption
 - **Compatible origins:**
-  - weapon competencies: Short Blades, Daggers, Flexible Weapons
+  - weapon competencies: Daggers, Flexible Weapons
   - weapon families: deceptive sidearms, flexible trick weapons, feint-capable close weapons, odd-angle tools
   - natural attack forms: tongue, hooked claw, feinting tail, snapping beak
   - secondary requirements: may pair well with Intuition, Deception, Imitation, Torsion, or Deflection depending on whether the Technique leans toward false read, expectation break, off-line contact, or deceptive redirection
@@ -707,7 +732,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Skirmish / light engagement / hit-and-reposition
 - **Fantasy core:** entering fast, striking in a meaningful but limited window, and changing position before the enemy can convert contact into stable control
 - **Compatible origins:**
-  - weapon competencies: Short Blades, Spears, Flexible Weapons
+  - weapon competencies: Short Blades, Spear, Flexible Weapons
   - weapon families: light sidearms, agile reach weapons, mobile skirmish tools, light flexible weapons
   - natural attack forms: claw, fang, light tail, quick forelimb
   - secondary requirements: may pair well with Evasion, Balance, Flow, Shadow Pressure, or Line Control depending on whether the Technique leans toward mobility, tempo theft, brief pressure, or short positional denial
@@ -732,7 +757,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Ward / reach discipline / pre-contact denial
 - **Fantasy core:** keeping hostile entry uncomfortable by maintaining a dangerous ready line that punishes overstep before full contact ever settles
 - **Compatible origins:**
-  - weapon competencies: Spear, Long Blades
+  - weapon competencies: Spear
   - weapon families: spears, polearms, stance-disciplined long blades, guard-reach weapons
   - natural attack forms: horn, beak, tusk
   - secondary requirements: may pair well with Balance, Focus, Perception, Deflection, or Line Control depending on whether the Technique leans toward poised denial, patient timing, angle read, or lane preservation
@@ -782,7 +807,7 @@ If the answer to `2` is weak, do not create a new profile yet.
 - **Family:** Unstoppable / drive-through commitment / refusal to stall
 - **Fantasy core:** continuing offense through partial contact, resistance, obstruction, or pain so that the first collision fails to halt the advance
 - **Compatible origins:**
-  - weapon competencies: Heavy Weapons, Axes, Spear
+  - weapon competencies: Maces, Axes
   - weapon families: heavy axes, breaker weapons, driving spears, mass-forward assault tools
   - natural attack forms: horn, tusk, forelimb smash, hoof trample
   - secondary requirements: may pair well with Tolerance, Armor, Charge, Bastion, or Balance depending on whether the Technique leans toward endurance-through-contact, advancing structure, or relentless follow-through
