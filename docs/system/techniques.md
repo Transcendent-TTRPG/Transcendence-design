@@ -508,6 +508,27 @@ The species origin explains why the Technique exists. The requirements explain w
 
 Only mark a species-origin Technique as biologically exclusive when that exclusivity is intentional and no credible non-magical substitute exists.
 
+### Condition authoring rule
+
+If a Technique naturally applies a condition, Alteration, Affliction, Poison, Curse, or other Ailment that does not yet exist, do not force the Technique into the closest existing condition by default.
+
+Instead:
+
+- check `docs/system/ailments.md` and `data/system/ailments.yaml`
+- decide whether the missing state is broadly useful enough to become a generic system Ailment
+- if it is, define it with a neutral system name, not a species-flavored name
+- then reference that Ailment from the Technique
+
+Species-origin Techniques may explain why the method exists, but the condition name should remain generic if the state can be caused by many sources.
+
+When a Technique applies an Ailment through an `R.R.`, its default scaling should usually increase Ailment severity by competency rank bands:
+
+- Ranks 1-2: Minor
+- Ranks 3-4: Moderate
+- Ranks 5-6: Severe
+
+Some Ailments use severity mainly to determine application pressure or recovery difficulty rather than changing the ongoing effect. That is still valid scaling.
+
 Special rule for `Resistances`:
 
 - a Resistance may **not** be the sole origin of a Technique
@@ -1608,7 +1629,7 @@ This does not stop the attack. It makes ignoring the shield line worse.
 | `name_en` | Raise the Dike |
 | `origin` | Shield |
 | `world_origin` | Species: Sauri; seed: Vessel Under Pressure / Procession Of Force; transmission: temple escort drills and river-warden protection rites; availability: Restricted |
-| `category` | attack |
+| `category` | utility |
 | `type` | reactive |
 | `trigger` | An enemy attack or movement-linked strike would reach an ally, protected creature, carried witness, relic, or designated charge within your shield reach. |
 | `requirements` | Minimum rank: Novice; weapon profile: Interception; equipment: shield; user must have a clear physical path to place the shield between the threat and the protected target |
@@ -1741,13 +1762,11 @@ For this attack only, reduce the Impact Roll result needed to validate a break b
 
 Example: if the attack uses a `d12` Impact die and break validation normally occurs only on `12`, a rank 3 user validates break on `9-12` while using this Technique.
 
-If the Impact Roll lands inside that expanded break-validation range, resolve the break validation using the target's Durability, the attack surface's Potency, and the future break formula.
+If the Impact Roll lands inside that expanded break-validation range, resolve the break validation using the target's Durability and the Breaking Parts formula:
 
-Until the critical / break subsystem is formally adopted, this Technique should be tested as:
+`Critical Potency > target Durability`
 
-- hit and Impact Roll result falls inside the expanded break-validation range: break validation is allowed
-- hit but Impact Roll result falls outside the expanded break-validation range: no break validation
-- miss or no damage: no break validation
+This Technique does not increase Potency; it only expands the Impact die results that permit break validation.
 
 **Restrictions:**
 
@@ -2460,12 +2479,12 @@ The Technique affects only that triggering movement. It does not reduce the targ
 | `world_origin` | Species: Naghii; seed: Coiled Readiness; transmission: archive guard ward formation drills; availability: Restricted |
 | `category` | utility |
 | `type` | active |
-| `trigger` | The user chooses to establish a spear ward zone around their current position, declaring the area as contested space and holding the posture rather than advancing or attacking. |
+| `trigger` | The user chooses to establish a spear ward zone around their current position, declaring the area as contested space and holding the posture rather than advancing away from it. |
 | `requirements` | Minimum rank: Novice; weapon profile: Ward; equipment: a spear or other committed reach weapon capable of sustained threat posture; state: stable footing and ability to hold the position |
 | `target` | zone |
 | `range` | self |
 | `area` | self-zone |
-| `duration` | until the user moves more than a negligible distance from the declared position, makes an attack, or is forced off position by a hostile action |
+| `duration` | until the user moves more than a negligible distance from the declared position, turns the ward away, or is forced off position by a hostile action |
 | `cost` | Rhythm 3; Attrition 1 |
 | `saving_roll` | none |
 | `tags` | utility, control, stability, setup |
@@ -2474,13 +2493,13 @@ The Technique affects only that triggering movement. It does not reduce the targ
 
 **World origin:** Naghii archive guard doctrine treats stillness held at a threshold as stored threat. A planted position with a spear declares the surrounding space as contested before any entry is attempted. Non-Naghii can learn it with any committed reach weapon that can credibly present a sustained threat posture across a zone.
 
-**Why this is not a base attack:** A base spear attack strikes at a target. `Plantar la Guardia` does not strike — it declares the space as contested and taxes any enemy who acts within it over time. Its identity is zone ownership through held posture, not a single hostile exchange.
+**Why this is not a base attack:** A base spear attack strikes at a target. `Plantar la Guardia` declares the space as contested and taxes any enemy who acts within it over time. The user can still fight from the planted point, but the Technique's identity is zone ownership through held posture, not a single hostile exchange.
 
 **Primary interaction surface:** zone control — the ward zone creates a sustained Rhythm tax on enemy actions.
 
 **Secondary interaction surface:** setup, because an enemy paying extra Rhythm for every action inside the zone falls behind on tempo relative to the user and any allies outside the zone.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique produces no immediate attack or movement — its value is entirely in the Rhythm tax it imposes on enemy actions over time. The posture ends the moment the user moves or attacks, which forces a genuine choice between holding the zone and committing to a strike.
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique produces no immediate attack or movement — its value is entirely in the Rhythm tax it imposes on enemy actions over time. The posture persists while the user fights from the planted point, but ends when the user abandons the point or turns the ward away. This keeps the Technique tactical: the user can act, but must decide whether holding that space remains worth the positional commitment and repeated Attrition.
 
 **Effect:** Establish a ward zone centered on the user extending to weapon reach plus 1 meter. While the zone is active, any enemy that performs an active action within the zone — including entering the zone through movement, attacking from within it, or using a Technique inside it — pays an additional Rhythm cost on top of that action's normal cost equal to 1 plus the user's Spear competency rank bonus.
 
@@ -2495,11 +2514,13 @@ The Technique affects only that triggering movement. It does not reduce the targ
 
 Allies within or passing through the zone do not pay this cost. Enemies may leave the zone freely without penalty — the cost applies only to active actions performed within or through the zone, not to clean withdrawal.
 
+The user may attack, use Techniques, defend, speak, or pressure enemies while holding the zone if those actions do not abandon the position or turn the ward away from the contested space.
+
 **Restrictions:**
 
 - requires stable footing to hold the ward position
 - ends when the user moves more than a negligible distance from the declared position
-- ends when the user makes an attack
+- ends when the user turns the ward away from the contested space or can no longer present the threat posture
 - ends when the user is forced off position by knockdown or displacement
 - does not affect allies within the zone
 - does not prevent enemies from leaving the zone freely
@@ -2577,11 +2598,20 @@ Allies within or passing through the zone do not pay this cost. Enemies may leav
 
 **Primary interaction surface:** reactive weapon-arc interruption.
 
-**Secondary interaction surface:** condition application — Impedido Minor on a failed Alteration R.R., preventing weapon-rooted Techniques until cleared by Enfoque.
+**Secondary interaction surface:** condition application — Impedido on a failed Alteration R.R., preventing weapon-rooted Techniques until cleared by Enfoque.
 
 **Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is a reactive action with a condition-application surface. The condition is recoverable through Enfoque, the trigger is narrow (weapon execution only), and the target has an R.R. window to resist. These constraints prevent the cost from rising above the standard anchor despite the condition output.
 
-**Effect:** Make a reactive Flexible Weapons check or equivalent tail or tendril Technique check against the triggering enemy. If the Technique resolves successfully, the target immediately makes an Alteration Resistance Roll. On a failed R.R., the target becomes Impedido (Minor): the triggering weapon action does not complete, and the target cannot use weapon-rooted Techniques until it succeeds on an Enfoque Specialization Roll against the original severity. On a successful R.R., Impedido is not applied and the triggering action resolves normally.
+**Effect:** Make a reactive Flexible Weapons check or equivalent tail or tendril Technique check against the triggering enemy. If the Technique resolves successfully, the target immediately makes an Alteration Resistance Roll.
+
+The `Impedido` severity is determined by the competency rank used for the Technique:
+
+- Ranks 1-2: Minor
+- Ranks 3-4: Moderate
+- Ranks 5-6: Severe
+- Higher ranks continue this progression if the system later defines higher severity bands.
+
+On a failed R.R., the target becomes `Impedido` at that severity: the triggering weapon action does not complete, and the target cannot use weapon-rooted Techniques until it succeeds on an Enfoque Specialization Roll against the original severity. On a successful R.R., `Impedido` is not applied and the triggering action resolves normally.
 
 **Restrictions:**
 
@@ -2591,7 +2621,7 @@ Allies within or passing through the zone do not pay this cost. Enemies may leav
 - does not create full restraint or movement restriction
 - does not apply to non-weapon actions or purely social commitments
 - does not prevent the target from taking non-weapon actions while Impedido
-- Impedido Minor is removed by a successful Enfoque S.R. against the original severity
+- Impedido is removed by a successful Enfoque S.R. against the original severity
 
 ### Cruzar la Punta
 
@@ -2651,7 +2681,7 @@ Allies within or passing through the zone do not pay this cost. Enemies may leav
 | `target` | self |
 | `range` | self |
 | `area` | self |
-| `duration` | until the first attack against the user after this Technique resolves, or until the start of the user's next turn — whichever comes first |
+| `duration` | until the user makes a D.R., C.R., or R.R. in response to a hostile action after this Technique resolves |
 | `cost` | Rhythm 3; Attrition 1 |
 | `saving_roll` | none |
 | `tags` | defense, mobility, counter_positioning, reposition |
@@ -2662,15 +2692,15 @@ Allies within or passing through the zone do not pay this cost. Enemies may leav
 
 **Why this is not a base Evasion check:** A base Evasion check tests whether the user avoids a specific incoming attack. `Vaciar el Blanco` repositions without reactions and opens a bounded defensive window tied to the new position being unsettled in the attacker's tracking — a mechanical state distinct from a single dodge roll.
 
-**Primary interaction surface:** proactive displacement that opens a brief D.R. bonus window.
+**Primary interaction surface:** proactive displacement that opens a brief defensive/resistance bonus window.
 
 **Secondary interaction surface:** mobility, because the 2-meter move without reaction opportunities allows the user to create spacing or reach terrain without paying a normal movement cost on their turn.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique is a quick bounded repositioning with a single defensive window that closes on the first attack. Attrition reflects that deliberate full-body displacement under pressure is a real physical effort, not a passive stance shift.
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique is a quick bounded repositioning with a single defensive window that closes when the user must answer hostile pressure. Attrition reflects that deliberate full-body displacement under pressure is a real physical effort, not a passive stance shift.
 
-**Effect:** Move up to 2 meters in any direction without granting reaction opportunities. Until the first attack against the user resolves after this Technique, or until the start of the user's next turn — whichever comes first — the user gains a bonus to their D.R. equal to their Evasion competency rank.
+**Effect:** Move up to 2 meters in any direction without granting reaction opportunities. The next time you must make a `D.R.`, `C.R.`, or `R.R.` in response to a hostile action after this Technique resolves, you gain a bonus to that roll equal to your Evasion competency rank.
 
-| Evasion rank | D.R. bonus |
+| Evasion rank | Roll bonus |
 | --- | --- |
 | Novice | `+1` |
 | Adept | `+2` |
@@ -2679,15 +2709,14 @@ Allies within or passing through the zone do not pay this cost. Enemies may leav
 | Consummate | `+5` |
 | Transcendent | `+6` |
 
-This bonus reflects that the new position has not yet settled in the attacker's tracking. Once the first attack resolves, the window closes regardless of outcome.
+This bonus reflects that the new position has not yet settled in the hostile actor's tracking. Once that defensive or resistance roll resolves, the window closes regardless of outcome.
 
 **Restrictions:**
 
 - requires enough space to move 2 meters in the chosen direction
 - does not function when the user is fully restrained or immobilized
-- D.R. bonus applies to the first attack only, then closes
+- bonus applies to the first `D.R.`, `C.R.`, or `R.R.` made in response to a hostile action, then closes
 - does not grant an attack or produce damage
-- window also closes at the start of the user's next turn if no attack came
 
 ### Leer el Arco
 
@@ -2834,7 +2863,7 @@ The read concerns original design intent, not current state: it does not reveal 
 | `origin` | Meditación + Contención + Mental Resistance (Abzu) |
 | `world_origin` | Species: Naghii; seed: Holding Dangerous Knowledge; transmission: igi-an channel management and containment drills; availability: Restricted |
 | `category` | utility |
-| `type` | active |
+| `type` | passive |
 | `trigger` | The user performs a meditation action specifically directed at reducing the intensity of an active Abzu-origin or mental Affliction. |
 | `requirements` | Minimum rank: Novice; Meditación at Novice or higher; Contención at Novice or higher; Mental Resistance (Abzu) at Novice or higher; active Abzu-origin or mental Affliction present |
 | `target` | self |
@@ -2988,7 +3017,7 @@ On a failed check in either surface: no fault is identified.
 | `target` | enemy |
 | `range` | close |
 | `area` | single |
-| `duration` | until Atrapado Minor resolved |
+| `duration` | until Atrapado is removed |
 | `cost` | Rhythm 4; Attrition 1 |
 | `saving_roll` | `R.R.` reduces — on a successful Alteration Resistance Roll, Atrapado is not applied and the movement proceeds normally |
 | `tags` | utility, control, hold, pressure |
@@ -2997,15 +3026,24 @@ On a failed check in either surface: no fault is identified.
 
 **World origin:** Naghii archive guard training treats exit control as a formal discipline: a guard does not pursue an escaping target, they hold the point of consequence. The specific skill taught is grip application at the exit moment — not during the movement but at its departure threshold, before the step is committed. This is why the technique fires even on exits that would ordinarily deny a reaction window: the hold is already placed when the movement begins.
 
-**Why this is not raw Agarre:** Raw Agarre use produces narrative hold and positioning control without a defined mechanical condition. `Fijar el Umbral` applies Atrapado Minor through the Alteration R.R. system — a gated condition with defined recovery mechanics — and uniquely fires against movement that explicitly does not provoke reactions.
+**Why this is not raw Agarre:** Raw Agarre use produces narrative hold and positioning control without a defined mechanical condition. `Fijar el Umbral` applies `Atrapado` through the Alteration R.R. system — a gated condition with defined recovery mechanics — and uniquely fires against movement that explicitly does not provoke reactions.
 
-**Primary interaction surface:** reactive hold application at the moment of exit — Atrapado Minor on a failed Alteration R.R.
+**Primary interaction surface:** reactive hold application at the moment of exit — Atrapado on a failed Alteration R.R.
 
 **Secondary interaction surface:** override permission — fires against declared no-reaction movement, denying a class of safe exits that most reactives cannot reach.
 
-**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. Trabar el Gesto (Rhythm 5) negates the triggering action outright on a failed R.R. Fijar el Umbral applies Atrapado Minor — a condition the target can clear on subsequent turns through an Agarre S.R. or an action spent. The narrower outcome justifies the lower cost. The override permission prevents further reduction: firing against declared no-reaction movement is a meaningful advantage the R.R. gate and Atrapado Minor's recoverable nature balance against.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. Trabar el Gesto (Rhythm 5) negates the triggering action outright on a failed R.R. Fijar el Umbral applies `Atrapado` — a condition the target can clear on subsequent turns through an Agarre S.R. or an action spent. The narrower outcome justifies the lower cost. The override permission prevents further reduction: firing against declared no-reaction movement is a meaningful advantage the R.R. gate and the condition's recoverable nature balance against.
 
-**Effect:** Make an Agarre check against the triggering enemy. On success, the target must make an Alteration Resistance Roll. On a failed R.R., the target gains Atrapado Minor: movement reduced to 0 and −1 to physical rolls. Atrapado Minor persists until the target succeeds on an Agarre Specialization Roll at the start of its turn or spends an action to break free. On a successful R.R., the movement proceeds normally and Atrapado is not applied.
+**Effect:** Make an Agarre check against the triggering enemy. On success, the target must make an Alteration Resistance Roll.
+
+The `Atrapado` severity is determined by the Agarre rank used for the Technique:
+
+- Ranks 1-2: Minor
+- Ranks 3-4: Moderate
+- Ranks 5-6: Severe
+- Higher ranks continue this progression if the system later defines higher severity bands.
+
+On a failed R.R., the target gains `Atrapado` at that severity: movement is reduced to 0 and the target suffers the normal Atrapado penalties for that severity. `Atrapado` persists until the target succeeds on an Agarre Specialization Roll against the original severity at the start of its turn or spends an action to break free. On a successful R.R., the movement proceeds normally and `Atrapado` is not applied.
 
 This Technique may be declared against movement that explicitly states it does not provoke reactions — the grip is placed at the departure threshold before the safe-exit window opens.
 
@@ -3018,7 +3056,7 @@ This Technique may be declared against movement that explicitly states it does n
 - does not prevent the target from using non-movement actions while Atrapado
 - does not function when user is fully restrained or immobilized
 - does not function against targets with no grippable anatomy (fluid forms, incorporeal entities)
-- Atrapado Minor is removed by a successful Agarre S.R. at the start of the target's turn or by spending an action
+- Atrapado is removed by a successful Agarre S.R. against the original severity at the start of the target's turn or by spending an action
 
 ---
 

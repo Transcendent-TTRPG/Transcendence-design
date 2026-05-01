@@ -25,6 +25,18 @@ fatigue_thresholds:
     - id: fatigue_3
       name: Fatigue 3
       condition: "attrition >= 3 * endurance"
+    - id: fatigue_4
+      name: Fatigue 4
+      condition: "attrition >= 4 * endurance"
+    - id: fatigue_5
+      name: Fatigue 5
+      condition: "attrition >= 5 * endurance"
+  overflow_rule: >
+    The base scale does not create levels above Fatigue 5. If any rule would
+    add Fatigue while the character is already at Fatigue 5, the character
+    becomes Incapacitated by exhaustion and cannot take Active Actions,
+    Reactions, or Techniques until they can rest, receive help, or apply a
+    specific rule that removes them from that state.
 
 fatigue_timing:
   structural_rule: >
@@ -50,6 +62,40 @@ fatigue_timing:
     applies: true
     visible: true
     trigger: scene_ends_or_intensity_drops
+
+carrying_capacity:
+  formula_components:
+    strength: "Fuerza efectiva, minimum 1"
+    tenacity: "Tenacidad efectiva, minimum 1"
+    size_multiplier: "by creature size"
+  formula: "max(1, Fuerza) * max(1, Tenacidad) * size_multiplier_kg"
+  size_multipliers_kg:
+    diminuto: 1
+    pequeno: 15
+    mediano: 35
+    grande: 80
+    enorme: 200
+    gigantesco: 800
+  load_bands:
+    light:
+      name_es: Carga Ligera
+      range: "up_to_50_percent_capacity"
+      sustained_fatigue: none
+    medium:
+      name_es: Carga Media
+      range: "more_than_50_up_to_75_percent_capacity"
+      sustained_fatigue: "+1 Fatigue per 2 hours"
+    heavy:
+      name_es: Carga Pesada
+      range: "more_than_75_up_to_100_percent_capacity"
+      sustained_fatigue: "+1 Fatigue per 1 hour"
+  rule: >
+    Sustained load Fatigue does not check Attrition thresholds. It is direct
+    Fatigue from prolonged transport or exploration burden. If a new sustained
+    load application would push the character beyond Fatigue 5, the character
+    becomes Incapacitated by exhaustion and must rest or receive help.
+  scope: "travel, exploration, marching, transport, or prolonged physical work; not checked each combat round"
+  over_capacity: "more than 100% capacity cannot be carried functionally without help, equipment, Technique, pack creature, or specific rule"
 
 attrition_cost_scale:
   name: Attrition Cost Scale

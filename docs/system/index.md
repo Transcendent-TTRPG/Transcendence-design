@@ -13,6 +13,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [difficulty-thresholds.md](difficulty-thresholds.md) | 5 universal difficulty tiers (Fundamentos–Extrema), base values, formula (Base + NR), opposed roll vs. fixed threshold distinction |
 | [ailments.md](ailments.md) | Agravios framework: universal severity model, duration doctrine, and initial Alteration entries |
 | [environmental-conditions.md](environmental-conditions.md) | Two condition types (natural/extranatural), 6 elements + combinations, 5 severity levels with examples, Hinder/Restrict/Accelerate model, Narrator NR guidance |
+| [cover-visibility-concealment.md](cover-visibility-concealment.md) | Cobertura, Visibilidad y Ocultación — physical cover, visual range, light sources, hidden state, active/passive detection |
 | [limbo-manifestations.md](limbo-manifestations.md) | Three Limbo manifestation types (ambient flow / vestige / link), detection methods, relationships between types, open design questions (D-09–D-11) |
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
 | [techniques.md](techniques.md) | Technique taxonomy: canonical fields, cost model, timing, duration, resistance, scaling, and authoring rules |
@@ -27,7 +28,9 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [attrition-fatigue.md](attrition-fatigue.md) | Desgaste, Aguante y Fatiga — attrition model, Endurance formula, Fatigue thresholds, action cost scale |
 | [atb-reference.md](atb-reference.md) | ATB quick reference — timeline model, rhythm cost, reactions, subsystem tracks, encounter layers, table prompts |
 | [equipment-overview.md](equipment-overview.md) | Equipment structure: armor slots and types, zone block formula, shield role, weapon assignment, NPC→PC hit table |
+| [wounds-and-damage.md](wounds-and-damage.md) | Heridas y Daño — Impact vs. Block, PC wound slots, NPC damage surfaces, stabilization with Medicine |
 | [mechanics-overview.md](mechanics-overview.md) | Horizontal view of all systems organized by ability design surfaces — use this when designing abilities |
+| [pending-design-questions.md](pending-design-questions.md) | Working backlog of unresolved system questions for wounds, criticals, cover, visibility, and concealment |
 
 ## Structured Data (`/data/system/`)
 
@@ -40,11 +43,14 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Tenacity-specialization interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
 | `equipment.yaml` | Equipment slots, armor types, zone block formula, shield formulas, hit-location table, slot effects |
+| `wounds-and-damage.yaml` | Impact vs. Block wound thresholds, wound slots by zone, PC/NPC damage surface split, stabilization requirements |
 | `difficulty-thresholds.yaml` | 5 difficulty tiers with base values and formula — applies to all roll-based systems |
 | `ailments.yaml` | Agravios taxonomy, universal severity model, and initial Alteration entries |
 | `environmental-conditions.yaml` | Two condition types, 6 elements and combinations, 5 severity levels with NR guidance |
+| `cover-visibility-concealment.yaml` | Cover levels, reduced visibility ranges, light sources, concealment state, detection rules |
 | `limbo-manifestations.yaml` | El Limbo definition, three manifestation types with characteristics and detection, inter-manifestation relationships |
 | `techniques.yaml` | Technique taxonomy, template, cost fields, duration models, and competency-domain matrix |
+| `technique-interaction-surfaces.yaml` | Catalog of mechanical surfaces Techniques can touch — roll, timing, attrition, damage, wounds, cover, concealment, equipment, recovery, information, and encounter parts |
 | `weapon-technique-profiles.yaml` | Weapon-profile authoring layer — combat families, compatible origins, natural weapon compatibility, and ATB timing identity |
 | `natural-attack-forms.yaml` | Natural-form mapping layer — bodily contact logic, combat role, and profile compatibility for natural attacks |
 | `specialization-technique-domains.yaml` | Technique identity space by specialization — primary/secondary tags, target profile, timing, and limits |
@@ -71,6 +77,8 @@ All content here is extracted from and must remain consistent with `transcendenc
 | Fatigue 1 threshold | Attrition ≥ Endurance |
 | Fatigue 2 threshold | Attrition ≥ 2 × Endurance |
 | Fatigue 3 threshold | Attrition ≥ 3 × Endurance |
+| Fatigue 4 threshold | Attrition ≥ 4 × Endurance |
+| Fatigue 5 threshold | Attrition ≥ 5 × Endurance |
 | Action cost scale | 0 (trivial) / 1 (standard) / 2 (high demand) / 3 (extreme) |
 | Personality trait factors | 5 (Big Five) |
 | Roll types | 7 (AR, DR, IR, CR, RR, SR, PR) |

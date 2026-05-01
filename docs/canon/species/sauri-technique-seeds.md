@@ -597,3 +597,68 @@ On a successful R.R., `Lacerado` is not applied, but the attack still resolves i
 - should not replace formal bleeding, wound, or injury subsystems if those are later defined
 
 **Authoring note:** This Technique is Sauri-origin but not Sauri-locked. Sauri bite explains the vessel logic, while axes, hooked blades, serrated natural weapons, and tearing tools reproduce the same method through edge, hook, and follow-through. It should feel like forcing the enemy to respect the wound, not like adding another flat damage rider.
+
+---
+
+## Technique Candidates - Bastion
+
+These entries use the Sauri `Mordisco / Bite` species expression as their origin logic, but they are authored through shared Weapon Technique Profiles. A Technique in this section should be executable by any credible weapon or natural weapon with the required `Bastion` profile, such as Sauri bite, mace, weighted haft, heavy striking head, or another Bastion-profile attack surface capable of converting impact/contact into a grounded fall.
+
+### Sellar la Presa
+
+| Field | Value |
+| --- | --- |
+| `name` | Sellar la Presa |
+| `name_en` | Seal the Hold |
+| `origin` | Bastion |
+| `world_origin` | Species: Sauri; seed: Jaw As Judgment / Sovereign Weight; transmission: jaw-drop drills, mace grounding forms, and temple execution practice; availability: Restricted |
+| `category` | attack |
+| `type` | active |
+| `trigger` | You make a committed Bastion-profile attack against a target whose footing or bodily posture can be broken by grounded force. |
+| `requirements` | Minimum rank: Novice; weapon profile: Bastion; equipment or anatomy: Sauri bite, mace, weighted haft, heavy striking head, or another credible Bastion-profile weapon/natural weapon capable of driving force downward or pinning posture into the ground |
+| `target` | enemy |
+| `range` | weapon or natural weapon reach |
+| `area` | single enemy |
+| `duration` | until Derribado is removed |
+| `cost` | Rhythm 5; Attrition 2 |
+| `saving_roll` | On hit, the target makes an Alteration Resistance Roll against Derribado |
+| `tags` | attack, control, stability, knockdown |
+
+**Fantasy:** The user closes force downward and makes the target's posture fail. The important part is not that the target is trapped in a grip; it is that the ground becomes the sealed point. The target is not merely struck. It is made to fall where the user's weight says the exchange ends.
+
+**World origin:** Sauri jaw discipline treats judgment as something that descends. In temple practice, executioners and mace-bearers learn to close a body into the floor the way a stone door closes into its threshold: not by chasing the target, but by making their posture unable to remain upright.
+
+**Why this is not `Fijar el Umbral`:** `Fijar el Umbral` is a Naghii reactive hold that stops departure by applying `Atrapado`. `Sellar la Presa` is an active Bastion attack that breaks posture by applying `Derribado`. It does not keep the target restrained after the fall. The control comes from making the target spend its next movement recovery from the ground, not from holding them in place.
+
+**Primary interaction surface:** grounded knockdown.
+
+**Secondary interaction surface:** positional dominance after a fall.
+
+**Cost note:** `Rhythm 5 / Attrition 2` is intentional. The Technique is a committed attack that redirects force into the target's posture rather than simply trying to hurt them. The higher Attrition reflects the body commitment needed to drive through balance and settle the result into the ground.
+
+**Effect:** Make an active Bastion-profile attack against the target. If the attack hits, resolve damage normally. Then the target makes an Alteration Resistance Roll against `Derribado`.
+
+The `Derribado` severity is determined by the competency rank used for the Technique:
+
+- Ranks 1-2: Minor
+- Ranks 3-4: Moderate
+- Ranks 5-6: Severe
+- Higher ranks continue this progression if the system later defines higher severity bands.
+
+On a failed R.R., the target gains `Derribado` at that severity. The target is brought to the ground and suffers the normal `Derribado` effect: `-3` to all rolls, and its first movement action is spent getting up.
+
+After applying `Derribado`, you may choose to remain within reach and claim the fallen point. If you do, you gain a bonus equal to your competency rank to the first `D.R.` or physical `R.R.` you make against that target before it stands, but you lose this bonus if you voluntarily move more than 1 meter away, attack a different target, or turn the Bastion surface away from the fallen target.
+
+On a successful R.R., `Derribado` is not applied, but the attack still resolves its normal damage if it hit.
+
+**Restrictions:**
+
+- requires a valid Bastion-profile weapon or natural weapon capable of driving force into posture, balance, or the ground
+- cannot be used with shields, armor, or passive defensive surfaces unless those objects are separately defined as weapons with the Bastion profile
+- cannot be used with a surface that cannot plausibly knock the target down through grounded force
+- affects one target only
+- does not restrain, grapple, pin, drag, carry, suffocate, disarm, or create automatic damage over time by itself
+- cannot knock down targets whose scale, body plan, state, anchoring, or fiction makes knockdown impossible
+- applies `Derribado`, a generic Alteration, not a Sauri-only condition
+
+**Authoring note:** This Technique is Sauri-origin but not Sauri-locked. Sauri bite explains the doctrine through jaw closure and weight, while maces and other Bastion-profile weapons reproduce the same method through grounded mass and follow-through. It should feel like sealing the target into the floor for a moment, not like a generic grapple with a crocodile name.

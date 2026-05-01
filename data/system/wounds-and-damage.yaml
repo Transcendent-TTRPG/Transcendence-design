@@ -1,0 +1,586 @@
+meta:
+  version: "0.1"
+  status: draft
+  last_updated: "2026-04-30"
+
+taxonomy:
+  canonical_term:
+    es: Heridas y Daño
+    en: Wounds and Damage
+  principle: >
+    Player attacks against NPCs use the target's damage model. NPC attacks
+    against player characters use localized wound severity determined by the
+    ratio between Impact and zone Block.
+
+impact:
+  roll_name: Impacto
+  formula: "(competency_rank * weapon_damage) + (associated_characteristic * weapon_grade)"
+  note: >
+    Impact represents the pressure transmitted by a successful hit after the
+    attacker has found an opening.
+
+critical_impact:
+  trigger: "designated_critical_impact_die_rolls_its_maximum_value"
+  designation_rule: >
+    If an Impact Roll uses multiple damage dice, the attacker designates one
+    die as the critical die before rolling. At the table, use a different color.
+    In digital tools, label one die as critical/main. Only that die can validate
+    Critical Impact; other Impact dice add damage normally.
+  critical_faces:
+    d4: 4
+    d6: 6
+    d8: 8
+    d10: 10
+    d12: 12
+  principle: >
+    Smaller Impact dice validate critical hits more often. Larger Impact dice
+    validate critical hits less often but usually carry higher base Impact.
+    Increasing competency rank increases total Impact dice but does not
+    automatically increase critical frequency because only the designated
+    critical die can validate the critical. Critical frequency and part-breaking
+    power are separate surfaces.
+  default_permissions:
+    - critical_damage_against_npc_if_target_model_defines_it
+    - break_attempt_against_declared_breakable_target
+    - technique_trigger_if_technique_requires_critical_impact
+    - physical_consequence_if_target_or_attack_defines_it
+
+critical_potency:
+  formula: "base_potency * weapon_potency_multiplier"
+  use: >
+    Critical Potency measures the weapon's ability to break, deform, open, or
+    disable resistant parts during a Critical Impact.
+  weapon_multipliers:
+    spear:
+      name_es: Lanzas
+      multiplier: 0.8
+      role: "point pressure, light armor puncture, entry punishment"
+    axe:
+      name_es: Hachas
+      multiplier: 1.2
+      role: "material opening, rigid surface splitting, medium armor compromise"
+    mace:
+      name_es: Mazas
+      multiplier: 1.5
+      role: "heavy armor breaking, resistant structure crushing"
+    long_blade:
+      name_es: Hojas largas
+      multiplier: 1.0
+      role: "broad deep cutting against medium-resistance surfaces"
+    dagger:
+      name_es: Dagas
+      multiplier: 0.5
+      role: "frequent precise criticals against vulnerable or unprotected zones"
+    short_blade:
+      name_es: Hojas cortas
+      multiplier: 0.75
+      role: "quick cuts with moderate potency against soft or exposed targets"
+    thrown:
+      name_es: Armas arrojadizas
+      multiplier: 0.4
+      role: "precise ranged impact with low structural break power"
+    ranged:
+      name_es: Armas a distancia
+      multiplier: 0.6
+      role: "ranged puncture or impact, limited against hard structures"
+    flexible:
+      name_es: Armas flexibles
+      multiplier: 0.3
+      role: "control, restraint, imbalance, low direct break power"
+
+breaking_parts:
+  availability: "requires_critical_impact_and_declared_breakable_target"
+  validation_formula: "critical_potency >= target_durability"
+  failure_effect: "if critical_potency < target_durability, target loses 1 durability instead of breaking"
+  durability_loss_scope: >
+    Durability loss occurs only when resolving a valid break attempt: Critical
+    Impact, a Technique that permits breaking without a critical, or a specific
+    attack rule. Normal attacks do not reduce durability by default.
+  valid_targets:
+    - weapon
+    - shield
+    - armor_piece
+    - limb
+    - jaw
+    - horn
+    - shell
+    - tail_segment
+    - wing
+    - joint
+    - vital_point
+    - encounter_defined_destructible_part
+  consequences:
+    - disable_attack_option
+    - reduce_defense_or_block
+    - destroy_or_disable_equipment
+    - disable_technique_dependency
+    - reduce_mobility
+    - alter_behavior_pattern
+    - open_vulnerable_point
+    - change_encounter_phase
+    - reduce_extractable_resource_quality
+  broken_equipment:
+    block_rule: "broken equipment provides no Block until repaired or replaced"
+    durability_loss_rule: "durability loss alone does not reduce Block unless a specific rule says so"
+    principle: >
+      Equipment functions until it breaks. Failed valid break attempts reduce
+      Durability by 1, making future break attempts easier, but do not create
+      incremental Block recalculation by default.
+  limits:
+    - weapon_must_plausibly_affect_declared_target
+    - soft_tissue_cannot_be_broken_as_structure_unless_defined_as_targetable_part
+    - failed_break_attempt_reduces_target_durability_by_1
+
+creature_parts:
+  principle: >
+    Important enemies use anatomical or structural parts defined by their
+    creature design. They do not need to share player body-zone names, but
+    should usually be organized into five major locations for readability.
+  location_count_default: 5
+  part_fields:
+    defense_roll: "D.R. or difficulty to hit the part"
+    hp: "damage reserve for the part"
+    block: "Impact reduction while the part is functional"
+    potency: "structural offensive or breaking power if the part attacks"
+    durability: "resistance against breaking"
+    linked_abilities: "attacks, Techniques, traits, or phases that depend on the part"
+  design_role: >
+    Breaking parts limits enemy options. This is a core counterplay route
+    against creatures that are stronger than player characters in direct stats.
+  examples:
+    ice_wolf_jaw:
+      linked_ability: Aliento Helado
+      broken_consequence: "cannot use the linked breath ability while the jaw remains broken"
+  material_rule:
+    damage_note: "material does not necessarily change base weapon damage"
+    potency: "material can greatly change structural breaking power"
+    durability: "material can greatly change resistance to being broken"
+    catalog_dependency: "exact potency and durability values belong to material and equipment catalogs"
+
+block:
+  formula: "BC + BM + CD + CO"
+  terms:
+    BC: "Bloqueo base por categoria de armadura"
+    BM: "Bono de material"
+    CD: "Competencia Defensiva: armor competency level for the armor type in the resolved zone"
+    CO: "Calidad / grado de la pieza"
+  base_block:
+    light: 2
+    medium: 4
+    heavy: 6
+  material_bonus_formula: "floor(durability / 5)"
+  piece_grade_range: [1, 3]
+
+damage_surfaces:
+  pc_to_npc:
+    model: target_defined_damage
+    default_formula: "effective_damage = max(0, impact - target_block)"
+    target_models_allowed:
+      - general_hp
+      - zone_hp
+      - zone_defense
+      - vital_points
+      - destructible_parts
+      - phase_subsystems
+    note: >
+      NPCs, creatures, monsters, champions, and bosses may define their own HP
+      and zone structures. Player attacks do not use the PC wound table by default.
+    critical_resolution: >
+      Critical Impact resolves against the target model. It may deal additional
+      damage, allow break attempts, affect vital points, or trigger phase changes
+      only when those options are defined by the enemy, weapon, or Technique.
+  npc_to_pc:
+    model: localized_wounds
+    resolution_order:
+      - determine_hit_zone
+      - identify_zone_armor
+      - resolve_DR_with_zone_agility_rule
+      - if_attack_connects_roll_impact
+      - calculate_zone_block
+      - compare_impact_to_block
+      - record_wound_if_any
+    critical_resolution: >
+      Critical Impact against a player character does not affect mental or
+      horror systems by default. It remains physical pressure on the struck
+      zone. By default it still uses the Impact vs. Block wound table; specific
+      NPC attacks or Techniques may add wound escalation, Ailments, equipment
+      damage, Resistance Rolls, or posture-breaking effects.
+    critical_wound_resistance_rule:
+      default: "Critical wounds do not force Resistance Rolls by default."
+      reason: >
+        A Critical Wound already occupies 3 slots and may saturate or collapse
+        a zone by itself. Forcing Resistance Rolls on every Critical Wound would
+        double-punish the same event.
+      force_resistance_when:
+        - critical_wound_causes_collapse_in_vital_zone
+        - attack_npc_or_technique_says_so
+        - associated_ailment_requires_resistance_roll
+        - narrator_declares_extreme_scene_circumstance
+      vital_collapse_resistance:
+        type: "R.R."
+        resistance: Alteracion
+        meaning: "bodily shock, functional loss, internal trauma, or physical interruption"
+
+npc_to_pc_wound_thresholds:
+  comparison: impact_vs_block_ratio
+  bands:
+    - id: none
+      name_es: Sin herida
+      condition: "impact <= block * 1"
+      slots: 0
+    - id: light
+      name_es: Herida Leve
+      condition: "impact > block * 1 and impact < block * 2"
+      slots: 1
+    - id: grave
+      name_es: Herida Grave
+      condition: "impact >= block * 2 and impact < block * 3"
+      slots: 2
+    - id: critical
+      name_es: Herida Critica
+      condition: "impact >= block * 3"
+      slots: 3
+
+wound_slots:
+  zones:
+    head:
+      name_es: Cabeza
+      slots: 3
+    torso:
+      name_es: Torso
+      slots: 5
+    arms:
+      name_es: Brazos
+      slots: 4
+    legs:
+      name_es: Piernas
+      slots: 4
+    feet:
+      name_es: Pies
+      slots: 3
+  severity_slots:
+    light: 1
+    grave: 2
+    critical: 3
+  zone_states:
+    summary:
+      functional: "still_has_at_least_1_free_slot"
+      saturated: "reached_exactly_the_zone_slot_maximum"
+      collapsed: "received_damage_that_exceeded_available_slots"
+    functional:
+      condition: "zone_has_at_least_one_free_slot"
+      effect: "no_automatic_zone_penalty"
+    saturated:
+      condition: "all_slots_filled_without_overflow"
+      effect: "apply_zone_saturation_penalty"
+    collapsed:
+      condition: "incoming_wound_did_not_fit_or_saturated_zone_received_another_wound"
+      effect: "apply_zone_collapse_effect_and_possible_body_state_escalation"
+  saturation_penalty:
+    formula: "occupied_slots_in_zone"
+    scope: "only rolls and actions that clearly depend on the saturated zone"
+    values_by_zone:
+      head: -3
+      torso: -5
+      arms: -4
+      legs: -4
+      feet: -3
+  overflow_rule:
+    summary: >
+      If a wound does not fit in the remaining slots of the struck zone, fill
+      the remaining slots and resolve Overflow. Overflow represents functional
+      failure of the zone, not hidden HP.
+    steps:
+      - fill_remaining_slots
+      - mark_zone_collapsed
+      - apply_zone_collapse_effect
+      - if_head_or_torso_force_alteration_resistance_roll_against_wound_severity
+      - if_already_collapsed_refresh_or_escalate_body_state
+    collapse_difficulty_by_wound:
+      light: Desafiante
+      grave: Rigurosa
+      critical: Exigente
+  zone_penalties:
+    stacking_rule: >
+      Zone penalties represent accumulated functional loss. If an Ailment
+      already imposes an equal or stronger effect, use the stronger effect
+      instead of stacking identical copies.
+    head:
+      saturated:
+        - "Saturation penalty to mental and visual/auditory perception Specialization Rolls"
+        - "Saturation penalty to Preparation"
+      collapsed:
+        - "apply Aturdido"
+        - "Alteration Resistance Roll against the severity of the wound that caused Collapse; on failure, become Inconsciente"
+    torso:
+      saturated:
+        - "Saturation penalty to Tolerancia, strenuous physical actions, heavy defenses, holding posture under impact, and Techniques that stress the torso"
+      collapsed:
+        - "become Incapacitado until stabilized"
+        - "if the collapsing wound was Critical, also enter Agonia"
+    arms:
+      saturated:
+        - "Saturation penalty to Attack Rolls, Impact Rolls, and physical Specialization Rolls that clearly depend on arms, grip, shield, weapons, or manipulation"
+      collapsed:
+        - "one arm, grip, or execution line becomes unusable"
+        - "cannot use two-handed weapons, shield, or limb-dependent Techniques if they rely on the collapsed part"
+        - "may apply Impedido"
+    legs:
+      saturated:
+        - "movement reduced by half"
+        - "Saturation penalty to Strength or Tenacity physical Specialization Rolls that depend on legs: sustained running, jumping, charging, climbing with lower-body support, pushing, resisting push, or standing up"
+      collapsed:
+        - "cannot walk functionally without support or help"
+        - "cannot charge, run, or jump"
+    feet:
+      saturated:
+        - "cannot sprint"
+        - "Saturation penalty to Agility physical Specialization Rolls that depend on fine footing: balance, quiet stepping, turns, braking, difficult terrain, fine evasion, or sudden direction changes"
+      collapsed:
+        - "can move only with support, help, or an appropriate Specialization Roll"
+        - "if attempting to move under pressure without support and failing, apply Derribado"
+  repeated_overflow:
+    rule: >
+      If an already collapsed zone receives another wound, record the pressure,
+      refresh or reapply the collapse effect, and escalate body state if the
+      zone is vital.
+    vital_zone_escalation:
+      head:
+        resistance_roll: Alteration
+        on_failure: Inconsciente
+      torso:
+        resistance_roll: Alteration
+        on_failure: Agonia
+      head_or_torso_critical_while_in_agonia:
+        default_result: Muerto
+        exceptions:
+          - specific_rule
+          - immediate_intervention
+          - Technique
+          - table_decision
+    non_vital_zone_note: >
+      Arms and legs can become unusable without automatically killing the
+      character. Death requires vital compromise, a specific rule, or fiction
+      that clearly supports it.
+
+body_states:
+  operative:
+    name_es: Operativo
+    meaning: "Can act normally, subject to zone, Ailment, Fatigue, and Attrition penalties."
+  incapacitated:
+    name_es: Incapacitado
+    meaning: >
+      Cannot perform meaningful actions. May speak, crawl, hold something, or
+      react weakly only if the fiction supports it.
+  unconscious:
+    name_es: Inconsciente
+    meaning: "Cannot act or perceive usefully and cannot actively defend."
+  agony:
+    name_es: Agonia
+    meaning: >
+      At risk of death without stabilization. Cannot perform meaningful actions.
+  dead:
+    name_es: Muerto
+    meaning: "No longer recoverable by normal scene-level means."
+
+hit_location:
+  scope: npc_to_pc_only
+  table_1d100:
+    - range: "01-04"
+      zone: head
+    - range: "05-10"
+      zone: feet
+    - range: "11-45"
+      zone: torso
+    - range: "46-65"
+      zone: arms
+    - range: "66-100"
+      zone: legs
+
+stabilization:
+  meaning: >
+    Stabilization prevents immediate worsening, active shock, open bleeding,
+    uncontrolled pain, or functional collapse from continuing. It does not
+    erase the wound.
+  roll:
+    type: "S.R."
+    specialization: Medicina
+    characteristic: Sabiduria
+  difficulty_by_wound:
+    light:
+      name_es: Herida Leve
+      difficulty: Desafiante
+      required_kit: Basico
+      time: "30 minutes"
+    grave:
+      name_es: Herida Grave
+      difficulty: Rigurosa
+      required_kit: Avanzado
+      time: "60 minutes"
+    critical:
+      name_es: Herida Critica
+      difficulty: Exigente
+      required_kit: Especializado
+      time: "8 hours of rest and treatment"
+  missing_tools_guidance:
+    - narrator_may_disallow_roll
+    - narrator_may_increase_difficulty
+    - narrator_may_allow_partial_stabilization_if_fiction_supports_it
+
+treatment_and_healing:
+  principle: >
+    Stabilizing, treating, and healing are distinct steps. Medicine is the base
+    specialization for all three. Items, Techniques, and artifacts may modify
+    these rules from their own systems, but they are not part of the base wound
+    rule.
+  steps:
+    stabilize:
+      name_es: Estabilizar
+      function: "applies to a specific wound to stop immediate worsening, active shock, open bleeding, or continuing collapse"
+      frees_slots: false
+    treat:
+      name_es: Tratar
+      function: "applies to a body zone during a full rest to care for stabilized occupied slots in that zone"
+      frees_slots: false
+    heal:
+      name_es: Curar
+      function: "free occupied wound slots as the result of full rest with successful treatment"
+      frees_slots: true
+  object_model:
+    wound: "narrative and mechanical record of a received hit"
+    slot: "physical damage occupied by a wound"
+    zone: "body part where those slots are marked"
+    stabilize_targets: wound
+    treat_targets: zone
+    heal_targets: occupied_slot
+  care_states:
+    active:
+      name_es: Activa
+      meaning: "not stabilized; may continue worsening or producing active collapse"
+    stabilized:
+      name_es: Estabilizada
+      meaning: "no immediate worsening; still occupies slots and keeps zone consequences"
+    treated:
+      name_es: Tratada
+      meaning: "the zone containing the wound received Medicine care during a full rest and may free one slot at the end of that rest"
+    healed:
+      name_es: Curada
+      meaning: "lost one or more wound slots through recovery; if it reaches 0 slots, it disappears"
+  healing_track:
+    principle: >
+      Light, Grave, and Critical define how many slots a wound occupies when it
+      is created. Healing is slot-based rather than severity-table based.
+    severity_by_slots:
+      3: critical
+      2: grave
+      1: light
+      0: healed
+    base_recovery_rule: "one occupied wound slot recovered per treated character per full rest"
+    recovery_limit: >
+      A character recovers only 1 wound slot per full rest through the base
+      Medicine rule. Extra time or multiple Medicine users cannot free
+      additional slots in the same full rest unless a specific rule says
+      otherwise.
+  rest_recovery:
+    prerequisites:
+      - wound_must_be_stabilized_before_it_can_heal
+      - active_wounds_must_be_stabilized_first
+    rest_windows:
+      thirty_minutes:
+        can_stabilize: light
+        can_treat_for_slot_recovery: false
+        recovered_slots: 0
+      sixty_minutes:
+        can_stabilize: grave
+        can_treat_for_slot_recovery: false
+        recovered_slots: 0
+      full_rest:
+        can_stabilize: critical_or_any_stabilized_wound
+        can_treat_for_slot_recovery: true
+        recovered_slots_on_success: 1
+    treatment_roll_by_most_severe_occupied_slot:
+      light:
+        rest: "full rest"
+        roll:
+          specialization: Medicina
+          characteristic: Sabiduria
+          difficulty: Desafiante
+          required_kit: Basico
+        result: "if the zone is treated during full rest, frees 1 occupied slot"
+      grave:
+        rest: "full rest"
+        roll:
+          specialization: Medicina
+          characteristic: Sabiduria
+          difficulty: Rigurosa
+          required_kit: Avanzado
+        result: "if the zone is treated during full rest, frees 1 occupied slot"
+      critical:
+        rest: "full rest"
+        roll:
+          specialization: Medicina
+          characteristic: Sabiduria
+          difficulty: Exigente
+          required_kit: Especializado
+        result: "if the zone is treated during full rest, frees 1 occupied slot"
+    zone_burden_modifier:
+      timing: "count occupied wound slots in the treated zone at the start of the full rest"
+      modifiers:
+        - occupied_slots: "1"
+          adjustment: "+0 NR"
+        - occupied_slots: "2-3"
+          adjustment: "+1 NR"
+        - occupied_slots: "4-5"
+          adjustment: "+2 NR"
+      collapsed_zone_extra_adjustment: "+1 NR"
+      principle: >
+        Treatment difficulty uses the most severe occupied slot in the treated
+        zone as the base difficulty, then increases with the total occupied
+        slots in that body zone. A small wound in a heavily damaged torso is
+        harder to recover than the same wound in an otherwise healthy torso.
+    target_selection:
+      rule: "declare which occupied slot in the treated zone is being recovered before rolling"
+      default_result: "only 1 occupied slot is freed on success; it must belong to a stabilized wound"
+      narrator_may_require_most_severe_first_when:
+        - critical_wound_dominates_zone_function
+        - wound_is_causing_Agonia
+        - wound_is_maintaining_Collapse
+        - minor_wounds_cannot_be_safely_reached_first
+    no_treatment_rule: "wounds do not recover slots without treatment unless a specific rule says otherwise"
+  treatment_without_healing:
+    possible_effects:
+      - suspend_Agonia_after_stabilization
+      - allow_incapacitated_character_to_become_operational_with_remaining_zone_penalties_if_shock_bleeding_or_pain_was_the_cause
+      - remove_or_reduce_Ailment_if_that_Ailment_allows_Medicine_recovery
+      - prepare_patient_for_transport_or_rest_without_worsening
+    limitation: >
+      Treatment does not remove Saturation or Collapse by itself. Those states
+      change when enough wound slots are freed or a specific rule restores
+      function.
+  unsafe_rest:
+    narrator_options:
+      - prevent_treatment
+      - increase_difficulty
+      - allow_stabilization_without_improvement
+    examples:
+      - heavy_rain
+      - extreme_cold
+      - pursuit
+      - contamination
+      - forced_movement
+      - constant_threat
+
+ailment_relation:
+  rule: >
+    Wounds are localized damage. Ailments are functional harmful states. A wound
+    may justify or apply an Ailment only when a rule, Technique, or Narrator
+    decision explicitly makes that connection.
+  examples:
+    - wound_cut_may_apply_lacerado
+    - head_blunt_trauma_may_apply_disorientation_or_stun_like_alteration
+    - contaminated_puncture_may_create_infection_risk
+    - crushing_wound_may_apply_physical_alteration
+
+open_questions:
+  - id: WD-01
+    question: "Should some creature traits ignore, soften, or alter zone Saturation and Collapse?"

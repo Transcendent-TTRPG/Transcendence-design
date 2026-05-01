@@ -1,0 +1,482 @@
+meta:
+  version: "0.1"
+  status: draft
+  last_updated: "2026-04-30"
+
+taxonomy:
+  canonical_term:
+    es: Superficies de Interaccion de Tecnicas
+    en: Technique Interaction Surfaces
+  purpose: >
+    Catalog of existing mechanical surfaces that Techniques may modify. Use
+    this file as a design index when creating Techniques so new abilities touch
+    named systems instead of inventing disconnected effects.
+  authoring_rule: >
+    Every Technique should declare at least one primary mechanical surface, the
+    operation used on that surface, and the counterplay or limitation that keeps
+    the effect bounded.
+
+mechanical_surface_field:
+  recommended_shape:
+    mechanical_surfaces:
+      primary: ""
+      secondary: []
+      operations: []
+      counterplay: []
+      balance_notes: ""
+
+operation_verbs:
+  - grant_bonus
+  - impose_penalty
+  - reroll
+  - convert
+  - replace
+  - trigger
+  - suppress
+  - extend
+  - reduce
+  - escalate
+  - downgrade
+  - mark
+  - reveal
+  - hide
+  - relocate
+  - intercept
+  - break
+  - degrade
+  - restore
+  - consume
+  - refund
+
+surfaces:
+  roll_resolution:
+    name_es: Tiradas y Resolucion
+    terms:
+      - T.A.
+      - T.D.
+      - T.I.
+      - T.E.
+      - T.C.
+      - T.R.
+      - T.P.
+    can_modify:
+      - bonus_or_penalty
+      - reroll_condition
+      - opposed_roll
+      - timing_of_roll
+      - roll_conversion
+    common_counterplay:
+      - opposed_roll
+      - condition_limit
+      - narrow_trigger
+    balance_risk: "flat numerical inflation without new tactical decisions"
+
+  thresholds:
+    name_es: Umbrales y Dificultad
+    terms:
+      - dificultad
+      - NR
+      - umbral
+      - grado_de_exigencia
+    can_modify:
+      - difficulty_step
+      - effective_NR
+      - fixed_threshold
+      - task_access
+    common_counterplay:
+      - preparation_required
+      - tool_requirement
+      - limited_target_family
+    balance_risk: "making hard tasks reliably trivial"
+
+  timing_atb:
+    name_es: Ritmo y ATB
+    terms:
+      - Ritmo
+      - ATB
+      - Reaccion
+      - Preparacion
+      - Valor_de_Apertura
+    can_modify:
+      - rhythm_cost
+      - reaction_window
+      - follow_up_window
+      - action_timing
+      - setup_conversion
+    common_counterplay:
+      - trigger_width
+      - higher_rhythm_cost
+      - attrition_cost
+      - once_per_window_limit
+    balance_risk: "denying actions or manipulating tempo without paying enough"
+
+  cost_pressure:
+    name_es: Desgaste Aguante y Fatiga
+    terms:
+      - Desgaste
+      - Aguante
+      - Fatiga
+      - carga_sostenida
+      - capacidad_de_carga
+    can_modify:
+      - attrition_cost
+      - endurance_pressure
+      - fatigue_tolerance
+      - sustained_load
+      - recovery_of_control
+    common_counterplay:
+      - fatigue_cap
+      - recovery_window
+      - equipment_weight
+      - rest_requirement
+    balance_risk: "removing the expedition pressure that makes cost matter"
+
+  damage_impact:
+    name_es: Impacto Bloqueo y Dano
+    terms:
+      - Impacto
+      - Bloqueo
+      - HP
+      - dano
+      - zona
+    can_modify:
+      - impact_bonus
+      - block_reduction
+      - target_damage_model
+      - zone_damage
+      - damage_conversion
+    common_counterplay:
+      - defense_roll
+      - block_still_applies
+      - prepared_zone_required
+      - target_model_limit
+    balance_risk: "stacking extra damage with block bypass"
+
+  critical_breaking_parts:
+    name_es: Impacto Critico y Romper Partes
+    terms:
+      - Impacto_Critico
+      - dado_critico_designado
+      - Potencia_Critica
+      - Potencia_base
+      - Multiplicador_de_Potencia
+      - Durabilidad
+      - parte_rompible
+    can_modify:
+      - critical_trigger
+      - break_permission
+      - potency_modifier
+      - durability_degradation
+      - declared_break_target
+    common_counterplay:
+      - valid_material_contact
+      - target_durability
+      - attack_must_hit
+      - technique_cost
+    balance_risk: "invalidating creature parts or equipment without exposure"
+
+  wounds_body_state:
+    name_es: Heridas Ranuras y Estado Corporal
+    terms:
+      - Herida_Leve
+      - Herida_Grave
+      - Herida_Critica
+      - ranura_de_herida
+      - Saturada
+      - Colapsada
+      - Aturdido
+      - Impedido
+      - Derribado
+      - Estabilizar
+      - Tratar
+      - Curar
+    can_modify:
+      - slot_pressure
+      - saturation_penalty
+      - collapse_consequence
+      - treatment_access
+      - healing_window
+    common_counterplay:
+      - Medicine_roll
+      - full_rest
+      - treatment_required
+      - resistance_roll_when_defined
+    balance_risk: "healing or ignoring wound slots too cheaply"
+
+  equipment_material:
+    name_es: Equipo Material y Objetos
+    terms:
+      - arma
+      - escudo
+      - armadura
+      - material
+      - calidad
+      - Durabilidad
+      - Bloqueo
+      - Potencia
+    can_modify:
+      - equipment_requirement
+      - material_permission
+      - block_source
+      - durability_trade
+      - handling_condition
+    common_counterplay:
+      - item_break
+      - load_limit
+      - size_limit
+      - specific_equipment_needed
+    balance_risk: "putting item rules inside Techniques or ignoring load"
+
+  cover_positioning:
+    name_es: Cobertura Posicion y Movimiento
+    terms:
+      - Cobertura_Ligera
+      - Cobertura_Media
+      - Cobertura_Total
+      - linea_de_ataque
+      - escudo
+      - empuje
+      - desplazamiento
+    can_modify:
+      - cover_level
+      - attack_line
+      - protected_creature
+      - forced_movement
+      - area_cover_interaction
+    common_counterplay:
+      - move_to_new_angle
+      - area_attack
+      - destroy_cover
+      - perception_or_timing_window
+    balance_risk: "turning local cover into general immunity"
+
+  visibility_concealment:
+    name_es: Visibilidad y Ocultacion
+    terms:
+      - Visibilidad
+      - Ocultacion
+      - Ocultarse
+      - Percepcion
+      - posicion_aproximada
+      - deteccion_provocada
+      - sentido_especial
+    can_modify:
+      - hide_opportunity
+      - detection_roll
+      - opening_advantage
+      - approximate_position
+      - special_sense_interaction
+    common_counterplay:
+      - Percepcion
+      - applicable_sense
+      - area_effect
+      - reveal_signal
+    balance_risk: "practical invisibility without detection rules"
+
+  ailments_resistance:
+    name_es: Agravios y Resistencias
+    terms:
+      - Agravio
+      - Alteracion
+      - Veneno
+      - Infeccion
+      - Afliccion
+      - Maldicion
+      - T.R.
+      - Resiliencia
+    can_modify:
+      - ailment_application
+      - resistance_type
+      - severity
+      - duration
+      - recovery_method
+    common_counterplay:
+      - Resistance_Roll
+      - duration_limit
+      - clear_action
+      - specific_countermeasure
+    balance_risk: "persistent disabling effects with no exit"
+
+  environment:
+    name_es: Ambiente y Terreno
+    terms:
+      - condicion_natural
+      - condicion_extranatural
+      - severidad
+      - terreno
+      - clima
+      - elemento
+    can_modify:
+      - condition_severity
+      - terrain_cost
+      - environmental_visibility
+      - exposure_pressure
+      - elemental_countermeasure
+    common_counterplay:
+      - change_position
+      - counter_condition
+      - artifact
+      - Technique
+    balance_risk: "scene-wide control from a low-cost Technique"
+
+  recovery_rest:
+    name_es: Recuperacion Descanso y Medicina
+    terms:
+      - descanso_breve
+      - descanso_largo
+      - descanso_completo
+      - Medicina
+      - estabilizar
+      - tratar
+      - curar
+      - Desgaste
+    can_modify:
+      - recovery_amount
+      - treatment_roll
+      - rest_requirement
+      - continued_function
+      - stabilization_window
+    common_counterplay:
+      - supplies_required
+      - safe_rest_required
+      - Medicine_roll
+      - one_slot_limit
+    balance_risk: "compressing injury recovery until wounds stop mattering"
+
+  information:
+    name_es: Informacion Accionable
+    terms:
+      - Percepcion
+      - Interpretacion
+      - Identificacion
+      - Rastreo
+      - verdad_tactica
+      - intencion
+      - punto_debil
+    can_modify:
+      - reveal_truth
+      - identify_absence
+      - expose_route
+      - classify_threat
+      - setup_marker
+    common_counterplay:
+      - false_signal
+      - limited_question
+      - immediate_scene_only
+      - specialized_domain_required
+    balance_risk: "generic +X bonus instead of meaningful information"
+
+  progression_learning:
+    name_es: Progresion Aprendizaje y Acceso
+    terms:
+      - progreso
+      - fallo
+      - afinidad_mayor
+      - rango
+      - entrenamiento
+      - mentor
+      - requisito
+    can_modify:
+      - access_condition
+      - training_path
+      - affinity_interaction
+      - progression_trigger
+      - prerequisite
+    common_counterplay:
+      - mentor_gate
+      - rank_requirement
+      - downtime_requirement
+      - limited_to_training_context
+    balance_risk: "turning scene Techniques into progression accelerators"
+
+  npc_encounter_parts:
+    name_es: Partes de Criatura y Encuentros
+    terms:
+      - parte_de_criatura
+      - habilidad_vinculada
+      - punto_vital
+      - fase
+      - HP_de_parte
+      - defensa_de_parte
+    can_modify:
+      - linked_ability_shutdown
+      - phase_trigger
+      - part_targeting
+      - vital_point_access
+      - encounter_pressure
+    common_counterplay:
+      - part_defense
+      - part_durability
+      - attack_angle
+      - creature_reaction
+    balance_risk: "bypassing boss structure without interacting with its parts"
+
+  manifestation:
+    name_es: Manifestaciones del Limbo
+    terms:
+      - flujo
+      - vestigio
+      - vinculo
+      - manifestacion
+      - deteccion
+    can_modify:
+      - detection_method
+      - safe_handling
+      - proximity_read
+      - manifestation_clue
+    common_counterplay:
+      - narrow_scope
+      - no_magic_output
+      - manifestation_specific_limit
+      - specialist_requirement
+    balance_risk: "letting mundane Techniques become magic subsystems"
+
+interaction_weight:
+  low:
+    - small_conditional_bonus
+    - one_actionable_truth
+    - short_movement
+    - minor_cost_reduction
+    - consumed_setup_mark
+  medium:
+    - narrow_reaction
+    - recoverable_condition
+    - cover_modification
+    - conditional_impact_change
+    - concealment_or_detection_with_counterplay
+    - durability_degradation
+  high:
+    - action_denial
+    - part_or_equipment_break
+    - block_bypass
+    - wound_slot_healing
+    - rhythm_economy_change
+    - persistent_state
+    - forced_movement
+    - multi_target_effect
+    - vital_zone_or_collapse_interaction
+
+high_weight_compensation:
+  - higher_minimum_rank
+  - higher_rhythm_cost
+  - higher_attrition_cost
+  - narrow_trigger
+  - required_equipment
+  - resistance_defense_or_perception_counterplay
+  - short_duration
+  - limited_use
+  - visible_setup
+
+authoring_checklist:
+  - What is the primary mechanical surface?
+  - What secondary surface exists, if any?
+  - Which operation verb is being used?
+  - Which canonical glossary term does it touch?
+  - When is the Technique declared?
+  - Does it resolve before or after the relevant roll?
+  - Are range, area, and duration defined?
+  - What are the Rhythm and Attrition costs?
+  - What resists, stops, or mitigates it?
+  - Does it stack, replace, or expire?
+  - Does it depend on equipment, zone, part, cover, sense, or material?
+  - Does the effect still matter if the numerical bonus is removed?

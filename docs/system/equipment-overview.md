@@ -102,14 +102,14 @@ When a hit resolves against a body zone, blocking is determined by the piece equ
 ### Active Block Formula
 
 ```text
-Zone Block = BC + BM + CA + CO
+Zone Block = BC + BM + CD + CO
 ```
 
 Where:
 
 - `BC` = base by armor category
 - `BM` = material bonus
-- `CA` = armor competency level in the relevant armor type
+- `CD` = defensive competency level in the relevant armor type
 - `CO` = piece grade
 
 ### Base by category (`BC`)

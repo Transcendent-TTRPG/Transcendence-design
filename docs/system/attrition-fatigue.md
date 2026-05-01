@@ -144,6 +144,51 @@ En términos de ficción, la Fatiga no representa solo cansancio físico. Repres
 
 Por eso encaja con un sistema donde el conflicto no es solamente golpear, sino también leer, responder, coordinar y actuar en varios planos a la vez.
 
+### Carga sostenida
+
+La carga no usa Desgaste de escena si se está midiendo como esfuerzo prolongado de viaje, exploración o transporte. En ese caso genera Fatiga directamente por tiempo.
+
+La capacidad de carga depende del tamaño de la criatura, Fuerza y Tenacidad.
+
+Para evitar que un personaje con Fuerza `0` o Tenacidad `0` tenga capacidad `0`, usa valores efectivos mínimos:
+
+```text
+Fuerza efectiva = mínimo 1
+Tenacidad efectiva = mínimo 1
+Capacidad de carga = Fuerza efectiva × Tenacidad efectiva × multiplicador de tamaño
+```
+
+| Tamaño | Capacidad de carga |
+| --- | --- |
+| Diminuto | Fuerza efectiva × Tenacidad efectiva × 1 kg |
+| Pequeño | Fuerza efectiva × Tenacidad efectiva × 15 kg |
+| Mediano | Fuerza efectiva × Tenacidad efectiva × 35 kg |
+| Grande | Fuerza efectiva × Tenacidad efectiva × 80 kg |
+| Enorme | Fuerza efectiva × Tenacidad efectiva × 200 kg |
+| Gigantesco | Fuerza efectiva × Tenacidad efectiva × 800 kg |
+
+El tipo de carga se determina por el porcentaje usado de esa capacidad:
+
+| Tipo de carga | Peso transportado |
+| --- | --- |
+| Ligera | Hasta 50% de la capacidad |
+| Media | Más de 50% y hasta 75% |
+| Pesada | Más de 75% y hasta 100% |
+
+Fatiga por carga sostenida:
+
+| Tipo de carga | Fatiga |
+| --- | --- |
+| Ligera | No genera Fatiga automática por carga. |
+| Media | +1 nivel de Fatiga por cada 2 horas de carga sostenida. |
+| Pesada | +1 nivel de Fatiga por cada 1 hora de carga sostenida. |
+
+Esta Fatiga no chequea umbral de Desgaste. Es consecuencia directa de transportar carga significativa durante tiempo prolongado.
+
+La escala normal no crea niveles por encima de Fatiga 5. Si una nueva aplicación de carga sostenida empujaría al personaje más allá de Fatiga 5, queda Incapacitado por agotamiento y debe descansar o recibir ayuda.
+
+Esta regla mide carga sostenida durante viaje, exploración, marcha, transporte o trabajo físico prolongado. No se usa para cada asalto de combate. Una carga que supera el 100% de la capacidad no puede transportarse de forma funcional sin ayuda, equipo, Técnica, criatura de carga o una regla específica.
+
 ### Regla estructural de timing
 
 La regla estructural adoptada a partir de los playtests es esta:
@@ -164,6 +209,8 @@ La Fatiga se determina comparando el **Desgaste acumulado** con el **Aguante** d
 - **Fatiga 1:** Desgaste igual o mayor al Aguante
 - **Fatiga 2:** Desgaste igual o mayor a 2 × Aguante
 - **Fatiga 3:** Desgaste igual o mayor a 3 × Aguante
+- **Fatiga 4:** Desgaste igual o mayor a 4 × Aguante
+- **Fatiga 5:** Desgaste igual o mayor a 5 × Aguante
 
 ### Ejemplo
 
@@ -172,9 +219,11 @@ Si un personaje tiene **Aguante 7**:
 - Desgaste 0–6 → sin Fatiga
 - Desgaste 7–13 → Fatiga 1
 - Desgaste 14–20 → Fatiga 2
-- Desgaste 21+ → Fatiga 3
+- Desgaste 21–27 → Fatiga 3
+- Desgaste 28–34 → Fatiga 4
+- Desgaste 35+ → Fatiga 5
 
-Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear.
+Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Incapacitado por agotamiento. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
 
 ---
 
@@ -364,6 +413,8 @@ Toda hoja comienza con una especialización inicial de Tenacidad, elegida según
 | Fatiga 1 | Desgaste ≥ Aguante |
 | Fatiga 2 | Desgaste ≥ 2 × Aguante |
 | Fatiga 3 | Desgaste ≥ 3 × Aguante |
+| Fatiga 4 | Desgaste ≥ 4 × Aguante |
+| Fatiga 5 | Desgaste ≥ 5 × Aguante |
 
 ---
 
@@ -381,7 +432,7 @@ Toda hoja comienza con una especialización inicial de Tenacidad, elegida según
 
 ## Cuestiones aún abiertas
 
-1. Qué penalizadores exactos aplica cada nivel de Fatiga a las distintas clases de acción.
+1. Qué penalizadores exactos aplica cada nivel de Fatiga 1–5 a las distintas clases de acción.
 2. Qué condiciones concretas añaden Desgaste adicional y en qué nivel.
 3. Qué distribución de costos conviene para encuentros comunes, campeones y élites en términos de acciones esperadas.
 4. Cómo interactúan explícitamente las maniobras de coordinación con el Desgaste grupal.

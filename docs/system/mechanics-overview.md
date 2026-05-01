@@ -4,6 +4,8 @@ This document provides a horizontal view of all mechanical systems in Transcende
 
 For the explicit doctrine of how Techniques should touch those systems, see [technique-interaction-framework.md](/Users/juangomez/Transcendence-workspace/Transcendence-design/docs/system/technique-interaction-framework.md).
 
+For the machine-readable surface catalog used during Technique authoring, see [`data/system/technique-interaction-surfaces.yaml`](../../data/system/technique-interaction-surfaces.yaml).
+
 For authoritative numeric values, see [`data/system/`](../../data/system/).
 For detailed system descriptions, see the individual files in this folder.
 
@@ -463,6 +465,8 @@ Reactions: not more costly because they are reactions — more costly because th
 | Fatigue 1 | Attrition ≥ Endurance |
 | Fatigue 2 | Attrition ≥ 2 × Endurance |
 | Fatigue 3 | Attrition ≥ 3 × Endurance |
+| Fatigue 4 | Attrition ≥ 4 × Endurance |
+| Fatigue 5 | Attrition ≥ 5 × Endurance |
 
 **Projected vs Settled Fatigue:** During an active hostile scene, Fatigue is visible but not applied (projected). When the scene ends or drops in intensity, Fatigue settles and penalties apply.
 

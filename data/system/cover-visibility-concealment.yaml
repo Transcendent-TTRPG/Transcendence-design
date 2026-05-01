@@ -1,0 +1,296 @@
+meta:
+  version: "0.1"
+  status: draft
+  last_updated: "2026-04-30"
+
+taxonomy:
+  canonical_term:
+    es: Cobertura, Visibilidad y Ocultacion
+    en: Cover, Visibility, and Concealment
+  distinction:
+    cover: "physical or structural protection that interferes with attack lines"
+    visibility: "how far and how clearly visual details can be perceived"
+    concealment: "a tactical localization state; a creature is not precisely located by one or more enemies"
+
+cover:
+  principle: >
+    Cover must physically block, absorb, deflect, or interrupt an attack line.
+    Fog, smoke, and darkness are visibility conditions, not cover by themselves.
+    Cover applies against melee, ranged attacks, and projectiles when it
+    materially interrupts the attack line.
+  levels:
+    light:
+      name_es: Cobertura Ligera
+      criterion: "minor body protection or partial attack-line interference"
+      attack_penalty: -1
+      examples:
+        - low_furniture
+        - railing
+        - small_rock
+        - thin_tree
+        - door_edge
+        - about_25_percent_body_covered
+    medium:
+      name_es: Cobertura Media
+      criterion: "significant body protection with clear remaining openings"
+      attack_penalty: -3
+      examples:
+        - thick_tree
+        - large_rock
+        - barricade
+        - window_or_opening
+        - wall_corner
+        - about_50_to_75_percent_body_covered
+    total:
+      name_es: Cobertura Total
+      criterion: "no direct attack line to the target"
+      direct_attack_allowed: false
+      bypass_methods:
+        - area_effect_covering_position
+        - destroy_obstacle
+        - move_to_new_angle
+        - elevation
+        - ricochet_or_indirect_attack
+        - technique_specific_route_change
+  destruction:
+    rule: "use the normal break rule against the cover object's Durability"
+    validation_formula: "critical_potency >= object_durability"
+    on_success: "cover breaks or stops protecting according to object nature"
+    on_failure: "cover remains but loses 1 Durability"
+    scope: "only valid break attempts, Critical Impact, Techniques, or specific attack rules reduce Durability"
+  shields:
+    role: "primary portable cover source"
+    default_scope: "carrier_space_or_cell"
+    covering_other_creature: "normally requires shield Technique, reaction, or specific rule"
+    depends_on:
+      - shield_size
+      - carrier_size
+      - covered_creature_size
+      - attack_angle
+      - ability_to_carry_and_control_shield
+  area_attacks:
+    full_cover_applies_when: "cover clearly blocks the area origin, direction, or expansion"
+    partial_cover_rule: "apply half cover penalty, rounded down"
+    no_cover_when: "area surrounds, fills, falls behind, or ignores the cover"
+
+visibility:
+  grid_conversion:
+    meters_per_square: 1
+    grid_policy: "flexible by Narrator; grid recommended for combat and tactical positioning"
+  standard_range_m: 60
+  beyond_effective_range_rule: "+1 NR per 10 meters beyond effective visual range"
+  note: >
+    Use environmental condition severity as the main authority when the scene is
+    dominated by weather, darkness, smoke, or atmospheric pressure. These values
+    are quick references for concrete sight-line questions.
+  reduced_ranges:
+    rain:
+      light_m: 24
+      intense_m: 15
+      storm_m: 8
+    snow:
+      light_m: 24
+      intense_m: 15
+      snowstorm_m: 8
+    fog:
+      light_m: 20
+      dense_m: 10
+      thick_m: 5
+    smoke:
+      light_m: 20
+      dense_m: 5
+      choking_m: 2
+    dust_or_sand:
+      light_m: 25
+      moderate_m: 12
+      storm_m: 5
+    absolute_darkness:
+      range_m: 0
+    extranatural_darkness:
+      range_m: 0
+      countermeasures_required: true
+      rule: "ordinary light does not counter extranatural darkness tied to Darkness tauma"
+      valid_countermeasures:
+        - extranatural_light_tied_to_Light_tauma
+        - artifact
+        - Technique
+        - opposing_environmental_condition
+        - specific_rule
+  light_sources:
+    candle:
+      clear_m: 2
+      dense_condition_m: 1
+    torch:
+      clear_m: 4
+      dense_condition_m: 2
+    oil_lamp:
+      clear_m: 6
+      dense_condition_m: 3
+
+blind_or_no_visual_contact:
+  principle: >
+    A creature without vision does not automatically lose all competencies.
+    It cannot precisely target what it has not located and cannot use effects
+    that require clear visual reading.
+    Perception is not only sight; it can use hearing, smell, vibration, touch,
+    chemical signals, echolocation, or other senses when the creature has access
+    to them.
+  attack_guidance:
+    located_by_relevant_sense:
+      direct_attack_allowed: true
+      note: "apply penalty or NR only if the signal is weak, indirect, or hard to interpret"
+    not_located:
+      direct_attack_allowed: false
+  non_visual_senses:
+    default_roll: Percepcion
+    rule: "special senses use normal Perception structure unless a rule says otherwise"
+    can_ignore: "effects unrelated to that sense"
+    examples:
+      smell: "not blocked by visual darkness, but may be affected by wind, water, chemical smoke, or scent-altering Techniques"
+      vibration: "not blocked by visual darkness, but may require contact with a transmitting surface"
+      echolocation: "not blocked by visual darkness, but may be affected by silence, noise, or sound-dampening effects"
+  impact_note: >
+    Impact does not lose all bonuses from lack of vision. If an attack connects,
+    Impact resolves normally unless a specific rule says otherwise.
+
+concealment:
+  definition: >
+    Concealment means a creature is not precisely localized by one or more
+    enemies. It is not invisibility, immunity, or erasure of physical evidence.
+  base_action:
+    name_es: Ocultarse
+    rhythm: 5
+    attrition: 1
+    roll: "appropriate Specialization Roll against environment difficulty or enemy Perception"
+    out_of_hostile_scene: "no Rhythm cost; roll only when risk, opposition, or consequence exists"
+  attempt_requirements_any:
+    - medium_or_total_cover
+    - outside_effective_visual_range
+    - visibility_condition_can_hide_position
+    - technique_trait_artifact_or_preparation_allows_it
+  additional_requirement: >
+    No relevant enemy has the creature clearly localized by an applicable sense.
+    If localized, the creature must first create a real opportunity to hide.
+  opportunity_examples:
+    - break_line_of_sight
+    - enter_medium_or_total_cover
+    - enter_smoke_fog_darkness_vegetation_crowd_or_sufficient_noise
+    - create_distraction
+    - move_outside_effective_range_of_the_localizing_sense
+    - use_Technique_trait_artifact_or_preparation_that_allows_hiding_while_observed
+  roll:
+    default_type: "S.R."
+    typical_specializations:
+      - Sigilo
+      - Supervivencia
+      - fiction_dependent_specialization
+    opposing_options:
+      - environment_threshold
+      - enemy_perception
+  state_scope: "per_enemy_or_enemy_group"
+  effects:
+    - hidden_creature_cannot_be_chosen_by_that_enemy_as_direct_single_creature_target
+    - area_effects_can_still_affect_real_position
+    - enemy_can_attack_suspected_area_if_fiction_supports_it
+    - enemy_can_use_active_detection
+    - enemy_can_respond_to_obvious_signals
+  attack_from_concealment:
+    reaction_detection_range_m: 10
+    perception_roll: "Percepcion S.R. against active concealment or environment difficulty"
+    eligible_detectors: "relevant creatures within 10m with an applicable sense"
+    outside_range_exception: "special sense, Technique, preparation, or position may justify detection beyond 10m"
+    opening_advantage:
+      applies_if: "target does not detect the action in time"
+      attack_bonus: "+3 to A.R."
+    on_detection_success: "attacker gains no opening advantage against that detecting creature"
+    after_attack: "concealment is compromised even if the attack misses"
+  actions_that_risk_or_break_concealment:
+    - melee_attack
+    - ranged_attack
+    - movement_between_cover
+    - running
+    - loud_speech
+    - visible_or_noisy_object_interaction
+    - interacting_with_light_source
+    - changing_position_in_quiet_environment
+  compromise_rule:
+    exact_reveal: false
+    detection_range_m: 10
+    rule: >
+      Compromising concealment creates a signal. It does not automatically reveal
+      exact position. Relevant creatures within 10m may roll Perception if they
+      have an applicable sense; others need a special sense, Technique,
+      preparation, or circumstance.
+    communication_note: >
+      Communicating a suspected position does not reveal the hidden creature by
+      itself. It enables coordination, area attacks, or directed Perception, but
+      does not remove penalties or make the position exact.
+
+detection:
+  active:
+    search_action: "no universal separate Search action; use Percepcion S.R., Technique, or scene-specific action"
+    roll: "Percepcion S.R. against concealment or environment difficulty"
+    result: "detects hidden creature for the searching creature; may communicate if scene allows"
+  passive:
+    name_es: "deteccion provocada"
+    trigger: "hidden creature creates a signal worth noticing"
+    purpose: "resolve signals caused by hidden creature, not free continuous scanning"
+    possible_results:
+      - exact_detection
+      - approximate_position
+      - no_detection
+  approximate_position_direction_1d8:
+    1: Noroeste
+    2: Norte
+    3: Noreste
+    4: Oeste
+    5: Este
+    6: Suroeste
+    7: Sur
+    8: Sureste
+  uncertain_approximate_position:
+    use_when: "hidden creature compromises concealment and a creature attempts to locate it"
+    opposed_roll_rule: "Percepcion must exceed concealment; ties favor the hidden creature"
+    player_hidden_creature_detects:
+      - player_rolls_the_specialization_used_to_hide_or_current_fictional_equivalent
+      - narrator_rolls_creature_Percepcion
+      - if_Percepcion_exceeds_concealment_creature_locates_real_position
+      - if_Percepcion_does_not_exceed_concealment_narrator_rolls_1d8_and_creature_may_act_toward_false_position
+    creature_hidden_player_detects:
+      - player_rolls_Percepcion
+      - narrator_secretly_rolls_creature_concealment
+      - narrator_secretly_rolls_1d8_at_the_same_time_declaring_only_that_concealment_is_being_resolved
+      - if_player_Percepcion_exceeds_concealment_narrator_points_to_real_position
+      - if_player_Percepcion_does_not_exceed_concealment_narrator_points_to_false_position_from_1d8
+      - narrator_does_not_declare_success_or_failure
+    grid_guidance: >
+      The 1d8 result points to the adjacent square from the hidden creature's
+      real position in that direction. If the creature occupies multiple
+      squares, use the adjacent square from the edge of its occupied space. If
+      that square is invalid, blocked, or implausible, use the nearest plausible
+      cover, square, or area in the same direction.
+    theater_guidance: "use a nearby credible zone"
+
+special_senses_and_exceptions:
+  rule: "abilities and creatures may state that they ignore concealment under specific conditions"
+  examples:
+    - scent_tracking_ignores_visual_concealment_if_smell_is_not_blocked
+    - vibration_sense_ignores_visual_concealment_on_shared_surface
+    - Technique_reveals_or_marks_hidden_creature
+
+balance_guardrails:
+  - concealment_requires_physical_environmental_or_technique_basis
+  - concealment_is_per_enemy_not_global
+  - hidden_does_not_mean_untouchable
+  - area_effects_still_work_if_they_cover_real_position
+  - attacks_usually_reveal_or_risk_concealment
+  - specialized_perception_can_accelerate_detection_but_should_not_replace_all_signals
+  - non_visual_senses_can_reduce_or_ignore_visual_concealment
+
+open_questions:
+  - id: CVC-03
+    question: "Which final specialization owns stealth if Sigilo is not in the final catalog?"
+  - id: CVC-04
+    question: "Which non-visual senses are common by species or creature family?"
+  - id: CVC-05
+    question: "Which Techniques allow attacking without revealing position?"

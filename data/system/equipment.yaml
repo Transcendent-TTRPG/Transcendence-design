@@ -56,11 +56,11 @@ armor_competencies:
     in the resolved hit zone, if that armor actually participates in reducing impact.
 
 zone_block:
-  formula: "BC + BM + CA + CO"
+  formula: "BC + BM + CD + CO"
   terms:
     BC: "Base by armor category"
     BM: "Material bonus"
-    CA: "Armor competency level in relevant armor type"
+    CD: "Defensive competency level in relevant armor type"
     CO: "Piece grade"
   material_bonus_formula: "floor(durability / 5)"
   piece_grade_range: [1, 3]
