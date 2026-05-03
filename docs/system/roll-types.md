@@ -6,8 +6,8 @@ All checks use a `d10` base modified by characteristics, competencies, equipment
 
 | Code | Name                  | Formula | Uses Competency |
 |---|---|---|---|
-| A.R. | Attack Roll           | 1d10 + Competency Level + Associated Characteristic | Yes — weapon/object |
-| D.R. | Defense Roll          | 1d10 + Evasion Level + Applicable Agility + Defense Bonuses | Yes — Evasion |
+| A.R. | Attack Roll           | 1d10 + Competency Level + Competency Rank + Associated Characteristic + Bonuses | Yes — weapon/object |
+| D.R. | Defense Roll          | 1d10 + Applicable Evasion + Applicable Agility + Defense Bonuses | Yes — Evasion |
 | I.R. | Impact Roll           | (Competency Rank × Weapon Damage) + (Associated Characteristic × Weapon Grade) | Yes — weapon rank |
 | C.R. | Characteristic Roll   | 1d10 + Characteristic + Reference Level + Bonuses | No (unless specific rule) |
 | R.R. | Resistance Roll       | varies by threat type (see below) | Yes — Resistances |
@@ -19,21 +19,25 @@ All checks use a `d10` base modified by characteristics, competencies, equipment
 ### A.R. — Attack Roll
 Represents ability to land an effective strike with a weapon, maneuver, or object.
 
-`A.R. = 1d10 + Competency Level (weapon/object) + Associated Characteristic`
+`A.R. = 1d10 + Competency Level + Competency Rank + Associated Characteristic + Additional Bonuses`
 
 ### D.R. — Defense Roll
 Represents ability to avoid an incoming attack through reflexes, mobility, and armor.
 
-`D.R. = 1d10 + Evasion Competency Level + Applicable Agility + Defense Bonuses`
+`D.R. = 1d10 + Applicable Evasion + Applicable Agility + Defense Bonuses`
 
-`Applicable Agility` depends on the armor type of the resolved hit zone:
+`Applicable Evasion = applicable Evasion level + applicable Evasion rank`
 
-- Light armor zone -> full `AGI`
-- Medium armor zone -> `floor(AGI / 2)`, minimum 1
-- Heavy armor zone -> no `AGI`
-- Unarmored zone -> full `AGI`
+`Applicable Evasion` and `Applicable Agility` depend on the armor type of the resolved hit zone:
 
-For `NPC -> PC`, hit location is rolled first. That resolved zone determines which armor type constrains Agility in `D.R.`. If defense fails, the zone's block value still mitigates the impact.
+| Armor in resolved zone | Applicable Evasion | Applicable Agility |
+|---|---|---|
+| Unarmored | full Evasion | full `AGI` |
+| Light armor | full Evasion | full `AGI` |
+| Medium armor | half Evasion, rounded up, minimum 1 | half `AGI`, rounded up, minimum 1 |
+| Heavy armor | 0 | 0 |
+
+For `NPC -> PC`, hit location is rolled first. That resolved zone determines which armor type constrains Evasion and Agility in `D.R.`. If defense fails, the zone's block value still mitigates the impact.
 
 ### I.R. — Impact Roll
 Determines real damage dealt after an attack surpasses defense.
@@ -51,6 +55,8 @@ Used when an action depends on a general aptitude, without specific training.
 
 ### R.R. — Resistance Roll
 Represents ability to withstand harmful effects.
+
+A Resistance Roll is not voluntary execution. It is the body, mind, or essence responding to a hostile effect. For that reason, it uses a single `d10` by default and does **not** use Evolutionary Advantage.
 
 | Threat Type             | Formula |
 |---|---|
@@ -72,7 +78,7 @@ No competencies involved. Purely narrative/psychological.
 
 ## Evolutionary Advantage
 
-Applies to A.R., D.R., R.R., and S.R. Player chooses one approach before rolling:
+Applies to A.R., D.R., and S.R. Player chooses one approach before rolling:
 
 | Option | Mechanic | Trade-off |
 |---|---|---|
@@ -81,15 +87,17 @@ Applies to A.R., D.R., R.R., and S.R. Player chooses one approach before rolling
 
 **Learning condition:** if the higher die exceeds (lower die + the rank of the competency designated by that roll's progression rule), mark 1 progress point in that competency.
 
+Evolutionary Advantage does not apply to R.R., C.R., or P.R. Resistances can still progress, but they do so through exposure, consequence, and survival after the effect resolves.
+
 ## Roll → Competency Relationship
 
-| Roll | Competency used | Progression target with Learning Advantage |
+| Roll | Competency used | Progression |
 |---|---|---|
 | A.R. | Weapon or object competency | Weapon/object competency, on successful attack resolution |
-| D.R. | Evasion competency | Evasion on successful defense; armor type in resolved zone on failed defense where armor absorbs impact |
+| D.R. | Evasion competency | Evasion on successful defense with Learning Advantage; armor type in resolved zone on failed defense where armor absorbs impact |
 | I.R. | Weapon competency rank | None directly |
 | C.R. | None (unless specific rule) | None |
-| R.R. | Resistance matching threat type | Matching resistance, on failed resistance where the effect is actually suffered |
+| R.R. | Resistance matching threat type | Does not use Learning Advantage. Matching resistance progresses when the character fails or suffers a partial consequence from a relevant danger and survives |
 | S.R. | Specialization competency | Used specialization, on successful roll |
 | P.R. | None | None |
 

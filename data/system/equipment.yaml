@@ -48,11 +48,12 @@ armor_types:
     dr_agility_rule: none
 
 armor_competencies:
-  - light_armor
-  - medium_armor
-  - heavy_armor
+  types:
+    - light_armor
+    - medium_armor
+    - heavy_armor
   progression_rule: >
-    Failed D.R. with Learning Advantage can grant progress to the armor type present
+    Failed D.R. can grant progress to the armor type present
     in the resolved hit zone, if that armor actually participates in reducing impact.
 
 zone_block:
@@ -67,20 +68,25 @@ zone_block:
 
 defense_resolution:
   model: hybrid
-  formula: "1d10 + evasion_level + applicable_agility + defense_bonuses"
+  formula: "1d10 + applicable_evasion + applicable_agility + defense_bonuses"
   order_npc_to_pc:
     - determine_hit_zone
     - identify_zone_armor_type
-    - resolve_DR_with_zone_agility_rule
+    - resolve_DR_with_zone_evasion_and_agility_rule
     - if_hit_connects_apply_zone_block
   applicable_agility:
     light: "full_AGI"
-    medium: "floor(AGI / 2), minimum 1"
+    medium: "ceil(AGI / 2), minimum 1"
     heavy: "none"
     unarmored: "full_AGI"
+  applicable_evasion:
+    light: "full_evasion"
+    medium: "ceil(evasion / 2), minimum 1"
+    heavy: "none"
+    unarmored: "full_evasion"
   note: >
-    The hit zone determines both the armor type that constrains Agility in D.R. and the
-    zone block that mitigates impact if defense fails.
+    The hit zone determines both the armor type that constrains Evasion and Agility in
+    D.R. and the zone block that mitigates impact if defense fails.
 
 shield_types:
   light:

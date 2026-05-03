@@ -184,12 +184,12 @@ These rules are not just editorial background. They are active design constraint
 
 ## Roll types
 
-Base die: **d10**. Evolutionary Advantage: roll 2d10, choose execution (take higher) or learning (take lower, use higher for learning check).
+Base die: **d10**. Evolutionary Advantage applies to active execution rolls (`A.R.`, `D.R.`, `S.R.`): roll 2d10, choose execution (take higher) or learning (take lower, use higher for learning check). `R.R.`, `C.R.`, and `P.R.` do not use Evolutionary Advantage by default.
 
 | Roll | Code | Formula | Used for |
 | --- | --- | --- | --- |
-| Attack Roll | A.R. | 1d10 + competency level + characteristic | Landing an effective strike |
-| Defense Roll | D.R. | 1d10 + evasion level + applicable Agility + defense bonuses | Avoiding an incoming attack |
+| Attack Roll | A.R. | 1d10 + competency level + competency rank + characteristic + bonuses | Landing an effective strike |
+| Defense Roll | D.R. | 1d10 + applicable Evasion + applicable Agility + defense bonuses | Avoiding an incoming attack |
 | Impact Roll | I.R. | (competency rank × weapon damage) + (characteristic × weapon grade) | Damage after AR beats DR |
 | Characteristic Roll | C.R. | 1d10 + characteristic + Reference Level + bonuses | General aptitude without specific training |
 | Resistance Roll | R.R. | Varies by threat type (see below) | Withstanding harmful effects |
@@ -343,21 +343,21 @@ Synapsis triggers on reaching the threshold level of each new rank (specializati
 | 5 | Consumado / Consummate | 9–10 | 9 | +1 characteristic |
 | 6 | Trascendente / Transcendent | 11+ | 11 | +1 characteristic |
 
-Cost per level: 10 pts (5 pts if major affinity). Major affinity determined by background.
+Cost per level: 10 pts. Specializations with major affinity from background cost 5 pts. Resistances do not use major affinity by base rule.
 Untrained characters can still roll any specialization: formula = 1d10 + characteristic only.
 
-`D.R.` uses a hybrid defensive model. For `NPC -> PC`, hit zone is determined first; that zone determines which armor type constrains Agility and which zone block applies if defense fails.
+`D.R.` uses a hybrid defensive model. For `NPC -> PC`, hit zone is determined first; that zone determines which armor type constrains Evasion and Agility, and which zone block applies if defense fails.
 
 ### Competency types and bonuses
 
 | Type | Per level bonus | Per rank bonus | Progression trigger |
 | --- | --- | --- | --- |
 | Weapons | +1 A.R. | +1 A.R. + 1 damage die | Successful `A.R.` with Learning Advantage, if the attack hits and deals damage |
-| Armors | +1 zone block (relevant type) | No passive per-rank block bonus | Failed `D.R.` with Learning Advantage, if armor in the resolved zone absorbs impact |
+| Armors | +1 zone block (relevant type) | No passive per-rank block bonus | Failed `D.R.`, if armor in the resolved zone absorbs impact |
 | Shields | — | Access to additional shield maneuvers; Master reduces equipped shield movement penalty by grade | Successful shield Techniques or shield maneuvers |
 | Evasion | +1 D.R. | +1 D.R. | Successful `D.R.` with Learning Advantage |
 | Specialization | +1 S.R. | +1 S.R.; on entering a new rank, +1 characteristic via Synapsis | Successful `S.R.` with Learning Advantage |
-| Resistances | +1 R.R. (specific type) | (see resistance subtypes) | Failed `R.R.` with Learning Advantage, if the effect is actually suffered |
+| Resistances | +1 R.R. (specific type) | (see resistance subtypes) | Exposure progress: failed `R.R.` or partial consequence from a relevant danger, if the character survives |
 
 ### Resistance subtypes
 

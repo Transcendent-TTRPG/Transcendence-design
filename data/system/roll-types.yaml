@@ -1,7 +1,12 @@
 base_die: d10
 
 evolutionary_advantage:
-  applies_to: [AR, DR, RR, SR]
+  applies_to: [AR, DR, SR]
+  does_not_apply_to: [RR, CR, PR]
+  note: >
+    Evolutionary Advantage applies only when the character has active control over
+    the execution of the roll. Resistance Rolls are internal responses of body,
+    mind, or essence; they use a single die by default and progress by exposure.
   options:
     execution:
       description: Roll 2d10, take the higher result
@@ -15,26 +20,32 @@ rolls:
   - id: AR
     name: Attack Roll
     code: A.R.
-    formula: "1d10 + competency_level(weapon) + associated_characteristic"
+    formula: "1d10 + competency_level(weapon) + competency_rank(weapon) + associated_characteristic + bonuses"
     competency: weapon_or_object
     used_for: Landing an effective strike with a weapon, maneuver, or object
 
   - id: DR
     name: Defense Roll
     code: D.R.
-    formula: "1d10 + evasion_level + applicable_agility + defense_bonuses"
+    formula: "1d10 + applicable_evasion + applicable_agility + defense_bonuses"
     competency: evasion
+    applicable_evasion: "evasion_level + evasion_rank, constrained by armor type in the resolved hit zone"
     zone_resolution:
       npc_to_pc_order:
         - determine_hit_zone
         - identify_zone_armor_type
-        - resolve_DR_with_zone_agility_rule
+        - resolve_DR_with_zone_evasion_and_agility_rule
         - if_hit_connects_apply_zone_block
       applicable_agility:
         light: full_AGI
-        medium: "floor(AGI / 2), minimum 1"
+        medium: "ceil(AGI / 2), minimum 1"
         heavy: none
         unarmored: full_AGI
+      applicable_evasion_by_armor:
+        light: full_evasion
+        medium: "ceil(evasion / 2), minimum 1"
+        heavy: none
+        unarmored: full_evasion
     used_for: Avoiding an incoming attack through reflexes, mobility, armor
 
   - id: IR
@@ -57,6 +68,8 @@ rolls:
     name: Resistance Roll
     code: R.R.
     competency: resistance_type
+    die_structure: "single d10 by default; no Evolutionary Advantage"
+    exception_rule: "Specific Techniques, ailments, mutations, or exceptional effects may alter this explicitly."
     variants:
       - trigger: poison_or_infection
         formula: "1d10 + TEN + resistances + bonuses"
@@ -97,6 +110,7 @@ progression_map:
   DR:
     learning_advantage:
       success: evasion
+    armor_absorption:
       failure: armor_type_of_resolved_armored_zone_if_armor_absorbs_impact
   IR:
     learning_advantage:
@@ -107,17 +121,19 @@ progression_map:
       success: none
       failure: none
   RR:
-    learning_advantage:
-      success: none
-      failure: matching_resistance_if_effect_is_suffered
+    exposure:
+      trigger: matching_resistance_if_effect_is_suffered_or_partial_consequence_is_taken
+      requirements:
+        - real_danger
+        - relevant_to_current_rank
+        - failed_RR_or_partial_consequence
+        - survives_exposure
   SR:
     learning_advantage:
       success: specialization_used
       failure: none
   PR:
-    learning_advantage:
-      success: none
-      failure: none
+    no_progression: true
 
 shield_progression:
   note: >

@@ -194,7 +194,7 @@ damage_surfaces:
     resolution_order:
       - determine_hit_zone
       - identify_zone_armor
-      - resolve_DR_with_zone_agility_rule
+      - resolve_DR_with_zone_evasion_and_agility_rule
       - if_attack_connects_roll_impact
       - calculate_zone_block
       - compare_impact_to_block

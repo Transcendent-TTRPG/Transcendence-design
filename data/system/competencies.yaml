@@ -73,12 +73,36 @@ synapsis:
 progression:
   major_affinity_cost: 5    # progress points per level (with major affinity)
   default_cost: 10           # progress points per level (without major affinity)
-  method: learning_advantage  # use the lower die result; generates progress, not execution
+  methods:
+    learning_advantage:
+      applies_to:
+        - weapons
+        - evasion
+        - specialization
+      description: >
+        Use the lower die result for execution and reserve the higher die for the
+        learning check. Progress is awarded only if the roll and scene satisfy
+        that competency's progression trigger.
+    armor_absorption:
+      applies_to: [armors]
+      description: >
+        Armor progresses when a Defense Roll fails, the hit resolves through an
+        armored zone, and that armor actually absorbs part of the impact.
+    shield_use:
+      applies_to: [shields]
+      description: >
+        Shields progress through successful shield Techniques, interceptions,
+        and dedicated shield maneuvers.
+    exposure:
+      applies_to: [resistances]
+      description: >
+        Resistances progress when the character faces a relevant danger, suffers
+        the effect or a partial consequence, and survives the exposure.
   note: >
-    Major affinity is determined by background. Any character can make a specialization roll
-    in any domain — even untrained. Untrained formula: 1d10 + characteristic only.
-    Progress is accumulated through any successful learning-advantage roll in that domain,
-    provided the Narrator validates the narrative fit of the specialization used.
+    Major affinity is determined by background and applies to specializations unless a
+    specific rule says otherwise. Any character can make a specialization roll in any
+    domain — even untrained. Untrained formula: 1d10 + characteristic only. Resistances
+    do not use major affinity by base rule.
   min_test_difficulty_by_rank:
     untrained: any
     novice: any
@@ -112,8 +136,8 @@ types:
       per_level: "+1 to zone block when that armor type is present in the resolved hit zone"
       note: "no passive per-rank block bonus; block already stacks with category, material, and grade"
     progression_trigger: >
-      Failed D.R. with Learning Advantage, when the hit resolves through an armored zone
-      and that armor actually reduces impact.
+      Failed D.R., when the hit resolves through an armored zone and that armor actually
+      reduces impact.
 
   - id: shields
     name_es: Escudos
@@ -162,8 +186,8 @@ types:
       - id: curses
         bonus: "+1 to detect or resist curses"
     progression_trigger: >
-      Failed R.R. with Learning Advantage, when the corresponding effect is actually
-      suffered and survived as meaningful exposure.
+      R.R. fails or the character suffers a partial consequence from the corresponding
+      effect, the exposure is relevant to the current rank, and the character survives.
     damage_note: >
       Resistances do not reduce Impact or elemental damage. Damage is resolved through
       Impact versus Block and the wound/HP rules. Elemental identity is handled by traits
@@ -195,10 +219,10 @@ progression_map:
     success_with_learning_advantage: weapon_or_object_competency_used
   defense_roll:
     success_with_learning_advantage: evasion
-    failure_with_learning_advantage: armor_type_of_resolved_armored_zone_if_armor_absorbs_impact
+    failure_with_armor_absorption: armor_type_of_resolved_armored_zone_if_armor_absorbs_impact
   specialization_roll:
     success_with_learning_advantage: specialization_used
   resistance_roll:
-    failure_with_learning_advantage: matching_resistance_if_effect_is_suffered
+    exposure_progress: matching_resistance_if_effect_is_suffered_or_partial_consequence_is_taken_and_survived
   shield_technique:
     success_with_learning_advantage: shield_competency

@@ -81,7 +81,7 @@ This competency interacts directly with zone-based block.
 
 ### Armor competency progression
 
-Armor competency progresses through **failed `D.R.` with Learning Advantage**, but only when all of the following are true:
+Armor competency progresses through **failed `D.R.`**, but only when all of the following are true:
 
 - the hit resolves against an armored zone
 - the armor in that zone actually participates in reducing the impact
@@ -152,18 +152,21 @@ The same grade also functions as the piece's constant slot bonus where relevant.
 ### `D.R.` by resolved zone
 
 ```text
-D.R. = 1d10 + Evasion Level + Applicable Agility + Defense Bonuses
+D.R. = 1d10 + Applicable Evasion + Applicable Agility + Defense Bonuses
 ```
 
-Where `Applicable Agility` depends on the armor type in the struck zone:
+Where `Applicable Evasion` and `Applicable Agility` depend on the armor type in the struck zone:
 
-- light zone -> full Agility
-- medium zone -> `floor(AGI / 2)`, minimum 1
-- heavy zone -> no Agility
+| Armor in struck zone | Applicable Evasion | Applicable Agility |
+|---|---|---|
+| unarmored | full Evasion | full Agility |
+| light | full Evasion | full Agility |
+| medium | half Evasion, rounded up, minimum 1 | half Agility, rounded up, minimum 1 |
+| heavy | 0 | 0 |
 
 `Defense Bonuses` may include shields, Techniques, reactions, or situational effects.
 
-If the zone is unarmored, treat it as using full Agility and no armor block unless another rule states otherwise.
+If the zone is unarmored, treat it as using full Evasion, full Agility, and no armor block unless another rule states otherwise.
 
 ---
 
@@ -261,7 +264,7 @@ Creatures also use internal slots or equivalent anatomical regions for `D.R.`, b
 
 This distribution is intentionally weighted toward torso and legs, while keeping head and feet relatively rare.
 
-Because this table is rolled before full defensive resolution for `NPC -> PC`, it also determines which armor type constrains Agility in the `D.R.` formula.
+Because this table is rolled before full defensive resolution for `NPC -> PC`, it also determines which armor type constrains Evasion and Agility in the `D.R.` formula.
 
 ---
 

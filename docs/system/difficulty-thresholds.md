@@ -20,7 +20,7 @@ Threshold = Base + NR
 - When the challenge is environmental: NR = Narrator-assigned equivalent for the condition's intensity
 - When the challenge is the intrinsic complexity of a task: NR = Narrator-assigned or system-assigned equivalent
 
-The Narrator declares the difficulty tier before the roll is made. The player knows the threshold before deciding whether to use Execution Advantage or Learning Advantage.
+The Narrator declares the difficulty tier before the roll is made. If the roll can use Evolutionary Advantage, the player knows the threshold before deciding whether to use Execution Advantage or Learning Advantage.
 
 ---
 
