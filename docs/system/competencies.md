@@ -79,12 +79,10 @@ Technical mastery in a specific skill.
 - Progression: successful `S.R.` with Learning Advantage in tests appropriate to current rank.
 
 ### Resistances
-Withstanding specific types of danger. Often develops through exposure and survival.
+Withstanding specific harmful conditions and effects. Resistances do not reduce Impact, elemental damage, or wounds. Damage is resolved through Impact versus Block and the wound or HP rules.
 
 | Resistance type   | Bonus per level |
 |---|---|
-| Elemental damage  | +1 to R.R. against elemental effects |
-| Physical          | +1 to R.R. against broad physical resistance cases |
 | Poison            | +1 to R.R. against poisons |
 | Infection         | +1 to R.R. against infections |
 | Affliction        | +1 to R.R. against afflictions; +1 to Affliction R.R. per rank during meditation |
@@ -92,6 +90,15 @@ Withstanding specific types of danger. Often develops through exposure and survi
 | Curses            | +1 to detect or resist curses |
 
 Progression: failed `R.R.` with Learning Advantage, when the corresponding effect is actually suffered and survived as meaningful exposure.
+
+Elemental identity is handled by traits on creatures, materials, objects, or specific effects rather than by player resistance competencies.
+
+| Trait | Damage effect |
+|---|---|
+| Minor Resistance | Takes 50% damage from that elemental origin |
+| Major Resistance | Takes 0 damage from that elemental origin |
+| Minor Vulnerability | Takes 150% damage from that elemental origin |
+| Major Vulnerability | Takes 200% damage from that elemental origin |
 
 ## Progression Map by Roll
 

@@ -363,13 +363,20 @@ Untrained characters can still roll any specialization: formula = 1d10 + charact
 
 | Subtype | Bonus |
 | --- | --- |
-| Physical | +1 R.R. vs broad physical resistance cases |
-| Elemental | +1 R.R. vs elemental effects |
 | Poison | +1 R.R. vs poisons |
 | Infection | +1 R.R. vs infections |
 | Affliction | +1 R.R. vs afflictions; +1 per rank during meditation |
 | Alteration | +1 R.R. vs alterations |
 | Curses | +1 to detect or resist curses |
+
+Resistances do not reduce Impact, elemental damage, wounds, or HP damage. Elemental origin is handled by creature, material, object, or effect traits.
+
+| Elemental trait | Damage effect |
+| --- | --- |
+| Minor Resistance | 50% damage from that origin |
+| Major Resistance | 0 damage from that origin |
+| Minor Vulnerability | 150% damage from that origin |
+| Major Vulnerability | 200% damage from that origin |
 
 ### Ability surfaces
 

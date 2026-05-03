@@ -284,12 +284,17 @@ surfaces:
       - Maldicion
       - T.R.
       - Resiliencia
+      - Resistencia_menor
+      - Resistencia_mayor
+      - Vulnerabilidad_menor
+      - Vulnerabilidad_mayor
     can_modify:
       - ailment_application
       - resistance_type
       - severity
       - duration
       - recovery_method
+      - elemental_damage_trait
     common_counterplay:
       - Resistance_Roll
       - duration_limit

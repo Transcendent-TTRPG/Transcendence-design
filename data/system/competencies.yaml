@@ -149,12 +149,8 @@ types:
   - id: resistances
     name_es: Resistencias
     name_en: Resistances
-    description: Withstanding specific types of danger
+    description: Withstanding specific harmful conditions and effects; not damage reduction
     subtypes:
-      - id: physical
-        bonus: "+1 to R.R. against broad physical resistance cases"
-      - id: elemental
-        bonus: "+1 to R.R. against elemental effects"
       - id: poison
         bonus: "+1 to R.R. against poisons"
       - id: infection
@@ -168,6 +164,31 @@ types:
     progression_trigger: >
       Failed R.R. with Learning Advantage, when the corresponding effect is actually
       suffered and survived as meaningful exposure.
+    damage_note: >
+      Resistances do not reduce Impact or elemental damage. Damage is resolved through
+      Impact versus Block and the wound/HP rules. Elemental identity is handled by traits
+      such as minor/major resistance or vulnerability on creatures, materials, objects,
+      or specific effects.
+
+elemental_damage_traits:
+  scope: creatures_materials_objects_and_specific_effects
+  rule: >
+    These traits modify damage of a declared elemental origin after normal impact
+    resolution identifies the relevant damage amount. They are not player resistance
+    competencies and do not progress through Learning Advantage.
+  levels:
+    minor_resistance:
+      name_es: Resistencia menor
+      damage_multiplier: 0.5
+    major_resistance:
+      name_es: Resistencia mayor
+      damage_multiplier: 0
+    minor_vulnerability:
+      name_es: Vulnerabilidad menor
+      damage_multiplier: 1.5
+    major_vulnerability:
+      name_es: Vulnerabilidad mayor
+      damage_multiplier: 2
 
 progression_map:
   attack_roll:

@@ -333,12 +333,15 @@ Buenos usos:
 - aplicar Alteración si el golpe impacta y el objetivo falla T.R.;
 - reducir severidad de Veneno si el personaje está entrenado;
 - hacer que una Maldición exija otra forma de resistencia;
+- explotar una Vulnerabilidad menor o mayor definida en el perfil de una criatura, material u objeto;
 - dar contrajuego a través de T.R. y duración clara.
 
 Riesgo:
 
 - estados persistentes sin salida;
 - resistencias usadas como única identidad de Técnica.
+
+Las resistencias de personaje no reducen daño elemental. Si una Técnica interactúa con fuego, agua, luz, oscuridad u otro origen elemental, esa interacción debe operar como origen del efecto, Alteración, entorno, material o rasgo de Vulnerabilidad/Resistencia definido por el objetivo.
 
 ### Equipo, Material y Objetos
 

@@ -185,13 +185,13 @@ Resistances are a special case:
 
 That means the normal output is:
 
-- `Armor + Fire Resistance`
+- `Armor + fire-origin Vulnerability/Resistance trait`
 - `Tolerance + Poison Resistance`
 - `Resonance + Corruption Resistance`
 
 and not:
 
-- `Fire Resistance` alone
+- a standalone fire-resistance Technique with no other trained origin
 - `Poison Resistance` alone
 
 Pure Resistance Techniques are prohibited.

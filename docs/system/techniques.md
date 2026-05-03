@@ -557,10 +557,10 @@ Because of that:
 
 In practice:
 
-- `Armor + Fire Resistance` is valid
+- `Armor + fire-origin Vulnerability/Resistance trait` is valid
 - `Tolerance + Poison Resistance` is valid
 - `Resonance + Corruption Resistance` is valid
-- `Fire Resistance` by itself is not valid
+- a standalone fire-resistance Technique with no other trained origin is not valid
 
 Pure Resistance Techniques are prohibited.
 
