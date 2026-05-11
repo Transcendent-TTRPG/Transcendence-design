@@ -16,6 +16,8 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [cover-visibility-concealment.md](cover-visibility-concealment.md) | Cobertura, Visibilidad y Ocultación — physical cover, visual range, light sources, hidden state, active/passive detection |
 | [limbo-manifestations.md](limbo-manifestations.md) | Three Limbo manifestation types (ambient flow / vestige / link), detection methods, relationships between types, open design questions (D-09–D-11) |
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
+| [materials-and-fabrication.md](materials-and-fabrication.md) | Materials framework: families, grade, accessibility, extraction, conservation, fabrication, refinement, and related tool/plan logic |
+| [faction-reputation-and-alliances.md](faction-reputation-and-alliances.md) | Social-world framework: faction standing, public renown, alliances, and commerce/availability |
 | [techniques.md](techniques.md) | Technique taxonomy: canonical fields, cost model, timing, duration, resistance, scaling, and authoring rules |
 | [technique-interaction-framework.md](technique-interaction-framework.md) | Cross-system doctrine for Techniques — what systems they should touch, how they should touch them, and how to avoid arbitrary bonus-stacking |
 | [technique-origins.md](technique-origins.md) | World-grounding framework for Techniques — origin fronts (Species, Doctrine, Region), transmission logic, access levels, and design checklist |
@@ -28,6 +30,8 @@ All content here is extracted from and must remain consistent with `transcendenc
 | [attrition-fatigue.md](attrition-fatigue.md) | Desgaste, Aguante y Fatiga — attrition model, Endurance formula, Fatigue thresholds, action cost scale |
 | [atb-reference.md](atb-reference.md) | ATB quick reference — timeline model, rhythm cost, reactions, subsystem tracks, encounter layers, table prompts |
 | [equipment-overview.md](equipment-overview.md) | Equipment structure: armor slots and types, zone block formula, shield role, weapon assignment, NPC→PC hit table |
+| [combat-equipment-catalog.md](combat-equipment-catalog.md) | Concrete combat equipment catalog: named weapons, shield classes, and compositional armor authoring rule |
+| [mundane-equipment-and-objects.md](mundane-equipment-and-objects.md) | Broad catalog of ordinary carried goods, travel gear, field utility, mundane ammunition, and simple loadouts |
 | [wounds-and-damage.md](wounds-and-damage.md) | Heridas y Daño — Impact vs. Block, PC wound slots, NPC damage surfaces, stabilization with Medicine |
 | [mechanics-overview.md](mechanics-overview.md) | Horizontal view of all systems organized by ability design surfaces — use this when designing abilities |
 | [pending-design-questions.md](pending-design-questions.md) | Working backlog of unresolved system questions for wounds, criticals, cover, visibility, and concealment |
@@ -43,12 +47,16 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Tenacity-specialization interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
 | `equipment.yaml` | Equipment slots, armor types, zone block formula, shield formulas, hit-location table, slot effects |
+| `combat-equipment-catalog.yaml` | Concrete combat equipment catalog — named weapon items, shield classes, and armor composition rule |
+| `mundane-equipment-and-objects.yaml` | Baseline catalog of mundane carried goods, travel gear, field support objects, and simple loadouts |
 | `wounds-and-damage.yaml` | Impact vs. Block wound thresholds, wound slots by zone, PC/NPC damage surface split, stabilization requirements |
 | `difficulty-thresholds.yaml` | 5 difficulty tiers with base values and formula — applies to all roll-based systems |
 | `ailments.yaml` | Agravios taxonomy, universal severity model, and initial Alteration entries |
 | `environmental-conditions.yaml` | Two condition types, 6 elements and combinations, 5 severity levels with NR guidance |
 | `cover-visibility-concealment.yaml` | Cover levels, reduced visibility ranges, light sources, concealment state, detection rules |
 | `limbo-manifestations.yaml` | El Limbo definition, three manifestation types with characteristics and detection, inter-manifestation relationships |
+| `materials-and-fabrication.yaml` | Materials framework — families, accessibility, extraction domains, conservation classes, fabrication, refinement, and related authored loops |
+| `faction-reputation-and-alliances.yaml` | Social-world framework — faction standing, public renown, alliance status, settlement availability, and trade-access logic |
 | `techniques.yaml` | Technique taxonomy, template, cost fields, duration models, and competency-domain matrix |
 | `technique-interaction-surfaces.yaml` | Catalog of mechanical surfaces Techniques can touch — roll, timing, attrition, damage, wounds, cover, concealment, equipment, recovery, information, and encounter parts |
 | `weapon-technique-profiles.yaml` | Weapon-profile authoring layer — combat families, compatible origins, natural weapon compatibility, and ATB timing identity |

@@ -34,8 +34,8 @@ Represents ability to avoid an incoming attack through reflexes, mobility, and a
 |---|---|---|
 | Unarmored | full Evasion | full `AGI` |
 | Light armor | full Evasion | full `AGI` |
-| Medium armor | half Evasion, rounded up, minimum 1 | half `AGI`, rounded up, minimum 1 |
-| Heavy armor | 0 | 0 |
+| Medium armor | full Evasion | half `AGI`, rounded up, minimum 1 |
+| Heavy armor | half Evasion, rounded up, minimum 1 | 0 |
 
 For `NPC -> PC`, hit location is rolled first. That resolved zone determines which armor type constrains Evasion and Agility in `D.R.`. If defense fails, the zone's block value still mitigates the impact.
 

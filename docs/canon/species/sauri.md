@@ -106,7 +106,173 @@ What if nothing living was ever meant to contain that current?
 
 ---
 
-## 5. System Connections
+## 5. Organization and Internal Variation
+
+No Sauri order survives by symbolism alone. Their internal divisions exist
+because different bodies must carry different forms of pressure, and because a
+single mistake in water, preservation, sovereignty, or Tauma handling can ruin
+an entire settlement.
+
+### Temple basins and territorial variants
+
+Sauri communities are rarely identical. A marsh temple, a river kingdom, a
+desert-edge cistern city, and a half-buried reservoir fortress may all honor
+the vessel, but they do not distribute authority the same way. Where flood is
+the main threat, river wardens and labor castes may rival priesthoods in
+practical power. Where preservation and dynastic continuity dominate, funerary
+orders and lineage keepers may carry more weight than soldiers. Where
+reservoir control means survival, engineers, masons, and gate guards may
+become nearly sacred offices.
+
+What remains universal is not one political form, but one civilizational
+demand: someone must keep the vessel from failing.
+
+### Orders that hold the species together
+
+Most Sauri communities rely on some version of the following pressure-bearing
+bodies:
+
+- **sovereign or vessel lineages** who embody legitimacy and absorb political-religious burden
+- **temple attendants and preservers** who manage bodies, rites, and dangerous continuity with the dead
+- **river or gate wardens** who control approach, thresholds, basins, and breach response
+- **labor and maintenance bodies** who keep canals, cisterns, walls, floodgates, and storage systems from failing
+- **readers of pressure** who interpret scale-signs, ruin residue, water corruption, or Tauma irregularity
+
+These do not always exist as clean castes. In poorer or more fragile
+settlements, the same person may serve in several roles because the community
+cannot afford specialization.
+
+### Internal tensions
+
+Sauri internal conflict is usually not about abstract ideology first. It is
+about which failure must be prevented before the others.
+
+Common fault lines include:
+
+- priesthood versus labor authority
+- sovereign sanctity versus proof that the vessel is failing
+- preservation of the dead versus fear that too much is being held
+- canal defense versus open trade
+- ritual orthodoxy versus local survival improvisation
+- communities built around living rulers versus those ruled by preserved dynastic remnants
+
+These tensions become dangerous because Sauri settlements often do not have the
+margin to be wrong for long. A doctrinal split during drought, rot, siege, or
+ruin contamination is not a philosophical inconvenience. It is the shape of a
+mass death event waiting for the first crack.
+
+---
+
+## 6. Daily Life and Survival
+
+To survive as Sauri is to live inside managed pressure. Water must be held,
+heat must be endured, meat must be preserved, stone must not crack at the
+wrong moment, and Tauma-signs must be read before they become catastrophe.
+What other peoples call "settlement" often feels to the Sauri more like a
+continuously maintained containment structure.
+
+### Food, labor, and continuity
+
+Most Sauri communities depend on fish, marsh-catch, hard reptiles, river
+beasts, preserved meat, reed grains, bitter roots, and whatever can be dried,
+smoked, salted, sealed, or sun-cured before rot or contamination claim it.
+Fresh abundance exists only briefly and unpredictably. Scarcity is not a rare
+crisis but a planning condition.
+
+Because of that, labor has ritual force. Canal clearing, reservoir inspection,
+salting, preservation, flood-wall repair, cistern cleaning, carcass judgment,
+and corpse handling are not low tasks beneath sacred life. They are the tasks
+that prevent sacred life from collapsing.
+
+### Childhood and discipline
+
+Sauri childhood is usually less protected than other species would prefer.
+Young Sauri are taught early to distinguish still water from foul water,
+stable stone from hollow stone, true shelter from deceptive shade, and a
+useful sign from a fatal false reading. To fail these lessons is not merely to
+be foolish. It is to become difficult to keep alive.
+
+Rites of passage often test tolerance rather than prowess: heat endurance,
+night watch, sealed silence, burden-bearing, holding posture under fear,
+keeping form while hungry, or preserving something entrusted to the initiate
+without spoilage, panic, or leak.
+
+### Domestic fear
+
+Ordinary Sauri life is shaped by the fear of breach:
+
+- a gate that fails in flood season
+- a sealed chamber that was not truly sealed
+- a cistern tainted by rot, residue, or corpse seepage
+- a preserved ruler, witness, or ancestor showing the wrong sign
+- a rival species testing the edge of the canal line
+- a body that was asked to carry too much
+
+Their homes are not comfortable because the world is gentle. They are
+comfortable only where maintenance has not yet failed.
+
+### Aging, death, and unbearable loss
+
+To age well among the Sauri is not merely to survive long. It is to remain
+structurally useful: a keeper of rites, a reader of pressure, a witness of
+lineage, a body that still knows where the vessel holds.
+
+The losses they find hardest to bear are often losses of containment:
+
+- a reservoir gone bad
+- a lineage body left unpreserved
+- a child taken by heat, marsh predators, or bad water
+- a sovereign who breaks under the burden they were supposed to hold
+- a temple whose rituals continue after the current inside it has already gone wrong
+
+---
+
+## 7. External Relations
+
+The Sauri tend to occupy floodplains, marsh margins, temple reservoirs,
+desert-edge basins, canal settlements, and buried or half-buried ritual
+complexes built where water, stone, and heat can still be controlled. This
+does not make their territories safe. It makes them defensible only so long as
+maintenance, labor, and ritual legitimacy keep working together.
+
+### Neighbors, rivals, and dependency
+
+Other species rarely encounter the Sauri in neutral terms. The Sauri control
+water, preserved routes, old basins, hidden stores, funerary ground, and
+stoneworks that others may desperately need. This makes them valuable trading
+partners, feared toll-keepers, harsh allies, or natural targets.
+
+Some neighbors see them as guardians of stability. Others see them as hoarders
+of survival infrastructure. Both readings may be correct depending on whether
+the canal is open, the dead are quiet, and the treaty still holds.
+
+### The shape of danger
+
+The greatest outside pressures on Sauri continuity are usually:
+
+- drought or salt corruption
+- flood failure or reservoir breach
+- marsh predators and carrion ecologies
+- ruin-taint spreading through water channels
+- raiders who strike storage, labor crews, or funerary lines instead of walls
+- rival species who need controlled water badly enough to risk war for it
+
+This means Sauri diplomacy is rarely abstract. It is about access to the means
+of continuity.
+
+### How they are read by others
+
+Many outsiders respect Sauri endurance but fear Sauri judgment. Their
+ceremonial calm can look like confidence, cruelty, or stubborn blindness
+depending on who is dying outside the gates. To peoples who live more lightly,
+the Sauri seem too willing to preserve what should be buried and too certain
+that enough discipline can survive anything.
+
+That certainty is one of the things most likely to destroy them.
+
+---
+
+## 8. System Connections
 
 ### Competency affinities
 
@@ -171,11 +337,24 @@ Sauri-origin Techniques should emerge from:
 - reading environmental pressure through scale, stone, water, heat, and mineral residue
 - preservation of bodies, evidence, rulers, and oaths
 
+For authoring purposes, the Sauri also support a small **secondary
+specialization pool** beyond their main 8-specialization Novice spine. The
+most justified secondary-fit domains are:
+
+- `Aclimatación` for exposure, heat, and hostile ambient endurance
+- `Contención` for dangerous internal or extranatural pressure
+- `Teología` for ritual burden, preserved authority, and sacred-contact logic
+- `Arquitectura` for chamber, threshold, and built-containment expressions
+
+These should mainly support resistance hybrids, regional variants, or
+higher-rank expansion rather than replace the primary specialization package by
+default.
+
 Sauri Techniques should not simply be "elemental powers." The Sauri may be obsessed with Tauma, but standard Techniques remain trained, grounded methods. If a Technique appears to interact with Tauma, it should do so through detection, preparation, containment, safe handling, or interpretation unless a later magic subsystem explicitly allows more.
 
 ---
 
-## 6. Design Notes
+## 9. Design Notes
 
 ### What makes them distinct
 

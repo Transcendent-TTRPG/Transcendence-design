@@ -30,6 +30,13 @@ severity_model:
   rule: >
     All Ailments use the same three severity levels. What severity changes is
     specific to each Ailment entry.
+  default_application_pressure:
+    minor: "8 + NR"
+    moderate: "13 + NR"
+    severe: "17 + NR"
+  pressure_note: >
+    These are the default resistance thresholds for applying or escalating an
+    Ailment by severity unless a specific entry overrides them.
   note: >
     Severity does not always increase the ongoing penalty. Some Ailments use
     severity mainly to define application pressure, resistance difficulty, or
@@ -95,6 +102,79 @@ families:
       disorientation, confusion, or overload should usually be treated as
       transient bodily states or downstream effects, not as standalone
       Afflictions.
+    progression_model:
+      main_sources:
+        - vestigio
+        - vinculo
+      interaction_rule: >
+        Each meaningful interaction with a Vestigio or Vínculo may call for an
+        Affliction Resistance Roll. On a failure, the relevant sensory
+        Affliction intensity increases by 1.
+      manifestation_track:
+        latent_range: [0, 4]
+        first_manifestation_at: 5
+        moderate_at: 10
+        severe_at: 15
+      overflow_rule: >
+        If intensity would increase past a Severe manifested Affliction, the
+        next increase should usually manifest a new Affliction on the same
+        sensory channel instead of extending the same one past Severe.
+      recovery_and_worsening:
+        failed_qualifying_interaction: "+1 intensity"
+        no_adequate_rest: "+1 intensity per night"
+        good_sleep: "-1 intensity per night"
+        effective_meditation: "-1 intensity per session"
+      structure_note: >
+        A proper Affliction usually carries both a terrestrial impairment and
+        an extranatural perception benefit. Recovery pressure should reduce the
+        destabilizing burden without assuming the perception channel vanishes
+        automatically.
+  infection:
+    definition: >
+      Biological, contaminant, or invasive organism Ailments that remain in
+      the body over time and may spread to others.
+    resistance_formula: "1d10 + Tenacity + Resistances + Bonuses"
+    structure:
+      required_subsystems:
+        - contagion
+        - incubation
+        - propagation
+        - treatment_route
+      contagion: >
+        Initial exposure requires an Infection Resistance Roll against the
+        Infection's stated difficulty.
+      incubation: >
+        The Infection may remain present but asymptomatic for a defined period
+        before visible symptoms begin.
+      propagation: >
+        Once active after incubation, the Infection may spread through the
+        vectors defined by its entry. Exposed creatures must make the stated
+        Infection Resistance Roll to avoid contagion.
+  poison:
+    definition: >
+      Toxic Ailments introduced through a delivery method and resolved inside
+      the organism.
+    resistance_formula: "1d10 + Tenacity + Resistances + Bonuses"
+    delivery_methods:
+      - inoculation
+      - ingestion
+      - inhalation
+      - contact
+    persistence_rule: >
+      Poisons remain active until neutralized, metabolized out, removed from
+      the system, or otherwise ended by their own entry.
+    handling_note: >
+      Identification, safe handling, application, contamination risk, and
+      neutralization should be part of poison logic rather than generic
+      narration.
+  curse:
+    definition: >
+      Extranatural Ailments bound to beings, objects, places, vows, or hostile
+      supernatural rules.
+    resistance_formula: "defined per curse entry"
+    scope_note: >
+      Curses should not be collapsed into Afflictions. An Affliction distorts
+      perception or inner coherence; a Curse binds a hostile extranatural rule.
 
 template:
   name: ""

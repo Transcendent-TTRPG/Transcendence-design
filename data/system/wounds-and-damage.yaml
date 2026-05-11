@@ -168,7 +168,7 @@ block:
     light: 2
     medium: 4
     heavy: 6
-  material_bonus_formula: "floor(durability / 5)"
+  material_bonus_formula: "floor(durability / 10)"
   piece_grade_range: [1, 3]
 
 damage_surfaces:

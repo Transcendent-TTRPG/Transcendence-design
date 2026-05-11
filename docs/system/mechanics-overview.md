@@ -22,6 +22,8 @@ For detailed system descriptions, see the individual files in this folder.
 | Limbo Manifestations | `limbo-manifestations.yaml` | Manifestation type (flow/vestige/link), detection method, proximity to link |
 | Competencies & Progression | `competencies.yaml` | Effective level/rank bonus, maneuver access, progression unlock |
 | Specializations | `specializations.yaml` | S.R. bonus, Technique access, Synapsis path unlock |
+| Materials & Fabrication | `materials-and-fabrication.yaml` | Material family, durability, base potency, accessibility, conservation, extraction, fabrication, refinement |
+| Faction Reputation & Alliances | `faction-reputation-and-alliances.yaml` | Standing state, renown profile, alliance status, availability ceiling, trade access, price pressure |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
 | Rest & Recovery | `attrition-fatigue.yaml` | Recovery amount modifier, additional task access, favorable condition criteria |
 | ATB combat timeline | `combat-atb-timeline.md` (ADR) | Rhythm cost reduction, initial position bonus, reaction access |
@@ -29,6 +31,12 @@ For detailed system descriptions, see the individual files in this folder.
 | General Rules | `general-rules.md` | Specific-over-general priority, strongest-condition replacement, rounding, tool dependency |
 | Action Structure | `atb-combat.yaml` + `atb-reference.md` | Action type gating, trigger windows, free/active/reactive classification |
 | Equipment | `equipment.yaml` | Weapon assignment, shield role, armor interaction, zone-based defense surfaces |
+| Combat Equipment Catalog | `combat-equipment-catalog.yaml` | Named weapon items, shield class entries, item damage/range/weight/assignment, armor composition permissions |
+| Mundane Equipment & Objects | `mundane-equipment-and-objects.yaml` | Ordinary carried goods, load categories, availability tier, price baseline, weight/load reference |
+| Weapon Technique Profiles | `weapon-technique-profiles.yaml` | Combat expression profile, compatible effect family, access gate, shared weapon/natural-attack language |
+| Natural Attack Forms | `natural-attack-forms.yaml` | Anatomy contact logic, compatible profiles, restricted profiles, species-level combat expression |
+| Backgrounds | `backgrounds.md` | Starting specialization package, major affinity, creation-time Synapsis spread |
+| Technique Origins | `technique-origins.md` | Origin front, transmission, availability, world-grounded access to Techniques |
 | NPC / Creature Logic | `general-rules.md` | Trait-based exceptions, subsystem timing, encounter-layer pressure |
 
 ---
@@ -118,6 +126,124 @@ This prevents good Technique ideas from becoming bad rules text.
 
 ---
 
+## Faction Reputation & Alliances
+
+This layer governs how the social world remembers the group beyond one immediate scene.
+
+It is made of four linked but separate parts:
+
+- `Faction Standing`
+- `Public Renown`
+- `Alliance Status`
+- `Commerce & Availability`
+
+Use this system when an authored element needs to touch:
+
+- trust from a specific organized group;
+- political or factional access;
+- public social pattern or notoriety;
+- alliance benefits and obligations;
+- sourcing pressure, trade gates, or restricted inventory access.
+
+### Main ability surfaces
+
+| Surface | Typical use |
+| --- | --- |
+| Standing | Shift one faction up or down a bounded relationship ladder |
+| Renown | Add, suppress, reinterpret, or redirect public action pattern |
+| Alliance | Form, reinforce, strain, or break a formal relationship |
+| Access | Open or close faction goods, information, services, or infrastructure |
+| Availability | Raise or bypass a local sourcing ceiling |
+| Trade terms | Apply discounts, surcharges, waiting time, or service priority |
+
+### Design rule
+
+Do not use this layer as a personality or moral-alignment system.
+
+It should answer:
+
+- who trusts us;
+- who has reason to fear or welcome us;
+- what doors are open;
+- what this settlement can normally provide;
+- and what faction relationships override that baseline.
+
+It should not answer:
+
+- what kind of soul the character has;
+- whether one scene-level persuasion roll should auto-resolve all future consequences;
+- or whether all factions interpret the same act identically.
+
+---
+
+## Mundane Equipment & Objects
+
+This layer covers the ordinary carried goods and practical field objects that players interact with constantly but that do not need a unique subsystem each.
+
+Use it when an authored element needs to touch:
+
+- routine gear access;
+- carried object category;
+- simple price and load reference;
+- mundane ammunition baseline;
+- travel, camp, writing, medical, or utility object availability.
+
+### Main ability surfaces
+
+| Surface | Typical use |
+| --- | --- |
+| Object category | Distinguish travel gear, light source, recordkeeping, utility, medical, or mundane ammunition |
+| Availability | Judge whether a mundane object is plausibly on hand in a place |
+| Price baseline | Provide default cost before social, factional, or scarcity modifiers |
+| Weight / load | Inform how much practical field support the group can carry |
+| Bundle / loadout | Fast-start ordinary equipment package |
+
+### Design rule
+
+Do not overload this layer with:
+
+- armor slot logic;
+- weapon profile logic;
+- unique magical item logic;
+- or full fabrication/refinement procedures.
+
+Use it as the fast baseline for ordinary physical play, then hand off to the more specific system when the object becomes mechanically deeper.
+
+---
+
+## Combat Equipment Catalog
+
+This layer instantiates the combat-equipment structure into concrete authored entries.
+
+Use it when an authored element needs to touch:
+
+- a named weapon item rather than only a weapon family;
+- shield class entries as catalog objects;
+- item-specific damage, range, weight, associated characteristic, or assignment;
+- or the rule that armor is composed from slot, category, material, and grade rather than from giant suit lists.
+
+### Main ability surfaces
+
+| Surface | Typical use |
+| --- | --- |
+| Named weapon item | Reference a concrete weapon instead of only a broad family |
+| Item bonus text | Tie a weapon's special baseline incentive to a tactic or target condition |
+| Assignment | Distinguish `Primary` from `Auxiliary` item structure |
+| Shield class | Apply class-authored cover, armor, and movement logic |
+| Armor composition | Check what part of an armor piece comes from slot/category vs. material |
+
+### Design rule
+
+Do not use this catalog to override the structural rules in `equipment-overview.md`.
+
+The correct hierarchy is:
+
+1. `equipment-overview` defines the stable logic
+2. `combat-equipment-catalog` defines concrete combat items
+3. `materials-and-fabrication` defines what those items are made from and how they survive material pressure
+
+---
+
 ## General Rules
 
 **Authority:** `docs/system/general-rules.md`
@@ -129,6 +255,7 @@ These rules are not just editorial background. They are active design constraint
 | Principle | Meaning for Technique design |
 | --- | --- |
 | Specific over general | A Technique may override a baseline rule, but only inside its own clearly bounded scope |
+| Thematic-mechanical synthesis | First ask what the fiction most credibly supports, then test what the numbers most safely support, and keep the strongest middle ground between both |
 | Round up | Any derived Technique value using fractions should assume upward rounding unless its own text says otherwise |
 | Strongest condition | A Technique should usually replace, refresh, or fail to stack against a stronger same-type effect |
 | Tool handling | Some Techniques should explicitly require valid tools, implements, or interfaces to function properly |
@@ -288,6 +415,10 @@ Techniques should stay non-magical, but some may still interact with manifestati
 | Detection support | Help identify flow, vestige, or link presence |
 | Safe approach or handling | Improve interaction with manifestation-linked scenes |
 | Interpretation aid | Clarify what kind of manifestation is present |
+| Discovery gate | Determine whether a vestige can be intentionally used |
+| Medium requirement | Check whether light, sound, vibration, heat, or another valid carrier exists |
+| Affliction pressure | Track whether use raises sensory Affliction intensity |
+| Link qualification | Check whether the bearer has the required linked Affliction severity |
 
 ### Out of bounds for standard Techniques
 
@@ -295,6 +426,108 @@ Techniques should stay non-magical, but some may still interact with manifestati
 | --- | --- |
 | Creating supernatural energy or effects from nothing | Belongs to later Limbo / magic design |
 | Full manifestation control | Too far beyond trained non-magical Technique scope |
+
+---
+
+## Ailments
+
+**Authority:** `data/system/ailments.yaml`
+
+Ailments are one of the main cross-system surfaces for Techniques because they
+carry named ongoing consequences instead of vague penalties.
+
+### Core taxonomy
+
+| Family | Main logic |
+| --- | --- |
+| Alterations | Direct bodily or operational disruption |
+| Infections | Biological / contaminant state with contagion and incubation logic |
+| Afflictions | Sensory, perceptual, or inner-state distortion with intensity logic |
+| Poisons | Toxic states resolved through delivery method and persistence in the organism |
+| Curses | Extranatural binding rules attached to a target, object, place, or relation |
+
+### Key Technique surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Apply a named Ailment | Direct ongoing state pressure |
+| Escalate or downgrade severity | Ailment pressure by tier |
+| Modify the qualifying `R.R.` | Delivery or resistance logic |
+| Suppress, stabilize, or shorten persistence | Relief without erasing the whole subsystem |
+| Interact with Affliction intensity | Vestigio / Vínculo pressure and recovery logic |
+
+### Design rule
+
+If a Technique wants to create an ongoing state, first check whether a named
+Ailment already owns that effect. If not, the missing mechanic should be
+defined in the Ailment layer before the Technique treats it as freeform text.
+
+---
+
+## Wounds & Damage
+
+**Authority:** `data/system/wounds-and-damage.yaml`
+
+Wounds and damage are not just "lose HP." This layer distinguishes impact,
+zone block, wound slots, collapse, durability, and break logic.
+
+### Key structure
+
+| Layer | What it does |
+| --- | --- |
+| Impact vs. Block | Determines whether harm penetrates protection |
+| Wound slots by zone | Tracks bodily saturation and collapse on PCs |
+| NPC / creature surfaces | Uses parts, HP, durability, and linked functions |
+| Critical break logic | Resolves whether a valid critical can break a part or object |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Add or reduce Impact pressure | Damage-facing attack shaping |
+| Change how Block matters in one narrow case | Protection interaction |
+| Stabilize or preserve a wounded target | Medical or endurance continuity |
+| Mark a part, zone, or structural weakness | Break setup or follow-up pressure |
+| Modify valid break attempts | Potency, critical range, or durability interaction |
+
+### Design rule
+
+Techniques should not collapse all physical consequences into generic damage.
+If the fiction is about bodily spill, wound continuity, broken parts, or zone
+failure, this layer should be the real authority.
+
+---
+
+## Cover / Visibility / Concealment
+
+**Authority:** `data/system/cover-visibility-concealment.yaml`
+
+This layer owns protection by line, what can be seen, how hidden states work,
+and what it takes to recover a target's position or reading surface.
+
+### Key structure
+
+| Layer | What it does |
+| --- | --- |
+| Cover | Interferes with attack lines and direct targeting |
+| Visibility | Defines how far and how clearly details can be perceived |
+| Concealment | Governs hidden state, approximate location, and re-detection |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Raise or lower effective cover | Attack-line pressure |
+| Create or deny a refuge point | Position-based protection |
+| Alter visibility tier or readable range | Scene perception pressure |
+| Reveal, blur, or preserve position | Hidden-state control |
+| Break physical cover | Durability and structure interaction |
+
+### Design rule
+
+Techniques should not say "the target is harder to hit" or "the user is hidden"
+if the real effect is cover, concealment, or visibility loss. Use the named
+system instead.
 
 ---
 
@@ -323,6 +556,159 @@ Equipment is not just a prerequisite list. It changes what kinds of Technique in
 | Change zone pressure | Body-area interaction |
 | Use shield value or block surfaces indirectly | Guard logic |
 | Require or exploit natural attack form | Shared profile access |
+
+---
+
+## Materials & Fabrication
+
+**Authority:** `data/system/materials-and-fabrication.yaml`
+
+This layer owns the logic of what materials are, how they are extracted,
+preserved, transformed, and refined into authored outputs.
+
+### Key structure
+
+| Layer | What it does |
+| --- | --- |
+| Material family | Groups materials by shared handling and processing logic |
+| Grade | Tracks quality band of the material itself |
+| Accessibility | Sets how demanding extraction, identification, or work should be |
+| Conservation | Determines whether a material is stable, perishable, or volatile |
+| Fabrication domain | Identifies which specialization actually owns the work |
+| Refinement path | Defines how a valid object can gain an additional authored property |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Read or exploit a material property | Material-facing setup |
+| Reduce a bounded extraction or work threshold | Specialist efficiency |
+| Preserve a volatile input | Continuity under pressure |
+| Accelerate one authored work interval | Limited production pressure |
+| Mark a valid refinement interface | Upgrade permission rather than freeform bonus creation |
+
+### Design rule
+
+Techniques may touch this layer, but they should not replace whole crafting,
+extraction, or production loops. They should usually set up, preserve, exploit,
+or accelerate one bounded interaction that the material system already owns.
+
+---
+
+## Weapon Technique Profiles
+
+**Authority:** `data/system/weapon-technique-profiles.yaml`
+
+Weapon Technique Profiles are the shared combat-expression layer between a
+weapon competency, a natural attack form, and a concrete Technique.
+
+### Core role
+
+| Layer | What it answers |
+| --- | --- |
+| Weapon competency | What the character can wield effectively |
+| Weapon Technique Profile | What style of combat pressure the action belongs to |
+| Technique | What happens right now, with what cost and effect |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Grant access through a specific profile | Combat identity gate |
+| Restrict effect families by profile | Keep weapon fantasy coherent |
+| Build follow-up logic inside one profile family | Sequencing without global combo rules |
+| Share the same combat language across weapons and natural forms | Unified Technique ecosystem |
+
+### Design rule
+
+Profiles are not standalone Techniques and not item-by-item trees. They are the
+bridge that lets spear thrust, tail sweep, claw rake, or shield catch live in
+the same combat authoring language when the contact logic matches.
+
+---
+
+## Natural Attack Forms
+
+**Authority:** `data/system/natural-attack-forms.yaml`
+
+Natural attack forms are the inverse compatibility layer for natural combat.
+They do not create a separate Technique school; they map anatomy to existing
+Weapon Technique Profiles.
+
+### Core role
+
+| Layer | What it answers |
+| --- | --- |
+| Natural attack form | What kind of contact the body creates |
+| Compatible profiles | Which shared combat expressions that anatomy can inherit |
+| Restricted profiles | Which expressions would be a stretch or require special justification |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Access shared profiles through anatomy | Natural combat integration |
+| Restrict poor-fit profiles | Keep body logic credible |
+| Override generic form access at species level | Species-specific combat identity |
+| Use anatomy as a valid interface for interception, control, puncture, impact, or delivery | Shared combat permission |
+
+### Design rule
+
+Natural forms should inherit from the same shared profile layer used by
+manufactured weapons whenever possible. If a claw, bite, horn, shell, or tail
+cannot map cleanly to existing profiles, that may justify a new profile or a
+species exception, but not a duplicate natural-only subsystem by default.
+
+---
+
+## Technique Origins
+
+**Authority:** `docs/system/technique-origins.md`
+
+Technique Origins ground authored Techniques in the world instead of treating
+them as abstract unlocks granted automatically by progression.
+
+Use this layer when an authored element needs to touch:
+
+- where a Technique comes from;
+- who plausibly teaches, preserves, or restricts it;
+- what transmission path makes it available;
+- and what part of the world gives the Technique its identity.
+
+### Core role
+
+| Layer | What it answers |
+| --- | --- |
+| Competency | Whether the character can understand and execute this kind of method |
+| Technique origin | Why the method exists in the setting and what front produced it |
+| Transmission | How the character actually encounters or learns it |
+| Availability | How widely the method circulates in the world |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Origin front | Species, doctrine, or region as the primary source of a Technique |
+| Origin focus | The functional sphere the Technique serves inside that front, such as reconnaissance, triage, threshold control, containment, surveying, or escort discipline |
+| Holder | The concrete body that currently teaches, guards, sells, restricts, or preserves the Technique |
+| Transmission path | Teacher, order, battlefield inheritance, manuscript, ritual, or local tradition |
+| Availability | How easy the Technique is to encounter, buy, inherit, or be initiated into |
+| Discovery path | Whether the Technique enters play through exploration, faction access, observation, trade, archive recovery, or rediscovery |
+| Adaptation | Whether a non-native user can learn an analogous form through a credible substitute |
+
+### Design rule
+
+Progression grants capability, not spontaneous knowledge.
+
+If a Technique matters enough to be authored, it should normally answer:
+
+- who developed it;
+- under what pressure or need;
+- how it survived;
+- and why the current character can access it at all.
+
+The full authored catalog is part of the world's knowledge ecology, not a free
+player pick list.
 
 ---
 
@@ -634,6 +1020,15 @@ Starting point for all characters: 4 specializations at Level 1 / Novice (3 from
 
 Universal Tenacity choice: +1 TEN at creation. Stacks with species bonuses.
 
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Major affinity | Reduced progress cost inside one specialization family |
+| Starting package | Opening access to a limited set of trained domains |
+| Creation Synapsis spread | Early characteristic distribution through starting ranks |
+| Background gate | Narrative justification for certain early contacts, training paths, or world access |
+
 ---
 
 ## Ability design surfaces
@@ -688,3 +1083,5 @@ Abilities should cross systems where it serves the thematic concept. A bonus tha
 **What makes a bonus differential:** It interacts with a system in a way that changes how a character plays, not just how much they deal or absorb. Rhythm cost reductions change the cadence of play. Attrition cost reductions change how long you can sustain output.
 
 **Cross-system abilities are stronger by design:** An ability that touches two systems should typically be more restricted in its trigger condition to compensate for its broader effect. The restriction itself can carry thematic weight.
+
+**When theme and balance disagree:** Resolve in three steps. First ask what is most thematically credible. Then ask what creates the healthiest play pattern and numeric pressure. Finalize the rule at the strongest middle point that preserves identity without creating a dominant or degenerate option.

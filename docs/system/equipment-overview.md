@@ -53,14 +53,14 @@ There are three armor types:
 Each piece belongs to one of these types. Type determines:
 
 - base block
-- how much Agility contributes to `D.R.`
+- how `Evasion` and Agility contribute to `D.R.`
 - the kind of secondary bonus a slot provides
 
-### Agility interaction with `D.R.`
+### Defense interaction with `D.R.`
 
-- **Light armor:** full Agility applies to `D.R.`
-- **Medium armor:** half Agility applies to `D.R.` (minimum 1)
-- **Heavy armor:** Agility does not apply to `D.R.`
+- **Light armor:** full `Evasion`; full Agility
+- **Medium armor:** full `Evasion`; half Agility (minimum 1)
+- **Heavy armor:** half `Evasion` (minimum 1); no Agility
 
 If a defense is resolved against a specific hit zone, use the armor type relevant to that zone.
 
@@ -121,7 +121,7 @@ Where:
 ### Material bonus (`BM`)
 
 ```text
-BM = floor(durability / 5)
+BM = floor(durability / 10)
 ```
 
 This assumes armor pieces are made from materials with durability and potency values defined elsewhere.
@@ -161,8 +161,8 @@ Where `Applicable Evasion` and `Applicable Agility` depend on the armor type in 
 |---|---|---|
 | unarmored | full Evasion | full Agility |
 | light | full Evasion | full Agility |
-| medium | half Evasion, rounded up, minimum 1 | half Agility, rounded up, minimum 1 |
-| heavy | 0 | 0 |
+| medium | full Evasion | half Agility, rounded up, minimum 1 |
+| heavy | half Evasion, rounded up, minimum 1 | 0 |
 
 `Defense Bonuses` may include shields, Techniques, reactions, or situational effects.
 
@@ -192,7 +192,7 @@ These effects are always tied to the piece's **grade**.
 
 - **Light:** bonus to `S.R.` when bracers are used as part of a Technique's attack structure
 - **Medium:** bonus to `A.R.` in active Techniques
-- **Heavy:** bonus to `A.R.` in active Techniques
+- **Heavy:** bonus to `I.R.` in active Techniques
 
 ### Helmet / Head
 
@@ -229,8 +229,8 @@ Shield competency should support actions such as:
 ### Shield Defense by Type
 
 - Light shield = grade
-- Medium shield = grade + 1
-- Heavy shield = grade × 2
+- Medium shield = grade
+- Heavy shield = grade + 1
 
 This shield value applies as a general `D.R.` bonus.
 

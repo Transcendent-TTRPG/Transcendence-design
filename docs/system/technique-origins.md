@@ -106,6 +106,91 @@ These fronts are not mutually exclusive, but every technique should have **one p
 
 A technique may also have a **secondary front** if necessary.
 
+That is only the first layer.
+
+To make Techniques actually searchable in the world, each one should also have
+an **origin focus**: the concrete social, practical, or institutional body
+inside that front that preserves the method.
+
+In other words:
+
+- `front` answers **what kind of world-source created the Technique**
+- `focus` answers **what kind of body preserves it**
+- `holder` answers **who actually has it now**
+
+Without that second and third layer, `Species`, `Doctrine`, and `Region` are
+too broad to create meaningful search play.
+
+---
+
+## Front, Focus, and Holder Standard
+
+Every authored Technique should ideally be readable at three levels:
+
+1. **Front** — Species, Doctrine, or Region
+2. **Focus** — the functional sphere the Technique belongs to
+3. **Holder** — the concrete order, lineage, patrol, school, archive, shrine, caste, crew, or community that can transmit it now
+
+Example:
+
+- front: `Species`
+- focus: `Exploration / Reconnaissance`
+- holder: `Sauri marsh patrols`
+
+Another valid example:
+
+- front: `Doctrine`
+- focus: `Exploration / Reconnaissance`
+- holder: `Ash-march proselyte scouts`
+
+The same focus may appear under very different holders. A survival or
+reconnaissance Technique might be preserved by a marsh patrol, a ruin survey
+order, a merchant caravan vanguard, or a missionary cult that expands through
+dangerous terrain. The focus names what kind of practical sphere the Technique
+serves. The holder names who actually teaches, guards, trades, or hides it in
+the current world state.
+
+This lets the Narrator answer questions like:
+
+- where would players look for this Technique?
+- what kind of institution or body would know it?
+- who would sell, guard, hide, or trade it?
+- what dungeon, library, camp, shrine, or ruin might plausibly contain a trace of it?
+
+### Design rule
+
+When a Technique is authored, the designer should be able to answer:
+
+- what front produced it
+- what focus describes the kind of work, pressure, or function the Technique serves
+- what holder transmits or guards it now
+
+If only the first question can be answered, the Technique is still too diffuse
+for strong world integration.
+
+### Interpretation rule
+
+`Focus` should stay broad enough to remain reusable across different social
+bodies, but specific enough to tell the Narrator where to start looking.
+
+Good focus names:
+
+- `Exploration / Reconnaissance`
+- `Guard / Threshold Control`
+- `Medicine / Triage`
+- `Custodial / Containment`
+- `Armor / Impact Correction`
+
+Weak focus names:
+
+- `Monarchy`
+- `Temple`
+- `Cult`
+- `Patrol`
+- `Specific elite unit`
+
+Those are usually better holders than focuses.
+
 ---
 
 ## 1. Species-Origin Techniques
@@ -180,20 +265,36 @@ exclusive.
 - species-specific symbolic behaviors
 - culturally rooted technique sets across multiple competency families
 
+### Common species-origin focuses
+
+Species Techniques are not usually held by "the species" in a flat way. They
+are more often preserved by one or more internal bodies such as:
+
+- **Monarchy / Court** — sovereign guard, noble lineages, judges, ceremonial retinues
+- **Military / Guard** — line troops, escorts, wardens, sentries, corridor defense
+- **Exploration / Reconnaissance** — scouts, patrols, ruin-entry teams, frontier watchers
+- **Labor / Craft** — quarry hands, builders, floodgate crews, engineers, preservers
+- **Ritual / Funerary** — temple attendants, body-bearers, executioners, preservers
+- **Scholarly / Custodial** — archive keepers, interpreters, doctrinal readers, witness orders
+- **Common Practice** — broadly circulated species habits, village teaching, ordinary instruction
+
+These are not classes. They are worldbuilding anchors that tell the Narrator
+where the knowledge lives.
+
 ### Species Rank Coverage
 
 When a species receives a full Technique pass for a rank band, the set should use a uniform coverage target. This keeps species comparable by quantity without forcing them to have identical effects, weapons, or tactical personalities.
 
-For the current **Novice / rank 1** pass, the target is **20 species-origin Techniques**:
+For the current **Novice / rank 1** pass, the target is **24 species-origin Techniques**:
 
 | Section | Count | Origin surface | Notes |
 | --- | ---: | --- | --- |
 | Attack / weapons | 12 | three core attack surfaces, four Techniques each | These Techniques express the species' culturally valued arsenal. Each species should define three core attack surfaces that relate to its natural weapons, cultural weapons, or compensating combat traditions. |
-| Defense | 2 | armor or Evasion | These Techniques express how the species avoids, absorbs, redirects, or survives pressure. They should follow the species' actual armor and movement identity. |
+| Armor | 2 | light, medium, heavy, or the species' real restricted armor identity | These Techniques must be armor-rooted, not a generic defense bucket. They should express how the species survives pressure through armor practice, covering, weight, posture, and material trust. They do not need to cover all three armor families in one rank band. |
 | Resistance hybrids | 2 | Resistance plus another competency, specialization, equipment competency, or bounded state | Resistances never stand alone. These Techniques show how the species handles poison, fear, pain, corruption, mental influence, exposure, or similar pressure through a practiced method. |
-| Specializations | 4 | one specific specialization or a tightly paired specialization expression | These Techniques cover non-weapon identity: perception, tracking, intimidation, interpretation, medicine, architecture, theology, command, and similar domains. |
+| Specializations | 8 | one specific specialization or a tightly paired specialization expression | These Techniques cover non-weapon identity: perception, tracking, intimidation, interpretation, medicine, architecture, theology, command, and similar domains. They should normally represent at least three specialization categories and avoid placing more than three Techniques in one category unless the species identity explicitly demands it. |
 
-This quota is an authoring target, not a statement that every member of the species knows all twenty Techniques.
+This quota is an authoring target, not a statement that every member of the species knows all twenty-four Techniques.
 
 The attack quota is built from **three core attack surfaces**:
 
@@ -211,7 +312,7 @@ The quota answers:
 
 - does this species have comparable Technique volume to other species?
 - does the species have more than weapon expression?
-- did we include defense, resistance pressure, and non-combat or utility identity?
+- did we include armor identity, resistance pressure, and non-combat or utility identity?
 
 The quota does **not** answer:
 
@@ -279,6 +380,20 @@ This makes doctrine a powerful design tool for creating:
 - sacred social techniques
 - techniques that depend on worldview as much as on skill
 
+### Common doctrine-origin focuses
+
+Doctrine Techniques are usually preserved by bodies such as:
+
+- **Liturgical** — priests, readers, officiants, temple functionaries
+- **Initiatory** — novice paths, inner circles, formal rank ladders, sanctioned initiates
+- **Ascetic** — ordeals, bodily discipline, suffering paths, endurance practices
+- **Martial-Ritual** — sacred guards, doctrinal escorts, temple fighters, sanctioned violence
+- **Custodial** — relic keepers, vestige handlers, funerary doctrine, ritual archivists
+- **Heretical / Disputed** — splinter sects, forbidden readings, rival rites, suppressed lineages
+
+Doctrine-origin Techniques should usually be searchable through institutions,
+texts, initiation, ritual permission, schism, or guarded inner teaching.
+
 ---
 
 ## 3. Region-Origin Techniques
@@ -321,6 +436,21 @@ This front is especially important in Transcendence because the world is harsh, 
 - terrain-specific movement
 - combat methods built around local hazards
 - practical skill sets shared by multiple peoples in the same land
+
+### Common region-origin focuses
+
+Region Techniques are usually preserved by bodies such as:
+
+- **Travel / Navigation** — guides, caravans, ferrymen, crossing crews, pathfinders
+- **Survival / Patrol** — local wardens, flood responders, watch posts, frontier sentries
+- **Ruin / Hazard Work** — salvage crews, delvers, cistern workers, collapse readers
+- **Settlement Defense** — gate crews, wall teams, corridor defenders, militias
+- **Labor / Extraction** — miners, quarry hands, marsh workers, kiln crews, rope teams
+- **Shared Local Culture** — practices so embedded in place that multiple peoples know them
+
+Region-origin Techniques should usually be searchable through the pressures of
+place: the jobs, routes, hazards, and infrastructures that local life makes
+necessary.
 
 ---
 
@@ -393,6 +523,87 @@ To give the world texture, each technique should have an **availability profile*
 - **Lost** — no stable living transmission remains; recoverable only through ruins, fragments, or rediscovery
 
 These are not required mechanical categories yet, but they are highly useful for design and worldbuilding.
+
+## Discovery, Search, and Circulation
+
+Technique availability is not abstract flavor. It is one of the main ways
+Transcendence turns worldbuilding into play.
+
+Because the total body of Techniques in the setting is far larger than what any
+one group will immediately know, players should normally **search for
+Techniques in the world** rather than selecting them freely from the global
+catalog.
+
+This means a Technique may exist in authored canon and still be:
+
+- unknown to the current party;
+- known by rumor but not accessible;
+- documented but untranslated or incomplete;
+- visible in performance but not yet learnable without later study;
+- politically restricted;
+- species-specific in origin but adaptable through a substitute body of practice;
+- or valuable mainly as exchange material, scholarship, or faction leverage.
+
+### Common world-side acquisition paths
+
+Techniques may enter play through:
+
+- direct training by a living teacher;
+- faction instruction, school access, or doctrinal initiation;
+- manuals, scrolls, tablets, archive records, or technical notes;
+- observation of a real practitioner under pressure;
+- inscriptions, fragments, murals, funerary records, or ruin remains;
+- trade, patronage, ransom, gift exchange, or political negotiation.
+
+### Narrator rule
+
+The Narrator should treat Techniques as a distributed body of knowledge, not as
+universal player entitlement.
+
+Exploration can reward:
+
+- usable Techniques the group can actually learn now;
+- Techniques the group cannot yet execute but can preserve, sell, or trade;
+- partial records that need interpretation, translation, or reconstruction;
+- clues pointing toward a teacher, archive, order, or species tradition that
+  holds the full method.
+
+### Availability as search pressure
+
+The availability ladder should also guide how difficult a Technique is to
+encounter in the world:
+
+- **Common** — likely to be found through ordinary teachers, widely circulated manuals, or visible practice
+- **Restricted** — usually requires the right contact, caste, faction, duty, or social permission
+- **Secret** — usually requires espionage, betrayal, exceptional trust, or hidden archives
+- **Sacred** — usually requires ritual sanction, doctrinal legitimacy, or formal initiation
+- **Lost** — usually requires ruin exploration, fragment recovery, reconstruction, or rediscovery
+
+Availability does **not** replace the mechanical learning rules in
+`techniques.md`.
+
+Instead:
+
+- `availability` answers **how the world holds the knowledge**
+- `learning` answers **how the character internalizes it once access exists**
+
+### Search heuristics for Narrators
+
+If players want a certain kind of Technique, the Narrator should usually ask
+for its `front` and `focus` before deciding where it can be found.
+
+Examples:
+
+- a `Supervivencia` Technique should point toward camps, patrols, guides,
+  scouts, labor routes, or frontier outposts
+- a `Medicina` preservation Technique may point toward temple attendants,
+  body-bearers, field medics, or trauma archives
+- a court-bearing or witness-control Technique should point toward monarchies,
+  escorts, ritual courts, or doctrinal institutions
+- a region-born traversal Technique should point toward crossings, ferries,
+  ruins, harsh climates, and local specialists
+
+This makes the search world-facing instead of arbitrary.
 
 ---
 
@@ -572,7 +783,9 @@ Required fields:
 
 - `world_origin.primary_front` — Species, Doctrine, or Region
 - `world_origin.secondary_front` — optional
+- `world_origin.focus` — the functional sphere the Technique serves, broad enough to remain reusable across different institutions
 - `world_origin.source` — the specific species, doctrine, region, order, school, or tradition
+- `world_origin.holder` — optional but strongly recommended; the concrete order, lineage, patrol, archive, shrine, caste, crew, or community that currently transmits it
 - `world_origin.seed` — the conceptual seed, pressure, doctrine, or regional need that generated the Technique
 - `world_origin.transmission` — the world-side source through which the Technique is passed on
 - `world_origin.availability` — Common, Restricted, Secret, Sacred, or Lost
@@ -597,13 +810,35 @@ What must a character already know how to do?
 ### 3. Does it need a secondary front?
 Only if necessary.
 
-### 4. Why did this technique emerge?
+### 4. What focus preserves it inside that front?
+- monarchy / court
+- military / guard
+- exploration / reconnaissance
+- labor / craft
+- ritual / funerary
+- scholarly / custodial
+- liturgical / initiatory / ascetic
+- travel / navigation / patrol
+- or another equally concrete body
+
+### 5. Who actually holds it now?
+- school
+- order
+- lineage
+- archive
+- patrol
+- shrine
+- work crew
+- caste
+- local community
+
+### 6. Why did this technique emerge?
 What real need or worldview created it?
 
-### 5. How is it transmitted?
+### 7. How is it transmitted?
 Teacher? rite? text? communal practice?
 
-### 6. Who can encounter it?
+### 8. Who can encounter it?
 Common? restricted? sacred? secret?
 
 If these questions do not have clear answers, the technique is probably under-grounded.
@@ -621,4 +856,5 @@ If these questions do not have clear answers, the technique is probably under-gr
 7. Doctrine-origin techniques allow cross-species technique systems rooted in belief and ritual.
 8. Region-origin techniques ground techniques in local environmental necessity.
 9. Every technique must imply a believable path of transmission.
-10. Technique identity should emerge from history, need, belief, and survival — not only from mechanical usefulness.
+10. Every technique should be searchable through a concrete focus and holder inside the world.
+11. Technique identity should emerge from history, need, belief, and survival — not only from mechanical usefulness.

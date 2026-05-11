@@ -50,6 +50,130 @@ Notas actuales:
 
 ---
 
+## Armaduras, Escudos y Bloqueo
+
+La capa estructural actual de equipo ya funciona, pero hay varias tensiones de balance entre `D.R.`, `Bloqueo`, materiales y escudos que conviene revisar antes de cerrar publicación.
+
+Nota de estado:
+
+- `equipment-overview.md` ahora ya refleja una versión candidata de rebalanceo para esta capa.
+- Lo que sigue pendiente aquí ya no es definir desde cero, sino validar si la versión candidata se sostiene en mesa o si necesita otro ajuste.
+
+### Riesgos detectados
+
+- `Armadura intermedia` parece demasiado eficiente respecto a `Armadura pesada`, porque conserva parte de `Evasión` y `Agilidad` mientras la diferencia de `Bloqueo base` es relativamente pequeña.
+- Materiales de alta `Durabilidad` empujan demasiado el `BM`, lo que permite que piezas ligeras o intermedias de materiales muy buenos se acerquen demasiado al `Bloqueo` de categorías superiores sin pagar su costo de movilidad.
+- `Escudo intermedio` parece el punto dulce más rentable porque combina bono a `D.R.`, `Cobertura Ligera` y una penalización de movimiento que puede volverse nula con competencia suficiente.
+- Algunos bonos de ranura no diferencian bien entre `Intermedia` y `Pesada`, especialmente en brazales.
+
+### Propuesta de rebalanceo pendiente
+
+#### 1. Reforzar la identidad de `Armadura pesada`
+
+Propuesta:
+
+- `Ligera`: mantiene `Evasión` completa y `Agilidad` completa.
+- `Intermedia`: mantiene `Agilidad` a la mitad, pero deja de conservar `Evasión` a la mitad.
+- `Pesada`: recupera una porción mínima de `Evasión`, pero sigue sin usar `Agilidad`.
+
+Versión concreta a probar:
+
+| Armadura en la zona | Evasión aplicable | Agilidad aplicable |
+| --- | --- | --- |
+| sin armadura | completa | completa |
+| ligera | completa | completa |
+| intermedia | completa | mitad, redondeando hacia arriba, mínimo 1 |
+| pesada | mitad, redondeando hacia arriba, mínimo 1 | 0 |
+
+Objetivo:
+
+- `Intermedia` sigue siendo la opción flexible.
+- `Pesada` deja de sentirse como "peor que intermedia salvo por +2 Bloqueo base".
+- `Pesada` aguanta mejor sin convertirse en evasiva.
+
+#### 2. Bajar el peso del material en `Bloqueo`
+
+Regla actual:
+
+```text
+BM = floor(durability / 5)
+```
+
+Problema:
+
+- la `Durabilidad` del material está escalando demasiado cerca del corazón del `Bloqueo`, no solo en supervivencia del equipo.
+
+Propuesta conservadora:
+
+```text
+BM = floor(durability / 10)
+```
+
+Alternativa más granular:
+
+- `Ligera`: `BM = floor(durability / 10)`
+- `Intermedia`: `BM = floor(durability / 8)`
+- `Pesada`: `BM = floor(durability / 6)`
+
+Objetivo:
+
+- el material sigue importando
+- pero la categoría de armadura vuelve a importar más
+- y `Pesada` capitaliza mejor los materiales excelentes
+
+#### 3. Recalibrar escudos
+
+Problema principal:
+
+- `Escudo intermedio` ofrece demasiada eficiencia acumulada si mantiene simultáneamente `D.R.`, `Cobertura Ligera` y una penalización muy fácil de anular.
+
+Propuesta de prueba:
+
+| Tipo de escudo | Bono a `D.R.` | Cobertura | Penalización de movimiento |
+| --- | --- | --- | --- |
+| ligero | `grade` | ninguna | ninguna |
+| intermedio | `grade` | `Cobertura Ligera` | `grade` |
+| pesado | `grade + 1` | `Cobertura Media` | `grade × 2` |
+
+Nota:
+
+- esta versión deja a `Pesado` como inversión real en protección
+- y evita que `Intermedio` sea el mejor punto de costo-beneficio casi siempre
+
+#### 4. Diferenciar mejor bonos por ranura
+
+Problema:
+
+- `Brazales intermedios` y `Brazales pesados` hoy entregan el mismo tipo de bono ofensivo.
+
+Propuesta:
+
+| Ranura | Ligera | Intermedia | Pesada |
+| --- | --- | --- | --- |
+| Brazales | bono a `S.R.` cuando forman parte de la Técnica | bono a `A.R.` en Técnicas activas | bono a `I.R.` o bono a `Bloqueo` en reacciones defensivas con brazos |
+
+Objetivo:
+
+- `Intermedia` = precisión ofensiva y control activo
+- `Pesada` = castigo o respuesta de choque
+
+### Orden sugerido de pruebas
+
+1. Probar solo el cambio de `Evasión/Agilidad` por categoría.
+2. Si `Pesada` sigue débil, probar el ajuste de `BM`.
+3. Luego revisar escudos.
+4. Por último recalibrar bonos de ranura.
+
+### Preguntas abiertas
+
+- ¿`Armadura intermedia` debería conservar `Evasión` completa o media?
+- ¿`Pesada` se siente mejor con `media Evasión` o con más `Bloqueo base`?
+- ¿el `BM` del material debe ser universal o variar según categoría?
+- ¿`Escudo pesado` debería dar `Cobertura Media` y `D.R.` alto, o una de las dos?
+- ¿`Brazales pesados` deben premiar `I.R.` o `Bloqueo` reactivo?
+
+---
+
 ## Cobertura
 
 Notas actuales:

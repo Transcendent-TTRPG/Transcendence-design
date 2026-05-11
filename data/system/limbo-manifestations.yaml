@@ -66,17 +66,50 @@ manifestaciones:
     nombre_es: Vestigio
     nombre_en: Vestige
     descripcion: >
-      Energía taumática residual depositada en un objeto o lugar por contacto pasado con
-      el Limbo. No hay entidad ni vínculo activo — es la huella de una presencia anterior.
-      Se disipa gradualmente; no es permanente.
+      Energía taumática residual depositada en un objeto físico por contacto
+      pasado con el Limbo. No hay entidad ni vínculo activo — es la huella de
+      una presencia anterior. Se disipa gradualmente; no es permanente.
     caracteristicas:
       - residual — la fuente ya no está presente
       - en disipación — se debilita con el tiempo
-      - localizado — en un objeto o lugar específico, no difuso
+      - localizado — en un objeto específico, no difuso
       - inerte — no genera efectos activos por sí solo
     distincion_critica: >
       Un vestigio no es un vínculo. No hay conexión activa al Limbo. Es la impresión
       que dejó la energía, no la energía misma.
+    principios_de_uso:
+      - objeto_fisico_limitado
+      - no_crea_energia_sesga_sincroniza_o_filtra_procesos_ya_existentes
+      - siempre_requiere_un_medio_local_luz_sonido_vibracion_presion_calor_u_otro_portador_real
+      - fatiga_de_patron_su_agotamiento_es_impredecible_y_debe_permanecer_oculto_para_los_jugadores
+      - poder_moderado_da_ventaja_pero_no_define_jerarquias
+      - cada_uso_significativo_aumenta_la_intensidad_de_afliccion_del_portador
+      - opcion_debil_entre_objetos_del_limbo_por_su_efecto_acotado_y_sus_usos_finitos
+    descubrimiento:
+      undiscovered_state: >
+        El portador solo conoce una presentación misteriosa y no puede usar el
+        vestigio de forma intencional.
+      discovered_state: >
+        El portador ha comprendido el patrón real del vestigio y puede usarlo
+        intencionalmente dentro de sus requisitos.
+      bearer_information_on_discovery:
+        - nombre_real
+        - sentido_vinculado
+        - requisitos_de_uso
+        - identidad_del_efecto
+      transfer_rule: >
+        Transferir el vestigio a otro portador normalmente reinicia el estado
+        de descubrimiento, salvo que la ficción establezca herencia explícita
+        de la comprensión.
+    agotamiento:
+      model: narrator_hidden_pattern_fatigue
+      rule: >
+        El vestigio se agota por fatiga de patrón de manera impredecible. La
+        cuenta exacta de usos no debería ser visible para jugadores.
+    nota_de_autoria: >
+      Los vestigios deberían construirse normalmente a partir de objetos de
+      mitología, historia, superstición o folclor reales y luego adaptarse a
+      la lógica mecánica de Transcendence.
     deteccion:
       taumaturgia: >
         distingue la firma "antigua" o "decreciente" de un vestigio vs. la firma activa
@@ -91,20 +124,39 @@ manifestaciones:
     nombre_es: Vínculo
     nombre_en: Link
     descripcion: >
-      Puente activo entre el mundo físico y el Limbo. La energía fluye continuamente
-      a través de él. Puede ser un objeto o un lugar que sirve como punto de anclaje
-      entre dimensiones.
+      Puente activo entre el mundo físico y el Limbo llevado por un objeto
+      físico. La energía fluye continuamente a través de él mientras exista una
+      conexión real entre el usuario y la entidad vinculada.
     caracteristicas:
       - activo — la conexión con el Limbo es continua
-      - anclado — a un objeto o lugar específico
+      - anclado — a un objeto específico
       - genera flujo ambiental en su entorno como efecto secundario
       - más potente y peligroso que un vestigio
     origen_posible:
-      natural: zonas donde las dimensiones son naturalmente delgadas
+      natural: objeto surgido de una zona donde las dimensiones son naturalmente delgadas
       creado: por acción taumática — requiere diseño del sistema Tauma (D-11-a)
     relacion_con_entorno: >
       Un vínculo activo genera flujo ambiental en su área circundante. Si es
       suficientemente intenso, puede producir condiciones extranaturales persistentes.
+    principios_de_uso:
+      - sigue_siendo_un_objeto_fisico_pero_con_una_relacion_activa
+      - es_la_opcion_mas_poderosa_entre_los_objetos_del_limbo
+      - no_tiene_cargas_finitas_como_un_vestigio
+      - su_poder_escala_segun_la_severidad_de_la_afliccion_vinculada
+      - su_costo_de_largo_plazo_debe_pagarse_en_cordura
+    requisitos_de_uso:
+      regla_base: >
+        El portador debe tener al menos una Aflicción del Vacío en el sentido
+        requerido por el vínculo.
+      single_sense_link: usa_la_severidad_de_la_afliccion_de_ese_sentido
+      multi_sense_link: usa_la_severidad_minima_entre_todos_los_sentidos_requeridos
+      fail_state: >
+        Si el portador no tiene la Aflicción requerida, no puede usar el
+        vínculo en absoluto.
+    nota_de_autoria: >
+      Como los vestigios, los vínculos deberían partir normalmente de objetos
+      de mitología, historia, superstición o folclor reales y luego adaptarse
+      a la lógica del Limbo.
     deteccion:
       taumaturgia: firma claramente activa y direccional; puede medir intensidad y estabilidad
       instinto: reacción fuerte — claramente algo que no pertenece
@@ -129,6 +181,10 @@ relaciones:
     Un vestigio no tiene conexión activa al Limbo. La distinción es mecánicamente
     relevante para detección (Taumaturgia) y para condiciones extranaturales: un
     vestigio no genera condiciones activas; un vínculo sí puede.
+  descubrimiento_vs_uso: >
+    Detectar una presencia del Limbo no equivale a descubrir un vestigio, y
+    descubrir un vestigio no equivale a cumplir los requisitos de uso de un
+    vínculo. Son capas distintas del sistema.
 
 # ──────────────────────────────────────────────────────
 # PREGUNTAS DE DISEÑO ABIERTAS

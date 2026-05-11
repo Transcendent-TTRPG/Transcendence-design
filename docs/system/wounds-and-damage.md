@@ -249,7 +249,7 @@ Donde:
 ### Bono de material
 
 ```text
-BM = floor(durabilidad / 5)
+BM = floor(durabilidad / 10)
 ```
 
 ### Competencia Defensiva

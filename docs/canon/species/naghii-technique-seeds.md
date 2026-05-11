@@ -2,7 +2,7 @@
 
 **Status:** In progress
 **Species:** Naghii
-**Primary reference:** `docs/canon/species/serpientes.md`, `docs/system/technique-origins.md`
+**Primary reference:** `docs/canon/species/naghii.md`, `docs/system/technique-origins.md`
 **System references:** `docs/system/techniques.md`, `docs/system/competencies.md`, `docs/system/specializations.md`, `docs/system/weapon-technique-profiles.md`
 
 ---
@@ -240,7 +240,7 @@ This seed gives the Naghii a practical survival doctrine beyond mysticism: they 
 
 ### Standard
 
-Each species targets **8 specialization techniques** in the Novice pass. The exact distribution across categories (Saberes, Mentales, Social, Física, Artes y Oficios) is not fixed — it follows the species' actual lore identity. No category is required; a species heavily oriented toward knowledge may have 4 Saberes and 0 Artes y Oficios. The requirement is that at least 2 categories are represented.
+Each species targets **8 specialization techniques** in the Novice pass. The exact distribution across categories (Saberes, Mentales, Social, Física, Artes y Oficios) is not fixed — it follows the species' actual lore identity — but the pass should normally represent at least **3 categories** and avoid placing more than **3 techniques** in a single category. A fourth Technique in one category is an explicit species-identity exception, not the default.
 
 ### Naghii Novice Pass — Specialization Status
 

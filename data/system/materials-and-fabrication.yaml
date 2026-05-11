@@ -1,0 +1,1314 @@
+meta:
+  version: "1.0"
+  status: draft
+  last_updated: "2026-05-07"
+
+system_scope:
+  purpose:
+    - define_materials_as_mechanical_objects
+    - define_extraction_as_trained_process
+    - define_conservation_as_decay_and_preservation_layer
+    - define_fabrication_as_specialization_driven_production
+    - define_refinement_as_separate_upgrade_layer
+  not_yet_in_scope:
+    - full_material_catalog
+    - full_recipe_catalog
+    - exact_plant_catalog
+    - full_physea_production_catalog
+
+material_model:
+  required_fields:
+    - family
+    - grade
+    - accessibility
+    - durability
+    - base_potency
+    - processing_state
+    - valid_domains
+    - conservation_profile
+    - material_state
+  taxonomy:
+    natural_materials:
+      note: >
+        Baseline resource layer of the world. These should carry most routine
+        extraction, trade, fabrication, and survival play.
+      includes:
+        - creature_parts
+        - metals
+        - minerals_and_stone
+        - woods
+        - fibers_and_textiles
+        - leather_and_processed_hide
+        - plants_and_fungi
+        - fluids_and_glands
+        - organs_and_sensitive_biological_components
+    processed_materials:
+      note: >
+        Produced from natural materials through a valid fabrication domain. A
+        processed material should define its source family and whether it
+        inherits, replaces, or modifies source material surfaces.
+    living_materials:
+      note: >
+        Extraordinary setting layer. Defined not by origin alone but by
+        continued responsive, adaptive, growing, or behaviorally active
+        material logic after becoming usable world material.
+  families:
+    - creature_parts
+    - metals
+    - minerals_and_stone
+    - woods
+    - fibers_and_textiles
+    - leather_and_processed_hide
+    - fluids_and_glands
+    - organs_and_sensitive_biological_components
+    - plants_and_fungi
+    - precious_stones_and_fine_setting_materials
+  material_states:
+    inert:
+      meaning: structurally_meaningful_but_not_actively_self_changing
+    organic:
+      meaning: derived_from_living_matter_but_not_behaviorally_active_as_material
+    living:
+      meaning: actively_responsive_adaptive_growing_or_self_adjusting_as_material
+    tauma_reactive:
+      meaning: changes_behavior_when_exposed_to_tauma_or_other_defined_extranatural_carrier
+    tauma_impregnated:
+      meaning: holds_residual_extranatural_charge_or_memory_without_necessarily_being_alive
+  grade_model:
+    note: "Grade is material quality band, not the same thing as accessibility."
+    common_authored_grades:
+      "1": common
+      "2": rare
+      "3": exceptional
+  living_material_behaviors:
+    - growth
+    - regeneration
+    - shedding
+    - adhesion
+    - contraction
+    - pulse
+    - filtering
+    - attunement
+    - tauma_reactivity
+    - dependency
+
+accessibility:
+  note: >
+    Accessibility expresses how difficult a material is to correctly extract,
+    identify, process, or work. It sets a base difficulty band; actual
+    thresholds still follow the universal difficulty table with NR scaling.
+  tiers:
+    general:
+      meaning: commonly_worked_broadly_available_or_structurally_forgiving
+      default_difficulty_band: Challenging
+    limited:
+      meaning: less_available_more_delicate_or_more_demanding_to_work
+      default_difficulty_band: Demanding
+    singular:
+      meaning: rare_dangerous_highly_unstable_or_technically_extreme
+      default_difficulty_band: Extreme
+
+extraction:
+  core_rule: >
+    Extraction is always resolved through the relevant specialization, never
+    through Focus as a generic continuation roll.
+  usual_domains:
+    creature_tissues_hides_organs_glands_fluids: Medicina
+    mineral_seams_ore_stone_compacted_structural_earth: Mineria
+    plants_fungi_botanical_reagents: Herboristeria
+  requirements:
+    - valid_physical_access_to_source
+    - relevant_tool_or_kit
+    - remaining_integrity_in_source
+    - credible_specialization_rank
+    - threshold_based_on_accessibility_source_condition_and_pressure
+  tool_grades:
+    - basic
+    - advanced
+    - specialized
+  tool_grade_functions:
+    - may_permit_higher_grade_material_handling
+    - may_reduce_extraction_time
+    - may_increase_reliable_yield
+    - may_reduce_spoilage_or_self_contamination
+  output_requirements:
+    - unit_definition
+    - source_damage_or_ruin_rule
+    - size_based_yield_scaling
+    - failure_consequence_rule
+  creature_parts:
+    default_specialization: Medicina
+    tool_requirement: extraction_kit
+    catalog:
+      pelaje:
+        unit: kg
+        durability_formula: "6 * q"
+        base_potency_formula: "4 * q"
+        cost_formula: "10 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: general
+      escamas:
+        unit: kg
+        durability_formula: "8 * q"
+        base_potency_formula: "5 * q"
+        cost_formula: "20 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      caparazon:
+        unit: kg
+        durability_formula: "10 * q"
+        base_potency_formula: "6 * q"
+        cost_formula: "30 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      plumaje:
+        unit: kg
+        durability_formula: "4 * q"
+        base_potency_formula: "3 * q"
+        cost_formula: "10 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: general
+      huesos:
+        unit: kg
+        durability_formula: "3 * q"
+        base_potency_formula: "5 * q"
+        cost_formula: "16 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      cuernos:
+        unit: kg
+        durability_formula: "4 * q"
+        base_potency_formula: "6 * q"
+        cost_formula: "16 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: general
+      garras:
+        unit: kg
+        durability_formula: "4 * q"
+        base_potency_formula: "6 * q"
+        cost_formula: "16 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: general
+      colmillos:
+        unit: kg
+        durability_formula: "5 * q"
+        base_potency_formula: "7 * q"
+        cost_formula: "16 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      glandulas:
+        unit: unit
+        durability_formula: "0"
+        base_potency_formula: "0"
+        cost_formula: "30 * q"
+        sensitivity_group: sensitive
+        default_accessibility: limited
+      organos:
+        unit: unit
+        durability_formula: "0"
+        base_potency_formula: "0"
+        cost_formula: "40 * q"
+        sensitivity_group: sensitive
+        default_accessibility: limited
+      fluidos:
+        unit: liter
+        durability_formula: "0"
+        base_potency_formula: "0"
+        cost_formula: "20 * q"
+        sensitivity_group: sensitive
+        default_accessibility: general
+      sistema_nervioso:
+        unit: unit
+        durability_formula: "0"
+        base_potency_formula: "0"
+        cost_formula: "150 * q"
+        sensitivity_group: sensitive
+        default_accessibility: singular
+    sensitivity_groups:
+      non_sensitive:
+        note: bulk_structural_extraction_usually_measured_in_kg
+      sensitive:
+        note: precision_extraction_usually_measured_in_units_or_liters
+    tool_grades:
+      basic:
+        safe_up_to_grade: 1
+        time_reduction_percent: 0
+        roll_bonus: 0
+      advanced:
+        safe_up_to_grade: 2
+        time_reduction_percent: 25
+        roll_bonus: 1
+      specialized:
+        safe_up_to_grade: 3
+        time_reduction_percent: 50
+        roll_bonus: 2
+    base_time_and_yield:
+      sensitive:
+        small:
+          base_time_minutes: 120
+          base_yield: "1 unit"
+        medium:
+          base_time_minutes: 240
+          base_yield: "2 units"
+        large:
+          base_time_minutes: 360
+          base_yield: "3 units"
+        huge:
+          base_time_minutes: 480
+          base_yield: "4 units"
+        gigantic:
+          base_time_minutes: 600
+          base_yield: "5 units"
+      non_sensitive:
+        small:
+          base_time_minutes: 60
+          base_yield: "2 kg"
+        medium:
+          base_time_minutes: 120
+          base_yield: "4 kg"
+        large:
+          base_time_minutes: 240
+          base_yield: "8 kg"
+        huge:
+          base_time_minutes: 360
+          base_yield: "15 kg"
+        gigantic:
+          base_time_minutes: 480
+          base_yield: "25 kg"
+    threshold_rule: "accessibility_base + creature_level_or_equivalent_NR_pressure"
+    extraction_risk:
+      infection_facing_parts:
+        - pelaje
+        - escamas
+        - plumaje
+        - organos
+        - fluidos
+      poison_facing_parts:
+        - colmillos
+        - glandulas
+        - garras
+      grade_to_severity:
+        common: Minor
+        rare: Moderate
+        exceptional: Severe
+    failure_outcomes:
+      - time_spent_no_valid_yield
+      - reduced_yield
+      - reduced_grade
+      - spoiled_sample
+      - triggered_infection_pressure
+      - triggered_poison_pressure
+      - damage_to_sensitive_follow_up_part
+
+conservation:
+  classes:
+    stable:
+      meaning: does_not_meaningfully_decay_in_normal_storage
+    perishable:
+      meaning: decays_over_time_unless_preserved_correctly
+    volatile:
+      meaning: decays_quickly_destabilizes_or_becomes_unsafe_without_immediate_handling
+  default_guidance:
+    stable:
+      - minerals
+      - stone
+      - most_metals
+    perishable:
+      - hides
+      - fluids
+      - organs
+      - glands
+      - many_plant_reagents
+    volatile:
+      - nerve_tissue
+      - unstable_glands
+      - fresh_venoms
+  invalid_preservation_outcomes:
+    - lose_usable_time
+    - drop_in_grade
+    - become_invalid_for_specific_process
+    - become_unsafe_to_handle
+  living_material_note: >
+    Living materials may require maintenance rather than simple storage.
+    Maintenance can include moisture, darkness, circulation, feeding medium,
+    resonance exposure, taumatic quiet/charge, or species-specific handling.
+  creature_parts:
+    profiles:
+      pelaje_plumaje:
+        required_kit: basic
+        conservation_time_favorable_conditions: "1 month"
+        baseline_requirement: dry_cool_storage_away_from_humidity
+      escamas_caparazon:
+        required_kit: advanced
+        conservation_time_favorable_conditions: "2 months"
+        baseline_requirement: clean_organic_residue_and_store_dry
+      colmillos_garras:
+        required_kit: basic
+        conservation_time_favorable_conditions: "6 weeks"
+        baseline_requirement: dry_fully_and_keep_low_humidity
+      huesos_cuernos:
+        required_kit: advanced
+        conservation_time_favorable_conditions: "2 months"
+        baseline_requirement: remove_soft_tissue_and_treat_with_preservative
+      glandulas_organos:
+        required_kit: specialized
+        conservation_time_favorable_conditions: "1 week"
+        baseline_requirement: preserve_in_saline_alcohol_or_equivalent_medium
+      fluidos:
+        required_kit: basic
+        conservation_time_favorable_conditions:
+          blood_like_fluids: "2 weeks"
+          venom_class_fluids: "1 month"
+        baseline_requirement: sealed_isolated_containers
+      sistema_nervioso:
+        required_kit: specialized
+        conservation_time_favorable_conditions: "3 days"
+        baseline_requirement: controlled_preservation_in_specialized_medium
+
+craft_materials:
+  core_domains:
+    Mineria:
+      usual_material_space:
+        - ores
+        - raw_stone
+        - coal
+        - quarry_materials
+        - extractable_mineral_bearing_sources
+    Herreria:
+      usual_material_space:
+        - metals
+        - alloys
+        - forged_plate
+        - worked_mineral_feed_such_as_glass
+        - armor_grade_creature_composites
+    Sastreria:
+      usual_material_space:
+        - fibers
+        - cloth
+        - leather
+        - hide_derived_materials
+        - flexible_protective_composites
+    Joyeria:
+      usual_material_space:
+        - precious_stones
+        - fine_setting_materials
+        - precision_decorative_or_symbolic_craft_matter
+    Ingenieria:
+      usual_material_space:
+        - structural_use_of_already_worked_materials
+  natural_catalog:
+    metals:
+      hierro:
+        durability: 15
+        base_potency: 25
+        cost_formula_per_kg: "10 * q"
+        default_accessibility: general
+      bronce:
+        durability: 12
+        base_potency: 22
+        cost_formula_per_kg: "15 * q"
+        default_accessibility: general
+      cobre:
+        durability: 10
+        base_potency: 20
+        cost_formula_per_kg: "10 * q"
+        default_accessibility: general
+      estano:
+        durability: 9
+        base_potency: 18
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
+      acero:
+        durability: 18
+        base_potency: 30
+        cost_formula_per_kg: "30 * q"
+        default_accessibility: limited
+      peltre:
+        durability: 8
+        base_potency: 15
+        cost_formula_per_kg: "18 * q"
+        default_accessibility: general
+      plata:
+        durability: 16
+        base_potency: 28
+        cost_formula_per_kg: "40 * q"
+        default_accessibility: limited
+      platino:
+        durability: 17
+        base_potency: 29
+        cost_formula_per_kg: "50 * q"
+        default_accessibility: limited
+      oro:
+        durability: 10
+        base_potency: 20
+        cost_formula_per_kg: "100 * q"
+        default_accessibility: limited
+      cromo:
+        durability: 20
+        base_potency: 27
+        cost_formula_per_kg: "60 * q"
+        default_accessibility: limited
+      plomo:
+        durability: 12
+        base_potency: 18
+        cost_formula_per_kg: "15 * q"
+        default_accessibility: general
+      titanio:
+        durability: 22
+        base_potency: 35
+        cost_formula_per_kg: "80 * q"
+        default_accessibility: singular
+      mithril:
+        durability: 28
+        base_potency: 45
+        cost_formula_per_kg: "500 * q"
+        default_accessibility: singular
+      adamantium:
+        durability: 30
+        base_potency: 50
+        cost_formula_per_kg: "1000 * q"
+        default_accessibility: singular
+      oricalco:
+        durability: 25
+        base_potency: 40
+        cost_formula_per_kg: "800 * q"
+        default_accessibility: singular
+    stone_and_precious_materials:
+      piedra:
+        type: rock
+        durability: 8
+        base_potency: 16
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
+      roca:
+        type: rock
+        durability: 9
+        base_potency: 18
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
+      carbon:
+        type: rock
+        durability: 5
+        base_potency: 10
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
+      ambar:
+        type: rock
+        durability: 4
+        base_potency: 8
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
+      coral:
+        type: rock
+        durability: 6
+        base_potency: 10
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
+      obsidiana:
+        type: rock
+        durability: 12
+        base_potency: 12
+        cost_formula_per_kg: "30 * q"
+        default_accessibility: singular
+      vidrio:
+        type: rock
+        durability: 3
+        base_potency: 6
+        cost_formula_per_kg: "15 * q"
+        default_accessibility: general
+      jade:
+        type: precious_stone
+        durability: 10
+        base_potency: 15
+        cost_formula_per_kg: "50 * q"
+        default_accessibility: singular
+      lapislazuli:
+        type: precious_stone
+        durability: 8
+        base_potency: 14
+        cost_formula_per_kg: "30 * q"
+        default_accessibility: limited
+      cuarzo:
+        type: precious_stone
+        durability: 6
+        base_potency: 11
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: limited
+      marfil:
+        type: precious_material
+        durability: 7
+        base_potency: 13
+        cost_formula_per_kg: "40 * q"
+        default_accessibility: limited
+      cristales:
+        type: precious_stone
+        durability: 7
+        base_potency: 12
+        cost_formula_per_kg: "30 * q"
+        default_accessibility: limited
+      rubi:
+        type: precious_stone
+        durability: 16
+        base_potency: 9
+        cost_formula_per_kg: "120 * q"
+        default_accessibility: singular
+      esmeralda:
+        type: precious_stone
+        durability: 15
+        base_potency: 9
+        cost_formula_per_kg: "140 * q"
+        default_accessibility: singular
+      zafiro:
+        type: precious_stone
+        durability: 16
+        base_potency: 9
+        cost_formula_per_kg: "110 * q"
+        default_accessibility: singular
+      diamante:
+        type: precious_stone
+        durability: 18
+        base_potency: 10
+        cost_formula_per_kg: "200 * q"
+        default_accessibility: singular
+      topacio:
+        type: precious_stone
+        durability: 14
+        base_potency: 8
+        cost_formula_per_kg: "90 * q"
+        default_accessibility: singular
+    woods:
+      pino:
+        durability: 15
+        base_potency: 7
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
+      roble:
+        durability: 20
+        base_potency: 10
+        cost_formula_per_kg: "10 * q"
+        default_accessibility: general
+      arce:
+        durability: 18
+        base_potency: 8
+        cost_formula_per_kg: "12 * q"
+        default_accessibility: general
+      caoba:
+        durability: 22
+        base_potency: 12
+        cost_formula_per_kg: "15 * q"
+        default_accessibility: general
+      ebano:
+        durability: 25
+        base_potency: 11
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: limited
+      secoya:
+        durability: 30
+        base_potency: 15
+        cost_formula_per_kg: "25 * q"
+        default_accessibility: singular
+    fibers_and_hide_derived:
+      lana:
+        type: fiber
+        durability_formula: "2 * q"
+        base_potency_formula: "3 * q"
+        cost_formula_per_kg: "12 * q"
+        default_accessibility: general
+      lino:
+        type: fiber
+        durability_formula: "2 * q"
+        base_potency_formula: "3 * q"
+        cost_formula_per_kg: "10 * q"
+        default_accessibility: general
+      algodon:
+        type: fiber
+        durability_formula: "1 * q"
+        base_potency_formula: "2 * q"
+        cost_formula_per_kg: "8 * q"
+        default_accessibility: general
+      seda:
+        type: fiber
+        durability_formula: "3 * q"
+        base_potency_formula: "4 * q"
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
+      yute:
+        type: fiber
+        durability_formula: "2 * q"
+        base_potency_formula: "4 * q"
+        cost_formula_per_kg: "6 * q"
+        default_accessibility: general
+      seda_de_arakhel:
+        type: fiber
+        durability: 18
+        base_potency: 18
+        cost_formula_per_kg: "50 * q"
+        default_accessibility: singular
+      tela:
+        type: fiber
+        durability_formula: "1 * q"
+        base_potency_formula: "2 * q"
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
+      cuero:
+        type: leather
+        durability_formula: "5 * q"
+        base_potency_formula: "6 * q"
+        cost_formula_per_kg: "18 * q"
+        default_accessibility: limited
+      cuero_escamado:
+        type: leather
+        durability_formula: "7 * q"
+        base_potency_formula: "8 * q"
+        cost_formula_per_kg: "25 * q"
+        default_accessibility: limited
+      cuero_acorazado:
+        type: leather
+        durability_formula: "9 * q"
+        base_potency_formula: "10 * q"
+        cost_formula_per_kg: "35 * q"
+        default_accessibility: limited
+  processed_materials:
+    cuero:
+      source: pelaje
+      domain: Sastreria
+      durability_formula: "7 * q"
+      base_potency_formula: "5 * q"
+      cost_formula: "15 * q * qty"
+    escamado:
+      source: escamas
+      domain: Herreria
+      durability_formula: "9 * q"
+      base_potency_formula: "6 * q"
+      cost_formula: "25 * q * qty"
+    acorazado:
+      source: caparazon
+      domain: Herreria
+      durability_formula: "11 * q"
+      base_potency_formula: "7 * q"
+      cost_formula: "35 * q * qty"
+    tela:
+      source: fiber_source
+      domain: Sastreria
+      durability_formula: "material + q"
+      base_potency_formula: "material + q"
+      cost_formula: "material * 0.2 * q * qty"
+    bronce:
+      source: "cobre + estano"
+      domain: Herreria
+      durability: 12
+      base_potency: 20
+      cost_formula: "20 * q * qty"
+    acero:
+      source: "hierro + carbon"
+      domain: Herreria
+      durability: 18
+      base_potency: 30
+      cost_formula: "30 * q * qty"
+    peltre:
+      source: estano
+      domain: Herreria
+      durability: 8
+      base_potency: 15
+      cost_formula: "15 * q * qty"
+    vidrio:
+      source: mineral_or_sand_feed
+      domain: Herreria
+      durability: 5
+      base_potency: 10
+      cost_formula: "8 * q * qty"
+  accessibility:
+    tiers:
+      general:
+        label: high
+        base_threshold_model: "8 + creature_level_or_NR_pressure"
+        difficulty_band: Fundamental
+        labor_cost_per_kg_formula: "15 * grade"
+        default_fabrication_time: "1 week"
+        minimum_kit: basic
+      limited:
+        label: medium
+        base_threshold_model: "13 + creature_level_or_NR_pressure"
+        difficulty_band: Rigorous
+        labor_cost_per_kg_formula: "45 * grade"
+        default_fabrication_time: "2 weeks"
+        minimum_kit: advanced
+      singular:
+        label: low
+        base_threshold_model: "17 + creature_level_or_NR_pressure"
+        difficulty_band: Extreme
+        labor_cost_per_kg_formula: "150 * grade"
+        default_fabrication_time: "3 weeks"
+        minimum_kit: specialized
+
+fabrication:
+  core_rule: >
+    Fabrication is governed by the specialization that owns the work, not by
+    Focus as a generic progress tax.
+  world_layers:
+    natural_materials: carry_most_standard_fabrication
+    processed_materials: ordinary_transformation_layer
+    living_materials: >
+      usually_require_special_handling_rule_maintenance_condition_narrower_valid_domains_narrower_outputs_or_specific_environmental_requirements
+  usual_domains:
+    forged_weapons_metal_armor_structural_metal_parts: Herreria
+    cloth_armor_garments_leatherwork_flexible_gear: Sastreria
+    fine_setting_gemstone_work_precision_adornment: Joyeria
+    mechanisms_assemblies_complex_structural_function: Ingenieria
+    prepared_compounds_elixirs_poisons_alchemical_products: Alquimia
+  requirements:
+    - valid_plan_design_or_known_recipe
+    - valid_material_inputs
+    - valid_tools_workshop_or_kit
+    - responsible_specialization
+    - work_time
+    - labor_cost
+    - difficulty_band
+  work_intervals:
+    note: >
+      The framework does not force hourly rolls. Each authored process should
+      define meaningful intervals such as stage, session, workday, formula
+      cycle, or structural pass.
+    failed_roll_default:
+      - time_is_spent
+      - no_meaningful_progress_is_made
+      - optional_material_stress_or_waste_if_authored
+  complexity_bands:
+    - simple
+    - complex
+    - advanced
+
+refinement:
+  core_rule: >
+    Refinement is separate from base fabrication. It modifies an already-valid
+    object through an additional material layer or authored augmentation path.
+  required_fields:
+    - valid_base_object
+    - consumed_refinement_material
+    - responsible_specialization
+    - time_requirement
+    - difficulty_band
+    - exact_granted_property
+  allowed_output_surfaces:
+    - durability
+    - base_potency
+    - critical_break_behavior
+    - resistance_or_vulnerability_trait
+    - protection_profile
+    - delivery_profile
+    - named_equipment_property
+
+alchemy:
+  authored_through:
+    - formula_or_recipe
+    - reagent_requirements
+    - plant_or_biological_inputs
+    - alchemical_index_or_complexity_measure
+    - delivery_route_if_relevant
+  qualifying_roll: Alquimia
+
+plants:
+  role: sourcing_inputs
+  accessibility_model:
+    high:
+      extraction_difficulty_band: Fundamental
+      base_extraction_time: "15 min"
+      minimum_kit: basic
+    medium:
+      extraction_difficulty_band: Rigorous
+      base_extraction_time: "30 min"
+      minimum_kit: advanced
+    low:
+      extraction_difficulty_band: Extreme
+      base_extraction_time: "60 min"
+      minimum_kit: specialized
+  alchemical_index:
+    note: >
+      Compact measure of alchemical weight, complexity, or catalytic value.
+      Lower values usually support simpler restorative or low-complexity uses;
+      higher values usually support stronger toxic or transformative outcomes
+      and more demanding formula work.
+  future_entry_fields:
+    - accessibility
+    - extraction_time
+    - alchemical_index_contribution_if_relevant
+    - primary_use_family
+    - conservation_behavior
+  qualifying_roll: Herboristeria
+  baseline_catalog:
+    high_accessibility:
+      lavanda:
+        alchemical_index: 2
+        cost_per_unit: 4
+        base_extraction_time: "15 min"
+      oregano:
+        alchemical_index: 2
+        cost_per_unit: 4
+        base_extraction_time: "15 min"
+      ortiga:
+        alchemical_index: 3
+        cost_per_unit: 6
+        base_extraction_time: "15 min"
+      melisa:
+        alchemical_index: 3
+        cost_per_unit: 6
+        base_extraction_time: "15 min"
+      consuelda:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      verbena:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      achillea:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      matricaria:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      hypericum:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      echinacea:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      enebro:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      borraja:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+      equisetum:
+        alchemical_index: 4
+        cost_per_unit: 8
+        base_extraction_time: "15 min"
+    medium_accessibility:
+      pasiflora:
+        alchemical_index: 4
+        main_use: elixir
+        cost_per_unit: 8
+      escutelaria:
+        alchemical_index: 4
+        main_use: elixir
+        cost_per_unit: 8
+      pleurotus:
+        alchemical_index: 4
+        main_use: elixir
+        cost_per_unit: 8
+      ajenjo:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      silybum:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      smilax:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      curcuma:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      tricholoma:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      lactarius:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      divinorum:
+        alchemical_index: 6
+        main_use: both
+        cost_per_unit: 12
+      rhodiola:
+        alchemical_index: 6
+        main_use: elixir
+        cost_per_unit: 12
+      chaga:
+        alchemical_index: 6
+        main_use: elixir
+        cost_per_unit: 12
+      dealbata:
+        alchemical_index: 6
+        main_use: poison
+        cost_per_unit: 12
+      gyromitra:
+        alchemical_index: 6
+        main_use: poison
+        cost_per_unit: 12
+      dedalera:
+        alchemical_index: 7
+        main_use: poison
+        cost_per_unit: 12
+      papaver:
+        alchemical_index: 7
+        main_use: elixir
+        cost_per_unit: 14
+      amanita_muscaria:
+        alchemical_index: 7
+        main_use: both
+        cost_per_unit: 14
+      psilocybe:
+        alchemical_index: 7
+        main_use: both
+        cost_per_unit: 14
+    low_accessibility:
+      artemisa:
+        alchemical_index: 5
+        main_use: elixir
+        cost_per_unit: 10
+      cordyceps:
+        alchemical_index: 8
+        main_use: elixir
+        cost_per_unit: 16
+      aconito:
+        alchemical_index: 8
+        main_use: poison
+        cost_per_unit: 15
+      estramonio:
+        alchemical_index: 8
+        main_use: both
+        cost_per_unit: 16
+      mandragora:
+        alchemical_index: 9
+        main_use: both
+        cost_per_unit: 18
+      boletus:
+        alchemical_index: 9
+        main_use: poison
+        cost_per_unit: 18
+      belladona:
+        alchemical_index: 9
+        main_use: poison
+        cost_per_unit: 18
+      ricino:
+        alchemical_index: 9
+        main_use: poison
+        cost_per_unit: 18
+      cicuta:
+        alchemical_index: 10
+        main_use: poison
+        cost_per_unit: 20
+      adelfa:
+        alchemical_index: 10
+        main_use: poison
+        cost_per_unit: 20
+      taxus:
+        alchemical_index: 10
+        main_use: poison
+        cost_per_unit: 20
+
+work_infrastructure:
+  objects:
+    note: >
+      For fabrication, the important distinction is not objecthood itself but
+      whether the object functions as a portable tool, consumable kit, heavy
+      infrastructure, or specialized device.
+  artifacts:
+    note: >
+      Artifacts are exceptional made things that combine authored construction
+      with powered elemental or extranatural function. They are not the
+      baseline assumption of ordinary fabrication and should build on top of an
+      already-authored ordinary tool, kit, or infrastructure family.
+  tools:
+    classes:
+      light_tool:
+        meaning: portable_routine_low_scale_and_broadly_usable_within_domain
+      heavy_tool:
+        meaning: larger_more_stable_more_precise_or_more_force_capable_equipment
+      specialized_tool:
+        meaning: narrow_purpose_precision_implement_for_one_exact_type_of_work
+  kits:
+    note: >
+      Compact domain-specific, partially consumable work bundles that trade
+      portability and fast setup against limited uses and lower workshop power.
+    required_fields:
+      - owning_specialization_or_action_family
+      - grade
+      - uses
+      - portability
+      - field_only_or_full_shop_scope
+    grades:
+      "1": basic
+      "2": advanced
+      "3": specialized
+    rank_bands:
+      "1":
+        expected_competency_ranks:
+          - Novice
+          - Adept
+        note: baseline_field_and_apprentice_professional_work
+      "2":
+        expected_competency_ranks:
+          - Expert
+          - Master
+        note: advanced_professional_work
+      "3":
+        expected_competency_ranks:
+          - Consummate
+          - Transcendent
+        note: peak_or_near_peak_specialized_work
+    baseline_rules:
+      - cost_scales_with_grade
+      - uses_scale_with_grade
+      - portability_remains_roughly_constant
+      - grade_sets_safe_or_credible_work_ceiling
+      - basic_kits_normally_support_novice_and_adept_work
+      - advanced_kits_normally_support_expert_and_master_work
+      - specialized_kits_normally_support_consummate_and_transcendent_work
+      - higher_rank_work_normally_requires_matching_kit_band_unless_subsystem_rule_relaxes_it
+    allocation_rule:
+      note: >
+        Every production-facing discipline that routinely acts on matter should
+        normally have a graded kit family. This also applies to support
+        practices that are not broad enough to stand as specializations but
+        still create a meaningful handling gate in play.
+      specialization_owned_families:
+        Medicina: medical_kits
+        Herboristeria: herboristry_kits
+        Alquimia: alchemical_kits
+        Trampas: trapmaking_kits
+        Mineria: mining_kits
+        Herreria: smithing_kits
+        Sastreria: tailoring_kits
+        Joyeria: jewelers_kits
+        Ingenieria: engineering_kits
+      support_practice_families:
+        - extraction_kits
+        - conservation_kits
+        - poison_handling_kits
+        - repair_kits
+        - mineral_refinement_kits
+        - fiber_refinement_kits
+        - surveying_and_appraisal_kits
+        - cartography_kits
+        - projectile_fletching_kits
+      support_practice_roll_guidance:
+        extraction: Medicina
+        biological_preservation_sensitive_handling: Medicina
+        botanical_sensitive_handling: Herboristeria_or_Alquimia
+        repair_and_refinement: Herreria_or_Sastreria_or_Joyeria_or_Ingenieria
+        surveying_appraisal_or_cartographic_interpretation: closest_relevant_knowledge_or_identification_domain
+        projectile_adjustment_and_payload_fitting: closest_relevant_projectile_or_crafting_domain
+    baseline_families:
+      - medical_kits
+      - herboristry_kits
+      - alchemical_kits
+      - trapmaking_kits
+      - mining_kits
+      - smithing_kits
+      - tailoring_kits
+      - jewelers_kits
+      - engineering_kits
+      - extraction_kits
+      - conservation_kits
+      - poison_handling_kits
+      - repair_kits
+      - mineral_refinement_kits
+      - fiber_refinement_kits
+      - dye_and_finishing_kits
+      - surveying_and_appraisal_kits
+      - cartography_kits
+      - projectile_fletching_kits
+  heavy_work_infrastructure:
+    traits:
+      - non_consumable
+      - fixed_or_semi_fixed
+      - harder_to_transport
+      - suited_for_long_complex_or_high_throughput_work
+    examples:
+      - forge_bodies
+      - anvils
+      - cutting_tables
+      - leather_presses
+      - distillation_apparatus
+      - jewelry_furnaces
+      - fixed_precision_benches
+    baseline_families:
+      - forge_assemblies
+      - anvils_and_shaping_surfaces
+      - cutting_and_measuring_tables
+      - leather_presses_and_stretching_frames
+      - furnaces_and_kilns
+      - distillation_and_reaction_benches
+      - precision_setting_benches
+      - structural_work_surfaces
+  specialized_objects:
+    framework_roles:
+      - extraction_support
+      - conservation_support
+      - poison_handling
+      - repair_support
+      - surveying_or_appraisal
+      - cartography
+      - trap_assembly
+      - refinement_support
+
+production_documents:
+  plans:
+    scope:
+      - tools
+      - structures
+      - manufactured_objects
+    required_fields:
+      - output_class
+      - complexity
+      - required_domains
+      - required_materials
+      - expected_labor
+      - expected_work_time
+      - availability
+    complexity:
+      simple:
+        difficulty_band: Fundamental
+        base_market_cost: 50
+      complex:
+        difficulty_band: Rigorous
+        base_market_cost: 200
+      advanced:
+        difficulty_band: Extreme
+        base_market_cost: 600
+    availability_surcharge:
+      common: 0
+      moderate: 100
+      specialized: 200
+      rare: 300
+      exceptional: 400
+    design_families:
+      - thrown_and_ranged_weapon_designs
+      - hafted_weapon_designs
+      - flexible_weapon_designs
+      - light_medium_heavy_armor_designs
+      - light_medium_heavy_shield_designs
+      - pendant_amulet_insignia_designs
+  trap_diagrams:
+    required_fields:
+      - trap_type
+      - rarity_or_complexity
+      - construction_time
+      - build_difficulty
+      - detection_difficulty
+      - disarm_difficulty
+      - specialized_reagent_or_subsystem_if_required
+    rarity:
+      common:
+        build_time: "4 hours"
+        build_difficulty: Fundamental
+        detect_difficulty: Challenging
+        disarm_difficulty: Challenging
+      rare:
+        build_time: "10 hours"
+        build_difficulty: Rigorous
+        detect_difficulty: Rigorous
+        disarm_difficulty: Rigorous
+      exceptional:
+        build_time: "24 hours"
+        build_difficulty: Extreme
+        detect_difficulty: Demanding
+        disarm_difficulty: Demanding
+    type_surcharge:
+      mechanism: 50
+      illusory: 100
+      environmental: 100
+      psychic: 200
+      living: 150
+  formulas:
+    scope:
+      - elixirs
+      - poisons
+      - other_alchemical_compounds
+    required_fields:
+      - output_family
+      - rarity
+      - reagents
+      - plant_inputs
+      - required_alchemical_index
+      - final_dose_logic
+    rarity:
+      common:
+        build_time: "12 hours"
+        default_doses: "1d4"
+      rare:
+        build_time: "24 hours"
+        default_doses: "1d3"
+      exceptional:
+        build_time: "36 hours"
+        default_doses: "1d2"
+    market_cost:
+      rarity:
+        common: 50
+        rare: 200
+        exceptional: 600
+      output_family_surcharge:
+        elixir: 50
+        poison: 100
+      availability_uses_plan_table: true
+
+work_logic:
+  start_condition_requires:
+    - right_specialization
+    - right_material_inputs
+    - right_tools_or_infrastructure
+    - relevant_plan_diagram_or_formula_when_not_improvised
+  support_rule:
+    portable_kits_normally_cover:
+      - field_extraction
+      - first_pass_preservation
+      - minor_repairs
+      - low_scale_preparation
+      - short_localized_jobs
+    heavy_infrastructure_normally_expected_for:
+      - long_fabrication
+      - high_output_processing
+      - high_precision_shaping
+      - large_objects
+      - work_implausible_from_handheld_kits_alone
+  progress_rule: >
+    Progress is tracked in meaningful work intervals owned by the relevant
+    specialization, not by generic hourly Focus checks.
+  specialization_owned_progress:
+    Herreria: advances_forge_work
+    Sastreria: advances_textile_and_leather_work
+    Joyeria: advances_fine_setting_work
+    Ingenieria: advances_structural_and_mechanism_work
+    Alquimia: advances_compounds
+    Trampas: advances_trap_assembly
+    Herboristeria: advances_plant_harvesting_and_preparation
+    Medicina: advances_creature_part_extraction_and_preservation_aware_anatomical_work
+  failure_defaults:
+    - time_spent_without_meaningful_progress
+    - material_stress_or_waste
+    - reduced_final_yield_or_stability
+    - contamination_or_handling_danger_if_biological_or_chemical
+    - blocked_continuation_until_conditions_improve
+
+traps:
+  note: >
+    Traps are authored objects and should usually combine Trampas with another
+    specialization when the construction materially depends on that domain.
+  typical_pairings:
+    - "Trampas + Ingenieria"
+    - "Trampas + Herreria"
+    - "Trampas + Alquimia"
+
+technique_design_rule:
+  good_interactions:
+    - identify_right_extraction_point
+    - preserve_volatile_material_under_pressure
+    - force_one_authored_refinement_step
+    - exploit_material_weakness
+    - accelerate_one_bounded_fabrication_or_repair_window
+  bad_interactions:
+    - replace_entire_crafting_loop_with_one_action
+    - invent_material_properties_not_defined_anywhere
+    - create_permanent_equipment_without_material_tool_or_plan_requirements

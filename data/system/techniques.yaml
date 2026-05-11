@@ -365,6 +365,8 @@ world_origin_models:
     - primary_front
     - source
     - seed
+    - focus
+    - holder
     - transmission
     - availability
   availability_levels:
@@ -391,14 +393,14 @@ world_origin_models:
   species_rank_coverage:
     scope: full_species_origin_pass
     current_rank_band: Novice
-    target_total: 20
+    target_total: 24
     core_attack_surfaces: 3
     techniques_per_core_attack_surface: 4
     target_counts:
       attack_weapons: 12
-      defense: 2
+      armor_techniques: 2
       resistance_hybrids: 2
-      specializations: 4
+      specializations: 8
     section_definitions:
       attack_weapons: >
         Three core attack surfaces, four Techniques each. A core attack
@@ -407,25 +409,37 @@ world_origin_models:
         competency that deliberately mirrors a natural weapon form. These
         Techniques do not need to be purely damaging, but their executable root
         is a weapon, natural weapon, or weapon profile.
-      defense: >
-        Armor or Evasion. These Techniques express how the species avoids,
-        absorbs, redirects, or survives pressure according to its actual armor
-        and movement identity.
+      armor_techniques: >
+        Two armor-rooted Techniques. These should be built from the species'
+        real armor identity rather than a generic defense bucket. They should
+        express how the species survives pressure through armor practice,
+        covering, weight, posture, and material trust. The pair should be drawn
+        from the armor families that truly fit the species — light, medium,
+        heavy, or a culturally restricted subset — but they do not need to
+        cover all three armor families in the same rank band.
       resistance_hybrids: >
         A Resistance plus another competency, specialization, equipment
         competency, or bounded state. Resistances never stand alone.
       specializations: >
         One specific specialization or a tightly paired specialization
-        expression that carries non-weapon identity.
+        expression that carries non-weapon identity. Specialization coverage
+        should normally represent at least three specialization categories
+        across the full species pass. Avoid placing more than three of the
+        eight specialization Techniques in a single category unless the species
+        identity explicitly demands that exception and the pass still preserves
+        meaningful category variety.
     notes:
       - The quota is an authoring target, not a list of Techniques every member of the species knows.
+      - The current full-pass target is 12 attack/weapon Techniques, 2 armor Techniques, 2 resistance hybrids, and 8 specialization Techniques.
       - Species with fewer natural weapons should not be padded with fake anatomy.
       - Attack coverage should come from three core attack surfaces connected to natural weapons, culturally valued manufactured weapons, or compensating combat traditions.
-      - Define natural weapon access, cultural arsenal, defense identity, resistance pressures, and specialization surfaces before filling the quota.
+      - Define natural weapon access, cultural arsenal, armor identity, resistance pressures, and specialization surfaces before filling the quota.
 
-required_reading:
+  required_reading:
   before_any_technique:
     - data/system/techniques.yaml
+    - Transcendence-publications/canon/glossary.md
+    - docs/system/mechanics-overview.md
   before_specialization_technique:
     - docs/system/specialization-technique-domains.md
   before_condition_applying_technique:
@@ -433,13 +447,14 @@ required_reading:
   before_species_technique:
     - docs/canon/species/<species_file>.md
 
-authoring_questions:
+  authoring_questions:
   - What competency domain makes this possible?
   - What world origin created this Technique: Species, Doctrine, or Region?
   - What seed, doctrine, or regional pressure explains why this method exists?
   - Why is this not just raw competency use?
   - What direct mechanical change does it create?
   - If this is an information or reading Technique, what actionable truth does it reveal?
+  - If this affects a creature's ongoing state, is it using an existing Ailment, wound, Fatigue, cover, visibility, or other named system mechanic rather than inventing a vague freeform effect?
   - What non-magical cause inside the fiction makes this believable?
   - How is it actually learned: self-study, guided training, or both?
   - What timing window does it occupy?
@@ -519,7 +534,7 @@ competency_domains:
       Resistances are adaptation modifiers, not a standalone Technique school.
       They should alter how another chosen domain behaves under a learned threat.
 
-information_technique_rule:
+  information_technique_rule:
   applies_to_domains:
     - Perception
     - Interpretation
@@ -551,6 +566,486 @@ information_technique_rule:
     If a reading Technique only grants a bonus, it should be rewritten unless
     it is deliberately a bounded setup Technique. The read itself should usually
     change play by producing a concrete actionable truth.
+
+specialization_technique_rule:
+  principle: >
+    Specialization Techniques should be authored by extracting the trained
+    capabilities that the specialization actually develops, then translating
+    those capabilities into a bounded thematic mechanical expression.
+  required_authoring_order:
+    - identify_the_specialization
+    - extract_the_concrete_trained_capabilities_it_develops
+    - choose_one_capability_or_one_tightly_coherent_pair_as_the_technique_root
+    - translate_that_root_into_a_bounded_combat_or_exploration_mechanic
+    - validate_the_result_against_existing_system_surfaces_ailments_costs_and_action_vocabulary
+  current_species_novice_pass_focus:
+    - combat
+    - exploration
+  avoid_defaulting_to:
+    - pure_abstract_social_scene_resolution
+  should_not_be:
+    - generic_use_of_the_specialization_with_numbers
+    - a_named_version_of_the_base_specialization_action
+    - locked_to_the_most_literal_environment_of_the_specialization_when_the_trained_method_translates_more_broadly
+  examples:
+    - Nadar may express propulsion_orientation_breath_timing_yield_and_recovery_through_resistance rather than only water_locked_motion
+    - Tolerancia may express ordered_function_under_damage rather than passive_toughness
+    - Arquitectura may express structural_intent_or_threshold_logic rather than generic_knowledge_bonus
+  validation_question: >
+    What concrete trained sub-capacities does this specialization contribute,
+    and how does the Technique turn them into a mechanical action the raw
+    Specialization Roll does not already cover?
+  hard_gate: >
+    If the author cannot name the extracted capability before writing the
+    effect text, the Technique is not ready.
+
+specialization_capability_catalog:
+  purpose: >
+    Canonical extraction surface list for Specialization Techniques. Techniques
+    should be rooted in one listed capability, or in a clearly adjacent
+    capability that is added here first, rather than in the specialization's
+    superficial theme.
+  interpretation_rule:
+    - extracted_capabilities_should_usually_be_transferable_trained_patterns
+    - they_should_not_default_to_literal_profession_actions
+    - they_may_apply_outside_the_original_trade_scene_or_tool
+    - they_remain_bounded_by_the_objects_materials_bodies_or_pressures_that_the_specialization_actually_trains
+  transferability_rule: >
+    An extracted capability should usually describe a trained way of noticing,
+    timing, shaping, reading, controlling, preserving, extracting,
+    stabilizing, or interpreting rather than merely naming the profession's
+    headline task.
+  domain_boundary_rule: >
+    Transferable does not mean universal. A capability may travel outside its
+    original profession only into situations where the specialization actually
+    trained that pattern. For example, a Minería-derived material-reading
+    capability may apply to stone, packed earth, masonry, ore, or other
+    mineral-bearing structures, but not automatically to anatomy, social tells,
+    or aura patterns. A Medicina-derived stabilization capability may apply to
+    bodies, wounds, and physical trauma, but not automatically to walls,
+    rituals, or mining seams.
+  entries:
+    - specialization: Saltar
+      extracted_capabilities:
+        - explosive_release
+        - force_to_space_conversion
+        - launch_window_commitment
+        - clearance_judgment
+        - short_burst_body_projection
+    - specialization: Trepar
+      extracted_capabilities:
+        - support_testing
+        - progressive_load_transfer
+        - body_weight_distribution
+        - sustained_traction_sequencing
+        - hanging_recovery
+    - specialization: Lanzamiento
+      extracted_capabilities:
+        - body_to_object_force_transfer
+        - release_discipline
+        - trajectory_framing
+        - timed_delivery
+        - remote_placement_by_projection
+    - specialization: Nadar
+      extracted_capabilities:
+        - propulsion
+        - flotation
+        - orientation_under_pressure
+        - respiratory_pacing
+        - yielding_without_losing_control
+        - escape_through_resisting_flow
+    - specialization: Agarre
+      extracted_capabilities:
+        - contact_anchoring
+        - pressure_retention
+        - leverage_finding
+        - slip_correction
+        - escape_closure
+    - specialization: Acrobacias
+      extracted_capabilities:
+        - momentum_redirection
+        - continuous_body_sequencing
+        - inversion_recovery
+        - obstacle_threading
+        - dynamic_recovery_through_motion
+    - specialization: Destreza
+      extracted_capabilities:
+        - micro_placement_control
+        - fine_pressure_calibration
+        - sequence_clean_manipulation
+        - constrained_access_handling
+        - error_minimizing_handwork
+    - specialization: Equilibrio
+      extracted_capabilities:
+        - posture_correction
+        - center_line_recovery
+        - unstable_base_adaptation
+        - anti_overcommit_stabilization
+        - narrow_support_continuity
+    - specialization: Equitación
+      extracted_capabilities:
+        - moving_platform_synchronization
+        - distributed_control_through_reins_and_weight
+        - mounted_line_correction
+        - shared_turn_timing
+        - stability_through_another_bodys_motion
+    - specialization: Marcha
+      extracted_capabilities:
+        - sustained_pacing
+        - load_distribution
+        - distance_efficiency
+        - cadence_preservation
+        - recovery_while_advancing
+    - specialization: Aclimatación
+      extracted_capabilities:
+        - exposure_normalization
+        - physiological_adjustment_under_hostile_conditions
+        - environmental_strain_dampening
+        - breathable_continuity_in_bad_air_or_climate
+        - adaptation_carryover
+    - specialization: Tolerancia
+      extracted_capabilities:
+        - pain_ordering
+        - function_preservation_under_active_burden
+        - degradation_partitioning
+        - shock_resistance
+        - physiological_continuation_under_failure_pressure
+    - specialization: Orientación
+      extracted_capabilities:
+        - bearing_reconstruction
+        - route_option_pruning
+        - reference_anchoring
+        - directional_correction_under_uncertainty
+        - spatial_fallback_selection
+    - specialization: Rastreo
+      extracted_capabilities:
+        - disturbance_isolation
+        - continuity_reconstruction
+        - freshness_discrimination
+        - passage_pattern_reading
+        - likely_route_continuation
+    - specialization: Intuición
+      extracted_capabilities:
+        - latent_pattern_calling
+        - concealed_intent_suspicion
+        - threshold_of_danger_recognition
+        - incomplete_signal_commitment
+        - wrongness_discrimination
+    - specialization: Engaño
+      extracted_capabilities:
+        - false_frame_construction
+        - selective_truth_shaping
+        - expectation_steering
+        - confidence_borrowing
+        - reaction_baiting
+    - specialization: Improvisación
+      extracted_capabilities:
+        - function_recovery_from_bad_resources
+        - ad_hoc_method_assembly
+        - constraint_inversion
+        - stopgap_conversion
+        - tempo_first_solutioning
+    - specialization: Hurto
+      extracted_capabilities:
+        - opportunity_extraction
+        - unnoticed_transfer
+        - access_window_exploitation
+        - possession_redirection
+        - withdrawal_before_registration
+    - specialization: Percepción
+      extracted_capabilities:
+        - signal_segregation
+        - anomaly_discrimination
+        - attention_reindexing
+        - partial_pattern_completion
+        - early_contact_registration
+    - specialization: Supervivencia
+      extracted_capabilities:
+        - viable_option_discrimination_under_adversity
+        - pressure_prioritized_decision_sequencing
+        - low_infrastructure_continuity
+        - scarcity_budgeting
+        - fallback_line_selection
+    - specialization: Medicina
+      extracted_capabilities:
+        - instability_triage
+        - function_preserving_intervention
+        - bodily_state_discrimination_under_pressure
+        - escalation_threshold_recognition
+        - timed_stabilization_entry
+    - specialization: Herboristería
+      extracted_capabilities:
+        - living_source_property_discrimination
+        - safe_extraction_from_organic_material
+        - effect_to_need_matching
+        - crude_field_preparation
+        - contamination_avoidance
+    - specialization: Alquimia
+      extracted_capabilities:
+        - reactive_balance_control
+        - staged_combination_sequencing
+        - volatility_window_judgment
+        - effect_stabilization_under_mix_pressure
+        - transformation_containment
+    - specialization: Trampas
+      extracted_capabilities:
+        - trigger_path_reading
+        - response_chain_anticipation
+        - concealed_placement_logic
+        - disarm_sequence_isolation
+        - zone_commitment_shaping
+    - specialization: Minería
+      extracted_capabilities:
+        - material_detail_discrimination
+        - stress_signature_reading
+        - fault_line_isolation
+        - force_entry_precision
+        - load_path_judgment
+    - specialization: Herrería
+      extracted_capabilities:
+        - heat_state_discrimination
+        - force_shaped_correction
+        - structural_joining_discipline
+        - fatigue_point_reading
+        - stress_repair_sequencing
+    - specialization: Sastrería
+      extracted_capabilities:
+        - tension_line_management
+        - layered_fit_calibration
+        - seam_path_planning
+        - reinforcement_placement
+        - silent_profile_preparation
+    - specialization: Joyería
+      extracted_capabilities:
+        - micro_secure_placement
+        - small_scale_force_discipline
+        - component_seating_precision
+        - fine_material_discrimination
+        - concealment_through_ornament
+    - specialization: Ingeniería
+      extracted_capabilities:
+        - mechanism_state_reading
+        - load_path_modeling
+        - sequence_dependent_assembly
+        - failure_cascade_anticipation
+        - function_reassignment_through_structure
+    - specialization: Identificación
+      extracted_capabilities:
+        - feature_to_class_mapping
+        - category_narrowing_through_exclusion
+        - known_unknown_discrimination
+        - specimen_comparison
+        - recognition_under_incomplete_evidence
+    - specialization: Interpretación
+      extracted_capabilities:
+        - implication_extraction
+        - pattern_linkage
+        - structural_inference
+        - meaning_reconstruction_from_arrangement
+        - context_weighted_resolution
+    - specialization: Lingüística
+      extracted_capabilities:
+        - grammar_state_recognition
+        - script_pattern_decoding
+        - root_family_comparison
+        - formal_message_reconstruction
+        - language_transfer_through_structural_similarity
+    - specialization: Taumaturgia
+      extracted_capabilities:
+        - tauma_law_reading
+        - manifestation_state_classification
+        - arcane_pattern_inference
+        - interaction_forecasting
+        - instability_recognition_under_exposure
+    - specialization: Historia
+      extracted_capabilities:
+        - precedent_retrieval
+        - era_signature_discrimination
+        - continuity_reconstruction_across_events
+        - institutional_pattern_recognition
+        - present_case_comparison_to_known_past_structures
+    - specialization: Geografía
+      extracted_capabilities:
+        - region_scale_spatial_modeling
+        - terrain_system_linkage
+        - climate_pressure_projection
+        - route_network_inference
+        - place_relationship_reconstruction
+    - specialization: Astronomía
+      extracted_capabilities:
+        - celestial_pattern_fixing
+        - cycle_state_timing
+        - sky_reference_anchoring
+        - long_cycle_projection
+        - anomaly_discrimination_in_celestial_motion
+    - specialization: Teología
+      extracted_capabilities:
+        - doctrine_structure_reading
+        - ritual_role_inference
+        - sacred_protocol_sequencing
+        - symbol_authority_discrimination
+        - devotion_frame_reconstruction
+    - specialization: Criptología
+      extracted_capabilities:
+        - encoded_pattern_isolation
+        - transformation_rule_inference
+        - substitution_chain_detection
+        - hidden_message_reconstruction
+        - signal_masking_through_formal_structure
+    - specialization: Arqueología
+      extracted_capabilities:
+        - deposition_sequence_reading
+        - fragment_context_reconstruction
+        - disturbance_discrimination
+        - layer_to_event_inference
+        - site_use_continuity_modeling
+    - specialization: Arquitectura
+      extracted_capabilities:
+        - threshold_function_reading
+        - structural_intent_inference
+        - circulation_path_modeling
+        - load_path_discrimination
+        - access_control_logic_reconstruction
+    - specialization: Belicología
+      extracted_capabilities:
+        - force_role_composition_reading
+        - engagement_phase_modeling
+        - doctrine_signature_discrimination
+        - threat_ordering_under_conflict_pressure
+        - battle_pattern_projection
+    - specialization: Enfoque
+      extracted_capabilities:
+        - attention_channel_narrowing
+        - task_line_retention
+        - interruption_filtering
+        - precision_continuity_under_pressure
+        - target_lock_persistence
+    - specialization: Contención
+      extracted_capabilities:
+        - internal_surge_partitioning
+        - breakdown_threshold_holding
+        - impulse_output_gating
+        - escalation_arrest
+        - functional_continuity_under_emotional_overload
+    - specialization: Meditación
+      extracted_capabilities:
+        - state_baseline_restoration
+        - breath_led_regulation
+        - internal_noise_settling
+        - recovery_entry_sequencing
+        - long_cycle_self_stabilization
+    - specialization: Aplomo
+      extracted_capabilities:
+        - visible_strain_suppression
+        - bearing_line_preservation
+        - pressure_sign_leak_control
+        - external_steadiness_projection
+        - read_denial_through_posture_discipline
+    - specialization: Instinto
+      extracted_capabilities:
+        - preconscious_threat_registration
+        - essence_led_orientation
+        - immediate_choice_before_analysis
+        - nonrational_salience_discrimination
+        - survival_line_commitment
+    - specialization: Resonancia
+      extracted_capabilities:
+        - active_aura_reach
+        - signal_attunement
+        - affinity_discrimination_through_contact
+        - field_state_sampling
+        - nonverbal_force_reading
+    - specialization: Vínculo
+      extracted_capabilities:
+        - bonded_state_awareness
+        - tether_persistence_across_separation
+        - relational_direction_finding
+        - shared_pressure_registration
+        - connection_stability_management
+    - specialization: Domesticación
+      extracted_capabilities:
+        - response_state_calming
+        - cue_to_response_imprinting
+        - trust_window_shaping
+        - instinct_channel_redirection
+        - creature_state_reading_under_agitation
+    - specialization: Liderazgo
+      extracted_capabilities:
+        - authority_line_projection
+        - group_tempo_synchronization
+        - directive_clarity_under_pressure
+        - role_pressure_distribution
+        - cohesion_restoration_through_command
+    - specialization: Negociación
+      extracted_capabilities:
+        - leverage_surface_mapping
+        - concession_window_shaping
+        - term_pressure_calibration
+        - interest_line_alignment
+        - agreement_path_structuring
+    - specialization: Intimidación
+      extracted_capabilities:
+        - threat_weight_projection
+        - consequence_salience_forcing
+        - will_pressure_concentration
+        - space_claim_enforcement
+        - hesitation_induction
+    - specialization: Imitación
+      extracted_capabilities:
+        - identity_pattern_copying
+        - vocal_and_behavioral_mirroring
+        - social_rhythm_reproduction
+        - borrowed_mannerism_control
+        - role_presence_adoption
+    - specialization: Sigilo
+      extracted_capabilities:
+        - attention_threshold_reduction
+        - profile_suppression
+        - registration_window_timing
+        - line_of_notice_disruption
+        - trace_sign_minimization
+  use_rule: >
+    The catalog is a constraint, not a free-bonus generator: pick the
+    specialization, pick the extracted capability, build the Technique from
+    that capability, and preserve the capability's trained domain boundary. If
+    a proposed Technique cannot point to a listed capability, or to a clearly
+    adjacent capability that should be added here first, the Technique should
+    not be authored yet.
+
+condition_application_rule:
+  principle: >
+    When a Technique affects a creature with an ongoing harmful state, always
+    validate existing Ailments and named system states first.
+  always_check:
+    - data/system/ailments.yaml
+    - docs/system/ailments.md
+    - Transcendence-publications/canon/glossary.md
+  use_existing_when_possible:
+    - ailments
+    - wound_states
+    - fatigue
+    - cover_visibility_concealment_states
+    - other_named_mechanics
+  if_missing_state:
+    - define_the_missing_state_in_the_relevant_system_layer_first
+    - prefer_a_neutral_system_name_not_a_species_flavored_name
+    - register_it_in_yaml_docs_and_glossary_before_treating_it_as_a_technique_effect
+  prohibition: >
+    Do not leave creature-affecting effects as vague pressure, impairment, or
+    narrative penalty when an existing named mechanic should carry the load.
+
+system_validation_rule:
+  principle: >
+    Techniques must interact with existing system mechanics rather than
+    collapsing into generic move_attack_dodge_intercept language.
+  always_check:
+    - Transcendence-publications/canon/glossary.md
+    - docs/system/mechanics-overview.md
+    - docs/system/technique-interaction-framework.md
+  authoring_test:
+    - Which named system surfaces does this Technique touch?
+    - Which existing roll action state cost or condition vocabulary does it use?
+    - If it sounds like a generic action, what specific system layer makes it distinct here?
 
 access_model:
   access_is_separate_from_scaling: true
@@ -696,6 +1191,8 @@ template:
     secondary_front: null
     source: ""
     seed: ""
+    focus: ""
+    holder: ""
     transmission: ""
     availability: null
     adaptation_notes: ""
@@ -769,6 +1266,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Threshold Denial
+      focus: Guard / Threshold Control
+      holder: Naghii archive guards
       transmission: archive_guard_spear_drills
       availability: Restricted
       adaptation_notes: >
@@ -788,9 +1287,9 @@ pilot_examples:
       weapon_profile: Perforation
       support_specializations: []
       equipment:
-        - spear
-        - other_committed_piercing_reach_weapon
-      states: []
+        - any_weapon_natural_attack_or_item_with_perforation_access
+      states:
+        - user_can_sustain_a_committed_piercing_line
       prerequisite_techniques: []
     learning:
       self_study:
@@ -843,7 +1342,7 @@ pilot_examples:
       melee contact: the enemy's forward motion ends at the point rather than
       past it.
     scaling: >
-      Higher Spear competency may improve reliability, entry denial clarity, or
+      Higher competency used for this Technique may improve reliability, entry denial clarity, or
       cost efficiency, but should not turn the Technique into broad zone control
       by default.
     cost_note: >
@@ -874,6 +1373,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Tail Keeps The Channel / Procession Of Force
+      focus: Guard / Route Control
+      holder: Sauri river wardens and temple gate guards
       transmission: river_warden_shield_drills_and_temple_gate_defense
       availability: Restricted
       adaptation_notes: >
@@ -895,8 +1396,9 @@ pilot_examples:
       weapon_profile: Line Control
       support_specializations: []
       equipment:
-        - shield
-      states: []
+        - any_weapon_natural_attack_or_item_with_line_control_access
+      states:
+        - user_can_physically_occupy_or_cover_the_chosen_route_with_the_profile_bearing_surface
       prerequisite_techniques: []
     learning:
       self_study:
@@ -923,7 +1425,7 @@ pilot_examples:
         close one path without claiming the whole battlefield.
       final_validation: one_successful_supervised_execution
     target: route
-    range: shield_reach
+    range: profile_bearing_surface_reach
     area: single_readable_route
     duration:
       model: until_trigger
@@ -933,8 +1435,8 @@ pilot_examples:
         Ends after the next hostile activation that could plausibly use or
         attack through the chosen route resolves, even if the user's own marker
         becomes ready first. Also ends early if the user leaves the route, loses
-        shield posture, takes a non-free action that abandons the shield line,
-        or becomes unable to maintain the shield line.
+        profile-bearing posture, takes a non-free action that abandons the profile-bearing line,
+        or becomes unable to maintain the profile-bearing line.
     cost:
       rhythm_cost: 3
       attrition_cost: 1
@@ -946,20 +1448,21 @@ pilot_examples:
       The user sets the shield like a stone gate in a canal, making one route
       costly to ignore before the enemy chooses a target through it.
     effect: >
-      Choose one readable route within shield reach. The compuerta remains in
+      Choose one readable route within profile-bearing surface reach. The compuerta remains in
       place until the next hostile activation that could plausibly use or attack
       through that route resolves, even if the user's own marker becomes ready
       first. During that window, an enemy that uses the chosen route or attacks
       through that route against a target other than the user treats the action
-      as obstructed by the user's shield line. The obstructed action suffers a
-      penalty to its Attack Roll equal to 1 + the user's Shield rank. Instead of
+      as obstructed by the user's profile-bearing line. The obstructed action suffers a
+      penalty to its Attack Roll equal to 1 plus the rank bonus of the
+      competency used for this Technique. Instead of
       accepting the penalty, the enemy may choose to attack the user or the
-      user's shield line as the cleaner target. This does not stop the attack.
-      It makes ignoring the shield line worse.
+      user's profile-bearing line as the cleaner target. This does not stop the attack.
+      It makes ignoring the profile-bearing line worse.
     scaling: >
-      Higher Shield competency increases the Attack Roll penalty through Shield
-      rank. It should not turn the Technique into persistent zone control by
-      default.
+      Higher profile-bearing competency increases the Attack Roll penalty
+      through the rank bonus of the competency used for this Technique. It
+      should not turn the Technique into persistent zone control by default.
     cost_note: >
       Rhythm 3 / Attrition 1 is deliberate. The Technique is an active setup,
       not a guaranteed interception. It costs little because it changes enemy
@@ -967,11 +1470,11 @@ pilot_examples:
       route rather than stopping the next attack by itself.
     restrictions:
       - requires_a_real_lane_doorway_flank_bridge_corridor_riverbank_edge_formation_gap_or_other_readable_route_to_govern
-      - requires_the_user_to_physically_occupy_or_cover_the_chosen_route_with_shield_reach
+      - requires_the_user_to_physically_occupy_or_cover_the_chosen_route_with_profile_bearing_surface_reach
       - does_not_create_a_persistent_zone_by_itself
       - does_not_prevent_the_enemy_from_attacking_through_the_route
       - ends_after_the_next_hostile_activation_that_could_use_or_attack_through_the_route_resolves
-      - ends_early_if_the_user_leaves_the_route_loses_shield_posture_takes_a_non_free_action_that_abandons_the_shield_line_or_cannot_maintain_the_shield_line
+      - ends_early_if_the_user_leaves_the_route_loses_profile_bearing_posture_takes_a_non_free_action_that_abandons_the_profile_bearing_line_or_cannot_maintain_the_profile_bearing_line
       - should_not_stack_with_another_copy_of_the_same_technique_on_the_same_route
     tags:
       - defense
@@ -992,6 +1495,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Vessel Under Pressure / Procession Of Force
+      focus: Escort / Protective Interception
+      holder: Sauri temple escorts and river wardens
       transmission: temple_escort_drills_and_river_warden_protection_rites
       availability: Restricted
       adaptation_notes: >
@@ -1003,7 +1508,7 @@ pilot_examples:
     trigger: >
       An enemy attack or movement-linked strike would reach an ally, protected
       creature, carried witness, relic, or designated charge within the user's
-      shield reach.
+      profile-bearing surface reach.
     requirements:
       level: null
       rank: Novice
@@ -1011,8 +1516,9 @@ pilot_examples:
       weapon_profile: Interception
       support_specializations: []
       equipment:
-        - shield
-      states: []
+        - any_weapon_natural_attack_or_item_with_interception_access
+      states:
+        - clear_physical_path_to_place_the_profile_bearing_surface_between_threat_and_protected_target
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1038,7 +1544,7 @@ pilot_examples:
         from one incoming blockable threat.
       final_validation: one_successful_supervised_interception_of_a_protected_target
     target: ally_creature_or_object
-    range: shield_reach
+    range: profile_bearing_surface_reach
     area: single_protected_target
     duration:
       model: instant
@@ -1060,15 +1566,15 @@ pilot_examples:
     effect: >
       Contest the triggering attack or movement-linked strike with a shield
       response. If the Technique resolves successfully, the attack does not
-      affect its intended target. The shield-bearing user becomes the point of
+      affect its intended target. The profile-bearing user becomes the point of
       contact for the hostile force; the attack is blocked, redirected, or
-      resolved against the user's shield defense as the scene requires. If the
+      resolved against the user's profile-bearing defense as the scene requires. If the
       intercepted attack carries a non-damage rider, such as forced movement, a
       condition, or a grab, that rider does not transfer automatically to the
       protected target. The Narrator resolves whether the rider can affect the
-      shield-bearing user based on the fiction of the contact.
+      profile-bearing user based on the fiction of the contact.
     scaling: >
-      Higher Shield competency may improve reliability, protected-target
+      Higher profile-bearing competency may improve reliability, protected-target
       breadth, or rider mitigation, but should not become persistent bodyguard
       coverage by default.
     cost_note: >
@@ -1099,6 +1605,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Release At The Correct Gate / Tail Keeps The Channel
+      focus: Guard / Breach Response
+      holder: Sauri river breach wardens and temple interrupters
       transmission: river_warden_breach_drills_and_temple_guard_interruption_forms
       availability: Restricted
       adaptation_notes: >
@@ -1108,7 +1616,7 @@ pilot_examples:
     category: attack
     type: reactive
     trigger: >
-      An enemy within shield reach begins a Technique, heavy action,
+      An enemy within profile-bearing surface reach begins a Technique, heavy action,
       telegraphed action, or movement-linked execution that requires visible
       commitment before it resolves.
     requirements:
@@ -1118,9 +1626,10 @@ pilot_examples:
       weapon_profile: Interruption
       support_specializations: []
       equipment:
-        - shield
-        - ready_manufactured_weapon_or_natural_weapon_or_shield_with_attack_stats
-      states: []
+        - any_weapon_natural_attack_or_item_with_interruption_access
+        - ready_weapon_natural_weapon_or_item_with_explicit_attack_stats
+      states:
+        - triggering_action_has_readable_physical_line_windup_focus_point_or_execution_route
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1145,7 +1654,7 @@ pilot_examples:
         hidden actions.
       final_validation: one_successful_supervised_interruption_with_or_without_counter
     target: enemy
-    range: shield_reach
+    range: profile_bearing_surface_reach
     area: single_enemy
     duration:
       model: instant
@@ -1154,7 +1663,7 @@ pilot_examples:
       end_rule: null
     cost:
       rhythm_cost: 5
-      attrition_cost: 1
+      attrition_cost: 2
       other: []
     saving_roll:
       model: defense_roll_margin
@@ -1182,7 +1691,7 @@ pilot_examples:
       threat value, or declared interruption threshold. If no such value exists,
       this Technique can spoil the setup but cannot produce the counterattack.
     scaling: >
-      Higher Shield competency may improve defensive reliability or future
+      Higher profile-bearing competency may improve defensive reliability or future
       interruption windows, but counter access should remain tied to a clean
       margin.
     cost_note: >
@@ -1191,7 +1700,7 @@ pilot_examples:
       credible striking surface.
     restrictions:
       - requires_a_readable_committed_execution_not_a_trivial_instant_hidden_or_purely_mental_action
-      - requires_shield_reach_and_a_credible_contact_point_to_jam_strike_or_break
+      - requires_profile_bearing_surface_reach_and_a_credible_contact_point_to_jam_strike_or_break
       - counterattack_requires_a_ready_weapon_natural_weapon_or_shield_item_with_explicit_attack_stats
       - affects_one_enemy_action_only
       - should_not_cancel_an_entire_boss_or_champion_subsystem_unless_it_exposes_a_vulnerable_interruption_window
@@ -1215,6 +1724,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Vessel Under Pressure / Sovereign Weight
+      focus: Guard / Bastion Posture
+      holder: Sauri sovereign guards and temple bastions
       transmission: temple_bastion_stances_and_sovereign_guard_anchoring_rites
       availability: Restricted
       adaptation_notes: >
@@ -1233,11 +1744,11 @@ pilot_examples:
       weapon_profile: Bastion
       support_specializations: []
       equipment:
-        - shield
+        - any_weapon_natural_attack_or_item_with_bastion_access
       states:
         - standing
         - able_to_brace
-        - shield_oriented_toward_pressure
+        - profile_bearing_surface_oriented_toward_pressure
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1270,7 +1781,7 @@ pilot_examples:
       sustain_rule: >
         The user may still attack, use Techniques, intercept, speak, pressure
         enemies, and defend while the stance is active, as long as those actions
-        do not abandon the anchored point or break shield posture.
+        do not abandon the anchored point or break profile-bearing posture.
       end_rule: >
         Ends if the user voluntarily moves more than 1 meter from the anchored
         point, is forced out of posture, loses footing, turns the shield away
@@ -1287,16 +1798,18 @@ pilot_examples:
       harder to take from them.
     effect: >
       Choose the point or small space the user is anchoring. While the stance
-      remains active, the user gains a bonus equal to their Shield rank to D.R.
-      against attacks that come through the shield line or anchored front, and
+      remains active, the user gains a bonus equal to the rank bonus of the
+      competency used for this Technique to D.R.
+      against attacks that come through the profile-bearing line or anchored front, and
       to R.R. against forced movement, knockdown, shove, drag, destabilization,
       crushing pressure, and physical Alterations caused by impact or bodily
       displacement. The user may still attack, use Techniques, intercept, speak,
       pressure enemies, and defend while the stance is active, as long as those
-      actions do not abandon the anchored point or break shield posture.
+      actions do not abandon the anchored point or break profile-bearing posture.
     scaling: >
-      Higher Shield competency increases the stance bonus through Shield rank.
-      It should not become broad route control or ally interception by itself.
+      Higher profile-bearing competency increases the stance bonus through the
+      rank bonus of the competency used for this Technique. It should not
+      become broad route control or ally interception by itself.
     cost_note: >
       Rhythm 3 / Attrition 1 is deliberate. Entering the stance is quick; the
       real cost is positional and attritional.
@@ -1326,6 +1839,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Jaw As Judgment / Vessel Under Pressure
+      focus: Execution / Ritual Discipline
+      holder: Sauri temple execution keepers
       transmission: jaw_closing_rites_execution_drills_and_temple_predator_discipline
       availability: Restricted
       adaptation_notes: >
@@ -1344,11 +1859,9 @@ pilot_examples:
       weapon_profile: Impact
       support_specializations: []
       equipment:
-        - sauri_bite
-        - mace
-        - heavy_blunt_weapon
-        - other_credible_impact_surface
-      states: []
+        - any_weapon_natural_attack_or_item_with_impact_access
+      states:
+        - user_can_close_force_into_target_through_a_credible_impact_surface
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1427,6 +1940,400 @@ pilot_examples:
       - pressure
       - disruption
       - setup
+  - name: Barrer la Orilla
+    name_en: Sweep the Bank
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Impact Technique that applies Desequilibrado
+      through blunt lateral shock instead of repeating knockdown, restraint, or
+      forced displacement.
+    origin:
+      main: Impact
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Procession Of Force
+      focus: Guard / Corridor Punishment
+      holder: Sauri canal guards and corridor punishers
+      transmission: riverbank_impact_drills_corridor_breach_punishment_and_canal_guard_body_line_training
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that the tail governs the
+        edge beside the body. Non-Sauri users can learn it through maces or any
+        Impact tradition that can deliver blunt lateral shock into posture.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Impact-profile tail or heavy lateral strike
+      against a target within reach whose posture can be disrupted by blunt side
+      force.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Impact
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_impact_access
+      states:
+        - user_has_enough_space_to_swing_pivot_or_drive_blunt_lateral_force_through_the_targets_stance
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling lateral force, stance disruption, and recovery from
+          the swing so the user does not overbalance while trying to break the
+          target's posture.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri tail instructor, mace instructor, impact-weapon trainer, or
+          corridor guard can correct timing, angle, and recovery.
+      material_cost: null
+      access_notes: >
+        Best learned in drills with riverbank edges, corridors, flank pressure,
+        and targets that can resist without turning the exchange into a full
+        knockdown practice.
+      final_validation: one_successful_supervised_execution_that_applies_desequilibrado_without_derribado_or_restraint
+    target: enemy
+    range: impact_weapon_or_natural_weapon_reach
+    area: single_enemy
+    duration:
+      model: until_condition_removed
+      value: desequilibrado_removed
+      sustain_rule: null
+      end_rule: >
+        Ends when Desequilibrado is removed or when balance is recovered by the
+        normal recovery rules for that state.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: alteration_resistance
+      effect_on_success: >
+        Desequilibrado is not applied, but the attack still resolves its normal
+        damage if it hit.
+    description: >
+      The user crosses force through the edge of the target's stance, creating
+      blunt lateral shock that makes clean defense and physical execution
+      unstable.
+    effect: >
+      Make an active Impact-profile attack against the target. If the attack
+      hits, resolve damage normally. Then the target makes an Alteration
+      Resistance Roll against Desequilibrado. The Desequilibrado severity is
+      determined by the competency rank used for the Technique: ranks 1-2 are
+      Minor, ranks 3-4 are Moderate, and ranks 5-6 are Severe. On a failed
+      R.R., the target gains Desequilibrado at that severity and suffers the
+      normal penalties to D.R. and physical Specialization Rolls until balance
+      is recovered. On a successful R.R., Desequilibrado is not applied, but the
+      attack still resolves its normal damage if it hit. If the target is
+      already Desequilibrado, stronger application replaces weaker application,
+      and equal application usually refreshes persistence.
+    scaling: >
+      Higher competency increases Desequilibrado severity in two-rank bands.
+      The Technique does not gain forced movement, restraint, or knockdown by
+      default.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is intentional. The Technique is an active attack
+      that resolves normal impact and can apply a persistent stability
+      condition. The Attrition reflects the heavy body commitment needed to
+      swing or drive an Impact-bearing surface through the target's stance
+      without overbalancing the user.
+    restrictions:
+      - requires_a_valid_impact_profile_surface_capable_of_blunt_lateral_shock
+      - requires_enough_room_body_angle_or_contact_path_to_sweep_or_drive_force_across_the_targets_stance
+      - cannot_be_used_with_a_weapon_natural_attack_or_item_that_lacks_impact_access_unless_a_specific_rule_grants_that_access
+      - cannot_be_used_with_surfaces_whose_main_identity_is_not_blunt_structural_shock_unless_the_specific_item_or_anatomy_carries_the_impact_profile
+      - does_not_apply_derribado_atrapado_forced_displacement_disarm_or_rupture_by_itself
+      - cannot_affect_targets_whose_body_plan_anchoring_scale_flight_terrain_position_or_fiction_makes_lateral_balance_disruption_impossible
+      - affects_one_target_only
+      - applies_desequilibrado_a_generic_alteration_not_a_sauri_only_condition
+    tags:
+      - attack
+      - disruption
+      - pressure
+      - stability_break
+  - name: Anclar el Contrapeso
+    name_en: Anchor the Counterweight
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Line Control Technique that uses tail or
+      profile-bearing counterweight to reduce forced displacement and reinforce
+      resistance against physical stability loss without creating lane taxation
+      or persistent control.
+    origin:
+      main: Line Control
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Stone Remembers Pressure
+      focus: Guard / Stability Holding
+      holder: Sauri flood-threshold wardens
+      transmission: riverbank_stance_drills_flooded_floor_balance_practice_and_temple_threshold_holding
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that the tail can become the
+        body's counterweight under pressure. Non-Sauri users can learn it
+        through Line Control surfaces that can credibly brace, hook, plant, or
+        counterweight the user's own body.
+    category: defense
+    type: reactive
+    trigger: >
+      The user would be pushed, pulled, shoved, dragged, knocked off a held
+      point, displaced by a physical effect, or forced to resist Derribado or
+      Desequilibrado from impact, sweep, collision, footing loss, momentum loss,
+      or unstable ground that the user's profile-bearing surface can oppose.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Line Control
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_line_control_access
+      states:
+        - narrowed_access_profile_bearing_surface_must_brace_hook_plant_sweep_back_or_counterweight_users_body
+        - triggering_effect_is_physical_displacement_or_stability_loss
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires drilling bracing, hooking, planting, and counterweight
+          recovery against pushes, drags, unstable ground, and physical posture
+          loss.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Sauri tail instructor, Line Control trainer, guard instructor, or
+          terrain-fighting mentor can correct timing, surface choice, and
+          recovery without turning the Technique into a hold or lane tax.
+      material_cost: null
+      access_notes: >
+        Best learned on wet stone, uneven ground, thresholds, cover lines, and
+        other places where a body must keep position while pressure tries to
+        remove it.
+      final_validation: one_successful_supervised_reaction_that_reduces_forced_movement_or_reinforces_resistance_against_physical_stability_loss
+    target: self
+    range: self
+    area: users_occupied_space
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The user answers incoming pressure with a planted, hooked, or
+      counterweighted surface, keeping their body from being removed from the
+      place it chose to hold.
+    effect: >
+      When the trigger occurs, reduce the forced movement distance by 1 meter
+      plus the rank bonus of the competency used for this Technique. If this
+      reduction brings the forced movement to 0, the user remains in their
+      current space and keeps any held-point, guard, stance, route, or
+      body-position effect that would have ended only because they were
+      displaced. If the forced movement is only partially reduced, the user is
+      still moved by the remaining distance and may choose the nearest legal
+      space along the forced movement path that preserves footing if more than
+      one legal space is equally valid. If the same triggering effect would
+      apply Derribado or Desequilibrado through physical posture loss, impact,
+      sweep, collision, unstable ground, or momentum loss, the user gains a
+      bonus equal to the rank bonus of the competency used for this Technique
+      to the Alteration R.R. against that Derribado or Desequilibrado. If the
+      triggering effect would apply both forced movement and one of those
+      states, apply both parts of this Technique.
+    scaling: >
+      Higher competency increases the forced movement reduction and the
+      Alteration R.R. bonus against qualifying physical Derribado or
+      Desequilibrado. The Technique never becomes enemy control, damage,
+      condition application, or ally protection by default.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is intentional. The Technique reacts to one
+      physical stability event and can preserve position, but it does not
+      damage, apply a condition, protect allies, counterattack, or create
+      persistent control.
+    restrictions:
+      - requires_a_physical_displacement_or_stability_loss_effect
+      - requires_a_profile_bearing_surface_that_can_credibly_brace_hook_plant_sweep_back_or_counterweight_the_users_body
+      - cannot_be_used_against_teleportation_spatial_transposition_incorporeal_movement_mind_control_fear_movement_voluntary_movement_or_nonphysical_body_movement
+      - does_not_help_against_derribado_or_desequilibrado_from_nonphysical_sources_or_sources_the_surface_cannot_physically_oppose
+      - does_not_help_against_atrapado_once_the_user_is_already_restrained
+      - can_only_oppose_the_drag_shove_pull_or_displacement_that_would_put_the_user_into_restraint_if_that_movement_is_the_trigger
+      - cannot_protect_another_creature_by_itself
+      - cannot_move_the_enemy_apply_atrapado_apply_desequilibrado_apply_derribado_deal_damage_disarm_or_rupture_by_itself
+      - cannot_preserve_a_stance_guard_or_held_point_effect_if_that_effect_ended_for_a_reason_other_than_displacement
+      - cannot_reduce_forced_movement_below_0
+      - affects_the_user_only
+    tags:
+      - defense
+      - anti_displacement
+      - stability
+      - control
+  - name: Cerrar el Flanco
+    name_en: Close the Flank
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Interception Technique that uses tail or
+      profile-bearing reach to replace a protected target's Defense Roll with
+      the user's reactive Attack Roll, creating a risky offensive protection
+      window.
+    origin:
+      main: Interception
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Procession Of Force
+      focus: Escort / Flank Defense
+      holder: Sauri flank escorts and canal bank guards
+      transmission: flank_guard_tail_drills_temple_corridor_escort_forms_and_canal_bank_body_adjacent_defense
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that the flank beside the
+        body is governed terrain. Non-Sauri users can learn it through
+        Interception surfaces with enough reach and striking authority to hit
+        an attacker before their attack reaches the protected target.
+    category: defense
+    type: reactive
+    trigger: >
+      An enemy within the user's tail or Interception-surface reach makes a
+      physical attack against the user or against a creature or object within
+      that same reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interception
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_interception_access
+      states:
+        - profile_bearing_surface_has_enough_reach_and_striking_authority_to_hit_the_attacker_before_the_attack_reaches_the_protected_target
+        - protected_willing_creature_accepts_replacing_its_td_against_the_triggering_attack
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling attack-line recognition, flank coverage, and timing
+          a reactive strike so it reaches the attacker before the hostile attack
+          reaches the protected target.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri tail instructor, escort trainer, or Interception-surface
+          instructor can correct the user's timing so the protection is neither
+          late nor a passive shield substitution.
+      material_cost: null
+      access_notes: >
+        Best learned in corridor escort drills, flank defense practice, and
+        paired exercises where the protected target deliberately yields their
+        Defense Roll to the user's interception.
+      final_validation: one_successful_supervised_reactive_attack_that_replaces_a_protected_targets_defense_roll
+    target: attacking_enemy
+    range: tail_or_interception_surface_reach
+    area: one_attacking_enemy_and_one_protected_target
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: opposed_attack_roll
+      effect_on_success: >
+        If the user's reactive Attack Roll equals or exceeds the triggering
+        attacker's Attack Roll, the triggering attack does not hit the
+        protected target and the user's attack deals normal damage to the
+        attacker.
+    description: >
+      The enemy commits to a body beside the user, and the user's tail or
+      profile-bearing surface arrives first. The attacker reaches for one
+      target and finds the flank already crossing the line with enough force to
+      punish the attempt.
+    effect: >
+      When the trigger occurs, declare whether this Technique is replacing the
+      user's own T.D. or the protected target's T.D. against the triggering
+      attack. Make a reactive T.A. with the tail or Interception-profile
+      surface against the attacking enemy. Compare that T.A. to the triggering
+      attacker's T.A. If the user's T.A. equals or exceeds the attacker's T.A.,
+      the interception succeeds: the triggering attack does not hit the
+      protected target, the user's attack deals normal damage to the attacking
+      enemy, and any non-damage rider on the triggering attack fails to affect
+      the protected target unless a specific rule says it survives failed
+      interception. If the user's T.A. is lower than the attacker's T.A., the
+      interception fails. The triggering attack resolves against the protected
+      target as if that target's T.D. had failed. The protected target does not
+      make a separate T.D. against that attack. If the protected target is a
+      willing creature, it must accept the interception before the roll. If it
+      refuses, this Technique cannot replace its T.D. Objects, unconscious
+      creatures, restrained creatures, carried creatures, or creatures unable
+      to defend may be protected if the fiction allows the user to cover the
+      line.
+    scaling: >
+      Higher competency improves the user's reactive T.A. through normal
+      competency scaling. Higher-tier versions may broaden valid protected
+      targets, improve rider handling, or allow limited protection against more
+      complex attack lines, but Novice use remains one attack against one
+      protected target.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is intentional. The Technique is reactive, can
+      protect another target, and can deal normal damage if the user's attack
+      roll beats the hostile attack. Its main limiter is risk: declaring it
+      replaces the protected target's T.D. against the triggering attack, and
+      the added Attrition reflects the offensive interception load of doing
+      both protection and punishment in the same window.
+    restrictions:
+      - requires_a_physical_attack_or_movement_linked_strike_from_an_enemy_within_tail_or_interception_surface_reach
+      - requires_a_profile_bearing_surface_that_can_credibly_strike_the_attacker_before_the_triggering_attack_reaches_the_protected_target
+      - cannot_be_used_against_purely_mental_social_aura_curse_poison_infection_area_teleportation_or_non_contact_effects
+      - cannot_be_used_against_an_attack_line_the_user_cannot_perceive_anticipate_or_physically_reach
+      - cannot_protect_an_unwilling_creature_that_is_able_to_defend_itself_and_refuses_the_replacement
+      - cannot_be_used_if_the_protected_target_already_rolled_td_against_the_triggering_attack
+      - does_not_stop_enemy_movement_apply_atrapado_apply_desequilibrado_apply_derribado_disarm_or_rupture_by_itself
+      - does_not_automatically_make_the_user_the_target_of_the_triggering_attack
+      - affects_one_triggering_attack_only
+      - cannot_stack_with_another_copy_of_itself_on_the_same_triggering_attack
+    tags:
+      - defense
+      - interception
+      - counterattack
+      - protection
   - name: Abrir la Vasija
     name_en: Open the Vessel
     status: pilot_example
@@ -1441,6 +2348,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Jaw As Judgment / Vessel Under Pressure
+      focus: Execution / Wound Opening
+      holder: Sauri executioners and wound readers
       transmission: predator_restraint_drills_execution_tearing_rites_and_wound_reading_practice
       availability: Restricted
       adaptation_notes: >
@@ -1461,13 +2370,9 @@ pilot_examples:
       weapon_profile: Rend
       support_specializations: []
       equipment:
-        - sauri_bite
-        - axe
-        - hooked_blade
-        - serrated_natural_weapon
-        - tearing_edge
-        - other_credible_rend_surface
-      states: []
+        - any_weapon_natural_attack_or_item_with_rend_access
+      states:
+        - profile_bearing_surface_can_open_and_worsen_a_contact_wound
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1560,6 +2465,8 @@ pilot_examples:
       secondary_front: null
       source: Sauri
       seed: Release At The Correct Gate / Jaw As Judgment
+      focus: Assault / Breakthrough Commitment
+      holder: Sauri breach bearers and mace processions
       transmission: breach_rites_mace_processions_and_jaw_commitment_drills
       availability: Restricted
       adaptation_notes: >
@@ -1579,11 +2486,9 @@ pilot_examples:
       weapon_profile: Unstoppable
       support_specializations: []
       equipment:
-        - sauri_bite
-        - mace
-        - heavy_blunt_weapon
-        - other_credible_unstoppable_surface
-      states: []
+        - any_weapon_natural_attack_or_item_with_unstoppable_access
+      states:
+        - profile_bearing_surface_can_carry_force_through_resistance
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1592,7 +2497,7 @@ pilot_examples:
         practice_hours: 8
         text_or_manual_required: false
         notes: >
-          Requires repeated drilling against guards, braces, shield lines, and
+          Requires repeated drilling against guards, braces, profile-bearing lines, and
           active postures so the learner distinguishes real defensive commitment
           from an open target.
       guided_training:
@@ -1662,6 +2567,270 @@ pilot_examples:
       - pressure
       - forced_movement
       - posture_break
+  - name: Sellar la Presa
+    name_en: Seal the Hold
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Bastion Technique that applies grounded knockdown
+      through posture failure instead of turning bite or weight into a generic
+      grapple.
+    origin:
+      main: Bastion
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Jaw As Judgment / Sovereign Weight
+      focus: Execution / Grounding Force
+      holder: Sauri temple execution groundskeepers
+      transmission: jaw_drop_drills_mace_grounding_forms_and_temple_execution_practice
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that judgment descends and
+        closes a body into the ground. Non-Sauri users can learn it through
+        mace schools, execution practice, weighted haft drills, or any Bastion
+        tradition that converts contact into grounded posture failure.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Bastion-profile attack against a target whose
+      footing or bodily posture can be broken by grounded force.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Bastion
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_bastion_access
+      states:
+        - profile_bearing_surface_can_drive_force_downward_or_pin_posture_into_the_ground
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling grounded force, balance collapse, and safe follow-up
+          positioning without turning the fall into a sustained pin.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri jaw instructor, mace instructor, execution trainer, or Bastion
+          weapon instructor can correct descent angle, contact timing, and
+          grounded commitment.
+      material_cost: null
+      access_notes: >
+        Best learned with controlled falling drills, resistant targets, and
+        surfaces that can safely absorb grounded impact.
+      final_validation: one_successful_supervised_execution_that_applies_derribado_without_maintaining_a_pin
+    target: enemy
+    range: weapon_or_natural_weapon_reach
+    area: single_enemy
+    duration:
+      model: until_condition_removed
+      value: derribado_removed
+      sustain_rule: null
+      end_rule: >
+        The Technique's condition ends when Derribado is removed. The optional
+        claimed-point bonus ends earlier if the user voluntarily moves more
+        than 1 meter away, attacks a different target, or turns the Bastion
+        surface away from the fallen target.
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: alteration_resistance
+      effect_on_success: >
+        Derribado is not applied, but the attack still resolves its normal
+        damage if it hit.
+    description: >
+      The user closes force downward and makes the target's posture fail,
+      sealing the exchange into the ground rather than sustaining a grip.
+    effect: >
+      Make an active Bastion-profile attack against the target. If the attack
+      hits, resolve damage normally. Then the target makes an Alteration
+      Resistance Roll against Derribado. The Derribado severity is determined
+      by the competency rank used for the Technique: ranks 1-2 are Minor, ranks
+      3-4 are Moderate, and ranks 5-6 are Severe. On a failed R.R., the target
+      gains Derribado at that severity. The target is brought to the ground and
+      suffers the normal Derribado effect: -3 to all rolls, and its first
+      movement action is spent getting up. After applying Derribado, the user
+      may choose to remain within reach and claim the fallen point. If they do,
+      they gain a bonus equal to their competency rank to the first D.R. or
+      physical R.R. they make against that target before it stands. This bonus
+      ends if the user voluntarily moves more than 1 meter away, attacks a
+      different target, or turns the Bastion surface away from the fallen target.
+    scaling: >
+      Higher competency increases Derribado severity in two-rank bands and
+      increases the optional claimed-point bonus through competency rank.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is intentional. The Technique is a committed attack
+      that redirects force into posture instead of simply adding damage. The
+      higher Attrition reflects the body commitment needed to drive through
+      balance and settle the result into the ground.
+    restrictions:
+      - requires_a_valid_bastion_profile_weapon_or_natural_weapon_capable_of_driving_force_into_posture_balance_or_the_ground
+      - cannot_be_used_with_shields_armor_or_passive_defensive_surfaces_unless_they_are_defined_as_bastion_profile_weapons
+      - cannot_be_used_with_a_surface_that_cannot_plausibly_knock_the_target_down_through_grounded_force
+      - affects_one_target_only
+      - does_not_restrain_grapple_pin_drag_carry_suffocate_disarm_or_create_automatic_damage_over_time
+      - cannot_knock_down_targets_whose_scale_body_plan_state_anchoring_or_fiction_makes_knockdown_impossible
+      - applies_derribado_a_generic_alteration_not_a_sauri_only_condition
+    tags:
+      - attack
+      - control
+      - stability
+      - knockdown
+  - name: Devolver al Cauce
+    name_en: Return to the Channel
+    status: pilot_example
+    purpose: >
+      Validate a Sauri-origin Interruption Technique that applies Atrapado
+      through credible movement restraint, without turning tail use into a
+      generic flexible-weapon lane tax.
+    origin:
+      main: Interruption
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Release At The Correct Gate
+      focus: Guard / Route Recovery
+      holder: Sauri river wardens and corridor guards
+      transmission: river_warden_flank_drills_canal_guard_forms_and_temple_corridor_defense
+      availability: Restricted
+      adaptation_notes: >
+        The Technique expresses the Sauri doctrine that a flank, passage, or
+        route beside the body is a channel that can be closed by the tail.
+        Non-Sauri users can learn the same timing through flexible weapons,
+        restraining thrown tools, hooked lines, or shield methods that can
+        credibly catch or bind movement.
+    category: defense
+    type: reactive
+    trigger: >
+      An enemy within tail or interrupting-surface reach attempts to move past
+      the user's flank, leave the user's reach through a route they can cover,
+      circle behind them, cross a guarded passage, or complete a
+      movement-linked action through the user's body-adjacent channel.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interruption
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_interruption_access
+      states:
+        - narrowed_access_profile_bearing_surface_must_plausibly_restrain_or_redirect_movement
+        - examples_include_sauri_tail_prehensile_natural_weapon_flexible_weapon_hooked_line_restraining_thrown_weapon_or_hooking_shield
+        - user_has_a_credible_contact_line_to_the_moving_body_or_limb
+        - triggering_movement_crosses_the_users_covered_passage
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires drilling flank timing, contact-line discipline, and safe
+          restraint release so the user catches movement as it commits rather
+          than striking after the target has already passed.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Sauri tail instructor, flexible-weapon instructor, restraining
+          thrown-tool trainer, or shield instructor with hook/catch methods can
+          correct the timing and teach what surfaces can actually hold.
+      material_cost: null
+      access_notes: >
+        Best learned with moving targets, corridor drills, flank-passage
+        exercises, and equipment that can safely restrain without damaging the
+        target by default.
+      final_validation: one_successful_supervised_interruption_that_applies_atrapado_without_dealing_damage
+    target: moving_enemy
+    range: tail_flexible_hook_or_shield_catch_reach
+    area: single_enemy_using_the_covered_passage
+    duration:
+      model: until_condition_removed
+      value: atrapado_removed
+      sustain_rule: null
+      end_rule: >
+        Atrapado ends when the target breaks free, is released, or the
+        restraining source no longer holds them. The Technique also ends if the
+        user loses the required contact line, releases the source, or the
+        restraining surface can no longer reach the target.
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: alteration_resistance
+      effect_on_success: >
+        Atrapado is not applied. The target may complete the movement if it
+        still has a legal route, but does not gain a clean flank, rear-position,
+        or passage advantage from the triggering movement against the user
+        unless another rule explicitly grants it.
+    description: >
+      The enemy thinks the side is open. The user's tail or restraining surface
+      closes across the passage and returns the body to the channel. This is a
+      heavy catch at the moment movement becomes exposed, not a strike for
+      damage.
+    effect: >
+      When the trigger occurs, make a reactive Interruption check using the
+      relevant competency or natural-weapon competency. If the check fails, the
+      enemy completes the movement or movement-linked action normally. If the
+      check succeeds, the target immediately makes an Alteration Resistance
+      Roll against Atrapado. The Atrapado severity is determined by the
+      competency rank used for the Technique: ranks 1-2 are Minor, ranks 3-4
+      are Moderate, and ranks 5-6 are Severe. On a failed R.R., the target
+      gains Atrapado at that severity. Their movement becomes 0, they suffer
+      the normal Atrapado penalties for that severity, and the movement or
+      movement-linked action that triggered the Technique stops at the point
+      where the restraint catches them. Atrapado persists until the target
+      breaks free, is released, or the restraining source no longer holds them.
+    scaling: >
+      Higher competency increases Atrapado severity in two-rank bands. Higher
+      tiers may improve trigger breadth, contact reliability, recovery denial,
+      or multi-target handling, but this novice form affects one target only.
+    cost_note: >
+      Rhythm 4 / Attrition 1 is intentional. The Technique is reactive and can
+      stop movement, but it requires a real movement trigger, a credible
+      restraining surface, and an Alteration Resistance Roll. It costs less
+      than a committed disabling attack because it does not deal damage by
+      itself and only fires when the enemy exposes their route.
+    restrictions:
+      - requires_a_real_movement_flank_escape_circling_passage_or_movement_linked_action_to_interrupt
+      - requires_a_credible_restraining_or_redirecting_surface
+      - ordinary_swords_maces_daggers_simple_spears_axes_armor_and_bites_do_not_qualify_without_hook_catch_or_bind_permission
+      - thrown_weapons_qualify_only_when_the_thrown_object_can_restrain_catch_or_bind_movement
+      - thrown_knives_darts_stones_and_simple_projectiles_do_not_qualify
+      - shield_use_requires_explicit_hook_pin_catch_or_trap_permission
+      - a_plain_blocking_shield_does_not_qualify_by_itself
+      - cannot_be_used_if_the_tail_weapon_shield_hook_or_restraining_surface_is_already_occupied_restrained_pinned_or_unable_to_reach_the_target
+      - does_not_affect_teleportation_incorporeal_movement_flight_above_the_surface_or_movement_that_never_crosses_the_covered_passage
+      - affects_one_target_only
+      - does_not_deal_damage_apply_derribado_disarm_or_force_displacement_by_itself
+      - cannot_create_atrapado_without_a_physical_or_structural_source_that_continues_to_restrain_the_target
+      - does_not_stack_multiple_copies_of_atrapado
+    tags:
+      - defense
+      - control
+      - interruption
+      - movement_denial
+      - restraint
   - name: Clavar el Paso
     name_en: Pin the Step
     status: pilot_example
@@ -1677,6 +2846,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Committed Compression
+      focus: Enforcement / Breach Response
+      holder: Naghii Kha enforcement cadres
       transmission: kha_enforcement_and_breach_response_drills
       availability: Restricted
       adaptation_notes: >
@@ -1696,9 +2867,9 @@ pilot_examples:
       weapon_profile: Perforation
       support_specializations: []
       equipment:
-        - spear
-        - other_committed_piercing_reach_weapon
-      states: []
+        - any_weapon_natural_attack_or_item_with_perforation_access
+      states:
+        - user_can_sustain_a_committed_piercing_line
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1749,7 +2920,7 @@ pilot_examples:
       new position at full weapon reach. You are left committed forward after
       the exchange.
     scaling: >
-      Higher Spear competency may improve reliability, closing stability, or
+      Higher competency used for this Technique may improve reliability, closing stability, or
       cost efficiency, but should not remove the Technique's committed identity
       or extend the closing distance beyond the authored 2 meters at base.
     cost_note: >
@@ -1782,6 +2953,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Preserved Distance
+      focus: Guard / Range Discipline
+      holder: Naghii archive range wardens
       transmission: archive_guard_range_discipline
       availability: Restricted
       adaptation_notes: >
@@ -1801,9 +2974,9 @@ pilot_examples:
       weapon_profile: Perforation
       support_specializations: []
       equipment:
-        - spear
-        - other_committed_piercing_reach_weapon
-      states: []
+        - any_weapon_natural_attack_or_item_with_perforation_access
+      states:
+        - user_can_sustain_a_committed_piercing_line
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1858,7 +3031,7 @@ pilot_examples:
       target is now outside close-pressure range and must spend movement to
       close again before they can threaten you in melee.
     scaling: >
-      Higher Spear competency may improve reliability, recovery clarity, or
+      Higher competency used for this Technique may improve reliability, recovery clarity, or
       cost efficiency, but should not turn the Technique into automatic broad
       control or unconditional repositioning.
     cost_note: >
@@ -1890,6 +3063,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Coiled Readiness
+      focus: Guard / Close Control
+      holder: Naghii temple guards
       transmission: temple_guard_torsion_drills
       availability: Common
       adaptation_notes: >
@@ -1900,7 +3075,7 @@ pilot_examples:
     category: utility
     type: reactive
     trigger: >
-      An enemy already inside the user's flexible reach tries to withdraw,
+      An enemy already inside the user's profile-bearing reach tries to withdraw,
       circle to a better angle, disengage from a contested position, or turn
       partial contact into clean separation.
     requirements:
@@ -1910,11 +3085,10 @@ pilot_examples:
       weapon_profile: Torsion
       support_specializations: []
       equipment:
-        - flexible_weapon
-        - functional_tail_or_tendril
-        - other_credible_torsion_contact_surface
+        - any_weapon_natural_attack_or_item_with_torsion_access
       states:
-        - target_is_already_inside_flexible_reach
+        - user_has_a_credible_torsion_contact_surface
+        - target_is_already_inside_profile_bearing_reach
         - user_has_a_credible_held_contact_or_coiled_threat
       prerequisite_techniques: []
     learning:
@@ -1943,7 +3117,7 @@ pilot_examples:
         a guarded space.
       final_validation: one_successful_supervised_execution
     target: enemy
-    range: flexible_reach
+    range: profile_bearing_reach
     area: single
     duration:
       model: instant
@@ -1974,18 +3148,18 @@ pilot_examples:
       reach, and must spend a later movement commitment or action to clear the
       contact before treating that path as open.
     scaling: >
-      Higher Flexible Weapons competency may improve reliability, contact
+      Higher competency used for this Technique may improve reliability, contact
       clarity, or cost efficiency, but should not turn the Technique into full
       restraint, damage, multi-target denial, or sustained immobilization by
       default.
     cost_note: >
       Rhythm 4 / Attrition 1 matches a narrow reactive anti-disengagement
       window. Unlike Cerrar la Linea, this does not stop an enemy from entering;
-      it punishes an enemy who is already inside flexible reach and tries to
+      it punishes an enemy who is already inside profile-bearing reach and tries to
       leave, circle, or cleanly improve position.
     restrictions:
       - requires_a_flexible_contact_surface_that_can_credibly_catch_the_step_or_line
-      - cannot_be_used_against_an_enemy_entering_from_outside_flexible_reach
+      - cannot_be_used_against_an_enemy_entering_from_outside_profile_bearing_reach
       - cannot_be_used_if_the_user_has_no_credible_held_contact_or_coiled_threat
       - cannot_create_full_immobilization_or_grappling_control_by_itself
       - should_not_function_as_broad_zone_control_or_multi_target_denial
@@ -2010,6 +3184,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Controlled Misreading
+      focus: Skirmish / Feint And Angle Theft
+      holder: Naghii flexible-line skirmishers
       transmission: tail_feint_and_flexible_line_drills
       availability: Common
       adaptation_notes: >
@@ -2031,9 +3207,7 @@ pilot_examples:
       weapon_profile: Unpredictability
       support_specializations: []
       equipment:
-        - flexible_weapon
-        - functional_tail_or_tendril
-        - other_credible_flexible_false_line_surface
+        - any_weapon_natural_attack_or_item_with_unpredictability_access
       states:
         - target_can_perceive_the_visible_line
         - user_has_space_to_resolve_from_a_different_angle
@@ -2061,7 +3235,7 @@ pilot_examples:
         flexible tools, and controlled misreading over heavy force.
       final_validation: one_successful_supervised_false_line_execution
     target: creature
-    range: flexible_reach
+    range: profile_bearing_reach
     area: single
     duration:
       model: until_trigger
@@ -2088,7 +3262,7 @@ pilot_examples:
       Make a Flexible Weapons attack or equivalent tail/tendril Technique check
       against the target. If the Technique resolves successfully, choose one
       false-line consequence: steal position, letting the user shift up to 1
-      meter around the target within flexible reach without provoking a reaction
+      meter around the target within profile-bearing reach without provoking a reaction
       from that target; or spoil response, giving the target a situational
       penalty equal to the user's Flexible Weapons rank bonus (+1 at Novice, +2
       at Adept, +3 at Expert, +4 at Master, +5 at Consummate, +6 at
@@ -2138,6 +3312,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Layered Sensing
+      focus: Exploration / Reconnaissance
+      holder: Naghii ruin scouts
       transmission: ruin_scout_trace_reading_drills
       availability: Common
       adaptation_notes: >
@@ -2264,6 +3440,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Ritualized Access
+      focus: Guard / Access Judgment
+      holder: Naghii gatekeepers
       transmission: gatekeeper_challenge_protocols
       availability: Common
       adaptation_notes: >
@@ -2396,6 +3574,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Absence As Evidence
+      focus: Scholarly / Gap Reading
+      holder: Naghii outer archive readers
       transmission: outer_archive_gap_reading_drills
       availability: Restricted
       adaptation_notes: >
@@ -2519,6 +3699,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Projection Of Interpretation
+      focus: Exploration / Scout Marking
+      holder: Naghii Saa projection scouts
       transmission: saa_projection_and_archive_scout_marking_drills
       availability: Restricted
       adaptation_notes: >
@@ -2539,9 +3721,10 @@ pilot_examples:
       weapon_profile: Precision
       support_specializations: []
       equipment:
-        - ranged_weapon_with_prepared_marking_ammunition_or_natural_fluid_projection
-        - readable_marking_delivery_such_as_pigment_scent_phosphorescent_residue_or_tracer
+        - any_weapon_natural_attack_or_item_with_precision_access
       states:
+        - narrowed_access_attack_must_deliver_readable_physical_mark
+        - marking_examples_include_pigment_scent_phosphorescent_residue_tracer_or_equivalent_marking_fluid
         - target_can_be_physically_marked
       prerequisite_techniques: []
     learning:
@@ -2597,7 +3780,7 @@ pilot_examples:
       scented, irritating, or phosphorescent mark where the target's next
       movement will reveal the line it is trying to make disappear.
     effect: >
-      Make a Ranged Weapons attack with prepared marking ammunition, a marking
+      Make a profile-bearing attack with prepared marking ammunition, a marking
       kit delivery, or equivalent natural fluid-projection Technique check
       against the target. If the Technique resolves
       successfully, the target becomes read-marked until the duration ends.
@@ -2610,7 +3793,7 @@ pilot_examples:
       statistics, make the target visible through sealed barriers, or share the
       read with allies who cannot perceive the mark.
     scaling: >
-      Higher Ranged Weapons rank may improve reliability, allow subtler
+      Higher rank in the competency used for this Technique may improve reliability, allow subtler
       marking deliveries, or let later higher-tier versions extend the read to
       allied observers or more difficult movement conditions. Novice use marks
       one creature and preserves one immediate route read only.
@@ -2653,6 +3836,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Venom As Commitment
+      focus: Guard / Suppression
+      holder: Naghii suppression wardens
       transmission: saa_irritant_projection_and_warden_suppression_drills
       availability: Restricted
       adaptation_notes: >
@@ -2673,9 +3858,9 @@ pilot_examples:
       weapon_profile: Corrosion
       support_specializations: []
       equipment:
-        - ranged_weapon_with_prepared_residue_ammunition_or_natural_fluid_projection
-        - irritating_venom_caustic_dust_or_sensory_residue_delivery
+        - any_weapon_natural_attack_or_item_with_corrosion_access
       states:
+        - narrowed_access_attack_must_deliver_irritating_venom_caustic_dust_or_sensory_residue
         - target_has_a_relevant_sensory_surface_or_exposed_reading_channel
       prerequisite_techniques: []
     learning:
@@ -2730,7 +3915,7 @@ pilot_examples:
       across the target's reading surface, making the next clean look, aim, or
       pursuit decision arrive through irritation and false signal.
     effect: >
-      Make a Ranged Weapons attack with prepared residue ammunition, a residue
+      Make a profile-bearing attack with prepared residue ammunition, a residue
       kit delivery, or equivalent natural fluid-projection Technique check
       against the target. If the Technique resolves
       successfully, the target becomes signal-blurred until the duration ends.
@@ -2738,14 +3923,14 @@ pilot_examples:
       scent, aim, identification, pursuit, or precise read, the target must
       choose: spend that opportunity clearing or neutralizing the residue,
       ending the effect; or act through it and take a situational penalty equal
-      to the user's Ranged Weapons rank bonus (+1 at Novice, +2 at Adept, +3 at
+      to the rank bonus of the competency used for this Technique (+1 at Novice, +2 at Adept, +3 at
       Expert, +4 at Master, +5 at Consummate, +6 at Transcendent) on that one
       affected roll or opposed exchange. The penalty applies only to that single
       sight/read-dependent action. The Technique does not blind the target
       completely, does not prevent movement, and does not impose a general
       scene-wide penalty.
     scaling: >
-      The penalty scales by Ranged Weapons rank: +1 at Novice, +2 at Adept, +3
+      The penalty scales by rank bonus of the competency used for this Technique: +1 at Novice, +2 at Adept, +3
       at Expert, +4 at Master, +5 at Consummate, and +6 at Transcendent. Higher
       rank may allow subtler residues or more difficult delivery angles, but
       Novice use affects one immediate sight/read-dependent action only.
@@ -2787,6 +3972,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Projection Of Interpretation
+      focus: Exploration / Projection Geometry
+      holder: Naghii ruin geometry scouts
       transmission: ruin_geometry_and_projection_angle_drills
       availability: Common
       adaptation_notes: >
@@ -2809,8 +3996,9 @@ pilot_examples:
       weapon_profile: Ricochet
       support_specializations: []
       equipment:
-        - ranged_weapon_with_rebound_capable_projectile_or_natural_hardened_projection
+        - any_weapon_natural_attack_or_item_with_ricochet_access
       states:
+        - narrowed_access_attack_must_use_rebound_capable_projectile_or_natural_hardened_projection
         - usable_rebound_surface_present
         - indirect_path_to_target_is_physically_plausible
       prerequisite_techniques: []
@@ -2862,7 +4050,7 @@ pilot_examples:
       surface as part of the shot, striking the surface so the projectile bends
       into a line the target did not fully own.
     effect: >
-      Make a Ranged Weapons attack through one declared rebound or skip surface.
+      Make a profile-bearing attack through one declared rebound or skip surface.
       If the Technique resolves successfully, the attack may reach a target
       that has partial cover, an offset doorway, an angled corner, or a blocked
       direct line, as long as a physically plausible indirect path exists. The
@@ -2872,7 +4060,7 @@ pilot_examples:
       does not hit through sealed barriers, ignore total cover, curve freely in
       open air, or seek a target the user cannot reasonably locate.
     scaling: >
-      Higher Ranged Weapons rank may allow more difficult surface reads,
+      Higher rank in the competency used for this Technique may allow more difficult surface reads,
       smaller viable angles, or later higher-tier versions with chained
       surfaces. Novice use allows one declared rebound or skip surface only.
     cost_note: >
@@ -2910,6 +4098,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Preserved Distance
+      focus: Guard / Cadence Discipline
+      holder: Naghii archive wardens
       transmission: archive_warden_cadence_drills
       availability: Common
       adaptation_notes: >
@@ -2934,7 +4124,7 @@ pilot_examples:
       weapon_profile: Volley
       support_specializations: []
       equipment:
-        - ranged_weapon_or_natural_projection_capable_of_controlled_repeated_release
+        - any_weapon_natural_attack_or_item_with_volley_access
       states:
         - target_is_within_ranged_line
         - user_can_sustain_a_short_cadence
@@ -2989,11 +4179,11 @@ pilot_examples:
       into a moving creature's next steps, forcing it to break rhythm, guard
       its body, or correct its footing before the movement completes.
     effect: >
-      Make a reactive Ranged Weapons attack or Technique check against the
+      Make a reactive profile-bearing attack or Technique check against the
       moving target before the triggering movement finishes. If the Technique
       resolves successfully, the attack resolves normally and the target's
       remaining distance for that triggering movement is reduced by 1 meter per
-      Ranged Weapons rank bonus. If the reduction prevents the target from
+      rank bonus of the competency used for this Technique. If the reduction prevents the target from
       reaching its declared position, it stops at the last legal position it can
       still reach. This can leave the target short of cover, short of melee
       contact, or short of a clean line break if the lost distance matters. The
@@ -3001,7 +4191,7 @@ pilot_examples:
       target's speed for the rest of the round, attack multiple targets, or
       create area suppression.
     scaling: >
-      The movement reduction is 1 meter per Ranged Weapons rank bonus. Higher-
+      The movement reduction is 1 meter per rank bonus of the competency used for this Technique. Higher-
       tier versions may affect more complex movement windows, but Novice use
       affects one target and one triggering movement only.
     cost_note: >
@@ -3042,6 +4232,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Preserved Distance
+      focus: Guard / Skirmish Contact
+      holder: Naghii contact wardens
       transmission: archive_warden_skirmish_contact_drills
       availability: Common
       adaptation_notes: >
@@ -3055,7 +4247,7 @@ pilot_examples:
     type: active
     trigger: >
       The user wants to make contact with a target at or within 1 meter outside
-      flexible reach and return to a preferred position in a single trained
+      profile-bearing reach and return to a preferred position in a single trained
       sequence — entering, striking, and withdrawing before the target can
       convert the contact into a stable close exchange.
     requirements:
@@ -3065,10 +4257,9 @@ pilot_examples:
       weapon_profile: Skirmish
       support_specializations: []
       equipment:
-        - flexible_weapon
-        - functional_tail_or_tendril
-        - other_credible_skirmish_flexible_surface
-      states: []
+        - any_weapon_natural_attack_or_item_with_skirmish_access
+      states:
+        - user_has_enough_spacing_to_touch_and_withdraw
       prerequisite_techniques: []
     learning:
       self_study:
@@ -3095,7 +4286,7 @@ pilot_examples:
         contact without committing to a sustained close exchange.
       final_validation: one_successful_supervised_execution
     target: enemy
-    range: flexible_reach
+    range: profile_bearing_reach
     area: single
     duration:
       model: instant
@@ -3128,7 +4319,7 @@ pilot_examples:
       returns to their preferred distance before the target can convert the brief
       contact into a stable close exchange.
     scaling: >
-      Higher Flexible Weapons competency may improve reliability, allow subtler
+      Higher competency used for this Technique may improve reliability, allow subtler
       timing of the entry window, or improve cost efficiency, but should not
       extend the approach or return distance beyond 1 meter at base or remove
       the contingency that the return requires a successful attack.
@@ -3167,6 +4358,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Threshold Denial
+      focus: Enforcement / Execution Interruption
+      holder: Naghii temple execution guards
       transmission: temple_guard_execution_break_drills
       availability: Restricted
       adaptation_notes: >
@@ -3178,7 +4371,7 @@ pilot_examples:
     category: utility
     type: reactive
     trigger: >
-      An enemy within flexible reach declares or begins a weapon-rooted attack
+      An enemy within profile-bearing reach declares or begins a weapon-rooted attack
       or Technique — the commitment arc of the action is visible and within
       reach.
     requirements:
@@ -3188,11 +4381,10 @@ pilot_examples:
       weapon_profile: Interruption
       support_specializations: []
       equipment:
-        - flexible_weapon
-        - functional_tail_or_tendril
-        - other_credible_interruption_flexible_surface
+        - any_weapon_natural_attack_or_item_with_interruption_access
       states:
-        - target_is_within_flexible_reach
+        - narrowed_access_profile_bearing_surface_must_reach_and_catch_weapon_weapon_arm_or_execution_line
+        - target_is_within_profile_bearing_reach
         - user_has_a_credible_flexible_contact_line_to_the_targets_weapon_or_weapon_arm
       prerequisite_techniques: []
     learning:
@@ -3220,7 +4412,7 @@ pilot_examples:
         hostile weapon use in confined archive spaces is a specific discipline.
       final_validation: one_successful_supervised_execution
     target: enemy
-    range: flexible_reach
+    range: profile_bearing_reach
     area: single
     duration:
       model: instant
@@ -3242,8 +4434,8 @@ pilot_examples:
       catch lands on the arm, the grip, or the execution line — not to hold,
       but to break the moment the action needed to become unstoppable.
     effect: >
-      Make a reactive Flexible Weapons check or equivalent tail or tendril
-      Technique check against the triggering enemy. If the Technique resolves
+      Make a reactive Interruption check using the relevant profile-bearing
+      competency against the triggering enemy. If the Technique resolves
       successfully, the target immediately makes an Alteration Resistance Roll.
       The Impedido severity is determined by the competency rank used for the
       Technique: ranks 1-2 are Minor, ranks 3-4 are Moderate, and ranks 5-6 are
@@ -3253,7 +4445,7 @@ pilot_examples:
       Roll against the original severity. On a successful R.R., Impedido is not
       applied and the triggering action resolves normally.
     scaling: >
-      Higher Flexible Weapons competency increases Impedido severity in
+      Higher competency used for this Technique increases Impedido severity in
       two-rank bands. Higher tiers may improve reliability, allow subtler
       commitment-arc reading, improve cost efficiency, or broaden the trigger to
       non-weapon committed actions.
@@ -3265,7 +4457,7 @@ pilot_examples:
       resist. These constraints prevent the cost from rising above the standard
       anchor despite the condition output.
     restrictions:
-      - target_must_be_within_flexible_reach
+      - target_must_be_within_profile_bearing_reach
       - user_must_have_a_credible_contact_line_to_the_targets_weapon_or_weapon_arm
       - applies_to_one_target_only
       - does_not_create_full_restraint_or_movement_restriction
@@ -3294,6 +4486,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Coiled Readiness
+      focus: Guard / Ward Formation
+      holder: Naghii archive sentries
       transmission: archive_guard_ward_formation_drills
       availability: Restricted
       adaptation_notes: >
@@ -3316,8 +4510,7 @@ pilot_examples:
       weapon_profile: Ward
       support_specializations: []
       equipment:
-        - spear
-        - other_committed_reach_weapon_capable_of_sustained_threat_posture
+        - any_weapon_natural_attack_or_item_with_ward_access
       states:
         - user_has_stable_footing_and_can_hold_the_position
       prerequisite_techniques: []
@@ -3388,7 +4581,7 @@ pilot_examples:
       penalty; the cost applies only to active actions performed within or
       through the zone, not to clean withdrawal.
     scaling: >
-      The Rhythm cost increase scales with Spear competency rank: 1 plus the
+      The Rhythm cost increase scales with the rank bonus of the competency used for this Technique: 1 plus the
       rank bonus. Higher tiers may allow the zone to persist through limited
       repositioning or resist displacement attempts more reliably, but Novice
       use requires the user to remain at the declared position to maintain the
@@ -3436,6 +4629,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Projection Of Interpretation
+      focus: Scholarly / Trajectory Reading
+      holder: Naghii outer archive projection readers
       transmission: outer_archive_trajectory_and_projection_drills
       availability: Restricted
       adaptation_notes: >
@@ -3583,6 +4778,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: The Archive Must Continue
+      focus: Scholarly / Structural Intent Reading
+      holder: Naghii outer archive intent readers
       transmission: outer_archive_structural_intent_reading_drills
       availability: Restricted
       adaptation_notes: >
@@ -3720,6 +4917,8 @@ pilot_examples:
       secondary_front: Doctrine
       source: Naghii
       seed: Ritualized Access
+      focus: Guard / Threshold Crossing
+      holder: Naghii threshold-crossing guards
       transmission: archive_guard_threshold_crossing_drills
       availability: Restricted
       adaptation_notes: >
@@ -3846,6 +5045,8 @@ pilot_examples:
       secondary_front: Doctrine
       source: Naghii
       seed: Absence As Evidence
+      focus: Exploration / Countertracking
+      holder: Naghii outer archive countertrackers
       transmission: outer_archive_countertracking_and_displacement_doctrine
       availability: Restricted
       adaptation_notes: >
@@ -3951,7 +5152,7 @@ pilot_examples:
     status: authored_example
     purpose: >
       Add a novice Kha-Naghii resistance hybrid Technique rooted in Tolerancia
-      and Venom Resistance, expressing the species' biological venom conditioning
+      and Poison Resistance, expressing the species' biological venom conditioning
       as a passive floor modifier that automatically reduces the settled severity
       of any Veneno family ailment by one step — distinct from the standard
       Alteration R.R. because it fires after the roll resolves and requires no
@@ -3959,12 +5160,14 @@ pilot_examples:
     origin:
       main: Tolerancia
       secondary:
-        - Venom_Resistance
+        - Poison_Resistance
     world_origin:
       primary_front: Species
       secondary_front: Doctrine
       source: Naghii
       seed: Venom As Commitment
+      focus: Venom / Conditioning
+      holder: Naghii Kha venom cadres
       transmission: kha_venom_conditioning_and_endurance_drills
       availability: Restricted
       adaptation_notes: >
@@ -3972,7 +5175,7 @@ pilot_examples:
         body has carried its own venom since before conscious memory, and
         formal training teaches the practitioner to metabolize external venom
         through the same disciplined endurance used in initiation and field
-        exposure. Outsiders can learn an analogue if they have earned Venom
+        exposure. Outsiders can learn an analogue if they have earned Poison
         Resistance through documented systematic conditioning — long-term
         antidote work, initiated venom-handling traditions, or significant
         recorded field exposure — combined with Tolerancia training at Novice
@@ -3991,7 +5194,7 @@ pilot_examples:
         - Tolerancia
       equipment: []
       states:
-        - venom_resistance_at_novice_rank_or_higher
+        - poison_resistance_at_novice_rank_or_higher
         - tolerancia_specialization_at_novice_rank_or_higher
       prerequisite_techniques: []
     learning:
@@ -4018,7 +5221,7 @@ pilot_examples:
         Restricted to Kha-Naghii initiation tracks and formally supervised
         venom conditioning programs. Not available through archive libraries
         or standard martial teaching.
-      final_validation: documented_stable_venom_tolerance_at_novice_rank_with_tolerancia_at_novice_rank
+      final_validation: documented_stable_poison_tolerance_at_novice_rank_with_tolerancia_at_novice_rank
     target: self
     range: self
     area: self
@@ -4027,7 +5230,7 @@ pilot_examples:
       value: null
       sustain_rule: null
       end_rule: >
-        Always active while the character retains both Venom Resistance at
+        Always active while the character retains both Poison Resistance at
         Novice or higher and Tolerancia at Novice or higher. If either drops
         below Novice through injury, extended isolation, or narrative loss,
         the passive no longer applies until both are restored.
@@ -4073,7 +5276,7 @@ pilot_examples:
       restricted, mentor-gated acquisition process that cannot be shortcut.
     restrictions:
       - applies_to_veneno_family_ailments_only
-      - requires_venom_resistance_at_novice_rank_or_higher
+      - requires_poison_resistance_at_novice_rank_or_higher
       - requires_tolerancia_at_novice_rank_or_higher
       - does_not_negate_veneno_ailments_completely_by_itself
       - does_not_apply_to_alteration_affliction_or_other_family_effects_from_venom_sources
@@ -4103,6 +5306,8 @@ pilot_examples:
       secondary_front: Doctrine
       source: Naghii
       seed: Holding Dangerous Knowledge
+      focus: Custodial / Containment
+      holder: Naghii igi-an containment wardens
       transmission: igi_an_channel_management_and_containment_drills
       availability: Restricted
       adaptation_notes: >
@@ -4113,7 +5318,7 @@ pilot_examples:
         enters without being absorbed by it, and finding the return path through
         Contención discipline. Outsiders can learn an analogue if they have
         documented susceptibility to mental or Abzu-origin influence through
-        practice or exposure, meaningful Mental Resistance (Abzu), and both
+        practice or exposure, meaningful Affliction Resistance, and both
         Meditación and Contención at Novice rank or higher.
     category: utility
     type: passive
@@ -4132,7 +5337,7 @@ pilot_examples:
       states:
         - meditacion_at_novice_rank_or_higher
         - contencion_at_novice_rank_or_higher
-        - mental_resistance_abzu_at_novice_rank_or_higher
+        - affliction_resistance_at_novice_rank_or_higher
         - active_abzu_origin_or_mental_affliction_present
       prerequisite_techniques: []
     learning:
@@ -4173,7 +5378,7 @@ pilot_examples:
       sustain_rule: null
       end_rule: >
         Always active while the character retains Meditación, Contención, and
-        Mental Resistance (Abzu) each at Novice or higher.
+        Affliction Resistance each at Novice or higher.
     cost:
       rhythm_cost: 0
       attrition_cost: 0
@@ -4218,7 +5423,7 @@ pilot_examples:
       own cost in time and focus — this Technique does not add to it.
     restrictions:
       - applies_only_to_meditation_directed_at_abzu_origin_or_mental_afflictions
-      - requires_meditacion_contencion_and_mental_resistance_abzu_each_at_novice_or_higher
+      - requires_meditacion_contencion_and_affliction_resistance_each_at_novice_or_higher
       - does_not_apply_to_physical_alteration_or_veneno_family_afflictions
       - does_not_change_what_the_meditation_action_costs
       - does_not_reduce_affliction_intensity_outside_a_dedicated_meditation_action
@@ -4248,6 +5453,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Archive Arrest
+      focus: Guard / Access Point Holding
+      holder: Naghii access-point temple guards
       transmission: temple_guard_hold_and_access_point_drills
       availability: Restricted
       adaptation_notes: >
@@ -4393,6 +5600,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: Ziggurat Body Logic
+      focus: Exploration / Surveying
+      holder: Naghii archive surveyors
       transmission: archive_survey_and_ruin_reading_field_training
       availability: Restricted
       adaptation_notes: >
@@ -4531,6 +5740,8 @@ pilot_examples:
       secondary_front: null
       source: Naghii
       seed: The Archive Must Continue
+      focus: Scholarly / Remnant Cataloguing
+      holder: Naghii igi-an remnant cataloguers
       transmission: igi_an_ruin_field_reading_and_firstborn_remnant_cataloguing
       availability: Restricted
       adaptation_notes: >
@@ -4666,3 +5877,1649 @@ pilot_examples:
       - pattern_exploitation
       - setup
       - counter_read
+  - name: Tomar la Corriente
+    name_en: Take the Current
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Nadar specialization Technique that translates
+      swimming discipline into a combat and exploration response against
+      current-like physical displacement. The Technique is not water-locked and
+      has no anatomical requirement: it uses Nadar's trained components —
+      breath timing, yielding, propulsion, orientation, and recovery through
+      resistance — to reduce forced movement, turn part of that movement into
+      controlled repositioning, or avoid a secondary consequence caused by
+      loss of orientation.
+    origin:
+      main: Nadar
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Vessel Under Pressure
+      focus: Traversal / Flood Recovery
+      holder: Sauri river-crossing wardens and cistern recoverers
+      transmission: riverbank_crossing_drills_flooded_corridor_training_and_temple_cistern_recovery_forms
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri river and cistern training, where
+        resisting a current directly is treated as a mistake. Outsiders can
+        learn an equivalent through any tradition that trains body recovery
+        against a resisting medium: flood rescue, naval boarding drills,
+        quarry-slope recovery, crowd-pressure control, or other disciplines
+        where the practitioner must yield without losing orientation.
+    category: utility
+    type: reactive
+    trigger: >
+      A physical force, moving surface, crowd, unstable terrain, current-like
+      pressure, collision, shove, pull, slide, collapse, or other moving
+      environment would displace the user, carry them, spin them off line, or
+      make them lose functional orientation.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Nadar
+      equipment: []
+      states:
+        - user_has_enough_freedom_of_movement_to_yield_turn_brace_breathe_or_redirect_the_body
+        - no_specific_anatomy_required
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 6
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drills in controlled displacement: moving water,
+          mud, loose slope, impact carry, crowd pressure, or another physical
+          force that can carry the learner off line. The learner must practice
+          choosing the exit line instead of opposing the whole force.
+      guided_training:
+        allowed: true
+        study_hours: 3
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Sauri river instructor, flood rescuer, naval trainer, or other
+          movement specialist can correct when the learner resists too early,
+          turns against the pressure, or loses breath timing during recovery.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri riverbank, temple-cistern, and flooded corridor
+        schools. Non-Sauri access requires training that treats displacement as
+        a current-like force rather than a wall to overpower.
+      final_validation: controlled_recovery_from_unexpected_current_like_displacement
+    target: self
+    range: self
+    area: self
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: on_resolution
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other:
+        - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
+        - no_attrition_cost_in_normal_exploration_without_active_threat
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Nadar Specialization Roll against the triggering force
+        or environmental threshold, the user chooses one listed recovery
+        option.
+    description: >
+      The user does not fight the current head-on. They enter it correctly.
+      The same discipline used to stay alive in water — breath timing, yield,
+      propulsion, orientation, and recovery through resistance — applies to
+      any force that tries to carry the body somewhere it did not choose to go.
+    effect: >
+      Make a Nadar Specialization Roll against the triggering force,
+      environmental threshold, or opposed movement effect. On success, choose
+      one: reduce the forced movement affecting the user by 1 meter plus the
+      user's Nadar rank bonus; convert up to 1 meter plus the user's Nadar rank
+      bonus of the forced movement into controlled repositioning along a legal
+      path touched by the triggering force; or avoid one secondary consequence
+      caused only by losing orientation during that movement, such as falling
+      prone, striking a minor obstacle, losing held direction, or being turned
+      away from the intended exit line. The Technique does not erase the source
+      of danger. If the force is too large to fully escape, the user still
+      moves, but does so through a controlled line chosen from the available
+      path rather than being carried blindly. In exploration, the same effect
+      can define how the user exits a current-like hazard: where they surface,
+      what edge they reach, which side of a collapsing passage they roll
+      toward, or which safe point they catch after being carried by pressure.
+    scaling: >
+      Higher Nadar competency may increase the recovered distance, improve
+      reliability against larger environmental forces, or allow the user to
+      carry a light object through the same recovery line. Higher tiers may
+      extend the protection to an adjacent ally, allow partial recovery while
+      restrained, or convert a stronger forced movement into a chosen legal
+      endpoint.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique does not negate the
+      triggering force outright, does not damage the source, and does not
+      protect another creature. Its value is recovery and route choice. In
+      exploration, it is simply the user's specialized response to a current-
+      like hazard and should not add Attrition unless the scene is already
+      tracking active pressure.
+    restrictions:
+      - requires_a_physical_force_or_environment_that_can_be_treated_as_a_current
+      - examples_include_water_mud_crowd_pressure_sliding_ground_collapsing_debris_moving_platform_strong_wind_against_footing_impact_carry_shove_pull_or_drag
+      - cannot_be_used_against_teleportation_fear_movement_command_effects_mental_control_social_pressure_poison_curse_infection_or_purely_internal_paralysis
+      - cannot_be_used_while_fully_immobilized_bound_unconscious_or_unable_to_move_the_body_enough_to_yield_or_redirect
+      - does_not_protect_another_creature
+      - does_not_stop_the_source_damage_the_source_apply_a_condition_or_create_a_counterattack
+      - cannot_move_the_user_through_sealed_barriers_occupied_spaces_impossible_angles_or_routes_the_triggering_force_could_not_plausibly_carry_the_body_through
+      - cannot_override_an_effect_that_explicitly_states_its_displacement_cannot_be_reduced_or_redirected_unless_a_later_upgrade_says_otherwise
+    tags:
+      - movement
+      - recovery
+      - anti_displacement
+      - exploration
+      - defense
+  - name: Guardar el Pulso
+    name_en: Keep the Pulse
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Tolerancia specialization Technique that preserves one
+      necessary bodily function under an already active physiological burden.
+      The Technique does not remove the burden and does not spend ATB time to
+      answer it. Instead, it converts extra bodily strain into a one-resolution
+      mitigation window, letting the user keep one action, held duty, or rescue
+      beat from spilling under pain, wound pressure, poison burden, fatigue, or
+      another named bodily penalty source.
+    origin:
+      main: Tolerancia
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Preserved Witness
+      focus: Endurance / Preservation Bearing
+      holder: Sauri ordeal guards and preservation bearers
+      transmission: ordeal_chambers_wound_bearing_rites_and_preservation_guard_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri endurance and preservation training,
+        where initiates learn to choose what function cannot be allowed to fail
+        first. Outsiders can learn an equivalent through medical-field
+        survival, poison-handling discipline, military pain management, rescue
+        carrying drills, or other traditions that train deliberate function
+        preservation under bodily degradation.
+    category: utility
+    type: reactive
+    trigger: >
+      The user is about to resolve a physical action, maintain a held duty, or
+      finish a short exploration beat while already suffering one concrete
+      bodily penalty source that would slow, penalize, or interrupt that
+      function.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Tolerancia
+      equipment: []
+      states:
+        - user_is_conscious
+        - protected_function_is_still_physically_possible
+        - burden_is_bodily_or_physiological_not_social_mental_or_purely_supernatural
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 6
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drills under controlled strain: carrying weight
+          through pain, holding posture after cuts or bruising, maintaining
+          grip while exhausted, or preserving one necessary function while the
+          rest of the body degrades.
+      guided_training:
+        allowed: true
+        study_hours: 3
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri ordeal master, field medic, poison warden, or endurance
+          instructor can correct when the learner disperses effort across the
+          whole body instead of preserving the one function that matters now.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri ordeal, funerary, and preservation-guard
+        traditions. Non-Sauri access requires training that explicitly teaches
+        function triage under bodily pressure rather than simple pain
+        tolerance.
+      final_validation: one_successful_preserved_action_under_active_bodily_penalty
+    target: self
+    range: self
+    area: self
+    duration:
+      model: until_trigger
+      value: one_protected_resolution
+      sustain_rule: null
+      end_rule: when_the_protected_action_duty_or_exploration_beat_resolves
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 1
+      other:
+        - activation_is_part_of_the_protected_action_and_does_not_advance_the_atb_marker
+        - additional_attrition_may_be_paid_before_resolution_on_a_strict_1_to_1_mitigation_basis
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The body wants to spill the action. The practitioner closes around it.
+      Breath, weight, pain, pulse, and posture are put back into order long
+      enough for one necessary thing to happen: the hand does not open, the
+      body does not drop, the step completes, the witness is carried out, the
+      strike is not lost to pain.
+    effect: >
+      Choose one existing bodily penalty source that is currently affecting the
+      declared action, held duty, or short exploration beat. If the burden
+      already has a named system definition, use that definition as the
+      authority for what is being preserved: an Ailment uses its existing
+      severity, wound pressure uses its already established execution burden,
+      and Fatigue uses the concrete penalty currently defined in the scene.
+      Guardar el Pulso does not invent a new burden and does not replace the
+      source's normal application, duration, recovery, or removal rules. For
+      this one resolution, pay the base Attrition 1. The user may then pay
+      additional Attrition before resolution, up to a maximum additional
+      amount equal to their Tolerancia competency rank. Each additional
+      1 Attrition increases the preserved mitigation by 1 on a strict 1:1
+      basis. Then choose one: reduce one stepped bodily penalty source by 1
+      plus extra Attrition paid steps for this action or duty, to a minimum of
+      none; if the source does not use severity steps, ignore up to 1 plus
+      extra Attrition paid points of one concrete penalty from that source for
+      this resolution; prevent one already declared physical action from being
+      interrupted by that bodily burden, as long as the action remains
+      physically possible; or maintain one held duty until the user's next
+      activation or until the immediate exploration beat resolves, such as
+      carrying a body, holding a gate, keeping a grip, remaining standing,
+      staying braced, or continuing a short forced movement. After the
+      preserved function resolves, all wounds, Fatigue, Ailments, penalties,
+      and consequences continue normally.
+    scaling: >
+      Higher Tolerancia competency scales this Technique in two ways: it raises
+      the maximum additional Attrition that may be paid on the 1:1 mitigation
+      exchange, and it should usually expand permission rather than only raw
+      quantity. Higher tiers may let the user preserve more demanding held
+      duties, protect an adjacent ally's carried burden, or preserve a
+      function through harsher interruption clauses.
+    cost_note: >
+      Rhythm 0 / Attrition 1 plus optional extra Attrition is deliberate. The
+      Technique should not compete with the action it is preserving. The user
+      is not spending time to answer an external threat; they are spending body
+      to keep the action from spilling. The real price is extra strain, not
+      ATB delay. Any additional mitigation is bought directly with more
+      Attrition on a strict 1:1 basis, but only up to an additional amount
+      equal to the user's Tolerancia competency rank.
+    restrictions:
+      - applies_only_to_bodily_or_physiological_pressure
+      - examples_include_pain_wound_pressure_fatigue_poison_infection_lacerado_physical_ailments_or_similar_body_degradation
+      - cannot_be_used_against_fear_command_social_pressure_deception_curse_logic_mental_control_loss_of_will_confusion_or_purely_emotional_collapse
+      - if_the_burden_is_an_ailment_that_ailment_must_already_exist_in_the_system_or_be_defined_before_this_technique_can_reference_it
+      - only_affects_one_penalty_source_per_use
+      - additional_attrition_paid_for_mitigation_cannot_exceed_the_users_tolerancia_competency_rank
+      - extra_attrition_paid_only_increases_mitigation_on_the_chosen_source_and_does_not_extend_duration_or_protect_multiple_functions
+      - cannot_heal_stabilize_treat_cure_remove_wound_slots_reduce_fatigue_or_clear_an_ailment
+      - cannot_allow_an_action_that_is_physically_impossible
+      - cannot_override_atrapado_full_paralysis_total_immobilization_unconsciousness_or_another_state_that_removes_the_relevant_bodily_function_entirely
+      - cannot_prevent_death_unconsciousness_or_collapse_if_another_rule_already_places_the_user_beyond_action
+      - preserves_one_function_only
+      - cannot_be_stacked_with_itself_on_the_same_action_or_burden
+    tags:
+      - utility
+      - mitigation
+      - survival_window
+      - exploration
+  - name: Sellar la Grieta
+    name_en: Seal the Crack
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Aplomo specialization Technique that turns visible
+      composure into concrete combat/exploration pressure on hostile reads. The
+      Technique is not internal emotional repair and it does not construct a
+      false narrative. Instead, it makes one hostile read harder and strips one
+      dependent rider if that read still lands.
+    origin:
+      main: Aplomo
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Sovereign Weight / Vessel Under Pressure
+      focus: Ritual / Court Bearing
+      holder: Sauri court witnesses and sovereign stillness guards
+      transmission: court_bearing_drills_temple_witness_rites_and_sovereign_guard_stillness_training
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri court, ordeal, and witness-bearing
+        traditions, where visible fracture becomes politically dangerous the
+        moment the wrong observer can use it. Outsiders can learn an equivalent
+        through disciplines of ceremonial bearing, command presence under
+        scrutiny, expedition leadership posture, or other training that teaches
+        control of what escapes outward without relying on explicit lies.
+    category: utility
+    type: reactive
+    trigger: >
+      During combat or exploration under pressure, one creature or group under
+      real scrutiny attempts to read, expose, exploit, or convert the user's
+      visible pain, fear, fatigue, hesitation, or instability into actionable
+      tactical truth, pursuit pressure, or a conditional hostile rider.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Aplomo
+      equipment: []
+      states:
+        - there_is_an_observer_or_audience_capable_of_reading_the_user
+        - user_is_still_presenting_a_functional_outward_bearing
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 6
+        practice_hours: 6
+        text_or_manual_required: false
+        notes: >
+          Requires repeated drills under hostile scrutiny: remaining outwardly
+          legible as unbroken while exhausted, in pain, frightened, under
+          pursuit pressure, or pressured by watchers who are waiting for
+          visible fracture.
+      guided_training:
+        allowed: true
+        study_hours: 3
+        practice_hours: 4
+        mentor_required: true
+        notes: >
+          A Sauri court tutor, ritual speaker, guard captain, or similar mentor
+          can correct when the learner suppresses too late, overacts into
+          obvious falsehood, or allows pain and strain to escape through small
+          visible tells that hostile readers could exploit in the field.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri court-bearing, ritual witness, sovereign
+        retinue, and high-pressure escort traditions. Non-Sauri access requires
+        training that teaches visible composure under hostile observation
+        rather than inner calm alone.
+      final_validation: one_successful_preserved_bearing_under_hostile_scrutiny
+    target: self
+    range: self
+    area: one_observing_creature_or_group_involved_in_the_triggering_resolution
+    duration:
+      model: until_trigger
+      value: one_triggering_read_or_pressure_resolution
+      sustain_rule: null
+      end_rule: on_resolution_or_when_the_same_scrutiny_breaks
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Aplomo Specialization Roll opposed by the triggering
+        read or pressure action, or against a Narrator-set scrutiny threshold,
+        the chosen observer suffers concrete read pressure for that resolution
+        and loses one read-dependent rider if the read still succeeds.
+    description: >
+      The crack exists. The witness does not get to see it open. Pain remains
+      inside the jaw, fear remains behind the eyes, fatigue remains in the
+      limbs, but the line that others can read stays unbroken long enough for
+      the moment to pass without surrendering tactical leverage.
+    effect: >
+      Make an Aplomo Specialization Roll opposed by the triggering read or
+      pressure action, or against a Narrator-set scrutiny threshold when no
+      hostile roll exists. On success, choose one observing creature or one
+      coherent observing group involved in the trigger. Apply both of the
+      following to that resolution: if the triggering read uses a roll, apply
+      the rank-based penalty below; if it uses a fixed threshold, apply the
+      listed difficulty-tier increase. If the triggering action or Technique
+      still succeeds, it loses the listed number of read-dependent riders.
+      Rank scaling: ranks 1-2 impose -2 to the read roll or +1 difficulty tier
+      and deny 1 read-dependent rider; ranks 3-4 impose -3 to the read roll or
+      +1 difficulty tier and deny up to 2 read-dependent riders from the same
+      triggering action or Technique; ranks 5-6 impose -4 to the read roll or
+      +2 difficulty tiers and deny up to 2 read-dependent riders from the same
+      triggering action or Technique. The base action may still continue if it
+      does not require the denied leverage to exist. Sellar la Grieta does not
+      turn the user invisible, healthy, or fearless. It only makes one visible
+      crack harder to use as field evidence right now. On failure, the read or
+      pressure proceeds normally.
+    scaling: >
+      Higher Aplomo competency scales this Technique mechanically, not just by
+      permission: better ranks increase the roll penalty or threshold shift on
+      the hostile read and increase how many read-dependent riders can be
+      denied. Higher tiers may additionally broaden target scope or continued
+      exchange coverage, but the base rank scaling is already numerically
+      explicit in the effect text.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a narrow reactive
+      answer, but it does more than merely stay calm: it makes the hostile read
+      harder right now and can cancel one dependent rider if the read still
+      lands. The cost reflects real visible strain under scrutiny without
+      turning the Technique into a full social shield.
+    restrictions:
+      - only_works_against_leverage_that_depends_on_the_users_visible_outward_fracture
+      - does_not_work_against_directly_examined_wounds_written_records_material_traces_or_third_party_testimony
+      - does_not_create_a_false_narrative
+      - does_not_remove_wounds_fatigue_fear_ailments_or_other_burdens_from_the_user
+      - does_not_negate_a_hostile_action_wholesale_only_applies_read_pressure_and_denies_the_rank_based_number_of_read_dependent_riders
+      - only_affects_one_observing_creature_or_one_coherent_observing_group_per_use
+      - cannot_erase_non_visible_proof_the_observer_already_has
+    tags:
+      - utility
+      - counter_read
+      - control
+      - pressure
+  - name: Tomar el Resguardo
+    name_en: Take Shelter
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Supervivencia specialization Technique rooted in
+      shelter selection rather than generic survival. The Technique actively
+      prepares one real shelter feature as a short hazard-resistant working
+      point for the user.
+    origin:
+      main: Supervivencia
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Tail Keeps The Channel / Stone Remembers Pressure
+      focus: Survival / Shelter Selection
+      holder: Sauri marsh patrols and floodline labor crews
+      transmission: marsh_patrol_drills_flood_bank_labor_practice_ruin_entry_field_doctrine_and_heat_shelter_instruction
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri marsh, floodline, ruin, and
+        heat-exposure practice where survival depends on identifying which
+        existing feature actually breaks pressure and which only looks safe.
+        Outsiders can learn an equivalent through expedition fieldcraft,
+        quarry work, fireline training, flood response, or comparable shelter
+        selection disciplines.
+    category: utility
+    type: active
+    trigger: >
+      The user is about to move through, work inside, or hold position against
+      a declared environmental hazard while a real partial shelter, cover
+      edge, dry seam, stone lip, bank cut, shadow line, or other less-exposed
+      point still exists nearby.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Supervivencia
+      equipment: []
+      states:
+        - a_real_environmental_hazard_is_already_affecting_the_scene
+        - a_real_usable_shelter_feature_exists
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 6
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated field exposure where the learner must distinguish
+          true shelter from deceptive shelter under time pressure: flood banks,
+          marsh shelves, half-collapsed corridors, kiln yards, dusted archives,
+          or other unevenly hostile environments.
+      guided_training:
+        allowed: true
+        study_hours: 3
+        practice_hours: 5
+        mentor_required: true
+        notes: >
+          A Sauri patrol leader, labor foreman, ruin guide, or comparable
+          field mentor can correct when the learner chooses visual cover that
+          does not actually break the hazard angle, timing, or spill pattern.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri marsh patrol, flood labor, ruin-entry, and
+        heat discipline traditions. Non-Sauri access requires training that
+        treats matter as unequal shelter under pressure rather than a uniform
+        background.
+      final_validation: one_successful_prepared_shelter_choice_under_active_environmental_pressure
+    target: shelter_point
+    range: self_or_nearby_reachable_shelter_feature
+    area: one_chosen_shelter_point_or_working_edge
+    duration:
+      model: until_trigger
+      value: until_users_next_activation_or_until_abandoned
+      sustain_rule: null
+      end_rule: on_next_activation_abandonment_or_shelter_failure
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Supervivencia Specialization Roll against the declared
+        environmental hazard threshold, the Narrator identifies one real
+        refuge point in the scene that the user can immediately use.
+    description: >
+      The field is not equally hostile. Stone lips, dry seams, bank cuts,
+      shadow lines, and low angles carry different amounts of pressure. The
+      practitioner does not invent safety; they identify the one real place
+      where the body can still function for a moment.
+    effect: >
+      Choose one real shelter point, cover edge, dry seam, stone lip, bank
+      cut, shadow line, or other less-exposed working feature that the user
+      can immediately occupy, work from, or move through during this
+      activation. Make a Supervivencia Specialization Roll against the
+      declared environmental hazard threshold. On success, the Narrator
+      identifies one real refuge point in the current scene that the user can
+      immediately reach, occupy, work from, or pass through. That point
+      remains valid until the end of the user's next activation, or until the
+      fiction clearly changes enough that the refuge is lost. The refuge may
+      take one of two concrete forms: cover refuge, where the user gains the
+      normal automatic T.D. benefit of using real cover from that point and it
+      also counts as a better position for cover-dependent concealment,
+      hiding, or line-breaking attempts if the fiction supports it; or
+      environmental refuge, where the declared environmental hazard treats the
+      user as sheltered by that point for its normal resolution using the
+      scene's existing environmental rules rather than any extra
+      Technique-specific bonus. Tomar el Resguardo does not create cover or
+      safety from nothing. It reveals which already-existing point in the map
+      or environment is the correct place to use right now. On failure, the
+      chosen point was misread, too weak, or claimed too late; the hazard
+      resolves normally.
+    scaling: >
+      This Technique does not scale by changing its output. Its value scales
+      indirectly because a higher Supervivencia rank makes the required roll
+      more reliable, which makes the refuge easier to identify under harsher
+      conditions.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. A full field read would normally
+      cost the equivalent of a broader Supervivencia action. This Technique is
+      cheaper because it does one narrower thing only: identify one
+      immediately usable refuge point and let the user capitalize on it now.
+    restrictions:
+      - requires_a_real_environmental_hazard_and_a_real_shelter_feature_already_present
+      - does_not_create_cover_or_shelter_where_none_exists
+      - does_not_grant_free_movement_or_repositioning
+      - only_protects_against_one_declared_environmental_hazard_per_use
+      - only_benefits_the_user_at_novice_tier
+      - ends_early_if_the_shelter_breaks_becomes_occupied_is_bypassed_or_is_abandoned
+      - does_not_stop_direct_attacks_conditions_or_ailments_unless_they_are_exposure_riders_of_the_declared_hazard
+    tags:
+      - utility
+      - setup
+      - terrain
+      - hazard
+      - cover
+  - name: Anudar la Vasija
+    name_en: Knot the Vessel
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Medicina specialization Technique rooted in
+      stabilization and trauma triage rather than generic healing. The
+      Technique performs one fast emergency intervention that halts immediate
+      bodily spill without pretending to cure the target.
+    origin:
+      main: Medicina
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Preserved Witness
+      focus: Medicine / Triage
+      holder: Sauri temple attendants and floodline medics
+      transmission: funerary_preparation_drills_floodline_field_medicine_temple_attendant_trauma_practice_and_marshal_triage_instruction
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri preservation and emergency body care
+        traditions, where stopping immediate loss matters before full
+        restoration. Outsiders can learn an equivalent through combat medic,
+        battlefield surgery, rescue, or trauma-response disciplines that teach
+        binding and bracing under pressure.
+    category: utility
+    type: active
+    trigger: >
+      An adjacent creature has active physical trauma that is still spilling,
+      worsening, or threatening immediate collapse, and the user has one short
+      intervention window to bind, brace, seal, or pin it before the next
+      break in function.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Medicina
+      equipment: []
+      states:
+        - access_to_the_targets_injured_body_zone
+        - one_free_hand
+        - cloth_binding_splint_material_field_kit_or_another_plausible_stabilizing_means
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated emergency body-care drills: binding under motion,
+          bracing under panic, recognizing when a wound is still spilling, and
+          learning the difference between stopping loss now and pretending a
+          body is restored.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Sauri attendant, field medic, embalmer, or comparable trauma
+          instructor can correct hand placement, pressure choice, timing, and
+          the mistake of treating a stabilization window like a full cure.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri funerary, escort, floodline, and temple
+        attendant traditions. Non-Sauri access requires emergency body-care
+        training rather than abstract medical theory alone.
+      final_validation: one_successful_emergency_stabilization_under_active_scene_pressure
+    target: self_or_adjacent_creature
+    range: touch_or_adjacent
+    area: one_creature
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: stabilization_result_then_follows_its_normal_system_rule
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Medicina Specialization Roll against a threshold set
+        by the severity and instability of the target's current trauma, the
+        user performs one immediate emergency stabilization result.
+    description: >
+      The body is opening where it should stay closed. The practitioner does
+      not restore the whole vessel. They stop the spill from becoming total
+      loss.
+    effect: >
+      Choose one self or adjacent creature suffering current physical trauma
+      that is still actively worsening, spilling, or threatening immediate
+      collapse. Make a Medicina Specialization Roll against a threshold set by
+      the target's current trauma severity and scene pressure. On success,
+      choose one: if the target is in Agonía, immediately apply Estabilizar to
+      that target; if the target is suffering Lacerado, end Lacerado by
+      binding, bracing, sealing, or otherwise stabilizing the stressed wound;
+      if the target is suffering another already-declared wound-pressure rider
+      that exists because the injury remains physically unstabilized, remove
+      that one rider until the fiction creates it again through renewed
+      stress, reopened trauma, or further injury. Anudar la Vasija does not
+      heal, treat, or cure the trauma. It only stops the immediate spill. Any
+      wound slots, lasting damage, untreated zones, Ailments, Fatigue, and
+      follow-up care requirements remain in place. On failure, the
+      intervention is too slow, slips, or cannot hold under current pressure;
+      the trauma continues normally.
+    scaling: >
+      This Technique does not scale by changing its output. Its value scales
+      indirectly because higher Medicina makes the emergency intervention more
+      reliable against worse trauma and tighter pressure windows.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is faster and
+      narrower than full treatment. It does not recover wound slots, heal
+      damage, or perform long care. It buys immediate continuity by locking
+      one trauma point down under pressure.
+    restrictions:
+      - only_works_on_current_physical_trauma
+      - does_not_work_on_curses_fear_command_effects_pure_pain_without_a_stabilizable_bodily_source_or_abstract_morale_collapse
+      - if_the_targets_problem_is_an_ailment_it_must_have_a_physical_logic_that_can_be_braced_bound_or_stabilized
+      - cannot_free_wound_slots_restore_lost_resources_or_count_as_tratar_or_curar
+      - cannot_remove_more_than_one_current_trauma_output_per_use
+      - requires_actual_bodily_access_and_plausible_stabilizing_means
+      - does_not_prevent_future_worsening_if_the_wound_is_reopened_restressed_or_the_stabilization_fails_in_fiction
+    tags:
+      - utility
+      - support
+      - stabilization
+      - recovery
+      - medical
+  - name: Tomar la Costura
+    name_en: Take the Seam
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Minería specialization Technique rooted in material
+      detail discrimination, fault-line isolation, and load-path judgment
+      rather than literal quarry extraction. The Technique turns one existing
+      mineral truth into immediate cover or break setup.
+    origin:
+      main: Minería
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Stone Remembers Pressure / The Seam Tells Which Face Holds
+      focus: Labor / Masonry Reading
+      holder: Sauri quarry hands and defensive masons
+      transmission: quarry_reading_drills_floodgate_maintenance_tomb_opening_labor_and_defensive_masonry_practice
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri quarry, gate, tomb, and defensive
+        stonework traditions, where correct reading of a surface matters more
+        than brute-force intervention. Outsiders can learn an equivalent
+        through masonry judgment, siege reading, ruin work, or comparable
+        mineral-surface disciplines.
+    category: setup
+    type: active
+    trigger: >
+      A stone, packed-earth, mudbrick, ore-bearing, masonry, or similarly
+      mineral feature is relevant to the current position, line, or obstacle,
+      and the user has a short window to read which face protects and which
+      seam gives.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Minería
+      equipment: []
+      states:
+        - line_of_sight_or_physical_access_to_the_relevant_material_feature
+        - enough_visibility_contact_or_prior_exposure_to_actually_judge_the_surface
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated seam-reading drills where the learner must identify
+          which local face truly carries load, which edge offers shelter, and
+          which seam will yield before the rest of the mass.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Sauri quarry hand, gate worker, tomb laborer, or comparable mentor
+          can correct bad surface judgment, false seam reads, and the common
+          error of treating all stone faces as mechanically equivalent.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri quarry, masonry, gate, and tomb-working
+        traditions. Non-Sauri access requires practical mineral-surface
+        judgment rather than academic material knowledge alone.
+      final_validation: one_successful_read_that_turns_an_existing_mineral_feature_into_cover_or_break_setup_under_pressure
+    target: object_cover_or_structure_segment
+    range: short_range_or_adjacent
+    area: one_local_material_segment
+    duration:
+      model: conditional
+      value: null
+      sustain_rule: null
+      end_rule: mode_dependent_enemy_cover_reduction_lasts_while_that_creature_keeps_using_the_same_mineral_cover_on_the_same_line_self_cover_lasts_until_the_user_leaves_that_position_break_setup_lasts_through_the_next_valid_break_attempt_and_all_modes_end_early_if_the_scene_materially_changes
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Minería Specialization Roll against a threshold set by
+        material hardness, packing, stability, and scene pressure, the user
+        identifies one materially true face or seam that immediately alters
+        cover use or break setup.
+    description: >
+      Stone always tells the truth if you know where to look. One face carries
+      load cleanly. Another has already begun to separate. The practitioner
+      does not need to move the wall yet; they only need to know which side to
+      trust and which side to strike.
+    effect: >
+      Choose one stone, packed-earth, mudbrick, ore-bearing, masonry, or
+      similarly mineral feature within short range that is currently relevant
+      as cover, barrier, lip, bank, broken face, threshold, or local obstacle.
+      Make a Minería Specialization Roll against a threshold set by the
+      material's hardness, packing, stability, and the scene's current
+      pressure. On success, choose one: if one enemy is currently using the
+      chosen mineral feature as Cobertura on a declared attack line, reduce
+      that enemy's Cobertura by one step on that line, to a minimum of no
+      cover, while that enemy continues using that same feature on that same
+      line; this ends if the enemy changes position, switches to different
+      cover, loses the line, or the feature materially changes; if the chosen
+      feature can plausibly shield part of the user's body or
+      working angle, treat it as Cobertura Ligera for the user against
+      declared attack lines until the user leaves that position, stops holding
+      that face, or the feature materially changes; or if the chosen feature
+      contains a plausible mineral seam, stress line, or weak face, declare
+      one exact segment for the next valid break attempt against that segment;
+      for that attempt only, the designated critical die counts one result
+      below its normal maximum as enough to validate the break attempt against
+      that segment. This expanded threshold does not grant other critical
+      options unless the die actually rolls its normal maximum, and the read
+      ends whether the attempt succeeds or fails. Tomar la Costura does not
+      create new stone, move structures, or cause damage by itself. It only
+      turns an existing mineral truth into one immediate mechanical advantage.
+      On failure, the read is too slow, the surface is too deceptive, or the
+      pressure of the moment prevents a clean judgment; the feature grants no
+      improved use and no marked break seam.
+    scaling: >
+      This Technique does not scale by changing its output. Its value scales
+      indirectly because higher Minería makes the correct protective face or
+      break seam easier to identify under harder material and more dangerous
+      pressure.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique does not break,
+      move, or build the material by itself. It buys one precise read that
+      immediately improves how an existing mineral surface is used or attacked.
+    restrictions:
+      - only_works_on_stone_packed_earth_mudbrick_masonry_ore_bearing_excavated_or_similarly_mineral_material
+      - does_not_function_on_anatomy_pure_metal_mechanisms_cloth_wood_joinery_social_posture_aura_states_or_broad_architectural_logic_where_layout_is_the_key_issue
+      - cannot_affect_more_than_one_declared_cover_line_or_mark_more_than_one_break_seam_per_use
+      - cannot_reduce_enemy_cobertura_by_more_than_one_step
+      - cannot_grant_better_than_cobertura_ligera_to_the_user
+      - the_expanded_critical_threshold_only_applies_to_validating_one_break_attempt_against_the_declared_mineral_segment_and_does_not_broaden_other_critical_outputs_unless_the_weapon_rolls_its_normal_true_critical
+      - if_the_feature_has_no_meaningful_protective_face_and_no_meaningful_mineral_seam_the_technique_does_not_apply
+      - if_the_feature_is_too_large_too_uniform_too_ruined_or_too_visually_obscured_for_a_novice_read_to_isolate_one_useful_face_or_seam_the_technique_only_reveals_that_limitation_through_failure_or_refusal_of_effect
+    tags:
+      - setup
+      - structure
+      - cover
+      - break
+      - terrain
+  - name: Tomar el Eco
+    name_en: Take the Echo
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Resonancia specialization Technique rooted in active
+      aura reach, signal attunement, and field-state sampling rather than
+      generic aura mysticism. The Technique catches one active signal and
+      turns it into one actionable truth.
+    origin:
+      main: Resonancia
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Stone Remembers Pressure / Preserved Witness
+      focus: Custodial / Resonance Reading
+      holder: Sauri temple readers and cistern wardens
+      transmission: temple_readers_cistern_wardens_funerary_signal_practice_and_ruin_entry_resonance_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri temple reading, funerary testimony,
+        and ruin-entry resonance traditions. Outsiders can learn an equivalent
+        through disciplined aura contact practice, but not through formal
+        Taumaturgia study alone.
+    category: information
+    type: active
+    trigger: >
+      A creature, object, place, or manifestation nearby is carrying an active
+      aura, taumatic, or essential signal that matters now, and the user has a
+      short window to catch its echo before it disperses into the scene.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Resonancia
+      equipment: []
+      states:
+        - an_active_signal_must_actually_be_present
+        - plausible_resonant_reach_to_the_source
+        - no_fully_sealed_barrier_between_user_and_source
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: false
+        notes: >
+          Requires repeated resonance drills where the learner must isolate one
+          real pulse from background pressure and report one useful truth
+          before the signal changes.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A temple reader, funerary attendant, or comparable resonance mentor
+          can correct false contact, signal confusion, and the common novice
+          error of mistaking dense background presence for the true source.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri reading, funerary, cistern, and ruin-entry
+        traditions. Non-Sauri access requires practical aura contact
+        discipline rather than only book learning.
+      final_validation: one_successful_pressure_scene_read_that_identifies_a_true_signal_before_it_is_visibly_confirmed
+    target: one_creature_object_place_or_manifestation
+    range: short_sensory_reach_or_same_immediate_scene
+    area: one_active_signal
+    duration:
+      model: conditional
+      value: null
+      sustain_rule: null
+      end_rule: mode_dependent_exact_position_read_lasts_until_the_source_changes_zone_fully_suppresses_its_signal_crosses_a_sealed_barrier_or_the_scene_stops_tracking_immediate_location_route_truth_lasts_until_the_source_commits_to_its_next_movement_or_signal_pattern_changes_state_truth_is_immediate
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Resonancia Specialization Roll against a threshold set
+        by signal strength, interference, distance, and scene pressure, the
+        user takes one actionable truth from the active signal. If a creature
+        is actively hiding or suppressing its signal, oppose with the relevant
+        concealment or suppression roll instead.
+    description: >
+      The Sauri does not need to see the whole body to know something is
+      there. What touched the place leaves a pulse. What carries force does
+      not stay silent. The practitioner catches the echo before it fades and
+      takes the truth that still remains in it.
+    effect: >
+      Choose one creature, object, place, or manifestation within short
+      sensory reach that is carrying an active aura, taumatic, or essential
+      signal. Make a Resonancia Specialization Roll against a threshold set by
+      signal strength, interference, distance, and scene pressure. On success,
+      choose one: if the source is present but visually hidden, obscured, or
+      positionally uncertain, detect its exact current position for yourself;
+      while the read lasts, that source cannot rely on purely visual
+      concealment against you; if the source is moving, about to move, or has
+      just passed through multiple plausible routes, the Narrator reveals
+      which current route, doorway, bank, corridor, or adjacent zone still
+      carries the true signal, and this lasts until the source commits to its
+      next movement or the signal pattern changes; or if the source is an
+      object, place, creature, or manifestation whose state matters more than
+      its exact location, the Narrator reveals one immediate state truth
+      supported by the signal, such as whether it is active, dormant,
+      unstable, recently disturbed, anchored, or already fading, and this
+      truth is immediate rather than persistent. Tomar el Eco does not
+      identify exact statistics, full intent, full spell logic, hidden
+      history, or every signal in the area. It takes one active echo and turns
+      it into one actionable truth. On failure, the signal is too weak, too
+      crowded, too distant, or too entangled with other presences; the user
+      gets no reliable read from that attempt.
+    scaling: >
+      This Technique does not scale by changing its output. Its value scales
+      indirectly because higher Resonancia makes it easier to isolate the
+      correct signal under heavier interference, denser presence, or weaker
+      echo.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a fast read under
+      pressure that produces one actionable truth now. It does not damage,
+      bind, or suppress the target by itself; it only prevents the signal from
+      staying tactically ambiguous.
+    restrictions:
+      - only_works_on_active_aura_taumatic_or_essential_signals_that_are_actually_present_in_the_scene
+      - does_not_reveal_through_fully_sealed_barriers_total_sensory_isolation_or_sources_whose_signal_has_genuinely_ended
+      - does_not_grant_universal_revelation_to_allies
+      - does_not_reveal_full_intention_exact_mechanics_exact_statistics_or_complete_causal_history
+      - if_the_target_is_hidden_only_by_mundane_distance_without_any_readable_signal_reaching_the_user_the_technique_does_not_apply
+      - if_multiple_signals_are_perfectly_merged_and_the_fiction_offers_no_basis_to_isolate_one_of_them_at_novice_scale_the_technique_only_reveals_that_entanglement_through_failure_or_refusal_of_effect
+    tags:
+      - information
+      - detection
+      - anti_concealment
+      - aura
+      - tauma
+  - name: Tomar la Secuencia
+    name_en: Take the Sequence
+    status: authored_example
+    purpose: >
+      Add a novice Sauri Taumaturgia specialization Technique rooted in
+      tauma-law reading, interaction forecasting, and instability recognition
+      under exposure rather than spellcasting. The Technique turns one active
+      taumatic pattern into one lawful handling forecast.
+    origin:
+      main: Taumaturgia
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Stone Remembers Pressure / Release At The Correct Gate
+      focus: Doctrine / Ritual Maintenance
+      holder: Sauri temple doctrine archivists and ritual maintainers
+      transmission: temple_doctrine_archive_instruction_ritual_maintenance_and_controlled_contact_tauma_drills
+      availability: Restricted
+      adaptation_notes: >
+        The Technique originates in Sauri temple doctrine and controlled-contact
+        tauma practice, where survival depends on reading lawful openings
+        rather than overpowering the phenomenon. Outsiders can learn an
+        equivalent through formal tauma handling discipline, but not through
+        raw aura contact alone.
+    category: setup
+    type: active
+    trigger: >
+      An active taumatic object, place, manifestation, seal, residue pattern,
+      or unstable effect must be crossed, handled, contained, or manipulated
+      before the scene can advance safely.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Taumaturgia
+      equipment: []
+      states:
+        - a_real_taumatic_structure_or_manifestation_must_be_present
+        - enough_access_observation_or_prior_contact_to_study_its_current_operation
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 8
+        text_or_manual_required: true
+        notes: >
+          Requires repeated doctrinal comparison between known taumatic
+          patterns and live handling drills where the learner must name one
+          safe sequence before contact occurs.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A temple instructor, archive scholar, or ritual maintainer can
+          correct false law reads, unstable handling assumptions, and the
+          common novice error of mistaking active pattern contact for true
+          formal understanding.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri doctrinal, archival, and ritual-maintenance
+        traditions. Non-Sauri access requires formal tauma discipline rather
+        than only experiential contact.
+      final_validation: one_successful_forecast_that_allows_a_real_taumatic_interaction_to_be_handled_more_safely_under_pressure
+    target: one_taumatic_source_manifestation_or_ritual_structure
+    range: short_study_reach_or_same_immediate_scene
+    area: one_active_taumatic_pattern
+    duration:
+      model: conditional
+      value: null
+      sustain_rule: null
+      end_rule: mode_dependent_revealed_state_truth_is_immediate_while_the_handling_forecast_lasts_through_the_next_valid_action_that_follows_the_declared_law_or_until_the_targets_pattern_materially_changes
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: specialization_check
+      effect_on_success: >
+        On a successful Taumaturgia Specialization Roll against a threshold set
+        by pattern complexity, instability, interference, and scene pressure,
+        the user extracts one lawful handling forecast from the phenomenon.
+    description: >
+      The Sauri scholar does not reach for the force first. They read its
+      sequence. Every taumatic thing opens somewhere, closes somewhere, spills
+      somewhere, and holds somewhere. The trick is not to overpower it, but to
+      know which step comes next and where the vessel survives the contact.
+    effect: >
+      Choose one active taumatic object, place, manifestation, seal, residue
+      pattern, or unstable effect within short study reach. Make a
+      Taumaturgia Specialization Roll against a threshold set by pattern
+      complexity, instability, interference, and scene pressure. On success,
+      choose one: reveal one current state truth about the target's operation,
+      such as whether it is stable, unstable, cycling, anchored, draining,
+      primed, or already collapsing, and this truth is immediate rather than
+      persistent; declare one lawful handling sequence for the next valid
+      action to cross, touch, move, inspect, disable, contain, or disengage
+      from that exact target, and reduce the threshold of that next valid
+      action by 1 step if it follows the revealed sequence; or declare one
+      specific unsafe interaction that would provoke, worsen, discharge, or
+      prematurely shift the target, and treat any ally within clear hearing
+      who avoids that declared mistake as not having triggered that specific
+      escalation path during the next immediate handling window. Tomar la
+      Secuencia does not reveal full doctrine, complete hidden history, exact
+      statistics, all future states, or universal safety from the phenomenon.
+      It gives one lawful read that matters now. On failure, the pattern is
+      too incomplete, too unstable, too alien, or too pressured to parse
+      cleanly; the user gets no reliable forecast from that attempt.
+    scaling: >
+      This Technique does not scale by changing its output. Its value scales
+      indirectly because higher Taumaturgia makes it easier to isolate a
+      correct law under denser interference, stranger doctrine, or more
+      unstable taumatic behavior.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is a fast doctrinal
+      read under pressure. It does not suppress the manifestation or complete
+      the solution by itself; it gives one lawful way to interact with the
+      phenomenon better than blind contact would allow.
+    restrictions:
+      - only_works_on_active_taumatic_structures_manifestations_residues_seals_or_effects_that_are_actually_operating_in_the_scene
+      - does_not_function_on_purely_mundane_mechanisms_ordinary_weather_bodily_wounds_social_pressure_or_non_taumatic_mystery_by_itself
+      - does_not_suppress_dispel_or_deactivate_the_target_on_its_own
+      - only_reduces_the_threshold_of_one_next_valid_action_that_genuinely_follows_the_declared_law
+      - if_the_target_materially_changes_state_before_that_next_action_resolves_the_forecast_ends
+      - if_the_phenomenon_is_so_alien_sealed_or_overbuilt_that_novice_taumaturgia_cannot_isolate_a_lawful_interaction_window_the_technique_only_reveals_that_limitation_through_failure_or_refusal_of_effect
+    tags:
+      - setup
+      - information
+      - tauma
+      - manifestation
+      - handling
+  - name: Cerrar la Coraza
+    name_en: Close the Carapace
+    status: authored_example
+    purpose: >
+      Add a novice Sauri armor-rooted defense Technique that expresses armor
+      as an actively presented vessel rather than passive mitigation. The
+      Technique improves Bloqueo and physical stability only through one
+      declared armored line.
+    origin:
+      main: Armadura intermedia / Armadura pesada
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Procession Of Force
+      focus: Armor / Escort Discipline
+      holder: Sauri armored escorts and floodgate guards
+      transmission: temple_armor_drills_floodgate_guard_posture_training_and_sovereign_escort_procession_discipline
+      availability: Restricted
+      adaptation_notes: >
+        The Technique comes from Sauri armor doctrine that treats weight,
+        seam, and posture as active preparation. Outsiders can learn it
+        through real armor drill and line-holding discipline, but not by
+        merely wearing heavy protection without the body training to close it
+        correctly.
+    category: defense
+    type: active_stance
+    trigger: >
+      The user deliberately sets their body to receive incoming pressure
+      through the part of their armor that was built to hold it.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - functional_medium_or_heavy_armor_on_the_declared_line
+        - able_to_hold_posture_and_keep_the_declared_armored_facing_toward_the_pressure
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires repeated armor-on posture drills, wall-pressure work, and
+          impact reception practice where the learner must keep the correct
+          seam presented instead of turning the wrong gap into the hit.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A temple guard, floodgate escort, or experienced armored instructor
+          can correct false facing, overcommitted weight, and the common novice
+          mistake of trusting armor that is not actually being presented
+          correctly.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri armor and escort traditions. Non-Sauri access
+        requires genuine medium or heavy armor discipline and repeated contact
+        practice under pressure.
+      final_validation: one_successful_held_posture_under_real_impact_where_the_declared_armor_line_absorbs_pressure_without_opening
+    target: self
+    range: self
+    area: one_declared_armored_facing_or_pressure_line
+    duration:
+      model: sustained
+      value: null
+      sustain_rule: while_the_user_keeps_the_declared_armored_facing_and_posture
+      end_rule: >
+        ends_if_the_user_moves_more_than_1_meter_turns_away_falls_loses_footing
+        breaks_the_presented_facing_or_loses_the_relevant_functional_armor_on_a_struck_zone
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: none
+    description: >
+      The armor is not trusted because it exists. It is trusted because the
+      body closes it correctly. Plates, scales, straps, and weight all have an
+      angle where they hold and an angle where they open. The Sauri turns the
+      body until the pressure meets the vessel where it was meant to survive.
+    effect: >
+      Choose one forward or otherwise clearly declared pressure line that the
+      user's current body-facing and armor can credibly present. While the
+      stance remains active, the user is considered to be using an active
+      armor posture. If an attack or physical impact comes through that
+      declared line, hits a zone where the chosen medium or heavy armor
+      actually participates in absorbing the impact, and does not bypass the
+      armor entirely, add a bonus equal to the rank bonus of the armor
+      competency used for this Technique to that zone's Bloqueo. If that same
+      triggering effect would also force physical displacement or require an
+      R.R. against Derribado or Desequilibrado through impact, shove, posture
+      loss, or bodily collision coming through that same declared line, add
+      the same rank bonus to that R.R. If the pressure comes from a different
+      line, strikes an unarmored or lightly armored zone, reaches a gap the
+      declared posture is not actually covering, or bypasses armor entirely,
+      this Technique gives no benefit against that effect.
+    scaling: >
+      This Technique scales through the rank bonus of the armor competency
+      used for it. Higher armor competency improves the added Bloqueo and the
+      physical stability R.R. from the same declared line, but does not widen
+      the covered arc or turn the Technique into general protection.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. Entering the posture is quick, but
+      holding the correct weight, seam, and angle under live pressure is real
+      body work. The Technique does not damage, move, intercept for allies, or
+      create broad protection; it only prepares one armored line to survive
+      contact better while the posture is maintained.
+    restrictions:
+      - only_works_with_armadura_intermedia_or_armadura_pesada
+      - only_applies_when_the_declared_armor_really_participates_in_absorbing_the_impact_on_the_struck_zone
+      - does_not_improve_td_interception_ally_protection_or_cover_by_itself
+      - does_not_help_against_poison_fear_curses_taumatic_pressure_sensory_overload_mental_influence_social_pressure_or_other_nonphysical_effects
+      - does_not_help_against_attacks_or_effects_that_explicitly_bypass_armor_strike_from_outside_the_declared_line_or_hit_a_zone_the_declared_posture_was_not_actually_covering
+      - ends_if_the_user_voluntarily_moves_more_than_1_meter_turns_away_falls_loses_footing_or_otherwise_breaks_the_presented_armored_facing
+      - ends_for_any_struck_zone_whose_relevant_armor_piece_is_broken_and_no_longer_contributes_bloqueo
+      - does_not_stack_with_another_active_armor_posture_unless_a_later_rule_explicitly_says_otherwise
+    tags:
+      - defense
+      - mitigation
+      - stability
+      - survival_window
+  - name: Volver la Placa
+    name_en: Turn the Plate
+    status: authored_example
+    purpose: >
+      Add a novice Sauri reactive armor Technique that performs a one-hit
+      emergency line correction. The Technique turns an incoming physical hit
+      onto the armor's holding face for one instant rather than creating a
+      sustained posture.
+    origin:
+      main: Armadura intermedia / Armadura pesada
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Release At The Correct Gate / Vessel Under Pressure
+      focus: Armor / Impact Correction
+      holder: Sauri escort correctors and canal gate guards
+      transmission: escort_impact_drills_last_angle_armor_correction_practice_and_canal_gate_body_turn_discipline
+      availability: Restricted
+      adaptation_notes: >
+        The Technique comes from Sauri emergency armor correction doctrine:
+        the user does not outrun the hit, but turns it onto the plate at the
+        last viable moment. Outsiders can learn it through real impact drill
+        in medium or heavy armor, but not through abstract endurance alone.
+    category: defense
+    type: reactive
+    trigger: >
+      A physical attack or impact is about to connect against a zone
+      protected by the user's medium or heavy armor, and the user still has
+      time to turn that contact onto the armor's holding face instead of
+      receiving it through a worse seam or angle.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations: []
+      equipment: []
+      states:
+        - the_struck_zone_is_protected_by_a_functional_medium_or_heavy_armor_piece
+        - not_fully_restrained_or_immobilized
+        - still_physically_capable_of_making_the_last_angle_correction
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 6
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires repeated impact-reception drills and last-angle body turns
+          where the learner must make one hit land on plate instead of on a
+          seam, gap, or badly presented angle.
+      guided_training:
+        allowed: true
+        study_hours: 3
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Sauri escort, temple guard, or experienced armored instructor can
+          correct late turns, false seam closures, and the novice tendency to
+          over-rotate into collapse instead of redirecting the hit cleanly.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri escort and armored body-discipline traditions.
+        Non-Sauri access requires repeated live-contact armor drilling rather
+        than passive wear familiarity.
+      final_validation: one_successful_last_angle_correction_that_turns_a_real_hit_onto_the_holding_face_of_the_armor
+    target: self
+    range: self
+    area: one_incoming_hit_one_struck_zone
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: resolves_after_the_triggering_hit_and_any_linked_rr_are_resolved
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: none
+    description: >
+      The Sauri does not outrun the hit. They correct it. A shoulder turns
+      half a handspan, the ribs settle, the weight drops, the seam disappears,
+      and the strike lands on what was meant to survive it.
+    effect: >
+      When the trigger occurs, declare the struck zone and the armor
+      competency used for this Technique. If the triggering hit does not
+      explicitly bypass armor and the declared armor piece on that zone still
+      functions, add a bonus equal to the rank bonus of that armor competency
+      to that zone's Bloqueo against that one hit. If that same hit would
+      also force an R.R. against Derribado or Desequilibrado through bodily
+      impact, shove, collision, or posture-breaking force, add the same rank
+      bonus to that R.R. as well. Volver la Placa only changes how this one
+      hit is received. It does not remain active after resolution and does not
+      create an active armor posture.
+    scaling: >
+      This Technique scales through the rank bonus of the armor competency
+      used for it. Higher armor competency improves the one-hit Bloqueo
+      correction and any linked physical stability R.R., but does not turn the
+      Technique into a sustained line, movement answer, or general damage
+      reduction.
+    cost_note: >
+      Rhythm 3 / Attrition 1 is deliberate. The Technique is narrower than a
+      sustained stance, but it still asks for a real armored body correction
+      under live pressure. It protects only one incoming hit, does not move
+      the user, does not intercept for allies, and does not create an ongoing
+      line bonus.
+    restrictions:
+      - only_works_with_armadura_intermedia_or_armadura_pesada
+      - only_works_if_the_struck_zone_is_actually_protected_by_the_declared_armor_and_that_armor_still_functions
+      - does_not_function_if_the_attack_or_effect_explicitly_bypasses_armor_entirely
+      - does_not_improve_td_intercept_for_allies_create_cover_or_establish_a_sustained_defensive_line
+      - does_not_help_against_poison_fear_curses_taumatic_pressure_sensory_overload_mental_influence_social_pressure_or_other_nonphysical_effects
+      - does_not_reduce_forced_movement_distance_by_itself_and_does_not_preserve_a_held_point_beyond_the_one_hit_rr_bonus
+      - does_not_stack_with_cerrar_la_coraza_on_the_same_hit_unless_a_later_rule_explicitly_says_otherwise
+    tags:
+      - defense
+      - mitigation
+      - stability
+      - counter
+  - name: Bajar el Núcleo
+    name_en: Lower the Core
+    status: authored_example
+    purpose: >
+      Add a novice Sauri resistance hybrid Technique rooted in Aclimatación
+      plus Heat Resistance. The Technique passively improves Aclimatación
+      rolls against heat-origin environmental hazards by adding the Heat
+      Resistance rank bonus.
+    origin:
+      main: Aclimatación + Heat Resistance
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Vessel Under Pressure / Stone Remembers Pressure
+      focus: Endurance / Heat Exposure
+      holder: Sauri kiln laborers and desert-edge crossers
+      transmission: kiln_court_endurance_drills_exposed_labor_under_heat_load_and_desert_edge_crossing_discipline
+      availability: Restricted
+      adaptation_notes: >
+        The Technique comes from Sauri exposure discipline: the user does not
+        escape the heat, but carries acclimated thermal order into the actual
+        exposure roll. Outsiders can learn it only through real heat
+        acclimation plus genuine Heat Resistance.
+    category: utility
+    type: passive
+    trigger: >
+      The user makes an Aclimatación Specialization Roll to resist a declared
+      heat-origin environmental hazard that could impose Fatigue, exposure
+      degradation, or similar thermal burden.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Aclimatación
+      equipment: []
+      states:
+        - heat_resistance_at_novice_or_higher
+        - the_roll_is_specifically_resisting_a_heat_origin_environmental_hazard
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires repeated exposed labor, march, or hold drills in real heat
+          where the learner must keep a useful work window without immediate
+          access to shade or relief.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Sauri heat-labor veteran, crossing guide, or ordeal instructor can
+          correct bad pacing, false breathing discipline, and the novice habit
+          of letting panic consume function before the body actually fails.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri exposure, labor, and ordeal traditions.
+        Non-Sauri access requires both Aclimatación and real Heat Resistance
+        developed through actual exposure, not theory alone.
+      final_validation: one_successful_heat_exposure_resistance_drill_where_heat_resistance_is_consciously_brought_into_the_aclimatacion_response
+    target: self
+    range: self
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: while_both_prerequisites_remain_at_novice_or_higher
+      end_rule: null
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: none
+    description: >
+      The body does not become cool. It becomes ordered. Breath shortens,
+      blood slows, effort narrows, and the worst of the heat is kept away from
+      the core long enough that trained acclimation stops being a general
+      virtue and becomes a better answer to the heat in front of you.
+    effect: >
+      When the user makes an Aclimatación Specialization Roll specifically to
+      resist a declared heat-origin environmental hazard — such as sun-baked
+      exposure, radiant stone, kiln wash, furnace-side heat, steam-adjacent
+      thermal load, or a similar non-weapon heat pressure — add a bonus to
+      that roll equal to the user's Heat Resistance rank bonus. This bonus
+      applies only to Aclimatación rolls against heat-origin environmental
+      hazards. It does not create shelter, remove existing Fatigue, protect
+      allies, or change what those hazards do on success or failure; it only
+      improves the user's chance to resist them cleanly.
+    scaling: >
+      This Technique scales through the Heat Resistance rank bonus that it
+      adds to qualifying Aclimatación rolls.
+    cost_note: >
+      Rhythm 0 / Attrition 0 is correct and deliberate. This is a passive
+      hybrid like the Naghii resistance models. The cost was paid in exposure,
+      acclimation, and training long before the scene began; no declared
+      action is needed when the body is already trained to answer heat better.
+    restrictions:
+      - requires_aclimatacion_at_novice_or_higher
+      - requires_heat_resistance_at_novice_or_higher
+      - applies_only_to_aclimatacion_rolls_against_declared_heat_origin_environmental_hazards_already_present_in_the_scene
+      - does_not_help_against_weapon_hits_direct_fire_attacks_explosions_poison_curses_taumatic_pressure_mental_influence_or_non_heat_hazards_by_itself
+      - does_not_create_a_refuge_point_cover_line_protection_or_separate_shelter_window
+      - affects_the_user_only
+      - does_not_reduce_or_clear_fatigue_after_it_has_already_settled_it_only_improves_the_qualifying_roll_that_may_prevent_that_outcome
+    tags:
+      - utility
+      - hazard
+      - mitigation
+      - endurance
+      - stability
+  - name: Nombrar el Umbral
+    name_en: Name the Threshold
+    status: authored_example
+    purpose: >
+      Add a novice Sauri resistance hybrid Technique rooted in Teología plus
+      Affliction Resistance. The Technique passively improves the Affliction
+      Resistance Roll that prevents `Vestigio` or `Vínculo` contact from
+      increasing by 1 the intensity of an already-settled extranatural
+      sensory Affliction.
+    origin:
+      main: Teología + Affliction Resistance
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Preserved Witness / The Failed Vessel
+      focus: Funerary Doctrine / Vestige Handling
+      holder: Sauri funerary theologians and vestige attendants
+      transmission: funerary_doctrine_vestige_handling_liturgy_and_temple_instruction_on_naming_what_passes_through_the_vessel
+      availability: Restricted
+      adaptation_notes: >
+        The Technique comes from Sauri doctrinal handling of dangerous
+        contact. The user does not close the opening, but identifies and
+        frames it correctly enough that further contact is less likely to push
+        the sensory fracture deeper. Outsiders can learn it only through real
+        doctrinal contact work plus genuine Affliction Resistance.
+    category: utility
+    type: passive
+    trigger: >
+      The user interacts with a Vestigio or Vínculo and must make an
+      Affliction Resistance Roll to avoid increasing by 1 the intensity of an
+      already-settled extranatural sensory Affliction.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      support_specializations:
+        - Teología
+      equipment: []
+      states:
+        - affliction_resistance_at_novice_or_higher
+        - an_extranatural_sensory_affliction_is_already_present
+        - the_triggering_escalation_comes_specifically_from_vestigio_or_vinculo_interaction
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: true
+        notes: >
+          Requires doctrinal study plus repeated controlled contact with
+          vestige-adjacent ritual material, where the learner must identify
+          the kind of intrusion and hold the frame without letting the opened
+          sense escalate.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A temple reader, funerary handler, or vestige keeper can correct
+          false doctrinal naming, panic responses, and the novice tendency to
+          treat every intrusion as undifferentiated force.
+      material_cost: null
+      access_notes: >
+        Restricted within Sauri doctrinal and funerary traditions. Non-Sauri
+        access requires real ritual study plus genuine Affliction Resistance
+        developed through actual contact risk.
+      final_validation: one_successful_controlled_contact_where_doctrinal_naming_prevents_a_sensory_affliction_from_increasing_in_intensity
+    target: self
+    range: self
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: while_both_prerequisites_remain_at_novice_or_higher
+      end_rule: null
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: none
+    description: >
+      The contact still opens the world. The difference is that the Sauri does
+      not meet it as raw intrusion. The doctrine gives the phenomenon a place,
+      a lineage, a boundary, a name. What enters is still dangerous, but it
+      no longer arrives as shapeless flood.
+    effect: >
+      When the user interacts with a Vestigio or Vínculo and must make an
+      Affliction Resistance Roll to avoid increasing by 1 the intensity of an
+      already-settled extranatural sensory Affliction, add a bonus to that
+      roll equal to the user's Affliction Resistance rank bonus. This bonus
+      applies only to intensity-escalation Affliction Resistance Rolls caused
+      by Vestigio or Vínculo interaction. It does not prevent the initial
+      contact, remove the Affliction, erase its extranatural perception
+      benefit, or protect against unrelated Alterations.
+    scaling: >
+      This Technique scales through the Affliction Resistance rank bonus that
+      it adds to qualifying Affliction Resistance Rolls.
+    cost_note: >
+      Rhythm 0 / Attrition 0 is correct and deliberate. This is a passive
+      hybrid like the other resistance models. The cost was paid in doctrine,
+      repeated contact, and learning to survive naming what should not be
+      touched.
+    restrictions:
+      - requires_teologia_at_novice_or_higher
+      - requires_affliction_resistance_at_novice_or_higher
+      - applies_only_when_vestigio_or_vinculo_interaction_would_increase_by_1_the_intensity_of_an_already_settled_extranatural_sensory_affliction
+      - does_not_help_against_mundane_sensory_disorders_weapon_hits_poison_curses_unrelated_to_vestigios_or_vinculos_or_non_extranatural_alterations
+      - does_not_prevent_the_initial_settling_of_an_affliction_unless_a_later_system_explicitly_says_those_same_rolls_also_count_as_intensity_escalation_from_zero
+      - does_not_reduce_clear_or_recover_intensity_after_it_has_already_increased_it_only_improves_the_qualifying_alteration_resistance_roll
+      - affects_the_user_only
+    tags:
+      - utility
+      - corruption
+      - condition_reduction
+      - stability
+      - doctrinal

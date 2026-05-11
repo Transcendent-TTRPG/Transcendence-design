@@ -1,0 +1,568 @@
+authority: docs/system/faction-reputation-and-alliances.md
+
+purpose:
+  - track_how_specific_factions_read_and_treat_the_group_over_time
+  - separate_public_pattern_from_personal_trust
+  - give_alliances_formal_status_obligations_and_benefits
+  - connect_trade_access_to_settlement_scale_and_social_position
+
+non_goals:
+  - define_personality_or_inner_morality
+  - replace_live_social_scene_resolution
+  - collapse_all_faction_reactions_into_one_global_alignment_value
+
+core_layers:
+  - faction_standing
+  - public_renown
+  - alliance_status
+  - commerce_and_availability
+
+faction_standing:
+  note: always_tracked_per_faction_never_as_one_global_world_value
+  ladder:
+    Hostile:
+      meaning: faction_treats_group_as_danger_enemy_or_direct_liability
+    Unwelcome:
+      meaning: faction_does_not_trust_group_and_limits_access_or_cooperation
+    Neutral:
+      meaning: ordinary_baseline_treatment_with_no_special_trust_or_hostility
+    Favored:
+      meaning: faction_is_willing_to_help_within_normal_bounds_and_deal_in_good_faith
+    Trusted:
+      meaning: faction_is_willing_to_share_better_access_terms_and_internal_opportunities
+    Allied:
+      meaning: faction_recognizes_group_as_reliable_partner_with_active_mutual_commitment
+  common_change_triggers:
+    - materially_helping_the_faction
+    - materially_harming_the_faction
+    - supporting_or_obstructing_declared_faction_interests
+    - honoring_or_breaking_meaningful_commitments
+    - becoming_publicly_associated_with_actions_the_faction_cannot_ignore
+  change_procedure:
+    - decide_whether_the_action_materially_matters_to_that_faction
+    - decide_whether_the_effect_is_minor_major_or_decisive
+    - move_standing_only_if_the_action_crosses_a_real_trust_threshold
+  default_shift_bands:
+    minor:
+      default_change: no_immediate_standing_shift_by_itself
+    major:
+      default_change: plus_or_minus_1_step
+    decisive:
+      default_change: plus_or_minus_2_steps_when_fiction_clearly_justifies_it
+  impact_band_guidance:
+    minor:
+      - one_helpful_conversation
+      - one_fair_trade
+      - one_routine_success_that_helps_a_little
+      - one_small_insult_inconvenience_or_breach_without_lasting_consequence
+    major:
+      - completing_or_sabotaging_a_meaningful_job
+      - materially_helping_a_faction_project_succeed
+      - publicly_embarrassing_or_undermining_the_faction
+      - honoring_or_violating_a_promise_that_mattered
+    decisive:
+      - saving_or_destroying_something_strategically_or_symbolically_critical
+      - exposing_treason_corruption_or_sacred_breach
+      - betraying_an_alliance
+      - delivering_victory_or_disaster_the_faction_cannot_reinterpret_away
+  stability_rule: >
+    Do not move Standing more than once for the same faction from the same
+    underlying event chain unless a later consequence creates a second distinct
+    political meaning.
+  main_effects:
+    - hospitality_and_safe_reception
+    - willingness_to_deal
+    - mission_quality_and_trust_sensitive_work
+    - access_to_restricted_information_infrastructure_or_inventory
+    - price_pressure_urgency_and_risk_tolerance
+
+public_renown:
+  note: >
+    Tracks the action pattern a faction believes it sees in the group. This is
+    not personality truth or universal morality.
+  significant_action_value: 1
+  threshold_per_recognition_step: 10
+  axes:
+    actions:
+      - Constructive
+      - Neutral
+      - Destructive
+    motivations:
+      - Altruistic
+      - Personal
+      - Selfish
+  profile_matrix:
+    Constructive:
+      Altruistic: Benefactors
+      Personal: Builders
+      Selfish: Magnates
+    Neutral:
+      Altruistic: Observers
+      Personal: Independents
+      Selfish: Opportunists
+    Destructive:
+      Altruistic: Revolutionaries
+      Personal: Mercenaries
+      Selfish: Tyrants
+  common_triggers:
+    - missions_completed_or_failed_in_visible_ways
+    - protection_sabotage_rescue_betrayal_or_exploitation
+    - commercial_behavior_with_material_social_effect
+    - resource_extraction_or_destruction
+    - public_interventions_that_help_destabilize_or_profit_from_a_situation
+  gain_procedure:
+    - ask_whether_the_faction_can_credibly_witness_verify_or_hear_about_the_action
+    - tag_the_action_on_both_renown_axes
+    - assign_renown_based_on_event_scale
+  default_gain_bands:
+    minor_but_visible: 1
+    major_public_event: 2
+    defining_public_event: 3
+  renown_loss_or_reversal_triggers:
+    - public_failure_that_damages_known_image
+    - exposure_of_conduct_against_expected_profile
+    - scandal_cowardice_incompetence_or_hypocrisy_that_faction_cares_about
+  memory_rule: >
+    Renown is sticky but not immortal. If the group acts in a different public
+    pattern for long enough, the dominant profile with that faction may shift
+    even if older Renown is not erased.
+  affects:
+    - offer_profile
+    - rumor_and_expectation
+    - fame_fear_admiration_or_notoriety_gates
+    - bounded_social_modifiers_where_the_pattern_is_relevant
+  renown_to_standing_guideline:
+    - repeated_positive_renown_in_a_profile_the_faction_values_may_justify_later_positive_standing_shift
+    - repeated_negative_renown_in_a_profile_the_faction_fears_or_hates_may_justify_later_negative_standing_shift
+    - competence_fear_or_hatred_do_not_automatically_change_trust
+
+alliances:
+  note: alliance_is_recognized_mutual_commitment_not_just_goodwill
+  statuses:
+    None:
+      meaning: no_alliance_exists
+    Informal:
+      meaning: mutual_support_exists_but_is_mostly_practice_and_expectation
+    Recognized:
+      meaning: relationship_is_acknowledged_and_carries_recurring_privileges
+    Sworn:
+      meaning: relationship_carries_explicit_commitments_duties_and_breach_consequences
+    Broken:
+      meaning: former_alliance_abandoned_violated_or_publicly_dissolved
+  baseline_formation_requirements:
+    - faction_standing_at_favored_or_stronger
+    - meaningful_acts_aligned_with_faction_interests
+    - explicit_narrative_recognition
+    - mutual_expectation_not_one_sided_admiration
+  maintenance_vectors:
+    - continued_support
+    - honoring_requests_or_shared_obligations
+    - avoiding_direct_harm_to_alliance_interests_without_explanation
+    - responding_when_alliance_is_publicly_tested
+  benefit_categories:
+    - access_to_restricted_goods_or_services
+    - use_of_infrastructure
+    - privileged_information
+    - expert_assistance
+    - diplomatic_sponsorship
+    - military_or_logistical_support
+    - reduced_scrutiny_in_faction_controlled_territory
+  cost_categories:
+    - obligations
+    - expectation_of_response
+    - enemies_by_association
+    - pressure_not_to_assist_rivals
+    - retaliation_or_embargo_on_break
+
+commerce_and_availability:
+  currency:
+    baseline_unit: Shekel
+  commerce_categories:
+    - Consumables
+    - Equipment
+    - Materials_and_Resources
+    - Services
+    - Luxury_Goods
+    - Authored_Documents
+  category_guidance:
+    Consumables:
+      - routine_travel_goods
+      - food
+      - writing_supplies
+      - basic_light
+      - daily_use_items
+    Equipment:
+      - adventuring_gear
+      - combat_gear
+      - tools
+      - kits
+      - practical_carried_objects
+    Materials_and_Resources:
+      - raw_materials
+      - processed_materials
+      - reagents
+      - creature_parts
+      - crafting_inputs
+    Services:
+      - lodging
+      - transport
+      - treatment
+      - labor
+      - repair
+      - refining
+      - commissioning
+      - professional_assistance
+    Luxury_Goods:
+      - status_goods
+      - ceremonial_goods
+      - fine_adornment
+      - prestige_items
+    Authored_Documents:
+      - plans
+      - formulas
+      - trap_diagrams
+      - maps
+      - know_how_objects
+  availability_ladder:
+    Common:
+      meaning: readily_available_in_most_settlements
+    Moderate:
+      meaning: usually_available_in_towns_and_larger_markets
+    Specialized:
+      meaning: usually_available_only_in_trade_centers_or_through_known_experts
+    Rare:
+      meaning: difficult_to_obtain_without_large_city_access_influence_or_special_contacts
+    Exceptional:
+      meaning: extraordinary_or_capital_grade_access_only
+  settlement_tiers:
+    Small_Village:
+      population_guidance: up_to_500
+      normal_ceiling: Common
+    Town:
+      population_guidance: 500_to_2000
+      normal_ceiling: Moderate
+    City:
+      population_guidance: 2000_to_10000
+      normal_ceiling: Specialized
+    Major_City:
+      population_guidance: 10000_to_50000
+      normal_ceiling: Rare
+    Capital_or_Metropolis:
+      population_guidance: 50000_plus
+      normal_ceiling: Exceptional
+  local_market_rule:
+    procedure:
+      - identify_commerce_category
+      - identify_availability
+      - compare_to_settlement_ceiling
+      - check_faction_alliance_or_narrative_exceptions
+      - apply_faction_standing_to_price_speed_and_willingness_to_sell
+    below_or_at_ceiling_result: normally_sourceable_through_local_market_unless_other_restriction_blocks_it
+    above_ceiling_result: not_normally_sourceable_through_ordinary_channels_requires_exception_route
+  ceiling_exception_sources:
+    - faction_sponsorship_with_relevant_stock_or_infrastructure
+    - high_faction_standing
+    - active_alliance
+    - one_off_fictional_exception_such_as_caravan_embassy_black_market_or_war_supply
+  standing_trade_logic:
+    Hostile:
+      expected_result:
+        - no_ordinary_trade
+        - punitive_pricing_or_forced_intermediaries
+        - confiscation_or_exposure_risk_if_relevant
+    Unwelcome:
+      expected_result:
+        - restricted_access
+        - worse_terms
+        - low_trust
+    Neutral:
+      expected_result:
+        - baseline_local_pricing_and_availability
+    Favored:
+      expected_result:
+        - modest_discounts_or_easier_sourcing
+        - better_goodwill
+    Trusted:
+      expected_result:
+        - better_than_market_priority
+        - access_to_held_stock
+        - improved_service_terms
+    Allied:
+      expected_result:
+        - faction_channels
+        - protected_access
+        - special_exceptions_when_fiction_supports_them
+  price_pressure_bands:
+    Hostile:
+      default_market_effect:
+        sale_state: no_ordinary_sale
+        if_trade_occurs_anyway: at_least_plus_50_percent_and_under_risk
+    Unwelcome:
+      default_market_effect:
+        price_modifier: +20_percent
+        additional_effect: lower_willingness_to_source_edge_case_goods
+    Neutral:
+      default_market_effect:
+        price_modifier: 0
+    Favored:
+      default_market_effect:
+        price_modifier: -10_percent
+        alternative: one_favorable_sourcing_concession
+    Trusted:
+      default_market_effect:
+        price_modifier: -20_percent
+        alternative: priority_access_to_held_stock
+    Allied:
+      default_market_effect:
+        price_modifier: -20_percent
+        additional_effect: faction_channel_exceptions_when_justified
+  service_priority:
+    Hostile: refused_unless_coerced_or_hidden
+    Unwelcome: last_priority_only_after_known_clients
+    Neutral: normal_queue
+    Favored: moved_forward_when_possible
+    Trusted: priority_treatment_for_bounded_requests
+    Allied: direct_internal_routing_when_faction_controls_service
+  alliance_trade_exceptions:
+    - access_to_non_public_inventories
+    - permission_to_use_faction_infrastructure_instead_of_buying_full_result
+    - access_to_specialists_who_do_not_serve_the_open_market
+    - bypass_one_step_of_local_availability_ceiling_when_allied_faction_controls_supply
+    - protection_from_ordinary_local_scarcity_when_faction_spends_its_own_logistics
+  sourcing_outcomes:
+    - delayed_sourcing
+    - limited_quantity
+    - commission_only
+    - restricted_buyer_scrutiny
+    - faction_referral
+    - black_market_route
+    - caravan_wait
+    - embassy_or_guild_channel
+    - refusal
+  baseline_market_catalog:
+    note: >
+      Small first-layer catalog for ordinary market interaction. These are
+      baseline references, not region-proof universal laws.
+    objects:
+      travel_backpack:
+        category: Equipment
+        price: 30
+        availability: Common
+        weight_note: "1 kg"
+      bedroll:
+        category: Consumables
+        price: 25
+        availability: Common
+        weight_note: "2 kg"
+      waterskin_or_canteen:
+        category: Consumables
+        price: 12
+        availability: Common
+        weight_note: "1 kg empty"
+      rain_poncho:
+        category: Consumables
+        price: 12
+        availability: Common
+        weight_note: "0.5 kg"
+      rope_10m:
+        category: Equipment
+        price: 120
+        availability: Common
+        weight_note: "1.5 kg"
+      travel_rations_1_day:
+        category: Consumables
+        price: 10
+        availability: Common
+        weight_note: "0.5 kg"
+      torch:
+        category: Consumables
+        price: 10
+        availability: Common
+        weight_note: "1 kg"
+      wax_candles_10:
+        category: Consumables
+        price: 5
+        availability: Common
+        weight_note: "0.2 kg"
+      writing_kit:
+        category: Consumables
+        price: 10
+        availability: Common
+        weight_note: "0.2 kg"
+      blank_journal:
+        category: Consumables
+        price: 20
+        availability: Common
+        weight_note: "0.5 kg"
+      whetstone:
+        category: Equipment
+        price: 15
+        availability: Common
+        weight_note: "0.5 kg"
+      basic_repair_box:
+        category: Equipment
+        price: 35
+        availability: Common
+        weight_note: "3 kg"
+      field_cook_set:
+        category: Equipment
+        price: 30
+        availability: Common
+        weight_note: "2 kg"
+      bandages_10:
+        category: Consumables
+        price: 8
+        availability: Common
+        weight_note: "0.2 kg"
+      antiseptic_bottle:
+        category: Consumables
+        price: 20
+        availability: Common
+        weight_note: "0.3 kg"
+      oil_lamp:
+        category: Equipment
+        price: 20
+        availability: Moderate
+        weight_note: "1 kg"
+      local_territory_map:
+        category: Authored_Documents
+        price: 60
+        availability: Moderate
+        weight_note: "0.1 kg"
+      camouflage_cloth:
+        category: Equipment
+        price: 30
+        availability: Moderate
+        weight_note: "1 kg"
+      compass:
+        category: Equipment
+        price: 35
+        availability: Moderate
+        weight_note: "0.3 kg"
+      mortar_and_pestle:
+        category: Equipment
+        price: 30
+        availability: Moderate
+        weight_note: "1.5 kg"
+      test_tubes_5:
+        category: Equipment
+        price: 15
+        availability: Specialized
+        weight_note: "0.5 kg"
+      climbing_hooks_set:
+        category: Equipment
+        price: 30
+        availability: Specialized
+        weight_note: "0.8 kg"
+    ammunition_goods:
+      steel_arrows_20:
+        category: Equipment
+        price: 20
+        availability: Common
+        weight_note: "1 kg"
+      darts_10:
+        category: Equipment
+        price: 10
+        availability: Common
+        weight_note: "0.3 kg"
+      sling_stones_10:
+        category: Equipment
+        price: 15
+        availability: Common
+        weight_note: "2 kg"
+      specialty_ammunition_rule: usually_begins_at_specialized_or_higher_unless_setting_logic_says_otherwise
+    services:
+      common_lodging:
+        category: Services
+        price_guidance: "10-20 Shekels / night"
+        availability: Common
+        note: basic_room_or_shared_shelter_equivalent
+      modest_meal:
+        category: Services
+        price_guidance: "5-10 Shekels"
+        availability: Common
+        note: one_decent_meal_in_routine_settlement
+      animal_stabling_or_care:
+        category: Services
+        price_guidance: "8-15 Shekels / day"
+        availability: Common
+        note: ordinary_housing_and_feed
+      local_messenger:
+        category: Services
+        price_guidance: "10-25 Shekels"
+        availability: Common
+        note: within_same_settlement_or_nearby_route
+      short_secure_storage:
+        category: Services
+        price_guidance: "5-15 Shekels / day"
+        availability: Common
+        note: non_faction_protected_storage
+      local_guide:
+        category: Services
+        price_guidance: "30-80 Shekels / day"
+        availability: Moderate
+        note: settlement_nearby_roads_or_known_terrain_only
+      map_copy_or_update:
+        category: Services
+        price_guidance: "40-120 Shekels"
+        availability: Moderate
+        note: depends_on_scope_and_source_quality
+      minor_equipment_repair:
+        category: Services
+        price_guidance: "20-80 Shekels"
+        availability: Moderate
+        note: not_a_full_rebuild_uses_local_craft_capacity
+      routine_treatment:
+        category: Services
+        price_guidance: "20-100 Shekels"
+        availability: Moderate
+        note: stabilization_cleaning_ordinary_medical_handling
+      appraisal:
+        category: Services
+        price_guidance: "20-60 Shekels"
+        availability: Moderate
+        note: object_material_or_trade_value_judgment
+      passenger_transport:
+        category: Services
+        price_guidance: varies_by_route_and_danger
+        availability: Moderate
+        note: route_length_and_security_are_main_drivers
+      private_specialist_consultation:
+        category: Services
+        price_guidance: "100+ Shekels"
+        availability: Specialized
+        note: alchemist_scholar_engineer_jeweler_and_similar_roles
+    catalog_use_rule:
+      - use_for_ordinary_market_interaction
+      - use_when_item_is_not_unique_enough_to_deserve_its_own_authored_chapter
+      - use_when_table_needs_stable_baseline_faster_than_bespoke_negotiation_scene
+      - treat_prices_as_baseline_references_when_regional_identity_scarcity_or_faction_control_matters
+
+relationship_to_social_specializations:
+  note: >
+    Social specializations resolve live scene pressure. This system determines
+    what the world remembers, what a faction allows, and how hard the social
+    starting position is.
+  commonly_relevant_specializations:
+    - Liderazgo
+    - Negociacion
+    - Intimidacion
+    - Engaño
+    - Imitacion
+    - Sigilo
+
+ability_surfaces:
+  - standing_shift_with_bounded_faction_set
+  - renown_gain_loss_or_reinterpretation
+  - alliance_formation_maintenance_or_strain
+  - access_gate_to_goods_information_or_infrastructure
+  - price_modifier_or_priority_of_service
+  - settlement_availability_exception
+  - social_starting_position_inside_faction_controlled_scene
+
+design_rules:
+  - do_not_use_one_global_alignment_grid_for_trust_prices_or_political_access
+  - use_faction_standing_for_trust_and_access
+  - use_public_renown_for_action_pattern_and_public_read
+  - use_alliance_status_for_formal_or_semi_formal_commitment
+  - use_commerce_and_availability_for_market_reality

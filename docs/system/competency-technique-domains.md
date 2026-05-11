@@ -187,7 +187,7 @@ That means the normal output is:
 
 - `Armor + fire-origin Vulnerability/Resistance trait`
 - `Tolerance + Poison Resistance`
-- `Resonance + Corruption Resistance`
+- `Resonance + Affliction Resistance`
 
 and not:
 

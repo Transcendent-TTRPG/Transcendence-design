@@ -185,6 +185,11 @@ types:
         bonus: "+1 to R.R. against alterations"
       - id: curses
         bonus: "+1 to detect or resist curses"
+    subtype_scope_note: >
+      These subtypes are the canonical Ailment-family Resistances. Elemental
+      resistance/vulnerability traits and species-specific wording such as
+      venom tolerance or Abzu mental hardening should map back to these
+      families unless a future system explicitly adds a new Resistance subtype.
     progression_trigger: >
       R.R. fails or the character suffers a partial consequence from the corresponding
       effect, the exposure is relevant to the current rank, and the character survives.

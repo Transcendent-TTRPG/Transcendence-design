@@ -100,6 +100,18 @@ Withstanding specific harmful conditions and effects. Resistances do not reduce 
 
 Resistances are added to the corresponding `R.R.`, but they do not use Evolutionary Advantage.
 
+These are the **Ailment-family Resistances**.
+
+They are not the same thing as:
+
+- elemental traits such as heat, cold, fire, or lightning resistance/vulnerability
+- species wording such as "venom tolerance" or "Abzu mental hardening"
+
+Those concepts may explain the fiction of a Technique, species trait, or
+environmental interaction, but the competency layer still resolves through the
+canonical Resistance families above unless a future system explicitly adds a
+new subtype.
+
 ## Learning Through Exposure
 
 Resistances increase when the character is exposed to a real danger, suffers it, and survives its consequences.

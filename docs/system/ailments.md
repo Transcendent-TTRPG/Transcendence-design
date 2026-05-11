@@ -68,6 +68,15 @@ Severity may scale:
 
 But the three-level structure remains the same across all Ailment families.
 
+### Default application pressure
+
+Unless a specific Ailment entry says otherwise, the default resistance
+pressure for Ailment severity is:
+
+- `Minor / Leve` = `8 + NR`
+- `Moderate / Moderado` = `13 + NR`
+- `Severe / Grave` = `17 + NR`
+
 Severity does **not** always mean that the ongoing penalty must increase.
 
 Some Ailments use severity mainly to define:
@@ -227,6 +236,181 @@ should not be treated as Afflictions by themselves.
 
 They are better modeled as **transient bodily states or downstream effects**
 that an Affliction, Alteration, encounter, or Technique may cause.
+
+### Vestige / Link progression rule
+
+For the current horror-facing model, the main recurring source of Affliction
+pressure is interaction with:
+
+- `Vestigios`
+- `Vínculos`
+
+Each meaningful interaction with a `Vestigio` or `Vínculo` may call for an
+Affliction `R.R.`.
+
+If the user fails that roll:
+
+- the relevant sensory Affliction intensity increases by `1`
+- if no Affliction has manifested yet, the pressure still accumulates on the
+  relevant sensory track
+
+The source itself determines which sense or sensory channel is being stressed.
+
+### Intensity and manifestation
+
+Afflictions use a pressure track before and after manifestation.
+
+- intensity `0–4`: latent pressure; no full Affliction is manifested yet
+- intensity `5`: the first Affliction on that linked sensory track manifests at
+  `Minor / Leve`
+- intensity `10`: that manifested Affliction reaches `Moderate / Moderado`
+- intensity `15`: that manifested Affliction reaches `Severe / Grave`
+
+If a character would gain more intensity on a sensory Affliction that is
+already at `Severe / Grave`, the next increase should usually manifest a **new
+Affliction** on the same sense or source-linked channel rather than pushing the
+same entry beyond Severe.
+
+### Recovery and worsening
+
+Default Affliction pressure changes should follow:
+
+- `+1` intensity after a failed qualifying `Vestigio` or `Vínculo` interaction
+- `+1` intensity per night without adequate rest
+- `-1` intensity per night of good sleep
+- `-1` intensity per effective meditation session
+
+Specific Afflictions may add narrower triggers, treatment routes, or worsening
+conditions, but these are the current baseline rules.
+
+### Structure note
+
+An Affliction should usually include both:
+
+- a negative terrestrial effect that impairs ordinary function
+- a positive extranatural perception channel that reveals something ordinary
+  senses do not
+
+The resistance or treatment model should usually reduce the destabilizing cost
+without automatically erasing that anomalous perception channel.
+
+---
+
+## Infections
+
+Infections are biological or contaminant-driven Ailments that settle in the
+body, remain present through time, and may spread to other creatures.
+
+### Resistance Rule
+
+Infections use the Infection resistance formula:
+
+`R.R. = 1d10 + Tenacity + Resistances + Bonuses`
+
+### Contagion
+
+`Contagion / Contagio` is the difficulty of contracting the Infection when the
+target is first exposed.
+
+Each Infection should declare the qualifying exposure vectors and the
+difficulty used for that initial Infection `R.R.`.
+
+### Incubation
+
+An Infection may have an incubation period.
+
+During incubation:
+
+- the Infection is already present in the organism
+- no visible symptoms are required yet
+- the target may still be carrying the condition before its functional effects
+  fully appear
+
+Once incubation ends, the Infection begins manifesting symptoms and can then be
+treated, worsen, or spread according to its entry.
+
+### Propagation
+
+Once an Infection has passed incubation and is active, it may spread through
+valid physical contact or another vector defined by the Infection.
+
+A creature exposed to an active carrier must make the Infection `R.R.` defined
+by that Infection to avoid becoming infected.
+
+### Design note
+
+Infections are not short combat riders by default.
+
+They should usually define:
+
+- exposure vector
+- contagion difficulty
+- incubation
+- propagation conditions
+- treatment route
+- persistence inside the organism
+
+---
+
+## Poisons
+
+Poisons are toxic Ailments introduced into the body through a delivery method.
+
+### Resistance Rule
+
+Poisons use the Poison resistance formula:
+
+`R.R. = 1d10 + Tenacity + Resistances + Bonuses`
+
+### Delivery methods
+
+Common poison delivery families include:
+
+- inoculation
+- ingestion
+- inhalation
+- contact
+
+Each Poison entry should define which delivery methods it supports.
+
+### Persistence
+
+Poisons should not default to an arbitrary round timer.
+
+By base doctrine, a Poison remains active until:
+
+- it is neutralized
+- it leaves the system
+- or its own entry states another end condition
+
+### Handling note
+
+Manipulating poisons should usually require the proper kit, tools, or trained
+procedure. Identification, application, neutralization, and contamination risk
+belong to the Poison's handling logic, not to generic freeform narration.
+
+---
+
+## Curses
+
+Curses are extranatural Ailments attached to beings, objects, places, vows, or
+other binding structures.
+
+### Resistance Rule
+
+Curses normally use the Curse resistance formula or detection/resistance route
+defined by the specific curse.
+
+### Scope note
+
+Curses are not the same thing as Afflictions.
+
+- `Afflictions` distort mind, perception, and inner coherence
+- `Curses` bind a hostile extranatural rule onto a target, object, place, or
+  relation
+
+Some Curses may cause Afflictions downstream, but the two families should not
+be collapsed into one.
 
 ---
 

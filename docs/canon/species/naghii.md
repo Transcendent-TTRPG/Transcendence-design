@@ -127,7 +127,174 @@ The cost of this practice is taught explicitly within the order: opening the min
 
 ---
 
-## 5. System Connections
+## 5. Organization and Internal Variation
+
+Naghii society does not fracture only because people disagree. It fractures
+because disagreement under ruined skies, dangerous records, unstable sites,
+and incomplete truth can kill communities before certainty arrives.
+
+### Communities, archives, and regional divergence
+
+The Naghii are united by archive logic, not by a single state. Different
+communities formed around different ruin fields, different sky visibility,
+different survival routes, and different interpretations of what the Firstborn
+left behind. Some are inward archive-cities with deep initiation layers and
+minimal outside contact. Others are route-facing communities that survive only
+by trading warning, maps, escorts, and interpretation outward. Some are more
+Kha-dominant and enforcement-heavy. Others give more practical space to Saa
+projection, scouting, and signal authority.
+
+What remains universal is not uniform theology. It is the conviction that
+danger must be filtered through controlled access.
+
+### Bodies of authority
+
+Most Naghii communities contain some shifting combination of:
+
+- **priest-astronomer hierarchies** who preserve doctrine, calendars, and celestial interpretation
+- **Kha enforcement bodies** who guard thresholds, restricted records, and dangerous access points
+- **Saa interpretive bodies** who project warning, pattern, and consequence outward
+- **archive custodians and record chains** who preserve continuity across damage, fire, theft, or mistranslation
+- **surveyors, scouts, and ruin readers** who keep the outer world legible enough for the archives to remain relevant
+
+In theory these functions support one another. In practice they often compete
+over which kind of certainty deserves authority first.
+
+### Internal fault lines
+
+The three schools of Khataar interpretation are only one axis of tension.
+Other recurring fractures include:
+
+- Kha enforcement urgency versus Saa interpretive delay
+- inner archive secrecy versus field necessity
+- local ruin knowledge versus central doctrinal control
+- preservation of dangerous records versus destruction of what may be too costly to keep
+- communities that see the Firstborn as sacred completion versus communities that increasingly suspect civilizational failure
+- priestly authority versus surveyors, couriers, and guards who pay for delay with their bodies
+
+These tensions matter because Naghii life often depends on timing. A wrong
+sequence, a late warning, a blocked courier line, or a priesthood frozen by
+internal dispute can turn doctrinal disagreement into famine, ruin loss, mass
+exposure, or a preventable Abzu event.
+
+---
+
+## 6. Daily Life and Survival
+
+For the Naghii, survival is not only a matter of food and shelter. It is also
+the survival of procedure, record, warning, and correct reading. A Naghii
+community that eats but misreads the sky, mishandles a ruin, opens the wrong
+archive layer, or trusts a false translation may still be living inside the
+shape of its own extinction.
+
+### Food, labor, and the cost of caution
+
+Most Naghii communities live by carefully managed grain, fish, reptiles, small
+herd stock where terrain allows it, preserved meat, bitter oils, fermented
+stores, and trade goods that can survive long keeping. Their settlements often
+depend on routes that are vulnerable to interruption, contamination, predation,
+or political seizure.
+
+This makes caution material, not philosophical. A wrong reading may send a
+labor caravan into unstable ruins. A missed signal may cost a watch post its
+water. A badly timed opening of a sealed chamber may kill scribes, scouts, and
+guards before the priesthood finishes arguing about what happened.
+
+### Childhood, initiation, and fear
+
+Naghii children are raised under layered restriction. They learn early that
+not all doors are for opening, not all records are for touching, not all ruins
+are entered simply because they have been found, and not all truths become
+safer because they are spoken aloud.
+
+Initiation therefore has a survival function. It teaches not just reverence
+but sequencing:
+
+- when to wait
+- when to read
+- when to close distance
+- when to refuse access
+- when to leave a thing unnamed because naming it badly is worse than silence
+
+### Ordinary anxiety
+
+The common Naghii fear is not constant dramatic revelation. It is layered
+misreading:
+
+- a sign taken too early
+- a warning dismissed because the pattern was incomplete
+- a chamber opened in the wrong sequence
+- a projected reading turned into force before it was ready
+- a priest who trusted doctrine more than the ruin in front of them
+- a Kha and Saa authority split that leaves everyone else exposed while they debate
+
+This makes daily life narrower than it appears from outside. The archive exists
+because forgetting is fatal, but so is certainty built on the wrong fragment.
+
+### Aging, diaspora, and unbearable loss
+
+To age well among the Naghii is to remain useful as a keeper of sequence, a
+reader of pattern, a witness of precedent, or a body disciplined enough not to
+break under dangerous knowledge. Elders are valued not merely for memory but
+for surviving long enough to have seen which interpretations cost lives.
+
+What the Naghii find hardest to lose is often not territory alone but chain of
+meaning:
+
+- an archive segment burned, flooded, stolen, or mistranslated
+- a lineage that can no longer verify an old rite
+- a watch tradition broken for one season too many
+- a diaspora child who never learns which dangers their people already named
+- a signal that arrives and is recognized too late
+
+---
+
+## 7. External Relations
+
+Naghii communities tend to anchor themselves around ruins, stepped temple
+sites, dry uplands with sky visibility, archive-cities, guarded corridors, and
+trade routes where information can be controlled as tightly as goods. These are
+not comfortable holdings. They are exposed, contested, and often dependent on
+fragile infrastructure and dangerous neighboring ground.
+
+### Neighbors, rivals, and dependency
+
+Other species seek the Naghii for records, routes, warnings, astronomical
+interpretation, sealed knowledge, ruin maps, and controlled access to sites no
+one else understands. That makes the Naghii useful, but also resented. A
+people who control interpretation can be accused of wisdom, fraud, cowardice,
+or hoarding depending on how desperate everyone else is.
+
+Their archives create asymmetrical relationships:
+
+- some species need Naghii records to move safely
+- some fear Naghii gatekeeping more than the ruin itself
+- some trade for venom, signal-reading, or route logic
+- some would rather burn a record than let one priesthood decide what it means
+
+### The shape of danger
+
+The outside pressures most likely to damage Naghii continuity are:
+
+- ruin collapse and false archaeological confidence
+- tainted chambers, vestiges, and Abzu-sensitive sites
+- caravan interruption and route-loss
+- predators or raiders that strike scribes, couriers, and surveyors instead of fortresses
+- other species forcing access during famine, panic, or celestial fear
+- internal doctrinal splits that paralyze action until the danger has already crossed the threshold
+
+### How they are read by others
+
+To outsiders, the Naghii often look like a species that would rather classify a
+disaster than prevent it. Their patience can read as cowardice, their ritual
+gates as arrogance, and their caution as a form of cruelty that lets danger
+spread while permission is debated.
+
+Sometimes that judgment is unfair. Sometimes it is exactly what happened.
+
+---
+
+## 8. System Connections
 
 ### Competency affinities
 
@@ -212,7 +379,7 @@ The Naghii's history produces identifiable technique traditions. Because techniq
 
 ---
 
-## 6. Design Notes
+## 9. Design Notes
 
 ### What makes them distinct
 

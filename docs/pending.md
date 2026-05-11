@@ -39,7 +39,7 @@ Estas mecánicas están referenciadas en el texto existente pero no tienen regla
 
 ## Naghii — Pase de Técnicas Novice
 
-Objetivo: 20 técnicas Novice para la especie. Target breakdown según `data/system/techniques.yaml`.
+Objetivo canónico actual: 24 técnicas Novice para la especie. Target breakdown según `data/system/techniques.yaml`.
 
 | Bloque | Target | Hecho | Pendiente |
 | --- | --- | --- | --- |
@@ -48,6 +48,8 @@ Objetivo: 20 técnicas Novice para la especie. Target breakdown según `data/sys
 | resistance_hybrids | 2 | 2 ✓ | 0 |
 | specializations | 8 | 8 | 0 |
 | **Total** | **24** | **24** | **0** |
+
+Nota: este pase quedó cerrado bajo el bucket anterior de `defense`. El estándar canónico actual cambió a `armor_techniques` y requiere reconciliar si `Cruzar la Punta` y `Vaciar el Blanco` siguen viviendo como Técnicas válidas fuera de cuota o si deben reemplazarse por dos Técnicas de armadura.
 
 ### Técnicas completadas (21)
 

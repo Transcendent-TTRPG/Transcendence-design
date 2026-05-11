@@ -1,0 +1,204 @@
+authority: docs/system/mundane-equipment-and-objects.md
+
+purpose:
+  - provide_broad_catalog_for_ordinary_non_magical_carried_goods
+  - answer_mundane_inventory_questions_without_needing_full_authored_subsystems
+  - separate_daily_equipment_from_deeper_combat_and_material_layers
+
+non_goals:
+  - define_full_weapon_families_with_profile_logic
+  - define_armor_slot_and_block_logic
+  - define_vestigios_or_vinculos
+  - replace_materials_and_fabrication_for_complex_commissioned_goods
+
+category_model:
+  - Travel_Gear
+  - Camp_and_Sustenance
+  - Light_and_Observation
+  - Writing_and_Recordkeeping
+  - Field_Utility
+  - Climbing_and_Access
+  - Medical_and_Sanitary
+  - Alchemical_and_Sample_Handling
+  - Mundane_Ammunition
+  - Packages_and_Loadouts
+
+catalog:
+  travel_gear:
+    travel_backpack:
+      price: 30
+      availability: Common
+      weight: "1 kg"
+      note: durable_pack_with_routine_travel_compartments
+    waterskin_or_canteen:
+      price: 12
+      availability: Common
+      weight: "1 kg empty"
+      note: standard_carried_water_container
+    rain_poncho:
+      price: 12
+      availability: Common
+      weight: "0.5 kg"
+      note: weather_protection_for_ordinary_rain_exposure
+    compass:
+      price: 35
+      availability: Moderate
+      weight: "0.3 kg"
+      note: practical_direction_reference
+    reading_glasses:
+      price: 25
+      availability: Common
+      weight: "0.1 kg"
+      note: close_work_aid_for_documents_maps_or_detail_tasks
+  camp_and_sustenance:
+    bedroll:
+      price: 25
+      availability: Common
+      weight: "2 kg"
+      note: standard_sleep_gear_for_moderate_conditions
+    travel_rations_1_day:
+      price: 10
+      availability: Common
+      weight: "0.5 kg"
+      note: preserved_daily_field_food
+    field_cook_set:
+      price: 30
+      availability: Common
+      weight: "2 kg"
+      note: pot_small_pan_and_simple_cooking_implements
+  light_and_observation:
+    torch:
+      price: 10
+      availability: Common
+      weight: "1 kg"
+      note: routine_mobile_light_source
+    wax_candles_10:
+      price: 5
+      availability: Common
+      weight: "0.2 kg"
+      note: small_interior_or_camp_light_source
+    oil_lamp:
+      price: 20
+      availability: Moderate
+      weight: "1 kg"
+      note: directed_and_more_stable_light_source
+    camouflage_cloth:
+      price: 30
+      availability: Moderate
+      weight: "1 kg"
+      note: mundane_concealment_aid_for_camp_stash_or_equipment
+  writing_and_recordkeeping:
+    writing_kit:
+      price: 10
+      availability: Common
+      weight: "0.2 kg"
+      note: ink_and_basic_writing_implements
+    blank_journal:
+      price: 20
+      availability: Common
+      weight: "0.5 kg"
+      note: general_record_book
+    local_territory_map:
+      price: 60
+      availability: Moderate
+      weight: "0.1 kg"
+      note: region_specific_authored_document
+  field_utility:
+    rope_10m:
+      price: 120
+      availability: Common
+      weight: "1.5 kg"
+      note: standard_utility_rope
+    basic_repair_box:
+      price: 35
+      availability: Common
+      weight: "3 kg"
+      note: general_minor_repair_implements
+    whetstone:
+      price: 15
+      availability: Common
+      weight: "0.5 kg"
+      note: edge_upkeep_and_simple_sharpening
+    mortar_and_pestle:
+      price: 30
+      availability: Moderate
+      weight: "1.5 kg"
+      note: crushing_and_mixing_dry_or_soft_matter
+  climbing_and_access:
+    climbing_hooks_set:
+      price: 30
+      availability: Specialized
+      weight: "0.8 kg"
+      note: anchor_support_for_ascent_or_secured_rope_work
+  medical_and_sanitary:
+    bandages_10:
+      price: 8
+      availability: Common
+      weight: "0.2 kg"
+      note: wound_covering_and_binding_material
+    antiseptic_bottle:
+      price: 20
+      availability: Common
+      weight: "0.3 kg"
+      note: basic_cleansing_agent_for_routine_treatment
+  alchemical_and_sample_handling:
+    test_tubes_5:
+      price: 15
+      availability: Specialized
+      weight: "0.5 kg"
+      note: basic_liquid_or_specimen_handling
+  mundane_ammunition:
+    steel_arrows_20:
+      price: 20
+      availability: Common
+      weight: "1 kg"
+      note: baseline_bow_ammunition
+    darts_10:
+      price: 10
+      availability: Common
+      weight: "0.3 kg"
+      note: simple_light_thrown_ammunition
+    sling_stones_10:
+      price: 15
+      availability: Common
+      weight: "2 kg"
+      note: routine_sling_ammunition
+    specialty_ammunition_rule: usually_begins_at_specialized_or_higher_unless_setting_logic_normalizes_it
+  packages_and_loadouts:
+    adventure_pack:
+      price: 150
+      availability: Moderate
+      weight: "12 kg"
+      contains:
+        - bedroll
+        - waterskin_or_canteen
+        - field_cook_set
+        - rope_10m
+        - basic_light
+        - general_travel_basics
+    dungeon_pack:
+      price: 120
+      availability: Specialized
+      weight: "10 kg"
+      contains:
+        - rope_10m
+        - torches
+        - basic_repair_tools
+        - first_pass_medical_basics
+        - compact_rations
+        - confined_space_support_goods
+
+catalog_use_rule:
+  - use_when_object_is_mundane
+  - use_when_object_is_bought_carried_stored_consumed_or_replaced_as_part_of_ordinary_play
+  - use_when_table_does_not_need_full_subsystem_or_bespoke_authored_item_entry
+  - use_when_market_question_is_more_about_access_price_or_load_than_unique_powers
+  - move_to_more_specific_system_layer_if_object_becomes_culturally_unique_faction_locked_materially_exceptional_or_mechanically_deep
+
+relationships:
+  faction_reputation_and_commerce:
+    determines_how_easy_objects_are_to_source_at_what_price_and_through_whose_channels
+  materials_and_fabrication:
+    determines_how_more_complex_goods_are_made_refined_repaired_or_commissioned
+  equipment_overview:
+    governs_structural_combat_rules_for_armor_shields_and_deeper_combat_equipment

@@ -40,13 +40,25 @@ Every species encountered the ruins of the ancient civilization and drew differe
 
 The horror of the setting is not equally visible to all species. Some look at the sky and see danger. Others see order. Others have deliberately stopped looking. The cosmicist dimension of each species should emerge from their specific mythological inheritance, not from a generic "scary universe" overlay.
 
+### Survival is never assumed
+
+Species in Transcendence should be written as peoples surviving a world that is
+chaotic, dangerous, and often barely habitable. Climate, terrain, monstrous
+ecologies, ruin pressure, scarcity, contamination, Tauma fallout, and conflict
+with other species are not background decoration. They shape institutions,
+rituals, habits, migration, architecture, and social fear.
+
+If a species description feels comfortable without explaining how that comfort
+is defended, preserved, rationed, hidden, or paid for, the species is probably
+under-authored for the tone of the setting.
+
 ---
 
 ## Species Roster
 
 | # | Species | Animal Base | Cultural Analog | Cosmicist Hook | Doc |
 |---|---------|-------------|-----------------|----------------|-----|
-| 01 | Naghii | Serpent | Sumerian / Mesopotamian | Oldest astronomical records in the world; Khataar marks the catastrophe but can't be dated; watching a sky they're not sure is done | [serpientes.md](serpientes.md) |
+| 01 | Naghii | Serpent | Sumerian / Mesopotamian | Oldest astronomical records in the world; Khataar marks the catastrophe but can't be dated; watching a sky they're not sure is done | [naghii.md](naghii.md) |
 | 02 | Sauri | Crocodile | Egyptian / ancient fluvial temple culture | Tauma must be contained in proper vessels; their ruler is treated as the living proof that flesh can channel the primordial current without breaking | [sauri.md](sauri.md) |
 | 03 | — | Elephant | — | — | — |
 | 04 | — | Ant | — | Hive mind, loss of individuality, colony as consuming entity | — |
@@ -60,13 +72,65 @@ The horror of the setting is not equally visible to all species. Some look at th
 
 ---
 
-## Structural Template
+## Canonical Species Template
 
-Each species document follows this structure:
+Species should now be authored against the fuller canonical template, not only
+the older 6-section skeleton.
 
-1. **Identity** — name, animal base, cultural analog, cosmicist hook
-2. **Body** — physical description as humanoid, anatomical traits, natural attack forms
-3. **Culture** — social structure, worldview, interpretation of the ruins and the catastrophe
-4. **Theology** — relationship with Tauma and El Limbo, deities or belief entities, what they fear
-5. **System connections** — competency affinities, technique implications, species-specific mechanics
-6. **Design notes** — distinctive tone, what to avoid
+Reference file: [species-template.md](species-template.md)
+Development assessment: [species-development-status.md](species-development-status.md)
+
+### Required layers
+
+1. **Identity**
+   Name, animal base, cultural analog, cosmicist hook, and the species'
+   strongest first impression.
+2. **Body**
+   Humanoid anatomy, proportions, locomotion, natural weapon logic, sensory
+   channels, visible biological markers, and any relevant internal variants.
+3. **Culture**
+   Social structure, worldview, authority patterns, inheritance of ruins, and
+   the central civilizational idea that organizes daily life.
+4. **Theology and Cosmology**
+   Relationship with Tauma, El Limbo / Abzu / equivalent, sacred history,
+   what they believe happened, and what they are most afraid of.
+5. **Organization and Internal Variation**
+   Castes, orders, schools, priesthoods, city-states, lineages, regional
+   branches, or other internal differences; what is universal versus what
+   varies between communities.
+6. **Daily Life and Life Cycle**
+   Food, sleep, kinship, childhood, adulthood, old age, rites of passage,
+   prestige, shame, mourning, and what an ordinary member's life looks like
+   outside elite institutions.
+7. **External Relations**
+   Geographic distribution, typical habitats, neighbors, major alliances,
+   rivalries, trade patterns, old conflicts, and how other species usually
+   read them.
+8. **Material Expression and Language**
+   Clothing, architecture, tools, ritual objects, ornament, naming patterns,
+   titles, writing logic, and the species' visible material culture.
+9. **System Connections**
+   Competency affinities, natural attack forms, arsenal fit, resistances or
+   vulnerabilities, species-specific mechanics, and Technique implications.
+10. **Player Character Hooks and Open Questions**
+    What a player character of that species likely knows, what they may have
+    left behind, how they fit outside their home society, and unresolved
+    questions that still need worldbuilding.
+
+### Design rule
+
+To count as narratively robust, a species should not stop at combat identity
+or Technique seeds alone. It should support:
+
+- fiction-level distinction
+- world placement
+- internal variation
+- everyday life
+- player-character usability
+- system integration
+
+### Legacy note
+
+Older species documents may still use the earlier 6-section structure. They do
+not need to be discarded, but future revision should migrate them toward the
+canonical 10-layer template above.
