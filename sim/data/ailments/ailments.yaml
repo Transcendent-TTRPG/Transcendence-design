@@ -1,0 +1,113 @@
+ailments:
+  - id: aterrorizado
+    family: alteration
+    severity_model: minor_moderate_severe
+    timing:
+      activation_start: []
+      action_gate:
+        - severe_first_feared_line_attempt_may_abort
+      reevaluation_points:
+        - explicit_recovery
+        - feared_line_change
+      expiry_mode: fiction_change_or_recovery
+      fiction_release_events:
+        - feared_line_changed
+    numeric_burden:
+      source: rank_bonus
+      applies_to:
+        - ar_against_feared_line
+        - dr_against_feared_line
+        - cr_against_feared_line
+        - sr_against_feared_line
+    qualitative_burden:
+      minor:
+        - line_specific_pressure
+      moderate:
+        - containment_required_to_commit
+      severe:
+        - first_attempt_may_abort
+    recovery:
+      type: specialization_roll
+      competency: Contencion
+      threshold_model: source_severity
+    persistence_rule: until_line_changes_or_recovery_succeeds
+    application_notes:
+      - Numeric burden is driven by source rank bonus.
+      - Severity adds qualitative pressure rather than replacing the numeric burden.
+
+  - id: aturdido
+    family: alteration
+    severity_model: minor_moderate_severe
+    timing:
+      activation_start:
+        - threaten_next_meaningful_activation
+        - moderate_and_severe_repeat_until_recovery
+      action_gate: []
+      reevaluation_points:
+        - activation_start
+        - explicit_recovery
+      expiry_mode: recovery_or_minor_consumption
+      fiction_release_events: []
+    numeric_burden:
+      source: rank_bonus
+      applies_to:
+        - rr
+        - cr
+    qualitative_burden:
+      minor:
+        - lose_next_meaningful_activation
+      moderate:
+        - lose_next_meaningful_activation
+        - preparation_becomes_zero
+        - repeats_until_tolerancia_recovery
+      severe:
+        - lose_next_meaningful_activation
+        - preparation_becomes_zero
+        - repeats_until_tolerancia_recovery
+        - timing_sensitive_reactions_require_recovery
+    recovery:
+      type: specialization_roll
+      competency: Tolerancia
+      threshold_model: source_severity
+    persistence_rule: until_removed
+    application_notes:
+      - All severities threaten the next meaningful ATB activation.
+      - Moderate and severe can continue across multiple lost activations until recovery succeeds.
+
+  - id: conmocionado
+    family: alteration
+    severity_model: minor_moderate_severe
+    timing:
+      activation_start: []
+      action_gate:
+        - severe_first_intellect_or_composure_attempt_may_fail
+      reevaluation_points:
+        - explicit_recovery
+        - each_activation_for_first_gate
+      expiry_mode: recovery_only
+      fiction_release_events: []
+    numeric_burden:
+      source: rank_bonus
+      applies_to:
+        - composure_cr
+        - intellect_cr
+        - composure_sr
+        - intellect_sr
+    qualitative_burden:
+      minor:
+        - cognitive_destabilization
+      moderate:
+        - cognitive_destabilization
+        - preparation_becomes_zero
+      severe:
+        - cognitive_destabilization
+        - preparation_becomes_zero
+        - first_composure_or_intellect_attempt_each_activation_may_fail
+    recovery:
+      type: specialization_roll
+      competency: Contencion
+      threshold_model: source_severity
+    persistence_rule: until_removed
+    application_notes:
+      - Numeric burden is driven by source rank bonus.
+      - Moderate and severe directly suppress Preparation while active.

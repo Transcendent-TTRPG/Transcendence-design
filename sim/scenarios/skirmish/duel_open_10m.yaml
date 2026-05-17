@@ -1,0 +1,3 @@
+scenario:
+  id: duel_open_10m
+  description: Two combatants start 10 meters apart in open space.

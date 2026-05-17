@@ -1,0 +1,17 @@
+id: hidden_gain_crossing_4m
+question: How often does a watched 4-meter crossing successfully produce `Oculto`?
+scenario: hidden_crossing
+retrieval_profile: concealment_rule_lookup
+domains:
+  - concealment
+actors:
+  mover: zarnag_novice_skirmisher
+  watcher: common_guard_observer
+policies:
+  mover: stealth_crosser
+  watcher: conservative
+measurements:
+  - hidden_gain_rate
+  - detection_rate
+  - crossing_success_rate
+iterations: 20000

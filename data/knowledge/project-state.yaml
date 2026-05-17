@@ -1,0 +1,33 @@
+project_state:
+  simulation:
+    status: in_progress
+    notes:
+      - README, architecture, and logical data schemas are authored.
+      - Domain model design is the next major planning step.
+
+  concealment:
+    status: normalized
+    notes:
+      - Hidden is a formal state.
+      - Concealment is the subsystem, not the granted effect.
+      - Hidden preserves its acquiring roll as the active value.
+
+  ailments:
+    status: modernized_partial
+    notes:
+      - Major review pass completed for many Alterations.
+      - Rank-bonus penalty doctrine is established for the relevant family.
+      - Structural/binary states remain intentionally distinct.
+
+  zarnag_species_pass:
+    status: complete_for_current_scope
+    notes:
+      - 24 novice species-origin techniques currently authored.
+      - 12 weapon, 2 defense, 2 hybrids, 8 specialization.
+
+  knowledge_layer:
+    status: established_initial_structure
+    notes:
+      - Governance and concept-model documents are created.
+      - Structured registries are created.
+      - Further expansion should track more system concepts and species states.

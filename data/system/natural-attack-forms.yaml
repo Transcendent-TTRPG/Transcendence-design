@@ -98,6 +98,24 @@ forms:
           Sauri bite Techniques should emphasize closure, crushing pressure,
           sustained hold, and structural break. They are closer to heavy impact
           and containment than to small-fang precision.
+      - species: "Zarnag"
+        expression_id: "zarnag_carrion_bite"
+        availability: "All Zarnag"
+        contact_logic: "Infectious breach, foul-contact pressure, tearing lock, and committed body-following maul"
+        compatible_profiles:
+          - "Corrosion"
+          - "Shadow Pressure"
+          - "Rend"
+          - "Charge"
+        restricted_profiles:
+          - "Bastion"
+          - "Ricochet"
+          - "Precision"
+        identity_notes: >
+          Zarnag bite Techniques should emphasize contamination risk, panic at
+          close range, tearing commitment, and the sense that once contact is
+          secured the body follows brutally. They should not become clean fang
+          precision or stationary heavy-jaw fortification.
 
   - id: tail
     name: "Tail"
@@ -180,6 +198,25 @@ forms:
       - "Precision"
       - "Ricochet"
     identity_notes: "Claws sit naturally between light predation and tearing offense. They map strongly to mobile and invasive profiles."
+    species_profile_expressions:
+      - species: "Zarnag"
+        expression_id: "zarnag_scavenger_claws"
+        availability: "All Zarnag"
+        contact_logic: "Fast raking harassment, opportunistic hooking, short-reach chaining, and messy close-contact tearing"
+        compatible_profiles:
+          - "Skirmish"
+          - "Shadow Pressure"
+          - "Rend"
+          - "Unpredictability"
+        restricted_profiles:
+          - "Bastion"
+          - "Precision"
+          - "Ricochet"
+        identity_notes: >
+          Zarnag claw Techniques should emphasize close harassment, panic
+          pressure, opportunistic tearing, and chained short-reach contact once
+          an exchange loses cleanliness. They should not feel like elegant
+          blade flow or careful point-exact weapon play.
 
   - id: shell
     name: "Shell"

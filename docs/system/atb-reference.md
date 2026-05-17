@@ -120,6 +120,9 @@ Ese costo representa cuánto retrasa la siguiente oportunidad de actuar.
 | Acción pesada | 7 | Otros actúan antes de tu recuperación |
 | Acción extrema | 9 | Reservada para habilidades mayores — no se usa en el nivel base |
 
+Los valores intermedios también son válidos cuando una acción o Técnica cae entre
+dos anclas de sensación real, por ejemplo `6` entre estándar y pesada.
+
 ### Acciones base universales
 
 | Acción | Costo de ritmo | Desgaste |
@@ -127,14 +130,16 @@ Ese costo representa cuánto retrasa la siguiente oportunidad de actuar.
 | Acción libre (soltar, hablar) | 0 | 0 |
 | Interactuar | 3 | 1 * |
 | Moverse | 5 | 1 |
-| Leer / entender (básico) | 5 | — |
-| Atacar con arma a una mano | 5 | 1 |
-| Atacar con arma a dos manos | 7 | 2 |
-| Atacar con dos armas a una mano | 7 | 2 |
+| Ocultarse | 6 | 1 |
+| Usar Especialización | 6 | 1 |
+| Atacar con arma natural | 6 | 1 |
+| Atacar con arma a una mano | 6 | 1 |
+| Atacar con arma a dos manos | 7 | 1 |
+| Atacar con dos armas a una mano | 8 | 1 |
 
-\* Solo cuando la interacción es significativa y ocurre bajo presión real. \— Desgaste de Leer/entender pendiente de definición de capa cognitiva/social.
+\* Solo cuando la interacción es significativa y ocurre bajo presión real.
 
-> **Regla estructural de Desgaste:** acciones estándar bajo presión → 1 Desgaste · acciones pesadas → 2 Desgaste · acciones extremas → 3 Desgaste (pendiente definición específica). El costo de ritmo y el Desgaste están relacionados, pero no son lo mismo.
+> **Regla estructural de Desgaste:** las acciones base bajo presión suelen partir de `1` Desgaste, pero el costo de ritmo y el Desgaste no escalan de forma automática ni idéntica. Las Técnicas pueden subir, bajar o redistribuir esa relación cuando su identidad lo justifique.
 
 ---
 

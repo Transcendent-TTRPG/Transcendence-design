@@ -1,0 +1,62 @@
+sources:
+  - id: system_docs
+    owner: rules_prose
+    paths:
+      - Transcendence-design/docs/system
+    preferred_for:
+      - canonical wording
+      - subsystem doctrine
+      - mechanical explanation
+
+  - id: system_data
+    owner: rules_data
+    paths:
+      - Transcendence-design/data/system
+    preferred_for:
+      - structured authority data
+      - machine-readable rule summaries
+      - simulator crosswalk inputs
+
+  - id: adrs
+    owner: formal_design_decisions
+    paths:
+      - Transcendence-design/docs/adr
+    preferred_for:
+      - accepted architectural decisions
+      - long-lived design tradeoffs
+
+  - id: knowledge_docs
+    owner: normalized_doctrine
+    paths:
+      - Transcendence-design/docs/knowledge
+    preferred_for:
+      - terminology
+      - boundaries
+      - governance
+      - lookup guidance
+
+  - id: knowledge_data
+    owner: structured_project_memory
+    paths:
+      - Transcendence-design/data/knowledge
+    preferred_for:
+      - concept registries
+      - decision summaries
+      - project-state lookup
+
+  - id: simulation_docs
+    owner: simulation_design
+    paths:
+      - Transcendence-design/sim
+    preferred_for:
+      - simulator architecture
+      - schemas
+      - experiment design
+
+  - id: publications
+    owner: rendered_books
+    paths:
+      - Transcendence-publications
+    preferred_for:
+      - publication wording
+      - rendered output verification

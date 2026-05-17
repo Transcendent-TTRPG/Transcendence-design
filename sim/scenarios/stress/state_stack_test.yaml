@@ -1,0 +1,3 @@
+scenario:
+  id: state_stack_test
+  description: Repeated state application and resolution under ATB pressure.

@@ -79,6 +79,38 @@ It represents trained use of the armor's blocking profile, weight, structure, an
 
 This competency interacts directly with zone-based block.
 
+### Defensive doctrine by family
+
+For Technique authoring, armor competencies should be read through two larger
+defensive families:
+
+- `Evasion family`: `Evasion` and `Light Armor`
+- `Mitigation family`: `Medium Armor` and `Heavy Armor`
+
+`Light Armor` belongs to the evasive family, not the mitigation family.
+
+That means light armor is primarily there to preserve:
+
+- strong `D.R.`
+- mobility
+- angle change
+- peel-outs
+- recovery into another action
+
+If the defense still fails, the light armor can contribute its zone `Bloqueo`,
+but that is not its main tactical identity.
+
+By contrast, medium and heavy armor are primarily there to:
+
+- absorb impact
+- improve `Bloqueo`
+- preserve structure
+- reduce what gets through
+- and survive pressure through weight and material
+
+So when a Technique uses `Light Armor`, it should normally feel closer to
+evasion than to bracing.
+
 ### Armor competency progression
 
 Armor competency progresses through **failed `D.R.`**, but only when all of the following are true:

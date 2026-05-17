@@ -41,6 +41,15 @@ severity_model:
     Severity does not always increase the ongoing penalty. Some Ailments use
     severity mainly to define application pressure, resistance difficulty, or
     removal difficulty while the settled result remains functionally the same.
+  ongoing_effect_scaling_note: >
+    When an Ailment's main ongoing burden is a numeric penalty, prefer that
+    value to come from the rank bonus of the source that applied it, not from
+    severity alone. In those cases, severity should usually decide which extra
+    restrictions, consequence layers, recovery burdens, or commitment costs
+    activate. By contrast, more binary or structural Ailments such as
+    blindness, paralysis, knockdown, or full restraint often use severity
+    more for application pressure, recovery difficulty, persistence, or
+    additional state burdens than for numeric penalty scaling.
 
 duration_models:
   preferred:
@@ -203,14 +212,17 @@ entries:
       response, and degraded physical execution.
     severity_levels:
       minor:
-        - "+1 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
-        - "-1 to physical Specialization Rolls"
+        - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
+        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
       moderate:
-        - "+2 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
-        - "-2 to physical Specialization Rolls"
+        - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
+        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "cannot use precise reactive physical answers such as movement-dependent reactions, tight interception, or other timing-sensitive physical responses unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
       severe:
-        - "+3 rhythm cost to attacks, movement, and Techniques tied to attacks or movement"
-        - "-3 to physical Specialization Rolls"
+        - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
+        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "cannot use precise reactive physical answers such as movement-dependent reactions, tight interception, or other timing-sensitive physical responses unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts movement, an attack, or a Technique tied to attacks or movement, it must first attempt that Tolerancia Specialization Roll; on a failure, the attempted action does not resolve and is lost to lock, spasm, or discharge recoil as the fiction requires"
     application_requirements:
       - meaningful_electrical_discharge
       - prolonged_conductive_exposure
@@ -248,11 +260,14 @@ entries:
       compensate for, or push through the damaged tissue.
     severity_levels:
       minor:
-        - "+1 rhythm cost to strenuous physical actions that stress the wound"
+        - "strenuous physical actions that directly stress the wound cost additional Rhythm equal to the rank bonus of the source that applied Lacerado"
       moderate:
-        - "+2 rhythm cost to strenuous physical actions that stress the wound"
+        - "strenuous physical actions that directly stress the wound cost additional Rhythm equal to the rank bonus of the source that applied Lacerado"
+        - "actions that explosively drive force, weight, leverage, or full-body motion through the wounded line require a Tolerancia Specialization Roll against the original severity for that attempt"
       severe:
-        - "+3 rhythm cost to strenuous physical actions that stress the wound"
+        - "strenuous physical actions that directly stress the wound cost additional Rhythm equal to the rank bonus of the source that applied Lacerado"
+        - "actions that explosively drive force, weight, leverage, or full-body motion through the wounded line require a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts one of those strenuous wound-stressing physical actions, it must first attempt that Tolerancia Specialization Roll; on a failure, the attempted action or roll does not resolve and is lost to recoil, guarded movement, protective collapse, or pain break as the fiction requires"
     application_requirements:
       - deep_cut_or_laceration
       - tearing_bite_or_claw
@@ -294,13 +309,16 @@ entries:
     severity_levels:
       minor:
         - "movement becomes 0"
-        - "-1 to A.R., I.R., D.R., and physical Specialization Rolls"
+        - "A.R., I.R., D.R., and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Atrapado whenever those rolls are made through the active restraint"
       moderate:
         - "movement becomes 0"
-        - "-2 to A.R., I.R., D.R., and physical Specialization Rolls"
+        - "A.R., I.R., D.R., and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Atrapado whenever those rolls are made through the active restraint"
+        - "cannot use large-body, full-extension, or heavily leveraged actions through the restrained line unless first succeeding on an Agarre Specialization Roll against the original severity for that attempt"
       severe:
         - "movement becomes 0"
-        - "-3 to A.R., I.R., D.R., and physical Specialization Rolls"
+        - "A.R., I.R., D.R., and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Atrapado whenever those rolls are made through the active restraint"
+        - "cannot use large-body, full-extension, or heavily leveraged actions through the restrained line unless first succeeding on an Agarre Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts to attack, intercept, or break free through the restrained line, it must first attempt that Agarre Specialization Roll; on a failure, the attempted action does not resolve and is lost to bind, catch, twist, or restraint drag as the fiction requires"
     application_requirements:
       - creature_grapple_or_hold
       - restraining_net_or_mechanism
@@ -337,14 +355,17 @@ entries:
       motor response, and agile movement.
     severity_levels:
       minor:
-        - "-1 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "Agility Characteristic Rolls and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Congelado"
         - "movement reduced by half"
       moderate:
-        - "-2 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "Agility Characteristic Rolls and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Congelado"
         - "movement reduced by half"
+        - "cannot voluntarily sprint, leap, climb, or use another clearly explosive mobility line unless first succeeding on an Aclimatación Specialization Roll against the original severity for that attempt"
       severe:
-        - "-3 to Agility Characteristic Rolls and Agility Specialization Rolls"
+        - "Agility Characteristic Rolls and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Congelado"
         - "movement reduced by half"
+        - "cannot voluntarily sprint, leap, climb, or use another clearly explosive mobility line unless first succeeding on an Aclimatación Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts a movement action or Agility-based committed action through the cold-impaired line, it must first attempt that Aclimatación Specialization Roll; on a failure, the attempted action does not resolve and is lost to stiffness, cold lock, or slipping motor response as the fiction requires"
     application_requirements:
       - prolonged_freezing_exposure
       - ice_based_hostile_effect
@@ -419,14 +440,17 @@ entries:
       mental steadiness, and cognitive continuity.
     severity_levels:
       minor:
-        - "-1 to Composure and Intellect Characteristic Rolls"
-        - "-1 to Composure and Intellect Specialization Rolls"
+        - "Composure and Intellect Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Conmocionado"
+        - "Composure and Intellect Specialization Rolls suffer a penalty equal to that same rank bonus"
       moderate:
-        - "-2 to Composure and Intellect Characteristic Rolls"
-        - "-2 to Composure and Intellect Specialization Rolls"
+        - "Composure and Intellect Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Conmocionado"
+        - "Composure and Intellect Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "Preparation becomes 0"
       severe:
-        - "-3 to Composure and Intellect Characteristic Rolls"
-        - "-3 to Composure and Intellect Specialization Rolls"
+        - "Composure and Intellect Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Conmocionado"
+        - "Composure and Intellect Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "Preparation becomes 0"
+        - "the first time on each activation the target attempts a Composure- or Intellect-based Characteristic Roll or Specialization Roll, it must first succeed on a Contención Specialization Roll against the original severity for that attempt; on a failure, the attempted action or roll does not resolve and is lost to cognitive break, drift, or mental stall as the fiction requires"
     application_requirements:
       - impact_or_internal_shock
       - blast_force_or_collision
@@ -490,6 +514,9 @@ entries:
         Normally resisted with Alteration Resistance when first applied. If
         already suffered, recovery is mainly physiological unless a specific
         source overrides it.
+        Use Paralizado only when meaningful bodily action is actually arrested;
+        use Atrapado for restraint, Aturdido for lost activation, and Impedido
+        for execution breakdown that still leaves the body meaningfully active.
     stacking_rule: >
       The paralyzed state never creates parallel copies. A stronger
       application replaces a weaker one; an equal application usually refreshes
@@ -516,7 +543,10 @@ entries:
       - other_fictionally_credible_hearing_disruption_source
     effect: >
       The target loses auditory function needed for hearing-based perception,
-      reaction, and task resolution.
+      reaction, and task resolution. Use Ensordecido only when hearing is no
+      longer a usable primary sense; if a source only muddies one auditory
+      line, one ear, one echo path, or one bounded read channel, use a
+      procedural state instead.
     duration:
       model: until_removed
       notes: >
@@ -557,7 +587,10 @@ entries:
       - other_fictionally_credible_loss_of_sight
     effect: >
       The target is functionally blind and suffers major penalties to combat
-      and specialization execution.
+      and specialization execution. Use Cegado only when vision is no longer
+      a usable primary sense; if a source only fouls one eye-line, one
+      read-point, or one bounded visual channel, use a procedural state
+      instead.
     duration:
       model: until_removed
       notes: >
@@ -583,30 +616,36 @@ entries:
       foe, or intent in the immediate scene.
     severity_levels:
       minor:
-        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+        - "A.R., I.R., and mental Specialization Rolls that require clean friend-foe discrimination, target identification, or intent reading suffer a penalty equal to the rank bonus of the source that applied Confundido"
       moderate:
-        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+        - "A.R., I.R., and mental Specialization Rolls that require clean friend-foe discrimination, target identification, or intent reading suffer a penalty equal to the rank bonus of the source that applied Confundido"
+        - "before the target can deliberately choose a specific creature, side, or operative line in a crowded, ambiguous, or fast-changing scene, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
       severe:
-        - "at the start of each ATB activation, roll 1d100; on a result greater than 50, attack the nearest enemy even if that creature is actually an ally"
+        - "A.R., I.R., and mental Specialization Rolls that require clean friend-foe discrimination, target identification, or intent reading suffer a penalty equal to the rank bonus of the source that applied Confundido"
+        - "before the target can deliberately choose a specific creature, side, or operative line in a crowded, ambiguous, or fast-changing scene, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts such a directed choice, it must first attempt that Enfoque Specialization Roll; on a failure, the attempted action or roll does not resolve cleanly and the target must either hesitate, choose the nearest obvious line, or misdirect toward the wrong creature or priority as the fiction requires"
     application_requirements:
       - bodily_shock_or_sensory_overload
       - neural_disruption_or_concussion
       - toxins_or_other_fictionally_credible_operational_judgment_break
     effect: >
       The target cannot reliably direct intent during the scene and may
-      misdirect aggression.
+      misidentify targets, sides, or operative priorities.
     duration:
       model: until_removed
       notes: >
         Persists until enough operational clarity returns.
     recovery:
       notes: >
-        At the start of each activation, before the confusion roll, the target
-        may attempt an Enfoque Specialization Roll against the original
-        severity. On success, Confundido ends.
+        Ends with a successful Enfoque Specialization Roll against the original
+        severity once enough operational clarity returns. Medicina or removal
+        of the destabilizing source may also end it if the fiction supports
+        that route.
     resistance_or_escape:
       notes: >
-        Normally resisted with Alteration Resistance when first applied.
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, recovery is mainly about regaining judgment continuity rather
+        than simply waiting out one random moment.
     stacking_rule: >
       The confused state never creates parallel copies. A stronger application
       replaces a weaker one; an equal application usually refreshes
@@ -618,11 +657,14 @@ entries:
       The target's posture and bodily stability are compromised.
     severity_levels:
       minor:
-        - "-1 to D.R. and physical Specialization Rolls"
+        - "D.R. and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desequilibrado"
       moderate:
-        - "-2 to D.R. and physical Specialization Rolls"
+        - "D.R. and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desequilibrado"
+        - "cannot voluntarily rush, force movement, commit to unstable repositioning, or use posture-demanding mobility lines unless first succeeding on an Equilibrio Specialization Roll against the original severity for that attempt"
       severe:
-        - "-3 to D.R. and physical Specialization Rolls"
+        - "D.R. and physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desequilibrado"
+        - "cannot voluntarily rush, force movement, commit to unstable repositioning, or use posture-demanding mobility lines unless first succeeding on an Equilibrio Specialization Roll against the original severity for that attempt"
+        - "if the target fails that required Equilibrio Specialization Roll while trying to commit bodily weight through the unstable line, it immediately becomes Derribado at the same severity instead of merely losing the attempt"
     application_requirements:
       - footing_or_momentum_loss
       - bodily_shock_or_unstable_ground
@@ -651,36 +693,49 @@ entries:
       The target is stunned badly enough to lose its next meaningful activation.
     severity_levels:
       minor:
-        - "-1 to Resistance Rolls and Characteristic Rolls"
+        - "Resistance Rolls and Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Aturdido"
         - "lose the next meaningful ATB activation"
       moderate:
-        - "-2 to Resistance Rolls and Characteristic Rolls"
+        - "Resistance Rolls and Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Aturdido"
         - "lose the next meaningful ATB activation"
+        - "while Aturdido remains active, Preparation becomes 0"
+        - "after each lost activation is consumed, the target must succeed on a Tolerancia Specialization Roll against the original severity or Aturdido remains active and will consume the next meaningful activation as well"
       severe:
-        - "-3 to Resistance Rolls and Characteristic Rolls"
+        - "Resistance Rolls and Characteristic Rolls suffer a penalty equal to the rank bonus of the source that applied Aturdido"
         - "lose the next meaningful ATB activation"
+        - "while Aturdido remains active, Preparation becomes 0"
+        - "after each lost activation is consumed, the target must succeed on a Tolerancia Specialization Roll against the original severity or Aturdido remains active and will consume the next meaningful activation as well"
+        - "while Aturdido remains active, the target cannot voluntarily use timing-sensitive reactive lines unless it first succeeds on a Tolerancia Specialization Roll against the original severity for that attempt"
     application_requirements:
       - impact_or_neural_shock
       - concussive_force_or_overload
       - other_fictionally_credible_brief_action_shutdown_source
     effect: >
-      The target loses its next meaningful activation and suffers reduced
-      resistance and characteristic performance.
+      The target loses its next meaningful activation and suffers degraded
+      resistance, bodily readiness, and characteristic performance. In more
+      severe cases, the stun can continue across multiple activations until
+      the body fully recovers continuity.
     duration:
-      model: until_next_activation_resolves
+      model: until_removed
       notes: >
-        Ends immediately after the lost activation is consumed.
+        Minor usually ends after the first lost activation is consumed.
+        Moderate and Severe may persist across multiple lost activations until
+        recovery succeeds.
     recovery:
       notes: >
-        No additional recovery roll is required unless a specific source says
-        otherwise. The condition ends after the skipped activation is spent.
+        Minor usually ends once the skipped activation is spent. Moderate and
+        Severe end with a successful Tolerancia Specialization Roll against the
+        original severity after a lost activation, or when treatment, bodily
+        stabilization, or source removal restores operational continuity.
+        Medicina can also end the state if the fiction supports direct
+        intervention.
     resistance_or_escape:
       notes: >
         Normally resisted with Alteration Resistance when first applied.
     stacking_rule: >
       The stunned state never creates parallel copies. A stronger application
-      replaces a weaker one; an equal application usually refreshes which
-      upcoming activation is lost.
+      replaces a weaker one; an equal application usually refreshes persistence
+      and which upcoming activation is threatened next.
 
   - name: Desorientado
     family: Alteration
@@ -688,14 +743,14 @@ entries:
       The target loses directional certainty and mental orientation.
     severity_levels:
       minor:
-        - "-1 to mental Specialization Rolls"
-        - "-1 Preparation"
+        - "mental Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desorientado"
       moderate:
-        - "-2 to mental Specialization Rolls"
-        - "-2 Preparation"
+        - "mental Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desorientado"
+        - "Preparation becomes 0"
       severe:
-        - "-3 to mental Specialization Rolls"
-        - "-3 Preparation"
+        - "mental Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Desorientado"
+        - "Preparation becomes 0"
+        - "the first time on each activation the target attempts to choose route, facing, target priority, or another orientation-dependent line, it must first succeed on an Orientación Specialization Roll against the original severity for that attempt; on a failure, the attempted choice does not resolve and the target must either hesitate or take the simpler legal alternative the fiction supports"
     application_requirements:
       - spatial_disruption_or_sensory_scramble
       - dizziness_or_unstable_perspective
@@ -730,9 +785,12 @@ entries:
       moderate:
         - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
         - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
+        - "while Asfixiado remains active, Preparation becomes 0, and the target cannot voluntarily sprint, shout forcefully, maintain long strain, or use another clearly breath-hungry line unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
       severe:
         - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
         - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
+        - "while Asfixiado remains active, Preparation becomes 0, and the target cannot voluntarily sprint, shout forcefully, maintain long strain, or use another clearly breath-hungry line unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "if the target fails the start-of-activation Tolerancia Specialization Roll, the lost activation also drops held breath-dependent lines, spoken coordination, maintained grips, or equivalent sustained effort as the fiction requires"
     application_requirements:
       - choking_or_drowning
       - smoke_inhalation_or_crushing_pressure
@@ -766,15 +824,18 @@ entries:
         - "cannot use Techniques tied to weapon competencies"
       moderate:
         - "cannot use Techniques tied to weapon competencies"
+        - "weapon-based A.R., I.R., and hand-critical physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
       severe:
         - "cannot use Techniques tied to weapon competencies"
+        - "weapon-based A.R., I.R., and hand-critical physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
+        - "before the target can deliberately make a weapon-rooted attack, intercept, reload, re-ready, or other precise armed execution line, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
     application_requirements:
       - bodily_disruption_or_neural_interference
       - pain_lock_or_unstable_grip
       - other_fictionally_credible_weapon_execution_break
     effect: >
-      The target cannot use weapon-rooted Techniques cleanly even if it can
-      still act in other ways.
+      The target loses clean armed execution continuity and cannot rely on
+      weapon-technique handling even if it can still act in other ways.
     duration:
       model: until_removed
       notes: >
@@ -786,7 +847,9 @@ entries:
         when the source preventing clean execution no longer applies.
     resistance_or_escape:
       notes: >
-        Normally resisted with Alteration Resistance when first applied.
+        Normally resisted with Alteration Resistance when first applied. Use
+        Impedido for broken armed execution continuity, not for full bodily
+        arrest.
     stacking_rule: >
       The impaired state never creates parallel copies. A stronger application
       replaces a weaker one; an equal application usually refreshes
@@ -799,11 +862,14 @@ entries:
       pressure.
     severity_levels:
       minor:
-        - "-1 to Resistance Rolls"
+        - "Resistance Rolls suffer a penalty equal to the rank bonus of the source that applied Sobrecargado"
       moderate:
-        - "-2 to Resistance Rolls"
+        - "Resistance Rolls suffer a penalty equal to the rank bonus of the source that applied Sobrecargado"
+        - "cannot voluntarily use inner-regulation or sensory-ordering lines such as Contención, Enfoque, Resonancia, or another directly comparable self-ordering Specialization Roll unless first succeeding on a Contención Specialization Roll against the original severity for that attempt"
       severe:
-        - "-3 to Resistance Rolls"
+        - "Resistance Rolls suffer a penalty equal to the rank bonus of the source that applied Sobrecargado"
+        - "cannot voluntarily use inner-regulation or sensory-ordering lines such as Contención, Enfoque, Resonancia, or another directly comparable self-ordering Specialization Roll unless first succeeding on a Contención Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target is forced to make a Resistance Roll or attempts a self-ordering Specialization Roll under pressure, it must first attempt that Contención Specialization Roll; on a failure, the attempted self-ordering action does not resolve, or the forced Resistance Roll is made without external bonuses, guidance, or aid as the fiction requires"
     application_requirements:
       - sensory_saturation_or_internal_overload
       - psychic_spillover_expressed_through_the_body
@@ -827,3 +893,51 @@ entries:
       The overloaded state never creates parallel copies. A stronger
       application replaces a weaker one; an equal application usually refreshes
       persistence.
+
+  - name: Aterrorizado
+    family: Alteration
+    description: >
+      The target's body and immediate operational judgment are seized by acute
+      terror. This is not long-term trauma or deep anomalous distortion; it is
+      a live bodily fear response that makes direct opposition, approach, and
+      steady execution against the feared line harder.
+    severity_levels:
+      minor:
+        - "A.R., D.R., Characteristic Rolls, and Specialization Rolls that directly oppose, approach, handle, or commit toward the feared source or feared line suffer a penalty equal to the rank bonus of the source that applied Aterrorizado"
+      moderate:
+        - "A.R., D.R., Characteristic Rolls, and Specialization Rolls that directly oppose, approach, handle, or commit toward the feared source or feared line suffer a penalty equal to the rank bonus of the source that applied Aterrorizado"
+        - "cannot voluntarily reduce distance to the feared source or deliberately commit into the feared line unless first succeeding on a Contención Specialization Roll against the original severity for that attempt"
+      severe:
+        - "A.R., D.R., Characteristic Rolls, and Specialization Rolls that directly oppose, approach, handle, or commit toward the feared source or feared line suffer a penalty equal to the rank bonus of the source that applied Aterrorizado"
+        - "cannot voluntarily reduce distance to the feared source or deliberately commit into the feared line unless first succeeding on a Contención Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target tries to directly oppose, approach, handle, or commit toward the feared line, it must first attempt that Contención Specialization Roll; on a failure, the attempted action does not resolve and is lost to hesitation, recoil, or aborted commitment as the fiction requires"
+    application_requirements:
+      - creature_presence_or_technique_creates_an_immediate_terror_line
+      - scene_revelation_grotesque_display_or_predator_presence
+      - contamination_threat_or_other_fictionally_credible_urgent_fear_source
+    effect: >
+      The target suffers operational penalties whenever acting directly
+      against the feared line and cannot willingly close or commit into that
+      line without first steadying itself.
+    duration:
+      model: while_condition_persists
+      notes: >
+        Persists while the terror line remains active and functionally
+        relevant.
+    recovery:
+      notes: >
+        Ends when the terror line is materially broken, disproved, removed,
+        contained, or no longer functionally relevant; or when the target
+        succeeds on a Contención Specialization Roll against the original
+        severity to regain enough inward control that the feared line no
+        longer governs immediate bodily response.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, the preferred self-recovery is Contención, because the problem
+        is not pain tolerance or medical treatment but restoring enough
+        internal control to act against the fear line.
+    stacking_rule: >
+      The terrified state never creates parallel copies. A stronger terror
+      line replaces a weaker one; an equal application usually refreshes
+      persistence while the same feared line remains active.

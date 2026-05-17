@@ -1,0 +1,3 @@
+environment:
+  id: bad_threshold
+  description: Suspicious threshold with unstable footing and trap-response logic.

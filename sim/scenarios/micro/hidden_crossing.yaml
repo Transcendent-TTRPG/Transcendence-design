@@ -1,0 +1,18 @@
+scenario:
+  id: hidden_crossing
+  environment: smoke_crossing
+  map:
+    width_m: 12
+    height_m: 8
+  actors:
+    - slot: mover
+      position: [1, 3]
+    - slot: watcher
+      position: [7, 3]
+  conditions:
+    - partial_watch
+    - incomplete_registration
+  observer_relations:
+    - watcher_observes_mover
+  notes:
+    - One watched crossing with one concealment opportunity.

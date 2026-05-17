@@ -1,0 +1,3 @@
+scenario:
+  id: triggered_trap
+  description: One already-triggered trap response against one target.

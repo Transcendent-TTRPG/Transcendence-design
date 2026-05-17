@@ -1,0 +1,63 @@
+retrieval_profiles:
+  - id: simulator_domain_modeling
+    purpose: >
+      Build simulator domain objects from compact doctrine and authority files without
+      starting from broad repo scans.
+    lookup_order:
+      - knowledge_data
+      - knowledge_docs
+      - system_docs
+      - system_data
+    preferred_domains:
+      - concealment
+      - ailments
+      - techniques
+      - simulation
+
+  - id: concealment_rule_lookup
+    purpose: >
+      Resolve Hidden, Hide, concealment persistence, and detection behavior quickly and
+      consistently.
+    lookup_order:
+      - knowledge_data
+      - system_docs
+      - system_data
+      - publications
+    preferred_domains:
+      - concealment
+
+  - id: ailment_doctrine_lookup
+    purpose: >
+      Resolve ailment taxonomy, numeric burden doctrine, severity behavior, and
+      recovery handling.
+    lookup_order:
+      - knowledge_data
+      - knowledge_docs
+      - system_docs
+      - system_data
+    preferred_domains:
+      - ailments
+
+  - id: technique_balance_audit
+    purpose: >
+      Review technique identity, cost, ailment interaction, and distinction from base
+      actions.
+    lookup_order:
+      - knowledge_data
+      - system_docs
+      - system_data
+      - publications
+    preferred_domains:
+      - techniques
+      - ailments
+
+  - id: species_completion_audit
+    purpose: >
+      Resolve species-specific authored coverage and current completion state before
+      writing new techniques.
+    lookup_order:
+      - knowledge_data
+      - system_docs
+      - system_data
+    preferred_domains:
+      - zarnag_species

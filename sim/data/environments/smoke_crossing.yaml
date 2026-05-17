@@ -1,0 +1,8 @@
+environment:
+  id: smoke_crossing
+  description: Partial smoke and disrupted watch lines across one crossing.
+  roll_modifiers:
+    Sigilo: 1
+    Percepcion: -1
+  notes:
+    - Smoke, clutter, and broken sightlines support stealth while degrading clean perception.

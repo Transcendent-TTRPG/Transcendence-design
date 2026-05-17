@@ -67,22 +67,43 @@ base_actions:
 
     - id: specialization
       label: Specialization
-      rhythm_cost: 5
+      rhythm_cost: 6
       attrition_cost: 1
       notes: >
         Use of any specialization in a hostile scene: jumping, acrobatics, perception,
         interpretation, tracking, social reading, crafting under pressure, etc.
         The cost is the same regardless of specialization type because the reason is the same:
         the character is under active scene pressure and the action requires real attention and effort.
-        Techniques may later modify this cost up or down.
+        Base specialization use is intentionally slower than many authored Techniques so that
+        learned expressions remain the primary reward language of play. Techniques may later
+        modify this cost up or down.
+
+    - id: hide
+      label: Hide
+      rhythm_cost: 6
+      attrition_cost: 1
+      notes: >
+        Hide is a broad base action that changes tactical information state and therefore sits
+        above simple movement or interaction. Authored concealment Techniques should usually
+        feel cleaner, narrower, or more decisive than this fallback line.
+
+    - id: attack_natural
+      label: Attack with Natural Weapon
+      rhythm_cost: 6
+      attrition_cost: 1
+      notes: >
+        Covers claws, bite, horns, tail, pincers, and other built-in offensive forms at the
+        base layer. Species identity should emerge primarily through authored natural-attack
+        Techniques, not through this universal fallback.
 
     - id: attack_one_handed
       label: Attack with One-Handed Weapon
-      rhythm_cost: 5
+      rhythm_cost: 6
       attrition_cost: 1
       notes: >
         Covers all one-handed offensive weapon families at the base layer.
-        Distinct weapon identity emerges through impact, effects, traits, and specific abilities.
+        Distinct weapon identity should emerge primarily through impact, effects, traits,
+        and authored Techniques rather than through repeated base attacks.
 
     - id: attack_two_handed
       label: Attack with Two-Handed Weapon
@@ -96,13 +117,13 @@ base_actions:
 
     - id: attack_dual_wield
       label: Attack with Two One-Handed Weapons
-      rhythm_cost: 7
+      rhythm_cost: 8
       attrition_cost: 1
       notes: >
-        Dual-wield at Heavy baseline due to coordination and offensive commitment.
-        Attrition 1 for the same reason as two-handed: rhythm cost already governs
-        the trade-off. With sufficient competency, coordinating two weapons is no more
-        exhausting per action than a single committed strike.
+        Dual-wield at the upper end of Heavy baseline due to coordination and offensive
+        commitment. Attrition 1 for the same reason as two-handed: rhythm cost already governs
+        the trade-off, while authored two-weapon Techniques should remain the cleaner and more
+        differentiated way to exploit dual-wielding.
 
 attrition_structural_rule:
   description: >

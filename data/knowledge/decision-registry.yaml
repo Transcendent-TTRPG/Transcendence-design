@@ -1,0 +1,68 @@
+decisions:
+  - id: concealment_hidden_state_split
+    title: Hidden is the state, Concealment is the subsystem
+    status: accepted
+    summary: >
+      Hidden is the formal state. Hide is the base action that can grant it.
+      Concealment remains the subsystem that governs acquisition, maintenance, break,
+      and detection.
+    related_concepts:
+      - hidden_state
+      - concealment_subsystem
+    authority_paths:
+      - Transcendence-design/docs/system/cover-visibility-concealment.md
+      - Transcendence-design/data/system/cover-visibility-concealment.yaml
+
+  - id: hidden_roll_persistence
+    title: Hidden keeps its acquiring roll
+    status: accepted
+    summary: >
+      The roll that created Hidden remains the active opposed value until replaced,
+      broken, or invalidated by later rule effects or fiction changes.
+    related_concepts:
+      - hidden_state
+    authority_paths:
+      - Transcendence-design/docs/system/cover-visibility-concealment.md
+      - Transcendence-design/data/system/cover-visibility-concealment.yaml
+
+  - id: light_armor_is_evasive
+    title: Light Armor belongs to the evasive family
+    status: accepted
+    summary: >
+      Light Armor should be designed as part of the evasive family rather than the
+      mitigation family. Medium and Heavy Armor belong to mitigation.
+    authority_paths:
+      - Transcendence-design/docs/system/techniques.md
+      - Transcendence-design/docs/system/equipment-overview.md
+
+  - id: ailment_numeric_burden_from_rank_bonus
+    title: Certain ailment numeric burdens scale from rank bonus
+    status: accepted
+    summary: >
+      In rank-bonus penalty states, the numeric burden is driven by source rank bonus
+      while severity adds qualitative burden instead of only changing the number.
+    related_concepts:
+      - rank_bonus_scaled_penalty
+    authority_paths:
+      - Transcendence-design/docs/system/ailments.md
+      - Transcendence-design/data/system/ailments.yaml
+
+  - id: techniques_inherit_ailment_effects
+    title: Techniques should not re-describe canonical ailment effects
+    status: accepted
+    summary: >
+      When a Technique applies an ailment, the ailment's effect should live in the
+      ailment definition, not be redundantly restated inside the Technique.
+    authority_paths:
+      - Transcendence-design/docs/system/techniques.md
+      - Transcendence-design/docs/system/ailments.md
+
+  - id: zarnag_novice_species_pass_complete
+    title: Zarnag novice technique pass is complete
+    status: accepted
+    summary: >
+      Zarnag currently stands at 24 species-origin novice techniques: 12 weapon, 2
+      defense, 2 resistance hybrids, and 8 specialization techniques.
+    authority_paths:
+      - Transcendence-design/docs/system/techniques.md
+      - Transcendence-design/docs/canon/species/zarnag-technique-seeds.md

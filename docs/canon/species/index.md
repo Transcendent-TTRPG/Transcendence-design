@@ -60,7 +60,7 @@ under-authored for the tone of the setting.
 |---|---------|-------------|-----------------|----------------|-----|
 | 01 | Naghii | Serpent | Sumerian / Mesopotamian | Oldest astronomical records in the world; Khataar marks the catastrophe but can't be dated; watching a sky they're not sure is done | [naghii.md](naghii.md) |
 | 02 | Sauri | Crocodile | Egyptian / ancient fluvial temple culture | Tauma must be contained in proper vessels; their ruler is treated as the living proof that flesh can channel the primordial current without breaking | [sauri.md](sauri.md) |
-| 03 | — | Elephant | — | — | — |
+| 03 | Zarnag | Hyena | Mythic source: Horn of Africa hyena-death folklore | Death does not always finish cleanly; the world leaves dangerous remains behind, and the Zarnag survive by managing what others abandon | [zarnag.md](zarnag.md) |
 | 04 | — | Ant | — | Hive mind, loss of individuality, colony as consuming entity | — |
 | 05–20 | — | — | — | — | — |
 

@@ -1,0 +1,68 @@
+knowledge_manifest:
+  domains:
+    - id: concealment
+      concepts:
+        - hidden_state
+        - concealment_subsystem
+      decisions:
+        - concealment_hidden_state_split
+        - hidden_roll_persistence
+      preferred_sources:
+        - Transcendence-design/data/knowledge/concept-registry.yaml
+        - Transcendence-design/data/knowledge/decision-registry.yaml
+        - Transcendence-design/docs/knowledge/CONCEPT-MODEL.md
+        - Transcendence-design/docs/system/cover-visibility-concealment.md
+        - Transcendence-design/data/system/cover-visibility-concealment.yaml
+      fallback_sources:
+        - Transcendence-publications/core-books/transcendence-corebook/08-conflict-and-combat/es/07-cobertura-visibilidad-y-ocultacion.md
+        - Transcendence-publications/core-books/transcendence-corebook/08-conflict-and-combat/en/07-cover-visibility-and-concealment.md
+
+    - id: ailments
+      concepts:
+        - ailment
+        - rank_bonus_scaled_penalty
+      decisions:
+        - ailment_numeric_burden_from_rank_bonus
+        - techniques_inherit_ailment_effects
+      preferred_sources:
+        - Transcendence-design/data/knowledge/concept-registry.yaml
+        - Transcendence-design/data/knowledge/decision-registry.yaml
+        - Transcendence-design/docs/knowledge/CONCEPT-MODEL.md
+        - Transcendence-design/docs/system/ailments.md
+        - Transcendence-design/data/system/ailments.yaml
+
+    - id: techniques
+      concepts:
+        - technique
+        - procedural_state
+      decisions:
+        - techniques_inherit_ailment_effects
+        - light_armor_is_evasive
+      preferred_sources:
+        - Transcendence-design/data/knowledge/concept-registry.yaml
+        - Transcendence-design/data/knowledge/decision-registry.yaml
+        - Transcendence-design/docs/system/techniques.md
+        - Transcendence-design/data/system/techniques.yaml
+        - Transcendence-design/data/system/weapon-technique-profiles.yaml
+
+    - id: simulation
+      concepts: []
+      decisions: []
+      preferred_sources:
+        - Transcendence-design/data/knowledge/project-state.yaml
+        - Transcendence-design/sim/README.md
+        - Transcendence-design/sim/ARCHITECTURE.md
+        - Transcendence-design/sim/DATA-SCHEMAS.md
+        - Transcendence-design/docs/knowledge/ACCESS-ARCHITECTURE.md
+
+    - id: zarnag_species
+      concepts:
+        - technique
+      decisions:
+        - zarnag_novice_species_pass_complete
+      preferred_sources:
+        - Transcendence-design/data/knowledge/project-state.yaml
+        - Transcendence-design/data/knowledge/decision-registry.yaml
+        - Transcendence-design/docs/canon/species/zarnag-technique-seeds.md
+        - Transcendence-design/docs/system/techniques.md
+        - Transcendence-design/data/system/techniques.yaml

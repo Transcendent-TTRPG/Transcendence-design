@@ -1,0 +1,68 @@
+profiles:
+  - id: ice_wolf_elder
+    species: ice_wolf
+    preparation: 4
+    movement_meters: 10
+    damage_model:
+      kind: creature_zones
+      creature_zones:
+        - id: jaw
+          max_hp: 8
+          block: 2
+          dr_bonus: 1
+          durability: 4
+          linked_abilities:
+            - bite
+            - frost_breath
+        - id: forelegs
+          max_hp: 6
+          block: 2
+          dr_bonus: 0
+          durability: 3
+          linked_abilities:
+            - pounce
+            - charge
+        - id: hindlegs
+          max_hp: 6
+          block: 2
+          dr_bonus: 0
+          durability: 3
+          linked_abilities:
+            - sprint
+            - leap
+        - id: torso
+          max_hp: 14
+          block: 4
+          dr_bonus: 2
+          durability: 5
+          linked_abilities:
+            - body_endurance
+          vital: true
+        - id: tail
+          max_hp: 5
+          block: 1
+          dr_bonus: 0
+          durability: 2
+          linked_abilities:
+            - balance
+    characteristics:
+      Agilidad: 2
+      Tenacidad: 2
+      Sabiduría: 1
+      Compostura: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      Bite:
+        rank: adept
+        level: 3
+      alteration:
+        rank: novice
+        level: 1
+    weapons: []
+    techniques: []
+    policy_defaults:
+      primary: aggressive
+    notes:
+      - Seed creature profile for breakable-zone and linked-ability modeling.

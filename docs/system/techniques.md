@@ -73,6 +73,33 @@ It must always be possible to point to a non-magical cause such as:
 
 If the only explanation is supernatural emergence, occult projection, or impossible energy creation, it does not belong here. That belongs to later Limbo / magic design, not to Techniques.
 
+### Nothing from nothing
+
+No Technique should survive authoring as a purely mechanical outcome with no
+clear material or functional cause.
+
+Every finished Technique should let the reader answer:
+
+- what body part, weapon, tool, kit, residue, angle, or carried object is
+  doing the work;
+- what trained handling or timing makes that effect possible right now;
+- and why that result belongs to a live exchange instead of a vague narrative
+  assumption.
+
+This matters especially for effects involving:
+
+- marks;
+- residues;
+- contamination;
+- route alteration;
+- sensory tagging;
+- improvised barriers;
+- projectile payloads;
+- or any result that could otherwise read like “the rule says so.”
+
+If the author cannot point cleanly to the cause, the Technique is not ready
+yet.
+
 ### Metaphysical is not automatically magical
 
 Not every hard-to-explain or uncanny phenomenon is automatically:
@@ -123,8 +150,107 @@ When writing a Technique, ask:
 3. Can its effect be traced to a real trained cause inside the fiction?
 4. If it feels uncanny or metaphysical, can it still be explained without Tauma or extranatural causation?
 5. Would it still make sense if all overt magic were removed from the scene?
+6. What specifically is doing the work: body, weapon, kit, residue, terrain, angle, or trained handling?
+7. If this effect looks like preparation rather than live exchange, does it actually belong somewhere else?
 
-If the answer to `3`, `4`, or `5` is no, the Technique is drifting out of bounds.
+If the answer to `3`, `4`, `5`, `6`, or `7` is no, the Technique is drifting out of bounds.
+
+### Trap boundary rule
+
+Do not keep a concept in Techniques if its strongest version is really:
+
+- a prepared hazard;
+- a delayed crossing punishment;
+- a pre-placed route denial;
+- a baited step-trigger;
+- or any other effect that works better as setup than as live trained action.
+
+If the concept becomes more convincing when authored as:
+
+- trap placement;
+- trap arming;
+- battlefield preparation;
+- route conditioning before contact;
+- or other delayed hazard logic
+
+then it should usually move to **Traps**, scene preparation, or another setup
+layer instead of staying in the Technique catalog.
+
+Techniques may still punish:
+
+- an entry happening right now;
+- a process already in motion;
+- a live crossing attempt inside the current exchange;
+- or a bad immediate choice under pressure.
+
+But they should not become disguised trap diagrams.
+
+### Procedural states are not automatically Ailments
+
+Not every temporary mechanical state created by a Technique should become an
+`Ailment`.
+
+Use a **procedural state** when the Technique is primarily changing:
+
+- an object;
+- a tool;
+- a held piece;
+- a route;
+- a declared line;
+- a sensory channel;
+- a mark;
+- a residue;
+- a read;
+- or a short tactical relation between two actors.
+
+These are usually not bodywide conditions. They are:
+
+- bounded;
+- local;
+- materially caused;
+- and dependent on one exact thing still being true.
+
+Good procedural-state examples include:
+
+- `read-marked`
+- `signal-blurred`
+- `wound-fouled`
+- `badly-seated`
+- `displaced`
+- `read-spoiled`
+- `wrong-answered`
+- `step-checked`
+
+Use an **Ailment** when the Technique establishes a real ongoing condition in
+the target's body, nervous system, posture, perception, or operational
+capacity, such as:
+
+- fear;
+- imbalance;
+- knockdown;
+- restraint;
+- impaired weapon execution;
+- blindness;
+- overload;
+- concussion;
+- freezing;
+- or another state the body is now actually suffering.
+
+As a rule of thumb:
+
+- if the effect stops mattering because one exact piece, line, channel, or mark
+  is no longer relevant, it is probably a procedural state;
+- if the effect continues because the target's body or operative condition has
+  been altered, it is probably an `Ailment`.
+
+Do not migrate a procedural state into `Ailments` just because it has a
+penalty. Migrate it only when the fiction has crossed from:
+
+- object/process/read disruption
+
+into:
+
+- actual bodily or operational alteration.
 
 ---
 
@@ -159,6 +285,92 @@ That mechanical consequence may:
 - suspend or distort a hostile pattern
 
 This is why Techniques need strict structure.
+
+---
+
+## Defense Families
+
+Pure defensive Techniques in Transcendence should be authored from only two
+mechanical families:
+
+- `evasion`
+- `mitigation`
+
+This matters more than treating every defensive competency as if it were a
+separate school.
+
+### Evasion family
+
+The evasion family includes:
+
+- `Evasion`
+- `Light Armor`
+
+`Light Armor` belongs here on purpose.
+
+Light armor is not a smaller version of medium or heavy mitigation. Its job is
+to preserve:
+
+- `D.R.`
+- mobility
+- angle change
+- peel-outs
+- recovery into another action
+
+while still contributing some `Bloqueo` if a defended line is not fully
+avoided.
+
+So a `Light Armor` Technique should usually feel like:
+
+- slipping the line
+- denying clean purchase
+- changing angle
+- keeping movement alive
+- or converting a successful defense into better immediate position
+
+not like:
+
+- bracing to absorb
+- turning the body into a wall
+- or trusting the armor to hold the impact directly
+
+### Mitigation family
+
+The mitigation family includes:
+
+- `Medium Armor`
+- `Heavy Armor`
+
+These Techniques are about surviving contact through:
+
+- `Bloqueo`
+- posture
+- weight
+- impact correction
+- seam management
+- reduced wound severity
+- and preserving structure under pressure
+
+So a mitigation Technique should usually feel like:
+
+- receiving better
+- presenting the right plate
+- reducing what gets through
+- preventing breakage
+- or staying whole under force
+
+not like a last-second evasive peel.
+
+### Authoring rule
+
+When writing a pure defense Technique:
+
+1. decide whether the Technique wins by `avoiding` or by `receiving better`
+2. if it avoids, place it in the `Evasion / Light Armor` family
+3. if it receives better, place it in the `Medium Armor / Heavy Armor` family
+
+Do not author `Light Armor` as a mini-mitigation school.
+Do not author `Medium` or `Heavy` as disguised evasive tricks.
 
 ---
 
@@ -210,6 +422,73 @@ Techniques should usually be:
 - the main vehicle for expressing personal build decisions without relying on fixed class structure
 
 If a proposed Technique is only a renamed base action with minor numerical tuning, it has probably failed its authoring goal.
+
+### Optimization rule
+
+Base actions are allowed to remain:
+
+- reliable
+- simple
+- broadly available
+- sometimes the correct conservative choice
+
+But they should almost never be the **most efficient learned answer** once a
+character has a relevant authored Technique for the same moment.
+
+In practice:
+
+- a base attack should not be the superior repeated choice over a learned attack Technique that targets the same tactical problem;
+- a base defensive answer should not outshine a learned reactive Technique meant for that threat family;
+- and a base utility action should not solve a specialized pressure problem more cleanly than the Technique written to own that space.
+
+This does **not** mean every Technique must strictly outdamage or outvalue the
+base action in every scene.
+
+It means a learned Technique should usually provide at least one of the
+following over the base action:
+
+- better tactical shaping
+- stronger thematic identity
+- clearer permission
+- narrower but more decisive answer quality
+- better conversion of a specific trigger into an outcome
+- superior follow-up leverage
+
+If a Technique is less expressive **and** less efficient than the base action it
+competes with, it is probably under-authored, under-costed, or solving the
+wrong problem.
+
+### Calibration against base actions
+
+Base actions therefore **do** matter when judging `Rhythm` and `Attrition`, but
+they should be used as a **floor calibration**, not as a parallel optimization
+track.
+
+Use them to ask:
+
+- is this Technique asking the player to pay more than a base action while giving too little differentiation back?
+- is this Technique so cheap that it makes the base action irrelevant in every normal case?
+- is this Technique occupying the same tactical space as a base action without earning its extra identity?
+
+Do **not** use them to ask:
+
+- should every Technique be only a small numerical upgrade over Attack?
+- should base actions and Techniques compete for the same “best DPR” slot?
+
+The intended relationship is:
+
+- base actions = common floor
+- Techniques = authored reward language
+
+### Pending core sync
+
+The current base-action costs in the corebook remain usable for play, but this
+document now treats them as a calibration reference that may need later
+realignment.
+
+Pending follow-up:
+
+- review `01-actions` in the corebook so base-action cost presentation matches the intended “fallback, not optimal line” doctrine.
 
 ---
 
@@ -1656,6 +1935,90 @@ Then review it against:
 - counterplay
 - how early projected Fatigue should appear in the intended scene
 
+### Procedural countermeasure standard
+
+Some Techniques do not mainly pressure through direct damage, raw denial, or a
+named Alteration severity. Instead, they create a **procedural problem** that
+must be answered before the target can recover a clean operating state.
+
+Typical examples:
+
+- residue that must be cleaned
+- a wound that must be bound or flushed
+- a line that must be inspected before safe passage
+- a restraint that must be disentangled
+- an irritant that must be cleared
+- a signal or mark that must be identified before the right response is possible
+
+When a Technique uses this kind of pressure, it should not invent a bespoke
+mini-action every time. It should usually resolve through the existing base
+actions framework:
+
+- **Interact** when the answer is mostly physical and immediate
+- **Use Specialization** when the answer needs trained reading, treatment, or handling
+
+Then it should point to one of the standard countermeasure patterns below and narrow:
+
+- who can perform it
+- what specialization or roll it uses
+- what tools are needed
+- whether self-use is allowed
+- whether the source must also be removed
+
+Do not leave all countermeasure routes implicitly open by default. The authored
+Technique should declare which route actually clears the state:
+
+- one exact route
+- or one primary route plus one clearly justified secondary route
+
+If no separate substance, diagnosis layer, or technical handling requirement is
+present in the fiction, prefer the narrower route.
+
+#### Countermeasure patterns
+
+| Pattern | Typical use | Default cost under active threat |
+| --- | --- | --- |
+| `self_clear` | The affected target spends time cleaning, bracing, scraping, flushing, disentangling, or otherwise restoring its own immediate function | `Rhythm 3 / Attrition 1` |
+| `aided_treatment` | Another creature, or the target with proper tools and careful handling, treats the problem in a more reliable or technical way | `Rhythm 6 / Attrition 1` |
+| `quick_identification` | A fast read to learn what kind of countermeasure is needed before acting blindly | `Rhythm 3 / Attrition 1` |
+
+These are defaults, not hard locks. A specific Technique may narrow, exclude, or
+raise them when the fiction clearly earns it.
+
+#### Authoring rule
+
+Use a procedural countermeasure when all of the following are true:
+
+1. the target still has a believable way out
+2. the Technique's value comes partly from forcing time, care, or attention
+3. the state should not be treated as full passive persistence with no answer
+4. the answer is practical, medical, positional, sensory, or technical rather than purely mental
+
+#### Default cost guidance
+
+- Use `self_clear` when the answer is quick, local, and mostly about stopping to
+  deal with the problem.
+- Use `aided_treatment` when the answer needs tools, help, technique, or careful
+  handling on a real target.
+- Use `quick_identification` when the problem is not simply "remove it" but
+  "understand what this is before acting."
+
+Outside `ATB` or another active-threat scene, these usually stop costing
+`Attrition` and resolve as ordinary bounded scene actions unless the specific
+Technique or condition says otherwise.
+
+#### Why this exists
+
+Without this standard, authored Techniques tend to drift into:
+
+- vague "spend some time fixing it" prose
+- effects with no clean exit
+- or custom micro-rules that all do the same kind of timing tax differently
+
+This standard keeps those Techniques legible and reusable while still letting
+the actual fiction decide whether the answer is `Medicina`, `Destreza`,
+`Contención`, `Agarre`, `Rastreo`, or something else.
+
 ---
 
 ## Saving Roll / Resistance
@@ -1825,7 +2188,7 @@ It is not meant to imply that the final catalog should be written inline in this
 | `name_en` | Close the Line |
 | `origin` | Spear |
 | `world_origin` | Species: Naghii; seed: Threshold Denial; transmission: archive guard spear drills; availability: Restricted |
-| `category` | attack |
+| `category` | defense |
 | `type` | reactive |
 | `trigger` | An enemy advances into your line or tries to convert forward movement into immediate melee contact against you. |
 | `requirements` | Minimum rank: Novice; weapon profile: Perforation; any weapon competency, natural attack form, or specific item that grants Perforation access can use this Technique unless the Technique or item says otherwise; user must be able to sustain a committed piercing line |
@@ -1875,7 +2238,7 @@ It is not meant to imply that the final catalog should be written inline in this
 | `range` | profile-bearing surface reach |
 | `area` | single readable route |
 | `duration` | until the next relevant hostile activation resolves, or until you leave the route |
-| `cost` | Rhythm 3; Attrition 1 |
+| `cost` | Rhythm 4; Attrition 1 |
 | `saving_roll` | none |
 | `tags` | defense, control, anti_displacement, setup |
 
@@ -1889,7 +2252,7 @@ It is not meant to imply that the final catalog should be written inline in this
 
 **Secondary interaction surface:** target pressure, because enemies can still attack past the user, but doing so through the closed route becomes less efficient.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is intentional. The Technique is an active setup, not a guaranteed interception. It costs little because it does not stop the next attack by itself; it changes the next relevant enemy decision through the chosen route.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique is still narrower than a standard committed action, but it actively claims one route before the hostile choice is made and taxes attacks that ignore that claim. That lane-pressure surface no longer belongs at the quick anchor.
 
 **Effect:** Choose one readable route within profile-bearing surface reach. The compuerta remains in place until the next hostile activation that could plausibly use or attack through that route resolves, even if your own marker becomes ready first.
 
@@ -1953,7 +2316,7 @@ If the intercepted attack carries a non-damage rider, such as forced movement, a
 | `name_en` | Break the Flow |
 | `origin` | Shield |
 | `world_origin` | Species: Sauri; seed: Release At The Correct Gate / Tail Keeps The Channel; transmission: river-warden breach drills and temple guard interruption forms; availability: Restricted |
-| `category` | attack |
+| `category` | defense |
 | `type` | reactive |
 | `trigger` | An enemy within profile-bearing surface reach begins a Technique, heavy action, telegraphed action, or movement-linked execution that requires visible commitment before it resolves. |
 | `requirements` | Minimum rank: Novice; weapon profile: Interruption; any weapon competency, natural attack form, or specific item that grants Interruption access can use this Technique unless the Technique or item says otherwise; user must have a ready weapon, natural weapon, or item with explicit attack stats to deliver the counter; the enemy's action must have a readable physical line, windup, focus point, or route of execution the profile-bearing surface can strike or jam |
@@ -1961,7 +2324,7 @@ If the intercepted attack carries a non-damage rider, such as forced movement, a
 | `range` | profile-bearing surface reach |
 | `area` | single enemy |
 | `duration` | instant |
-| `cost` | Rhythm 5; Attrition 1 |
+| `cost` | Rhythm 6; Attrition 2 |
 | `saving_roll` | D.R. contest; counter requires clean defensive margin |
 | `tags` | attack, defense, disruption, counter_positioning |
 
@@ -2000,7 +2363,7 @@ If the triggering action was a telegraphed action rather than a direct attack, t
 | `range` | self |
 | `area` | anchored point |
 | `duration` | sustained while anchored |
-| `cost` | Rhythm 3; Attrition 1 |
+| `cost` | Rhythm 7; Attrition 2 |
 | `saving_roll` | none |
 | `tags` | defense, stability, mitigation, anti_displacement |
 
@@ -2104,18 +2467,16 @@ This Technique does not increase Potency; it only expands the Impact die results
 
 **Effect:** Make an active Impact-profile attack against the target. If the attack hits, resolve damage normally. Then the target makes an Alteration Resistance Roll against `Desequilibrado`.
 
-The `Desequilibrado` severity is determined by the competency rank used for the Technique:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
 - Ranks 5-6: Severe
 - Higher ranks continue this progression if the system later defines higher severity bands.
 
-On a failed R.R., the target gains `Desequilibrado` at that severity. The target suffers the normal penalties to `D.R.` and physical Specialization Rolls until it recovers balance.
+On a failed R.R., the target gains `Desequilibrado` at that severity.
 
 On a successful R.R., `Desequilibrado` is not applied, but the attack still resolves its normal damage if it hit.
-
-If the target is already `Desequilibrado`, this Technique follows the normal stacking rule for that state: stronger application replaces weaker application, and equal application usually refreshes persistence.
 
 **Restrictions:**
 
@@ -2207,7 +2568,7 @@ This Technique can also oppose a physical attempt to knock you off a ledge, pull
 | `range` | tail or Interception surface reach |
 | `area` | one attacking enemy and one protected target |
 | `duration` | instant |
-| `cost` | Rhythm 5; Attrition 1 |
+| `cost` | Rhythm 6; Attrition 2 |
 | `saving_roll` | opposed by the triggering attack roll |
 | `tags` | defense, interception, counterattack, protection |
 
@@ -2223,7 +2584,7 @@ This Technique can also oppose a physical attempt to knock you off a ledge, pull
 
 **Secondary interaction surface:** counter-damage if the interception succeeds.
 
-**Cost note:** `Rhythm 5 / Attrition 1` is intentional. The Technique is reactive, can protect another target, and can deal damage if the user's attack roll beats the hostile attack. Its main limiter is risk: declaring it replaces the protected target's T.D. against the triggering attack.
+**Cost note:** `Rhythm 6 / Attrition 2` is deliberate. The Technique is reactive, can protect another target, and can deal normal damage if the user's attack roll beats the hostile attack. That is stronger than a standard-anchor reactive, but narrower than full heavy scene control, so it sits cleanly at the bridge value between `5` and `7`.
 
 **Effect:** When the trigger occurs, declare whether this Technique is replacing your own T.D. or the protected target's T.D. against the triggering attack.
 
@@ -2288,7 +2649,7 @@ If the protected target is a willing creature, it must accept the interception b
 
 **Effect:** Make an active Rend-profile attack against the target. If the attack hits, resolve damage normally. Then the target makes an Alteration Resistance Roll against `Lacerado`.
 
-The `Lacerado` severity is determined by the competency rank used for the attack:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
@@ -2297,16 +2658,6 @@ The `Lacerado` severity is determined by the competency rank used for the attack
 
 On a failed R.R., the target gains `Lacerado` at that severity.
 
-While `Lacerado` is active, strenuous physical actions that stress the wound cost additional Rhythm according to severity:
-
-- Minor: `+1` Rhythm
-- Moderate: `+2` Rhythm
-- Severe: `+3` Rhythm
-
-Strenuous physical actions include attacks, movement bursts, weapon Techniques, forced movement attempts, grapples, heavy defenses, or similar actions that clearly put pressure through the opened wound.
-
-`Lacerado` ends when the target spends a suitable action to bind, brace, close, harden, or otherwise stabilize the wound pressure; when treatment removes it; or when the wound is no longer functionally stressed by the scene.
-
 On a successful R.R., `Lacerado` is not applied, but the attack still resolves its normal damage if it hit.
 
 **Restrictions:**
@@ -2314,7 +2665,6 @@ On a successful R.R., `Lacerado` is not applied, but the attack still resolves i
 - requires a valid Rend-profile surface and a target with material, flesh, protection, binding, hide, or natural armor that can be meaningfully torn
 - does not apply to targets without a credible tearable body or structure
 - applies `Lacerado`, a generic Alteration, not a Sauri-only condition
-- cannot stack multiple copies of `Lacerado` on the same target; a stronger application replaces a weaker one, and an equal application usually refreshes persistence
 - does not create ongoing automatic damage by itself
 - does not bypass armor or Durability unless the attack already has rules that allow that
 - should not replace formal bleeding, wound, or injury subsystems if those are later defined
@@ -2420,14 +2770,14 @@ These entries use the Sauri `Mordisco / Bite` species expression as their origin
 
 **Effect:** Make an active Bastion-profile attack against the target. If the attack hits, resolve damage normally. Then the target makes an Alteration Resistance Roll against `Derribado`.
 
-The `Derribado` severity is determined by the competency rank used for the Technique:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
 - Ranks 5-6: Severe
 - Higher ranks continue this progression if the system later defines higher severity bands.
 
-On a failed R.R., the target gains `Derribado` at that severity. The target is brought to the ground and suffers the normal `Derribado` effect: `-3` to all rolls, and its first movement action is spent getting up.
+On a failed R.R., the target gains `Derribado` at that severity.
 
 After applying `Derribado`, you may choose to remain within reach and claim the fallen point. If you do, you gain a bonus equal to your competency rank to the first `D.R.` or physical `R.R.` you make against that target before it stands, but you lose this bonus if you voluntarily move more than 1 meter away, attack a different target, or turn the Bastion surface away from the fallen target.
 
@@ -2485,18 +2835,18 @@ These entries validate Techniques that break an enemy's process while it is happ
 
 If the check succeeds, the target immediately makes an Alteration Resistance Roll against `Atrapado`.
 
-The `Atrapado` severity is determined by the competency rank used for the Technique:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
 - Ranks 5-6: Severe
 - Higher ranks continue this progression if the system later defines higher severity bands.
 
-On a failed R.R., the target gains `Atrapado` at that severity. Their movement becomes `0`, they suffer the normal `Atrapado` penalties for that severity, and the movement or movement-linked action that triggered the Technique stops at the point where the restraint catches them.
+On a failed R.R., the target gains `Atrapado` at that severity, and the movement or movement-linked action that triggered the Technique stops at the point where the restraint catches them.
 
 On a successful R.R., `Atrapado` is not applied. The target may complete the movement if it still has a legal route, but it does not gain any clean-flank, rear-position, or passage advantage from the triggering movement against the user unless another rule explicitly grants it.
 
-`Atrapado` persists until the target breaks free, is released, or the restraining source no longer holds them. The preferred self-recovery is an `Agarre` Specialization Roll against a living hold, or another physical Specialization Roll if the fiction is more about slipping out, cutting loose, or disentangling than overpowering contact.
+`Atrapado` then follows its normal recovery rules, but if the restraining source no longer physically holds, the condition ends.
 
 **Restrictions:**
 
@@ -2669,7 +3019,7 @@ On a successful R.R., `Atrapado` is not applied. The target may complete the mov
 
 **Secondary interaction surface:** mobility or disruption, depending on which consequence the user chooses.
 
-**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is broader than a narrow reactive catch: it is an active attack that creates either a small positional conversion or a bounded response penalty. It should not be as cheap as a pure quick strike, but it does not carry enough control or persistence to require higher strain.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique is broader than a narrow reactive catch, but its payoff remains tightly bounded: one target, one small positional conversion or one short response penalty, and no lasting control once the immediate exchange settles.
 
 **Effect:** Make a Flexible Weapons attack or equivalent tail/tendril Technique check against the target. If the Technique resolves successfully, choose one false-line consequence:
 
@@ -2751,59 +3101,58 @@ The read is concrete and immediate, but not exhaustive: it does not identify exa
 | --- | --- |
 | `name` | Pesar el Umbral |
 | `name_en` | Weigh the Threshold |
-| `origin` | Intimidation |
-| `world_origin` | Species: Naghii; seed: Ritualized Access; transmission: gatekeeper challenge protocols; availability: Common |
+| `origin` | Sigilo |
+| `world_origin` | Species: Naghii; seed: Preserved Distance / Ritualized Access; transmission: threshold-stalking drills, ambush patience protocols, and hidden guardian presence practice; availability: Common |
 | `category` | utility |
 | `type` | reactive |
-| `trigger` | A creature that can perceive the user's challenge and read basic threat attempts to cross a guarded boundary, enter a protected place, push past the user, ignore a stated prohibition, or attack as the way of violating that boundary. |
-| `requirements` | Minimum rank: Novice; state: visible boundary or declared prohibition; target can perceive the challenge and read basic threat |
+| `trigger` | While the user is under real cover, concealment, darkness, broken sightline, or another valid hidden-guardian position, a creature moves toward, crosses into, or commits through a line the user is silently holding. |
+| `requirements` | Minimum rank: Novice; the user must be under real cover, concealment, darkness, broken sightline, or another credible hidden position; the target must be able to register signs of a nearby unseen or half-seen threat; the held line must matter now. |
 | `target` | creature |
-| `range` | line of sight or clear hearing |
+| `range` | nearby line / hidden presence reach |
 | `area` | single |
-| `duration` | until the target halts/acknowledges the challenge, completes the challenged action despite the pressure, or the boundary stops mattering |
+| `duration` | instant application |
 | `cost` | Rhythm 3; Attrition 1 |
-| `saving_roll` | opposed `Containment` / `Contención` |
-| `tags` | utility, pressure, control, disruption |
+| `saving_roll` | on success, the target makes an Alteration `R.R.` against `Aterrorizado` |
+| `tags` | utility, stealth, pressure, fear, hidden_presence, ailment_application |
 
-**Fantasy:** The user makes the next step feel heavy. A door, line, warning, rank, silence, or held posture becomes a threshold the target must consciously violate rather than casually cross.
+**Fantasy:** The target does not see a guard barring the way. It feels that something has been waiting here long enough to know exactly when to close. The fear is not "someone shouted stop." The fear is "if I take the next step, the thing that has been tracking me from cover will act first."
 
-**World origin:** Naghii archive society treats access as procedure. Gatekeepers, guards, and priestly examiners developed this method to make improper entry feel immediately consequential before force is required.
+**World origin:** Naghii do not always contest access by standing in the doorway. Many threshold-keepers are taught to hold the dangerous line from just out of clear registration: behind stone, around a shelf turn, under broken light, along a wall line where movement reads before the body does. `Pesar el Umbral` comes from that stalking discipline, where the intruder begins to fear the held line before the guardian fully reveals themselves.
 
-**Why this is not a base Intimidation check:** A base Intimidation check applies general pressure. `Pesar el Umbral` is tied to a boundary moment: the target is about to cross, ignore, push past, attack through, or force access. It does not make the target afraid in general; it makes the boundary violation costly right now.
+**Why this is not a base Sigilo check:** A base `Sigilo` check helps the user remain unnoticed, suppress profile, or pass through attention cleanly. `Pesar el Umbral` turns hidden presence into a fear application surface: the target is not just failing to spot the user, it is being made to bodily accept the next step as unsafe.
 
-**Primary interaction surface:** pressure on a boundary-violating action.
+**Primary interaction surface:** hidden-presence pressure on one crossing or approach line.
 
-**Secondary interaction surface:** disruption, because the target may halt or acknowledge the challenge instead of completing the attempted action cleanly.
+**Secondary interaction surface:** Alteration application through `Aterrorizado`.
 
-**Saving roll note:** The target resists with `Containment` / `Contención`. The pressure of the Technique is not about looking calm; it is about keeping the decision intact when the boundary is made threatening. Creatures without formal specializations should use their closest NPC composure/instinct resistance as a Containment equivalent.
+**Saving roll note:** If the hidden pressure lands, the target resists with Alteration `R.R.` against `Aterrorizado`. The fear line is the unseen or half-seen nearby predator/guardian presence holding that crossing line.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is intentional. This is a quick challenge window that creates one immediate choice: stop cleanly or proceed under pressure. These costs apply only during ATB or another active-threat scene; in normal social or exploration scenes, where Rhythm and Attrition are not active costs, the Technique resolves as the user's Intimidation action. It does not physically restrain the target, redirect aggression, or prevent action by itself.
+**Cost note:** `Rhythm 3 / Attrition 1` is intentional. The Technique still requires a real hidden position, a meaningful crossing line, and an Alteration `R.R.` to settle. It does not become a generic stealth bonus or a free panic button in open ground.
 
-**Effect:** Make an Intimidation-based Technique check against the triggering target. If the Technique resolves successfully, the target must choose before completing the triggering action:
+**Effect:** Make a `Sigilo`-based Technique check against the triggering target from the hidden position that is holding the relevant line.
 
-- halt or acknowledge the challenge, ending the current attempt to force access cleanly
-- proceed through the challenge and take a situational penalty equal to the user's Intimidation rank bonus on the immediate roll or opposed exchange used to cross the boundary, push past, enter the protected place, attack as the boundary violation, force entry, or ignore the prohibition
+If the Technique fails, the target does not bodily accept the hidden threat as urgent enough to settle fear.
 
-| Intimidation rank | Penalty |
-| --- | --- |
-| Novice | `-1` |
-| Adept | `-2` |
-| Expert | `-3` |
-| Master | `-4` |
-| Consummate | `-5` |
-| Transcendent | `-6` |
+If the Technique succeeds, the target immediately makes an Alteration `R.R.` against `Aterrorizado`.
 
-The penalty applies only to the action that violates the challenged boundary. This is not a taunt that forces the target to attack the user or redirect aggression; it pressures the attempted violation.
+Use the default Ailment severity bands by rank:
+
+- ranks `1-2` -> `Minor`
+- ranks `3-4` -> `Moderate`
+- ranks `5-6` -> `Severe`
+
+On a failed `R.R.`, the target gains `Aterrorizado` at that severity. The feared line is the hidden nearby predator/guardian presence controlling the crossing line.
+
+On a successful `R.R.`, `Aterrorizado` does not settle.
 
 **Restrictions:**
 
-- requires a visible boundary or declared prohibition
-- requires the target to perceive the challenge and read basic threat
-- does not work on mindless targets or targets with no relevant self-preservation instinct or social read
-- does not force obedience or prevent the target from acting
-- does not redirect attacks or force the target to attack the user
-- penalty only applies to the immediate boundary-violating action
-- cannot be used as a general penalty to all actions in the scene
+- requires a real hidden position: cover, concealment, darkness, broken sightline, or equivalent
+- requires a meaningful held line or crossing moment
+- applies the generic Alteration `Aterrorizado`, not a Naghii-only condition
+- does not function in open exposure where the user is plainly registered and no hidden-presence line exists
+- does not work on mindless targets or targets with no relevant self-preservation instinct
+- if the target cannot register the possibility of a nearby unseen or half-seen threat, the Technique does not apply
 
 ### Leer la Línea Ausente
 
@@ -2867,7 +3216,7 @@ The read tells the user what kind of absence matters and what immediate conclusi
 | `range` | weapon or projection range |
 | `area` | single |
 | `duration` | until the target completes its next movement or concealment attempt, clears the mark, leaves sensory reach behind a sealed barrier, or immediate position stops mattering |
-| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `cost` | Rhythm 4; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
 | `saving_roll` | `D.R.` negates contact and prevents the mark |
 | `tags` | attack, precision, marking, counter_concealment |
 
@@ -2918,25 +3267,27 @@ The Technique does not grant an attack bonus, ignore cover, reveal exact statist
 | `range` | weapon or projection range |
 | `area` | single |
 | `duration` | until the target clears the residue, resolves one affected sight/read-dependent action, loses the residue environmentally, or immediate sensory pressure stops mattering |
-| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `cost` | Rhythm 4; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
 | `saving_roll` | `D.R.` negates contact and prevents the residue |
 | `tags` | attack, corrosion, sensory_pressure, disruption |
 
-**Fantasy:** The user projects venom, dust, caustic residue, or another hostile trace across the target's reading surface, making the next clean look, aim, or pursuit decision arrive through irritation and false signal.
+**Fantasy:** The user projects venom, dust, caustic residue, or another hostile trace across one exact exposed sensory channel, making the next clean read through that channel arrive through irritation and false signal.
 
 **World origin:** Kha-Naghii hold venom as consequence attached to contact; Saa-Naghii project that same logic outward. `Nublar la Señal` comes from the projected side: the contact matters because it degrades the target's next clean decision. Non-Naghii users reproduce the method with prepared residue ammunition, irritant dust, venom capsules, caustic darts, or a similar kit-based delivery.
 
-**Why this is not a base Ranged Weapons attack:** A base ranged attack tries to hit or harm. `Nublar la Señal` uses contact to create a bounded sensory-pressure choice: clear the residue or act through a compromised read. It is not a poison damage rider and not general blindness.
+**Why this is not a base Ranged Weapons attack:** A base ranged attack tries to hit or harm. `Nublar la Señal` spends precision to foul one declared sensory channel and create a bounded sensory-pressure choice: clear the residue or act through a compromised read. It is not a poison damage rider and not full `Cegado`.
 
 **Primary interaction surface:** ranged corrosive or irritating contact.
 
-**Secondary interaction surface:** disruption, because the target's next clean sensory action becomes costly unless they clear the residue.
+**Secondary interaction surface:** disruption, because the target's next clean sensory action through that declared channel becomes costly unless they clear the residue.
 
-**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is an attack that also creates a bounded sensory-pressure choice, giving it one strong surface and one secondary disruption surface. These costs apply only during ATB or another active-threat scene; in normal exploration, the Technique resolves as the user's ranged residue action without Attrition.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique is an attack that also creates a bounded sensory-pressure choice, but only for one target, one declared channel, and one dependent action. The shot also carries a precision tax because it must hit a small exposed read-point rather than just the body. These costs apply only during ATB or another active-threat scene; in normal exploration, the Technique resolves as the user's ranged residue action without Attrition.
 
-**Effect:** Make a profile-bearing attack with prepared residue ammunition, a residue kit delivery, or an equivalent natural fluid-projection Technique check against the target. If the Technique resolves successfully, the target becomes signal-blurred until the duration ends.
+**Effect:** Declare one exact exposed sensory channel or read-point the delivery is trying to foul: eyes, nostrils, heat pits, whiskers, a tasting fork, an exposed arcane read organ, or another similarly small channel the fiction supports. Make the attack with `-2` because the shot is targeting that exact point rather than simply landing on the body.
 
-Before resolving its next action or reaction that depends on clean sight, scent, aim, identification, pursuit, or precise read, the target must choose:
+If the attack still resolves successfully, the target becomes `signal-blurred` for that declared channel until the duration ends.
+
+Before resolving its next action or reaction that depends primarily on that same declared channel, the target must choose:
 
 - spend that opportunity clearing or neutralizing the residue, ending the effect
 - act through it and take a situational penalty equal to the rank bonus of the competency used for this Technique on that one affected roll or opposed exchange
@@ -2950,16 +3301,18 @@ Before resolving its next action or reaction that depends on clean sight, scent,
 | Consummate | `-5` |
 | Transcendent | `-6` |
 
-The penalty applies only to that single sight/read-dependent action. The Technique does not blind the target completely, prevent movement, or impose a general scene-wide penalty.
+The penalty applies only to that single channel-dependent action. If the declared channel is not actually one the target is using to make that decision, the effect gives no practical burden. The Technique does not blind the target completely, suppress all senses, prevent movement, or impose a general scene-wide penalty.
 
 **Restrictions:**
 
 - requires a ranged delivery that can leave irritating or degrading residue
 - non-natural users need prepared residue ammunition or a residue kit delivery
-- requires a relevant sensory surface or reading channel
+- requires a relevant exposed sensory channel or reading surface
 - applies to one creature only
-- affects one sight/read-dependent action only
+- affects one declared channel-dependent action only
+- the attack suffers `-2` for called channel placement
 - does not blind the target completely
+- does not disable all sensory channels
 - does not prevent movement
 - does not create a general scene-wide penalty
 - does not stack with itself on the same target
@@ -2981,7 +3334,7 @@ The penalty applies only to that single sight/read-dependent action. The Techniq
 | `range` | weapon or projection range via surface |
 | `area` | single |
 | `duration` | instant |
-| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `cost` | Rhythm 4; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
 | `saving_roll` | `D.R.` resolves normally against the final incoming path |
 | `tags` | attack, ricochet, geometry, cover_denial |
 
@@ -2995,7 +3348,7 @@ The penalty applies only to that single sight/read-dependent action. The Techniq
 
 **Secondary interaction surface:** cover denial, but only against the original direct-line edge that the rebound path genuinely bypasses.
 
-**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is a standard active attack with an indirect-line permission. It changes the attack geometry, but it does not add persistent state, deny future action, or bypass defense wholesale.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique grants one exact indirect-line permission, but it does not add persistent state, deny future action, or bypass defense wholesale. Its value lives in one geometry change, not in a lasting control surface.
 
 **Effect:** Make a profile-bearing attack through one declared rebound or skip surface. If the Technique resolves successfully, the attack may reach a target that has partial cover, an offset doorway, an angled corner, or a blocked direct line, as long as a physically plausible indirect path exists.
 
@@ -3030,7 +3383,7 @@ This does not hit through sealed barriers, ignore total cover, curve freely in o
 | `range` | weapon or projection range |
 | `area` | single |
 | `duration` | instant |
-| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `cost` | Rhythm 4; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
 | `saving_roll` | contextual — the target may answer with appropriate defense, movement timing, cover use, or balance |
 | `tags` | attack, volley, movement_control, pressure |
 
@@ -3106,7 +3459,7 @@ The Technique affects only that triggering movement. It does not reduce the targ
 
 **Secondary interaction surface:** setup, because an enemy paying extra Rhythm for every action inside the zone falls behind on tempo relative to the user and any allies outside the zone.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique produces no immediate attack or movement — its value is entirely in the Rhythm tax it imposes on enemy actions over time. The posture persists while the user fights from the planted point, but ends when the user abandons the point or turns the ward away. This keeps the Technique tactical: the user can act, but must decide whether holding that space remains worth the positional commitment and repeated Attrition.
+**Cost note:** `Rhythm 7 / Attrition 2` is deliberate. The Technique produces no immediate hit, but it establishes a sustained contested zone that taxes every hostile active action within it. That is major lane control with real positional commitment and ongoing pressure absorption, so it belongs at the heavy anchor rather than the quick band.
 
 **Effect:** Establish a ward zone centered on the user extending to weapon reach plus 1 meter. While the zone is active, any enemy that performs an active action within the zone — including entering the zone through movement, attacking from within it, or using a Technique inside it — pays an additional Rhythm cost on top of that action's normal cost equal to 1 plus the rank bonus of the competency used for this Technique.
 
@@ -3209,16 +3562,16 @@ The user may attack, use Techniques, defend, speak, or pressure enemies while ho
 
 **Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is a reactive action with a condition-application surface. The condition is recoverable through Enfoque, the trigger is narrow (weapon execution only), and the target has an R.R. window to resist. These constraints prevent the cost from rising above the standard anchor despite the condition output.
 
-**Effect:** Make a reactive Interruption check using the relevant profile-bearing competency against the triggering enemy. If the Technique resolves successfully, the target immediately makes an Alteration Resistance Roll.
+**Effect:** Make a reactive Interruption check using the relevant profile-bearing competency against the triggering enemy. If the Technique resolves successfully, the target immediately makes an Alteration Resistance Roll against `Impedido`.
 
-The `Impedido` severity is determined by the competency rank used for the Technique:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
 - Ranks 5-6: Severe
 - Higher ranks continue this progression if the system later defines higher severity bands.
 
-On a failed R.R., the target becomes `Impedido` at that severity: the triggering weapon action does not complete, and the target cannot use weapon-rooted Techniques until it succeeds on an Enfoque Specialization Roll against the original severity. On a successful R.R., `Impedido` is not applied and the triggering action resolves normally.
+On a failed R.R., the target becomes `Impedido` at that severity, and the triggering weapon action does not complete. On a successful R.R., `Impedido` is not applied and the triggering action resolves normally.
 
 **Restrictions:**
 
@@ -3238,31 +3591,35 @@ On a failed R.R., the target becomes `Impedido` at that severity: the triggering
 | `name_en` | Cross the Point |
 | `origin` | Evasion |
 | `world_origin` | Species: Naghii; seed: Ritualized Access; transmission: archive guard threshold-crossing drills; availability: Restricted |
-| `category` | utility |
+| `category` | defense |
 | `type` | reactive |
 | `trigger` | An enemy commits a single-target physical attack or physical Technique against the user with a discernible forward vector. |
-| `requirements` | Minimum rank: Novice; state: not fully restrained or immobilized; enough space to close toward the attacker |
+| `requirements` | Minimum rank: Novice; defensive competency: Evasion; state: not fully restrained or immobilized; enough space to close toward the attacker |
 | `target` | self |
 | `range` | self |
 | `area` | self |
 | `duration` | instant |
 | `cost` | Rhythm 3; Attrition 1 |
-| `saving_roll` | contextual — if the attacker anticipated the close, they may contest with the relevant Technique or roll; on success, the closing movement does not deny the attack's angle |
+| `saving_roll` | `D.R.` gates the Technique; if the attacker anticipated the close, they may contest the inside reposition with the relevant Technique or roll |
 | `tags` | defense, mobility, counter_positioning, survival_window |
 
 **Fantasy:** The attacker commits forward. The expected answer is to yield. The Naghii enters instead — flowing into the committed path at the exact moment it cannot redirect. Inside now, the attacker's position is no longer what they planned.
 
 **World origin:** Naghii archive-guard training teaches controlled threshold crossing — passing through a guarded line without hesitation at the exact right moment — as a deliberate, disciplined act. In combat, the same doctrine applies to committed attacks: the user crosses into the attack rather than away from it.
 
-**Why this is not a base Evasion check:** A base Evasion check moves away from or resists an incoming attack. `Cruzar la Punta` closes toward the attack instead — denying the attacker their optimal range and raising the threshold for their triggering strike. Its identity is entering the danger, not escaping it.
+**Why this is not raw `Evasion`:** A normal `D.R.` with `Evasion` only answers whether the hit lands. `Cruzar la Punta` uses that same successful defense as the entry gate for something more specific: crossing into the committed path so the attacker loses the range and angle they had just spent the action to claim.
 
 **Primary interaction surface:** reactive close into a committed attack, denying the attacker their planned striking geometry.
 
-**Secondary interaction surface:** threshold pressure on the triggering attack, because the user's new inside position forces the attacker's A.R. against a raised threshold.
+**Secondary interaction surface:** immediate angle theft after a successful defense, because the user's new inside position denies the attacker the geometry they had committed to.
 
 **Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique is a narrow reactive close — its value is denying the attacker their planned range and raising their threshold, not damage or conditions. Attrition reflects the genuine body effort of closing into a committed attack rather than away from it.
 
-**Effect:** Make an Evasion check. On success, close up to 2 meters toward the attacker as the strike arrives — entering rather than yielding. The attack resolves against the user's new position, inside the attacker's committed range and angle. The attacker's A.R. for the triggering attack is contested at raised threshold. Closing does not disarm or neutralize the attacker — a skilled opponent will adjust grip, use the butt end of a reach weapon, or reorient their body. What the user has gained is denying the attacker their preferred range, leaving them with the burden of re-establishing it. The user does not attack as part of this Technique.
+**Effect:** Make your `D.R.` against the triggering attack using `Evasion`.
+
+If that `D.R.` fails, the Technique fails and the attack resolves normally.
+
+If that `D.R.` succeeds, close up to 2 meters toward the attacker as the strike arrives — entering rather than yielding. The attack has already failed to land, but the user's new position is now inside the attacker's committed range and angle. Closing does not disarm or neutralize the attacker — a skilled opponent will adjust grip, use the butt end of a reach weapon, or reorient their body. What the user has gained is denying the attacker their preferred range, leaving them with the burden of re-establishing it. The user does not attack as part of this Technique.
 
 **Restrictions:**
 
@@ -3281,23 +3638,23 @@ On a failed R.R., the target becomes `Impedido` at that severity: the triggering
 | `name_en` | Empty the Target |
 | `origin` | Evasion |
 | `world_origin` | Species: Naghii; seed: Absence As Evidence; transmission: outer archive countertracking and displacement doctrine; availability: Restricted |
-| `category` | utility |
+| `category` | defense |
 | `type` | reactive |
 | `trigger` | An enemy commits a single-target physical attack or physical Technique against the user. |
-| `requirements` | Minimum rank: Novice; state: not fully restrained or immobilized; enough space to move 2 meters |
+| `requirements` | Minimum rank: Novice; defensive competency: Evasion; state: not fully restrained or immobilized; enough space to move 2 meters |
 | `target` | self |
 | `range` | self |
 | `area` | self |
 | `duration` | until the user makes a D.R., C.R., or R.R. in response to a hostile action after this Technique resolves |
 | `cost` | Rhythm 3; Attrition 1 |
-| `saving_roll` | none |
+| `saving_roll` | `D.R.` gates the Technique |
 | `tags` | defense, mobility, counter_positioning, reposition |
 
 **Fantasy:** The body leaves the readable position before the attacker settles their read. No block. No contest. The target has moved, and for a moment the new position is not yet fully mapped in the attacker's tracking. That moment is the window.
 
 **World origin:** Naghii archival doctrine holds that what is not present cannot be struck, and that deliberate displacement is a form of denial, not retreat. This method expresses the same logic in body movement: removing the body from an acquired target lock is a form of control, not merely escape.
 
-**Why this is not a base Evasion check:** A base Evasion check tests whether the user avoids a specific incoming attack. `Vaciar el Blanco` repositions without reactions and opens a bounded defensive window tied to the new position being unsettled in the attacker's tracking — a mechanical state distinct from a single dodge roll.
+**Why this is not raw `Evasion`:** A normal `D.R.` with `Evasion` only answers whether the strike lands. `Vaciar el Blanco` uses that successful defense as the gate for a second payoff: displacement plus a brief unsettled-tracking window on the next hostile answer.
 
 **Primary interaction surface:** proactive displacement that opens a brief defensive/resistance bonus window.
 
@@ -3305,7 +3662,11 @@ On a failed R.R., the target becomes `Impedido` at that severity: the triggering
 
 **Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique is a quick bounded repositioning with a single defensive window that closes when the user must answer hostile pressure. Attrition reflects that deliberate full-body displacement under pressure is a real physical effort, not a passive stance shift.
 
-**Effect:** Move up to 2 meters in any direction without granting reaction opportunities. The next time you must make a `D.R.`, `C.R.`, or `R.R.` in response to a hostile action after this Technique resolves, you gain a bonus to that roll equal to your Evasion competency rank.
+**Effect:** Make your `D.R.` against the triggering attack using `Evasion`.
+
+If that `D.R.` fails, the Technique fails and the attack resolves normally.
+
+If that `D.R.` succeeds, move up to 2 meters in any direction without granting reaction opportunities. The next time you must make a `D.R.`, `C.R.`, or `R.R.` in response to a hostile action after this Technique resolves, you gain a bonus to that roll equal to your Evasion competency rank.
 
 | Evasion rank | Roll bonus |
 | --- | --- |
@@ -3625,7 +3986,7 @@ On a failed check in either surface: no fault is identified.
 | `range` | close |
 | `area` | single |
 | `duration` | until Atrapado is removed |
-| `cost` | Rhythm 4; Attrition 1 |
+| `cost` | Rhythm 5; Attrition 1 |
 | `saving_roll` | `R.R.` reduces — on a successful Alteration Resistance Roll, Atrapado is not applied and the movement proceeds normally |
 | `tags` | utility, control, hold, pressure |
 
@@ -3639,18 +4000,18 @@ On a failed check in either surface: no fault is identified.
 
 **Secondary interaction surface:** override permission — fires against declared no-reaction movement, denying a class of safe exits that most reactives cannot reach.
 
-**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. Trabar el Gesto (Rhythm 5) negates the triggering action outright on a failed R.R. Fijar el Umbral applies `Atrapado` — a condition the target can clear on subsequent turns through an Agarre S.R. or an action spent. The narrower outcome justifies the lower cost. The override permission prevents further reduction: firing against declared no-reaction movement is a meaningful advantage the R.R. gate and the condition's recoverable nature balance against.
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The condition remains narrower than `Trabar el Gesto`, but the Technique's defining permission is that it fires even against movement that would normally deny reactions. That override is large enough to place it at the standard anchor despite the recoverable outcome.
 
-**Effect:** Make an Agarre check against the triggering enemy. On success, the target must make an Alteration Resistance Roll.
+**Effect:** Make an Agarre check against the triggering enemy. On success, the target must make an Alteration Resistance Roll against `Atrapado`.
 
-The `Atrapado` severity is determined by the Agarre rank used for the Technique:
+Use the default Ailment severity bands by rank:
 
 - Ranks 1-2: Minor
 - Ranks 3-4: Moderate
 - Ranks 5-6: Severe
 - Higher ranks continue this progression if the system later defines higher severity bands.
 
-On a failed R.R., the target gains `Atrapado` at that severity: movement is reduced to 0 and the target suffers the normal Atrapado penalties for that severity. `Atrapado` persists until the target succeeds on an Agarre Specialization Roll against the original severity at the start of its turn or spends an action to break free. On a successful R.R., the movement proceeds normally and `Atrapado` is not applied.
+On a failed R.R., the target gains `Atrapado` at that severity. On a successful R.R., the movement proceeds normally and `Atrapado` is not applied.
 
 This Technique may be declared against movement that explicitly states it does not provoke reactions — the grip is placed at the departure threshold before the safe-exit window opens.
 
@@ -3826,7 +4187,7 @@ The Technique does not remove the burden. After the preserved function resolves,
 | `range` | self |
 | `area` | one observing creature or group involved in the triggering resolution |
 | `duration` | one triggering read / pressure resolution, or until the user's next activation if the same scrutiny continues without breaking |
-| `cost` | Rhythm 3; Attrition 1 |
+| `cost` | Rhythm 4; Attrition 1 |
 | `saving_roll` | Aplomo Specialization Roll opposed by the triggering read / pressure action, or against a Narrator-set scrutiny threshold when no explicit hostile roll exists |
 | `tags` | utility, counter_read, control, pressure |
 
@@ -4039,7 +4400,7 @@ On failure, the intervention is too slow, slips, or cannot hold under current pr
 
 **Secondary interaction surface:** local terrain or obstacle use through a material face that is already present in the scene.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique does not break, move, or build the material by itself. It buys one precise read that immediately improves how an existing mineral surface is used or attacked.
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique still does not move or break the material by itself, but one read can become enemy-cover reduction, self-cover improvement, or a prepared break seam. That multi-mode setup is broader than a pure quick informational read.
 
 **Effect:** Choose one stone, packed-earth, mudbrick, ore-bearing, masonry, or similarly mineral feature within short range that is currently relevant as cover, barrier, lip, bank, broken face, threshold, or local obstacle. Make a `Minería` Specialization Roll against a threshold set by the material's hardness, packing, stability, and the scene's current pressure.
 
@@ -4407,7 +4768,1544 @@ This bonus applies only to intensity-escalation `Affliction R.R.` caused by `Ves
 - does not reduce, clear, or recover intensity after it has already increased; it only improves the qualifying `Alteration R.R.` that may prevent the increase
 - affects the user only
 
----
+### Hacer Esperar la Podredumbre
+
+| Field | Value |
+| --- | --- |
+| `name` | Hacer Esperar la Podredumbre |
+| `name_en` | Make the Rot Wait |
+| `origin` | Tolerancia + Infection Resistance |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting; transmission: plague-line labor, corpse-side endurance drills, and infection discipline under foul exposure; availability: Restricted |
+| `category` | utility |
+| `type` | passive |
+| `trigger` | A mundane Infection settles on the user after a qualifying exposure and that Infection has a declared incubation period. |
+| `requirements` | Minimum rank: Novice; `Tolerancia` at Novice or higher; `Infection Resistance` at Novice or higher; the source must be a real infection-family contamination rather than poison, curse, Affliction, or purely taumatic corruption. |
+| `target` | self |
+| `range` | self |
+| `area` | self |
+| `duration` | permanent while both prerequisites remain at Novice or higher |
+| `cost` | Rhythm 0; Attrition 0 — cost was paid in exposure, foul-work conditioning, and learned bodily discipline, not in the ATB |
+| `saving_roll` | none |
+| `tags` | utility, mitigation, endurance, contamination, incubation |
+
+**Fantasy:** The body does not win by staying untouched. It wins by making the rot arrive slower. Fever, swelling, black streak, bad breath, and organ-fail pressure are still coming, but not on the same clock they would claim from cleaner flesh.
+
+**World origin:** Zarnag corpse-haulers, trench clearers, foul-water workers, and plague-line walkers learn early that the first task after exposure is not panic. It is timing. Their endurance discipline teaches the body not to open itself wider through bad strain, bad scratching, bad breathing, bad exertion, or frightened overreaction. The Infection may still take hold, but it is forced to work on a slower timetable before symptoms surface.
+
+**Why this is not raw `Infection Resistance`:** Raw `Infection Resistance` decides whether the Infection settles at all. `Hacer Esperar la Podredumbre` does nothing until after that question is already answered. If the Infection gets in, the Technique forces it to reveal symptoms more slowly.
+
+**Why this is not raw `Tolerancia`:** Raw `Tolerancia` helps the body keep functioning under burden. `Hacer Esperar la Podredumbre` uses that same discipline earlier in the infection cycle: not to erase the burden, but to delay the point where the burden starts showing itself as active symptoms.
+
+**Primary interaction surface:** incubation delay on already-settled mundane Infections.
+
+**Secondary interaction surface:** survival window, because more incubation time means more opportunity to isolate, warn others, seek treatment, or finish necessary labor before the Infection becomes active.
+
+**Cost note:** `Rhythm 0 / Attrition 0` is correct and deliberate. This is a passive hybrid like the other resistance models. The cost was paid in repeated foul exposure, hard instruction, and learning how not to spend the body's time badly in the first moments after contamination.
+
+**Effect:** When a mundane Infection with a declared incubation period settles on you after all qualifying `Infection R.R.` processing, extend that Infection's incubation by one additional interval equal to its own listed incubation period before symptoms become active.
+
+If an Infection normally incubates for:
+
+- hours, it takes those hours again before symptoms manifest
+- days, it takes those days again before symptoms manifest
+- another declared period, repeat that same period once before the Infection becomes active
+
+This Technique does not cancel the Infection, reduce its severity, or prevent later propagation once the Infection becomes active. It only delays symptom onset by making the incubation last longer.
+
+**Restrictions:**
+
+- requires `Tolerancia` at Novice or higher
+- requires `Infection Resistance` at Novice or higher
+- applies only after a mundane Infection has already settled
+- applies only to Infections that actually have a declared incubation period
+- does not help against poison, curse, Affliction, Alteration, fear, command pressure, or purely taumatic corruption
+- does not remove or reduce an Infection after it has already settled
+- does not prevent later propagation once the Infection becomes active
+- affects the user only
+
+### Mantener Cerrada la Línea de Contagio
+
+| Field | Value |
+| --- | --- |
+| `name` | Mantener Cerrada la Línea de Contagio |
+| `name_en` | Keep the Contagion Line Closed |
+| `origin` | Medicina + Infection Resistance |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting; transmission: corpse-side triage, plague-front wound sorting, and septic handling discipline; availability: Restricted |
+| `category` | utility |
+| `type` | passive |
+| `trigger` | The user makes a `Medicina` Specialization Roll specifically to isolate, wrap, bind, mask, drain, or otherwise keep an already active mundane Infection from propagating through valid contact from one self or adjacent carrier. |
+| `requirements` | Minimum rank: Novice; `Medicina` at Novice or higher; `Infection Resistance` at Novice or higher; the target problem must be a real mundane infection-family contamination rather than poison, curse, Affliction, or purely taumatic rot. |
+| `target` | self or adjacent creature |
+| `range` | touch / adjacent |
+| `area` | one active infected carrier and the treatment line being contained |
+| `duration` | permanent while both prerequisites remain at Novice or higher |
+| `cost` | Rhythm 0; Attrition 0 — cost was paid in supervised foul triage and infection-handling practice, not in the ATB |
+| `saving_roll` | none |
+| `tags` | utility, mitigation, triage, contamination, containment |
+
+**Fantasy:** The sickness is already inside. The question now is whether it gets out through the same hands, cloth, fluid, breath, or seepage that kept the carrier alive long enough to be treated. The Zarnag closes that line before the sick body becomes the next source.
+
+**World origin:** Zarnag plague-front medicine is not only about saving the present body. It is also about preventing the present body from becoming the next open source. Corpse-side attendants, trench medics, and foul-water binders are trained to wrap, isolate, drain, mask, and handle active Infection in ways that keep care from becoming propagation.
+
+**Why this is not raw `Medicina`:** Raw `Medicina` can already treat wounds and perform broad field care. `Mantener Cerrada la Línea de Contagio` is narrower: it is specifically about keeping an already active Infection from using treatment contact, wrapped seepage, or ordinary handling as its next propagation route.
+
+**Why this is not raw `Infection Resistance`:** Raw `Infection Resistance` helps a body resist becoming infected. `Mantener Cerrada la Línea de Contagio` does not alter that body's resistance roll directly. It improves the practitioner's ability to keep an active carrier from spreading the Infection outward during the current treatment window.
+
+**Primary interaction surface:** improved `Medicina` rolls that specifically establish non-propagating treatment containment on an already active mundane Infection.
+
+**Secondary interaction surface:** contact containment, because successful treatment can keep one active carrier from infecting the next body through ordinary handling.
+
+**Cost note:** `Rhythm 0 / Attrition 0` is correct and deliberate. This is a passive hybrid like the other resistance models. The cost was paid in supervised foul triage, plague-front handling, and repeated practice keeping infected care from becoming fresh spread.
+
+**Effect:** When you make a `Medicina` Specialization Roll specifically to isolate, wrap, bind, mask, drain, or otherwise keep an already active mundane Infection from propagating through ordinary physical contact from one self or adjacent carrier, add a bonus to that roll equal to your `Infection Resistance` rank bonus.
+
+| `Infection Resistance` rank | Bonus |
+| --- | --- |
+| Novice | `+1` |
+| Adept | `+2` |
+| Expert | `+3` |
+| Master | `+4` |
+| Consummate | `+5` |
+| Transcendent | `+6` |
+
+If that qualifying `Medicina` roll succeeds, the treated Infection does not propagate through ordinary physical contact from that carrier while the containment remains materially intact, up to the end of the current scene.
+
+This does not stop other vectors the Infection entry still defines, does not cure the carrier, and does not survive torn wrappings, removed seals, burst drainage, or other clear containment failure.
+
+**Restrictions:**
+
+- requires `Medicina` at Novice or higher
+- requires `Infection Resistance` at Novice or higher
+- applies only to `Medicina` rolls addressing an already active mundane Infection that could validly propagate through contact
+- does not help against poison, curse, Affliction, Alteration, fear, command pressure, or purely taumatic corruption
+- does not remove or reduce the Infection by itself
+- does not block non-contact vectors the Infection entry still defines
+- ends if the containment is materially broken, removed, or no longer intact
+- affects one current treatment target only
+
+### Ensuciar la Herida
+
+| Field | Value |
+| --- | --- |
+| `name` | Ensuciar la Herida |
+| `name_en` | Foul the Wound |
+| `origin` | Bite |
+| `world_origin` | Species: Zarnag; seed: Carrion Contact Changes The Exchange; transmission: carrion bite discipline and foul-contact work; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user has close contact against a creature whose next clean bodily action can still be spoiled by foul residue, pain, or contamination pressure left at the wound site. |
+| `requirements` | Minimum rank: Novice; weapon profile: Corrosion; any weapon competency, natural attack form, or specific item that grants Corrosion access can use this Technique unless this Technique narrows that access; narrowed access: the attack must deliver bite or other close hostile-residue contact; the target must have a plausible wound surface or breach point |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the wound is cleared with `Interact`, or no longer tracked as a meaningful treatment problem |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the hostile residue |
+| `tags` | attack, corrosion, disruption, foul_contact |
+
+**Fantasy:** The first wound is not the whole problem. The Zarnag leaves the contact dirty enough that anyone trying to treat it now has to work through debris, filth, and hostile residue before the wound can be handled cleanly.
+
+**World origin:** Zarnag carrion labor teaches that some contact keeps working after the bite, cut, or tear is already over. A bad wound attracts filth, compromises movement, and changes judgment. `Ensuciar la Herida` comes from that practical truth: once the body is opened wrongly, the next decision is no longer clean.
+
+**Why this is not a base Bite attack:** A base bite only tries to hit and injure. `Ensuciar la Herida` turns the contact into a treatment problem. The target is pressured not because the hit did more damage, but because the wound is now materially harder to stabilize or clean until the fouling is actually removed.
+
+**Primary interaction surface:** close corrosive or contaminating contact.
+
+**Secondary interaction surface:** treatment denial, because the wound becomes harder to address cleanly until the hostile residue is removed.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is an attack that also creates a persistent treatment problem around hostile residue. These costs apply only during ATB or another active-threat scene; in normal exploration, the Technique resolves as the user's foul-contact action without Attrition.
+
+**Effect:** Make a profile-bearing close attack with a bite or another narrowed-access foul-contact delivery. If the Technique resolves successfully, the target becomes wound-fouled until the duration ends.
+
+While the wound remains fouled, any `Medicina` Specialization Roll or `Medicine`-origin Technique check that directly treats, stabilizes, binds, cleans, or prevents worsening of that wound takes a situational penalty equal to the rank bonus of the competency used for this Technique until the wound has first been cleared through the specific procedural response below.
+
+| Competency rank used | Treatment penalty |
+| --- | --- |
+| Novice | `-1` |
+| Adept | `-2` |
+| Expert | `-3` |
+| Master | `-4` |
+| Consummate | `-5` |
+| Transcendent | `-6` |
+
+Valid procedural response:
+
+- `self_clear`: the fouled target uses `Interact` under pressure to wipe, flush, scrape, or otherwise clear the wound enough to stop the treatment penalty
+
+This Technique does not normally call for `quick_identification`. The pressure is usually obvious: the wound is materially foul and must be cleaned before clean treatment can proceed.
+
+`Medicina` still matters after that step. It stabilizes, treats, or heals the wound once the fouling has been cleared, but it is not itself the step that removes this Technique's state.
+
+This Technique does not apply a generic disease, does not increase direct damage by itself, and does not create a permanent infection track on its own. It makes the wound materially dirtier and therefore harder to treat cleanly until that fouling is actually removed.
+
+**Restrictions:**
+
+- requires real close contact that can leave hostile residue
+- non-natural users need a credible foul-contact tool or delivery method
+- target must have a plausible wound surface or breach point
+- applies to one creature only
+- only penalizes `Medicina` rolls or `Medicine`-origin Techniques that directly address the fouled wound
+- does not penalize unrelated actions or unrelated treatment
+- does not stack with itself on the same target
+- does not replace real disease, infection, or Affliction rules by itself
+
+### Reír en la Brecha
+
+| Field | Value |
+| --- | --- |
+| `name` | Reír en la Brecha |
+| `name_en` | Laugh in the Gap |
+| `origin` | Evasion |
+| `world_origin` | Species: Zarnag; seed: The Laugh Breaks Nerve First; transmission: close mockery pressure and wrong-angle entry; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user can make close hostile contact and immediately crowd the target's read with laughter, body pressure, or wrong-angle follow-in before the target restores clean orientation. |
+| `requirements` | Minimum rank: Novice; weapon profile: Shadow Pressure; any weapon competency, natural attack form, or specific item that grants Shadow Pressure access can use this Technique unless this Technique narrows that access; narrowed access: the attack must deliver close predatory contact and let the user maintain immediate pressure after contact |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the target resolves the first penalized roll, or reaches the end of its next activation |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the spoiled read |
+| `tags` | attack, shadow_pressure, pressure, close_disruption |
+
+**Fantasy:** The Zarnag does not win this moment by making the wound worse. It wins it by becoming the wrong thing to answer cleanly: too close, too ugly, too loud, too immediate. The laugh lands in the gap before the target's next clean choice does.
+
+**World origin:** Zarnag fear discipline teaches that morale often breaks one beat before flesh does. Carrion outriders, trench harriers, and grave-line enforcers learn how to turn a snap of laughter, a crooked shoulder entry, or a bad-angle follow-in into a pressure moment that steals the enemy's clean read.
+
+**Why this is not raw Intimidación:** Raw `Intimidación` pressures resolve through will, authority, nerve, or social force. `Reír en la Brecha` is weaponized close-contact confusion. The target is not being convinced of anything. Its next answer is being made worse because the Zarnag is suddenly in the wrong place, at the wrong angle, at the wrong distance.
+
+**Primary interaction surface:** close `Shadow Pressure` that spoils the target's next clean answer.
+
+**Secondary interaction surface:** near-term answer pressure, because the tax only applies to the target's first direct answer against the user and then expires.
+
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique converts contact into a bounded tactical tax on one near-term direct answer. That is meaningful pressure, but it stays tightly constrained to one target, one follow-up roll, and only against the user who created the pressure.
+
+**Effect:** Make a profile-bearing close attack with claws, bite, or another narrowed-access intimate pressure surface. If the Technique resolves successfully, the target becomes `read-spoiled` until the duration ends.
+
+While `read-spoiled`, the first `D.R.` or `A.R.` the target makes directly against the user takes a situational penalty equal to the rank bonus of the competency used for this Technique.
+
+| Competency rank used | Roll penalty |
+| --- | --- |
+| Novice | `-1` |
+| Adept | `-2` |
+| Expert | `-3` |
+| Master | `-4` |
+| Consummate | `-5` |
+| Transcendent | `-6` |
+
+This Technique does not require `quick_identification`, cleansing, or technical handling. It also does not need a separate clearing route: the effect is already bounded to one target and one near-term `D.R.` or `A.R.` against the user.
+
+**Restrictions:**
+
+- requires real close contact and immediate follow-in pressure
+- non-natural users need a credible close surface for `Shadow Pressure`
+- only penalizes the first `D.R.` or `A.R.` the target makes directly against the user
+- applies to one creature only
+- does not stack with itself on the same target
+- does not penalize unrelated rolls against other creatures
+- does not create fear magic, compulsion, or long-form morale damage by itself
+
+### Abrir la Costura
+
+| Field | Value |
+| --- | --- |
+| `name` | Abrir la Costura |
+| `name_en` | Open the Seam |
+| `origin` | Evasion |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: body-line reading and close rip follow-up; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user can make close tearing contact against a creature whose posture, wound line, or protective body angle is already weak enough to be opened further by follow-through. |
+| `requirements` | Minimum rank: Novice; weapon profile: Rend; any weapon competency, natural attack form, or specific item that grants Rend access can use this Technique unless this Technique narrows that access; narrowed access: the attack must deliver tearing close contact and the target must have a plausible body line or protection line to open |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the first qualifying `Impact Roll` benefits from the opened seam, or until the end of the user's next activation |
+| `cost` | Rhythm 4; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the opened seam |
+| `tags` | attack, rend, setup, tearing |
+
+**Fantasy:** The Zarnag does not always need to win by tearing hardest in the first instant. Sometimes the correct answer is to open the line that was already beginning to fail, then come through it properly on the next committed entry.
+
+**World origin:** Zarnag route readers and close skirmishers survive by seeing where a wall, trench edge, scavenger path, or body line is already giving way. `Abrir la Costura` brings that logic into flesh: first contact does not just hurt, it makes the next true entry cleaner by opening what was already weakening.
+
+**Why this is not raw damage:** A base tearing strike just tries to injure. `Abrir la Costura` is about follow-through value. The first contact matters because it leaves the target worse for the user's next Impact, not because it immediately adds more damage by itself.
+
+**Primary interaction surface:** `Rend` through tearing contact that opens the target's line.
+
+**Secondary interaction surface:** bounded self-setup, because the benefit only applies to the user's next qualifying `Impact Roll` against the same target.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is an attack that turns first contact into a delayed material opening. The payoff is real, but it is limited to one target, one follow-up `Impact Roll`, and a short timing window.
+
+**Effect:** Make a profile-bearing close attack with claws, bite, or another narrowed-access tearing surface. If the Technique resolves successfully, the target becomes `seam-opened` until the duration ends.
+
+While `seam-opened`, the first `Impact Roll` made by the user against that same target ignores `Block` equal to the rank bonus of the competency used for this Technique.
+
+| Competency rank used | Block ignored |
+| --- | --- |
+| Novice | `1` |
+| Adept | `2` |
+| Expert | `3` |
+| Master | `4` |
+| Consummate | `5` |
+| Transcendent | `6` |
+
+This Technique does not require cleansing, diagnosis, or a separate clearing route. It is already bounded to one target, one follow-up `Impact Roll` from the same user, and one short timing window.
+
+**Restrictions:**
+
+- requires real close tearing contact
+- non-natural users need a credible rending surface or tool
+- only benefits the first `Impact Roll` made by the same user against the same target
+- applies to one creature only
+- does not stack with itself on the same target
+- does not help allies or unrelated attacks
+- does not ignore `Defense`, only `Block`
+- does not create persistent bleed, infection, or open-ended vulnerability by itself
+
+### Atajar el Brote
+
+| Field | Value |
+| --- | --- |
+| `name` | Atajar el Brote |
+| `name_en` | Cut Off the Spread |
+| `origin` | Bite |
+| `world_origin` | Species: Zarnag; seed: Better To Strike Before Rot Spreads; transmission: committed rush before worsening contact; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user judges that waiting is worse than committing and can enter close contact immediately after real forward movement toward the target. |
+| `requirements` | Minimum rank: Novice; weapon profile: Charge; any weapon competency, natural attack form, or specific item that grants Charge access can use this Technique unless this Technique narrows that access; narrowed access: the attack must follow real forward movement toward the target and end in close contact |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | immediate |
+| `cost` | Rhythm 7; Attrition 2 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the breakthrough Impact benefit |
+| `tags` | attack, charge, breakthrough, committed_entry |
+
+**Fantasy:** The Zarnag does not wait for the line to get cleaner. It judges that waiting is how rot spreads, panic hardens, or the route gets worse. The answer is ugly commitment now, before the target or the field has time to become a bigger problem.
+
+**World origin:** Plague breakers, hard-use hunting parties, and breach-line followers learn that some dangers should not be given another breath, another step, or another moment to reorganize. `Atajar el Brote` turns that judgment into action: forward entry first, clean recovery later if there is still time.
+
+**Why this is not raw movement plus bite:** A normal rush into a bite only changes distance. `Atajar el Brote` converts that committed entry into immediate breakthrough value on the same hit. The point is not just arriving. It is arriving hard enough that the target's `Block` fails to answer cleanly in that instant.
+
+**Primary interaction surface:** `Charge` through committed close entry and same-hit breakthrough.
+
+**Secondary interaction surface:** timing pressure, because the Technique only exists when the user accepts that delay is mechanically worse than costly commitment.
+
+**Cost note:** `Rhythm 7 / Attrition 2` is deliberate. This is heavier than the earlier Zarnag novice attacks because it includes real forward entry plus immediate Block-breaking value on the same strike. It should feel like an expensive but correct answer when hesitation is judged worse.
+
+**Effect:** Move into close contact with the target as part of the same committed action, then make a profile-bearing close attack with bite or another narrowed-access breakthrough surface.
+
+If the Technique resolves successfully, the `Impact Roll` of that same attack ignores `Block` equal to the rank bonus of the competency used for this Technique.
+
+| Competency rank used | Block ignored |
+| --- | --- |
+| Novice | `1` |
+| Adept | `2` |
+| Expert | `3` |
+| Master | `4` |
+| Consummate | `5` |
+| Transcendent | `6` |
+
+This Technique does not create a lasting state, a follow-up setup, or a clearing route. Its value is immediate: strike before worsening has time to multiply.
+
+**Restrictions:**
+
+- requires real forward movement toward the target before the attack
+- non-natural users need a credible breakthrough surface or tool
+- only benefits the `Impact Roll` of the same attack that carried the rush
+- applies to one creature only
+- does not stack with other instances of itself on the same attack
+- does not ignore `Defense`, only `Block`
+- does not grant free displacement or extra movement beyond the committed entry
+- does not create persistent opening or follow-up state by itself
+
+### Robar la Orilla
+
+| Field | Value |
+| --- | --- |
+| `name` | Robar la Orilla |
+| `name_en` | Steal the Edge |
+| `origin` | Claws |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: short entry, cut, and exit timing; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user can enter close enough to cut the target's edge and still keep enough body freedom to slip back out before becoming fully committed. |
+| `requirements` | Minimum rank: Novice; weapon profile: Skirmish; any weapon competency, natural attack form, or specific item that grants Skirmish access can use this Technique unless this Technique narrows that access; narrowed access: the attack must use a light close surface and the user must have room to exit after contact |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | immediate |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the reposition benefit |
+| `tags` | attack, skirmish, mobility, edge_theft |
+
+**Fantasy:** The Zarnag does not stay where the exchange is thickest. It takes the edge, cuts once, and slips out before the body line closes around it.
+
+**World origin:** Flank-runners, ruin pickers, and bad-ground harriers survive by stealing the dangerous outer edge of a line instead of contesting its center. `Robar la Orilla` applies that field truth to combat: first contact is useful because it creates a safe peel-off, not because it demands a held struggle.
+
+**Why this is not raw movement after an attack:** A normal attack followed by later movement leaves a tempo gap and pays for the reposition separately. `Robar la Orilla` binds the cut and the exit into one trained action, but only in a light skirmish form and only when the attack truly lands.
+
+**Primary interaction surface:** `Skirmish` through light contact plus immediate slip-out.
+
+**Secondary interaction surface:** mobility, because the reward is controlled exit timing rather than direct damage conversion or line-breaking force.
+
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. The Technique is a full attack, but its payoff is only a light slip-out. It should feel agile and useful without pricing itself like the heavier setup, breakthrough, or shared disruption attacks in the same species set.
+
+**Effect:** Make a profile-bearing close attack with claws or another narrowed-access light skirmish surface.
+
+If the Technique resolves successfully, after the attack the user may immediately reposition up to half of its normal `Movement` distance without paying an additional `Rhythm` cost.
+
+This reposition must remain physically plausible, must not pass through an occupied hostile body space the user could not normally cross, and must represent a real slip-out, lateral peel, or retreating edge step rather than a second engagement burst.
+
+**Restrictions:**
+
+- requires a light close surface with `Skirmish` access
+- user must have real room to reposition after contact
+- reposition occurs only if the attack successfully resolves
+- reposition is limited to half normal `Movement` distance
+- reposition does not ignore terrain or occupation limits
+- applies to one creature only
+- does not grant a second attack
+- does not create long-duration pressure or follow-up state by itself
+
+### Quebrar la Vuelta
+
+| Field | Value |
+| --- | --- |
+| `name` | Quebrar la Vuelta |
+| `name_en` | Break the Turn |
+| `origin` | Evasion |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: wrong-side recovery and close-line break; availability: Common |
+| `category` | defense |
+| `type` | reactive |
+| `trigger` | An enemy in close contact makes a physical attack against the user and the user still has enough body freedom to slip to the wrong side of the attack line before the hit fully settles. |
+| `requirements` | Minimum rank: Novice; defensive competency: Evasion; user and attacker must already be in close contact; the user must still have enough freedom to shift angle inside that contact |
+| `target` | attacking enemy |
+| `range` | close contact |
+| `area` | self and one attacking enemy |
+| `duration` | instant |
+| `cost` | Rhythm 3; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` gates the Technique |
+| `tags` | defense, evasion, reaction, angle_break |
+
+**Fantasy:** The attacker turns into the place they thought the Zarnag would still occupy and finds the body already broken off that line. The answer was committed to something real, but no longer to something present.
+
+**World origin:** Harriers, carcass-circle duelists, and wrong-line cutters learn that close exchanges are lost by the fighter who remains where the enemy expects. `Quebrar la Vuelta` expresses that habit reactively: let the attacker finish choosing the line, then make that line wrong at the last useful instant.
+
+**Why this is not raw movement or generic Evasion:** A normal reposition does not automatically spoil an attack that is already turning in, and base `Evasion` alone does not explain the specifically false-angle close logic. `Quebrar la Vuelta` is about making the attacker commit to the wrong turn inside an already-settled close exchange.
+
+**Primary interaction surface:** `Evasion` through false read and late angle break.
+
+**Secondary interaction surface:** light close reposition, because a successful defended break lets the user settle on a different immediate angle without paying a second action.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This is a narrow reactive defense: one close attack, one defended angle break, and one light reposition only if the defense succeeds. It should feel sharp and useful without becoming a universal escape or a full interception technique.
+
+**Effect:** When the triggering close attack is declared, make your `D.R.` against it with an additional situational bonus equal to the rank bonus of your `Evasion` competency.
+
+| Evasion rank used | Additional `D.R.` bonus |
+| --- | --- |
+| Novice | `+1` |
+| Adept | `+2` |
+| Expert | `+3` |
+| Master | `+4` |
+| Consummate | `+5` |
+| Transcendent | `+6` |
+
+If that `D.R.` succeeds, after the exchange resolves you may immediately reposition to another physically plausible close angle around the attacker without paying additional `Rhythm`, as long as you remain in close contact.
+
+This Technique does not create lasting pressure, a follow-up attack bonus, or a clearing route. Its value is immediate: the attacker answered the wrong line, and you are no longer where that answer expected.
+
+**Restrictions:**
+
+- requires existing close contact with the attacker
+- requires enough bodily freedom to support a real late angle shift
+- only applies against the triggering close attack
+- reposition occurs only if the `D.R.` succeeds
+- reposition must remain within close contact against the attacker
+- does not grant free disengagement or long reposition
+- does not replace the user's `Attack Roll` or create a counterattack
+- does not create persistent confusion, social fear, or follow-up bonus by itself
+
+### Soltar la Capa Muerta
+
+| Field | Value |
+| --- | --- |
+| `name` | Soltar la Capa Muerta |
+| `name_en` | Shed the Dead Layer |
+| `origin` | Light Armor |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting; transmission: outer-wrap shedding drills, carrion apron release work, and bad-contact escape practice; availability: Common |
+| `category` | defense |
+| `type` | reactive |
+| `trigger` | A physical attack, grab, or contact-dependent Technique is about to land on a zone protected by your functional light armor or expendable outer layer, and you still have enough body freedom to let that outer layer take the line instead of the body. |
+| `requirements` | Minimum rank: Novice; defensive competency: Light Armor; the struck zone must be covered by functional light armor or an expendable outer layer, and the user must not be fully restrained or immobilized |
+| `target` | self |
+| `range` | self |
+| `area` | one incoming hit or contact line |
+| `duration` | instant |
+| `cost` | Rhythm 3; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` gates the Technique |
+| `tags` | defense, light_armor, reaction, contact_denial |
+
+**Fantasy:** The body is already slipping free when the bad hand closes. If there is a loose apron, wrap, or hanging layer, it is what gets caught instead of the real line.
+
+**World origin:** Zarnag foul-work elders and pit-edge runners learn early that a cheap outer layer is worth less than a clean hold on the body. Aprons, wraps, slings, tied hides, and ragged layers are not only for weather or filth; they are also something you can afford to lose when a bad hand, bad tooth, or bad hook comes in wrong. `Soltar la Capa Muerta` is that lesson under pressure.
+
+**Why this is not raw `Light Armor`:** Raw `Light Armor` already supports a good `D.R.` while preserving mobility. `Soltar la Capa Muerta` pushes that evasive logic further by converting one successful defense into an immediate peel-out, and, when a loose outer layer exists, into a spoiled grip on the wrong thing.
+
+**Primary interaction surface:** `D.R.` through `Light Armor` as evasive peel and false purchase denial.
+
+**Secondary interaction surface:** immediate angle recovery, because a successful evasive peel leaves the user in a better short position instead of held contact.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This is a narrow reactive evasive defense: one defended contact line and one short peel-out if the defense succeeds. It should feel practical and sharp without turning light armor into mitigation, universal escape, or full anti-grapple immunity.
+
+**Effect:** Make your `D.R.` against the triggering attack using `Light Armor`.
+
+If that `D.R.` fails, the Technique fails and the attack resolves normally.
+
+If that `D.R.` succeeds, you may immediately reposition 1 meter to a legal adjacent space without paying additional `Rhythm`.
+
+This Technique does not improve `Bloqueo`, does not protect another creature, and does not require sacrificing equipment to gain the peel-out. Its value is the evasive exit itself.
+
+**Restrictions:**
+
+- requires functional light armor or an expendable outer layer on the struck zone
+- only applies against the triggering physical attack or contact line
+- reposition occurs only if the `D.R.` succeeds
+- reposition is limited to 1 meter and must end in a legal adjacent space
+- does not help against area effects, mental pressure, non-physical effects, or attacks that never needed contact purchase
+- does not protect another creature
+
+### Cortar la Mano Tarde
+
+| Field | Value |
+| --- | --- |
+| `name` | Cortar la Mano Tarde |
+| `name_en` | Cut the Late Hand |
+| `origin` | Claws + Bite |
+| `world_origin` | Species: Zarnag; seed: Quarantine Is Force With A Moral Cost; transmission: no-touch line reaction drills; availability: Common |
+| `category` | attack |
+| `type` | reactive |
+| `trigger` | An enemy within close contact begins a physical action that would grab, use, open, cross, pick up, or otherwise commit through a line, object, or body space the user is actively contesting at close range. |
+| `requirements` | Minimum rank: Novice; weapon profile: Interruption; any weapon competency, natural attack form, or specific item that grants Interruption access can use this Technique unless this Technique narrows that access; the user must already be contesting the relevant line, object, or body space and have a fast close surface capable of spoiling the process |
+| `target` | attacking enemy |
+| `range` | close contact |
+| `area` | self and one attacking enemy |
+| `duration` | instant |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | replace normal `D.R.` with opposed `A.R.` against the triggering hostile roll |
+| `tags` | attack, interruption, reaction, quarantine |
+
+**Fantasy:** The enemy did not merely attack. They put a hand, tool, or body line where it should not have gone. The Zarnag does not answer after the process is complete. It answers at the exact late moment when that process can still be ruined.
+
+**World origin:** Trench wardens, plague-line cutters, and carcass-route keepers learn that some lines must not be crossed cleanly, some seals must not be opened, and some objects must not be touched once the field has turned bad. `Cortar la Mano Tarde` is the combat form of that rule: spoil the process before the breach becomes real.
+
+**Why this is not raw reaction damage:** A reactive strike by itself does not necessarily ruin what the enemy was trying to do. `Cortar la Mano Tarde` is a counterattack whose damage only matters if the timing actually tears the process apart.
+
+**Primary interaction surface:** `Interruption` through late-hand process spoil.
+
+**Secondary interaction surface:** quarantine pressure, because the Technique protects a contested bad line, object, or body space without needing a full persistent control state.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. This is not just a spoil; it replaces the normal defensive answer with a reactive counterattack that can both ruin the hostile process and deal damage on the same resolution. That permission belongs at the standard anchor even with its narrow trigger.
+
+**Effect:** When the trigger occurs, the user may replace its normal `D.R.` against that one hostile attack or process with a reactive `Attack Roll` using claws, bite, or another narrowed-access interruptive close surface.
+
+If the user's reactive `Attack Roll` equals or exceeds the triggering hostile roll, the hostile action is interrupted and does not resolve cleanly, and the user's interruptive contact deals normal damage.
+
+If the user's reactive `Attack Roll` is lower, the hostile action resolves normally and this Technique deals no damage.
+
+This Technique does not hold the enemy in place, create a lasting state, or replace broader lane denial. Its value is timing: the enemy reached in too late and lost the process.
+
+**Restrictions:**
+
+- requires a real contested line, object, or close body space
+- non-natural users need a credible interruptive close surface or tool
+- only applies to the triggering enemy and the triggering action
+- the user must already be close enough to spoil the process
+- does not create a persistent grapple or hold
+- does not replace full `Line Control` or quarantine structure by itself
+- applies to one creature only
+- does not stack with itself on the same trigger
+
+### Encontrar la Parte Blanda
+
+| Field | Value |
+| --- | --- |
+| `name` | Encontrar la Parte Blanda |
+| `name_en` | Find the Soft Part |
+| `origin` | Bite + Claws |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: compromised body read and exact finish work; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The target is already bodily compromised in a way that exposes a soft line: an existing wound, failed posture, collapse, pinned limb, open breath line, or another plausible finishing vulnerability. |
+| `requirements` | Minimum rank: Novice; weapon profile: Lethality; any weapon competency, natural attack form, or specific item that grants Lethality access can use this Technique unless this Technique narrows that access; the target must already have a plausible soft line or vital opening, and the attack must be close and precise enough to exploit it |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | immediate |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the finishing benefit |
+| `tags` | attack, lethality, finishing, precision |
+
+**Fantasy:** The Zarnag does not attack the whole body. It attacks the part that has already stopped being equally alive, equally guarded, or equally able to resist.
+
+**World origin:** Carrion judges, flank-cutters, and finishing knife keepers learn how to read the point where a body has become easier to end than to fight honestly. `Encontrar la Parte Blanda` is not about inventing a miracle opening. It is about recognizing the one that already exists and finishing through it cleanly.
+
+**Why this is not raw damage:** A normal attack just tries to hit hard enough. `Encontrar la Parte Blanda` only gains value when the target is already compromised. Its value is not abstract damage inflation or hidden Block reduction. It is the ability to turn a real existing weak line into a cleaner chance of decisive contact.
+
+**Primary interaction surface:** `Lethality` through exact finishing exploitation of an already exposed line.
+
+**Secondary interaction surface:** judgment pressure, because the Technique only works when the user correctly identifies that the target has crossed from “hard to fight” into “possible to finish.”
+
+**Cost note:** `Rhythm 4 / Attrition 1` is deliberate. This is a selective finishing strike, not a broad opener or heavy breakthrough. Its payoff is real, but it only exists when the target already presents a true vulnerable line and the user can exploit it in one exact finishing attempt.
+
+**Effect:** Make a profile-bearing close attack with bite, claws, or another narrowed-access finishing surface against a target that already has a plausible soft line or vital opening.
+
+If the attack connects and proceeds to `Impact`, the designated critical die for that `Impact Roll` counts one result below its normal maximum as enough to validate an `Impacto Crítico` for this attack only.
+
+| Impact die | Normal critical | `Encontrar la Parte Blanda` critical |
+| --- | --- | --- |
+| `d4` | `4` | `3-4` |
+| `d6` | `6` | `5-6` |
+| `d8` | `8` | `7-8` |
+| `d10` | `10` | `9-10` |
+| `d12` | `12` | `11-12` |
+
+This expanded threshold applies only to validating the `Impacto Crítico` of this one attack. It does not increase base `Impact`, does not reduce `Block`, and does not broaden other critical options unless the attack actually resolves through a real pre-existing vulnerable line.
+
+**Restrictions:**
+
+- requires a real existing soft line, wound, or vital opening on the target
+- non-natural users need a credible close finishing surface or tool
+- applies to one creature only
+- does not increase base `Impact` or reduce `Block` by itself
+- does not create its own opening or count a normal healthy body as already compromised
+- does not stack with itself on the same attack
+- does not create long-form bleed or condition tracks by itself
+- the expanded critical threshold only applies to this one attack's designated critical die
+
+### Hacer Ceder el Resguardo
+
+| Field | Value |
+| --- | --- |
+| `name` | Hacer Ceder el Resguardo |
+| `name_en` | Make the Shelter Give |
+| `origin` | Axe / Cleaver |
+| `world_origin` | Species: Zarnag; seed: Quarantine Is Force With A Moral Cost; transmission: breaker-cleaver drills, corpse-gate labor, shield-splitting work, and bad-barrier breach practice; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | A local hard structure, carried protective piece, or nearby resisting segment is currently protecting, stabilizing, or screening the target, and the user has a Sunder-bearing surface capable of forcing that thing to stop doing its job. |
+| `requirements` | Minimum rank: Novice; weapon profile: Sunder; any weapon competency, natural attack form, or specific item that grants Sunder access can use this Technique unless this Technique narrows that access; the declared target must be a real breakable piece, object, or cover segment the attack can plausibly reach |
+| `target` | one declared protective or resisting structure |
+| `range` | weapon reach / adjacent |
+| `area` | single declared structure or piece |
+| `duration` | instant |
+| `cost` | Rhythm 5; Attrition 2 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` still resolves against the attack if the declared structure is being protected or carried by a creature |
+| `tags` | attack, sunder, break, anti-protection |
+
+**Fantasy:** The point is not to wound the creature first. The point is to make the thing it is trusting stop being trustworthy.
+
+**World origin:** Zarnag labor around bad dead, trench barriers, corpse-gates, and makeshift shields teaches a brutal practical lesson: some things are more dangerous half-functional than whole. `Hacer Ceder el Resguardo` turns that lesson into combat form. The user does not wait for a critical miracle. It commits to the piece itself and forces the question of whether that protection can still hold.
+
+**Why this is not raw damage:** A normal hard hit may damage the creature or rattle the line, but it does not necessarily turn a protection piece, shield, cover lip, or carrying structure into a valid break problem right now. `Hacer Ceder el Resguardo` is about making structure the target instead of treating structure as incidental.
+
+**Primary interaction surface:** `Sunder` through direct structural punishment of a declared protective or resisting piece.
+
+**Secondary interaction surface:** anti-protection pressure, because the Technique matters when something between the user and the consequence is still doing too much work.
+
+**Cost note:** `Rhythm 5 / Attrition 2` is deliberate. This Technique bypasses the normal need for `Impacto Crítico` to make a valid break attempt, but only against one declared reachable structure and without pretending every hit becomes a break.
+
+**Effect:** Before rolling, declare one real breakable target the attack can plausibly reach: a shield, armor piece, carried tool, door bar, corpse-gate slat, cover edge, brace, cart lip, or another local hard structure that is actively protecting, screening, or stabilizing the target's line.
+
+Make a Sunder-bearing attack against that declared target. If the attack fails to connect, nothing further happens.
+
+If the attack connects, this Technique creates a valid break attempt against the declared target **without requiring `Impacto Crítico`**. Resolve the break using the normal `Durabilidad` and `Potencia` rules for Breaking Parts or object rupture.
+
+If the declared target breaks, cracks open, or stops functioning, it immediately loses the protective, screening, or stabilizing benefit it was providing in the fiction. If it does not break, apply the normal failed break result for a valid break attempt.
+
+This Technique does not increase `Potencia`, does not broaden critical thresholds, and does not count the whole creature as a legal break target by itself.
+
+**Restrictions:**
+
+- the declared target must be a real breakable piece, object, or local hard structure rather than the creature as a whole
+- does not apply to purely soft tissue unless that tissue is already established as a breakable structure
+- non-natural users need a credible Sunder-bearing surface such as an axe, cleaver, breaker head, or similar tool
+- does not increase `Potencia` by itself
+- does not expand critical ranges or grant critical effects by itself
+- does not create a grapple, trap, or persistent lane denial
+- if no breakable structure is actually present on the line, this Technique does not apply
+- applies to one declared target only
+
+### Darle a la Pieza Útil
+
+| Field | Value |
+| --- | --- |
+| `name` | Darle a la Pieza Útil |
+| `name_en` | Hit the Useful Piece |
+| `origin` | Thrown Tool |
+| `world_origin` | Species: Zarnag; seed: The Necessary Hand Must Stay Steady; transmission: warning-throw drills, carcass-line enforcement, and exact object-spoil practice; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The target is actively relying on one visible carried or worn piece to work cleanly right now, and the user has one exact thrown line to spoil how that piece settles or moves. |
+| `requirements` | Minimum rank: Novice; weapon profile: Precision; any weapon competency, natural attack form, or specific item that grants Precision access can use this Technique unless this Technique narrows that access; requires a direct-line projectile or thrown surface capable of exact placement against a visible small target |
+| `target` | one creature and one declared carried or worn piece |
+| `range` | short range |
+| `area` | single |
+| `duration` | until the marked piece is corrected or the end of the target's next activation |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the placement effect |
+| `tags` | attack, precision, object_spoil, ranged |
+
+**Fantasy:** The shot is not for the body first. It is for the buckle, strap, grip, rim, sling, hinge, or hanging piece the body is about to trust.
+
+**World origin:** Zarnag line workers and warning throwers learn that sometimes the cleanest way to stop a bad process is not to maim the carrier, but to spoil the exact piece they are about to depend on. `Darle a la Pieza Útil` comes from that discipline: hit the useful part precisely enough that the next use is no longer clean.
+
+**Why this is not raw ranged damage:** A normal projectile hit may wound or rattle the target, but it does not necessarily make one exact carried or worn piece stop functioning cleanly. `Darle a la Pieza Útil` is about exact placement on the thing being used, not just on the person carrying it.
+
+**Primary interaction surface:** `Precision` through exact projectile placement on one declared useful piece.
+
+**Secondary interaction surface:** disruption, because the Technique makes the next use of that exact piece worse unless the target first corrects it.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The spoil is bounded to one piece, but it still combines an attack with a persistent functional penalty that any later actor can exploit. That shared disruption surface is stronger than a quick anchor attack.
+
+**Effect:** Before rolling, declare one visible carried or worn piece the target is plausibly relying on: a weapon grip, shield rim, sling, strap, lantern hook, satchel tie, mask fastening, brace cord, hanging tool, or similar small functional point.
+
+Make a Precision-bearing ranged or thrown attack against the target. If the attack fails to connect, nothing further happens.
+
+If the attack connects, the declared piece becomes `badly-seated`. The first `A.R.`, `D.R.`, or `S.R.` the target makes that directly depends on that exact piece takes a situational penalty equal to the rank bonus of the competency used for this Technique.
+
+| Competency rank used | Penalty to the first dependent roll |
+| --- | --- |
+| Novice | `-1` |
+| Adept | `-2` |
+| Expert | `-3` |
+| Master | `-4` |
+| Consummate | `-5` |
+| Transcendent | `-6` |
+
+The target may remove `badly-seated` before that roll by spending `Interactuar` to reseat, free, tighten, or regrip the declared piece if the fiction allows it. If the target never uses that exact piece before the end of its next activation, the effect ends.
+
+This Technique does not break the piece, does not disarm by itself, and does not create a trap or environmental mark.
+
+**Restrictions:**
+
+- requires one visible small carried or worn piece rather than a whole body zone
+- requires a direct-line thrown or projectile surface capable of exact placement
+- the penalty applies only to the first `A.R.`, `D.R.`, or `S.R.` that directly depends on the declared piece
+- the target may clear the effect with `Interactuar` if the declared piece can realistically be corrected
+- does not function on creatures with no readable or relevant carried/worn piece on the line
+- does not break, disarm, or trap by itself
+- applies to one creature and one declared piece only
+
+### Sostener la Mano Necesaria
+
+| Field | Value |
+| --- | --- |
+| `name` | Sostener la Mano Necesaria |
+| `name_en` | Hold the Necessary Hand |
+| `origin` | Contención |
+| `world_origin` | Species: Zarnag; seed: The Necessary Hand Must Stay Steady; transmission: plague-camp discipline, corpse-team instruction, and horror-labor steadiness drills; availability: Common |
+| `category` | utility |
+| `type` | reactive |
+| `trigger` | You or one adjacent ally is targeted by one immediate attempt of horror, disgust, taboo dread, or contamination pressure that would impose a concrete penalty, interruption, or collapse risk on one necessary task being declared right now. |
+| `requirements` | Minimum rank: Novice; Contención at Novice or higher; the declared task must be immediate and necessary, and the pressure must come from a real horrifying or contaminating source rather than a generic inconvenience |
+| `target` | self or one adjacent ally |
+| `range` | self / adjacent |
+| `area` | single creature |
+| `duration` | one declared task or short held duty |
+| `cost` | Rhythm 3; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration unless the scene is under active pressure |
+| `saving_roll` | opposed `Contención S.R.` against the triggering pressure roll or against a threshold set by the scene when no hostile roll exists |
+| `tags` | utility, containment, survival_window, support |
+
+**Fantasy:** The hand starts to go. The Zarnag answers before it does. Sometimes it is breath. Sometimes it is a snapped command. Sometimes it is the crooked laugh that says the foul thing has not won yet. The task holds because the breaking moment is denied in time.
+
+**World origin:** Zarnag children learn early that someone must keep touching what others recoil from. In plague camps, grave lines, butcher pits, and corpse-wagons, survival depends on the person who can keep one needed action alive while everyone else is fighting the urge to flinch, gag, pray badly, or run. `Sostener la Mano Necesaria` is that discipline under immediate pressure.
+
+**Why this is not raw Contención:** A base `Contención` roll decides whether the character mentally breaks. `Sostener la Mano Necesaria` is narrower and more tactical: it answers one specific attempt to break function at the exact moment that attempt would spoil a necessary task.
+
+**Primary interaction surface:** `Contención` through preserving one necessary task against immediate internal breakdown.
+
+**Secondary interaction surface:** support, because the user can steady an adjacent ally through one short task instead of only preserving self-function.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This is not broad morale support. It is one immediate reactive denial of one collapse attempt against one necessary task for self or adjacent ally.
+
+**Effect:** Choose yourself or one adjacent ally who is declaring one necessary immediate task under pressure. The task must be specific and practical: `Interactuar`, `Usar Especialización`, lifting or dragging a body, tying a seal, sealing a container, cutting something free, holding a gate, or another short duty the fiction clearly makes necessary.
+
+When horror, disgust, taboo dread, contamination pressure, or a comparable inward-collapse source attempts to impose a concrete penalty, interruption, or spoil on that task, make a reactive `Contención` Specialization Roll.
+
+If the source already uses an opposed roll, your `Contención S.R.` must equal or exceed that triggering roll. If the source does not use an opposed roll, roll against a threshold set by the scene's psychological and sensory pressure.
+
+On success, that one triggering collapse attempt does not apply to the declared task: the penalty, interruption, or inward break it would have caused is denied for this one resolution, and the task continues normally if it is still physically possible.
+
+On failure, the triggering pressure resolves normally.
+
+This Technique does not remove the source, cure panic broadly, or protect against bodily pain, command effects, deception, or long-form social pressure. It only says: not this break, not on this task, not yet.
+
+**Restrictions:**
+
+- only applies when the source of failure is horror, disgust, taboo dread, contamination pressure, or similar inward collapse pressure
+- does not apply to bodily pain, wound penalties, Fatigue, poison, or other physiological burden; those belong to `Tolerancia`
+- does not apply to leadership pressure, negotiation, deception, or ordinary fear from a merely dangerous opponent with no horror or contamination logic
+- only answers one triggering collapse attempt against one declared task or held duty per use
+- cannot make an impossible task physically possible
+- cannot remove a lasting condition, clear an Ailment, or grant broad morale immunity
+- if no real collapse pressure is present, this Technique does not apply
+
+### Tomar la Parte Útil
+
+| Field | Value |
+| --- | --- |
+| `name` | Tomar la Parte Útil |
+| `name_en` | Take the Useful Part |
+| `origin` | Destreza |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting; transmission: corpse-side sorting drills, foul-kit handling, and exact-hand work under contamination pressure; availability: Common |
+| `category` | utility |
+| `type` | reactive |
+| `trigger` | You fail one immediate `C.R.` or `S.R.` involving fine handwork on a small useful point — knot, seal edge, wrapped opening, sample point, tag, clasp, fastener, grip, tool edge, wound lip, or another similarly exact handling line — and the failure has not yet fully spilled into an irreversible outcome. |
+| `requirements` | Minimum rank: Novice; Destreza at Novice or higher; line of sight or hand access to the declared point; one free hand plus cloth, pick, hook, forceps, knife point, or another plausible fine-handling means. |
+| `target` | one declared exact point / small useful item / handling line |
+| `range` | touch / adjacent |
+| `area` | one exact local point |
+| `duration` | immediate |
+| `cost` | Rhythm 0; Attrition 3 |
+| `saving_roll` | immediate `Destreza S.R.` replacing the failed handling result |
+| `tags` | utility, reaction, exact_handling, contamination, second_attempt |
+
+**Fantasy:** The first hand goes wrong. The second hand arrives before the mistake finishes becoming disaster. The Zarnag does not start over cleanly; they seize the one useful point in the middle of the slip and force the exact correction through anyway.
+
+**World origin:** Zarnag labor around bodies, spoilage, trench kits, quarantine gear, and damaged containers teaches one ruthless lesson: the first miss is often survivable, the second is not. Children sorting refuse, plague-camp workers opening wraps, and corpse-line judges checking remains all learn how to correct a slipping hand in the same breath before snag, spill, burst, or contamination fully opens.
+
+**What `Destreza` contributes:** This Technique is built from extracted `Destreza` capacities, not from generic “carefulness”:
+
+- constrained-access handling
+- micro-placement control
+- exact-touch isolation
+- error-minimizing handwork
+
+**Why this is not a base Destreza check:** A base `Destreza` check resolves whether the fine handling succeeds or fails. `Tomar la Parte Útil` is the ugly corrective answer after that failure, when the hand still has one last exact chance to grab the right thing before the mistake becomes final.
+
+**Primary interaction surface:** reactive re-attempt on failed exact handwork.
+
+**Secondary interaction surface:** contamination and clutter control, because the corrective handwork happens before spill, snag, or broad handling fully blooms into a worse result.
+
+**Cost note:** `Rhythm 0 / Attrition 3` is deliberate. The value here is immediacy: you do not lose tempo, you just pay for the brutal hand correction with real bodily strain. This should feel expensive enough that it is used to save a moment that matters, not to casually fish for better outcomes.
+
+**Effect:** After you fail one immediate `C.R.` or one relevant `S.R.` involving fine handwork on one exact local point, you may immediately invoke `Tomar la Parte Útil` before the failure fully resolves into its worst consequence.
+
+Make an immediate `Destreza` Specialization Roll against the same threshold or opposed result that the failed action just used.
+
+If the `Destreza S.R.` succeeds, replace the failed result with this new success. The action is treated as if the exact useful point was recovered in time by hand correction rather than broad retry.
+
+If the `Destreza S.R.` fails, the original failure stands and the Technique buys nothing except the right to have tried.
+
+`Tomar la Parte Útil` does not roll the whole scene back. It only allows one exact second attempt before the missed touch becomes final.
+
+**Restrictions:**
+
+- only works on one exact local point, not a whole corpse, container, trap, kit, or wound
+- requires plausible fine access and handling means
+- only applies if the failed action was about fine handwork and the failure has not yet fully become irreversible
+- the replacement roll must still be physically plausible in the current fiction
+- does not grant a third attempt if the `Destreza` correction also fails
+- does not itself solve tasks that were impossible even on success
+- does not remove a settled Ailment or purify contamination by itself
+- cannot be used after the source has already burst, spilled, snapped, infected, fallen, or otherwise moved past the recoverable moment
+
+### Tirar la Advertencia
+
+| Field | Value |
+| --- | --- |
+| `name` | Tirar la Advertencia |
+| `name_en` | Throw the Warning |
+| `origin` | Lanzamiento |
+| `world_origin` | Species: Zarnag; seed: The Waste Draws Predators / Distinguish the Survivable from the Corrupting; transmission: warning-throw drills, bad-ground signaling, and quarantine-line distance work; availability: Common |
+| `category` | utility |
+| `type` | active |
+| `trigger` | You or one ally within `12 meters` is about to commit to one short local line — a step, crossing, descent, climb start, approach lane, or contamination edge — and a small thrown object can still land exactly where that line becomes dangerous or useful. |
+| `requirements` | Minimum rank: Novice; Lanzamiento at Novice or higher; one small throwable object, shard, tag, stone, bone chip, wrapped marker, or similarly light warning piece; clear enough line to place the throw meaningfully. |
+| `target` | self or one ally, and one exact local line / point of commitment |
+| `range` | `12 meters` |
+| `area` | one exact local point |
+| `duration` | one immediate movement, crossing, or local handling decision |
+| `cost` | Rhythm 2; Attrition 1 |
+| `saving_roll` | `Lanzamiento S.R.` against a threshold set by distance, visibility, clutter, speed, and scene pressure |
+| `tags` | utility, thrown_warning, distance_control, route_read, support |
+
+**Fantasy:** The throw lands before the foot does. Not to wound. To say: there. One shard in the right place can buy one clean step where the line was about to go bad.
+
+**World origin:** Zarnag scouts, corpse-wagon runners, and quarantine hands do not always shout. In bad wind, panic, smell, dark, or crowd noise, a thrown marker is often faster than a command. Stones, bone chips, wraps, hooks, and refuse tags become a live signaling language for bad ground, wrong approach, and don't-step-there warning.
+
+**What `Lanzamiento` contributes:** This Technique is built from extracted `Lanzamiento` capacities, not from generic “being able to throw”:
+
+- release discipline
+- exact landing control
+- route-point placement
+- timing a warning before commitment finishes
+
+**Why this is not a base Lanzamiento check:** A base `Lanzamiento` check can tell us whether the user hits or lands a thrown object well. `Tirar la Advertencia` turns that throw into one immediate line decision that changes how a creature may commit to one exact point right now.
+
+**Primary interaction surface:** thrown exact placement on one live route or commitment point.
+
+**Secondary interaction surface:** route guidance, because the value lies in making one short local decision cleaner rather than causing damage.
+
+**Cost note:** `Rhythm 2 / Attrition 1` is deliberate. This is lighter than most full utility Techniques because it only improves one immediate local commitment for self or an ally. It does not damage, persist, or broadly reshape the terrain.
+
+**Effect:** Declare one exact local point within `12 meters` where you or one ally are about to commit: a step edge, descent lip, climb start, crossing seam, contamination boundary, corpse-slick patch, or another similarly small route point.
+
+Make a `Lanzamiento` Specialization Roll against a threshold set by distance, visibility, clutter, speed, and scene pressure.
+
+On success, the target creature's next immediate `Movement`, `C.R.`, or relevant `S.R.` through that exact point treats its threshold as **one difficulty band lower**, to a minimum of `Fundamental`.
+
+That means:
+
+- `Extreme` becomes `Demanding`
+- `Demanding` becomes `Rigorous`
+- `Rigorous` becomes `Challenging`
+- `Challenging` becomes `Fundamental`
+- `Fundamental` does not reduce further
+
+The warning ends as soon as that one immediate decision resolves. It does not remain as a standing mark, trap, or general terrain modifier.
+
+On failure, the throw lands late, wrong, unseen, or unconvincingly, and creates no mechanical change.
+
+**Restrictions:**
+
+- only works on one exact local point, not a whole zone or broad area
+- requires a real throwable marker and a plausible thrown line
+- only affects one immediate movement, crossing, or local handling decision by the warned creature
+- does not deal damage, create a trap, or create a lasting terrain mark
+- does not override forced movement or teleportation
+
+### Leer lo que Siguió
+
+| Field | Value |
+| --- | --- |
+| `name` | Leer lo que Siguió |
+| `name_en` | Read What Followed |
+| `origin` | Rastreo |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows the Weak Line / Distinguish the Survivable from the Corrupting; transmission: wound-trace reading drills, continuity-of-force judgment, and fresh-damage exploitation practice; availability: Common |
+| `category` | utility |
+| `type` | active |
+| `trigger` | A creature within sight bears a fresh visible wound, torn seam, leaking wrap, failed plate edge, dragged limb, blood line, or another readable recent damage pattern on one specific operative zone, and the user wants to read how that zone is still failing. |
+| `requirements` | Minimum rank: Novice; Rastreo at Novice or higher; the target must show a fresh readable damage line or very recent physical failure pattern on one specific zone; that zone must still be operative or still matter to the creature's function; the line must be visible enough to study under current scene conditions. |
+| `target` | one specific wounded or freshly damaged zone on one creature |
+| `range` | within sight |
+| `area` | one zone |
+| `duration` | persistent on that zone until it is no longer readable, no longer operative, or materially altered beyond the original read |
+| `cost` | Rhythm 3; Attrition 1 |
+| `saving_roll` | Rastreo Specialization Roll against a threshold set by wound freshness, visibility, armor obstruction, target movement, and scene pressure |
+| `tags` | utility, tracking, wound_read, continuity_read, attack_setup, field_judgment |
+
+**Fantasy:** The Zarnag does not just see blood. They see where force kept traveling after the first break: which side took weight badly, which seam is still opening, which limb is lying to the rest of the body, which wrap is holding too late. The wound does not merely mark the creature. It marks the failing zone.
+
+**World origin:** Zarnag corpse-watchers and scavenger hands learn that a fresh wound is not an isolated point. It leaves a continuity line through posture, weight, drag, blood direction, flinch timing, and failing restraint. Veteran readers are taught to identify not just where something was hurt, but where that hurt is still making the rest of the body late, weak, or badly supported.
+
+**What `Rastreo` contributes:** This Technique is built from extracted `Rastreo` capacities, not from generic observation:
+
+- continuity reconstruction
+- freshness discrimination
+- force-line continuation
+- aftermath pattern reading
+- failure-point correlation
+
+**Why this is not a base Rastreo check:** A base `Rastreo` check can tell us whether a user notices damage, follows spoor, or identifies traces. `Leer lo que Siguió` turns a fresh readable damage pattern into a persistent zone-read: not "what happened here in general," but "how this specific part is still failing, and how to keep exploiting it."
+
+**Primary interaction surface:** fresh wound-line reading on one living target's specific operative zone.
+
+**Secondary interaction surface:** repeated attack shaping against that same zone, because the value lies in converting a readable continuity failure into a durable exploit until the zone stops mattering.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This is not a fleeting hunch. It is a committed technical read on one wounded zone. The cost buys durable targeting knowledge, but only on that one line and only while that line still exists as a readable problem.
+
+**Effect:** Choose one specific zone on one creature within sight that currently bears a fresh visible wound, torn seam, fresh blood line, dragged limb, failed wrap, or another readable recent damage pattern. Make a `Rastreo` Specialization Roll against a threshold set by wound freshness, visibility, armor obstruction, target movement, and scene pressure.
+
+On success, you identify where that fresh failure is still propagating through that zone's structure, supports, and connected lines. While that zone remains readable and still matters to the target's operation, your attacks that specifically target that same zone gain a bonus to their `A.R.` equal to `+1` per technique rank, as long as the attack plausibly exploits the same line or a directly connected one.
+
+Examples of valid follow-through include:
+
+- driving back into the same torn line on that zone
+- cutting the structure now compensating for that zone's first wound
+- striking the fastening, plate edge, joint, membrane, or support now carrying the bad load for that zone
+- attacking the connected side that zone is overusing to keep from collapsing further
+
+The read ends on that zone if the zone is fully destroyed, loses the relevant function, is thoroughly treated or rebuilt, is fully concealed from further reading, or changes so much that the original continuity line no longer describes its failure.
+
+On failure, the line is too obscured, too old, too well-compensated, too covered, or too visually noisy to turn into a reliable exploit.
+
+**Restrictions:**
+
+- requires a real fresh readable damage pattern on one specific zone
+- only benefits attacks that intentionally target that same zone
+- does not bypass reach, line of effect, or other normal attack requirements
+- does not stack with another active instance of `Leer lo que Siguió` on the same zone from the same user; reading a new zone replaces the old read
+- does not function if the target is fully concealed, the zone is fully covered, or the observed failure is too old to read as current continuity
+
+### Oír la Costura Mala
+
+| Field | Value |
+| --- | --- |
+| `name` | Oír la Costura Mala |
+| `name_en` | Hear the Bad Seam |
+| `origin` | Resonancia |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting / Keep Working Where Death Has Not Settled; transmission: corpse-pressure listening drills, quarantine seam reading, and bad-presence handling practice; availability: Common |
+| `category` | utility |
+| `type` | active |
+| `trigger` | A corpse, wound, object, bundle, doorway, pit, cache, or other exact source nearby may be carrying active unhealthy aura, taumatic residue, essential disturbance, or another bad sympathetic pressure, and the next decision depends on touching, moving, opening, treating, or resisting that source correctly. |
+| `requirements` | Minimum rank: Novice; Resonancia at Novice or higher; a real active disturbed signal must be present on one exact source; that source must not be completely sealed away from resonant reach. |
+| `target` | one exact disturbed source |
+| `range` | within sight or plausible resonant reach |
+| `area` | one source |
+| `duration` | persistent on that source until it is sealed, quieted, emptied, or materially altered beyond the original read |
+| `cost` | Rhythm 3; Attrition 1 |
+| `saving_roll` | Resonancia Specialization Roll against a threshold set by signal strength, contamination overlap, sealing, interference, and scene pressure |
+| `tags` | utility, resonance, contamination_read, handling_line, source_judgment, pressure_control |
+
+**Fantasy:** The Zarnag does not ask whether a thing feels wrong. They ask where the wrongness is still leaking from. A corpse is not just dangerous. A wrapped object is not just tainted. A doorway is not just bad. Each has one seam that is still speaking louder than the rest.
+
+**World origin:** Zarnag who work around graves, quarantines, plague bundles, disturbed remains, and bad thresholds learn to separate a whole ugly source from the one part of it that is still carrying the live pressure. Experienced readers listen for the seam that still calls, leaks, binds, or answers back, because that is the seam that decides whether handling becomes work or disaster.
+
+**What `Resonancia` contributes:** This Technique is built from extracted `Resonancia` capacities, not from vague sensitivity:
+
+- signal isolation
+- unhealthy-pressure discrimination
+- active-seam localization
+- contaminated-face judgment
+- bad-presence handling order
+
+**Why this is not a base Resonancia check:** A base `Resonancia` check can tell us whether a source carries aura, taumatic residue, or disturbed presence. `Oír la Costura Mala` turns that into one persistent operational read: which exact seam of the source is still active, and which handling line is less wrong.
+
+**Primary interaction surface:** one exact disturbed source carrying active unhealthy pressure.
+
+**Secondary interaction surface:** handling, treatment, containment, or resistance against that same source, because the value lies in not meeting the active seam head-on when another line is available.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This is not broad detection. It is a focused read on one exact source that can keep paying off while that source remains materially the same.
+
+**Effect:** Choose one exact disturbed source within sight or plausible resonant reach: a corpse, wound, wrapped object, pit edge, threshold, tool, bundle, container, altar face, or another similarly exact source carrying active unhealthy pressure. Make a `Resonancia` Specialization Roll against a threshold set by signal strength, contamination overlap, sealing, interference, and scene pressure.
+
+On success, you isolate one **bad seam** and one **less-wrong handling line** on that source. While the source remains materially the same, the user or one ally directly briefed by the user gains a bonus equal to `+1` per technique rank on the next qualifying `C.R.`, `S.R.`, or `R.R.` that deals directly with that same source through the declared handling line.
+
+Qualifying uses include:
+
+- opening, moving, or securing the source without touching its active seam
+- treating or containing the specific pressure the read identified
+- resisting an emanation, contact pressure, or backlash that comes from that exact source
+
+The read persists on that source until it is sealed, quieted, emptied, treated past the relevant disturbance, or altered so much that the original seam no longer describes the danger correctly.
+
+On failure, the source is too overlapped, too noisy, too sealed, too deceptive, or too unstable to separate one active seam from the rest in a reliable way.
+
+**Restrictions:**
+
+- requires one exact source carrying real active unhealthy pressure
+- only benefits one next qualifying `C.R.`, `S.R.`, or `R.R.` against that same source through the declared handling line
+- does not bless a whole room, battlefield, or category of objects
+- does not identify full history, exact identities, or every property of the source by itself
+- does not function if the source is fully insulated from resonant reach or if no meaningful less-wrong handling line exists
+
+### Reír Donde Más Suena
+
+| Field | Value |
+| --- | --- |
+| `name` | Reír Donde Más Suena |
+| `name_en` | Laugh Where It Rings Loudest |
+| `origin` | Intimidación |
+| `world_origin` | Species: Zarnag; seed: The Laugh Breaks Nerve First / Keep Working Where Death Has Not Settled; transmission: carrion-line authority drills, bad-scene pressure calls, and laugh-timing practice; availability: Common |
+| `category` | utility |
+| `type` | active |
+| `trigger` | One creature nearby is already under disgust, uncertainty, taboo pressure, corpse-pressure, contamination fear, or another strain of visible nerve, and the user wants to push exactly where that strain is already ringing. |
+| `requirements` | Minimum rank: Novice; Intimidación at Novice or higher; the target must be able to perceive the user clearly enough to register the pressure; there must already be a plausible fear, disgust, taboo, or collapse line to exploit. |
+| `target` | one creature already under visible nerve strain |
+| `range` | voice / clear sensory presence |
+| `area` | one creature |
+| `duration` | until the end of the target's next activation, or until the pressure is answered by one qualifying roll |
+| `cost` | Rhythm 3; Attrition 1 |
+| `saving_roll` | Intimidación Specialization Roll opposed by the target's relevant nerve-holding line, or against a threshold set by discipline, context, and current psychological pressure |
+| `tags` | utility, intimidation, nerve_pressure, taboo, laugh_pressure, response_spoil |
+
+**Fantasy:** The Zarnag does not need to invent a nightmare whole. They make the body's next worst conclusion feel immediate. The laugh lands on the seam where disgust, taboo, contamination, predator pressure, or bad death already points, and the target's body starts treating that line as urgent danger.
+
+**World origin:** Zarnag who work among bad deaths, rotting lines, and frightened labor do not waste breath trying to terrify the fearless. They learn to hear which worker, hunter, guard, mourner, or scavenger is one interpretation away from bodily panic, then press that exact seam until the body itself starts refusing the line.
+
+**What `Intimidación` contributes:** This Technique is built from extracted `Intimidación` capacities, not from generic shouting:
+
+- visible-nerve reading
+- pressure timing
+- taboo exploitation
+- authority through composure inside ugliness
+- terror-line activation through precisely placed social pressure
+
+**Why this is not a base Intimidación check:** A base `Intimidación` check can threaten, pressure, or impose presence. `Reír Donde Más Suena` does not stop at pressure. If the laugh lands, it can apply the named Alteration `Aterrorizado`.
+
+**Primary interaction surface:** one target facing a plausible immediate terror line.
+
+**Secondary interaction surface:** Alteration application through `Aterrorizado`.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique still requires a believable terror line and an Alteration `R.R.` to settle. It does not create guaranteed fear from nothing, but it does carry a real named state when the pressure lands cleanly.
+
+**Effect:** Choose one creature within voice or clear sensory presence that is facing a plausible immediate terror line: contamination, corpse-pressure, taboo breach, predator display, grotesque revelation, hostile presence, or another fictionally credible urgent fear source. Make an `Intimidación` Specialization Roll opposed by that target's relevant nerve-holding line, or against a threshold set by discipline, context, and current psychological pressure.
+
+If the Technique fails, the laugh lands wrong, too early, or against a target whose body does not actually accept the terror line.
+
+If the Technique succeeds, the target immediately makes an Alteration `R.R.` against `Aterrorizado`.
+
+Use the default Ailment severity bands by rank:
+
+- ranks `1-2` -> `Minor`
+- ranks `3-4` -> `Moderate`
+- ranks `5-6` -> `Severe`
+
+On a failed `R.R.`, the target gains `Aterrorizado` at that severity. The feared line is the one the user just made immediate.
+
+On a successful `R.R.`, `Aterrorizado` does not settle.
+
+**Restrictions:**
+
+- requires a plausible immediate terror line in the fiction
+- applies the generic Alteration `Aterrorizado`, not a Zarnag-only condition
+- the feared line must be declared clearly enough that `Aterrorizado` knows what source or line it is about
+- does not function on targets that cannot perceive the user or cannot meaningfully register the exploited pressure
+- if no credible urgent fear line exists, the Technique does not apply
+
+### Pasar Como Parte del Fondo
+
+| Field | Value |
+| --- | --- |
+| `name` | Pasar Como Parte del Fondo |
+| `name_en` | Pass as Part of the Background |
+| `origin` | Sigilo |
+| `world_origin` | Species: Zarnag; seed: Work The Bad Ground Without Becoming The New Problem; transmission: corpse-line crossing drills, ruin-scavenge patience, and foul-settlement profile suppression practice; availability: Common |
+| `category` | utility |
+| `type` | active |
+| `trigger` | The user wants to cross up to `4 meters` of watched space without being cleanly registered as the new threat on that line. |
+| `requirements` | Minimum rank: Novice; `Sigilo` at Novice or higher; the declared path must already be under watch, notice, or perception by one or more creatures, but the user must not already be cleanly identified as the hostile subject of that line; the crossed space must not be totally empty, featureless, and clean, and must contain enough background disturbance, clutter, traffic, smoke, foul labor, ruin noise, hanging material, debris, or other believable ambient explanation for the user's passage. |
+| `target` | one watch line, observer, or small observing cluster |
+| `range` | one declared crossed space up to `4 meters` long |
+| `area` | one declared crossing line |
+| `duration` | until the crossing resolves, the observing line localizes the user cleanly, or the user breaks the borrowed pattern |
+| `cost` | Rhythm 3; Attrition 1 |
+| `saving_roll` | `Sigilo` Specialization Roll opposed by the relevant alertness / registration line, or against a threshold set by distance, clutter, smell, light, ambient panic, and how credibly the user can be mistaken for part of what was already there |
+| `tags` | utility, stealth, hidden_state, bad_ground, profile_suppression |
+
+**Fantasy:** The Zarnag does not disappear. They become one more expected ugliness: another moving tarp, another corpse-hand, another bad smell, another bent figure in the ruin, another shape that does not yet deserve alarm.
+
+**World origin:** Zarnag who live around pits, bad camps, plague wagons, frightened labor, ruined streets, and death-sites learn that being unseen is only one way to survive. Often the better answer is to be seen wrongly: as labor, refuse, routine movement, or part of the same foul background nobody wants to study too closely.
+
+**What `Sigilo` contributes:** This Technique is built from extracted `Sigilo` capacities, not from generic crouching:
+
+- profile suppression inside ambient clutter
+- timing a registration window
+- moving like expected labor or expected ruin movement
+- reducing the urgency of notice
+- passing one watched line without becoming the new focus
+
+**Why this is not a base Sigilo check:** A base `Sigilo` check helps the user stay quiet, reduce profile, or avoid notice. `Pasar Como Parte del Fondo` does something narrower and more technical: it lets the user obtain the same formal state, `Oculto`, **while already crossing watched space**, because the watchers are reading that short passage as routine filth, labor, or background disturbance instead of as a new threat.
+
+**Primary interaction surface:** one watched crossing of up to `4 meters` through a non-empty, dirty, cluttered, or otherwise explainable background.
+
+**Secondary interaction surface:** altered access to `Oculto`, because the observing line is given just enough wrong context that the user's next passage can still register as hidden rather than as clean hostile presence.
+
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. This Technique does not create invisibility, broad stealth immunity, or perfect disguise. It only buys one bounded way to gain `Oculto` against one relevant observing line, and it collapses if the user gives the watchers a clearer story.
+
+**Effect:** Choose one declared crossed space of up to `4 meters` that is already being watched, noticed, or loosely perceived: a corpse cart edge, ruin threshold, trench lip, smoke line, pit perimeter, tarp gap, foul alley, camp handoff, or another similarly local bad-ground passage.
+
+Make a `Sigilo` Specialization Roll opposed by the relevant alertness / registration line, or against a threshold set by distance, clutter, smell, light, ambient panic, and how credibly the user can be mistaken for part of what was already there.
+
+If the Technique fails, the user becomes the new point of notice too cleanly, and the observing line may answer normally.
+
+If the Technique succeeds, the user gains `Oculto` **against that observer, watch line, or small observing cluster only**, using this Technique's successful `Sigilo` result as the active value of the `Oculto` state for that line, even though the user is already crossing watched space and would not normally be able to gain `Oculto` there through the base `Ocultarse` action alone.
+
+That limited `Oculto` lasts until one of these happens:
+
+- the user completes one next `Movement` through that same declared crossed space;
+- the observing line localizes the user cleanly through Percepción, another applicable sense, or a Technique that beats that active `Oculto` value;
+- or the user does something abrupt, clean, loud, or obviously out of pattern that breaks the bad-background read.
+
+While that limited `Oculto` holds, the observing line must treat the user under the normal rules of `Oculto`: it cannot choose the user as the target of direct single-creature attacks without first localizing them cleanly, though it may still attack a suspected area, search actively, or react to obvious signals if the fiction supports it.
+
+This Technique does not make the user invisible, does not fool every observer in the scene, does not create scene-wide concealment, and does not survive once the user stops matching the background pattern they exploited.
+
+**Restrictions:**
+
+- requires believable ambient ugliness, clutter, labor, disorder, ruin noise, foul traffic, or another bad-background pattern to blend into
+- applies to one declared crossed space of up to `4 meters` only
+- applies to one observer, watch line, or small observing cluster only
+- requires that the space not be totally empty, clean, and featureless
+- requires incomplete observation, not clean hostile identification
+- grants no benefit once the user clearly breaks the borrowed pattern
+- does not create full disguise, invisibility, or scene-wide stealth immunity
+- grants only one limited `Oculto` state tied to one declared crossed space
+- does not help if the observer already has clean, focused, and unambiguous attention on the user before the Technique begins
+
+### Ceder Antes del Disparo
+
+| Field | Value |
+| --- | --- |
+| `name` | Ceder Antes del Disparo |
+| `name_en` | Give Before the Trigger Bites |
+| `origin` | Trampas |
+| `world_origin` | Species: Zarnag; seed: Distinguish the Survivable from the Corrupting / Quarantine Is Force; transmission: trigger-response reading drills, spring-yield practice, and bad-threshold survival teaching; availability: Common |
+| `category` | utility |
+| `type` | reactive |
+| `trigger` | A trap, warning system, or other condition-triggered mechanism has already activated against the user or an adjacent ally. |
+| `requirements` | Minimum rank: Novice; `Trampas` at Novice or higher; the user must be the target of the activation or adjacent to the target and able to shout, pull, brace, spoil, release, flatten, or redirect in time; the danger must be something whose response can still be minimized by understanding how traps answer: spring, hook, snap line, drop, latch, shard burst, noise line, pressure release, or similar trigger logic. |
+| `target` | self or one adjacent creature caught in a trap activation |
+| `range` | self or adjacent |
+| `area` | one triggering trap response |
+| `duration` | one triggering resolution |
+| `cost` | Rhythm 0; Attrition 2 |
+| `saving_roll` | `Trampas` Specialization Roll made immediately after the trap activates and before its full consequences finish resolving |
+| `tags` | utility, traps, reaction, trap_response, quarantine |
+
+**Fantasy:** The Zarnag does not beat the trap by strength. They know when to go limp, when to turn with the pull, when to let cloth tear, when to flatten instead of recoil, when to lose a tool instead of a hand. The answer is not “avoid all effect.” It is “give the mechanism less of you than it wanted.”
+
+**World origin:** Zarnag who work plague lines, grave routes, bad camps, and improvised warning grounds learn early that knowing how traps are made also teaches how they bite. Springs want resistance, hooks want panic, latches want weight in the wrong direction, and noise lines want a full committed body. Veterans teach survival by response logic, not by perfect avoidance.
+
+**What `Trampas` contributes:** This Technique is built from extracted `Trampas` capacities, not from generic clutter use:
+
+- trigger-path reading
+- response-chain anticipation
+- collapse-point recognition
+- knowing what part of the mechanism actually matters
+- minimizing what the answer gets to take
+
+**Why this is not a base `Trampas` check:** A base `Trampas` check builds, identifies, prepares, or disarms a condition-triggered system. `Ceder Antes del Disparo` happens **after activation has already begun**. It is not trap setup or disarm. It is expert survival inside the first instant of a triggered response.
+
+**Primary interaction surface:** one triggered trap response that has not fully finished resolving.
+
+**Secondary interaction surface:** consequence reduction, because the value is not escaping all danger but making the mechanism take less than it would have taken from a body that answered wrong.
+
+**Cost note:** `Rhythm 0 / Attrition 2` is deliberate. This is a true emergency reaction that can interrupt disaster timing without spending Rhythm, but it only applies when a trap has already fired and it costs enough Attrition that it cannot be treated as free insurance.
+
+**Effect:** When a trap, warning system, or other condition-triggered mechanism activates against you or one adjacent ally, immediately make a `Trampas` Specialization Roll before the full response resolves.
+
+If the Technique fails, the trap resolves normally.
+
+If the Technique succeeds, choose one relevant roll in that resolution:
+
+- the triggering `C.R.`
+- the triggering `S.R.`
+- or the triggering `R.R.`
+
+That chosen roll gains a bonus equal to the `rank bonus` of `Trampas` for that one resolution.
+
+If the trap's outcome does not call for one of those rolls, the Narrator may instead let the Technique reduce one immediate trap consequence to its next less severe believable outcome:
+
+- a hard pull becomes a bad stumble
+- a full hook catch becomes a scrape or partial catch
+- a loud warning line reports late or weak
+- a falling response clips instead of fully pinning
+- or another similarly narrower mitigation that fits the mechanism
+
+This Technique does not untrigger the trap, does not disarm the whole system, and does not guarantee safety. It only minimizes one active response because the user understands how traps typically answer a body.
+
+It cannot help after the full consequences have already resolved.
+
+**Restrictions:**
+
+- only works after the trap has already activated
+- only affects one triggering resolution
+- requires the mechanism to still be in the part of resolution that can be answered physically or mentally in time
+- does not disarm or destroy the whole system
+- does not create a new trap
+- does not apply `Atrapado`, `Desequilibrado`, or `Derribado`
+- does not help after the outcome is already fully settled
+
+### Cortar el Paso Dos Veces
+
+| Field | Value |
+| --- | --- |
+| `name` | Cortar el Paso Dos Veces |
+| `name_en` | Cut the Step Twice |
+| `origin` | Thrown Tool |
+| `world_origin` | Doctrine: Transferable Skirmisher Fieldcraft; seed: Shorten Arrival Before It Lands Clean; transmission: warning-throw cadence, route enforcement, and chase-shortening drills; availability: Common |
+| `category` | attack |
+| `type` | reactive |
+| `trigger` | One creature within thrown range begins a committed movement through a line the user can still answer with repeated direct throws before the movement finishes. |
+| `requirements` | Minimum rank: Novice; weapon profile: Volley; any weapon competency, natural attack form, or specific item that grants Volley access can use this Technique unless this Technique narrows that access; requires a repeated-throw set, spare thrown pieces, or another believable means of short release cadence |
+| `target` | moving creature |
+| `range` | thrown range |
+| `area` | single creature |
+| `duration` | one triggering movement |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` resolves normally against the reactive attack |
+| `tags` | attack, volley, reaction, movement_pressure |
+
+**Fantasy:** The first throw says stop. The second says stop now. The target may still move, but not as far or as cleanly as they meant to.
+
+**World origin:** This Technique now sits provisionally under shared fieldcraft instead of one species. Route enforcers, chase hands, and warning throwers across multiple harsh traditions learn that a rushing body is easier to shorten than to fully stop. `Cortar el Paso Dos Veces` is not elegant archery cadence. It is practical repeated release into the next few steps of a creature that should not arrive cleanly where it meant to go.
+
+**Why this is not raw thrown damage:** A normal thrown hit may wound, but it does not necessarily make the target arrive short. `Cortar el Paso Dos Veces` is about maintaining just enough ranged cadence that the target has to check body, footing, or line before the movement completes.
+
+**Primary interaction surface:** `Volley` through reactive repeated release against one triggering movement.
+
+**Secondary interaction surface:** movement pressure, because the Technique shortens one committed approach, retreat, or crossing instead of creating a lasting slow.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. This is a reactive ranged attack that can also cut distance from one declared movement. It does not create area denial, does not attack multiple targets, and does not reduce speed after the movement ends.
+
+**Effect:** Make a reactive Volley-bearing thrown attack against the moving target before the triggering movement finishes.
+
+If the attack fails to connect, the movement resolves normally.
+
+If the attack connects, the attack resolves normally and the target's remaining distance for that triggering movement is reduced by `1 meter` per rank bonus of the competency used for this Technique.
+
+| Competency rank used | Distance removed from the remaining triggering movement |
+| --- | --- |
+| Novice | `1 m` |
+| Adept | `2 m` |
+| Expert | `3 m` |
+| Master | `4 m` |
+| Consummate | `5 m` |
+| Transcendent | `6 m` |
+
+If this reduction prevents the target from reaching its declared position, it stops at the last legal position it can still reach.
+
+This Technique affects only that one movement. It does not create a persistent slow, broad suppression, or a second attack.
+
+**Restrictions:**
+
+- requires line of effect to one moving target
+- requires a believable means of repeated direct thrown release, not one single heavy throw with no follow cadence
+- affects one target only
+- affects the triggering movement only
+- does not create a persistent speed penalty after the movement ends
+- does not attack multiple targets
+- does not create a trap, environmental mark, or broad no-cross zone
+
+### Hacer que el Ángulo Muerda
+
+| Field | Value |
+| --- | --- |
+| `name` | Hacer que el Ángulo Muerda |
+| `name_en` | Make the Angle Bite |
+| `origin` | Thrown Tool |
+| `world_origin` | Doctrine: Transferable Skirmisher Fieldcraft; seed: Keep the Threat Alive Past the Obvious Line; transmission: stone-skip warning drills, cart-rim rebound practice, and bad-corner pursuit work; availability: Uncommon |
+| `category` | attack |
+| `type` | active |
+| `trigger` | A target is not fully owned on a direct line, but one nearby hard surface could realistically carry a short rebound, skip, or angled continuation into their position. |
+| `requirements` | Minimum rank: Novice; weapon profile: Ricochet; any weapon competency, natural attack form, or specific item that grants Ricochet access can use this Technique unless this Technique narrows that access; requires one real rebound-capable surface and one projectile or thrown piece that can credibly skip, glance, or continue through that angle |
+| `target` | creature |
+| `range` | short range / rebound line |
+| `area` | single creature |
+| `duration` | instant |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` resolves normally, but the target does not gain the full benefit of treating the line as purely direct |
+| `tags` | attack, ricochet, indirect_line, disruption |
+
+**Fantasy:** The target trusted the obvious line. The throw was not for the obvious line.
+
+**World origin:** This Technique now sits provisionally under shared fieldcraft instead of one species. Corner workers, chase throwers, and other practical skirmishers learn that rims, stone lips, and iron fittings can continue a threat that should have ended on first contact. `Hacer que el Ángulo Muerda` is not trick-shot vanity. It is practical hostile geometry for bodies that think a bad corner already made them safe.
+
+**Why this is not raw thrown damage:** A normal throw asks whether the direct line is open. `Hacer que el Ángulo Muerda` asks whether the environment can keep the threat alive past the direct line the target thought they had solved.
+
+**Primary interaction surface:** `Ricochet` through one short, materially plausible rebound or skip line.
+
+**Secondary interaction surface:** disruption, because the Technique pressures targets who think a corner, lip, or partial obstruction already settled the line cleanly.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. The Technique is still narrower than broad suppression, but it combines a real indirect line with same-attack degradation of partial cover or angle advantage. That geometry shift is stronger than a quick projectile rider.
+
+**Effect:** Declare one real hard surface near the target or between you and the target that can plausibly carry a short rebound, skip, or angled continuation: a stone lip, wall edge, cart rim, shield edge, metal fitting, gate frame, slab corner, or similar rebound-capable point.
+
+Make a Ricochet-bearing ranged or thrown attack against the target through that declared angle.
+
+If the attack fails to connect, nothing further happens.
+
+If the attack connects, it resolves normally, and the target treats any one partial line advantage that depended only on the direct line as `1 step worse` for this resolution:
+
+- `Cobertura Ligera` becomes no cover
+- `Cobertura Media` becomes `Cobertura Ligera`
+- or an equivalent single-line partial protection loses one step of benefit for this attack only
+
+This Technique does not ignore total solid cover, does not bend around a fully sealed barrier, and does not chain into multiple rebounds.
+
+**Restrictions:**
+
+- requires one real rebound-capable surface already present in the fiction
+- requires a believable projectile or thrown piece that can skip, glance, or continue through a short rebound line
+- only reduces one partial direct-line advantage by one step for this one attack
+- does not ignore total cover, sealed barriers, or full loss of line of effect
+- does not create homing behavior, multi-target threat, or chained rebounds
+- applies to one creature only
+
+### Dar de Comer a la Segunda Mano
+
+| Field | Value |
+| --- | --- |
+| `name` | Dar de Comer a la Segunda Mano |
+| `name_en` | Feed the Second Hand |
+| `origin` | Claws + Dagger; alternate surfaces: Dagger + Hooked Sidearm, Two Short Blades |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: false-hand pairing drills, off-hand fouling work, and close side-sequence practice; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user is already in close contact with one target and has two ready light close surfaces on different hands that can threaten the same body before the answer fully resets. |
+| `requirements` | Minimum rank: Novice; no single weapon profile gate; requires two ready light close surfaces on different hands and a believable off-hand follow-through on the same target |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the end of the target's next activation or the first use of the displaced piece |
+| `cost` | Rhythm 6; Attrition 2 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | Each attack in the sequence resolves against the target's normal `D.R.` separately |
+| `tags` | attack, dual_wield, close_sequence, paired_surfaces |
+
+**Fantasy:** One hand keeps the answer busy. The other hand spoils what the answer needed to keep working.
+
+**World origin:** Zarnag side-pair cutters, carcass-openers, and tunnel-close fighters learn that one hand does not always kill the body, but it can keep the answer occupied long enough for the second hand to foul something useful before the body fully resets. `Dar de Comer a la Segunda Mano` is not flourish. It is ugly practical sequencing in close quarters where the opening disappears if you treat the two hands as separate thoughts.
+
+**Why this is not just the basic two-weapon action:** The basic two-weapon action is broader and slower. `Dar de Comer a la Segunda Mano` is narrower and faster, but if both contacts land it also leaves one useful piece fouled or out of place. That makes it more than throughput, and it is why this version now pays heavier `Attrition`.
+
+**Primary interaction surface:** paired close surfaces used as one short same-body sequence rather than as two disconnected swings.
+
+**Secondary interaction surface:** false-hand fouling, because the first contact occupies the answer long enough for the off-hand to spoil one practical piece before the defense fully resets.
+
+**Cost note:** `Rhythm 6 / Attrition 2` is deliberate. The Technique is cheaper than the broad basic two-weapon action only because it gives up flexibility: no retargeting, no movement, no heavy paired weapons, and no second attack if the first line fails to land. But if both contacts land, it also fouls one useful piece and can tax its first dependent roll, so the `Attrition` rises to 2.
+
+**Effect:** Declare two ready light close surfaces on different hands: claw and dagger, dagger and hooked sidearm, two short blades, or another believable same-target pairing.
+
+Make one close attack against the target with the first declared surface.
+
+If the first attack fails to connect, the sequence ends there.
+
+If the first attack connects, resolve it normally. Then immediately make one second close attack against the same target with the second declared off-hand surface at no additional `Rhythm` cost.
+
+If the second attack also connects, choose one useful piece on that same target that one of the two contacts plausibly fouled, displaced, or partially stripped: a shield edge, wrist guard, hanging tool, mask tie, belt-fastened item, sling position, sheath mouth, grip wrap, hand-held implement, or another nearby practical piece.
+
+That piece becomes `displaced` until the end of the target's next activation or until the target spends `Interactuar` to set it right, whichever comes first.
+
+While `displaced`, the first `A.R.`, `D.R.`, or `S.R.` that directly depends on that exact piece suffers a penalty of `1` per rank bonus of the competency used for this Technique. Once such a roll resolves, the `displaced` state ends whether the target corrected it or not.
+
+The second attack is part of the same Technique use. It cannot target a different creature, cannot include movement, and cannot be replaced by a second Technique, free grapple, or other extra process.
+
+This Technique does not create broad multi-target pressure. It is one short same-body close sequence that also leaves one practical piece fouled or out of place if both contacts land.
+
+**Restrictions:**
+
+- requires two ready light close surfaces on different hands
+- both attacks must target the same creature
+- the second attack only happens if the first attack connects
+- the displaced-piece effect only happens if both attacks connect
+- the user must name one real piece that the two contacts could have plausibly fouled or partially stripped
+- only the first roll that depends on that exact piece is penalized
+- does not grant movement, retargeting, or multi-target pressure
+- the second attack cannot be replaced by another Technique, grapple, or extra process
+- does not bypass normal `Defense` or armor
+
+### Cerrar la Salida a Dos Manos
+
+| Field | Value |
+| --- | --- |
+| `name` | Cerrar la Salida a Dos Manos |
+| `name_en` | Close the Exit with Both Hands |
+| `origin` | Claws + Dagger; alternate surfaces: Dagger + Hooked Sidearm, Two Short Blades |
+| `world_origin` | Species: Zarnag; seed: Quarantine Is Force; transmission: paired-hand exit-denial drills, close chase work, and crowding sequences; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user is already in close contact with one target and has two ready light close surfaces on different hands that can keep the target crowded through one short withdrawal line. |
+| `requirements` | Minimum rank: Novice; no single weapon profile gate; requires two ready light close surfaces on different hands and a believable crowding line that can tax one immediate retreat |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the end of the target's next activation or its first attempt to use `Movement` to increase distance from you |
+| `cost` | Rhythm 7; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | Each attack in the sequence resolves against the target's normal `D.R.` separately |
+| `tags` | attack, dual_wield, close_sequence, exit_pressure |
+
+**Fantasy:** One hand crowds the turn. The second hand makes the clean exit disappear.
+
+**World origin:** Zarnag quarantine chasers, trench-pair fighters, and pit-close enforcers learn that two hands are sometimes less about killing fast and more about keeping one dangerous body from peeling away cleanly. `Cerrar la Salida a Dos Manos` is not a flourish combo. It is ugly practical crowding: the first hand keeps the turn dirty, the second hand makes retreat cost real time.
+
+**Why this is not just the basic two-weapon action:** The basic two-weapon action is only broad offensive throughput. `Cerrar la Salida a Dos Manos` is narrower and costlier than `Dar de Comer a la Segunda Mano`, but if both contacts land it also taxes one breakaway attempt from the same body.
+
+**Primary interaction surface:** paired close surfaces used as one short same-body sequence that ends in exit pressure.
+
+**Secondary interaction surface:** crowding and quarantine pressure, because the sequence does not merely wound; it makes the target's next clean disengagement harder to afford.
+
+**Cost note:** `Rhythm 7 / Attrition 1` is deliberate. This is still narrower than the generic two-weapon action, but if both attacks connect it also taxes one breakaway attempt. That positional pressure is stronger than a simple same-target two-hand sequence.
+
+**Effect:** Declare two ready light close surfaces on different hands: claw and dagger, dagger and hooked sidearm, two short blades, or another believable same-target pairing.
+
+Make one close attack against the target with the first declared surface.
+
+If the first attack fails to connect, the sequence ends there.
+
+If the first attack connects, resolve it normally. Then immediately make one second close attack against the same target with the second declared off-hand surface at no additional `Rhythm` cost.
+
+If the second attack fails to connect, nothing further happens beyond its normal resolution.
+
+If both attacks connect, the target becomes `step-checked` against you until the end of its next activation or until it first attempts to use `Movement` to increase distance from you, whichever comes first.
+
+While `step-checked` is active, the target's first `Movement` that would break from your close contact costs `+2 Rhythm`. If the target does not pay that extra `Rhythm`, that `Movement` cannot increase distance from you and must instead stay in place or reposition without opening range if the fiction allows it.
+
+This Technique does not root the target, does not stop all movement, and does not affect creatures other than the struck target. It only makes one immediate breakaway attempt dirtier and more expensive.
+
+**Restrictions:**
+
+- requires two ready light close surfaces on different hands
+- both attacks must target the same creature
+- the second attack only happens if the first attack connects
+- the exit tax only happens if both attacks connect
+- only affects the target's first `Movement` that would increase distance from you
+- does not root, stop all movement, or create broad zone control
+- does not grant movement, retargeting, or multi-target pressure
+- the second attack cannot be replaced by another Technique, grapple, or extra process
+- does not bypass normal `Defense` or armor
+
+### Esconder la Segunda Línea
+
+| Field | Value |
+| --- | --- |
+| `name` | Esconder la Segunda Línea |
+| `name_en` | Hide the Second Line |
+| `origin` | Claws + Dagger |
+| `world_origin` | Species: Zarnag; seed: The Scavenger Follows The Weak Line; transmission: false-hand drills, low-line feints, and side-switch close work; availability: Common |
+| `category` | attack |
+| `type` | active |
+| `trigger` | The user can present one obvious close line strongly enough that the target answers it, while still holding a second plausible line of contact in reserve. |
+| `requirements` | Minimum rank: Novice; weapon profile: Unpredictability; any weapon competency, natural attack form, or specific item that grants Unpredictability access can use this Technique unless this Technique narrows that access; requires a close deceptive surface such as claws, dagger, hooked hand tool, or another odd-angle sidearm |
+| `target` | creature |
+| `range` | close contact |
+| `area` | single |
+| `duration` | until the user's next successful attack against that target or the end of the user's next activation |
+| `cost` | Rhythm 5; Attrition 1 when used during ATB or active threat; no Attrition cost in normal exploration |
+| `saving_roll` | `D.R.` negates contact and prevents the hidden-line setup |
+| `tags` | attack, unpredictability, setup, false_read |
+
+**Fantasy:** The target answered the hand they saw. The dangerous hand was the one they did not finish accounting for.
+
+**World origin:** Zarnag close workers learn that some lines are shown only so the enemy commits to answering them. `Esconder la Segunda Línea` is not flourish. It is ugly practical deception inside contact: make the defense settle on the first threat so the second one arrives through the answer itself.
+
+**Why this is not raw attack bonus:** A normal feint bonus just says the next attack is easier. `Esconder la Segunda Línea` is narrower and more physical: the target has prepared one item, guard, or defensive surface for the wrong line, and that exact prepared answer is worse on the follow-up.
+
+**Primary interaction surface:** `Unpredictability` through false first-line presentation and hidden second-line follow-through.
+
+**Secondary interaction surface:** setup, because the first successful contact changes how the target can answer the user's next attack.
+
+**Cost note:** `Rhythm 5 / Attrition 1` is deliberate. This is a full attack that can also seed one short deceptive follow-up window, but only against the same target and only for the user's next attack.
+
+**Effect:** Make a close `Unpredictability` attack with claws, dagger, or another narrowed-access deceptive close surface.
+
+If the attack fails to connect, nothing further happens.
+
+If the attack connects, the target becomes `wrong-answered` against you until your next successful attack against that target or the end of your next activation, whichever comes first.
+
+While `wrong-answered` is active, the target's next `D.R.` against your next attack treats one declared line-dependent defensive answer as unavailable for that one roll:
+
+- one shield-facing or guard-angle rider
+- one parry-like weapon rider
+- or one equivalent declared defensive surface that only works because the target answered the obvious first line
+
+The target still makes its normal `D.R.`. This Technique does not remove `Defense` entirely, does not bypass armor, and does not deny all defensive bonuses at once. It only makes one wrong prepared answer fail to help on the follow-up.
+
+**Restrictions:**
+
+- requires a deceptive close surface and believable false-line presentation
+- only affects the same target hit by the setup attack
+- only affects the target's next `D.R.` against the user's next attack
+- only suppresses one declared line-dependent defensive answer for that one roll
+- does not remove base `Defense`, armor, or unrelated defensive bonuses
+- does not stack with itself on the same target
+- ends unused at the end of the user's next activation
+
 
 ## Next Design Layer
 

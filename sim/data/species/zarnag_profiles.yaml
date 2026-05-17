@@ -1,0 +1,124 @@
+profiles:
+  - id: zarnag_novice_skirmisher
+    species: zarnag
+    preparation: 5
+    movement_meters: 9
+    characteristics:
+      Agilidad: 1
+      Astucia: 1
+      Tenacidad: 1
+      Sabiduría: 1
+      Compostura: 1
+      Presencia: 2
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Sigilo:
+        rank: novice
+        level: 1
+      Intimidacion:
+        rank: novice
+        level: 1
+      Trampas:
+        rank: novice
+        level: 1
+      Dagger:
+        rank: adept
+        level: 3
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: kris
+        competency: Dagger
+        grade: 1
+        base_potency: 8
+    techniques:
+      - pasar_como_parte_del_fondo
+      - reir_donde_mas_suena
+    policy_defaults:
+      primary: tempo_first
+    notes:
+      - Seed Zarnag profile for concealment and skirmish testing.
+
+  - id: common_guard_observer
+    species: generic_guard
+    preparation: 4
+    movement_meters: 8
+    characteristics:
+      Tenacidad: 1
+      Compostura: 1
+      Sabiduría: 2
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      medium_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Spear:
+        rank: novice
+        level: 1
+    armor_zones:
+      - zone: head
+        armor_type: medium
+        grade: 1
+      - zone: torso
+        armor_type: medium
+        grade: 1
+      - zone: arms
+        armor_type: medium
+        grade: 1
+      - zone: legs
+        armor_type: medium
+        grade: 1
+      - zone: feet
+        armor_type: medium
+        grade: 1
+    shield:
+      type: medium
+      grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: hasta
+        competency: Spear
+        grade: 1
+        base_potency: 8
+    techniques: []
+    policy_defaults:
+      primary: conservative
+    notes:
+      - Seed observer profile for watched-crossing and detection tests.

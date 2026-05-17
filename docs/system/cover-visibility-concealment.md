@@ -253,9 +253,30 @@ La `T.I.` o Impacto no pierde todos sus bonos por falta de visión. Si el ataque
 
 ## Ocultación
 
-La ocultación es un estado táctico: una criatura no está localizada con precisión por uno o más enemigos.
+La **ocultación** es la capa del sistema que gobierna el estado táctico `Oculto`, la detección, la posición aproximada y la pérdida o mantenimiento de esa ventaja.
+
+Una criatura `Oculta` no está localizada con precisión por uno o más enemigos.
 
 No es invisibilidad, no es inmunidad y no borra evidencia física. Significa que el enemigo no sabe exactamente dónde está la criatura o no puede fijarla como objetivo directo.
+
+### Estado `Oculto`
+
+`Oculto` es un estado táctico registrado **por enemigo o por grupo de enemigos**.
+
+Una criatura puede estar `Oculta` para un guardia, pero no para otro que la vio entrar. Puede estar `Oculta` para criaturas que dependen de visión, pero no para una criatura que rastrea calor, olor o vibración.
+
+La acción base **Ocultarse** otorga el estado `Oculto` cuando se cumplen sus requisitos y la tirada tiene éxito. Rasgos, artefactos, preparaciones o Técnicas también pueden otorgar `Oculto` por otras rutas más eficientes o más específicas, pero el estado concedido sigue siendo el mismo.
+
+Cuando `Oculto` nace de una tirada, esa tirada inicial se conserva como el valor activo del estado hasta que otra tirada, Técnica, detección o cambio de ficción la reemplace.
+
+Mientras una criatura esté `Oculta` para un enemigo:
+
+- ese enemigo no puede elegirla como objetivo de ataques directos de “una criatura”;
+- puede atacar un área o posición sospechada si tiene una razón para hacerlo;
+- puede buscarla activamente;
+- puede reaccionar a señales obvias, ruido, contacto o cambios del entorno.
+
+`Oculto` no protege contra efectos de área que cubran la posición real.
 
 ### Requisitos para ocultarse
 
@@ -263,7 +284,7 @@ Ocultarse es una acción base cuando se realiza bajo presión.
 
 | Acción | Ritmo | Desgaste | Tirada |
 | --- | ---: | ---: | --- |
-| Ocultarse | 5 | 1 | `T.E.` apropiada contra dificultad del entorno o Percepción enemiga |
+| Ocultarse | 6 | 1 | `T.E.` apropiada contra dificultad del entorno o Percepción enemiga |
 
 Fuera de una escena hostil, Ocultarse no necesita coste de Ritmo. El Narrador solo pide la tirada si hay riesgo, oposición o consecuencia.
 
@@ -272,7 +293,7 @@ Una criatura puede intentar ocultarse si cumple al menos una de estas condicione
 - tiene cobertura media o total;
 - está fuera del rango visual efectivo de los enemigos relevantes;
 - está dentro de una condición de visibilidad reducida que pueda ocultar su posición;
-- cuenta con una técnica, rasgo, artefacto o preparación que permita ocultación.
+- cuenta con una técnica, rasgo, artefacto o preparación que le permita obtener `Oculto`.
 
 Además, ningún enemigo relevante debe tenerla localizada claramente por un sentido aplicable. No basta con "querer desaparecer" mientras alguien la ve, oye, huele o percibe con claridad.
 
@@ -297,28 +318,22 @@ Especializaciones típicas:
 
 La especialización exacta depende de la ficción. Ocultarse en una sala con sombras y guardias puede ser `Sigilo`; perderse en selva, lluvia o terreno rocoso puede ser `Supervivencia`; una Técnica puede autorizar otra especialización si su método lo justifica.
 
-### Estado de ocultación
+### Otras formas de obtener `Oculto`
 
-La ocultación se registra por enemigo o por grupo de enemigos.
+La acción `Ocultarse` es la forma base de obtener `Oculto`, pero no la única. Una Técnica puede:
 
-Un personaje puede estar oculto para un guardia, pero no para otro que lo vio entrar. Puede estar oculto para criaturas que dependen de visión, pero no para una criatura que rastrea calor, olor o vibración.
+- permitir obtener `Oculto` con menos requisitos;
+- permitir obtener `Oculto` bajo observación parcial;
+- permitir mantener `Oculto` durante un movimiento corto;
+- o permitir que una acción concreta no rompa `Oculto` cuando normalmente sí lo haría.
 
-### Efectos de estar oculto
+Esas excepciones no crean un estado nuevo. Modifican la **forma de acceso** o **mantenimiento** del estado `Oculto`.
 
-Mientras una criatura esté oculta para un enemigo:
+### Atacar mientras se está `Oculto`
 
-- ese enemigo no puede elegirla como objetivo de ataques directos de “una criatura”;
-- puede atacar un área o posición sospechada si tiene una razón para hacerlo;
-- puede buscarla activamente;
-- puede reaccionar a señales obvias, ruido, contacto o cambios del entorno.
+Atacar mientras se está `Oculto` puede dar una ventaja de apertura si el objetivo no reacciona a tiempo.
 
-La ocultación no protege contra efectos de área que cubran la posición real.
-
-### Atacar desde ocultación
-
-Atacar desde ocultación puede dar una ventaja de apertura si el objetivo no reacciona a tiempo.
-
-Antes de resolver el ataque, las criaturas relevantes dentro de **10 metros** pueden intentar detectar la acción si tienen un sentido que pueda percibirla. Usa `T.E. de Percepción` contra la ocultación activa o la dificultad del entorno.
+Antes de resolver el ataque, las criaturas relevantes dentro de **10 metros** pueden intentar detectar la acción si tienen un sentido que pueda percibirla. Usa `T.E. de Percepción` contra el estado `Oculto` activo o la dificultad del entorno.
 
 Una criatura fuera de 10 metros solo puede intentar esta detección si tiene un sentido especial, Técnica, preparación o posición que justifique reaccionar a esa señal.
 
@@ -329,15 +344,15 @@ Una criatura fuera de 10 metros solo puede intentar esta detección si tiene un 
 
 Si el ataque conserva ventaja de apertura, obtiene `+3` a la `T.A.` contra objetivos que no detectaron la acción a tiempo.
 
-Atacar desde ocultación siempre compromete la ocultación, incluso si el ataque falla. Después del ataque, resuelve posición aproximada o detección según la escena.
+Atacar desde ocultación siempre compromete `Oculto`, incluso si el ataque falla. Después del ataque, resuelve posición aproximada o detección según la escena.
 
 ---
 
-## Mantener y perder ocultación
+## Mantener y perder `Oculto`
 
-La ocultación se mantiene mientras la criatura no dé una señal suficiente para localizarla.
+`Oculto` se mantiene mientras la criatura no dé una señal suficiente para localizarla.
 
-Acciones que comprometen la ocultación:
+Acciones que comprometen `Oculto`:
 
 - atacar cuerpo a cuerpo;
 - atacar a distancia;
@@ -348,9 +363,9 @@ Acciones que comprometen la ocultación:
 - interactuar con una fuente de luz;
 - cambiar de posición en un entorno silencioso.
 
-Comprometer la ocultación no significa revelar automáticamente la posición exacta. Significa que hay una señal suficiente para que enemigos cercanos intenten localizarla.
+Comprometer `Oculto` no significa revelar automáticamente la posición exacta. Significa que hay una señal suficiente para que enemigos cercanos intenten localizarla.
 
-Cuando una criatura compromete su ocultación, las criaturas relevantes dentro de **10 metros** pueden intentar una `T.E. de Percepción` si tienen un sentido aplicable. Criaturas fuera de 10 metros necesitan un sentido especial, Técnica, preparación o circunstancia que justifique la detección.
+Cuando una criatura compromete `Oculto`, las criaturas relevantes dentro de **10 metros** pueden intentar una `T.E. de Percepción` si tienen un sentido aplicable. Criaturas fuera de 10 metros necesitan un sentido especial, Técnica, preparación o circunstancia que justifique la detección.
 
 Si nadie detecta la posición exacta, el Narrador puede resolver posición aproximada.
 
@@ -371,7 +386,7 @@ En ese caso, los enemigos pueden atacar el área aproximada, moverse para abrir 
 
 ### Posición aproximada incierta
 
-Cuando una criatura oculta compromete su ocultación y otra criatura intenta localizarla, se hace una tirada enfrentada entre la Percepción del detector y la ocultación de la criatura escondida.
+Cuando una criatura `Oculta` compromete ese estado y otra criatura intenta localizarla, se hace una tirada enfrentada entre la Percepción del detector y la tirada o valor que sostiene `Oculto` para la criatura escondida.
 
 La posición aproximada incierta existe para que el detector reciba una pista jugable sin saber si acertó. El jugador debe saber que su personaje percibió algo, pero no si esa percepción fue correcta.
 
@@ -379,20 +394,20 @@ La posición aproximada incierta existe para que el detector reciba una pista ju
 
 Si el jugador es quien está oculto:
 
-1. El jugador tira la misma especialización que usó para ocultarse, o la especialización apropiada si la ficción cambió.
+1. El jugador conserva la tirada o valor que sostuvo `Oculto` cuando lo obtuvo por última vez.
 2. El Narrador tira `T.E. de Percepción` por la criatura que intenta detectarlo.
-3. Si Percepción supera la ocultación, la criatura localiza la posición real del personaje.
-4. Si Percepción no supera la ocultación, el Narrador tira `1d8` y la criatura actúa hacia la posición falsa indicada por esa dirección, si su comportamiento lo justifica.
+3. Si Percepción supera el estado `Oculto`, la criatura localiza la posición real del personaje.
+4. Si Percepción no supera el estado `Oculto`, el Narrador tira `1d8` y la criatura actúa hacia la posición falsa indicada por esa dirección, si su comportamiento lo justifica.
 
 ### Criatura oculta, jugador detecta
 
 Si una criatura es quien está oculta:
 
 1. El jugador tira `T.E. de Percepción`.
-2. El Narrador tira en secreto la ocultación de la criatura.
-3. El Narrador también tira `1d8` en secreto al mismo tiempo, declarando solo que está resolviendo ocultación.
-4. Si la Percepción del jugador supera la ocultación, el Narrador señala la posición real.
-5. Si la Percepción del jugador no supera la ocultación, el Narrador señala la posición falsa indicada por el `1d8`.
+2. El Narrador tira en secreto el estado `Oculto` de la criatura.
+3. El Narrador también tira `1d8` en secreto al mismo tiempo, declarando solo que está resolviendo `Oculto`.
+4. Si la Percepción del jugador supera el estado `Oculto`, el Narrador señala la posición real.
+5. Si la Percepción del jugador no supera el estado `Oculto`, el Narrador señala la posición falsa indicada por el `1d8`.
 
 El Narrador no declara si la tirada del jugador tuvo éxito o falló. El punto mostrado es lo que el personaje cree haber percibido.
 
@@ -426,7 +441,7 @@ Si esa casilla no es válida, está bloqueada o no es plausible, usa la cobertur
 Usa:
 
 ```text
-T.E. de Percepción contra la ocultación o contra la dificultad del entorno
+T.E. de Percepción contra el valor activo de `Oculto` o contra la dificultad del entorno
 ```
 
 No existe una acción universal separada llamada Buscar. Buscar se resuelve como una `T.E. de Percepción`, una Técnica, o una acción específica de la escena si el Narrador la exige por tiempo, posición o presión.

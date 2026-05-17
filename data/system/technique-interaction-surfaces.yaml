@@ -302,6 +302,32 @@ surfaces:
       - specific_countermeasure
     balance_risk: "persistent disabling effects with no exit"
 
+  procedural_countermeasures:
+    name_es: Acciones de Limpieza Revision y Tratamiento
+    terms:
+      - clear_action
+      - self_clear
+      - aided_treatment
+      - quick_identification
+      - cleaning_step
+      - treatment_step
+      - inspection_step
+      - purge_step
+    can_modify:
+      - countermeasure_cost
+      - countermeasure_roll
+      - tool_requirement
+      - target_scope
+      - persistence_gate
+    common_counterplay:
+      - Medicina_roll
+      - Destreza_roll
+      - Contención_roll
+      - Agarre_roll
+      - Rastreo_or_Percepcion_read
+      - preparation_required
+    balance_risk: "time-tax effects with no standardized way to answer them"
+
   environment:
     name_es: Ambiente y Terreno
     terms:

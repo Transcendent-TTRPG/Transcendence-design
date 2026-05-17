@@ -1,0 +1,3 @@
+scenario:
+  id: attrition_race
+  description: Repeated meaningful actions until attrition pressure dominates.

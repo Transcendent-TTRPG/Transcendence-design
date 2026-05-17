@@ -512,6 +512,18 @@ Transcendence usa tres pasos distintos:
 
 `Medicina` cubre estabilizar, tratar y curar daño corporal. Objetos, Técnicas o artefactos pueden modificar estas reglas desde sus propias secciones, pero no forman parte de la regla base de heridas.
 
+Cuando una Técnica no vuelve la herida más severa pero sí la hace más difícil de
+limpiar, leer o tratar, la respuesta inmediata suele resolverse con una acción
+base ya existente:
+
+- `Interactuar` cuando basta limpiar, retirar, soltar, raspar o despejar algo
+  de forma práctica
+- `Usar Especialización` cuando hace falta diagnóstico, tratamiento entrenado,
+  contención o manejo técnico
+
+Esto no sustituye `Estabilizar`, `Tratar` o `Curar`. Resuelve el paso previo que
+devuelve la herida o la zona a un estado tratable.
+
 ### Acción requerida
 
 Un personaje puede intentar estabilizar una criatura con una:

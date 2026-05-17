@@ -94,6 +94,11 @@ The form-level profile list is a generic default. It is useful when a species ha
 
 When a species has a defined expression for the same anatomical form, the species expression overrides the generic profile list for species-origin Technique authoring. This prevents a `Bite`, `Tail`, or `Claw` from behaving identically across species whose anatomy and combat logic are meaningfully different.
 
+For balance purposes, a species expression should still resolve to exactly
+**four** compatible profiles. The parent form's generic profile list is a
+fallback for species without a focused pass; it does **not** stack with the
+species-specific four.
+
 Examples:
 
 - a Naghii bite is fang insertion and venom delivery
@@ -122,6 +127,7 @@ Examples:
 | --- | --- | --- | --- | --- |
 | Naghii | Fang Bite | Kha-Naghii only | `Perforation`, `Corrosion`, `Shadow Pressure`, `Precision` | Retractable fang entry, controlled venom delivery, exact contact, and punishment of hesitation. |
 | Sauri | Jaw Closure | All Sauri | `Impact`, `Bastion`, `Rend`, `Unstoppable` | Heavy jaw closure, clamp, crush, drag, and sustained pressure. |
+| Zarnag | Carrion Bite | All Zarnag | `Corrosion`, `Shadow Pressure`, `Rend`, `Charge` | Infectious breach, foul-contact pressure, panic at close range, and committed body-following maul once contact is secured. |
 
 ### Tail
 
@@ -151,6 +157,12 @@ Examples:
 - **Compatible profiles:** `Flow`, `Shadow Pressure`, `Rend`, `Skirmish`
 - **Restricted profiles:** `Bastion`, `Precision`, `Ricochet`
 - **Identity notes:** Claws sit naturally between light predation and tearing offense. They map strongly to mobile and invasive profiles.
+
+#### Species profile expressions
+
+| Species | Expression | Availability | Compatible profiles | Identity |
+| --- | --- | --- | --- | --- |
+| Zarnag | Scavenger Claws | All Zarnag | `Skirmish`, `Shadow Pressure`, `Rend`, `Unpredictability` | Fast raking harassment, panic-inducing close pressure, opportunistic tearing, and chained short-reach contact that becomes more dangerous once the exchange turns messy. |
 
 ### Shell
 

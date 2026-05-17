@@ -1,0 +1,3 @@
+scenario:
+  id: duel_cluttered_6m
+  description: Two combatants start 6 meters apart in cluttered terrain.

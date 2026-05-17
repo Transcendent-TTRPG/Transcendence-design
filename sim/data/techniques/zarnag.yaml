@@ -1,0 +1,60 @@
+techniques:
+  - id: pasar_como_parte_del_fondo
+    name: Pasar Como Parte del Fondo
+    species: zarnag
+    category: utility
+    type: active
+    origin: Sigilo
+    rhythm: 3
+    attrition: 1
+    trigger: watched_crossing
+    requirements:
+      competencies:
+        - Sigilo
+      states:
+        - incomplete_observation
+      tags:
+        - crossed_space_not_empty
+    roll:
+      family: specialization
+      competency: Sigilo
+      opposed_by: perception_or_threshold
+    effects:
+      - id: grant_hidden_state_limited
+        parameters:
+          state_id: hidden_state
+          max_distance_m: 4
+          scope: watched_crossing_only
+    restrictions:
+      - fails_if_cleanly_identified_as_hostile
+    duration_model: until_crossing_or_detection
+    notes:
+      - Grants Hidden through a constrained watched crossing rather than through the full base Hide requirements.
+
+  - id: reir_donde_mas_suena
+    name: Reír Donde Más Suena
+    species: zarnag
+    category: pressure
+    type: active
+    origin: Intimidacion
+    rhythm: 4
+    attrition: 1
+    trigger: terror_line_exposed
+    requirements:
+      competencies:
+        - Intimidacion
+    roll:
+      family: specialization
+      competency: Intimidacion
+      opposed_by: alteration_resistance
+    effects:
+      - id: apply_ailment
+        parameters:
+          ailment_id: aterrorizado
+          severity: moderate
+          source_competency: Intimidacion
+    restrictions:
+      - requires_immediate_and_credible_fear_line
+    duration_model: ailment_persistence
+    notes:
+      - Seed intimidation technique that installs Aterrorizado through the standard ailment surface.

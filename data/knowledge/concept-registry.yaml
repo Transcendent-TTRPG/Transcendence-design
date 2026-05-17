@@ -1,0 +1,95 @@
+concepts:
+  - id: hidden_state
+    label: Hidden
+    family: concealment_state
+    canonical_terms:
+      en: Hidden
+      es: Oculto
+    summary: >
+      A formal observer-relative concealment state that changes whether a creature can
+      be cleanly localized or directly targeted by a given observer.
+    authority_paths:
+      - Transcendence-design/docs/system/cover-visibility-concealment.md
+      - Transcendence-design/data/system/cover-visibility-concealment.yaml
+    key_notes:
+      - Obtained by the Hide action or by other rules such as Techniques.
+      - The acquiring roll remains the active hidden value until replaced or broken.
+      - It is not an ailment.
+
+  - id: concealment_subsystem
+    label: Concealment
+    family: subsystem
+    canonical_terms:
+      en: Concealment
+      es: Ocultacion
+    summary: >
+      The rule subsystem governing how Hidden is gained, maintained, broken, and
+      contested.
+    authority_paths:
+      - Transcendence-design/docs/system/cover-visibility-concealment.md
+      - Transcendence-design/data/system/cover-visibility-concealment.yaml
+
+  - id: ailment
+    label: Ailment
+    family: state_family
+    canonical_terms:
+      en: Ailment
+      es: Agravio
+    summary: >
+      A harmful state family that alters body function, cognition, perception, or
+      operational capacity.
+    authority_paths:
+      - Transcendence-design/docs/system/ailments.md
+      - Transcendence-design/data/system/ailments.yaml
+
+  - id: procedural_state
+    label: Procedural State
+    family: state_family
+    canonical_terms:
+      en: Procedural State
+      es: Estado Procedural
+    summary: >
+      A narrow tactical or interaction state used for marks, spoil conditions, reads,
+      lines, and other local non-ailment effects.
+    authority_paths:
+      - Transcendence-design/docs/system/techniques.md
+      - Transcendence-design/data/system/techniques.yaml
+
+  - id: technique
+    label: Technique
+    family: action_family
+    canonical_terms:
+      en: Technique
+      es: Tecnica
+    summary: >
+      An authored move that exceeds or specializes beyond the common floor provided by
+      base actions.
+    authority_paths:
+      - Transcendence-design/docs/system/techniques.md
+      - Transcendence-design/data/system/techniques.yaml
+
+  - id: base_action
+    label: Base Action
+    family: action_family
+    canonical_terms:
+      en: Base Action
+      es: Accion Basica
+    summary: >
+      A baseline combat move that establishes the common floor of the system rather
+      than its differentiated ceiling.
+    authority_paths:
+      - Transcendence-publications/core-books/transcendence-corebook/08-conflict-and-combat/en/01-actions.md
+      - Transcendence-publications/core-books/transcendence-corebook/08-conflict-and-combat/es/01-acciones.md
+
+  - id: rank_bonus_scaled_penalty
+    label: Rank Bonus Scaled Penalty
+    family: ailment_doctrine
+    canonical_terms:
+      en: Rank Bonus Scaled Penalty
+      es: Penalizacion Escalada por Rank Bonus
+    summary: >
+      A doctrine for ailment families where the main numeric burden comes from the
+      source's rank bonus while severity adds qualitative layers.
+    authority_paths:
+      - Transcendence-design/docs/system/ailments.md
+      - Transcendence-design/data/system/ailments.yaml

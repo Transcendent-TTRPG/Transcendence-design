@@ -155,11 +155,34 @@ blind_or_no_visual_contact:
 
 concealment:
   definition: >
-    Concealment means a creature is not precisely localized by one or more
-    enemies. It is not invisibility, immunity, or erasure of physical evidence.
+    Concealment uses one formal tactical state: Oculto. A creature that is
+    Oculto is not precisely localized by one or more enemies. It is not
+    invisibility, immunity, or erasure of physical evidence.
+  hidden_state:
+    name_es: Oculto
+    definition: >
+      A creature that is Oculto is not precisely localized by one or more
+      enemies.
+    scope: per_enemy_or_enemy_group
+    granted_by:
+      - successful_base_hide_action
+      - technique
+      - trait
+      - artifact
+      - preparation
+    note: >
+      The base action Ocultarse is only one way to obtain Oculto. Techniques
+      may grant or maintain the same state through altered requirements or
+      narrower permissions.
+    effects:
+      - hidden_creature_cannot_be_chosen_by_that_enemy_as_direct_single_creature_target
+      - area_effects_can_still_affect_real_position
+      - enemy_can_attack_suspected_area_if_fiction_supports_it
+      - enemy_can_use_active_detection
+      - enemy_can_respond_to_obvious_signals
   base_action:
     name_es: Ocultarse
-    rhythm: 5
+    rhythm: 6
     attrition: 1
     roll: "appropriate Specialization Roll against environment difficulty or enemy Perception"
     out_of_hostile_scene: "no Rhythm cost; roll only when risk, opposition, or consequence exists"
@@ -187,23 +210,17 @@ concealment:
     opposing_options:
       - environment_threshold
       - enemy_perception
-  state_scope: "per_enemy_or_enemy_group"
-  effects:
-    - hidden_creature_cannot_be_chosen_by_that_enemy_as_direct_single_creature_target
-    - area_effects_can_still_affect_real_position
-    - enemy_can_attack_suspected_area_if_fiction_supports_it
-    - enemy_can_use_active_detection
-    - enemy_can_respond_to_obvious_signals
+  state_scope: "Oculto is tracked per enemy or enemy group"
   attack_from_concealment:
     reaction_detection_range_m: 10
-    perception_roll: "Percepcion S.R. against active concealment or environment difficulty"
+    perception_roll: "Percepcion S.R. against the active Oculto state or environment difficulty"
     eligible_detectors: "relevant creatures within 10m with an applicable sense"
     outside_range_exception: "special sense, Technique, preparation, or position may justify detection beyond 10m"
     opening_advantage:
       applies_if: "target does not detect the action in time"
       attack_bonus: "+3 to A.R."
     on_detection_success: "attacker gains no opening advantage against that detecting creature"
-    after_attack: "concealment is compromised even if the attack misses"
+    after_attack: "Oculto is compromised even if the attack misses"
   actions_that_risk_or_break_concealment:
     - melee_attack
     - ranged_attack
@@ -217,7 +234,7 @@ concealment:
     exact_reveal: false
     detection_range_m: 10
     rule: >
-      Compromising concealment creates a signal. It does not automatically reveal
+      Compromising Oculto creates a signal. It does not automatically reveal
       exact position. Relevant creatures within 10m may roll Perception if they
       have an applicable sense; others need a special sense, Technique,
       preparation, or circumstance.

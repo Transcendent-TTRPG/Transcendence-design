@@ -1,0 +1,3 @@
+scenario:
+  id: one_reaction_window
+  description: One trigger and one legal reaction window.

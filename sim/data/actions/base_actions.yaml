@@ -1,0 +1,66 @@
+actions:
+  - id: attack_one_handed
+    name: Attack with One-Handed Weapon
+    category: attack
+    rhythm: 6
+    attrition: 1
+    trigger_type: active
+    legal_when:
+      - has_primary_one_handed_weapon
+      - has_target_in_reach
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+    notes:
+      - Baseline one-handed attack for integrated ATB activation loops.
+
+  - id: hide
+    name: Hide
+    category: utility
+    rhythm: 6
+    attrition: 1
+    trigger_type: active
+    roll:
+      family: specialization
+      competency: Sigilo
+      opposed_by: perception_or_threshold
+    legal_when:
+      - has_real_opportunity
+    effects:
+      - id: grant_hidden_state
+        parameters:
+          state_id: hidden_state
+          model: observer_relative
+    notes:
+      - Baseline action for gaining Hidden through the common floor of concealment rules.
+
+  - id: focus_task
+    name: Focus on Task
+    category: utility
+    rhythm: 6
+    attrition: 1
+    trigger_type: active
+    roll:
+      family: specialization
+      competency: Enfoque
+    legal_when:
+      - has_open_task_or_thread
+    effects: []
+    notes:
+      - Seed action for intellect-based activation gating and concentration testing.
+
+  - id: brace_for_impact
+    name: Brace for Impact
+    category: defense
+    rhythm: 0
+    attrition: 2
+    trigger_type: reactive
+    legal_when:
+      - incoming_weapon_attack
+    effects:
+      - id: reaction_defense_bonus
+        parameters:
+          bonus: 2
+    notes:
+      - Seed timing-sensitive defensive reaction that raises D.R. for one incoming attack.

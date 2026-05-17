@@ -1,0 +1,3 @@
+scenario:
+  id: corridor_crossing
+  description: Narrow corridor with watched movement pressure.
