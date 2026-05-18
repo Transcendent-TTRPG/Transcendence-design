@@ -63,6 +63,21 @@ class ActiveAilment:
     notes: tuple[str, ...] = ()
 
 
+@dataclass(frozen=True)
+class ProceduralState:
+    """Applied non-ailment procedural state on a combatant."""
+
+    state_id: str
+    source_id: str | None = None
+    source_rank_bonus: int = 0
+    active: bool = True
+    applies_to: tuple[str, ...] = ()
+    remaining_uses: int | None = None
+    expires_on_owner_activation_end: int | None = None
+    expires_on_source_activation_end: int | None = None
+    notes: tuple[str, ...] = ()
+
+
 @dataclass
 class Combatant:
     """One instantiated actor in simulation runtime."""
@@ -84,6 +99,7 @@ class Combatant:
     weapons: dict[str, WeaponLoadout] = field(default_factory=dict)
     techniques: tuple[str, ...] = ()
     ailments: list[ActiveAilment] = field(default_factory=list)
+    procedural_states: list[ProceduralState] = field(default_factory=list)
     concealment_states: list[ConcealmentState] = field(default_factory=list)
     zones: list[ZoneState] = field(default_factory=list)
     creature_zones: list[CreatureZoneState] = field(default_factory=list)

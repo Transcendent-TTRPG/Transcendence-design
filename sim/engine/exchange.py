@@ -29,6 +29,7 @@ class ExchangeResult:
     impact_roll: ImpactRollValue | None
     attack_connected: bool
     effective_damage: int
+    block_ignored: int = 0
 
 
 def resolve_weapon_exchange(
@@ -42,6 +43,7 @@ def resolve_weapon_exchange(
     attack_penalty: int = 0,
     defense_bonus: int = 0,
     defense_penalty: int = 0,
+    block_ignore: int = 0,
 ) -> ExchangeResult:
     """Resolve A.R. -> D.R. -> I.R. -> Block -> effective damage."""
 
@@ -87,11 +89,13 @@ def resolve_weapon_exchange(
             opposed=opposed,
             impact_roll=None,
             attack_connected=False,
+            block_ignored=0,
             effective_damage=0,
         )
 
     ir = impact_roll_for_weapon(combatant=attacker, rng=rng, slot=attack_slot)
-    effective_damage = max(0, ir.total - block_context.total_block)
+    ignored = max(0, block_ignore)
+    effective_damage = max(0, ir.total - max(0, block_context.total_block - ignored))
     return ExchangeResult(
         attacker_id=attacker.id,
         defender_id=defender.id,
@@ -104,5 +108,6 @@ def resolve_weapon_exchange(
         opposed=opposed,
         impact_roll=ir,
         attack_connected=True,
+        block_ignored=ignored,
         effective_damage=effective_damage,
     )

@@ -39,6 +39,21 @@ def test_technique_loader_reads_seed_technique_data() -> None:
 
     assert definitions
     techniques = {entry.id: entry for entry in definitions}
+    gap = techniques["reir_en_la_brecha"]
+    assert gap.origin == "Evasion"
+    assert gap.effects[0].id == "weapon_exchange_primary"
+    assert gap.effects[1].id == "apply_procedural_state"
+
+    seam = techniques["abrir_la_costura"]
+    assert seam.effects[1].parameters["state_id"] == "seam_opened"
+
+    spread = techniques["atajar_el_brote"]
+    assert spread.rhythm == 7
+    assert spread.effects[1].id == "same_exchange_ignore_block_rank_bonus"
+
+    edge = techniques["robar_la_orilla"]
+    assert edge.effects[1].id == "reposition_after_hit_half_move"
+
     stealth = techniques["pasar_como_parte_del_fondo"]
     assert stealth.origin == "Sigilo"
     assert stealth.effects[0].id == "grant_hidden_state_limited"
@@ -48,6 +63,12 @@ def test_technique_loader_reads_seed_technique_data() -> None:
     assert fear.origin == "Intimidacion"
     assert fear.effects[0].id == "apply_ailment"
     assert fear.effects[0].parameters["ailment_id"] == "aterrorizado"
+
+    recover = techniques["recuperar_la_distancia"]
+    assert recover.origin == "Spear"
+    assert recover.rhythm == 5
+    assert recover.effects[1].id == "reposition_after_hit_distance"
+    assert recover.effects[1].parameters["meters"] == 1
 
 
 def test_ailment_loader_reads_seed_ailment_data() -> None:

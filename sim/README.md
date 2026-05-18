@@ -236,6 +236,7 @@ This layer exists to prove that:
 
 - [`ARCHITECTURE.md`](./ARCHITECTURE.md): full system design for the simulation module
 - [`DATA-SCHEMAS.md`](./DATA-SCHEMAS.md): declarative data formats and field expectations
+- [`TECHNIQUE-PORTING-PLAN.md`](./TECHNIQUE-PORTING-PLAN.md): retroactive species Technique porting order and coverage states
 
 ## Development Posture
 

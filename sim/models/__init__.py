@@ -7,7 +7,7 @@ from .ailment_def import (
     NumericBurdenDefinition,
     RecoveryDefinition,
 )
-from .combatant import ActiveAilment, Combatant, GridPosition, TimelineState, ZoneState
+from .combatant import ActiveAilment, Combatant, GridPosition, ProceduralState, TimelineState, ZoneState
 from .competency import CompetencyRating
 from .concealment_state import ConcealmentState
 from .damage_model import CreatureZoneDefinition, CreatureZoneState, DamageModelDefinition
@@ -42,6 +42,7 @@ __all__ = [
     "MapDefinition",
     "NumericBurdenDefinition",
     "QuestionDefinition",
+    "ProceduralState",
     "RecoveryDefinition",
     "RollDefinition",
     "RollOutcome",

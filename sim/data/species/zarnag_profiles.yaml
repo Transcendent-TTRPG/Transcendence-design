@@ -58,6 +58,10 @@ profiles:
         grade: 1
         base_potency: 8
     techniques:
+      - reir_en_la_brecha
+      - abrir_la_costura
+      - atajar_el_brote
+      - robar_la_orilla
       - pasar_como_parte_del_fondo
       - reir_donde_mas_suena
     policy_defaults:

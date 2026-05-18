@@ -1,1 +1,59 @@
-profiles: []
+profiles:
+  - id: naghii_novice_range_warden
+    species: naghii
+    preparation: 5
+    movement_meters: 8
+    characteristics:
+      Agilidad: 1
+      Astucia: 2
+      Tenacidad: 1
+      Sabiduría: 2
+      Compostura: 1
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Spear:
+        rank: adept
+        level: 3
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: hasta
+        competency: Spear
+        grade: 1
+        base_potency: 8
+    techniques:
+      - recuperar_la_distancia
+    policy_defaults:
+      primary: tempo_first
+    notes:
+      - Seed Naghii profile for spear-distance recovery testing.

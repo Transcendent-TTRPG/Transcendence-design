@@ -1506,7 +1506,7 @@ pilot_examples:
         profile-bearing posture, takes a non-free action that abandons the profile-bearing line,
         or becomes unable to maintain the profile-bearing line.
     cost:
-      rhythm_cost: 4
+      rhythm_cost: 5
       attrition_cost: 1
       other: []
     saving_roll:

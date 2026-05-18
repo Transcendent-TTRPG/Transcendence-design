@@ -1,1 +1,29 @@
-techniques: []
+techniques:
+  - id: recuperar_la_distancia
+    name: Recuperar la Distancia
+    species: naghii
+    category: attack
+    type: active
+    origin: Spear
+    rhythm: 5
+    attrition: 1
+    trigger: line_contested_or_compressed_by_close_pressure
+    requirements:
+      competencies:
+        - Spear
+      tags:
+        - perforation_access
+        - room_to_recover_line
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: reposition_after_hit_distance
+        parameters:
+          meters: 1
+    restrictions:
+      - reposition only occurs after a successful hit
+      - technique restores distance for one exchange and does not create broad lane denial
+    duration_model: immediate
+    notes:
+      - Seed Naghii spear technique that bundles a standard hit with one-meter distance recovery.

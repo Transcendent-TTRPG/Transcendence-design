@@ -8,6 +8,7 @@ from models import Combatant, ConcealmentState, EffectDefinition
 
 from .ailments_runtime import apply_ailment
 from .dice import rank_bonus
+from .procedural_states import apply_procedural_state
 
 
 @dataclass(frozen=True)
@@ -96,7 +97,7 @@ def apply_effect_definition(
         severity = str(effect.parameters["severity"])
         source_rank_bonus = source_rank_bonus_override
         if source_rank_bonus is None:
-            competency_id = source_competency or effect.parameters.get("source_competency")
+            competency_id = effect.parameters.get("source_competency") or source_competency
             if competency_id is None:
                 source_rank_bonus = 0
             else:
@@ -117,6 +118,36 @@ def apply_effect_definition(
             notes=(
                 "applied_new" if result.applied_new else "replaced_existing" if result.replaced_existing else "refreshed_existing" if result.refreshed_existing else "ignored_weaker_application",
             ),
+        )
+
+    if effect.id == "apply_procedural_state":
+        state_id = str(effect.parameters["state_id"])
+        source_rank_bonus = source_rank_bonus_override
+        if source_rank_bonus is None:
+            competency_id = effect.parameters.get("source_competency") or source_competency
+            if competency_id is None:
+                source_rank_bonus = 0
+            else:
+                rating = source.competencies.get(str(competency_id))
+                source_rank_bonus = 0 if rating is None else rank_bonus(rating.rank)
+        owner_expiry_delta = effect.parameters.get("expires_on_owner_activation_end_after")
+        source_expiry_delta = effect.parameters.get("expires_on_source_activation_end_after")
+        owner_expiry = None if owner_expiry_delta is None else target.timeline.activations_taken + int(owner_expiry_delta)
+        source_expiry = None if source_expiry_delta is None else source.timeline.activations_taken + int(source_expiry_delta)
+        result = apply_procedural_state(
+            target=target,
+            source_id=source.id,
+            state_id=state_id,
+            source_rank_bonus=source_rank_bonus,
+            applies_to=tuple(str(entry) for entry in effect.parameters.get("applies_to", ())),
+            remaining_uses=effect.parameters.get("remaining_uses"),
+            expires_on_owner_activation_end=owner_expiry,
+            expires_on_source_activation_end=source_expiry,
+        )
+        return EffectApplicationResult(
+            effect_id=effect.id,
+            applied=result.applied,
+            state_changes=(f"procedural:{state_id}",),
         )
 
     return EffectApplicationResult(

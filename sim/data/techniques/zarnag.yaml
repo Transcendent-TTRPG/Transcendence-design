@@ -1,4 +1,112 @@
 techniques:
+  - id: reir_en_la_brecha
+    name: Reír en la Brecha
+    species: zarnag
+    category: attack
+    type: active
+    origin: Evasion
+    rhythm: 4
+    attrition: 1
+    trigger: close_contact_with_immediate_follow_in_pressure
+    requirements:
+      competencies:
+        - Dagger
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: apply_procedural_state
+        parameters:
+          state_id: read_spoiled
+          source_competency: Dagger
+          applies_to:
+            - dr_against_source
+            - ar_against_source
+          remaining_uses: 1
+          expires_on_owner_activation_end_after: 1
+    restrictions:
+      - only penalizes the first direct D.R. or A.R. against the same user
+    duration_model: one_direct_answer_or_next_activation_end
+    notes:
+      - Seed close-pressure attack that spoils one near-term direct answer instead of applying a body ailment.
+
+  - id: abrir_la_costura
+    name: Abrir la Costura
+    species: zarnag
+    category: attack
+    type: active
+    origin: Evasion
+    rhythm: 5
+    attrition: 1
+    trigger: close_tearing_contact_on_a_weak_line
+    requirements:
+      competencies:
+        - Dagger
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: apply_procedural_state
+        parameters:
+          state_id: seam_opened
+          source_competency: Dagger
+          remaining_uses: 1
+          expires_on_source_activation_end_after: 2
+    restrictions:
+      - only benefits the same user's next qualifying Impact against the same target
+    duration_model: one_followup_impact_or_user_next_activation_end
+    notes:
+      - Seed tearing setup that turns first contact into one later block-ignore window for the same user.
+
+  - id: atajar_el_brote
+    name: Atajar el Brote
+    species: zarnag
+    category: attack
+    type: active
+    origin: Bite
+    rhythm: 7
+    attrition: 2
+    trigger: committed_forward_entry_is_better_than_waiting
+    requirements:
+      competencies:
+        - Dagger
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: same_exchange_ignore_block_rank_bonus
+        parameters:
+          source_competency: Dagger
+    restrictions:
+      - requires a committed entry surface even though the seed runtime abstracts the movement into the same action
+    duration_model: immediate
+    notes:
+      - Seed breakthrough strike that converts committed entry into same-hit block ignore.
+
+  - id: robar_la_orilla
+    name: Robar la Orilla
+    species: zarnag
+    category: attack
+    type: active
+    origin: Claws
+    rhythm: 4
+    attrition: 1
+    trigger: light_contact_with_room_to_slip_back_out
+    requirements:
+      competencies:
+        - Dagger
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: reposition_after_hit_half_move
+        parameters: {}
+    restrictions:
+      - reposition only occurs after a successful hit and still obeys basic occupation plausibility
+    duration_model: immediate
+    notes:
+      - Seed skirmish strike that bundles contact and slip-out into one ATB action.
+
   - id: pasar_como_parte_del_fondo
     name: Pasar Como Parte del Fondo
     species: zarnag

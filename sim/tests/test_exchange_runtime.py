@@ -56,3 +56,28 @@ def test_exchange_applies_impact_and_block_when_attack_connects() -> None:
     assert result.impact_roll is not None
     assert result.block_context.total_block == 6
     assert result.effective_damage == max(0, result.impact_roll.total - result.block_context.total_block)
+
+
+def test_exchange_block_ignore_reduces_effective_block() -> None:
+    context = instantiate_question_context("hidden_gain_crossing_4m")
+    attacker = context.actors_by_slot["mover"].combatant
+    defender = context.actors_by_slot["watcher"].combatant
+
+    base = resolve_weapon_exchange(
+        attacker=attacker,
+        defender=defender,
+        zone="torso",
+        rng=SimulationRNG(seed=11),
+    )
+    improved = resolve_weapon_exchange(
+        attacker=attacker,
+        defender=defender,
+        zone="torso",
+        rng=SimulationRNG(seed=11),
+        block_ignore=2,
+    )
+
+    assert base.attack_connected is True
+    assert improved.attack_connected is True
+    assert improved.block_ignored == 2
+    assert improved.effective_damage == base.effective_damage + 2

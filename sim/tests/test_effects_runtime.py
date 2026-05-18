@@ -50,6 +50,26 @@ def test_technique_apply_ailment_effect_installs_aterrorizado_using_source_rank_
     assert numeric_ailment_penalty(combatant=watcher, roll_tag="dr_against_feared_line") == 1
 
 
+def test_apply_procedural_state_effect_installs_read_spoiled_using_weapon_rank_bonus() -> None:
+    context = instantiate_question_context("hidden_gain_crossing_4m")
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    technique = {entry.id: entry for entry in load_technique_definitions()}["reir_en_la_brecha"]
+
+    results = apply_effects(
+        effects=technique.effects[1:],
+        source=mover,
+        target=watcher,
+        source_competency=technique.origin,
+        activation_index=mover.timeline.activations_taken + 1,
+    )
+
+    assert results[0].applied is True
+    assert watcher.procedural_states[0].state_id == "read_spoiled"
+    assert watcher.procedural_states[0].source_rank_bonus == 2
+    assert watcher.procedural_states[0].applies_to == ("dr_against_source", "ar_against_source")
+
+
 def test_combat_exchange_style_effect_can_apply_aturdido_and_atb_feels_it() -> None:
     context = instantiate_question_context("hidden_gain_crossing_4m")
     mover = context.actors_by_slot["mover"].combatant

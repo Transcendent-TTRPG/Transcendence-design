@@ -58,6 +58,12 @@ def _load_yaml(path: Path) -> dict[str, Any]:
     return loaded
 
 
+def _iter_yaml_files(path: Path) -> list[Path]:
+    if path.is_file():
+        return [path]
+    return sorted(path.rglob("*.yaml"))
+
+
 def _as_tuple(value: Any) -> tuple[str, ...]:
     if value is None:
         return ()
@@ -129,41 +135,40 @@ def load_technique_definitions(
     """Load simulation-facing technique definitions."""
 
     context = context or build_simulator_definition_context()
-    path = path or (context.sim_root / "data" / "techniques" / "zarnag.yaml")
-    data = _load_yaml(path)
-    entries = data.get("techniques", [])
-
     definitions = []
-    for entry in entries:
-        requirements_data = dict(entry.get("requirements", {}))
-        requirements = TechniqueRequirements(
-            competencies=_as_tuple(requirements_data.get("competencies")),
-            states=_as_tuple(requirements_data.get("states")),
-            equipment=_as_tuple(requirements_data.get("equipment")),
-            tags=_as_tuple(requirements_data.get("tags")),
-            notes=_as_tuple(requirements_data.get("notes")),
-        )
-
-        definitions.append(
-            TechniqueDefinition(
-                id=str(entry["id"]),
-                name=str(entry["name"]),
-                species=entry.get("species"),
-                category=str(entry["category"]),
-                type=str(entry["type"]),
-                origin=str(entry["origin"]),
-                rhythm=int(entry["rhythm"]),
-                attrition=int(entry["attrition"]),
-                trigger=str(entry["trigger"]),
-                roll=_roll_from_data(entry.get("roll")),
-                requirements=requirements,
-                effects=_effects_from_data(entry.get("effects")),
-                restrictions=_as_tuple(entry.get("restrictions")),
-                duration_model=entry.get("duration_model"),
-                scaling=dict(entry.get("scaling", {})),
-                notes=_as_tuple(entry.get("notes")),
+    path = path or (context.sim_root / "data" / "techniques")
+    for file_path in _iter_yaml_files(path):
+        data = _load_yaml(file_path)
+        entries = data.get("techniques", [])
+        for entry in entries:
+            requirements_data = dict(entry.get("requirements", {}))
+            requirements = TechniqueRequirements(
+                competencies=_as_tuple(requirements_data.get("competencies")),
+                states=_as_tuple(requirements_data.get("states")),
+                equipment=_as_tuple(requirements_data.get("equipment")),
+                tags=_as_tuple(requirements_data.get("tags")),
+                notes=_as_tuple(requirements_data.get("notes")),
             )
-        )
+            definitions.append(
+                TechniqueDefinition(
+                    id=str(entry["id"]),
+                    name=str(entry["name"]),
+                    species=entry.get("species"),
+                    category=str(entry["category"]),
+                    type=str(entry["type"]),
+                    origin=str(entry["origin"]),
+                    rhythm=int(entry["rhythm"]),
+                    attrition=int(entry["attrition"]),
+                    trigger=str(entry["trigger"]),
+                    roll=_roll_from_data(entry.get("roll")),
+                    requirements=requirements,
+                    effects=_effects_from_data(entry.get("effects")),
+                    restrictions=_as_tuple(entry.get("restrictions")),
+                    duration_model=entry.get("duration_model"),
+                    scaling=dict(entry.get("scaling", {})),
+                    notes=_as_tuple(entry.get("notes")),
+                )
+            )
     return tuple(definitions)
 
 

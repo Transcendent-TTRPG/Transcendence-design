@@ -4,10 +4,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from engine.activations import ActivationIntent, execute_activation_intent
-from engine.resolver import instantiate_question_context
+from engine.entities import build_experiment_context
+from engine.resolver import instantiate_question_context, load_simulation_inputs
 from engine.rng import SimulationRNG
 from experiments.atb_tempo import initialize_context_timeline
-from models import ActiveAilment, CompetencyRating
+from models import ActiveAilment, ActorAssignment, CompetencyRating, GridPosition, QuestionDefinition, ScenarioActorSlot, ScenarioDefinition
 
 
 def _initialized_hidden_crossing_context():
@@ -19,6 +20,39 @@ def _initialized_hidden_crossing_context():
             "watcher": -1,
         },
     )
+    return context
+
+
+def _initialized_naghii_range_recovery_context():
+    inputs = load_simulation_inputs()
+    scenario = ScenarioDefinition(
+        id="naghii_range_recovery_seed",
+        actor_slots=(
+            ScenarioActorSlot(slot="mover", position=GridPosition(2, 0)),
+            ScenarioActorSlot(slot="watcher", position=GridPosition(4, 0)),
+        ),
+        notes=("Minimal seed scenario for Recuperar la Distancia.",),
+    )
+    question = QuestionDefinition(
+        id="naghii_range_recovery_seed",
+        prompt="Can Recuperar la Distancia recover one meter of space after a successful thrust?",
+        scenario_id=scenario.id,
+        actor_assignments=(
+            ActorAssignment(slot="mover", profile_id="naghii_novice_range_warden"),
+            ActorAssignment(slot="watcher", profile_id="common_guard_observer"),
+        ),
+        policy_assignments={
+            "mover": "tempo_first",
+            "watcher": "conservative",
+        },
+    )
+    context = build_experiment_context(
+        question=question,
+        scenario=scenario,
+        environment=None,
+        profiles_by_id=inputs.profiles_by_id,
+    )
+    initialize_context_timeline(context)
     return context
 
 
@@ -99,6 +133,102 @@ def test_technique_can_apply_ailment_inside_atb_loop() -> None:
     assert result.effect_results
     assert watcher.ailments[0].ailment_id == "aterrorizado"
     assert watcher.ailments[0].severity == "moderate"
+
+
+def test_reir_en_la_brecha_applies_read_spoiled_on_successful_hit() -> None:
+    context = _initialized_hidden_crossing_context()
+    context.actors_by_slot["watcher"].combatant.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="reir_en_la_brecha",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    watcher = context.actors_by_slot["watcher"].combatant
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert result.exchange_result.attack_connected is True
+    assert any(state.state_id == "read_spoiled" for state in watcher.procedural_states)
+
+
+def test_atajar_el_brote_ignores_block_on_same_hit() -> None:
+    context = _initialized_hidden_crossing_context()
+    context.actors_by_slot["watcher"].combatant.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="atajar_el_brote",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert result.exchange_result.attack_connected is True
+    assert result.exchange_result.block_ignored == 2
+
+
+def test_robar_la_orilla_repositions_user_after_successful_hit() -> None:
+    context = _initialized_hidden_crossing_context()
+    context.actors_by_slot["watcher"].combatant.attrition_spent = 4
+    mover = context.actors_by_slot["mover"].combatant
+    before_x = mover.position.x
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="robar_la_orilla",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert result.exchange_result.attack_connected is True
+    assert mover.position.x < before_x
+    assert any(effect.effect_id == "reposition_after_hit_half_move" for effect in result.effect_results)
+
+
+def test_recuperar_la_distancia_repositions_user_one_meter_after_successful_hit() -> None:
+    context = _initialized_naghii_range_recovery_context()
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+    before_x = mover.position.x
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="recuperar_la_distancia",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert result.exchange_result.attack_connected is True
+    assert mover.position.x == before_x - 1
+    assert any(effect.effect_id == "reposition_after_hit_distance" for effect in result.effect_results)
 
 
 def test_aturdido_blocks_meaningful_action_and_spends_lost_activation_window() -> None:

@@ -1,0 +1,360 @@
+# Technique Porting Plan
+
+## Purpose
+
+This document tracks the retroactive porting of already-authored species
+Techniques into the simulation lab.
+
+The simulator is no longer blocked on core infrastructure. The main bottleneck
+is now **coverage**:
+
+- authored Technique exists in `docs/system/techniques.md`
+- but there is not yet a simulation-facing definition
+- or there is a definition but not enough runtime support
+- or there is runtime support but no policy/scenario coverage
+
+This document exists to make that work incremental and auditable.
+
+---
+
+## Working Decision
+
+For the current phase of simulator development, the project should prioritize
+**retroactive backfill of already-authored species Techniques before new
+Technique authoring port work expands further**.
+
+In practical terms:
+
+- if a Technique is already authored in the design authority, it should be
+  treated as part of the simulation backlog
+- new simulator-facing Technique work should begin from the earliest missing
+  authored Techniques of the finished species passes
+- the immediate goal is not just “some coverage”, but a usable path to test
+  species passes from their first authored Techniques forward
+
+This does **not** mean every authored Technique must be ported before any other
+runtime improvement. It means that new porting work should be organized around
+closing authored gaps, not around jumping only to the newest or easiest ideas.
+
+---
+
+## Porting States
+
+Every authored Technique should eventually move through these states:
+
+1. `authored`
+2. `sim_defined`
+3. `runtime_supported`
+4. `policy_exercisable`
+5. `scenario_tested`
+6. `question_ready`
+
+### Meaning
+
+#### `authored`
+
+The Technique exists in the design authority.
+
+#### `sim_defined`
+
+The Technique exists in `sim/data/techniques/*.yaml` with:
+
+- id
+- origin
+- rhythm / attrition
+- trigger
+- roll
+- effects
+- duration model
+
+#### `runtime_supported`
+
+The current engine can actually resolve its core behavior:
+
+- roll logic
+- effects
+- ailment / concealment / exchange / timing hooks
+
+#### `policy_exercisable`
+
+At least one policy can choose it under understandable conditions.
+
+#### `scenario_tested`
+
+At least one scenario meaningfully exposes the Technique.
+
+#### `question_ready`
+
+A saved question can use it for repeatable analysis.
+
+---
+
+## Current Reality
+
+Today the simulator can run full ATB slices with:
+
+- activations
+- reactions
+- combat exchange
+- concealment
+- ailments
+- recovery
+- expiry
+- policies
+
+But Technique data coverage is still narrow.
+
+### Current simulation-defined species Technique files
+
+- `sim/data/techniques/zarnag.yaml`
+- `sim/data/techniques/sauri.yaml`
+- `sim/data/techniques/naghii.yaml`
+
+### Current actual coverage
+
+- `Zarnag`
+  - `sim_defined`: `6`
+  - `runtime_supported`: `6`
+  - `policy_exercisable`: `6`
+- `Sauri`
+  - `sim_defined`: `0`
+- `Naghii`
+  - `sim_defined`: `1`
+  - `runtime_supported`: `1`
+
+---
+
+## Species Coverage Matrix
+
+| Species | Authored target | Sim defined | Runtime supported | Policy exercisable | Immediate next goal |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `Zarnag` | `24` | `6` | `6` | `6` | continue earliest-authored backfill, with `Ensuciar la Herida` as the first major missing outlier |
+| `Sauri` | `24` | `0` | `0` | `0` | open first seed batch |
+| `Naghii` | `24` | `1` | `1` | `0` | add first Naghii policy/scenario/question coverage after the initial spear seed |
+
+---
+
+## Naghii Current Ported Set
+
+These authored Naghii Techniques are already simulation-facing:
+
+| Technique | Porting state | Notes |
+| --- | --- | --- |
+| `Recuperar la Distancia` | `runtime_supported` | Uses standard weapon exchange plus a one-meter post-hit distance recovery extension. |
+
+---
+
+## Zarnag Current Ported Set
+
+These authored Zarnag Techniques are already simulation-facing:
+
+| Technique | Porting state | Notes |
+| --- | --- | --- |
+| `Reír en la Brecha` | `runtime_supported` | Uses one-shot procedural read pressure against the same source. |
+| `Abrir la Costura` | `runtime_supported` | Opens a follow-up seam through procedural Block-ignore setup. |
+| `Atajar el Brote` | `runtime_supported` | Same-exchange Block ignore on committed entry. |
+| `Robar la Orilla` | `runtime_supported` | Post-hit reposition already lives inside ATB execution. |
+| `Pasar Como Parte del Fondo` | `question_ready` | Uses concealment + watched crossing + policy support. |
+| `Reír Donde Más Suena` | `question_ready` | Uses `Aterrorizado`, recovery, expiry, and ATB gating. |
+
+These are enough to prove:
+
+- concealment pathing
+- fear pressure
+- ailment application
+- recovery
+- expiry by fiction change
+- policy usage
+- one-shot procedural state pressure
+- same-hit Block ignore
+- post-hit reposition
+
+But they are not enough to represent Zarnag as a whole.
+
+The first major missing authored outlier is now:
+
+- `Ensuciar la Herida`
+
+That one should be treated as the next heavier retroactive port because it
+needs a wound-treatment procedural surface instead of only exchange-time
+modifiers.
+
+---
+
+## Retroactive Porting Order
+
+We should not port all authored Techniques in random order.
+
+Use this sequence.
+
+### Step 1. Techniques that reuse existing runtime surfaces
+
+These are the cheapest high-value ports because the engine already supports
+their core semantics.
+
+Good candidates:
+
+- direct attack follow-ups
+- fear / concealment / reaction pressure
+- ailment application through already-supported ailments
+- simple exchange modifiers
+
+### Step 2. Techniques that need small new effect types
+
+These require modest engine growth, not architecture changes.
+
+Examples:
+
+- one-shot bonus / penalty injections
+- zone-specific attack modifiers
+- route or observer-local state markers
+- basic timing spoils
+
+### Step 3. Techniques that need new procedural state families
+
+These are more expensive and should be grouped intentionally.
+
+Examples:
+
+- read-mark states
+- signal-blur states
+- wound-foul states
+- route-spoil states
+
+### Step 4. Techniques that need broader scene logic
+
+These should come last because they depend on richer environment or map
+semantics.
+
+Examples:
+
+- quarantine line control over multiple spaces
+- trap corridor shaping
+- multi-target area pressure
+- spoil-aftermath behaviors
+
+---
+
+## Species Backfill Order
+
+Because the simulator already has Zarnag seeds, profiles, policies, concealment,
+fear, reactions, and ATB behavior in motion, the most efficient retroactive
+sequence is:
+
+1. finish the **Zarnag** authored backfill
+2. then open the **Naghii** authored backfill
+3. then open the **Sauri** authored backfill
+
+This is an implementation order, not a statement of design importance.
+
+The reason is simple:
+
+- `Zarnag` already has the richest simulation scaffolding
+- `Naghii` naturally extends concealment, sensory interference, and pressure
+- `Sauri` naturally extends control, positional pressure, and direct combat
+
+That means each species backfill should also strengthen the runtime in a
+coherent band instead of scattering engine work across unrelated surfaces.
+
+---
+
+## Technique Sequence Rule
+
+Within a species backfill, porting should proceed in the same order that best
+supports **historical and comparative testing**:
+
+1. earliest authored Techniques that reuse existing runtime surfaces
+2. earliest authored Techniques that need only small new effect types
+3. earliest authored Techniques that need new procedural state families
+4. later authored Techniques only after earlier missing siblings are covered
+
+This keeps the simulator usable for “start from the first Technique and keep
+going” validation instead of producing a spotty late-era-only test bed.
+
+---
+
+## Recommended Immediate Next Batch
+
+### Zarnag
+
+Best next batch after the currently-ported six:
+
+1. `Ensuciar la Herida`
+2. `Quebrar la Vuelta`
+3. `Soltar la Capa Muerta`
+4. `Hacer Esperar la Podredumbre`
+
+Why this batch:
+
+- it exercises recovery / pressure support
+- it exercises reactions further
+- it exercises warning and tempo
+- it stays close to already-supported ATB and exchange surfaces
+
+After this first batch, continue with the remaining Zarnag authored set in
+authored-order unless a later Technique is required to unblock an earlier one.
+
+### Naghii
+
+Best first batch:
+
+1. `Pesar el Umbral`
+2. `Nublar la Señal`
+3. `Marcar la Lectura`
+
+Why:
+
+- it opens the `Hidden` / fear relationship from another species
+- it forces us to formalize procedural sensory states
+- it is a good bridge between concealment and non-ailment state design
+
+### Sauri
+
+Best first batch:
+
+1. `Barrer la Orilla`
+2. `Sellar la Presa`
+3. `Devolver al Cauce`
+
+Why:
+
+- these anchor direct interaction with already-modeled ailments
+- they test melee exchange under control pressure
+- they help validate injury/control tempo under ATB
+
+---
+
+## Porting Checklist Per Technique
+
+Before calling a Technique simulation-ready, verify:
+
+- `sim definition exists`
+- `roll family is canonical`
+- `cost is authored`
+- `requirements are minimally represented`
+- `effect surface exists in engine`
+- `duration / timing model is explicit`
+- `policy can choose it`
+- `at least one test proves it resolves`
+- `at least one scenario can expose it`
+
+---
+
+## Working Rule
+
+Do not port by species-completion alone.
+
+Port by **interaction value**:
+
+- what new runtime surface it validates
+- what current policy blind spot it closes
+- what design question it unlocks
+
+That way retroactive porting strengthens the simulator instead of only
+inflating coverage counts.
+
+Also:
+
+- prefer **backfill continuity** over novelty
+- prefer **earlier missing authored Techniques** over later attractive ones
+- only break authored-order when a small runtime dependency must be built first
