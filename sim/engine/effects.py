@@ -57,6 +57,28 @@ def _upsert_concealment_state(
     )
 
 
+SUPPORTED_EFFECT_IDS: frozenset[str] = frozenset({
+    # Handled here by apply_effect_definition
+    "grant_hidden_state",
+    "grant_hidden_state_limited",
+    "apply_ailment",
+    "apply_procedural_state",
+    "mark_immediate_route_readable",
+    "blur_declared_sensory_channel",
+    "deny_clean_separation_if_check_succeeds",
+    # Handled at exchange/activation level in engine/activations.py
+    "weapon_exchange_primary",
+    "indirect_surface_ranged_attack",
+    "false_line_combined_resolution",
+    "utility_check_primary",
+    "same_exchange_ignore_block_rank_bonus",
+    "reposition_after_hit_half_move",
+    "reposition_after_hit_distance",
+    "advance_before_exchange_distance",
+    "reduce_target_movement_rank_bonus",
+})
+
+
 def apply_effect_definition(
     *,
     effect: EffectDefinition,
@@ -143,6 +165,7 @@ def apply_effect_definition(
             remaining_uses=effect.parameters.get("remaining_uses"),
             expires_on_owner_activation_end=owner_expiry,
             expires_on_source_activation_end=source_expiry,
+            expires_on_fiction_events=tuple(str(entry) for entry in effect.parameters.get("expires_on_fiction_events", ())),
         )
         return EffectApplicationResult(
             effect_id=effect.id,
@@ -150,10 +173,89 @@ def apply_effect_definition(
             state_changes=(f"procedural:{state_id}",),
         )
 
-    return EffectApplicationResult(
-        effect_id=effect.id,
-        applied=False,
-        notes=("unsupported_effect_id",),
+    if effect.id == "mark_immediate_route_readable":
+        state_id = str(effect.parameters.get("state_id", "read_marked"))
+        source_rank_bonus = source_rank_bonus_override
+        if source_rank_bonus is None:
+            competency_id = source_competency
+            if competency_id is None:
+                source_rank_bonus = 0
+            else:
+                rating = source.competencies.get(str(competency_id))
+                source_rank_bonus = 0 if rating is None else rank_bonus(rating.rank)
+        result = apply_procedural_state(
+            target=target,
+            source_id=source.id,
+            state_id=state_id,
+            source_rank_bonus=source_rank_bonus,
+            expires_on_fiction_events=("movement_resolved", "concealment_resolved", "mark_cleared", "interact_cleanup"),
+            notes=("route_readability_preserved",),
+        )
+        return EffectApplicationResult(
+            effect_id=effect.id,
+            applied=result.applied,
+            state_changes=(f"procedural:{state_id}",),
+            notes=("route_readability_state_installed",),
+        )
+
+    if effect.id == "blur_declared_sensory_channel":
+        state_id = str(effect.parameters.get("state_id", "signal_blurred"))
+        source_rank_bonus = source_rank_bonus_override
+        if source_rank_bonus is None:
+            competency_id = source_competency
+            if competency_id is None:
+                source_rank_bonus = 0
+            else:
+                rating = source.competencies.get(str(competency_id))
+                source_rank_bonus = 0 if rating is None else rank_bonus(rating.rank)
+        cleanup_path = str(effect.parameters.get("cleanup_path", "interact"))
+        result = apply_procedural_state(
+            target=target,
+            source_id=source.id,
+            state_id=state_id,
+            source_rank_bonus=source_rank_bonus,
+            applies_to=("ar_against_source", "dr_against_source"),
+            remaining_uses=1,
+            expires_on_fiction_events=(f"{cleanup_path}_cleanup", "channel_cleared"),
+            notes=("next_channel_dependent_answer_blurred",),
+        )
+        return EffectApplicationResult(
+            effect_id=effect.id,
+            applied=result.applied,
+            state_changes=(f"procedural:{state_id}",),
+            notes=("bounded_sensory_residue_installed",),
+        )
+
+    if effect.id == "deny_clean_separation_if_check_succeeds":
+        state_id = str(effect.parameters.get("state_id", "clean_separation_denied"))
+        source_rank_bonus = source_rank_bonus_override
+        if source_rank_bonus is None:
+            competency_id = source_competency
+            if competency_id is None:
+                source_rank_bonus = 0
+            else:
+                rating = source.competencies.get(str(competency_id))
+                source_rank_bonus = 0 if rating is None else rank_bonus(rating.rank)
+        result = apply_procedural_state(
+            target=target,
+            source_id=source.id,
+            state_id=state_id,
+            source_rank_bonus=source_rank_bonus,
+            remaining_uses=1,
+            expires_on_fiction_events=("separation_resolved", "position_recentered"),
+            notes=("clean_withdrawal_denied",),
+        )
+        return EffectApplicationResult(
+            effect_id=effect.id,
+            applied=result.applied,
+            state_changes=(f"procedural:{state_id}",),
+            notes=("anti_disengagement_state_installed",),
+        )
+
+    raise ValueError(
+        f"Unsupported effect_id '{effect.id}'. "
+        "Add a handler in engine/effects.py or engine/activations.py, "
+        "then add the ID to SUPPORTED_EFFECT_IDS."
     )
 
 

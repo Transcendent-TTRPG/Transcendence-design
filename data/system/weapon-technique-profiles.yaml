@@ -182,7 +182,7 @@ weapon_competency_profile_access:
         - Corrosion
       old_concept_anchors:
         - Aguijon
-        - Sigiloso
+        - Ricochete
         - Rafaga
         - Desgaste
     Flexible Weapons:
@@ -210,6 +210,7 @@ weapon_competency_profile_access:
 
 profiles:
   - name: Perforation
+    name_es: Perforación
     family: Spear / thrusting reach / piercing natural impact
     fantasy_core: >
       Driving force through a narrow line to break distance, threaten entry,
@@ -274,6 +275,7 @@ profiles:
       - abstract_condition_removal
       - purely_defensive_bastion_play
   - name: Interception
+    name_es: Intercepción
     family: Shield interception / line denial / protective redirection
     fantasy_core: >
       Stepping into the hostile line at the last moment to catch, divert,
@@ -342,6 +344,7 @@ profiles:
       - wide_offensive_sweeping_damage
       - abstract_nonspatial_condition_cleansing
   - name: Flow
+    name_es: Fluidez
     family: Long-blade flow / continuous edge control / elegant offensive transition
     fantasy_core: >
       Maintaining dangerous continuity through stance, edge, and movement so
@@ -409,6 +412,7 @@ profiles:
       - pure_ranged_projection
       - abstract_condition_removal
   - name: Shadow Pressure
+    name_es: Acecho
     family: Short-blade shadow pressure / opportunistic close-range exploitation
     fantasy_core: >
       Staying close, hard to read, and immediately dangerous by turning
@@ -480,6 +484,7 @@ profiles:
       - broad_multi_target_sweeps
       - abstract_noncontact_support
   - name: Line Control
+    name_es: Control de Línea
     family: Line control / spatial denial / forced repositioning
     fantasy_core: >
       Deciding where bodies can safely stand, pass, or commit by shaping
@@ -548,6 +553,7 @@ profiles:
       - abstract_condition_cleansing
       - high_precision_dueling_as_primary_identity
   - name: Ricochet
+    name_es: Rebote
     family: Thrown ricochet / angled projection / rebound pressure
     fantasy_core: >
       Using angle, impact surface, and projectile behavior to create pressure
@@ -618,6 +624,7 @@ profiles:
       - massive_area_blast_as_primary_mode
       - abstract_condition_removal
   - name: Precision
+    name_es: Precisión
     family: Precision shot / selective impact / exact ranged pressure
     fantasy_core: >
       Placing force exactly where it matters by reading distance, movement,
@@ -687,6 +694,7 @@ profiles:
       - wide_area_blast_logic
       - abstract_condition_removal
   - name: Charge
+    name_es: Embestida
     family: Charge / committed entry / momentum impact
     fantasy_core: >
       Converting movement, mass, and forward commitment into a decisive
@@ -758,6 +766,7 @@ profiles:
       - indirect_ranged_geometry
       - abstract_condition_removal
   - name: Bastion
+    name_es: Bastión
     family: Bastion / anchored defense / protected endurance
     fantasy_core: >
       Becoming the point that does not easily yield, using structure, stance,
@@ -830,6 +839,7 @@ profiles:
       - indirect_ranged_geometry
       - abstract_condition_cleansing
   - name: Torsion
+    name_es: Torsión
     family: Torsion / flexible reach / angular redirection
     fantasy_core: >
       Using bend, wrap, whip, or redirection of trajectory to threaten from
@@ -900,6 +910,7 @@ profiles:
       - abstract_condition_removal
       - pure_blunt_collision_as_primary_mode
   - name: Impact
+    name_es: Impacto
     family: Impact / blunt trauma / structural shock
     fantasy_core: >
       Delivering force so heavily and cleanly that posture, guard, breath, or
@@ -968,6 +979,7 @@ profiles:
       - flexible_wrap_identity
       - abstract_condition_removal
   - name: Rend
+    name_es: Desgarro
     family: Rend / tearing force / persistent bodily degradation
     fantasy_core: >
       Opening flesh, structure, or protection in a way that does not end at
@@ -1037,6 +1049,7 @@ profiles:
       - static_guardian_defense
       - abstract_condition_removal
   - name: Sunder
+    name_es: Ruptura
     family: Sunder / breaking force / material opening
     fantasy_core: >
       Attacking structure itself so that armor, guard, cover, weapon
@@ -1107,6 +1120,7 @@ profiles:
       - soft_flexible_wrap_identity
       - abstract_condition_removal
   - name: Volley
+    name_es: Cadencia
     family: Volley / sustained ranged pressure / repeated release
     fantasy_core: >
       Maintaining ranged initiative through cadence, repeated release, and
@@ -1177,6 +1191,7 @@ profiles:
       - wide_blast_logic
       - abstract_condition_removal
   - name: Deflection
+    name_es: Desvío
     family: Deflection / redirection by edge / active off-line defense
     fantasy_core: >
       Spoiling hostile force through angle, timing, and contact redirection so
@@ -1247,6 +1262,7 @@ profiles:
       - indirect_projectile_geometry
       - abstract_condition_removal
   - name: Interruption
+    name_es: Interrupción
     family: Interruption / execution break / hostile action spoil
     fantasy_core: >
       Breaking the enemy's process before it resolves cleanly by striking
@@ -1319,6 +1335,7 @@ profiles:
       - indirect_projectile_geometry_as_primary_mode
       - abstract_condition_removal
   - name: Corrosion
+    name_es: Corrosión
     family: Corrosion / degrading contact / persistent hostile residue
     fantasy_core: >
       Applying a contact that keeps making the target worse after impact
@@ -1391,6 +1408,7 @@ profiles:
       - broad_instant_blast_logic
       - condition_removal_as_primary_mode
   - name: Unpredictability
+    name_es: Impredecible
     family: Unpredictability / false read / non-obvious attack logic
     fantasy_core: >
       Defeating the opponent's expectation by making the next line, angle,
@@ -1460,6 +1478,7 @@ profiles:
       - broad_ranged_suppression
       - abstract_condition_removal
   - name: Skirmish
+    name_es: Hostigamiento
     family: Skirmish / light engagement / hit-and-reposition
     fantasy_core: >
       Entering fast, striking in a meaningful but limited window, and changing
@@ -1530,6 +1549,7 @@ profiles:
       - broad_ranged_suppression
       - abstract_condition_removal
   - name: Ward
+    name_es: Guarda
     family: Ward / reach discipline / pre-contact denial
     fantasy_core: >
       Keeping hostile entry uncomfortable by maintaining a dangerous ready
@@ -1596,6 +1616,7 @@ profiles:
       - indirect_projectile_geometry
       - abstract_condition_removal
   - name: Lethality
+    name_es: Letalidad
     family: Lethality / vital exploitation / finishing authority
     fantasy_core: >
       Turning one clean opening into a decisive end-state through anatomical
@@ -1669,6 +1690,7 @@ profiles:
       - indirect_projectile_geometry
       - abstract_condition_removal
   - name: Unstoppable
+    name_es: Imparable
     family: Unstoppable / drive-through commitment / refusal to stall
     fantasy_core: >
       Continuing offense through partial contact, resistance, obstruction, or

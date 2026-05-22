@@ -1,0 +1,25 @@
+id: naghii_nublar_la_senal_effectiveness
+question: How often does `Nublar la Señal` materially spoil the target's next channel-dependent answer before cleanup or dissipation?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - procedural_states
+  - balance
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - residue_application_rate
+  - spoiled_channel_answer_rate
+  - cleanup_before_use_rate
+  - burden_conversion_rate
+iterations: 20000
+compare:
+  technique: nublar_la_senal
+  against: marcar_la_lectura
+notes:
+  - Derived effectiveness question for bounded sensory interference.

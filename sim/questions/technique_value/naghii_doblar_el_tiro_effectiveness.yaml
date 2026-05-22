@@ -1,0 +1,25 @@
+id: naghii_doblar_el_tiro_effectiveness
+question: How often does `Doblar el Tiro` create real offensive value through one honest rebound line rather than reading like a normal shot?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - geometry
+  - balance
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - indirect_line_success_rate
+  - cover_edge_bypass_value
+  - nontrivial_geometry_value_rate
+  - damage_conversion_rate
+iterations: 20000
+compare:
+  technique: doblar_el_tiro
+  against: attack_one_handed
+notes:
+  - Derived effectiveness question for novice ricochet utility.

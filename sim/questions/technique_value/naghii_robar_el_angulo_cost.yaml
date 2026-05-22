@@ -1,0 +1,27 @@
+id: naghii_robar_el_angulo_cost
+question: Is `Robar el Ángulo` priced correctly at `Rhythm 4 / Attrition 1` for a novice false-line flexible-weapon attack?
+scenario: naghii_flexible_pressure_2m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - balance
+  - positioning
+actors:
+  mover: naghii_novice_false_line_skirmisher
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - hit_rate
+  - position_theft_rate
+  - spoiled_answer_rate
+  - combined_swing_rate
+  - rhythm_efficiency
+  - attrition_efficiency
+iterations: 20000
+compare:
+  technique: robar_el_angulo
+  sibling: anudar_el_paso
+notes:
+  - Minimum cost question for false-line pressure value.

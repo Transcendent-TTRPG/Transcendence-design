@@ -1,0 +1,27 @@
+id: naghii_trabar_el_gesto_cost
+question: Is Rhythm 5 / Attrition 1 the right cost for `Trabar el Gesto` — does the reactive interruption cost feel consistent with the condition-application upside and the narrow weapon-declaration trigger window?
+scenario: naghii_interruption_pressure_reach
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - cost_balance
+  - control
+actors:
+  mover: naghii_novice_torsion_keeper
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - trigger_rate
+  - condition_application_rate
+  - rr_failure_rate
+  - cost_efficiency_vs_utility_median
+iterations: 20000
+compare:
+  technique: trabar_el_gesto
+  against: cerrar_la_linea
+notes:
+  - Minimum cost question for the reactive Interruption entry of the Naghii technique set.
+  - Compares against Cerrar la Línea (R=4 reactive) to calibrate the +1 Rhythm premium for condition output.
+  - Runtime gate: blocked until enemy_weapon_declaration_trigger_hook and cancel_triggering_action_on_rr_failure are implemented (small_runtime_extension).

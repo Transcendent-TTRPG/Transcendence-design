@@ -1,4 +1,249 @@
 techniques:
+  - id: doblar_el_tiro
+    name: Doblar el Tiro
+    species: naghii
+    category: attack
+    type: active
+    origin: Ranged Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: indirect_line_available_through_declared_surface
+    roll:
+      family: attack
+      competency: Ranged Weapons
+      opposed_by: Defense
+      notes:
+        - one-surface rebound or skip attack
+    requirements:
+      competencies:
+        - Ranged Weapons
+      tags:
+        - ricochet_access
+        - rebound_capable_projectile
+        - usable_rebound_surface_present
+        - physically_plausible_indirect_path
+    effects:
+      - id: indirect_surface_ranged_attack
+        parameters:
+          bypasses_original_cover_edge: true
+          declared_surface_count: 1
+          final_defense_applies_normally: true
+    restrictions:
+      - does not ignore total cover or sealed barriers
+      - does not curve freely in open air
+      - does not seek a target the user cannot reasonably locate
+      - only one declared rebound or skip surface at novice
+    duration_model: immediate
+    notes:
+      - Seed Naghii ranged ricochet technique for material indirect-line attack geometry.
+
+  - id: nublar_la_senal
+    name: Nublar la Señal
+    species: naghii
+    category: utility
+    type: active
+    origin: Ranged Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: line_of_fire_to_foul_clean_sensory_read
+    roll:
+      family: attack
+      competency: Ranged Weapons
+      opposed_by: Defense
+      notes:
+        - called-shot sensory-channel delivery at minus two
+    requirements:
+      competencies:
+        - Ranged Weapons
+      tags:
+        - corrosion_access
+        - munition_kit_access_if_non_natural
+        - exposed_sensory_channel
+        - residue_delivery
+    effects:
+      - id: utility_check_primary
+        parameters:
+          roll_family: attack
+          opposed_by: Defense
+      - id: blur_declared_sensory_channel
+        parameters:
+          state_id: signal_blurred
+          penalty_source: rank_bonus
+          cleanup_path: interact
+          expires_on_next_channel_dependent_action: true
+    restrictions:
+      - does not blind the target completely
+      - does not disable all sensory channels
+      - does not prevent movement
+      - does not create a scene-wide penalty
+    duration_model: until_cleanup_or_next_channel_dependent_action
+    notes:
+      - Seed Naghii ranged residue technique for bounded sensory-pressure coverage.
+
+  - id: marcar_la_lectura
+    name: Marcar la Lectura
+    species: naghii
+    category: attack
+    type: active
+    origin: Ranged Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: line_of_fire_to_preserve_route_readability
+    roll:
+      family: attack
+      competency: Ranged Weapons
+      opposed_by: Defense
+      notes:
+        - marking contact shot or projection
+    requirements:
+      competencies:
+        - Ranged Weapons
+      tags:
+        - precision_access
+        - munition_kit_access_if_non_natural
+        - readable_mark_delivery
+        - target_can_be_physically_marked
+    effects:
+      - id: utility_check_primary
+        parameters:
+          roll_family: attack
+          opposed_by: Defense
+      - id: mark_immediate_route_readable
+        parameters:
+          state_id: read_marked
+          scope: single_target
+          sensory_gate: true
+          duration_scope: next_movement_or_concealment
+    restrictions:
+      - does not grant attack bonus
+      - does not ignore cover
+      - does not reveal through sealed barriers
+      - only preserves immediate route readability
+    duration_model: until_next_movement_or_concealment_or_mark_clear
+    notes:
+      - Seed Naghii ranged precision marking technique for immediate-route readability.
+      - Base cleanup path is Interactuar rather than trained technical neutralization.
+
+  - id: robar_el_angulo
+    name: Robar el Ángulo
+    species: naghii
+    category: attack
+    type: active
+    origin: Flexible Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: false_line_visible_to_target
+    requirements:
+      competencies:
+        - Flexible Weapons
+      tags:
+        - unpredictability_access
+        - target_perceives_visible_line
+        - space_for_off_angle_resolution
+    effects:
+      - id: false_line_combined_resolution
+        parameters:
+          reposition_meters: 1
+          spoil_response: rank_bonus
+    restrictions:
+      - does not force target movement
+      - does not immobilize or grapple by itself
+      - does not create broad zone control
+    duration_model: until_immediate_response_or_recenter
+    notes:
+      - Seed Naghii flexible-weapon false-line attack technique with combined position theft and immediate-response spoil.
+
+  - id: anudar_el_paso
+    name: Anudar el Paso
+    species: naghii
+    category: attack
+    type: reactive
+    origin: Flexible Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: enemy_inside_profile_reach_attempts_clean_separation
+    roll:
+      family: specialization
+      competency: Flexible Weapons
+      opposed_by: defense
+      notes:
+        - reactive anti-disengagement torsion attack
+    requirements:
+      competencies:
+        - Flexible Weapons
+      tags:
+        - torsion_access
+        - profile_reach_contested
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          zone: torso
+      - id: deny_clean_separation_if_check_succeeds
+        parameters:
+          scope: single_enemy_within_profile_reach
+    restrictions:
+      - only applies after the enemy is already inside the user's profile-bearing reach
+      - does not stop entry from outside reach
+      - denies clean withdrawal or superior angle rather than creating full immobilization
+    duration_model: immediate
+    notes:
+      - Seed Naghii flexible-weapon anti-disengagement technique.
+
+  - id: cerrar_la_linea
+    name: Cerrar la Línea
+    species: naghii
+    category: attack
+    type: reactive
+    origin: Spear
+    rhythm: 4
+    attrition: 1
+    trigger: enemy_enters_line_by_forward_movement
+    requirements:
+      competencies:
+        - Spear
+      tags:
+        - perforation_access
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+    restrictions:
+      - only applies against a movement-driven entry window
+      - does not function as a generic reactive attack against any hostile action
+      - on success the enemy's entry should not convert into clean melee contact
+    duration_model: immediate
+    notes:
+      - Seed Naghii reactive spear interception technique.
+
+  - id: clavar_el_paso
+    name: Clavar el Paso
+    species: naghii
+    category: attack
+    type: active
+    origin: Spear
+    rhythm: 5
+    attrition: 1
+    trigger: committed_forward_close_and_strike
+    requirements:
+      competencies:
+        - Spear
+      tags:
+        - perforation_access
+    effects:
+      - id: advance_before_exchange_distance
+        parameters:
+          meters: 2
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+    restrictions:
+      - advance and attack are one committed action
+      - user remains committed forward after the exchange
+      - technique does not create broad zone control by itself
+    duration_model: immediate
+    notes:
+      - Seed Naghii spear technique that closes up to two meters before resolving a standard attack exchange.
+
   - id: recuperar_la_distancia
     name: Recuperar la Distancia
     species: naghii
@@ -27,3 +272,278 @@ techniques:
     duration_model: immediate
     notes:
       - Seed Naghii spear technique that bundles a standard hit with one-meter distance recovery.
+
+  - id: clavar_la_cadencia
+    name: Clavar la Cadencia
+    species: naghii
+    category: attack
+    type: reactive
+    origin: Ranged Weapons
+    rhythm: 4
+    attrition: 1
+    trigger: creature_within_ranged_line_declares_or_begins_movement
+    requirements:
+      competencies:
+        - Ranged Weapons
+      tags:
+        - volley_access
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: reduce_target_movement_rank_bonus
+        parameters:
+          competency: Ranged Weapons
+    restrictions:
+      - requires_line_of_effect_to_one_target
+      - requires_ranged_tool_with_controlled_repeated_release
+      - affects_one_target_and_one_triggering_movement_only
+      - movement_reduction_is_one_meter_per_rank_bonus
+      - does_not_deal_extra_damage_beyond_the_reactive_attack
+      - does_not_reduce_speed_after_triggering_movement_resolves
+    duration_model: instant
+    notes:
+      - authority_cost_note_references_r5_but_structured_field_is_r4_editorial_gap_needs_resolution
+      - Seed Naghii ranged reactive technique that interrupts declared target movement and shortens effective distance by rank bonus meters.
+
+  - id: tocar_y_ceder
+    name: Tocar y Ceder
+    species: naghii
+    category: attack
+    type: active
+    origin: Flexible Weapons
+    rhythm: 5
+    attrition: 1
+    trigger: approach_touch_and_withdraw_before_target_converts_contact_into_stable_exchange
+    requirements:
+      competencies:
+        - Flexible Weapons
+      tags:
+        - skirmish_access
+        - enough_spacing_to_approach_and_withdraw
+    effects:
+      - id: advance_before_exchange_distance
+        parameters:
+          meters: 1
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+      - id: reposition_after_hit_distance
+        parameters:
+          meters: 1
+    restrictions:
+      - approach_is_up_to_1m_only_not_a_full_movement_action
+      - return_is_contingent_on_a_successful_attack
+      - return_does_not_grant_a_reaction_opportunity
+      - applies_to_one_target_only
+    duration_model: instant
+    notes:
+      - cost_is_doctrinal_r5_not_yet_sim_validated
+      - Seed Naghii flexible-weapon technique that bundles a 1m approach, a standard attack exchange, and a conditional 1m withdrawal into a single action.
+
+  - id: trabar_el_gesto
+    name: Trabar el Gesto
+    species: naghii
+    category: attack
+    type: reactive
+    origin: Flexible Weapons
+    rhythm: 5
+    attrition: 1
+    trigger: user_is_target_of_weapon_rooted_attack_from_enemy_within_weapon_reach
+    roll:
+      family: specialization
+      competency: Flexible Weapons
+      opposed_by: attacker_ta
+      notes:
+        - user substitutes T.D. with T.A. in the incoming exchange
+        - if T.A. exceeds attacker's T.A.: no damage taken, user deals T.I., attacker makes Alteration R.R. against Impedido
+        - if T.A. does not exceed: counter fails, attack resolves normally
+    requirements:
+      competencies:
+        - Flexible Weapons
+      tags:
+        - interruption_access
+        - user_is_declared_target_of_triggering_attack
+        - attacker_within_weapon_reach
+        - credible_flexible_contact_line_to_attackers_weapon_arm_or_execution_line
+    effects:
+      - id: weapon_exchange_primary
+        parameters:
+          slot: primary
+          role: counter_attacker
+      - id: apply_ailment
+        parameters:
+          ailment_id: impedido
+          severity: minor
+          source_competency: Flexible Weapons
+    restrictions:
+      - only triggers when user is the declared target of a weapon-rooted attack
+      - attacker must be within weapon reach
+      - T.A. replaces T.D. — does not supplement it
+      - does not prevent non-weapon actions or movement
+      - applies to one attacker only
+      - Impedido cleared by successful Enfoque S.R. against original severity
+    duration_model: ailment_persistence
+    notes:
+      - runtime_gap: small_runtime_extension
+      - missing_1: counter_attacker_exchange_role — weapon_exchange_primary currently only handles standard attacker role; counter-exchange where defender uses T.A. as defense substitute needs new exchange variant
+      - missing_2: ailment_gated_on_successful_counter — apply_ailment currently fires unconditionally; needs conditional gate on exchange outcome
+      - Impedido added to sim/data/ailments/ailments.yaml as part of this port
+      - severity param uses minor as Novice proxy; rank-scaled severity needs runtime support
+      - design revised: category changed from utility to attack; trigger changed from enemy-declaration to incoming-attack-on-user
+
+  - id: plantar_la_guardia
+    name: Plantar la Guardia
+    species: naghii
+    category: utility
+    type: active
+    origin: Spear
+    rhythm: 3
+    attrition: 1
+    trigger: user_establishes_spear_ward_zone_at_current_position
+    roll:
+      family: none
+      competency: null
+      opposed_by: null
+      notes:
+        - no attack roll; zone activates on declaration
+        - zone Rhythm tax at Novice = 1 + rank_bonus(Novice) = 2
+    requirements:
+      competencies:
+        - Spear
+      tags:
+        - ward_access
+        - stable_footing
+    effects:
+      - id: apply_procedural_state
+        parameters:
+          state_id: ward_zone
+          zone_radius: weapon_reach_plus_1m
+          enemy_rhythm_tax: rank_bonus_plus_1
+          cleanup_path: user_moves_or_turns_or_displaced
+          affects: enemies_within_zone
+    restrictions:
+      - zone collapses if user moves beyond negligible distance from declared position
+      - zone collapses if user turns the ward away or loses threat posture
+      - zone collapses on successful knockdown or displacement
+      - does not affect allies
+      - enemies may leave the zone freely without penalty
+      - cannot maintain while Derribado or Desequilibrado
+    duration_model: until_cleanup
+    notes:
+      - runtime_gap: new_state_family
+      - missing: ward_zone_procedural_state — apply_procedural_state effect ID is supported but ward_zone state type has no handler; needs spatial zone geometry, ATB rhythm-tax integration, and cleanup-on-movement tracking
+      - cost corrected from R=7/A=2 (authored error) to R=3/A=1; high Rhythm cost defeats ATB viability for a hold-position technique
+      - Seed Naghii spear zone-control technique using Ward profile
+
+  - id: leer_el_calor_del_paso
+    name: Leer el Calor del Paso
+    species: naghii
+    category: utility
+    type: active
+    origin: Percepcion
+    rhythm: 3
+    attrition: 1
+    trigger: living_creature_or_immediate_trace_within_sensory_reach
+    roll:
+      family: specialization
+      competency: Percepcion
+      opposed_by: null
+      notes:
+        - Percepcion specialization check against living creature or trace
+        - opposition is T.E. (Sigilo) — only when target actively suppresses physical signal; not yet modeled in sim
+        - treated as uncontested (always succeeds when triggered); Sigilo-opposed surface is a future small_runtime_extension
+    requirements:
+      competencies:
+        - Percepcion
+      tags:
+        - living_creature_present_or_immediate_trace_available
+    effects: []
+    restrictions:
+      - requires a living creature or immediate living trace within sensory reach
+      - cannot be used without physical signs to read
+      - reveals one immediate truth only — Narrator-side, no mechanical sim state
+      - does not create a bonus to another roll by itself
+      - does not create persistent tracking
+    duration_model: immediate
+    notes:
+      - data_only — Percepcion specialization roll resolves through existing path; information output is Narrator-side and carries no mechanical state in the sim
+      - contextual_masking_opposition not modeled: full read vs. Sigilo matchup needs a Percepcion-opposed-by-masking surface
+      - Seed Naghii Perception utility technique for non-weapon information-reveal coverage
+
+  - id: pesar_el_umbral
+    name: Pesar el Umbral
+    species: naghii
+    category: utility
+    type: active
+    origin: Sigilo
+    rhythm: 3
+    attrition: 1
+    trigger: user_in_real_hidden_position_with_creature_within_4m_threshold_range
+    roll:
+      family: specialization
+      competency: Sigilo
+      opposed_by: alteration_resistance
+      notes:
+        - Sigilo check from hidden position; opposed by target's Alteration R.R.
+        - if user wins the opposed roll, Aterrorizado applies at rank-appropriate severity
+    requirements:
+      competencies:
+        - Sigilo
+      tags:
+        - user_in_real_hidden_position
+        - target_within_4m_and_capable_of_registering_nearby_unseen_threat
+    effects:
+      - id: apply_ailment
+        parameters:
+          ailment_id: aterrorizado
+          severity: minor
+          source_competency: Sigilo
+    restrictions:
+      - requires a real hidden position — cover, concealment, darkness, broken sightline
+      - does not function in open exposure where the user is plainly registered
+      - does not work on mindless targets or targets with no self-preservation instinct
+      - target must be within 4 meters
+    duration_model: ailment_persistence
+    notes:
+      - data_only — all surfaces exist: Sigilo specialization roll + alteration_resistance opposed_by + apply_ailment with aterrorizado
+      - type corrected from reactive to active: the user in hidden position takes the initiative, not the creature
+      - range corrected to 4 meters from hidden position; original "nearby line / hidden presence reach" was not concrete enough
+      - severity param uses minor as Novice proxy; rank-scaled severity follows standard ailment bands (Minor novice, Moderate adept, Severe master+)
+      - same structural pattern as reir_donde_mas_suena (Zarnag) — Sigilo replaces Intimidacion
+
+  - id: leer_la_linea_ausente
+    name: Leer la Línea Ausente
+    species: naghii
+    category: utility
+    type: active
+    origin: Interpretacion
+    rhythm: 3
+    attrition: 1
+    trigger: incomplete_or_suspicious_pattern_record_route_ritual_scene_testimony_formation_or_sequence_present
+    roll:
+      family: specialization
+      competency: Interpretacion
+      opposed_by: null
+      notes:
+        - uncontested by default; opposed only when another creature deliberately falsified or staged the absence
+        - Sigilo-like masking opposition not yet modeled in sim
+    requirements:
+      competencies:
+        - Interpretacion
+      tags:
+        - incomplete_or_suspicious_pattern_present
+    effects: []
+    restrictions:
+      - requires an incomplete or suspicious pattern to read
+      - reveals one absence category only
+      - does not reveal the full missing content
+      - does not identify the responsible party by itself
+      - does not reconstruct the entire event
+      - does not create a bonus to another roll by itself
+      - does not bypass deliberate staging without contextual opposition
+    duration_model: immediate
+    notes:
+      - data_only — Interpretacion specialization roll resolves through existing path; output is Narrator-side, no mechanical sim state
+      - deliberate-staging opposition not modeled: contextual masking matchup needs Interpretacion-opposed-by-masking surface
+      - Seed Naghii archive-reading technique for absence-evidence and gap-read coverage

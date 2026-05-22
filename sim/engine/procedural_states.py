@@ -33,6 +33,7 @@ def apply_procedural_state(
     remaining_uses: int | None = None,
     expires_on_owner_activation_end: int | None = None,
     expires_on_source_activation_end: int | None = None,
+    expires_on_fiction_events: tuple[str, ...] = (),
     notes: tuple[str, ...] = (),
 ) -> ProceduralStateApplicationResult:
     """Apply or refresh one procedural state on a combatant."""
@@ -46,6 +47,7 @@ def apply_procedural_state(
         remaining_uses=remaining_uses,
         expires_on_owner_activation_end=expires_on_owner_activation_end,
         expires_on_source_activation_end=expires_on_source_activation_end,
+        expires_on_fiction_events=expires_on_fiction_events,
         notes=notes,
     )
     for index, current in enumerate(target.procedural_states):
@@ -94,6 +96,7 @@ def procedural_roll_penalty(
                     remaining_uses=remaining,
                     expires_on_owner_activation_end=state.expires_on_owner_activation_end,
                     expires_on_source_activation_end=state.expires_on_source_activation_end,
+                    expires_on_fiction_events=state.expires_on_fiction_events,
                     notes=state.notes,
                 )
             )
@@ -131,6 +134,7 @@ def procedural_block_ignore(
                     remaining_uses=remaining,
                     expires_on_owner_activation_end=state.expires_on_owner_activation_end,
                     expires_on_source_activation_end=state.expires_on_source_activation_end,
+                    expires_on_fiction_events=state.expires_on_fiction_events,
                     notes=state.notes,
                 )
             )
@@ -143,11 +147,13 @@ def resolve_procedural_state_expiry(
     *,
     combatants: tuple[Combatant, ...] | list[Combatant],
     actor: Combatant,
+    fiction_events: tuple[str, ...] = (),
 ) -> ProceduralStateExpiryResult:
     """Expire owner- and source-timed procedural states at one activation end."""
 
     cleared: list[str] = []
     remaining: list[str] = []
+    active_events = set(fiction_events)
     for combatant in combatants:
         updated: list[ProceduralState] = []
         for state in combatant.procedural_states:
@@ -161,7 +167,8 @@ def resolve_procedural_state_expiry(
                 and state.expires_on_source_activation_end is not None
                 and actor.timeline.activations_taken >= state.expires_on_source_activation_end
             )
-            if owner_expired or source_expired:
+            fiction_expired = bool(active_events.intersection(state.expires_on_fiction_events))
+            if owner_expired or source_expired or fiction_expired:
                 cleared.append(state.state_id)
                 continue
             updated.append(state)

@@ -249,7 +249,7 @@ Each species targets **8 specialization techniques** in the Novice pass. The exa
 | Leer el Calor del Paso | Percepción | Mental | ✓ |
 | Leer la Línea Ausente | Interpretación | Mental | ✓ |
 | Pesar el Umbral | Intimidación | Social | ✓ |
-| Leer el Arco | Astronomía | Saber | ✓ |
+| Medir el Ciclo | Astronomía | Saber | ✓ |
 | Leer el Propósito | Arquitectura | Saber | ✓ |
 | Fijar el Umbral | Agarre | Física | ✓ |
 | Sentar el Tercer Punto | Equilibrio | Física | ✓ |

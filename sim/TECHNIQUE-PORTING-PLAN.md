@@ -104,6 +104,20 @@ Today the simulator can run full ATB slices with:
 
 But Technique data coverage is still narrow.
 
+### Known pending runtime surfaces
+
+These are engine gaps that have been identified during porting and will affect
+multiple Techniques. Registering them here avoids rediscovering the same gap
+for each Technique that needs the surface.
+
+| Surface | Gap class | Affects | Notes |
+| --- | --- | --- | --- |
+| `counter_attacker_exchange_role` | `small_runtime_extension` | `Trabar el Gesto` (Naghii), `Romper el Caudal` (Sauri) | `weapon_exchange_primary` only models the standard attacker role; a counter-exchange where the defender uses T.A. instead of T.D. needs a new exchange variant |
+| `ailment_gated_on_exchange_outcome` | `small_runtime_extension` | `Trabar el Gesto` (Naghii) | `apply_ailment` fires unconditionally in post-exchange effects; needs a conditional gate on the outcome of the exchange (success/failure) before applying |
+| `rank_scaled_severity_in_apply_ailment` | `small_runtime_extension` | `Trabar el Gesto` (Naghii), any future rank-scaling ailment technique | `apply_ailment` takes a fixed severity string; dynamic severity resolution from actor rank not yet implemented |
+| `enemy_weapon_declaration_trigger_hook` | `small_runtime_extension` | Techniques that fire on enemy action declaration rather than on incoming attack | ATB loop has no hook before enemy's weapon-rooted activation completes; needed if any future Technique keeps the utility-check-cancel-action model |
+| `ward_zone_procedural_state` | `new_state_family` | `Plantar la Guardia` (Naghii) | needs spatial zone geometry (center + radius), ATB integration to apply Rhythm tax before enemy activations within the zone, and cleanup-on-movement tracking; `apply_procedural_state` effect ID is supported but state type handler is missing |
+
 ### Current simulation-defined species Technique files
 
 - `sim/data/techniques/zarnag.yaml`
@@ -119,8 +133,8 @@ But Technique data coverage is still narrow.
 - `Sauri`
   - `sim_defined`: `0`
 - `Naghii`
-  - `sim_defined`: `1`
-  - `runtime_supported`: `1`
+  - `sim_defined`: `14`
+  - `runtime_supported`: `12`
 
 ---
 
@@ -130,7 +144,7 @@ But Technique data coverage is still narrow.
 | --- | ---: | ---: | ---: | ---: | --- |
 | `Zarnag` | `24` | `6` | `6` | `6` | continue earliest-authored backfill, with `Ensuciar la Herida` as the first major missing outlier |
 | `Sauri` | `24` | `0` | `0` | `0` | open first seed batch |
-| `Naghii` | `24` | `1` | `1` | `0` | add first Naghii policy/scenario/question coverage after the initial spear seed |
+| `Naghii` | `24` | `14` | `12` | `0` | resolve ward_zone new_state_family; resolve counter_attacker_exchange small_runtime_extension; continue backfill |
 
 ---
 
@@ -140,7 +154,20 @@ These authored Naghii Techniques are already simulation-facing:
 
 | Technique | Porting state | Notes |
 | --- | --- | --- |
+| `Cerrar la Línea` | `runtime_supported` | Executes as a true timing-sensitive reaction, spends reaction cost honestly, and resolves a bounded interception exchange. |
+| `Anudar el Paso` | `runtime_supported` | Executes as a reaction and installs a clean-separation denial procedural state instead of requiring a larger withdrawal subsystem first. |
+| `Robar el Ángulo` | `runtime_supported` | Resolves a real weapon exchange, steals local position, and installs one direct-answer spoil on success. |
+| `Marcar la Lectura` | `runtime_supported` | Installs a marked-route procedural state with fiction-event cleanup rather than only carrying authored notes. |
+| `Nublar la Señal` | `runtime_supported` | Installs bounded sensory residue that burdens the next direct answer and clears through use or cleanup events. |
+| `Doblar el Tiro` | `runtime_supported` | Resolves a declared one-surface indirect ranged exchange through a bounded simulator-facing geometry abstraction. |
+| `Clavar el Paso` | `runtime_supported` | Uses a two-meter pre-exchange committed advance plus standard weapon exchange. |
 | `Recuperar la Distancia` | `runtime_supported` | Uses standard weapon exchange plus a one-meter post-hit distance recovery extension. |
+| `Clavar la Cadencia` | `runtime_supported` | Reactive Volley ranged attack that on hit reduces target movement by 1m per rank bonus via new `reduce_target_movement_rank_bonus` effect. cost_note corrected to R=4. |
+| `Tocar y Ceder` | `runtime_supported` | data_only — composes existing advance_before_exchange_distance (1m) + weapon_exchange_primary + reposition_after_hit_distance (1m). Cost R=5 doctrinal, not yet sim-validated. |
+| `Trabar el Gesto` | `sim_defined` | small_runtime_extension — data entry complete; Impedido added to sim ailments; blocked on counter_attacker_exchange_role and ailment_gated_on_exchange_outcome. |
+| `Plantar la Guardia` | `sim_defined` | new_state_family — ward_zone state has no handler; needs spatial zone geometry, ATB Rhythm-tax integration, and movement cleanup tracking. Cost corrected from R=7/A=2 to R=3/A=1. |
+| `Leer el Calor del Paso` | `runtime_supported` | data_only — Percepcion specialization roll resolves through existing path with no exchange or mechanical effect; information output is Narrator-side. Contextual masking opposition not yet modeled. Cost corrected from R=4 to R=3. |
+| `Pesar el Umbral` | `runtime_supported` | data_only — Sigilo specialization roll + alteration_resistance opposed_by + apply_ailment(aterrorizado) all already supported. Type corrected from reactive to active; range defined at 4 meters. New profile: naghii_novice_hidden_warden. |
 
 ---
 

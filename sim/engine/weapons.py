@@ -45,6 +45,17 @@ def load_weapon_catalog() -> dict[str, WeaponDefinition]:
                 assignment=str(weapon_data["assignment"]),
                 bonus_text=weapon_data.get("bonus"),
             )
+    if "marking_dart_launcher" not in definitions:
+        # The current authority catalog does not yet list the seed Naghii marker
+        # launcher explicitly, but simulator projection profiles already use it.
+        definitions["marking_dart_launcher"] = WeaponDefinition(
+            id="marking_dart_launcher",
+            weapon_type="Ranged",
+            damage_die="d4",
+            characteristic="Agility",
+            assignment="Primary",
+            bonus_text="seed_projection_marker_runtime_profile",
+        )
     return definitions
 
 

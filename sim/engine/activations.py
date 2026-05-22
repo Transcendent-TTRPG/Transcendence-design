@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 from dataclasses import dataclass
 
 from loaders import load_action_definitions, load_technique_definitions
@@ -13,6 +14,7 @@ from .ailments_runtime import (
     action_gate,
     ailment_definitions_by_id,
     attempt_ailment_recovery,
+    reaction_gate,
     resolve_activation_end,
     resolve_activation_start,
 )
@@ -28,7 +30,12 @@ from .dice import (
 from .effects import EffectApplicationResult, apply_effects
 from .entities import ExperimentContext
 from .exchange import ExchangeResult, resolve_weapon_exchange
-from .procedural_states import procedural_block_ignore, procedural_roll_penalty, resolve_procedural_state_expiry
+from .procedural_states import (
+    apply_procedural_state,
+    procedural_block_ignore,
+    procedural_roll_penalty,
+    resolve_procedural_state_expiry,
+)
 from .reactions import ReactionExecutionResult, resolve_attack_reaction
 from .rng import SimulationRNG
 from .timeline import TimelineAdvanceResult, mark_pending_activation, next_ready_combatant, spend_timeline_cost
@@ -50,6 +57,7 @@ class ActivationIntent:
     attack_slot: str = "primary"
     ailment_id: str | None = None
     against_feared_line: bool = False
+    as_reaction: bool = False
     fiction_events: tuple[str, ...] = ()
 
 
@@ -133,9 +141,14 @@ def _apply_post_exchange_effects(
         for effect in definition.effects
         if effect.id not in {
             "weapon_exchange_primary",
+            "indirect_surface_ranged_attack",
+            "false_line_combined_resolution",
+            "utility_check_primary",
             "same_exchange_ignore_block_rank_bonus",
             "reposition_after_hit_half_move",
             "reposition_after_hit_distance",
+            "advance_before_exchange_distance",
+            "reduce_target_movement_rank_bonus",
         }
     ]
     if filtered_effects:
@@ -168,6 +181,116 @@ def _apply_post_exchange_effects(
                 effect_id=reposition_effect_id,
                 applied=True,
                 state_changes=(f"reposition:{reposition_distance}m",),
+            )
+        )
+    for effect in definition.effects:
+        if effect.id != "reduce_target_movement_rank_bonus":
+            continue
+        competency_id = str(effect.parameters.get("competency", definition.origin if isinstance(definition, TechniqueDefinition) else ""))
+        rating = actor.competencies.get(competency_id)
+        rb = 0 if rating is None else rank_bonus(rating.rank)
+        if rb > 0:
+            direction = 1 if actor.position.x <= target.position.x else -1
+            target.position = target.position.__class__(target.position.x + (direction * rb), target.position.y)
+            effect_results.append(
+                EffectApplicationResult(
+                    effect_id=effect.id,
+                    applied=True,
+                    state_changes=(f"target_movement_reduced:{rb}m",),
+                )
+            )
+        else:
+            effect_results.append(
+                EffectApplicationResult(
+                    effect_id=effect.id,
+                    applied=False,
+                    notes=("zero_rank_bonus_no_movement_reduction",),
+                )
+            )
+        break
+    for effect in definition.effects:
+        if effect.id == "indirect_surface_ranged_attack":
+            declared_surface_count = max(1, int(effect.parameters.get("declared_surface_count", 1)))
+            effect_results.append(
+                EffectApplicationResult(
+                    effect_id=effect.id,
+                    applied=True,
+                    state_changes=(f"indirect_surface:{declared_surface_count}",),
+                    notes=("declared_indirect_line_resolved",),
+                )
+            )
+            continue
+        if effect.id != "false_line_combined_resolution":
+            continue
+        reposition_meters = max(1, int(effect.parameters.get("reposition_meters", 1)))
+        direction = -1 if actor.position.x <= target.position.x else 1
+        actor.position = actor.position.__class__(target.position.x + (direction * reposition_meters), actor.position.y)
+        rating = actor.competencies.get(definition.origin if isinstance(definition, TechniqueDefinition) else "")
+        source_rank = 0 if rating is None else rank_bonus(rating.rank)
+        state_result = apply_procedural_state(
+            target=target,
+            source_id=actor.id,
+            state_id="read_spoiled",
+            source_rank_bonus=source_rank,
+            applies_to=("dr_against_source", "ar_against_source"),
+            remaining_uses=1,
+            expires_on_owner_activation_end=target.timeline.activations_taken + 1,
+            notes=("false_line_spoil",),
+        )
+        effect_results.append(
+            EffectApplicationResult(
+                effect_id=effect.id,
+                applied=state_result.applied,
+                state_changes=(f"reposition:{reposition_meters}m", "procedural:read_spoiled"),
+                notes=("position_stolen_and_response_spoiled",),
+            )
+        )
+    return tuple(effect_results)
+
+
+_DAMAGE_EXCHANGE_EFFECTS = frozenset({
+    "weapon_exchange_primary",
+    "indirect_surface_ranged_attack",
+    "false_line_combined_resolution",
+})
+
+
+def _definition_uses_exchange(
+    definition: ActionDefinition | TechniqueDefinition,
+) -> bool:
+    return any(
+        effect.id in _DAMAGE_EXCHANGE_EFFECTS or effect.id == "utility_check_primary"
+        for effect in definition.effects
+    )
+
+
+def _definition_suppresses_weapon_damage(
+    definition: ActionDefinition | TechniqueDefinition,
+) -> bool:
+    """True when the only exchange driver is utility_check_primary (no weapon damage dealt)."""
+    has_utility_check = any(e.id == "utility_check_primary" for e in definition.effects)
+    has_damage_effect = any(e.id in _DAMAGE_EXCHANGE_EFFECTS for e in definition.effects)
+    return has_utility_check and not has_damage_effect
+
+
+def _apply_pre_exchange_effects(
+    *,
+    definition: ActionDefinition | TechniqueDefinition,
+    actor,
+    target,
+) -> tuple[EffectApplicationResult, ...]:
+    effect_results: list[EffectApplicationResult] = []
+    for effect in definition.effects:
+        if effect.id != "advance_before_exchange_distance":
+            continue
+        advance_distance = max(1, int(effect.parameters.get("meters", 1)))
+        direction = 1 if actor.position.x <= target.position.x else -1
+        actor.position = actor.position.__class__(actor.position.x + (direction * advance_distance), actor.position.y)
+        effect_results.append(
+            EffectApplicationResult(
+                effect_id="advance_before_exchange_distance",
+                applied=True,
+                state_changes=(f"advance:{advance_distance}m",),
             )
         )
     return tuple(effect_results)
@@ -248,6 +371,33 @@ def _resolve_specialization_opposed(
         opposed = resolve_opposed(actor_roll, target_roll)
         return opposed.attacker_wins, actor_roll.total
 
+    if opposed_by == "attacker_ta":
+        if target_slot is None:
+            raise ValueError("attacker_ta requires target_slot in the activation intent.")
+        target = context.actors_by_slot[target_slot].combatant
+        target_weapon = target.weapons.get("primary")
+        if target_weapon is None:
+            return True, actor_roll.total
+        target_competency = target_weapon.competency
+        target_rating = target.competencies.get(target_competency)
+        target_characteristic = associated_characteristic(target_competency)
+        target_bonus, target_penalty = _scene_bonus_penalty(
+            context=context,
+            actor_slot=target_slot,
+            competency=target_competency,
+        )
+        target_roll = specialization_roll(
+            competency=target_competency,
+            level=0 if target_rating is None else target_rating.level,
+            rank=None if target_rating is None else target_rating.rank,
+            rng=rng,
+            characteristic_modifier=0 if target_characteristic is None else characteristic_value(target.characteristics, target_characteristic),
+            bonus_modifier=target_bonus,
+            penalty_modifier=target_penalty,
+        )
+        opposed = resolve_opposed(actor_roll, target_roll)
+        return opposed.attacker_wins, actor_roll.total
+
     return True, actor_roll.total
 
 
@@ -287,42 +437,51 @@ def execute_activation_intent(
     recovery_success_by_ailment = recovery_success_by_ailment or {}
     actor_entry = context.actors_by_slot[intent.actor_slot]
     actor = actor_entry.combatant
-    ready = next_ready_combatant(tuple(entry.combatant for entry in context.actors))
-    if ready.id != actor.id:
-        raise ValueError(f"Actor slot '{intent.actor_slot}' is not currently leftmost on the ATB track.")
+    if not intent.as_reaction:
+        ready = next_ready_combatant(tuple(entry.combatant for entry in context.actors))
+        if ready.id != actor.id:
+            raise ValueError(f"Actor slot '{intent.actor_slot}' is not currently leftmost on the ATB track.")
 
-    mark_pending_activation(combatant=actor, pending=True)
-    activation_result = resolve_activation_start(
-        combatant=actor,
-        recovery_success_by_ailment=recovery_success_by_ailment,
-    )
-    if not activation_result.meaningful_activation_allowed:
-        timeline_result = spend_timeline_cost(
+        mark_pending_activation(combatant=actor, pending=True)
+        activation_result = resolve_activation_start(
             combatant=actor,
-            rhythm_cost=LOST_ACTIVATION_RHYTHM_COST,
-            attrition_cost=0,
+            recovery_success_by_ailment=recovery_success_by_ailment,
         )
-        end_result = resolve_activation_end(
-            combatant=actor,
-            fiction_events=intent.fiction_events,
-        )
-        procedural_end = resolve_procedural_state_expiry(
-            combatants=tuple(entry.combatant for entry in context.actors),
-            actor=actor,
-        )
-        mark_pending_activation(combatant=actor, pending=False)
-        return ActivationExecutionResult(
-            actor_id=actor.id,
-            actor_slot=intent.actor_slot,
-            mode=intent.mode,
-            definition_id=intent.definition_id,
-            succeeded=False,
-            blocked_by_ailment=True,
-            activation_result=activation_result,
-            timeline_result=timeline_result,
-            notes=("lost_meaningful_activation",)
-            + end_result.notes
-            + (() if not procedural_end.cleared_states else ("procedural_state_expired",)),
+        if not activation_result.meaningful_activation_allowed:
+            timeline_result = spend_timeline_cost(
+                combatant=actor,
+                rhythm_cost=LOST_ACTIVATION_RHYTHM_COST,
+                attrition_cost=0,
+            )
+            end_result = resolve_activation_end(
+                combatant=actor,
+                fiction_events=intent.fiction_events,
+            )
+            procedural_end = resolve_procedural_state_expiry(
+                combatants=tuple(entry.combatant for entry in context.actors),
+                actor=actor,
+                fiction_events=intent.fiction_events,
+            )
+            mark_pending_activation(combatant=actor, pending=False)
+            return ActivationExecutionResult(
+                actor_id=actor.id,
+                actor_slot=intent.actor_slot,
+                mode=intent.mode,
+                definition_id=intent.definition_id,
+                succeeded=False,
+                blocked_by_ailment=True,
+                activation_result=activation_result,
+                timeline_result=timeline_result,
+                notes=("lost_meaningful_activation",)
+                + end_result.notes
+                + (() if not procedural_end.cleared_states else ("procedural_state_expired",)),
+            )
+    else:
+        activation_result = ActivationAilmentResult(
+            meaningful_activation_allowed=True,
+            lost_activation_consumed=False,
+            cleared_ailments=(),
+            remaining_ailments=tuple(ailment.ailment_id for ailment in actor.ailments if ailment.active),
         )
 
     if intent.mode == "recovery":
@@ -350,6 +509,7 @@ def execute_activation_intent(
             procedural_end = resolve_procedural_state_expiry(
                 combatants=tuple(entry.combatant for entry in context.actors),
                 actor=actor,
+                fiction_events=intent.fiction_events,
             )
             mark_pending_activation(combatant=actor, pending=False)
             return ActivationExecutionResult(
@@ -382,6 +542,7 @@ def execute_activation_intent(
         procedural_end = resolve_procedural_state_expiry(
             combatants=tuple(entry.combatant for entry in context.actors),
             actor=actor,
+            fiction_events=intent.fiction_events,
         )
         mark_pending_activation(combatant=actor, pending=False)
         return ActivationExecutionResult(
@@ -406,19 +567,50 @@ def execute_activation_intent(
     else:
         raise ValueError(f"Unsupported activation mode: {intent.mode}")
 
+    if intent.as_reaction:
+        if intent.mode == "action" and definition.trigger_type != "reactive":
+            raise ValueError(f"Action '{definition.id}' cannot execute as a reaction.")
+        if intent.mode == "technique" and definition.type != "reactive":
+            raise ValueError(f"Technique '{definition.id}' cannot execute as a reaction.")
+        reaction_result = reaction_gate(
+            combatant=actor,
+            timing_sensitive=True,
+            recovery_success_by_ailment=recovery_success_by_ailment,
+        )
+        if not reaction_result.allowed:
+            timeline_result = spend_timeline_cost(
+                combatant=actor,
+                rhythm_cost=0,
+                attrition_cost=0,
+                as_reaction=True,
+            )
+            return ActivationExecutionResult(
+                actor_id=actor.id,
+                actor_slot=intent.actor_slot,
+                mode=intent.mode,
+                definition_id=intent.definition_id,
+                succeeded=False,
+                blocked_by_ailment=True,
+                activation_result=activation_result,
+                timeline_result=timeline_result,
+                notes=reaction_result.notes,
+            )
+
     intent_competency = None
     if definition.roll is not None and definition.roll.competency is not None:
         intent_competency = definition.roll.competency
     elif intent.mode == "technique":
         intent_competency = definition.origin
 
-    gate_result = action_gate(
-        combatant=actor,
-        competency=intent_competency,
-        against_feared_line=intent.against_feared_line,
-        recovery_success_by_ailment=recovery_success_by_ailment,
-    )
-    if not gate_result.allowed:
+    gate_result = None
+    if not intent.as_reaction:
+        gate_result = action_gate(
+            combatant=actor,
+            competency=intent_competency,
+            against_feared_line=intent.against_feared_line,
+            recovery_success_by_ailment=recovery_success_by_ailment,
+        )
+    if gate_result is not None and not gate_result.allowed:
         timeline_result = spend_timeline_cost(
             combatant=actor,
             rhythm_cost=definition.rhythm,
@@ -431,6 +623,7 @@ def execute_activation_intent(
         procedural_end = resolve_procedural_state_expiry(
             combatants=tuple(entry.combatant for entry in context.actors),
             actor=actor,
+            fiction_events=intent.fiction_events,
         )
         mark_pending_activation(combatant=actor, pending=False)
         return ActivationExecutionResult(
@@ -460,10 +653,15 @@ def execute_activation_intent(
     effect_results: tuple[EffectApplicationResult, ...] = ()
     reaction_results: tuple[ReactionExecutionResult, ...] = ()
     if success:
-        if any(effect.id == "weapon_exchange_primary" for effect in definition.effects):
+        if _definition_uses_exchange(definition):
             if intent.target_slot is None or intent.zone is None:
-                raise ValueError("weapon_exchange_primary requires target_slot and zone.")
+                raise ValueError("Exchange-bearing techniques require target_slot and zone.")
             target = context.actors_by_slot[intent.target_slot].combatant
+            effect_results = _apply_pre_exchange_effects(
+                definition=definition,
+                actor=actor,
+                target=target,
+            )
             attack_penalty = procedural_roll_penalty(
                 combatant=actor,
                 roll_tag="ar_against_source",
@@ -474,12 +672,14 @@ def execute_activation_intent(
                 roll_tag="dr_against_source",
                 against_source_id=actor.id,
             )
-            reaction_result = resolve_attack_reaction(
-                context=context,
-                attacker_slot=intent.actor_slot,
-                defender_slot=intent.target_slot,
-                zone=intent.zone,
-            )
+            reaction_result = None
+            if not intent.as_reaction:
+                reaction_result = resolve_attack_reaction(
+                    context=context,
+                    attacker_slot=intent.actor_slot,
+                    defender_slot=intent.target_slot,
+                    zone=intent.zone,
+                )
             defense_bonus = 0
             if reaction_result is not None:
                 reaction_results = (reaction_result,)
@@ -503,9 +703,11 @@ def execute_activation_intent(
                 defense_penalty=defense_penalty,
                 block_ignore=block_ignore,
             )
+            if _definition_suppresses_weapon_damage(definition):
+                exchange_result = dataclasses.replace(exchange_result, effective_damage=0)
             if exchange_result.attack_connected:
                 observer_id = None if intent.observer_slot is None else context.actors_by_slot[intent.observer_slot].combatant.id
-                effect_results = _apply_post_exchange_effects(
+                effect_results = effect_results + _apply_post_exchange_effects(
                     definition=definition,
                     actor=actor,
                     target=target,
@@ -532,6 +734,7 @@ def execute_activation_intent(
         combatant=actor,
         rhythm_cost=definition.rhythm,
         attrition_cost=definition.attrition,
+        as_reaction=intent.as_reaction,
     )
     end_result = resolve_activation_end(
         combatant=actor,
@@ -540,8 +743,10 @@ def execute_activation_intent(
     procedural_end = resolve_procedural_state_expiry(
         combatants=tuple(entry.combatant for entry in context.actors),
         actor=actor,
+        fiction_events=intent.fiction_events,
     )
-    mark_pending_activation(combatant=actor, pending=False)
+    if not intent.as_reaction:
+        mark_pending_activation(combatant=actor, pending=False)
     return ActivationExecutionResult(
         actor_id=actor.id,
         actor_slot=intent.actor_slot,

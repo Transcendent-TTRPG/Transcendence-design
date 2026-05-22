@@ -1,0 +1,27 @@
+id: naghii_plantar_la_guardia_zone_pressure_value
+question: How much practical tempo pressure does an active `Plantar la Guardia` zone create — does the +2 Rhythm tax per enemy action within the zone meaningfully delay enemy activations, or is the zone too easily avoided by staying outside it?
+scenario: naghii_ward_zone_threshold
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - zone_control
+  - positioning
+actors:
+  mover: naghii_novice_spear_warden
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - enemy_activations_taxed_per_zone_activation
+  - enemy_avoidance_rate
+  - tempo_delta_with_vs_without_zone
+  - zone_effective_radius_utilization
+iterations: 20000
+compare:
+  technique: plantar_la_guardia
+  against: clavar_el_paso
+notes:
+  - Derived zone-pressure question for Plantar la Guardia.
+  - Measures whether the +2 Rhythm tax creates real engagement shaping or whether enemies simply avoid the zone without meaningful cost.
+  - Runtime gate: blocked until ward_zone_procedural_state is implemented (new_state_family).

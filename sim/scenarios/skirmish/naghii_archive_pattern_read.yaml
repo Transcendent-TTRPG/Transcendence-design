@@ -1,0 +1,18 @@
+scenario:
+  id: naghii_archive_pattern_read
+  description: Two actors in a scene with an incomplete or suspicious observable pattern. Mover examines evidence with an absence visible in records, routes, or scene structure.
+  map:
+    width_m: 8
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [3, 3]
+    - slot: watcher
+      position: [6, 3]
+  conditions:
+    - incomplete_or_suspicious_pattern_present
+    - absence_evidence_observable_in_scene
+    - no_active_masking_or_deliberate_staging
+  notes:
+    - Reusable Naghii baseline for absence-evidence interpretation and gap-read techniques.
+    - Default (no staging) — contextual masking opposition not active.

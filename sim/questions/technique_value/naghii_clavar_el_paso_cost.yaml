@@ -1,0 +1,28 @@
+id: naghii_clavar_el_paso_cost
+question: Is `Clavar el Paso` priced correctly at `Rhythm 5 / Attrition 2` for a novice committed spear-entry Technique?
+scenario: naghii_spear_line_4m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - balance
+  - positioning
+actors:
+  mover: naghii_novice_range_warden
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - hit_rate
+  - effective_damage_rate
+  - entry_success_rate
+  - forward_commitment_value
+  - rhythm_efficiency
+  - attrition_efficiency
+iterations: 20000
+compare:
+  technique: clavar_el_paso
+  lighter: recuperar_la_distancia
+  anchor: cerrar_la_linea
+notes:
+  - Minimum cost question for the heavy novice spear entry line.

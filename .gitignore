@@ -1,2 +1,10 @@
 .DS_Store
 **/.DS_Store
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Generated text reports (re-runnable)
+sim/reports/*.txt

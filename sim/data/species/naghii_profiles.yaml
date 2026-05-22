@@ -1,4 +1,187 @@
 profiles:
+  - id: naghii_novice_projection_scout
+    species: naghii
+    preparation: 5
+    movement_meters: 8
+    characteristics:
+      Agilidad: 1
+      Astucia: 2
+      Tenacidad: 1
+      Sabiduría: 2
+      Compostura: 1
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Ranged Weapons:
+        rank: adept
+        level: 3
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: marking_dart_launcher
+        competency: Ranged Weapons
+        grade: 1
+        base_potency: 5
+    techniques:
+      - doblar_el_tiro
+      - nublar_la_senal
+      - marcar_la_lectura
+      - leer_el_calor_del_paso
+      - clavar_la_cadencia
+    policy_defaults:
+      primary: conservative
+    notes:
+      - Seed Naghii profile for ranged projection marking, ricochet geometry, and sensory-pressure coverage.
+
+  - id: naghii_novice_false_line_skirmisher
+    species: naghii
+    preparation: 5
+    movement_meters: 8
+    characteristics:
+      Agilidad: 2
+      Astucia: 2
+      Tenacidad: 1
+      Sabiduría: 1
+      Compostura: 1
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Flexible Weapons:
+        rank: adept
+        level: 3
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: nekode
+        competency: Flexible Weapons
+        grade: 1
+        base_potency: 6
+    techniques:
+      - robar_el_angulo
+    policy_defaults:
+      primary: tempo_first
+    notes:
+      - Seed Naghii profile for false-line angle theft coverage.
+
+  - id: naghii_novice_torsion_keeper
+    species: naghii
+    preparation: 5
+    movement_meters: 8
+    characteristics:
+      Agilidad: 2
+      Astucia: 2
+      Tenacidad: 1
+      Sabiduría: 1
+      Compostura: 1
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Flexible Weapons:
+        rank: adept
+        level: 3
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: kusari_fundo
+        competency: Flexible Weapons
+        grade: 1
+        base_potency: 6
+    techniques:
+      - anudar_el_paso
+      - tocar_y_ceder
+      - trabar_el_gesto
+    policy_defaults:
+      primary: conservative
+    notes:
+      - Seed Naghii profile for torsion anti-disengagement technique coverage.
+
   - id: naghii_novice_range_warden
     species: naghii
     preparation: 5
@@ -52,8 +235,131 @@ profiles:
         grade: 1
         base_potency: 8
     techniques:
+      - cerrar_la_linea
+      - clavar_el_paso
       - recuperar_la_distancia
     policy_defaults:
       primary: tempo_first
     notes:
       - Seed Naghii profile for spear-distance recovery testing.
+
+  - id: naghii_novice_hidden_warden
+    species: naghii
+    preparation: 5
+    movement_meters: 8
+    characteristics:
+      Agilidad: 1
+      Astucia: 2
+      Tenacidad: 1
+      Sabiduría: 1
+      Compostura: 2
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Sigilo:
+        rank: adept
+        level: 3
+      Flexible Weapons:
+        rank: novice
+        level: 1
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: nekode
+        competency: Flexible Weapons
+        grade: 1
+        base_potency: 6
+    techniques:
+      - pesar_el_umbral
+    policy_defaults:
+      primary: conservative
+    notes:
+      - Seed Naghii profile for hidden-presence threshold stalking and Aterrorizado application from concealment.
+
+  - id: naghii_novice_archive_reader
+    species: naghii
+    preparation: 5
+    movement_meters: 6
+    characteristics:
+      Astucia: 2
+      Sabiduría: 2
+      Tenacidad: 1
+      Compostura: 1
+      Agilidad: 1
+      Presencia: 1
+    competencies:
+      Evasion:
+        rank: novice
+        level: 1
+      light_armor:
+        rank: novice
+        level: 1
+      infection:
+        rank: novice
+        level: 1
+      alteration:
+        rank: novice
+        level: 1
+      Percepcion:
+        rank: novice
+        level: 1
+      Interpretacion:
+        rank: novice
+        level: 1
+    armor_zones:
+      - zone: head
+        armor_type: light
+        grade: 1
+      - zone: torso
+        armor_type: light
+        grade: 1
+      - zone: arms
+        armor_type: light
+        grade: 1
+      - zone: legs
+        armor_type: light
+        grade: 1
+      - zone: feet
+        armor_type: light
+        grade: 1
+    weapons:
+      - slot: primary
+        weapon_id: kusari_fundo
+        competency: Flexible Weapons
+        grade: 1
+        base_potency: 6
+    techniques:
+      - leer_la_linea_ausente
+    policy_defaults:
+      primary: conservative
+    notes:
+      - Seed Naghii profile for archive reading, absence-evidence interpretation, and gap-analysis coverage.

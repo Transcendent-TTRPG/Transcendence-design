@@ -1,0 +1,25 @@
+id: naghii_recuperar_la_distancia_reposition_value
+question: How much practical value does the one-meter post-hit reposition of `Recuperar la Distancia` create once the enemy must move again to re-enter pressure?
+scenario: naghii_spear_line_4m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - positioning
+  - balance
+actors:
+  mover: naghii_novice_range_warden
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - distance_recovery_rate
+  - enemy_reengage_requirement_rate
+  - followup_pressure_relief_rate
+  - recovered_meter_value
+iterations: 20000
+compare:
+  technique: recuperar_la_distancia
+  against: clavar_el_paso
+notes:
+  - Derived positioning question for line recovery utility.

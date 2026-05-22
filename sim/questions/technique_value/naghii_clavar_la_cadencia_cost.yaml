@@ -1,0 +1,28 @@
+id: naghii_clavar_la_cadencia_cost
+question: Is `Clavar la Cadencia` priced correctly at `Rhythm 4 / Attrition 1` for a novice reactive Volley ranged attack that on success also reduces target movement by 1 meter per rank bonus?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - balance
+  - positioning
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - hit_rate
+  - effective_damage_rate
+  - movement_disruption_rate
+  - rhythm_efficiency
+  - attrition_efficiency
+iterations: 20000
+compare:
+  technique: clavar_la_cadencia
+  sibling: cerrar_la_linea
+  lighter: robar_el_angulo
+notes:
+  - Minimum cost question for the novice reactive Volley movement-disruption line.
+  - authority_cost_note_references_r5_but_structured_field_is_r4_use_r4_and_flag_for_editorial_resolution

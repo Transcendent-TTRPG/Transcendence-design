@@ -1,0 +1,24 @@
+id: naghii_marcar_la_lectura_effectiveness
+question: How often does `Marcar la Lectura` preserve immediate route readability through movement or concealment pressure strongly enough to matter?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - procedural_states
+  - concealment
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - mark_application_rate
+  - route_readability_preserved_rate
+  - counter_concealment_value
+  - mark_cleanup_frequency
+iterations: 20000
+compare:
+  against: nublar_la_senal
+notes:
+  - Derived effectiveness question for readable-mark utility.

@@ -1,0 +1,26 @@
+id: naghii_tocar_y_ceder_return_value
+question: How much practical positional value does the conditional 1-meter return of `Tocar y Ceder` create — does withdrawing after the hit meaningfully prevent the target from converting the contact into a stable close exchange?
+scenario: naghii_flexible_pressure_2m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - positioning
+  - balance
+actors:
+  mover: naghii_novice_torsion_keeper
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - return_rate
+  - distance_recovery_rate
+  - followup_pressure_relief_rate
+  - position_swing_value
+iterations: 20000
+compare:
+  technique: tocar_y_ceder
+  against: anudar_el_paso
+notes:
+  - Derived positioning question for the conditional withdrawal of the Skirmish entry line.
+  - Measures whether the 1m return after a successful hit creates meaningful tactical separation or merely cosmetic repositioning.

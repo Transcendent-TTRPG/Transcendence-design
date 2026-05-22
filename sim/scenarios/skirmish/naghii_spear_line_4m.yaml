@@ -1,0 +1,16 @@
+scenario:
+  id: naghii_spear_line_4m
+  description: Two combatants begin four meters apart with enough room for novice spear pressure and recovery lines.
+  map:
+    width_m: 12
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [2, 3]
+    - slot: watcher
+      position: [6, 3]
+  conditions:
+    - clean_line_between_combatants
+    - enough_room_for_forward_and_backward_reposition
+  notes:
+    - Reusable Naghii spear baseline for entry, interception, and distance-recovery comparisons.

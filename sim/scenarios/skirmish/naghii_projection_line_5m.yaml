@@ -1,0 +1,17 @@
+scenario:
+  id: naghii_projection_line_5m
+  description: Two combatants begin five meters apart with open line of fire and room for marker, residue, and rebound tests.
+  map:
+    width_m: 14
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [2, 3]
+    - slot: watcher
+      position: [7, 3]
+  conditions:
+    - line_of_fire_available
+    - one_honest_rebound_surface_available
+    - target_can_be_marked_or_fouled
+  notes:
+    - Reusable Naghii ranged baseline for marker, residue, and ricochet questions.

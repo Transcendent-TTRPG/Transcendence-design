@@ -61,7 +61,7 @@ Nota: este pase quedó cerrado bajo el bucket anterior de `defense`. El estánda
 
 **Defense (2/2):** Cruzar la Punta (Evasion — reactive threshold crossing, closes into attack), Vaciar el Blanco (Evasion — reactive displacement, moves away)
 
-**Specializations (8/4+4):** Leer el Calor del Paso (Perception), Leer la Línea Ausente (Interpretation), Pesar el Umbral (Intimidation), Leer el Arco (Astronomía), Leer el Propósito (Architecture), Fijar el Umbral (Agarre), Sentar el Tercer Punto (Equilibrio), Marcar la Grieta (Arqueología)
+**Specializations (8/4+4):** Leer el Calor del Paso (Perception), Leer la Línea Ausente (Interpretation), Pesar el Umbral (Intimidation), Medir el Ciclo (Astronomía), Leer el Propósito (Architecture), Fijar el Umbral (Agarre), Sentar el Tercer Punto (Equilibrio), Marcar la Grieta (Arqueología)
 
 **Resistance Hybrids (2/2):** Templar el Veneno (Tolerancia + Venom Resistance — passive, Kha-Naghii venom metabolic floor), Sostener el Canal (Meditación + Contención + Mental Resistance Abzu — active, igi-an channel management recovery bonus)
 

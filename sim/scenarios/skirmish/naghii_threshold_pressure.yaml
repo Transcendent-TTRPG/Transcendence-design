@@ -1,0 +1,17 @@
+scenario:
+  id: naghii_threshold_pressure
+  description: Two combatants at close range with mover in a valid hidden position and watcher within 4 meters. Setup for Sigilo-based threshold fear and concealment-pressure questions.
+  map:
+    width_m: 8
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [3, 3]
+    - slot: watcher
+      position: [5, 3]
+  conditions:
+    - mover_in_valid_hidden_position
+    - target_within_4m_threshold_range
+    - watcher_unaware_of_mover_position
+  notes:
+    - Reusable Naghii baseline for hidden-presence fear application and concealment-pressure questions.

@@ -1,0 +1,26 @@
+id: naghii_clavar_la_cadencia_movement_disruption_value
+question: How much practical positional value does the rank-bonus movement reduction of `Clavar la Cadencia` create — does the target's cut distance meaningfully affect their ability to reach cover, escape pressure, or close into melee?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - positioning
+  - balance
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - movement_disruption_rate
+  - distance_cut_value
+  - target_position_swing
+  - followup_pressure_relief_rate
+iterations: 20000
+compare:
+  technique: clavar_la_cadencia
+  against: cerrar_la_linea
+notes:
+  - Derived positioning question for movement-disruption utility of the Volley reactive line.
+  - Measures whether cutting 1m of target movement per rank bonus creates enough positional swing to justify the reactive cost premium.

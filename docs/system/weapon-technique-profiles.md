@@ -205,7 +205,7 @@ The older combo-descriptor model is not carried forward mechanically. Only the n
 | `Short Blades` | `Shadow Pressure`, `Corrosion`, `Lethality`, `Skirmish` | Sombrio, Erosivo, Implacable, Veloz |
 | `Daggers` | `Unpredictability`, `Shadow Pressure`, `Lethality`, `Deflection` | Enganoso, Brumoso, Penetrante, Disruptivo |
 | `Thrown Weapons` | `Precision`, `Ricochet`, `Volley`, `Interruption` | Preciso, Ricochete, Propulsion, Intercepcion |
-| `Ranged Weapons` | `Precision`, `Ricochet`, `Volley`, `Corrosion` | Aguijon, Sigiloso, Rafaga, Desgaste |
+| `Ranged Weapons` | `Precision`, `Ricochet`, `Volley`, `Corrosion` | Aguijon, Ricochete, Rafaga, Desgaste |
 | `Flexible Weapons` | `Torsion`, `Unpredictability`, `Skirmish`, `Interruption` | Torsion, Impredecible, Fluctuante, Persistente |
 | `Shield` | `Interception`, `Interruption`, `Line Control`, `Bastion` | Interceptacion, Interrupcion, Control de Campo, Bastion |
 

@@ -1,0 +1,29 @@
+id: naghii_pesar_el_umbral_fear_rate
+question: How reliably does `Pesar el Umbral` settle `Aterrorizado` — how often does the Sigilo check succeed and the target fail the Alteration R.R., and does the combined application rate justify the technique's role as a hidden-presence fear surface?
+scenario: naghii_threshold_pressure
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - ailment_application
+  - hidden_presence
+  - fear
+actors:
+  mover: naghii_novice_hidden_warden
+  watcher: common_guard_observer
+policies:
+  mover: conservative
+  watcher: conservative
+measurements:
+  - sigilo_check_success_rate
+  - alteration_rr_failure_rate
+  - combined_aterrorizado_application_rate
+  - aterrorizado_severity_distribution
+  - activations_under_aterrorizado_per_engagement
+iterations: 20000
+compare:
+  technique: pesar_el_umbral
+  against: reir_donde_mas_suena
+notes:
+  - Fear application rate question for the Naghii hidden-presence technique.
+  - Two-stage application (Sigilo check → Alteration R.R.) means the combined rate may be lower than single-stage ailment techniques.
+  - Comparison against reir_donde_mas_suena (Zarnag Intimidacion) to test whether the two-stage path changes the fear application profile meaningfully relative to a direct single-check approach.

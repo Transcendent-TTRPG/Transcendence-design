@@ -1,0 +1,29 @@
+id: naghii_leer_la_linea_ausente_cost
+question: Is Rhythm 3 / Attrition 1 the right cost for `Leer la Línea Ausente` during ATB — does spending R=3 leave the user in a viable window to act on the revealed absence category before the situation shifts?
+scenario: naghii_archive_pattern_read
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - cost_balance
+  - information_timing
+actors:
+  mover: naghii_novice_archive_reader
+  watcher: common_guard_observer
+policies:
+  mover: conservative
+  watcher: conservative
+measurements:
+  - user_atb_position_after_technique
+  - activations_before_target_acts_again
+  - technique_use_rate_in_pattern_engagement
+  - rhythm_investment_vs_activation_window
+iterations: 20000
+compare:
+  technique: leer_la_linea_ausente
+  against: leer_el_calor_del_paso
+notes:
+  - Minimum cost question for the Interpretation absence-read technique of the Naghii set.
+  - Key question is timing viability — does R=3 leave enough ATB space to use the revealed absence category?
+  - Comparison against leer_el_calor_del_paso (also R=3 / A=1 information read) to test cost-band coherence.
+  - data_only — resolution_rate will be 1.0; technique_value=0 because output is Narrator-side.
+  - Staging-opposed surface not yet modeled; default treats the read as uncontested.

@@ -1,0 +1,27 @@
+id: naghii_pesar_el_umbral_cost
+question: Is Rhythm 3 / Attrition 1 the right cost for `Pesar el Umbral` — does spending R=3 from a hidden position leave the user in a viable ATB window to maintain concealment and act again before the fear either lands or fails to settle?
+scenario: naghii_threshold_pressure
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - cost_balance
+  - hidden_presence
+  - ailment_application
+actors:
+  mover: naghii_novice_hidden_warden
+  watcher: common_guard_observer
+policies:
+  mover: conservative
+  watcher: conservative
+measurements:
+  - user_atb_position_after_technique
+  - aterrorizado_application_rate
+  - rr_failure_rate_in_target
+  - technique_use_rate_in_concealment_engagement
+iterations: 20000
+compare:
+  technique: pesar_el_umbral
+  against: leer_el_calor_del_paso
+notes:
+  - Minimum cost question for the hidden-presence fear technique of the Naghii set.
+  - Comparison against leer_el_calor_del_paso tests coherence of the R=3 band for non-weapon Sigilo techniques.

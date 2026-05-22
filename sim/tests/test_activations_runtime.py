@@ -56,6 +56,72 @@ def _initialized_naghii_range_recovery_context():
     return context
 
 
+def _initialized_naghii_projection_context(*, profile_id: str = "naghii_novice_projection_scout"):
+    inputs = load_simulation_inputs()
+    scenario = ScenarioDefinition(
+        id=f"{profile_id}_seed",
+        actor_slots=(
+            ScenarioActorSlot(slot="mover", position=GridPosition(2, 0)),
+            ScenarioActorSlot(slot="watcher", position=GridPosition(5, 0)),
+        ),
+        notes=("Minimal seed scenario for Naghii projection techniques.",),
+    )
+    question = QuestionDefinition(
+        id=f"{profile_id}_seed",
+        prompt="Can the seeded Naghii projection technique resolve inside the ATB loop?",
+        scenario_id=scenario.id,
+        actor_assignments=(
+            ActorAssignment(slot="mover", profile_id=profile_id),
+            ActorAssignment(slot="watcher", profile_id="common_guard_observer"),
+        ),
+        policy_assignments={
+            "mover": "tempo_first",
+            "watcher": "conservative",
+        },
+    )
+    context = build_experiment_context(
+        question=question,
+        scenario=scenario,
+        environment=None,
+        profiles_by_id=inputs.profiles_by_id,
+    )
+    initialize_context_timeline(context)
+    return context
+
+
+def _initialized_naghii_flexible_context(*, profile_id: str):
+    inputs = load_simulation_inputs()
+    scenario = ScenarioDefinition(
+        id=f"{profile_id}_seed",
+        actor_slots=(
+            ScenarioActorSlot(slot="mover", position=GridPosition(2, 0)),
+            ScenarioActorSlot(slot="watcher", position=GridPosition(4, 0)),
+        ),
+        notes=("Minimal seed scenario for Naghii flexible-weapon techniques.",),
+    )
+    question = QuestionDefinition(
+        id=f"{profile_id}_seed",
+        prompt="Can the seeded Naghii flexible-weapon technique resolve inside the ATB loop?",
+        scenario_id=scenario.id,
+        actor_assignments=(
+            ActorAssignment(slot="mover", profile_id=profile_id),
+            ActorAssignment(slot="watcher", profile_id="common_guard_observer"),
+        ),
+        policy_assignments={
+            "mover": "tempo_first",
+            "watcher": "conservative",
+        },
+    )
+    context = build_experiment_context(
+        question=question,
+        scenario=scenario,
+        environment=None,
+        profiles_by_id=inputs.profiles_by_id,
+    )
+    initialize_context_timeline(context)
+    return context
+
+
 def test_hide_action_executes_inside_atb_and_advances_timeline() -> None:
     context = _initialized_hidden_crossing_context()
 
@@ -229,6 +295,202 @@ def test_recuperar_la_distancia_repositions_user_one_meter_after_successful_hit(
     assert result.exchange_result.attack_connected is True
     assert mover.position.x == before_x - 1
     assert any(effect.effect_id == "reposition_after_hit_distance" for effect in result.effect_results)
+
+
+def test_clavar_el_paso_advances_user_two_meters_before_exchange() -> None:
+    context = _initialized_naghii_range_recovery_context()
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+    before_x = mover.position.x
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="clavar_el_paso",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert mover.position.x == before_x + 2
+    assert any(effect.effect_id == "advance_before_exchange_distance" for effect in result.effect_results)
+
+
+def test_doblar_el_tiro_resolves_indirect_surface_exchange() -> None:
+    context = _initialized_naghii_projection_context()
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="doblar_el_tiro",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert any(effect.effect_id == "indirect_surface_ranged_attack" for effect in result.effect_results)
+
+
+def test_marcar_la_lectura_installs_read_marked_and_clears_on_mark_clear_event() -> None:
+    context = _initialized_naghii_projection_context()
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="marcar_la_lectura",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert any(state.state_id == "read_marked" for state in watcher.procedural_states)
+
+    followup = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="watcher",
+            mode="action",
+            definition_id="attack_one_handed",
+            target_slot="mover",
+            zone="torso",
+            fiction_events=("mark_cleared",),
+        ),
+        rng=SimulationRNG(seed=13),
+    )
+
+    assert followup.succeeded is True
+    assert all(state.state_id != "read_marked" for state in watcher.procedural_states)
+
+
+def test_nublar_la_senal_installs_signal_blurred_and_consumes_next_direct_answer() -> None:
+    context = _initialized_naghii_projection_context()
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="nublar_la_senal",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert any(state.state_id == "signal_blurred" for state in watcher.procedural_states)
+
+    followup = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="watcher",
+            mode="action",
+            definition_id="attack_one_handed",
+            target_slot="mover",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=13),
+    )
+
+    assert followup.succeeded is True
+    assert all(state.state_id != "signal_blurred" for state in watcher.procedural_states)
+
+
+def test_robar_el_angulo_repositions_user_and_spoils_direct_answer() -> None:
+    context = _initialized_naghii_flexible_context(profile_id="naghii_novice_false_line_skirmisher")
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+    before_x = mover.position.x
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="robar_el_angulo",
+            target_slot="watcher",
+            zone="torso",
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert mover.position.x != before_x
+    assert any(state.state_id == "read_spoiled" for state in watcher.procedural_states)
+
+
+def test_anudar_el_paso_executes_as_reaction_and_denies_clean_separation() -> None:
+    context = _initialized_naghii_flexible_context(profile_id="naghii_novice_torsion_keeper")
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="anudar_el_paso",
+            target_slot="watcher",
+            zone="torso",
+            as_reaction=True,
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.timeline_result.as_reaction is True
+    assert mover.timeline.reactions_taken == 1
+    assert any(state.state_id == "clean_separation_denied" for state in watcher.procedural_states)
+
+
+def test_cerrar_la_linea_executes_as_reaction_and_resolves_exchange() -> None:
+    context = _initialized_naghii_range_recovery_context()
+    mover = context.actors_by_slot["mover"].combatant
+    watcher = context.actors_by_slot["watcher"].combatant
+    watcher.attrition_spent = 4
+
+    result = execute_activation_intent(
+        context=context,
+        intent=ActivationIntent(
+            actor_slot="mover",
+            mode="technique",
+            definition_id="cerrar_la_linea",
+            target_slot="watcher",
+            zone="torso",
+            as_reaction=True,
+        ),
+        rng=SimulationRNG(seed=11),
+    )
+
+    assert result.succeeded is True
+    assert result.exchange_result is not None
+    assert result.timeline_result.as_reaction is True
+    assert mover.timeline.reactions_taken == 1
 
 
 def test_aturdido_blocks_meaningful_action_and_spends_lost_activation_window() -> None:

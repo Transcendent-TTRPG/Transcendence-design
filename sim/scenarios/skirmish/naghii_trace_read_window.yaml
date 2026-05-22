@@ -1,0 +1,17 @@
+scenario:
+  id: naghii_trace_read_window
+  description: Two combatants at moderate range with living presence and immediate trace readable within sensory reach. Baseline for non-weapon Percepcion information-read timing questions.
+  map:
+    width_m: 10
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [4, 3]
+    - slot: watcher
+      position: [7, 3]
+  conditions:
+    - creature_within_sensory_reach
+    - living_traces_present
+    - no_active_sensory_obstruction
+  notes:
+    - Reusable Naghii baseline for non-weapon information-read timing and ATB window questions.

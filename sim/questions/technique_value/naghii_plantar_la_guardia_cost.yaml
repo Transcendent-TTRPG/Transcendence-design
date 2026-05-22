@@ -1,0 +1,28 @@
+id: naghii_plantar_la_guardia_cost
+question: Is Rhythm 3 / Attrition 1 the right cost for `Plantar la Guardia` — does the ATB position after spending R=3 allow the user to maintain the zone while still acting and reacting within the same engagement window?
+scenario: naghii_ward_zone_threshold
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - cost_balance
+  - zone_control
+actors:
+  mover: naghii_novice_spear_warden
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - zone_active_duration_ticks
+  - enemy_rhythm_tax_paid
+  - user_atb_position_while_holding
+  - zone_collapse_rate
+iterations: 20000
+compare:
+  technique: plantar_la_guardia
+  against: cerrar_la_linea
+notes:
+  - Minimum cost question for the ward zone entry of the Naghii technique set.
+  - Key question is ATB viability: can the user hold position and still react/act at R=3?
+  - Cost corrected from authored error (R=7) to R=3 based on ATB model reasoning.
+  - Runtime gate: blocked until ward_zone_procedural_state is implemented (new_state_family).

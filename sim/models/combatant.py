@@ -75,6 +75,7 @@ class ProceduralState:
     remaining_uses: int | None = None
     expires_on_owner_activation_end: int | None = None
     expires_on_source_activation_end: int | None = None
+    expires_on_fiction_events: tuple[str, ...] = ()
     notes: tuple[str, ...] = ()
 
 

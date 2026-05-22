@@ -85,6 +85,39 @@ This structure should be the same semantically across:
 The difference between core and card should be **compression**, not a different
 data model.
 
+## Language rule
+
+Each play-facing surface must be fully localized to its publication language.
+
+That means:
+
+- Spanish core and Spanish cards should use Spanish-facing names for profiles,
+  competencies, and other player-facing labels
+- internal authority labels may remain in English when needed for design
+  stability, but they do not belong unchanged in the Spanish core or Spanish
+  cards
+- the same rule applies in reverse for English-facing publication surfaces
+
+Examples for Spanish play surfaces:
+
+- `Unpredictability` -> `Impredecible`
+- `Torsion` -> `Torsión`
+- internal roll shorthand such as `A.R.` or `I.R.` should not appear if the
+  Spanish core uses fully localized player-facing roll labels instead
+
+Prefer complete words for ordinary player-facing language:
+
+- `1 criatura`, not `1 criat.`
+- `Duración`, not `Dur.`
+- `Salvación`, not `Salv.`
+- `Desgaste`, not `Desg.`
+
+Only keep abbreviations when they are canonical rules notation players are
+already expected to read as system language, such as `T.A.`, `T.D.`, or `T.I.`.
+
+Player-facing surfaces should not require readers to translate internal labels
+mentally while using the rules at the table.
+
 ---
 
 ## Field definitions
@@ -151,6 +184,41 @@ remembered.
 
 Flavor text is not a rules paragraph.
 
+Good flavor text for a Technique should usually read like one of these:
+
+- a remembered line of doctrine
+- a field saying
+- a species-true maxim
+- a compact image that helps the move stay in the hand
+
+It should not:
+
+- paraphrase the effect mechanically
+- explain the balance logic
+- stack abstractions until the line sounds inflated
+- read like marketing copy for the Technique
+
+Prefer:
+
+- one strong image
+- one strong turn of thought
+- species identity over generic fantasy grandeur
+- short declarative phrasing over layered metaphor
+- physical or tactical imagery over abstract mood
+
+In practice, strong flavor text often feels like:
+
+- `Si avanzan por tu línea, la punta cobra primero.`
+- `Cuando el enemigo rompe la línea, la punta la dibuja de nuevo.`
+- `La lanza no pide alcance: lo toma.`
+
+Those work because they are:
+
+- brief
+- concrete
+- species-shaped
+- easy to remember at the table
+
 ### 5. Range
 
 The operational range of the Technique.
@@ -189,7 +257,7 @@ Examples:
 
 The main roll the Technique resolves through.
 
-Examples:
+Authority may track rolls with internal shorthand such as:
 
 - `A.R.`
 - `S.R.`
@@ -197,16 +265,65 @@ Examples:
 - `R.R.`
 - `D.R.`
 
+But the final play surface must follow the publication language and notation
+standard of that book.
+
+That means:
+
+- if the Spanish core uses Spanish-facing roll names, use those
+- do not preserve internal abbreviations automatically just because authority
+  or simulator code uses them
+- core and card must share the same player-facing roll notation
+
+#### Roll notation by Technique type
+
+**Weapon-rooted Techniques** (origin is a weapon competency such as Spear,
+Flexible Weapons, Ranged Weapons):
+
+- Primary roll is `T.A.` (Tirada de Ataque) — the weapon attack roll
+- Impact is `T.I.` when damage resolves; omit or show `—` when not applicable
+
+**Non-weapon specialization Techniques** (origin is a non-weapon competency
+such as Percepción, Sigilo, Atletismo, etc.):
+
+- Primary roll is `T.E.` (Tirada de Especialización)
+- The competency name is understood from the Requirements block; do not repeat
+  it on the roll cell unless the card needs disambiguation
+- Impact is `—` unless the Technique also produces direct damage payload
+
+**Techniques with no roll** (passive, zone, or declaration-triggered):
+
+- Primary roll is `—`
+
 ### 9. Saving Roll
 
 Show this field only when there is a **distinct roll that negates the Technique
 before its effect takes hold**.
 
+#### When the primary roll is weapon-rooted
+
+The saving roll is usually a resistance or defense roll:
+
+- `R.R.` (Tirada de Resistencia) — for ailment or alteration application
+- `T.D.` (Tirada de Defensa) — when the target's defense is a separate resolve
+  gate from the primary exchange
+
+#### When the primary roll is a non-weapon specialization
+
+The saving roll is the **opposing specialization that most directly suppresses
+the primary channel**:
+
+- identify what the primary roll is sensing, inferring, or extracting
+- ask which specialization a creature would actively use to block that channel
+- show it as `T.E. (Specialization)` using the same T.E. notation as the
+  primary roll
+
 Examples:
 
-- `R.R.`
-- `C.R.`
-- `D.R.`
+- Technique reads physical living signs through Percepción → saving roll is
+  `T.E. (Sigilo)` — the target suppresses their physical profile
+- Technique reads emotional state through Empatía → saving roll would be
+  `T.E. (Engaño)` or equivalent deception surface
 
 Do **not** use this field for:
 
@@ -215,7 +332,7 @@ Do **not** use this field for:
 - vague contextual exchange handling
 
 If there is no distinct negating roll, omit this field from the play-facing
-surface.
+surface or show `—` depending on the visual format.
 
 ### 10. Impact
 
@@ -224,6 +341,10 @@ Show this field when the Technique resolves:
 - `I.R.`
 - weapon impact
 - or another direct damage payload that players need to parse fast
+
+As with roll names, the visible label for the impact payload must follow the
+publication language and notation standard of that surface rather than leaking
+internal shorthand by default.
 
 If there is no impact payload, omit it or show `—` depending on the visual
 format.
@@ -248,7 +369,14 @@ Good requirements:
 - state condition
 - target condition
 - equipped item
+- kit family when the technique depends on prepared field support
 - species or learned threshold if truly required
+
+Requirements should also be localized for the player-facing surface:
+
+- use the Spanish-facing profile or competency label that the reader will see
+  elsewhere in the same book
+- do not leave internal English profile names on a Spanish rules surface
 
 Bad play-facing requirements:
 
@@ -260,6 +388,20 @@ Bad play-facing requirements:
 
 Those may still matter in authority or narrative adjudication, but they should
 not consume play-facing requirement space unless the game actually tracks them.
+
+### Kit dependency rule
+
+If a Technique depends on a named kit family to function as written, that kit
+should survive into the play-facing surface as a formal requirement.
+
+Do not blur a real kit gate into vague wording such as:
+
+- prepared ammunition
+- proper delivery
+- suitable tools
+- marked payload
+
+if the system already treats that dependency as a named kit family.
 
 ### Active-technique requirement rule
 
@@ -298,6 +440,7 @@ Good keywords:
 
 - weapon profile
 - specialization
+- kit family
 - ailment family
 - displacement
 - interruption

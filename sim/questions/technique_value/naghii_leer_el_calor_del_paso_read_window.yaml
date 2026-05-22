@@ -1,0 +1,28 @@
+id: naghii_leer_el_calor_del_paso_read_window
+question: How often does `Leer el Calor del Paso` fire in a meaningful read window — does the technique get triggered before the target acts or does the target activate first often enough to make the information arrive too late?
+scenario: naghii_trace_read_window
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - information_timing
+  - tempo
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: conservative
+  watcher: conservative
+measurements:
+  - technique_triggered_before_target_activation_rate
+  - activation_gap_between_read_and_target_action
+  - technique_use_rate_per_engagement
+  - information_window_ticks
+iterations: 20000
+compare:
+  technique: leer_el_calor_del_paso
+  against: marcar_la_lectura
+notes:
+  - Information timing question for Leer el Calor del Paso.
+  - Measures whether the R=3 investment produces information before the target acts, or whether ATB position makes the read arrive after the relevant activation.
+  - Runtime note: contextual masking opposition (Sigilo vs. Percepcion) not yet modeled — this question measures uncontested read timing only.
+  - Comparison against marcar_la_lectura to test whether non-weapon information techniques occupy a useful timing tier distinct from weapon-rooted read utilities.

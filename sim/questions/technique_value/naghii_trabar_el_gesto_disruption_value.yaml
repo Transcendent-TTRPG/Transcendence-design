@@ -1,0 +1,27 @@
+id: naghii_trabar_el_gesto_disruption_value
+question: How much practical disruption does `Trabar el Gesto` create when it lands — does cancelling the triggering weapon action plus applying Impedido meaningfully delay or degrade the target's offensive tempo across the following ATB window?
+scenario: naghii_interruption_pressure_reach
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - control
+  - positioning
+actors:
+  mover: naghii_novice_torsion_keeper
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - action_cancellation_rate
+  - impedido_duration_before_recovery
+  - target_weapon_technique_suppression_rate
+  - tempo_swing_value
+iterations: 20000
+compare:
+  technique: trabar_el_gesto
+  against: anudar_el_paso
+notes:
+  - Derived disruption question for the action-cancellation surface of Trabar el Gesto.
+  - Measures whether the combined output (cancelled action + Impedido) creates durable tactical advantage or only a one-activation delay.
+  - Runtime gate: blocked until small_runtime_extension gap is resolved.

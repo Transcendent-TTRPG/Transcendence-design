@@ -74,6 +74,44 @@ ailments:
       - All severities threaten the next meaningful ATB activation.
       - Moderate and severe can continue across multiple lost activations until recovery succeeds.
 
+  - id: impedido
+    family: alteration
+    severity_model: minor_moderate_severe
+    timing:
+      activation_start: []
+      action_gate:
+        - blocks_weapon_rooted_techniques_at_all_severities
+        - severe_requires_enfoque_sr_before_weapon_rooted_attack_or_intercept
+      reevaluation_points:
+        - explicit_recovery
+      expiry_mode: recovery_only
+      fiction_release_events: []
+    numeric_burden:
+      source: rank_bonus
+      applies_to:
+        - weapon_ar
+        - weapon_ir
+        - hand_critical_physical_sr
+    qualitative_burden:
+      minor:
+        - weapon_technique_execution_blocked
+      moderate:
+        - weapon_technique_execution_blocked
+        - weapon_based_rolls_penalized_by_source_rank_bonus
+      severe:
+        - weapon_technique_execution_blocked
+        - weapon_based_rolls_penalized_by_source_rank_bonus
+        - deliberate_weapon_rooted_action_requires_enfoque_sr_first
+    recovery:
+      type: specialization_roll
+      competency: Enfoque
+      threshold_model: source_severity
+    persistence_rule: until_removed
+    application_notes:
+      - Applied by Interruption techniques that catch the weapon execution arc.
+      - Does not restrict movement or non-weapon actions.
+      - Numeric burden (rank_bonus penalty) applies only at Moderate and Severe.
+
   - id: conmocionado
     family: alteration
     severity_model: minor_moderate_severe

@@ -1,0 +1,26 @@
+id: naghii_marcar_la_lectura_cost
+question: Is `Marcar la Lectura` priced correctly at `Rhythm 4 / Attrition 1` for a novice ranged route-readability Technique?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - balance
+  - procedural_states
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - hit_rate
+  - mark_application_rate
+  - route_readability_preserved_rate
+  - rhythm_efficiency
+  - attrition_efficiency
+iterations: 20000
+compare:
+  technique: marcar_la_lectura
+  sibling: nublar_la_senal
+notes:
+  - Minimum cost question for route-mark utility.

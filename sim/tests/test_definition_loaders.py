@@ -64,11 +64,60 @@ def test_technique_loader_reads_seed_technique_data() -> None:
     assert fear.effects[0].id == "apply_ailment"
     assert fear.effects[0].parameters["ailment_id"] == "aterrorizado"
 
+    angle = techniques["robar_el_angulo"]
+    assert angle.origin == "Flexible Weapons"
+    assert angle.category == "attack"
+    assert angle.rhythm == 4
+    assert angle.effects[0].id == "false_line_combined_resolution"
+    assert angle.effects[0].parameters["reposition_meters"] == 1
+    assert angle.effects[0].parameters["spoil_response"] == "rank_bonus"
+
+    knot = techniques["anudar_el_paso"]
+    assert knot.origin == "Flexible Weapons"
+    assert knot.category == "attack"
+    assert knot.roll is not None
+    assert knot.roll.family == "specialization"
+    assert knot.roll.competency == "Flexible Weapons"
+    assert knot.effects[0].id == "weapon_exchange_primary"
+    assert knot.effects[1].id == "deny_clean_separation_if_check_succeeds"
+
+    pin = techniques["clavar_el_paso"]
+    assert pin.origin == "Spear"
+    assert pin.attrition == 1
+    assert pin.effects[0].id == "advance_before_exchange_distance"
+    assert pin.effects[0].parameters["meters"] == 2
+
     recover = techniques["recuperar_la_distancia"]
     assert recover.origin == "Spear"
     assert recover.rhythm == 5
     assert recover.effects[1].id == "reposition_after_hit_distance"
     assert recover.effects[1].parameters["meters"] == 1
+
+    mark = techniques["marcar_la_lectura"]
+    assert mark.origin == "Ranged Weapons"
+    assert mark.category == "attack"
+    assert mark.roll is not None
+    assert mark.roll.competency == "Ranged Weapons"
+    assert mark.effects[0].id == "utility_check_primary"
+    assert mark.effects[1].id == "mark_immediate_route_readable"
+    assert mark.effects[1].parameters["state_id"] == "read_marked"
+
+    blur = techniques["nublar_la_senal"]
+    assert blur.origin == "Ranged Weapons"
+    assert blur.category == "utility"
+    assert blur.roll is not None
+    assert blur.roll.competency == "Ranged Weapons"
+    assert blur.effects[0].id == "utility_check_primary"
+    assert blur.effects[1].id == "blur_declared_sensory_channel"
+    assert blur.effects[1].parameters["state_id"] == "signal_blurred"
+
+    bend = techniques["doblar_el_tiro"]
+    assert bend.origin == "Ranged Weapons"
+    assert bend.category == "attack"
+    assert bend.roll is not None
+    assert bend.roll.competency == "Ranged Weapons"
+    assert bend.effects[0].id == "indirect_surface_ranged_attack"
+    assert bend.effects[0].parameters["declared_surface_count"] == 1
 
 
 def test_ailment_loader_reads_seed_ailment_data() -> None:

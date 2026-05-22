@@ -1,0 +1,17 @@
+scenario:
+  id: naghii_interruption_pressure_reach
+  description: Two combatants at close weapon reach, with watcher making a weapon-rooted attack that mover can intercept with a counter-attacker exchange.
+  map:
+    width_m: 8
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [3, 3]
+    - slot: watcher
+      position: [5, 3]
+  conditions:
+    - watcher_declares_weapon_attack_on_mover
+    - mover_within_weapon_reach_of_watcher
+    - credible_flexible_contact_line_available
+  notes:
+    - Reusable Naghii baseline for counter-attacker reactive interruption questions.

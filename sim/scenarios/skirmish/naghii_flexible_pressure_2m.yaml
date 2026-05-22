@@ -1,0 +1,16 @@
+scenario:
+  id: naghii_flexible_pressure_2m
+  description: Two combatants begin already close enough for novice flexible-weapon pressure and withdrawal denial lines.
+  map:
+    width_m: 10
+    height_m: 6
+  actors:
+    - slot: mover
+      position: [3, 3]
+    - slot: watcher
+      position: [5, 3]
+  conditions:
+    - contested_close_pressure
+    - enough_space_for_off_angle_movement
+  notes:
+    - Reusable Naghii flexible-weapon baseline for false-line and anti-disengagement questions.

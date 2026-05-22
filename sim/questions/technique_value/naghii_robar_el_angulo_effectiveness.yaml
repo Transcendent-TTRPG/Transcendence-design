@@ -1,0 +1,24 @@
+id: naghii_robar_el_angulo_effectiveness
+question: How often does `Robar el Ángulo` create meaningful value through position theft plus spoiled answer rather than just functioning as a normal attack?
+scenario: naghii_flexible_pressure_2m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - positioning
+  - procedural_states
+actors:
+  mover: naghii_novice_false_line_skirmisher
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - position_theft_rate
+  - spoiled_answer_rate
+  - combined_swing_rate
+  - local_angle_advantage_rate
+iterations: 20000
+compare:
+  against: attack_one_handed
+notes:
+  - Derived effectiveness question for false-line payoff.

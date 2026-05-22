@@ -1,0 +1,26 @@
+id: naghii_doblar_el_tiro_cost
+question: Is `Doblar el Tiro` priced correctly at `Rhythm 4 / Attrition 1` for a novice one-surface ricochet Technique?
+scenario: naghii_projection_line_5m
+retrieval_profile: simulator_domain_modeling
+domains:
+  - techniques
+  - balance
+  - geometry
+actors:
+  mover: naghii_novice_projection_scout
+  watcher: common_guard_observer
+policies:
+  mover: tempo_first
+  watcher: conservative
+measurements:
+  - hit_rate
+  - indirect_line_success_rate
+  - cover_edge_bypass_value
+  - rhythm_efficiency
+  - attrition_efficiency
+iterations: 20000
+compare:
+  technique: doblar_el_tiro
+  sibling: marcar_la_lectura
+notes:
+  - Minimum cost question for bounded ricochet geometry.
