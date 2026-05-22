@@ -44,6 +44,20 @@ El Impacto representa la presión real que el golpe transmite después de haber 
 
 ---
 
+## Dados adicionales de Impacto
+
+Algunas Técnicas, efectos o rasgos añaden dados adicionales a la Tirada de Impacto. Estos dados:
+
+- Suman al Impacto total de forma normal.
+- No modifican el dado crítico designado.
+- No aumentan la probabilidad de Impacto Crítico.
+
+La probabilidad crítica depende exclusivamente del dado crítico designado, que el atacante fija antes de tirar. Añadir dados adicionales aumenta el Impacto promedio sin alterar la chance de Impacto Crítico.
+
+El tipo y cantidad de dados adicionales los define la Técnica o efecto que los otorga. Expresiones habituales: `+Xd2`, `+Xd4`, o un valor fijo equivalente. Estos dados se tiran junto con la Tirada de Impacto normal.
+
+---
+
 ## Impacto Crítico
 
 Un Impacto Crítico ocurre cuando el dado crítico designado de la tirada de Impacto muestra su valor máximo.

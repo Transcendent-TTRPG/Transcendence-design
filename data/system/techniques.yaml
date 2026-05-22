@@ -1466,7 +1466,7 @@ pilot_examples:
       equipment:
         - any_weapon_natural_attack_or_item_with_line_control_access
       states:
-        - user_can_physically_occupy_or_cover_the_chosen_route_with_the_profile_bearing_surface
+        - user_must_remain_stationary_while_the_stance_is_active
       prerequisite_techniques: []
     learning:
       self_study:
@@ -1475,9 +1475,9 @@ pilot_examples:
         practice_hours: 6
         text_or_manual_required: false
         notes: >
-          Requires repeated drilling of route reading, shield placement, and
-          making attacks through the protected route less efficient without
-          claiming the whole battlefield.
+          Requires repeated drilling of shield placement, zone reading, and
+          holding a stable protected area without overcommitting to a single
+          attack line.
       guided_training:
         allowed: true
         study_hours: 4
@@ -1485,70 +1485,62 @@ pilot_examples:
         mentor_required: true
         notes: >
           A trained shield instructor, river warden, or temple guard can shorten
-          the learning curve by correcting lane choice and shield timing.
+          the learning curve by correcting stance timing and zone awareness.
       material_cost: null
       access_notes: >
-        Best learned in drills with doorways, corridors, formation gaps, bridges,
-        riverbank edges, or other readable routes that force the learner to
-        close one path without claiming the whole battlefield.
+        Best learned in formation drills where holding ground while protecting
+        nearby allies is the explicit goal.
       final_validation: one_successful_supervised_execution
-    target: route
-    range: profile_bearing_surface_reach
-    area: single_readable_route
+    target: self
+    range: self
+    area: allies_within_weapon_reach_plus_one
     duration:
       model: until_trigger
       value: null
       sustain_rule: null
       end_rule: >
-        Ends after the next hostile activation that could plausibly use or
-        attack through the chosen route resolves, even if the user's own marker
-        becomes ready first. Also ends early if the user leaves the route, loses
-        profile-bearing posture, takes a non-free action that abandons the profile-bearing line,
-        or becomes unable to maintain the profile-bearing line.
+        Ends when the user takes a movement action. Also ends early if the user
+        loses the profile-bearing weapon or becomes unable to maintain the stance.
     cost:
-      rhythm_cost: 5
+      rhythm_cost: 3
       attrition_cost: 1
       other: []
     saving_roll:
       model: none
       effect_on_success: null
     description: >
-      The user sets the shield like a stone gate in a canal, making one route
-      costly to ignore before the enemy chooses a target through it.
+      The user sets the shield and holds ground, making the space around nearby
+      allies costly to attack through. Enemies can still bypass — but doing so
+      through the protected zone is now the harder choice.
     effect: >
-      Choose one readable route within profile-bearing surface reach. The compuerta remains in
-      place until the next hostile activation that could plausibly use or attack
-      through that route resolves, even if the user's own marker becomes ready
-      first. During that window, an enemy that uses the chosen route or attacks
-      through that route against a target other than the user treats the action
-      as obstructed by the user's profile-bearing line. The obstructed action suffers a
-      penalty to its Attack Roll equal to 1 plus the rank bonus of the
-      competency used for this Technique. Instead of
-      accepting the penalty, the enemy may choose to attack the user or the
-      user's profile-bearing line as the cleaner target. This does not stop the attack.
-      It makes ignoring the profile-bearing line worse.
+      Declare the stance. While active, all attacks targeting allies within
+      [weapon reach + 1] of the user suffer a penalty to their Attack Roll
+      equal to the user's rank in the competency used for this Technique. This
+      makes targeting the user directly the more efficient option. The stance
+      ends when the user takes a movement action.
     scaling: >
-      Higher profile-bearing competency increases the Attack Roll penalty
-      through the rank bonus of the competency used for this Technique. It
-      should not turn the Technique into persistent zone control by default.
+      Higher competency rank increases the Attack Roll penalty applied to
+      attacks against allies in the protected zone. The zone radius does not
+      change with rank — it is always weapon reach + 1.
     cost_note: >
-      Rhythm 4 / Attrition 1 is deliberate. The Technique is still narrower
-      than a standard committed action, but it actively claims one route before
-      the hostile choice is made and taxes attacks that ignore that claim. That
-      lane-pressure surface no longer belongs at the quick anchor.
+      Rhythm 3 / Attrition 1. The Technique is a declared stance with no roll
+      requirement and no route selection — it claims a zone around the user and
+      taxes attacks against allies within it. The low cost reflects that its
+      benefit is conditional: it only matters when enemies choose to attack
+      allies through the zone rather than the user.
     restrictions:
-      - requires_a_real_lane_doorway_flank_bridge_corridor_riverbank_edge_formation_gap_or_other_readable_route_to_govern
-      - requires_the_user_to_physically_occupy_or_cover_the_chosen_route_with_profile_bearing_surface_reach
-      - does_not_create_a_persistent_zone_by_itself
-      - does_not_prevent_the_enemy_from_attacking_through_the_route
-      - ends_after_the_next_hostile_activation_that_could_use_or_attack_through_the_route_resolves
-      - ends_early_if_the_user_leaves_the_route_loses_profile_bearing_posture_takes_a_non_free_action_that_abandons_the_profile_bearing_line_or_cannot_maintain_the_profile_bearing_line
-      - should_not_stack_with_another_copy_of_the_same_technique_on_the_same_route
+      - requires_a_profile_bearing_weapon_with_a_defined_reach
+      - zone_radius_is_weapon_reach_plus_one_and_does_not_scale_with_rank
+      - penalty_applies_only_to_attacks_targeting_allies_not_the_user
+      - ends_immediately_when_the_user_moves
+      - does_not_prevent_enemies_from_attacking_allies_through_the_zone
+      - does_not_stack_with_another_copy_of_the_same_stance
     tags:
       - defense
+      - stance
+      - taunt
+      - zone_protection
       - control
-      - anti_displacement
-      - setup
   - name: Levantar el Dique
     name_en: Raise the Dike
     status: pilot_example
@@ -2959,7 +2951,7 @@ pilot_examples:
       end_rule: on_resolution
     cost:
       rhythm_cost: 5
-      attrition_cost: 2
+      attrition_cost: 1
       other: []
     saving_roll:
       model: contextual
@@ -2980,11 +2972,11 @@ pilot_examples:
       cost efficiency, but should not remove the Technique's committed identity
       or extend the closing distance beyond the authored 2 meters at base.
     cost_note: >
-      Rhythm 5 / Attrition 2 is deliberate. The Technique packages movement
-      and attack into a single action, which justifies the higher strain. The
-      2-meter close combined with the spear's 2-meter reach means the effective
-      threat range is up to 4 meters — that disguised reach is part of the
-      Technique's tactical value and part of why the body cost is real.
+      Rhythm 5 / Attrition 1. Sim validation showed that Attrition 2 was not
+      justified by generated value — the advance bonus (+1 value, always fires)
+      keeps the technique at rhythm parity with siblings, but the extra attrition
+      point produced no corresponding value advantage. The committed-forward
+      identity is preserved through the restriction layer, not through attrition cost.
     restrictions:
       - requires_enough_space_and_posture_to_drive_the_spear_with_committed_alignment
       - should_not_function_as_broad_zone_control_or_a_free_answer_to_multiple_enemies
@@ -3316,32 +3308,32 @@ pilot_examples:
       answer the visible line while the real contact steals the useful angle.
     effect: >
       Make a Flexible Weapons attack or equivalent tail/tendril Technique check
-      against the target. If the Technique resolves successfully, choose one
-      false-line consequence: steal position, letting the user shift up to 1
-      meter around the target within profile-bearing reach without provoking a reaction
-      from that target; or spoil response, giving the target a situational
-      penalty equal to the user's Flexible Weapons rank bonus (+1 at Novice, +2
-      at Adept, +3 at Expert, +4 at Master, +5 at Consummate, +6 at
-      Transcendent) on its next immediate reaction, counterattack, or opposed
-      exchange against the user before it re-centers. This does not force the
-      target to move, does not immobilize it, and does not create broad zone
-      control.
+      against the target. If the Technique resolves successfully, both
+      false-line consequences apply: steal position, letting the user shift up
+      to 1 meter around the target within profile-bearing reach without
+      provoking a reaction from that target; and spoil response, giving the
+      target a situational penalty equal to the user's Flexible Weapons rank
+      bonus (+1 at Novice, +2 at Adept, +3 at Expert, +4 at Master, +5 at
+      Consummate, +6 at Transcendent) on its next immediate reaction,
+      counterattack, or opposed exchange against the user before it re-centers.
+      This does not force the target to move, does not immobilize it, and does
+      not create broad zone control.
     scaling: >
       The spoil response penalty scales by Flexible Weapons rank: +1 at Novice,
       +2 at Adept, +3 at Expert, +4 at Master, +5 at Consummate, and +6 at
       Transcendent. Higher rank may allow subtler false lines or tighter
-      positional shifts, but Novice use chooses one false-line consequence only.
+      positional shifts, but Novice use still keeps the Technique tightly
+      bounded to one target and one short immediate-response window.
     cost_note: >
       Rhythm 4 / Attrition 1 is deliberate. The Technique is broader than a
       narrow reactive catch, but its payoff remains tightly bounded: one target,
-      one small positional conversion or one short response penalty, and no
+      one small positional conversion, one short response penalty, and no
       lasting control once the immediate exchange settles.
     restrictions:
       - requires_a_flexible_surface_that_can_present_one_line_and_resolve_through_another
       - requires_the_target_to_perceive_the_visible_line
       - requires_space_to_resolve_from_a_different_angle
       - applies_to_one_creature_only
-      - choose_one_false_line_consequence_only
       - does_not_force_target_movement
       - does_not_immobilize_or_grapple_by_itself
       - does_not_create_broad_zone_control
@@ -3425,17 +3417,18 @@ pilot_examples:
       sustain_rule: null
       end_rule: on_resolution
     cost:
-      rhythm_cost: 4
+      rhythm_cost: 3
       attrition_cost: 1
       other:
         - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
         - no_attrition_cost_in_normal_exploration_without_active_threat
     saving_roll:
-      model: contextual
+      model: opposed_specialization
+      competency: Sigilo
+      trigger: target_is_actively_suppressing_physical_signal
       effect_on_success: >
-        If the target is actively masking its state or movement, resolve against
-        that opposing method. On a successful answer, the user receives no clear
-        read.
+        If the target makes a successful Sigilo specialization check, the read
+        does not confirm. The user's Rhythm and Attrition are still spent.
     description: >
       The user reads heat, breath, scent, vibration, posture, and pressure as a
       single living signal, extracting one immediate truth about what the
@@ -3506,12 +3499,12 @@ pilot_examples:
         through stalking, ambush, or hidden-sentry traditions if they preserve
         the need for concealment, patience, and a meaningful crossing line.
     category: utility
-    type: reactive
+    type: active
     trigger: >
-      While the user is under real cover, concealment, darkness, broken
-      sightline, or another valid hidden-guardian position, a creature moves
-      toward, crosses into, or commits through a line the user is silently
-      holding.
+      The user is in a real hidden position — cover, concealment, darkness,
+      broken sightline, or another credible hidden-guardian position — and a
+      creature within 4 meters can register signs of a nearby unseen or
+      half-seen threat.
     requirements:
       level: null
       rank: Novice
@@ -3521,9 +3514,8 @@ pilot_examples:
         - Sigilo
       equipment: []
       states:
-        - the_user_must_be_under_real_cover_concealment_darkness_broken_sightline_or_another_credible_hidden_position
-        - the_target_must_be_able_to_register_signs_of_a_nearby_unseen_or_half_seen_threat
-        - the_held_line_must_matter_now
+        - the_user_must_be_in_a_real_hidden_position
+        - the_target_must_be_within_4_meters_and_able_to_register_a_nearby_unseen_threat
       prerequisite_techniques: []
     learning:
       self_study:
@@ -3551,7 +3543,7 @@ pilot_examples:
         ambush patience, not broad social authority.
       final_validation: one_successful_supervised_application_of_aterrorizado_from_a_hidden_held_line
     target: creature
-    range: nearby_line_or_hidden_presence_reach
+    range: 4_meters_from_hidden_position
     area: single
     duration:
       model: instant_application
@@ -3764,8 +3756,8 @@ pilot_examples:
         The Technique originates in Saa-Naghii projection practice: a reading
         is not complete until it can be made consequential at distance.
         Outsiders can learn analogous methods with pigment darts, venom
-        projectors, marked arrows, chemical tracers, prepared marking
-        ammunition, or other visible or scent-bearing ranged delivery tools.
+        projectors, marked arrows, chemical tracers, and other visible or
+        scent-bearing ranged delivery tools prepared through a munition kit.
     category: attack
     type: active
     trigger: >
@@ -3779,9 +3771,10 @@ pilot_examples:
       support_specializations: []
       equipment:
         - any_weapon_natural_attack_or_item_with_precision_access
+        - munition_kit_if_non_natural_user
       states:
-        - narrowed_access_attack_must_deliver_readable_physical_mark
-        - marking_examples_include_pigment_scent_phosphorescent_residue_tracer_or_equivalent_marking_fluid
+        - narrowed_access_non_natural_user_needs_munition_kit_to_prepare_readable_physical_mark
+        - readable_mark_examples_include_pigment_scent_phosphorescent_residue_tracer_or_equivalent_marking_fluid
         - target_can_be_physically_marked
       prerequisite_techniques: []
     learning:
@@ -3817,9 +3810,9 @@ pilot_examples:
       sustain_rule: null
       end_rule: >
         Ends when the target completes its next movement or concealment attempt,
-        spends an action clearing or neutralizing the mark, leaves the user's
-        sensory reach behind a sealed barrier, or the scene no longer tracks
-        immediate position.
+        spends Interactuar clearing the mark in a physically credible way,
+        leaves the user's sensory reach behind a sealed barrier, or the scene
+        no longer tracks immediate position.
     cost:
       rhythm_cost: 4
       attrition_cost: 1
@@ -3834,8 +3827,9 @@ pilot_examples:
         still apply as long as physical contact or residue is established.
     description: >
       The user does not simply shoot where the target is. They place a visible,
-      scented, irritating, or phosphorescent mark where the target's next
-      movement will reveal the line it is trying to make disappear.
+      scented, irritating, or phosphorescent mark prepared through a munition
+      kit where the target's next movement will reveal the line it is trying
+      to make disappear.
     effect: >
       Make a profile-bearing attack with prepared marking ammunition, a marking
       kit delivery, or equivalent natural fluid-projection Technique check
@@ -3901,8 +3895,8 @@ pilot_examples:
         The Technique originates in Saa-Naghii venom projection, where contact
         is used to degrade the next decision rather than simply harm the body.
         Outsiders can adapt it with irritant dust, venom capsules, caustic
-        darts, prepared residue ammunition, or other ranged tools that leave a
-        short-lived sensory residue.
+        darts, or other ranged tools that leave a short-lived sensory residue
+        when prepared through a munition kit.
     category: attack
     type: active
     trigger: >
@@ -3916,8 +3910,9 @@ pilot_examples:
       support_specializations: []
       equipment:
         - any_weapon_natural_attack_or_item_with_corrosion_access
+        - munition_kit_if_non_natural_user
       states:
-        - narrowed_access_attack_must_deliver_irritating_venom_caustic_dust_or_sensory_residue
+        - narrowed_access_non_natural_user_needs_munition_kit_to_prepare_irritating_venom_caustic_dust_or_sensory_residue
         - target_has_a_relevant_sensory_surface_or_exposed_reading_channel
       prerequisite_techniques: []
     learning:
@@ -3951,8 +3946,8 @@ pilot_examples:
       value: null
       sustain_rule: null
       end_rule: >
-        Ends when the target clears or neutralizes the residue, resolves one
-        affected sight/read-dependent action, loses the residue through
+        Ends when the target spends Interactuar clearing the residue, resolves
+        one affected sight/read-dependent action, loses the residue through
         environmental conditions, or the scene no longer tracks the immediate
         sensory pressure.
     cost:
@@ -3980,8 +3975,8 @@ pilot_examples:
       still resolves successfully, the target becomes signal-blurred for that
       declared channel until the duration ends. Before resolving its next
       action or reaction that depends primarily on that same declared channel,
-      the target must choose: spend that opportunity clearing or neutralizing
-      the residue, ending the effect; or act through it and take a situational
+      the target must choose: spend Interactuar clearing the residue, ending
+      the effect; or act through it and take a situational
       penalty equal to the rank bonus of the competency used for this
       Technique (+1 at Novice, +2 at Adept, +3 at Expert, +4 at Master, +5 at
       Consummate, +6 at Transcendent) on that one affected roll or opposed
@@ -4262,10 +4257,11 @@ pilot_examples:
       tier versions may affect more complex movement windows, but Novice use
       affects one target and one triggering movement only.
     cost_note: >
-      Rhythm 5 / Attrition 1 is deliberate. The Technique is a ranged reactive
-      attack that can also cut distance from one declared movement. It does not
-      create a persistent slow, make multiple attacks, or sustain broad
-      suppression.
+      Rhythm 4 / Attrition 1. The Technique is a ranged reactive attack that
+      can also cut distance from one declared movement. It does not create a
+      persistent slow, make multiple attacks, or sustain broad suppression.
+      Cost validated at R=4 by simulation consistency analysis (intra-set Naghii
+      damage curve).
     restrictions:
       - requires_line_of_effect_to_one_target
       - requires_a_ranged_tool_or_projection_capable_of_controlled_repeated_release
@@ -4435,12 +4431,11 @@ pilot_examples:
         interruptible. Non-Naghii can learn it with whips, chains, cords, or
         other flexible tools that can credibly reach a weapon arm or weapon
         execution line fast enough to catch the commitment before it resolves.
-    category: utility
+    category: attack
     type: reactive
     trigger: >
-      An enemy within profile-bearing reach declares or begins a weapon-rooted attack
-      or Technique — the commitment arc of the action is visible and within
-      reach.
+      The user is targeted by a weapon-rooted attack from an enemy within weapon
+      reach — the attacker's commitment arc is visible and interceptable.
     requirements:
       level: null
       rank: Novice
@@ -4450,9 +4445,9 @@ pilot_examples:
       equipment:
         - any_weapon_natural_attack_or_item_with_interruption_access
       states:
-        - narrowed_access_profile_bearing_surface_must_reach_and_catch_weapon_weapon_arm_or_execution_line
-        - target_is_within_profile_bearing_reach
-        - user_has_a_credible_flexible_contact_line_to_the_targets_weapon_or_weapon_arm
+        - user_is_the_declared_target_of_the_triggering_attack
+        - attacker_is_within_weapon_reach
+        - user_has_a_credible_flexible_contact_line_to_the_attackers_weapon_arm_or_execution_line
       prerequisite_techniques: []
     learning:
       self_study:
@@ -4479,7 +4474,7 @@ pilot_examples:
         hostile weapon use in confined archive spaces is a specific discipline.
       final_validation: one_successful_supervised_execution
     target: enemy
-    range: profile_bearing_reach
+    range: weapon_reach
     area: single
     duration:
       model: instant
@@ -4493,47 +4488,51 @@ pilot_examples:
     saving_roll:
       model: rr_reduces
       effect_on_success: >
-        If the target succeeds on its Alteration Resistance Roll, Impedido is
-        not applied and the triggering weapon action resolves normally.
+        If the attacker succeeds on its Alteration Resistance Roll, Impedido is
+        not applied.
     description: >
-      The user reads the commitment arc of the enemy's weapon action and sends
-      the flexible weapon into that line before the stroke can lock in. The
-      catch lands on the arm, the grip, or the execution line — not to hold,
-      but to break the moment the action needed to become unstoppable.
+      The attacker commits their stroke. Instead of defending, the Naghii sends
+      the flexible weapon into the commitment arc — catching the arm, the grip,
+      or the execution line at the exact threshold moment. The counter-strike
+      lands during the enemy's own action. The attacker absorbs damage and risks
+      losing control of their weapon arm.
     effect: >
-      Make a reactive Interruption check using the relevant profile-bearing
-      competency against the triggering enemy. If the Technique resolves
-      successfully, the target immediately makes an Alteration Resistance Roll
-      against Impedido. Use the default Ailment severity bands by rank: ranks
-      1-2 are Minor, ranks 3-4 are Moderate, and ranks 5-6 are Severe. On a
-      failed R.R., the target becomes Impedido at that severity, and the
-      triggering weapon action does not complete. On a successful R.R.,
-      Impedido is not applied and the triggering action resolves normally.
+      Substitute your normal T.D. with a T.A. against the triggering attacker.
+      If your T.A. exceeds the attacker's T.A., you take no damage from the
+      triggering attack and resolve T.I. normally against the attacker. The
+      attacker then immediately makes an Alteration Resistance Roll against
+      Impedido. Use the default Ailment severity bands by rank: ranks 1-2 are
+      Minor, ranks 3-4 are Moderate, and ranks 5-6 are Severe. On a failed
+      R.R., the attacker becomes Impedido at that severity. On a successful
+      R.R., Impedido is not applied. If your T.A. does not exceed the
+      attacker's T.A., the counter fails and the attack resolves normally.
     scaling: >
       Higher competency used for this Technique increases Impedido severity in
-      two-rank bands. Higher tiers may improve reliability, allow subtler
-      commitment-arc reading, improve cost efficiency, or broaden the trigger to
-      non-weapon committed actions.
+      two-rank bands. Higher tiers may improve reliability, extend the trigger
+      to non-weapon committed actions, or reduce the cost premium over a
+      standard reactive defense.
     cost_note: >
-      Rhythm 5 / Attrition 1 is deliberate. The Technique is a reactive action
-      with a condition-application surface: Impedido on a failed
-      Alteration R.R. The condition is recoverable through Enfoque, the trigger
-      is narrow (weapon execution only), and the target has an R.R. window to
-      resist. These constraints prevent the cost from rising above the standard
-      anchor despite the condition output.
+      Rhythm 5 / Attrition 1 is deliberate. The Technique is a reactive attack
+      that simultaneously defends and deals damage, with a condition surface on
+      top. The trigger is narrow (user must be the declared target), the
+      attacker has an R.R. window against Impedido, and the counter can still
+      fail if T.A. does not exceed the attacker's roll. These constraints
+      prevent the cost from rising above the standard anchor despite the dual
+      output.
     restrictions:
-      - target_must_be_within_profile_bearing_reach
-      - user_must_have_a_credible_contact_line_to_the_targets_weapon_or_weapon_arm
-      - applies_to_one_target_only
+      - user_must_be_the_declared_target_of_the_triggering_attack
+      - attacker_must_be_within_weapon_reach
+      - user_must_have_a_credible_flexible_contact_line_to_the_attackers_weapon_arm_or_execution_line
+      - applies_to_one_attacker_only
+      - ta_replaces_td_does_not_supplement_it
       - does_not_create_full_restraint_or_movement_restriction
-      - does_not_apply_to_non_weapon_actions_or_purely_social_commitments
-      - does_not_prevent_the_target_from_taking_non_weapon_actions_while_impedido
+      - does_not_prevent_the_attacker_from_taking_non_weapon_actions_while_impedido
       - impedido_is_removed_by_a_successful_enfoque_sr_against_the_original_severity
     tags:
-      - utility
+      - attack
       - control
       - disruption
-      - pressure
+      - counter
   - name: Plantar la Guardia
     name_en: Stand Guard
     status: authored_example
@@ -4622,8 +4621,8 @@ pilot_examples:
         position by a hostile action such as a successful knockdown or
         displacement.
     cost:
-      rhythm_cost: 7
-      attrition_cost: 2
+      rhythm_cost: 3
+      attrition_cost: 1
       other: []
     saving_roll:
       model: none
@@ -4652,11 +4651,14 @@ pilot_examples:
       use requires the user to remain at the declared position to maintain the
       zone.
     cost_note: >
-      Rhythm 7 / Attrition 2 is deliberate. The Technique produces no
-      immediate hit, but it establishes a sustained contested zone that taxes
-      every hostile active action within it. That is major lane control with
-      real positional commitment and ongoing pressure absorption, so it belongs
-      at the heavy anchor rather than the quick band.
+      Rhythm 3 / Attrition 1 is deliberate. The zone produces no immediate
+      hit — its cost mechanism is the movement restriction: if the user
+      moves, the zone collapses and the investment is lost. A higher Rhythm
+      cost would push the user too far ahead in the ATB queue, making it
+      impossible to hold position while still reacting and acting, defeating
+      the technique's identity. R=3 keeps the user in the ATB window where
+      holding a zone is actually viable. Cost validated by ATB model
+      analysis; pending sim validation.
     restrictions:
       - requires_stable_footing_to_hold_the_ward_position
       - ends_when_user_moves_beyond_negligible_distance_from_declared_position
@@ -4671,16 +4673,16 @@ pilot_examples:
       - control
       - pressure
       - setup
-  - name: Leer el Arco
-    name_en: Read the Arc
+  - name: Medir el Ciclo
+    name_en: Measure the Cycle
     status: authored_example
     purpose: >
       Add a novice Naghii-origin specialization Technique rooted in Astronomía,
-      completing the specialization set with a support expression that uses
-      trajectory projection — the cognitive tool underlying astronomical study
-      — to reveal where a moving target is going rather than where it is,
-      giving the user's team actionable information before the declared action
-      executes.
+      expressing formal cycle-reading logic as a direct combat tool: the user
+      targets one ciclo autónomo visible in the ATB and forces the Narrator to
+      declare the Rhythm cost of its next activation(s), giving the group the
+      exact window before the cycle fires. The number of steps revealed scales
+      with the user's Astronomía rank.
     origin:
       main: Astronomía
       secondary: []
@@ -4688,25 +4690,25 @@ pilot_examples:
       primary_front: Species
       secondary_front: null
       source: Naghii
-      seed: Projection Of Interpretation
-      focus: Scholarly / Trajectory Reading
-      holder: Naghii outer archive projection readers
-      transmission: outer_archive_trajectory_and_projection_drills
+      seed: Celestial Order As Precision Tool
+      focus: Scholarly / Cycle Reading
+      holder: Naghii outer archive celestial calculation practitioners
+      transmission: outer_archive_celestial_calculation_drills
       availability: Restricted
       adaptation_notes: >
-        The Technique originates in Naghii astronomical training, where the
-        primary skill is not identifying what is visible but projecting where
-        it will be. The same cognitive tools — arc reading, vector extension,
-        endpoint calculation — transfer to any moving target. Non-Naghii can
-        learn analogous methods through ballistic study, hunting projection,
-        fluid-movement reading, or other disciplines that teach trajectory
-        calculation rather than position observation.
+        The Technique originates in Naghii outer archive training, where the
+        primary cognitive tool is reading the return interval of observable
+        patterns — establishing exactly when something will next occur from
+        its cycle data, not from intuition or estimate. The same discipline
+        used to track lunar returns and tidal cycles applies to any independent
+        repeating ATB pattern in an encounter.
     category: utility
     type: active
     trigger: >
-      A creature or object within observable range is in movement, about to
-      act, or has a discernible vector that can be projected to a next
-      position or endpoint.
+      One or more ciclos autónomos are present and visible in the ATB — an
+      independent cycle belonging to a creature, a body part, or an
+      environmental effect that has its own Rhythm and activates outside the
+      creature's main turn.
     requirements:
       level: null
       rank: Novice
@@ -4715,7 +4717,7 @@ pilot_examples:
       support_specializations: []
       equipment: []
       states:
-        - target_has_a_discernible_movement_vector_or_imminent_declared_action
+        - at_least_one_ciclo_autonomo_visible_in_the_ATB
       prerequisite_techniques: []
     learning:
       self_study:
@@ -4724,36 +4726,32 @@ pilot_examples:
         practice_hours: 6
         text_or_manual_required: false
         notes: >
-          Requires repeated practice projecting trajectories from observed
-          starting vectors — learning to read where something is going rather
-          than where it is, and confirming those projections against what
-          actually happens.
+          Requires repeated practice reading observable cycles — extracting
+          return intervals from pattern data and confirming predicted
+          activations against what actually occurs.
       guided_training:
         allowed: true
         study_hours: 4
         practice_hours: 6
         mentor_required: true
         notes: >
-          A Naghii archive astronomer or trained projection reader can teach
-          the learner to separate genuine movement intent from noise, feint,
-          or incomplete vectors.
+          A Naghii outer archive astronomer can teach the learner to isolate
+          a cycle's return interval from surrounding noise and read it under
+          ATB pressure.
       material_cost: null
       access_notes: >
-        Restricted to outer archive astronomical training where projection and
-        trajectory reading are taught as practical tools before deeper
-        celestial study is permitted.
-      final_validation: one_successful_supervised_trajectory_read
-    target: creature
-    range: line_of_sight
-    area: single
+        Restricted to outer archive celestial calculation training where
+        cycle-reading is taught as a practical prerequisite to deeper
+        astronomical study.
+      final_validation: one_successful_supervised_cycle_interval_read_in_ATB
+    target: ciclo_autonomo
+    range: visual_range
+    area: one_ciclo_autonomo
     duration:
-      model: until_trigger
+      model: immediate
       value: null
       sustain_rule: null
-      end_rule: >
-        Ends when the target completes the revealed action, significantly
-        changes their intent before executing it, or the scene no longer
-        tracks the projected trajectory.
+      end_rule: null
     cost:
       rhythm_cost: 3
       attrition_cost: 1
@@ -4761,75 +4759,89 @@ pilot_examples:
         - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
         - no_attrition_cost_in_normal_exploration_without_active_threat
     saving_roll:
-      model: contextual
-      effect_on_success: >
-        If the target is actively feinting, using a deception technique, or
-        otherwise concealing their movement intent, they may oppose with the
-        relevant Specialization Roll or Technique. On a successful answer,
-        the read is inaccurate or reveals only that the target's visible
-        vector is not their real one.
+      model: difficulty_threshold_by_active_cycle_count
+      scale:
+        - active_cycles: 1
+          difficulty: Fundamental
+        - active_cycles: 2-3
+          difficulty: Desafiante
+        - active_cycles: 4-5
+          difficulty: Rigurosa
+        - active_cycles: 6-7
+          difficulty: Exigente
+        - active_cycles: 8+
+          difficulty: Extrema
+      note: >
+        The difficulty is not a target saving roll. It is a threshold for the
+        user's T.E. (Astronomía), set by the total number of active ciclos
+        autónomos present in the ATB at the moment of the roll. On failure,
+        no information is revealed.
     description: >
-      The astronomer does not look at where the object is. They look at the
-      arc. Every vector has an endpoint, and the discipline of projecting
-      celestial movement — tracing where something must be, not just where
-      it appears — applies to anything in motion. The user reads the arc
-      and declares where it ends.
+      The astronomer does not wait to see what the cycle does. They measure it.
+      Every cycle has a Rhythm, and the discipline of reading formal patterns
+      — the same discipline that tracks moons, tides, and celestial return
+      intervals — applies to anything that fires on a schedule.
+    bonus:
+      target: user_only
+      trigger: saving_rolls_from_measured_cycles_declared_activations
+      value: +1_per_Astronomia_rank
+      window: declared_N_activations_of_measured_cycle
+      roll_types: saving_rolls_only
+      note: >
+        The user gains a bonus equal to their current Astronomía rank on all
+        saving rolls produced by the measured cycle's effects during the
+        declared N activations. The bonus applies to the user only — not shared
+        with allies. It does not apply to attack, specialization, or influence
+        rolls.
     effect: >
-      Make an Astronomía Specialization Roll against one target in motion or
-      about to act. On success, the Narrator must declare one trajectory truth
-      about the target's next action or movement before it executes — such as
-      where the target will be at the end of their next movement; the landing
-      destination or path of a ranged attack they are about to make; what
-      cover, position, or creature the target's current movement vector leads
-      them toward; or whether the target's current direction brings them into
-      reach of an ally, a hazard, or a dead end. These are examples of the kind
-      of truth this Technique produces, not a closed list: the Narrator chooses
-      whichever truth is most structurally meaningful and may declare other
-      trajectory truths of the same quality and specificity that the vector
-      supports. This declared truth is available to the user and any ally within
-      clear hearing range before the target's action executes — giving the team
-      the window between the user's turn and the target's execution to act on
-      the information. The technique does not prevent the target from acting,
-      does not grant any roll bonus against the target, and does not reveal more
-      than one trajectory truth at Novice. If the target's intent changes
-      dramatically before execution due to scene events, the accuracy of the
-      read reflects what was true when the projection was made.
+      Make an Astronomía Specialization Roll targeting one visible ciclo
+      autónomo in the ATB. The difficulty is set by the total number of active
+      ciclos autónomos present at the moment of the roll: 1 = Fundamental,
+      2-3 = Desafiante, 4-5 = Rigurosa, 6-7 = Exigente, 8+ = Extrema. On
+      success, the Narrator declares the Rhythm cost of that cycle's next N
+      activations, where N equals the user's current Astronomía rank. The user
+      and all allies within clear hearing range receive this information before
+      the cycle fires. The user also gains a bonus equal to their Astronomía
+      rank on all saving rolls produced by the measured cycle's effects during
+      those N activations. On failure, no information is revealed and no bonus
+      is granted. The information does not alter the cycle's activation and does
+      not prevent its effect from occurring.
     scaling: >
-      Higher Astronomía rank may improve reliability, allow subtler or faster
-      trajectory reads, or let later higher-tier versions project two targets
-      in the same action. Novice use reveals one trajectory truth for one
-      target only.
+      The number of steps ahead revealed equals the user's current Astronomía
+      rank. At rank 1 (Novice), the Narrator declares the Rhythm cost of the
+      next activation only. At rank 2, two activations ahead; at rank 3, three;
+      and so on for the same targeted cycle.
     cost_note: >
-      Rhythm 3 / Attrition 1 is deliberate. The Technique is a quick read
-      under pressure that produces a single concrete trajectory truth. Its
-      value is entirely in the information and the window between the user's
-      turn and the target's execution — giving the team time to act on what
-      is coming rather than react to what has arrived. These costs apply only
-      during ATB or active-threat scenes; in exploration, the Technique
-      resolves as the user's Astronomía action without Attrition.
+      Rhythm 3 / Attrition 1 matches all Novice Naghii specialization
+      information Techniques. The output is immediate and combat-decisive: the
+      group knows exactly when the identified cycle will next fire, which
+      changes every subsequent decision in that ATB window. These costs apply
+      only during ATB or active-threat scenes.
     restrictions:
-      - requires_an_observable_target_with_a_discernible_vector_or_imminent_action
-      - reveals_one_trajectory_truth_only
-      - does_not_prevent_the_target_from_acting
-      - does_not_grant_roll_bonuses_against_the_target
-      - does_not_reveal_statistics_conditions_or_intent_beyond_movement_trajectory
-      - accuracy_depends_on_target_not_dramatically_changing_intent_before_execution
-      - shared_only_with_allies_within_clear_hearing_range
+      - requires_at_least_one_ciclo_autonomo_visible_in_the_ATB
+      - targets_one_ciclo_autonomo_only
+      - difficulty_set_by_total_active_ciclos_autonomos_at_moment_of_roll
+      - steps_revealed_equals_current_Astronomia_rank
+      - does_not_alter_the_cycles_activation_or_delay_it
+      - does_not_prevent_the_cycles_effect_from_occurring
+      - does_not_grant_attack_or_defense_roll_bonuses
     tags:
       - utility
-      - support
-      - counter_read
       - setup
+      - pattern_exploitation
   - name: Leer el Propósito
     name_en: Read the Purpose
     status: authored_example
     purpose: >
       Add a novice Naghii-origin specialization Technique rooted in Architecture,
-      giving the species a rank 1 expression that uses the cognitive tool of
-      reading built space as intention — not just form — to extract one structural
-      truth about circulation, concealment, or design intent that the raw
-      Architecture S.R. could surface but cannot guarantee at ATB speed or force
-      the Narrator to declare.
+      applying the cognitive tool of structural grammar reading to living creatures:
+      the user identifies one specific Punto Vital on a target creature by
+      recognizing where its critical biological load concentrates — the same
+      access-hierarchy and intended-use inference used on built space, applied to
+      a living system. On success, the Narrator declares the location of one
+      Punto Vital; the user gains a bonus to T.A and T.E against it. The technique
+      does not reveal what the vital point controls, which cycles it governs, or
+      which techniques it enables.
     origin:
       main: Architecture
       secondary: []
@@ -4837,25 +4849,24 @@ pilot_examples:
       primary_front: Species
       secondary_front: null
       source: Naghii
-      seed: The Archive Must Continue
-      focus: Scholarly / Structural Intent Reading
-      holder: Naghii outer archive intent readers
-      transmission: outer_archive_structural_intent_reading_drills
+      seed: Structural Grammar Is Universal
+      focus: Scholarly / Vital Structure Reading
+      holder: Naghii outer archive structural readers
+      transmission: outer_archive_vital_structure_reading_drills
       availability: Restricted
       adaptation_notes: >
-        The Technique originates in Naghii archive training where every built
-        space — ruin, archive, passage, vault — is read as a record of intent:
-        where the builders needed people to go, what they needed to hide, and
-        what the structure was designed to protect. Outsiders can learn analogous
-        methods through any architectural study tradition that teaches design
-        intent reading over surface observation.
+        The Technique originates in Naghii outer archive training, where the
+        primary cognitive tool is reading any organized system for its
+        structural logic — access hierarchy, load distribution, vital mass
+        concentration. The same discipline applied to identifying which vault
+        threshold bears the structural weight of an archive complex applies to
+        identifying where a living creature concentrates its critical biology.
+        Architectural reasoning is not limited to built space.
     category: utility
     type: active
     trigger: >
-      The user is present in or adjacent to a built space with enough legible
-      architectural features — walls, passages, volumes, thresholds, constructed
-      surfaces — to read the original design intent rather than just the
-      current condition.
+      A creature is present and visible in the scene with at least one Punto
+      Vital not yet identified by the user.
     requirements:
       level: null
       rank: Novice
@@ -4864,41 +4875,42 @@ pilot_examples:
       support_specializations: []
       equipment: []
       states:
-        - built_space_with_legible_architectural_features_present
+        - creature_visible_with_at_least_one_unidentified_punto_vital
       prerequisite_techniques: []
     learning:
       self_study:
         allowed: true
         study_hours: 10
-        practice_hours: 4
+        practice_hours: 6
         text_or_manual_required: false
         notes: >
-          Requires repeated practice distinguishing what a space was designed to
-          do from what it looks like now — learning to read layout, threshold
-          placement, and volume as records of intent rather than accidents.
+          Requires repeated practice translating architectural structural
+          analysis — access hierarchy, load distribution, vital mass reading —
+          from built space to living systems. The cognitive tool is the same;
+          the medium changes.
       guided_training:
         allowed: true
         study_hours: 4
-        practice_hours: 4
+        practice_hours: 6
         mentor_required: true
         notes: >
-          A Naghii archive architect, structural reader, or ruin-access
-          instructor can teach the learner to separate construction intent from
-          later modification, collapse, and use-drift.
+          A Naghii outer archive structural reader or any architectural
+          instructor who teaches design-intent reading can guide the learner
+          to apply structural grammar to biological organization.
       material_cost: null
       access_notes: >
-        Restricted to outer archive architectural training where design-intent
-        reading is taught as a practical access and security discipline before
-        deeper structural study is permitted.
-      final_validation: one_successful_supervised_structural_intent_read
-    target: structure
-    range: present_space
-    area: single_structure_or_zone
+        Restricted to outer archive architectural training where structural
+        grammar reading is taught as a discipline before deeper study is
+        permitted.
+      final_validation: one_successful_supervised_punto_vital_identification_in_ATB
+    target: creature
+    range: visual_range
+    area: one_punto_vital
     duration:
-      model: instant
+      model: indefinite
       value: null
       sustain_rule: null
-      end_rule: on_resolution
+      end_rule: on_identified_punto_vital_destruction_or_relocation
     cost:
       rhythm_cost: 3
       attrition_cost: 1
@@ -4906,59 +4918,76 @@ pilot_examples:
         - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
         - no_attrition_cost_in_normal_exploration_without_active_threat
     saving_roll:
-      model: contextual
-      effect_on_success: >
-        If the space has been deliberately altered to mislead a reader —
-        false passages, disguised structural logic, or intentionally planted
-        wrong cues — another character may oppose with Architecture or the
-        relevant masking Technique. On a successful answer, the user identifies
-        that the space does not read cleanly but does not receive the intended
-        truth.
+      model: difficulty_by_creature_category
+      scale:
+        - category: Común
+          difficulty: Desafiante
+        - category: Campeona
+          difficulty: Rigurosa
+        - category: Elite
+          difficulty: Exigente
+      note: >
+        The difficulty is set by the creature's category. A common creature's
+        structural organization is more legible than a champion's, and a
+        champion's more legible than an elite's. Vital point count is
+        approximately equal across all creature categories and is not the
+        determining factor. On failure, no Punto Vital is identified.
+    bonus:
+      target: user_only
+      trigger: T.A_and_T.E_against_identified_punto_vital
+      value: +1_per_Architecture_rank
+      window: indefinite_until_punto_vital_destroyed_or_relocated
+      roll_types: T.A_and_T.E_only
+      note: >
+        The user gains a bonus equal to their current Architecture rank on all
+        T.A and T.E rolls targeting the identified Punto Vital. The bonus
+        applies to the user only — not shared with allies — and persists until
+        the Punto Vital is destroyed or the creature relocates its vital points
+        (a rare creature ability).
     description: >
-      The builder always left a record. The user reads it: where the space was
-      designed to move people, what it was designed to hide, which volumes were
-      built to carry meaning and which to carry nothing. Design intent is
-      structural grammar — it does not disappear when the builders do.
+      The architecture of a living body is no less readable than a vault. The
+      user applies the same structural grammar — access hierarchy, load
+      distribution, vital mass concentration — to the creature's organization,
+      identifying where the critical biology is held. The location, not the
+      function.
     effect: >
-      Make an Architecture Specialization Roll against the built space. On
-      success, the Narrator provides one structural intent truth about how the
-      space was designed — such as where the original circulation was built to
-      lead; whether a volume, passage, threshold, or exit was intentionally
-      concealed in the design; which structural feature was built for
-      observation, controlled access, or defense rather than habitation; or
-      which part of the structure was designed as load-bearing and permanent
-      versus decorative or removable. These are examples of the kind of truth
-      this Technique produces, not a closed list: the Narrator chooses
-      whichever truth is most immediately relevant and may declare other
-      structural intent truths of the same quality that the built form supports.
-      The read concerns original design intent, not current state: it does not
-      reveal present occupants, post-construction modifications, current traps,
-      or contents placed after the structure was built.
+      Make an Architecture Specialization Roll targeting one visible creature.
+      The difficulty is set by the creature's category: Común = Desafiante,
+      Campeona = Rigurosa, Elite = Exigente. On success, the Narrator declares
+      the location of one specific Punto Vital on the creature. The user gains
+      a bonus equal to their current Architecture rank on all T.A and T.E rolls
+      targeting that Punto Vital. On failure, no Punto Vital is identified and
+      no bonus is granted. The technique does not reveal what the vital point
+      controls, which cycles it governs, or which techniques it enables. The
+      bonus applies to the user only and persists until the identified Punto
+      Vital is destroyed or the creature relocates its vital points.
     scaling: >
-      Higher Architecture rank may improve reliability, allow more damaged or
-      fragmentary spaces to qualify, or let later higher-tier versions read two
-      connected spaces in the same action. Novice use reveals one structural
-      intent truth for one space only.
+      The bonus to T.A and T.E scales with the user's current Architecture
+      rank: +1 at rank 1, +2 at rank 2, and so on. A single use always
+      identifies one Punto Vital. Higher rank improves targeting precision,
+      not breadth of information.
     cost_note: >
-      Rhythm 3 / Attrition 1 is deliberate. The Technique is a fast structural
-      read under pressure that produces one concrete intent truth. Its value is
-      entirely in the information — where the space was built to lead or hide —
-      immediately available to act on. These costs apply only during ATB or
-      active-threat scenes; in normal exploration, the Technique resolves as
+      Rhythm 3 / Attrition 1 matches all Novice Naghii specialization
+      information Techniques. The output is immediate and persistent: one
+      Narrator-declared vital location plus a targeting bonus that holds until
+      the vital point is destroyed. These costs apply only during ATB or
+      active-threat scenes; in normal exploration the Technique resolves as
       the user's Architecture action without Attrition.
     restrictions:
-      - requires_built_space_with_legible_architectural_features
-      - reveals_one_structural_intent_truth_only
-      - concerns_original_design_intent_not_current_state
-      - does_not_reveal_current_occupants_traps_or_post_construction_modifications
-      - does_not_function_against_natural_formations_or_fully_collapsed_rubble_with_no_readable_design
-      - does_not_create_roll_bonuses_by_itself
-      - does_not_reconstruct_the_full_building_history_or_builder_identity
+      - requires_creature_visible_with_at_least_one_unidentified_punto_vital
+      - targets_one_creature_only
+      - identifies_one_punto_vital_only
+      - difficulty_set_by_creature_category_not_vital_point_count
+      - does_not_reveal_what_the_vital_point_controls
+      - does_not_reveal_linked_cycles_or_techniques
+      - bonus_applies_to_user_only_not_shared_with_allies
+      - bonus_applies_to_T.A_and_T.E_only
+      - bonus_persists_until_punto_vital_destroyed_or_relocated
     tags:
       - utility
       - setup
-      - counter_positioning
-      - pattern_exploitation
+      - targeting
+      - structural_analysis
   - name: Cruzar la Punta
     name_en: Cross the Point
     status: authored_example
@@ -5041,8 +5070,8 @@ pilot_examples:
       sustain_rule: null
       end_rule: on_resolution
     cost:
-      rhythm_cost: 7
-      attrition_cost: 2
+      rhythm_cost: 3
+      attrition_cost: 1
       other: []
     saving_roll:
       model: defense_roll_contextual
@@ -5170,8 +5199,8 @@ pilot_examples:
       value: null
       sustain_rule: null
       end_rule: >
-        Ends the first time the user must make a D.R., C.R., or R.R. in
-        response to a hostile action after this Technique resolves.
+        Ends the first time the user makes a T.A., T.C., T.R., or T.E. against
+        the triggering enemy after this Technique resolves.
     cost:
       rhythm_cost: 3
       attrition_cost: 1
@@ -5182,27 +5211,24 @@ pilot_examples:
         The triggering attack must first be successfully defended with D.R.
     description: >
       The body leaves the readable position before the attacker settles their
-      read. No block. No contest. The target has moved, and for a moment the
-      new position is not yet fully mapped in the attacker's tracking. That
-      moment is the window.
+      read. No block. No contest. The target has moved — and the attacker's
+      acquired lock is momentarily void. That moment is the window to answer.
     effect: >
       Make your D.R. against the triggering attack using Evasion.
 
       If that D.R. fails, the Technique fails and the attack resolves
       normally.
 
-      If that D.R. succeeds, move up to 2 meters in any direction without
-      granting reaction opportunities. The next time the user must make a
-      D.R., C.R., or R.R. in response to a hostile action after this Technique
-      resolves, the user gains a bonus to that roll equal to their Evasion
-      competency rank: +1 at Novice, +2 at Adept, +3 at Expert, +4 at
-      Master, +5 at Consummate, +6 at Transcendent. This bonus reflects that
-      the new position has not yet settled in the hostile actor's tracking.
-      Once that defensive or resistance roll resolves, the window closes
-      regardless of outcome.
+      If that D.R. succeeds, the next time the user makes a T.A., T.C., T.R.,
+      or T.E. against the triggering enemy after this Technique resolves, the
+      user gains a bonus to that roll equal to their Evasion competency rank:
+      +1 at Novice, +2 at Adept, +3 at Expert, +4 at Master, +5 at
+      Consummate, +6 at Transcendent. Once that roll resolves, the window
+      closes regardless of outcome. The bonus applies against the triggering
+      enemy only.
     scaling: >
-      The defensive/resistance bonus scales directly with Evasion rank, and
-      higher Evasion also improves the D.R. that gates the displacement in the
+      The offensive/resistance bonus scales directly with Evasion rank, and
+      higher Evasion also improves the D.R. that gates the Technique in the
       first place. Deeper investment produces a more reliable reposition and a
       stronger unsettled-tracking window.
     cost_note: >
@@ -5219,9 +5245,9 @@ pilot_examples:
       - does_not_grant_an_attack_or_produce_damage
     tags:
       - defense
-      - mobility
       - counter_positioning
       - reposition
+      - offensive_window
   - name: Templar el Veneno
     name_en: Temper the Venom
     status: authored_example
@@ -5316,8 +5342,12 @@ pilot_examples:
         - no_atb_cost_the_body_responds_without_a_declared_action
         - access_cost_paid_through_conditioning_and_learning_requirements
     saving_roll:
-      model: none
-      effect_on_success: null
+      model: tolerancia_vs_venom_severity
+      note: >
+        The user makes a T.E. (Tolerancia) roll when a Veneno family ailment
+        settles. Difficulty is set by the venom's severity. On success, reduce
+        settled severity by one step. On failure, severity settles normally.
+        No declared action and no Rhythm or Attrition cost.
     description: >
       The body does not fight what it already carries. A Kha-Naghii who has
       trained under their own venom — and trained the discipline to hold
@@ -5325,17 +5355,12 @@ pilot_examples:
       external venom finds familiar terms. The metabolic adjustment is not a
       decision. It is the body's response to a known adversary.
     effect: >
-      When a Veneno family ailment settles on the user after all R.R.
-      processing, reduce the final settled severity by one step automatically:
-      Severe becomes Moderate, Moderate becomes Minor, Minor does not settle.
-      This reduction requires no check, no declared action, and no Rhythm or
-      Attrition cost. It applies after the standard Alteration Resistance Roll
-      resolves — the R.R. processes normally, and then the passive floor
-      modifier reduces the result by one additional step. This means a Kha-Naghii
-      who fails their R.R. still receives a better outcome than an untrained
-      character who fails the same roll. The effect applies to Veneno family
-      ailments only. Other degrading states that are not classified under the
-      Veneno family are not affected, even if they involve toxic substances,
+      When a Veneno family ailment settles on the user, make a T.E. (Tolerancia)
+      roll. The difficulty is set by the severity of the venom. On success,
+      reduce the final settled severity by one step: Severe becomes Moderate,
+      Moderate becomes Minor, Minor does not settle. On failure, the severity
+      settles normally. The roll requires no declared action and no Rhythm or
+      Attrition cost. Applies to Veneno family ailments only.
       unless the Narrator determines that the biological familiarity
       credibly extends to the specific source.
     scaling: >
@@ -5828,8 +5853,7 @@ pilot_examples:
       The user observes an enemy at close range with the intent to read
       construction faults, wear patterns, or damage history on their armor or
       equipment — or exposed joints, previous injury patterns, or anatomical
-      gaps on an unarmored or naturally protected target — or examines a static
-      structural element in exploration.
+      gaps on an unarmored or naturally protected target.
     requirements:
       level: null
       rank: Novice
@@ -5839,8 +5863,7 @@ pilot_examples:
         - Arqueología
       equipment: []
       states:
-        - in_combat_user_must_be_at_close_range_with_line_of_sight_to_the_target
-        - in_exploration_user_must_have_physical_access_to_the_structural_element
+        - close_range_with_line_of_sight_to_the_target
       prerequisite_techniques: []
     learning:
       self_study:
@@ -5900,23 +5923,19 @@ pilot_examples:
       is in range. Not where to hit. Where the material has already decided
       it will give.
     effect: >
-      Make an Arqueología check at difficulty set by the Narrator based on
-      the target's protective complexity, wear or injury state, and observation
-      conditions.
-      In combat — on success, identify one zone of the target where material
-      structure creates a fault: for armored targets, a construction gap,
-      wear point, or repair compromise in fabricated protection; for unarmored
-      or naturally protected targets, an exposed joint, a previous injury
-      site, or an anatomical gap where protection is thinnest. The difficulty
-      of the user's next attack against the identified zone is reduced by 1
-      step. The mark expires when the attack is made or at the end of the scene.
-      In exploration — on success, the Narrator identifies the most structurally
-      vulnerable point of the examined element — such as: the stone block with
-      the widest joint gap, the pillar base showing the deepest erosion, or the
-      floor section covering a hollow beneath. The Narrator chooses the specific
-      fact; the examples above are illustrative, not a closed menu.
-      On a failed check in either surface: no fault is identified. The material
-      does not yield a readable pattern at this examination.
+      Make an Arqueología check. Difficulty is set by the Narrator based on the
+      target's creature category or armor grade: Common/Grade 1 = Challenging;
+      Champion/Grade 2 = Rigorous; Elite/Grade 3 = Exacting.
+      On success, identify one zone of the target where material structure
+      creates a fault — for armored targets: a construction gap, wear point, or
+      repair compromise in fabricated protection; for unarmored or naturally
+      protected targets: an exposed joint, a previous injury site, or an
+      anatomical gap where protection is thinnest.
+      The user's next attack against the identified zone adds [Arqueología
+      rank]d2 to the Impact roll. These bonus dice are not the designated
+      critical die and do not affect critical probability. The mark expires
+      when the attack is made or at the end of the scene.
+      On a failed check: no fault is identified.
     scaling: >
       Higher Arqueología competency may improve reliability against well-
       maintained or recently repaired armor, reduce difficulty on complex
@@ -5924,24 +5943,23 @@ pilot_examples:
       than close range. Higher tiers may allow identifying multiple fault zones
       or extend the mark's duration beyond one attack.
     cost_note: >
-      Rhythm 3 / Attrition 1 is deliberate. The combat surface produces a
-      1-step difficulty reduction on one follow-up attack — meaningful but
-      bounded, and it costs the user an action plus the check before the
-      benefit applies. The exploration surface functions as a standard
-      information technique with no ATB cost. The cost matches the established
-      Naghii information technique anchor and reflects that the combat benefit
-      requires a setup action rather than producing immediate effect.
+      Rhythm 3 / Attrition 1 is deliberate. The technique produces one die
+      advancement on one follow-up attack — meaningful but bounded, and it
+      costs the user an action plus the check before the benefit applies. The
+      cost matches the established Naghii setup technique anchor and reflects
+      that the combat benefit requires a setup action rather than producing
+      immediate effect.
     restrictions:
-      - combat_use_requires_close_range_with_line_of_sight_to_the_target
-      - exploration_use_requires_physical_access_to_the_structural_element
-      - combat_mark_applies_to_one_zone_of_one_target_only
-      - combat_mark_expires_on_use_or_end_of_scene
+      - requires_close_range_with_line_of_sight_to_the_target
+      - mark_applies_to_one_zone_of_one_target_only
+      - mark_expires_on_use_or_end_of_scene
       - does_not_function_against_targets_with_no_readable_material_structure_such_as_purely_fluid_or_incorporeal_forms
-      - failed_check_yields_no_benefit_in_either_surface
+      - failed_check_yields_no_benefit
     tags:
       - utility
       - pattern_exploitation
       - setup
+      - die_advancement
       - counter_read
   - name: Tomar la Corriente
     name_en: Take the Current
