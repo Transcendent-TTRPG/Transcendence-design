@@ -2321,19 +2321,17 @@ If the intercepted attack carries a non-damage rider, such as forced movement, a
 | `range` | profile-bearing surface reach |
 | `area` | single enemy |
 | `duration` | instant |
-| `cost` | Rhythm 6; Attrition 2 |
-| `saving_roll` | D.R. contest; counter requires clean defensive margin |
+| `cost` | Rhythm 6; Attrition 3 |
+| `saving_roll` | D.R. contest; counterattack fires on any success |
 | `tags` | attack, defense, disruption, counter_positioning |
 
 **Fantasy:** The user does not wait behind the shield. They drive the shield into the moment where the enemy's action has begun but has not yet become inevitable. If the current breaks completely against the shield, the user's answering strike lands before the enemy can rebuild the flow.
 
-**Effect:** Contest the triggering execution with a shield-based `D.R.`. If the enemy's attack or execution still beats your `D.R.`, the Technique fails and the enemy resolves normally.
+**Effect:** When the user is the target of an enemy attack, whether by direct designation or through any effect or condition that makes them the target, contest it with a `D.R.`. If the enemy's attack beats the user's `D.R.`, the Technique fails and the enemy resolves normally.
 
-If your `D.R.` equals or exceeds the enemy's relevant attack or execution roll, the shield breaks the execution cleanly. The enemy's action still consumes its declared Rhythm and any declared cost, but it does not damage you through that contact.
+If the user's `D.R.` equals or exceeds the enemy's attack roll, the shield breaks the execution cleanly. The enemy's action still consumes its declared Rhythm and any declared cost, but it does not damage the user through that contact. The user may immediately make one counterattack against that enemy with one ready manufactured weapon, one natural weapon, or a shield item that has explicit attack stats. Resolve the counterattack normally with its own `A.R.` and `I.R.`. This counterattack does not add another Rhythm cost, but it cannot include movement, a second Technique, or a follow-up window.
 
-If your `D.R.` exceeds the enemy's roll by **3 or more**, you may immediately make one counterattack against that enemy with one ready manufactured weapon, one natural weapon, or a shield item that has explicit attack stats. Resolve the counterattack normally with its own `A.R.` and `I.R.`. This counterattack does not add another Rhythm cost, but it cannot include movement, a second Technique, or a follow-up window.
-
-If the triggering action was a telegraphed action rather than a direct attack, the Narrator uses the same margin logic against the action's relevant execution roll, fixed threat value, or declared interruption threshold. If no such value exists, this Technique can spoil the setup but cannot produce the counterattack.
+If the triggering action was a telegraphed action with no roll of its own, the Narrator determines whether an applicable threshold exists. If none exists, this Technique can spoil the setup but cannot produce the counterattack.
 
 **Restrictions:**
 
@@ -2360,7 +2358,7 @@ If the triggering action was a telegraphed action rather than a direct attack, t
 | `range` | self |
 | `area` | anchored point |
 | `duration` | sustained while anchored |
-| `cost` | Rhythm 7; Attrition 2 |
+| `cost` | Rhythm 3; Attrition 1 |
 | `saving_roll` | none |
 | `tags` | defense, stability, mitigation, anti_displacement |
 

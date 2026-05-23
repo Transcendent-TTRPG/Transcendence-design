@@ -131,7 +131,7 @@ dos anclas de sensación real, por ejemplo `6` entre estándar y pesada.
 | Interactuar | 3 | 1 * |
 | Moverse | 5 | 1 |
 | Ocultarse | 6 | 1 |
-| Usar Especialización | 6 | 1 |
+| Usar Especialización | 4 | 1 |
 | Atacar con arma natural | 6 | 1 |
 | Atacar con arma a una mano | 6 | 1 |
 | Atacar con arma a dos manos | 7 | 1 |

@@ -67,16 +67,16 @@ base_actions:
 
     - id: specialization
       label: Specialization
-      rhythm_cost: 6
+      rhythm_cost: 4
       attrition_cost: 1
       notes: >
         Use of any specialization in a hostile scene: jumping, acrobatics, perception,
         interpretation, tracking, social reading, crafting under pressure, etc.
         The cost is the same regardless of specialization type because the reason is the same:
         the character is under active scene pressure and the action requires real attention and effort.
-        Base specialization use is intentionally slower than many authored Techniques so that
-        learned expressions remain the primary reward language of play. Techniques may later
-        modify this cost up or down.
+        Set at 4 (between Quick and Standard) to encourage creative specialization use in combat —
+        specializations are the flexible action space of play and should be efficient enough to
+        compete with attacking. Techniques may still modify this cost up or down.
 
     - id: hide
       label: Hide
