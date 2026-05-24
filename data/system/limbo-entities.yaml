@@ -1,0 +1,418 @@
+# Entidades del Limbo — autoridad de diseño
+#
+# Referencia cruzada:
+#   - data/system/limbo-manifestations.yaml → vestigios, vínculos, flujo ambiental
+#   - data/system/ailments.yaml             → aflicciones del Vacío por sentido
+#   - docs/system/limbo-entities.md         → referencia narrativa y guía de autoría
+#
+# El Tauma es la energía elemental del mundo. Los Primordiales son entidades
+# compuestas de Tauma puro — toda entidad del Limbo es un Primordial.
+# El Tauma en sí no equivale a las criaturas: la energía y la entidad son distintas,
+# como el carbono y los seres vivos.
+
+meta:
+  version: "1.0"
+  status: draft
+  last_updated: "2026-05-24"
+
+# ──────────────────────────────────────────────────────
+# TAXONOMÍA DE CRIATURAS
+# ──────────────────────────────────────────────────────
+
+taxonomia_criaturas:
+  descripcion: >
+    Toda criatura pertenece a una de tres naturalezas. La naturaleza determina
+    su relación con el Tauma, no su peligrosidad ni su categoría de combate.
+  tipos:
+    - id: mortal
+      nombre_es: Mortal
+      nombre_en: Mortal
+      descripcion: >
+        Criatura biológica sin capacidad inherente para percibir o manipular Tauma.
+        No puede interactuar con el Limbo por sí sola. El Tauma es invisible e
+        inaccesible para ella salvo a través de un vestigio o vínculo.
+
+    - id: anomalia
+      nombre_es: Anomalía
+      nombre_en: Anomaly
+      descripcion: >
+        Criatura de base biológica mortal que ha desarrollado sensibilidad o capacidad
+        de manipulación taumática. Esto ocurre por exposición prolongada a zonas de
+        concentración extrema de Tauma, o por haber sido poseída por una entidad del
+        Limbo. Las Anomalías pueden percibir aspectos del Limbo de forma limitada e
+        imprecisa; esa percepción es poco confiable.
+
+    - id: primordial
+      nombre_es: Primordial
+      nombre_en: Primordial
+      descripcion: >
+        Entidad compuesta enteramente de Tauma puro. No posee estructura biológica
+        convencional. Toda entidad del Limbo es un Primordial. Su existencia fuera del
+        Limbo depende de la concentración taumática local o de su vínculo con un objeto
+        físico.
+
+# ──────────────────────────────────────────────────────
+# NIVELES DE ENTIDAD
+# ──────────────────────────────────────────────────────
+
+niveles_entidad:
+  descripcion: >
+    Todo Primordial pertenece a uno de cuatro niveles. El nivel determina su
+    coherencia como entidad, su potencia taumática, el tipo de manifestación
+    que puede dejar y los requisitos para interactuar con ella.
+  niveles:
+    - id: fragmento
+      nombre_es: Fragmento
+      nombre_en: Fragment
+      descripcion: >
+        Residuo taumático con cohesión mínima. Sin voluntad definida ni intención
+        clara. Es Tauma bruto que ha adquirido la mínima forma necesaria para dejar
+        una huella. Sus efectos son débiles. Siempre arquetípico — no existen
+        Fragmentos únicos.
+      coherencia: mínima — sin voluntad clara
+      unicidad: siempre arquetípico
+      vestigio:
+        disponible: true
+        cargas: "2–5"
+        nota: >
+          Efectos menores. Se agotan rápido. Descartables por diseño. El Narrador
+          determina el valor exacto dentro del rango en secreto al colocar el objeto.
+      vinculo:
+        disponible: true
+        nr_minimo: 1
+        nota: >
+          Accesible desde el inicio del juego. Requiere aflicción activa del sentido
+          vinculado. El costo en cordura es bajo, el efecto también.
+
+    - id: entidad
+      nombre_es: Entidad
+      nombre_en: Entity
+      descripcion: >
+        Voluntad reconocible. Naturaleza e intención propias. La mayoría de vestigios
+        y vínculos del juego provienen de este nivel. Puede ser malévola, benévola,
+        juguetona, indiferente, desesperada u otras disposiciones. Casi siempre
+        arquetípica — el mismo tipo de entidad puede existir en múltiples instancias
+        a lo largo del mundo y la historia.
+      coherencia: definida — naturaleza e intención propias
+      unicidad: casi siempre arquetípico
+      vestigio:
+        disponible: true
+        cargas: "5–10"
+        nota: >
+          Recurso valioso de duración incierta. El agotamiento es un momento
+          significativo aunque no necesariamente narrativo.
+      vinculo:
+        disponible: true
+        nr_minimo: 3
+        nota: >
+          Requiere progresión real en competencias. El efecto escala con la
+          severidad de la aflicción activa del portador.
+
+    - id: soberano
+      nombre_es: Soberano
+      nombre_en: Sovereign
+      descripcion: >
+        Identidad marcada y poder alto. Semi-único o único dentro de su arquetipo.
+        Sus efectos son significativos y sus intenciones, complejas. Interactuar
+        con un Soberano tiene consecuencias narrativas además de mecánicas —
+        la entidad tiene agenda. Diseñar un Soberano implica construir un personaje
+        con historia, no solo un efecto.
+      coherencia: fuerte — identidad individual marcada
+      unicidad: puede ser único
+      vestigio:
+        disponible: true
+        cargas: "10–15"
+        nota: >
+          Objeto de historia o mitología. Su agotamiento es un evento narrativo
+          que el Narrador puede preparar.
+      vinculo:
+        disponible: true
+        nr_minimo: 5
+        nota: >
+          Solo personajes con competencias significativamente avanzadas pueden
+          sostener la conexión sin consecuencias severas. El costo en cordura
+          escala con la severidad de la aflicción.
+
+    - id: abismal
+      nombre_es: Abismal
+      nombre_en: Abyssal
+      descripcion: >
+        Antiguo. Potencialmente único. Su escala de influencia puede afectar el
+        mundo, no solo a un individuo. No deja vestigios — si alguna vez estuvo
+        en un objeto, lo transformó en un vínculo permanente o lo destruyó.
+        Su presencia en el mundo físico no es una mecánica de progresión: es un
+        evento de ficción.
+      coherencia: absoluta — voluntad singular e historia propia
+      unicidad: frecuentemente único
+      vestigio:
+        disponible: false
+        nota: >
+          Los Abismales no dejan vestigios. Su huella en un objeto crea un vínculo
+          permanente o destruye el objeto.
+      vinculo:
+        disponible: true
+        nr_minimo: null
+        condicion: narrativa — ningún NR lo desbloquea
+        nota: >
+          Un vínculo Abismal es un evento de campaña, no una adquisición de
+          progresión. Requiere una circunstancia específica de la ficción. Sus
+          consecuencias sobre la cordura son permanentes y de alcance narrativo.
+
+# ──────────────────────────────────────────────────────
+# UNICIDAD
+# ──────────────────────────────────────────────────────
+
+unicidad:
+  descripcion: >
+    Toda entidad del Limbo es arquetípica o única. Esto determina si su vestigio
+    o vínculo es irrepetible o si existen múltiples instancias del mismo tipo
+    distribuidas a lo largo del mundo y la historia.
+  tipos:
+    - id: arquetipico
+      nombre_es: Arquetípico
+      nombre_en: Archetypal
+      descripcion: >
+        Existen muchas instancias del mismo tipo de entidad. Una entidad de vuelo
+        puede estar en una pluma en un continente y en una vasija en otro, siglos
+        después. La categoría de capacidad es la misma; la naturaleza, intención y
+        comportamiento de cada instancia son propios.
+      implicacion_narrativa: >
+        Distintas culturas, épocas y regiones pueden haber conocido versiones del
+        mismo arquetipo con nombres, objetos y rituales diferentes. Todos se refieren
+        a la misma clase de entidad, no a la misma entidad. Esto puede ser fuente
+        de conflictos entre facciones que creen poseer algo único.
+
+    - id: unico
+      nombre_es: Único
+      nombre_en: Singular
+      descripcion: >
+        Solo existe una instancia de esta entidad en el Limbo. Su vestigio o vínculo
+        no puede estar en dos lugares. Si el objeto que lo contiene se destruye,
+        la entidad se disuelve o regresa permanentemente al Limbo.
+      implicacion_narrativa: >
+        Un objeto único puede ser el centro de conflictos entre facciones, culturas
+        o periodos históricos. Su destrucción tiene consecuencias irreversibles para
+        la entidad y para quienes dependían de ella.
+
+# ──────────────────────────────────────────────────────
+# SCHEMA DE ENTIDAD — PROPIEDADES REQUERIDAS PARA AUTORÍA
+# ──────────────────────────────────────────────────────
+
+entity_schema:
+  descripcion: >
+    Propiedades que el Narrador debe definir al diseñar una entidad del Limbo.
+    Este schema aplica a vestigios y vínculos por igual. Una entidad bien diseñada
+    es un personaje con naturaleza e intención propias — no un ítem mágico.
+  propiedades:
+    - campo: id
+      tipo: string
+      descripcion: Identificador único de esta entidad.
+      requerido: true
+
+    - campo: nombre
+      tipo: string
+      descripcion: >
+        Nombre de la entidad, si lo tiene. No toda entidad es nombrable. Los Fragmentos
+        rara vez tienen nombre; los Soberanos y Abismales casi siempre.
+      requerido: false
+
+    - campo: nivel
+      tipo: enum [fragmento, entidad, soberano, abismal]
+      requerido: true
+
+    - campo: naturaleza
+      tipo: >
+        string — valores de referencia (no es lista cerrada):
+        malévola, benévola, juguetona, indiferente, desesperada, predatoria,
+        contemplativa, servicial, hostil, posesiva, curiosa
+      descripcion: >
+        Disposición base de la entidad. Afecta cómo entrega pistas y qué quiere
+        del portador. No es un valor moral — una entidad benévola puede ser
+        igualmente peligrosa que una malévola si sus objetivos divergen.
+      requerido: true
+
+    - campo: intencion
+      tipo: string
+      descripcion: >
+        Qué quiere esta entidad del portador o del mundo. Puede ser simple
+        (alimentarse de la aflicción acumulada) o compleja (completar algo
+        que no pudo antes de quedar atrapada). Guía el contenido de las pistas
+        y el comportamiento de la entidad a lo largo del tiempo.
+      requerido: true
+
+    - campo: sentidos
+      tipo: list of enum [vista, oido, olfato, gusto, tacto]
+      descripcion: >
+        Sentido(s) a través del cual la entidad se comunica y genera aflicciones.
+        Un vestigio de sentido único solo genera aflicciones de ese sentido.
+        Un vínculo multi-sentido requiere aflicción activa en todos los sentidos
+        vinculados para poder usarse.
+      requerido: true
+      min_sentidos: 1
+
+    - campo: unicidad
+      tipo: enum [arquetipico, unico]
+      requerido: true
+
+    - campo: arquetipo
+      tipo: string
+      descripcion: >
+        Si es arquetípico, a qué familia pertenece. Permite agrupar entidades del
+        mismo tipo aunque sean instancias distintas. Ejemplos: vuelo, percepción
+        temporal, fuerza bruta, ilusión, memoria.
+      requerido: si unicidad == arquetipico
+
+    - campo: capacidad_categoria
+      tipo: >
+        string — categorías de referencia (no es lista cerrada):
+        locomocion, percepcion, temporal, fisica, informacion, ambiental, biologica, mental
+      descripcion: >
+        Categoría general del efecto que otorga. Define el tipo de capacidad
+        sin especificar los detalles mecánicos exactos.
+      requerido: true
+
+    - campo: objeto_preferente
+      tipo: string
+      descripcion: >
+        Tipo de objeto en el que esta entidad tiende a impregnarse. No es
+        obligatorio — el Tauma puede estar en cualquier objeto — pero el objeto
+        preferente tiene coherencia con la naturaleza, capacidad y sentido de la
+        entidad. Ignorarlo deliberadamente puede crear misterio o subvertir
+        expectativas.
+      requerido: false
+
+    - campo: claves_pista
+      tipo: list of string
+      descripcion: >
+        Imágenes, sensaciones o patrones recurrentes que esta entidad usa para
+        comunicarse. Son la materia prima que el Narrador (o el sistema de IA)
+        usa para generar pistas consistentes con la identidad de esta entidad
+        a lo largo del tiempo. Deben reflejar la naturaleza, el sentido vinculado
+        y la intención.
+      requerido: true
+      min_items: 3
+
+    - campo: vestigio
+      tipo: object
+      descripcion: Completar solo si esta entidad se diseña como vestigio.
+      campos_hijo:
+        - campo: cargas
+          tipo: string
+          descripcion: >
+            Rango de cargas según el nivel (ver niveles_entidad). El Narrador
+            determina el valor exacto en secreto al colocar el objeto.
+        - campo: efecto
+          tipo: string
+          descripcion: Descripción mecánica del efecto al usar el vestigio.
+      requerido: si se diseña como vestigio
+
+    - campo: vinculo
+      tipo: object
+      descripcion: Completar solo si esta entidad se diseña como vínculo.
+      campos_hijo:
+        - campo: nr_minimo
+          tipo: integer (1, 3, 5) o null
+          descripcion: >
+            NR promedio mínimo requerido para usar el vínculo.
+            Fragmento: 1 · Entidad: 3 · Soberano: 5 · Abismal: null (narrativo).
+        - campo: efecto_base
+          tipo: string
+          descripcion: Efecto con la aflicción en severidad mínima requerida.
+        - campo: escala_severidad
+          tipo: list of object
+          descripcion: >
+            Cómo escala el efecto con la severidad de la aflicción activa del portador.
+            Cada entrada define el efecto para severidades Leve, Moderada y Grave.
+      requerido: si se diseña como vínculo
+
+# ──────────────────────────────────────────────────────
+# SENTIDOS Y AFLICCIONES DEL VACÍO
+# ──────────────────────────────────────────────────────
+
+sentidos_aflicciones:
+  descripcion: >
+    Cada sentido tiene aflicciones del Vacío asociadas. La aflicción específica
+    que desarrolla un portador depende de la entidad y de cómo elige comunicarse.
+    El sentido vinculado de un vestigio o vínculo determina qué grupo de aflicciones
+    puede generarse al interactuar con él. Los efectos negativos y positivos
+    completos de cada aflicción se encuentran en data/system/ailments.yaml.
+  sentidos:
+    - id: vista
+      nombre_es: Vista
+      nombre_en: Sight
+      aflicciones:
+        - id: esquizofrenia_paranoide
+          nombre_es: Esquizofrenia Paranoide
+        - id: agnosia_visual
+          nombre_es: Agnosia Visual
+        - id: alucinaciones_visuales
+          nombre_es: Alucinaciones Visuales
+
+    - id: oido
+      nombre_es: Oído
+      nombre_en: Hearing
+      aflicciones:
+        - id: tinnitus
+          nombre_es: Tinnitus
+        - id: hiperacusia
+          nombre_es: Hiperacusia
+        - id: eco_persistente
+          nombre_es: Eco Persistente
+
+    - id: olfato
+      nombre_es: Olfato
+      nombre_en: Smell
+      aflicciones:
+        - id: phantosmia
+          nombre_es: Phantosmia
+        - id: hiperosmia
+          nombre_es: Hiperosmia
+
+    - id: gusto
+      nombre_es: Gusto
+      nombre_en: Taste
+      aflicciones:
+        - id: disgeusia
+          nombre_es: Disgeusia
+        - id: compulsion_alimentaria
+          nombre_es: Compulsión Alimentaria
+
+    - id: tacto
+      nombre_es: Tacto
+      nombre_en: Touch
+      aflicciones:
+        - id: formicacion
+          nombre_es: Formicación
+        - id: anestesia_parcial
+          nombre_es: Anestesia Parcial
+        - id: hipertacto
+          nombre_es: Hipertacto
+
+# ──────────────────────────────────────────────────────
+# PREGUNTAS DE DISEÑO ABIERTAS
+# ──────────────────────────────────────────────────────
+
+open_questions:
+  - id: E-01
+    pregunta: >
+      ¿Las Anomalías tienen acceso diferenciado a vestigios y vínculos por su
+      sensibilidad natural al Tauma, o el acceso es igual para Mortales y Anomalías?
+    destino: sistema de entidades / sistema de aflicciones
+
+  - id: E-02
+    pregunta: >
+      ¿El costo en cordura de los vínculos es fijo por uso o escala con la
+      severidad de la aflicción activa del portador?
+    destino: sistema de cordura — cuando se diseñe
+
+  - id: E-03
+    pregunta: >
+      ¿Cuántas pistas son necesarias para que el jugador pueda declarar el
+      descubrimiento de un vestigio? ¿Varía por nivel de entidad?
+    destino: mecánica de descubrimiento — Parte 3 del framework
+
+  - id: E-04
+    pregunta: >
+      ¿Un Fragmento puede evolucionar a Entidad si absorbe suficiente aflicción
+      del portador con el tiempo, o los niveles son fijos desde el origen?
+    destino: lore del Limbo

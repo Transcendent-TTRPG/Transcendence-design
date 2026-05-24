@@ -1,13 +1,15 @@
 # Manifestaciones del Limbo — autoridad de diseño
 #
 # Referencia cruzada:
+#   - data/system/limbo-entities.yaml            → taxonomía y schema de entidades del Limbo
 #   - data/system/environmental-conditions.yaml  → condiciones extranaturales generadas por filtración
+#   - docs/system/limbo-entities.md              → referencia narrativa de entidades
 #   - docs/system/environmental-conditions.md    → impacto mecánico en entorno
 #   - docs/system/limbo-manifestations.md        → referencia de diseño
 #
 # El Limbo es la dimensión de origen del Tauma. Su energía se filtra al mundo físico
 # a través de tres manifestaciones. Las condiciones extranaturales son consecuencia de
-# la filtración intensa. Kaodis es la capa interpretativa religiosa, no la causa mecánica.
+# la filtración intensa. 
 
 meta:
   version: "1.0"
@@ -21,10 +23,6 @@ limbo:
     Dimensión paralela impercibible para las criaturas normales. Origen del Tauma.
     Su energía puede filtrarse al mundo físico de tres formas: flujo ambiental,
     vestigios y vínculos.
-  nota_teologica: >
-    En la religión elemental, los fenómenos del Limbo se atribuyen a Kaodis
-    (deidad del Vacío, hijo de Lampsi y Nytha). Kaodis es la interpretación
-    religiosa, no la causa mecánica.
   perceptibilidad:
     criaturas_normales: no perciben el Limbo directamente
     capacidades_de_deteccion:
