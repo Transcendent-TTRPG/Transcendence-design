@@ -166,7 +166,10 @@ initial_position:
       formula: "Reference Point − Opening Value"
       description: Highest Opening Value → position 0 → acts first. All others placed further right by their difference from the Reference Point.
   rule: The participant with the highest Opening Value is placed at 0 and acts first. Rhythm costs stack on top from the first activation onward.
-  tiebreak: Raw Preparation (before situational modifiers). If still tied, Narrator uses a fixed secondary criterion.
+  tiebreak: >
+    Raw Preparation (before situational modifiers).
+    If still tied between an NPC and a PC: Narrator decides who acts first.
+    If still tied between PCs: players decide their own order.
   situational_modifiers:
     - situation: Ambushing
       modifier: +2

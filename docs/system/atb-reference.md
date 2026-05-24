@@ -100,7 +100,10 @@ Si dos o más fichas quedan en la misma posición — al inicio o durante el com
 
 - actúa primero quien tenga mayor **Preparación bruta** (antes de modificadores situacionales)
 
-Si también empatan en Preparación bruta, el grupo puede usar una regla secundaria fija o el Narrador puede resolver el orden de la manera más clara para la mesa.
+Si también empatan en Preparación bruta:
+
+- **PNJ contra PJ:** el Narrador decide quién actúa primero.
+- **PJ contra PJ:** los jugadores deciden el orden entre sí.
 
 ---
 
@@ -424,7 +427,7 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 - Mayor Valor de Apertura → posición 0 → actúa primero.
 - Los costos de ritmo se acumulan sobre la posición inicial.
 - No hay rondas fijas.
-- Preparación bruta desempata en caso de empate.
+- Preparación bruta desempata en caso de empate. PNJ contra PJ: el Narrador decide. PJ contra PJ: los jugadores deciden.
 - Reacciones también cuestan ritmo.
 - Ritmo y Desgaste no son lo mismo.
 - Los subsistemas importantes pueden tener su propio track.
