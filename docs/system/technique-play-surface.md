@@ -231,6 +231,15 @@ Examples:
 - `3 m`
 - `Line of Sight`
 
+#### ES publication surface — valid Rango values
+
+| Value | When to use |
+| --- | --- |
+| `Personal` | The Technique targets only the user or their immediately held point |
+| `Alcance del arma` | The Technique's reach is defined by the weapon or natural attack form |
+| `Xm` (e.g., `3m`, `5m`) | Fixed metric range independent of weapon |
+| `Rango Visual` | Effect applies at visual range — for perception, read, or survey Techniques |
+
 ### 6. Area
 
 The tactical scope of the Technique.
@@ -243,6 +252,18 @@ Examples:
 - `Cone 2 m`
 - `Zone 1 m`
 
+#### ES publication surface — valid Área values
+
+| Value | When to use |
+| --- | --- |
+| `Tú` | Effect applies only to the user — NOT `Personal` |
+| `1 Criatura` | Single target at the specified range |
+| `Circular Xm` | Circular area around a point (radius in meters) |
+| `Cono Xm` | Cone emanating from the user |
+| `Línea Xm` | Straight line from the user |
+
+**Key distinction:** `Alcance del arma` belongs in **Rango**, not in **Área**. If a weapon-rooted Technique targets one creature at weapon reach, that is `Rango: Alcance del arma` / `Área: 1 Criatura`.
+
 ### 7. Duration
 
 How long the effect matters in play.
@@ -252,6 +273,19 @@ Examples:
 - `Instant`
 - `Until next activation`
 - `Scene`
+
+#### ES publication surface — valid Duración values
+
+**Only two values are valid on ES publication surfaces:**
+
+| Value | When to use |
+| --- | --- |
+| `Instantáneo` | Effect resolves once and ends — no ongoing state |
+| `Permanente` | Effect persists until a defined condition removes it |
+
+Sustained stances (e.g., Asentar la Piedra), ongoing bonuses, and lingering states are `Permanente`. End conditions (when the stance breaks, when the state clears) belong in the **Efecto** text, not in the Duración field.
+
+Do **not** use: `Sostenida`, `Hasta Moverse`, `Scene`, `Hasta el siguiente turno`, or any other intermediate value. If an effect is not instantaneous, it is Permanente — its end conditions live in the effect text.
 
 ### 8. Primary Roll
 
