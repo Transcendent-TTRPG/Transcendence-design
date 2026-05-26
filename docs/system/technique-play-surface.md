@@ -162,6 +162,21 @@ offensive exchange or impact payload, it may surface as:
 
 The goal is fast reading, not preserving every authority-side taxonomy detail.
 
+#### ES publication surface — valid Type - Category values
+
+| Value | When to use |
+| --- | --- |
+| `Activo - Ataque` | Active technique whose primary resolution is a T.A. |
+| `Activo - Utilidad` | Active technique with no attack roll — buffs, stances, declarations |
+| `Activo - Utilidad · Postura` | Active stance that persists until broken |
+| `Reactivo - Ataque` | Reactive technique whose primary resolution is a T.A. |
+| `Reactivo - Utilidad` | Reactive technique resolving through T.D., T.R., T.E., or no roll |
+
+**`Reactivo - Defensa` is not a valid ES play-surface category.** The defensive
+purpose of a technique does not create a separate category — it surfaces as
+`Reactivo - Ataque` if the primary resolution is T.A., or `Reactivo - Utilidad`
+in all other reactive cases.
+
 ### 2. Name
 
 The published player-facing name.
