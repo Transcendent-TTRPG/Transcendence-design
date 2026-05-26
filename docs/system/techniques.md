@@ -3986,21 +3986,30 @@ On a failed check: no fault is identified.
 
 **World origin:** Naghii archive survey training prepares practitioners for environments where floor integrity cannot be assumed — partially collapsed ziggurats, flooded antechambers, rubble-covered record vaults. The Naghii method uses the tail as a third contact point against low surfaces along the movement path. Non-Naghii learn an equivalent reflex through any tradition that trains deliberate third-contact navigation on bad terrain: a weapon or staff used as a low brace, a hand placed against a wall, or another trained weight-redistribution method.
 
-**Why this is not raw Equilibrio:** Raw Equilibrio use produces narrative stability — the character does not fall, looks composed, is not slowed obviously — without a defined mechanical benefit. `Sentar el Tercer Punto` converts 2 spaces of difficult terrain into free movement through the Equilibrio check: terrain speed penalties, difficulty increases, and mandatory Balance checks do not apply to those 2 spaces on a successful roll.
+**Why this is not raw Equilibrio:** Raw Equilibrio use produces narrative stability — the character does not fall, looks composed, is not slowed obviously — without a defined mechanical benefit. `Sentar el Tercer Punto` converts a number of spaces equal to the user's Equilibrio rank bonus + 1 into free movement through the Equilibrio check: terrain speed penalties, difficulty increases, and mandatory Balance checks do not apply to those spaces on a successful roll.
 
-**Primary interaction surface:** terrain traversal — 2 spaces of free movement through difficult terrain on a successful Equilibrio check.
+**Primary interaction surface:** terrain traversal — free movement through difficult terrain equal to Equilibrio rank bonus + 1 spaces on a successful Equilibrio check.
 
-**Secondary interaction surface:** positional continuity — maintains tactical engagement range and approach options across surfaces that would otherwise disrupt them.
+**Secondary interaction surface:** positional continuity — maintains tactical engagement range and approach options across surfaces that would otherwise disrupt them. At higher ranks, this can cross obstacles that would otherwise break any engagement window.
 
-**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique grants 2 spaces of free terrain movement — enough to cross meaningful obstacles and engage or reposition from terrain that would penalize other combatants. The Equilibrio check is its own gate; the effect is purely positional with no condition output on an opponent. One extra rhythm over a simple one-action negation reflects that the benefit applies over 2 spaces of movement rather than a single action moment.
+**Cost note:** `Rhythm 3 / Attrition 1` is deliberate. The Technique grants free terrain movement that scales with rank — enough to cross meaningful obstacles at Novice, and broad enough to remain valuable at Expert and above. The Equilibrio check is its own gate; the effect is purely positional with no condition output on an opponent.
 
-**Effect:** Make an Equilibrio check. On success, identify and use a stable anchor point along the movement path — extending the tail, bracing a weapon, placing a hand, or using whatever contact surface is available — and move up to 2 spaces through the triggering terrain as if on stable ground. Terrain speed penalties, difficulty increases, and mandatory Balance checks do not apply to those 2 spaces. On failure, terrain effects apply normally.
+**Effect:** Make an Equilibrio check. On success, identify and use a stable anchor point along the movement path — extending the tail, bracing a weapon, placing a hand, or using whatever contact surface is available — and move up to a number of spaces equal to your Equilibrio rank bonus + 1 through the triggering terrain as if on stable ground. Terrain speed penalties, difficulty increases, and mandatory Balance checks do not apply to those spaces. On failure, terrain effects apply normally.
+
+| Equilibrio rank | Spaces |
+| --- | ---: |
+| Novice | 2 |
+| Adept | 3 |
+| Expert | 4 |
+| Master | 5 |
+| Consummate | 6 |
+| Transcendent | 7 |
 
 **Restrictions:**
 
 - requires at least one stable anchor point reachable along the movement path
-- grants free movement for 2 spaces only — terrain effects apply normally beyond those 2 spaces
-- does not negate non-terrain instability sources at Novice tier
+- free movement applies only to spaces equal to Equilibrio rank bonus + 1 — terrain effects apply normally beyond those spaces
+- does not negate non-terrain instability sources
 - failed Equilibrio check provides no benefit
 
 ---
