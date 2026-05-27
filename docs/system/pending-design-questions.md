@@ -24,7 +24,7 @@ Notas actuales:
 - `wounds-and-damage.md` ya define `Funcional`, `Saturada`, `Colapsada` y Desbordamiento.
 - `wounds-and-damage.md` ya define penalizadores por zona con escala basada en ranuras ocupadas.
 - `wounds-and-damage.md` ya define que una Herida Crítica no fuerza `R.R.` por defecto; solo lo hace por Colapso vital, ataque/Técnica, Agravio o circunstancia extrema.
-- `wounds-and-damage.md` ya define la diferencia provisional entre estabilizar, tratar y curar. Los descansos de 30 y 60 minutos estabilizan; solo el descanso completo con tratamiento libera ranuras.
+- `wounds-and-damage.md` define dos pasos de recuperación: Estabilizar (detiene deterioro, no libera ranuras) y Tratar (Descanso Completo con T.E. Medicina — libera 1 ranura estabilizada en caso de éxito). Curar ya no existe como paso separado.
 - `wounds-and-damage.md` ya define ruptura de equipo: si Potencia Crítica es igual o superior a Durabilidad, rompe; si es menor, reduce `1` Durabilidad.
 - `wounds-and-damage.md` ya define partes de criatura como soportes de Bloqueo, HP, Durabilidad, Potencia y habilidades vinculadas.
 - La extracción de recursos de criaturas queda para su propia sección.

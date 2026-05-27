@@ -4403,7 +4403,7 @@ On failure, the intervention is too slow, slips, or cannot hold under current pr
 
 - only works on current physical trauma, not curses, fear, command effects, pure pain without a stabilizable bodily source, or abstract morale collapse
 - if the target's problem is an Ailment, that Ailment must already have a physical logic that can plausibly be braced, bound, or stabilized; otherwise this Technique does not apply
-- cannot free wound slots, restore lost HP-equivalent resources, or count as `Tratar` or `Curar`
+- cannot free wound slots, restore lost HP-equivalent resources, or count as `Tratar`
 - cannot remove more than one current trauma output per use
 - requires actual bodily access and plausible stabilizing means
 - does not prevent future worsening if the wound is reopened, stressed again, or the fiction makes the temporary stabilization fail

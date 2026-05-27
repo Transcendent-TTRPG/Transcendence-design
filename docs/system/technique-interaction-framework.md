@@ -134,7 +134,7 @@ Las superficies son los sistemas que una Técnica puede tocar. No son etiquetas 
 | `cost_pressure` | Desgaste, Aguante, Fatiga, carga sostenida, costo corporal |
 | `damage_impact` | Impacto, Bloqueo, daño contra HP, daño contra zonas de NPC |
 | `critical_breaking_parts` | Impacto Crítico, dado crítico, Potencia Crítica, Durabilidad, romper partes |
-| `wounds_body_state` | heridas, ranuras, saturación, colapso, estados corporales, estabilizar/tratar/curar |
+| `wounds_body_state` | heridas, ranuras, saturación, colapso, estados corporales, estabilizar/tratar |
 | `equipment_material` | armas, escudos, armaduras, bloqueo de piezas, material, calidad, durabilidad |
 | `cover_positioning` | cobertura, línea de ataque, protección de escudo, zonas, movimiento, empuje |
 | `visibility_concealment` | visibilidad, ocultación, detección, posición aproximada, sentidos especiales |
@@ -418,7 +418,7 @@ No todas las superficies pesan igual.
 - negar una acción;
 - romper equipo o parte;
 - ignorar Bloqueo;
-- curar ranuras;
+- liberar ranuras mediante Tratar;
 - alterar la economía de Ritmo;
 - aplicar estado persistente;
 - forzar movimiento;

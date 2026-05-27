@@ -440,11 +440,7 @@ treatment_and_healing:
       frees_slots: false
     treat:
       name_es: Tratar
-      function: "applies to a body zone during a full rest to care for stabilized occupied slots in that zone"
-      frees_slots: false
-    heal:
-      name_es: Curar
-      function: "free occupied wound slots as the result of full rest with successful treatment"
+      function: "applies to a body zone during a full rest; on a successful Medicina roll, frees 1 stabilized occupied slot in that zone"
       frees_slots: true
   object_model:
     wound: "narrative and mechanical record of a received hit"
@@ -462,10 +458,7 @@ treatment_and_healing:
       meaning: "no immediate worsening; still occupies slots and keeps zone consequences"
     treated:
       name_es: Tratada
-      meaning: "the zone containing the wound received Medicine care during a full rest and may free one slot at the end of that rest"
-    healed:
-      name_es: Curada
-      meaning: "lost one or more wound slots through recovery; if it reaches 0 slots, it disappears"
+      meaning: "the zone containing the wound received Medicine care during a full rest and freed at least one slot"
   healing_track:
     principle: >
       Light, Grave, and Critical define how many slots a wound occupies when it

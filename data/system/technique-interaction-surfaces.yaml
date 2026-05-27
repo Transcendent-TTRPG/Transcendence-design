@@ -189,7 +189,6 @@ surfaces:
       - Derribado
       - Estabilizar
       - Tratar
-      - Curar
     can_modify:
       - slot_pressure
       - saturation_penalty
@@ -359,7 +358,6 @@ surfaces:
       - Medicina
       - estabilizar
       - tratar
-      - curar
       - Desgaste
     can_modify:
       - recovery_amount

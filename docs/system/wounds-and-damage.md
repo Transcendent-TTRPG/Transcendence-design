@@ -516,15 +516,14 @@ Estabilizar una herida significa intervenir para que deje de producir deterioro 
 
 Estabilizar no borra la herida. Una herida estabilizada sigue existiendo hasta que sane, reciba tratamiento prolongado o una regla específica la elimine.
 
-Transcendence usa tres pasos distintos:
+Transcendence usa dos pasos distintos:
 
 | Paso | Función | Libera ranuras |
 | --- | --- | ---: |
 | Estabilizar | Se aplica a una herida concreta para detener deterioro inmediato, shock activo, sangrado abierto o Colapso que sigue empeorando. | No |
-| Tratar | Se aplica a una zona durante un descanso completo para atender las ranuras ocupadas que ya fueron estabilizadas. | No por sí mismo |
-| Curar | Libera ranuras ocupadas como resultado de descanso completo con tratamiento exitoso. | Sí |
+| Tratar | Se aplica a una zona durante un descanso completo — si la T.E. de Medicina tiene éxito, libera 1 ranura estabilizada. | Sí, con éxito |
 
-`Medicina` cubre estabilizar, tratar y curar daño corporal. Objetos, Técnicas o artefactos pueden modificar estas reglas desde sus propias secciones, pero no forman parte de la regla base de heridas.
+`Medicina` cubre estabilizar y tratar daño corporal. Objetos, Técnicas o artefactos pueden modificar estas reglas desde sus propias secciones, pero no forman parte de la regla base de heridas.
 
 Cuando una Técnica no vuelve la herida más severa pero sí la hace más difícil de
 limpiar, leer o tratar, la respuesta inmediata suele resolverse con una acción
@@ -535,7 +534,7 @@ base ya existente:
 - `Usar Especialización` cuando hace falta diagnóstico, tratamiento entrenado,
   contención o manejo técnico
 
-Esto no sustituye `Estabilizar`, `Tratar` o `Curar`. Resuelve el paso previo que
+Esto no sustituye `Estabilizar` o `Tratar`. Resuelve el paso previo que
 devuelve la herida o la zona a un estado tratable.
 
 ### Acción requerida
@@ -584,7 +583,7 @@ En un fallo, la herida no queda estabilizada. El intento puede consumir tiempo, 
 
 ---
 
-## Tratamiento y Curación
+## Tratamiento
 
 Una herida puede estar en uno de estos estados de cuidado:
 
@@ -592,8 +591,7 @@ Una herida puede estar en uno de estos estados de cuidado:
 | --- | --- |
 | Activa | No ha sido estabilizada. Puede seguir causando deterioro, Colapso activo, `Agonía`, sangrado, dolor incapacitante o Agravios asociados. |
 | Estabilizada | Ya no empeora de forma inmediata, pero sigue ocupando ranuras y manteniendo sus consecuencias de zona. |
-| Tratada | La zona que contiene esa herida fue atendida con Medicina durante un descanso completo. Puede liberar una ranura al final de ese descanso si el tratamiento fue exitoso. |
-| Curada | La herida perdió una o más ranuras por recuperación. Si llega a `0` ranuras, desaparece. |
+| Tratada | La zona que contiene esa herida fue atendida con Medicina durante un descanso completo y liberó al menos una ranura. |
 
 ### Heridas, zonas y ranuras
 
@@ -605,11 +603,9 @@ Para evitar ambigüedad:
 
 Estabilizar se hace sobre una herida porque lo urgente es detener esa lesión concreta.
 
-Tratar se hace sobre una zona durante descanso completo porque el cuerpo no recupera una lesión aislada en el vacío: recupera tejido, función, presión, movilidad y circulación de esa zona.
+Tratar se hace sobre una zona durante descanso completo. Un éxito libera `1` ranura ocupada de esa zona, que debe pertenecer a una herida estabilizada.
 
-Curar es el resultado mecánico del tratamiento: se libera `1` ranura ocupada.
-
-### Curación por ranuras
+### Ranuras y severidad
 
 Leve, Grave y Crítica indican cuántas ranuras ocupa una herida cuando ocurre:
 
@@ -619,34 +615,26 @@ Grave = 2 ranuras
 Crítica = 3 ranuras
 ```
 
-La curación no depende de que la herida sea Leve, Grave o Crítica. Depende de cuántas ranuras ocupadas quedan en el cuerpo.
+La recuperación no depende de la severidad original — depende de cuántas ranuras ocupadas quedan. Cada Tratar exitoso libera `1` ranura. Si una herida queda con menos ranuras, su severidad efectiva baja:
 
-Por regla base:
-
-```text
-Un personaje recupera 1 ranura de herida por descanso completo con tratamiento exitoso.
-```
-
-Esa ranura se libera de una zona tratada. Debe pertenecer a una herida estabilizada. Si una herida queda con menos ranuras, su severidad efectiva baja:
-
-| Ranuras restantes en la herida | Severidad efectiva |
+| Ranuras restantes | Severidad efectiva |
 | ---: | --- |
 | 3 | Crítica |
 | 2 | Grave |
 | 1 | Leve |
-| 0 | Curada |
+| 0 | Eliminada |
 
-Esto significa que una Herida Crítica no sana porque “pasó a Grave” por una regla especial. Sana porque perdió `1` ranura después de un descanso completo con tratamiento exitoso. Si tenía `3` ranuras, queda con `2`; por eso ahora se trata como Grave.
+Una Herida Crítica no sana porque “pasó a Grave” por una regla especial. Sana porque perdió `1` ranura tras un descanso completo con tratamiento exitoso.
 
-### Curación por descanso
+### Tratar por descanso
 
-Las heridas deben estar estabilizadas antes de poder recuperar ranuras. Una herida activa primero debe estabilizarse.
+Las heridas deben estar estabilizadas antes de poder liberar ranuras. Una herida activa primero debe estabilizarse.
 
-| Descanso | Puede estabilizar | Puede tratar | Puede liberar ranuras |
-| --- | --- | --- | ---: |
-| 30 minutos | Herida Leve | No | 0 |
-| 60 minutos | Herida Grave | No | 0 |
-| Descanso completo | Herida Crítica o cualquier herida estabilizada | Sí, con `Medicina` | 1 ranura por personaje tratado |
+| Descanso | Puede estabilizar | Puede liberar ranuras |
+| --- | --- | ---: |
+| 30 minutos | Herida Leve | No |
+| 60 minutos | Herida Grave | No |
+| Descanso completo | Herida Crítica o cualquier herida estabilizada | 1 ranura con `T.E. Medicina` exitosa |
 
 Los descansos de 30 y 60 minutos sirven para estabilizar, preparar traslado, reducir presión inmediata o mantener a una criatura funcional, pero no liberan ranuras. La recuperación real de ranuras requiere descanso completo y tratamiento.
 
@@ -694,9 +682,9 @@ Una Herida Grave ocupa `2` ranuras. Después de un descanso completo con tratami
 
 Una Herida Crítica ocupa `3` ranuras. Después de un descanso completo con tratamiento exitoso, libera `1` ranura y queda como Grave. Después de otro descanso completo con tratamiento exitoso, queda como Leve. Después de otro, desaparece.
 
-### Efectos de tratar sin curar
+### Efectos del tratamiento
 
-Un tratamiento exitoso puede aliviar consecuencias aunque la herida no se cure todavía:
+Un tratamiento exitoso puede aliviar consecuencias además de liberar la ranura:
 
 - suspender `Agonía` si la herida ya fue estabilizada;
 - permitir que un personaje `Incapacitado` por shock, sangrado o dolor vuelva a estar operativo con los penalizadores de zona correspondientes;

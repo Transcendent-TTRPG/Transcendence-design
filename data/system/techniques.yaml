@@ -6673,7 +6673,7 @@ pilot_examples:
       - only_works_on_current_physical_trauma
       - does_not_work_on_curses_fear_command_effects_pure_pain_without_a_stabilizable_bodily_source_or_abstract_morale_collapse
       - if_the_targets_problem_is_an_ailment_it_must_have_a_physical_logic_that_can_be_braced_bound_or_stabilized
-      - cannot_free_wound_slots_restore_lost_resources_or_count_as_tratar_or_curar
+      - cannot_free_wound_slots_restore_lost_resources_or_count_as_tratar
       - cannot_remove_more_than_one_current_trauma_output_per_use
       - requires_actual_bodily_access_and_plausible_stabilizing_means
       - does_not_prevent_future_worsening_if_the_wound_is_reopened_restressed_or_the_stabilization_fails_in_fiction
