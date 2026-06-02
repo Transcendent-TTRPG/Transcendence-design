@@ -6,15 +6,43 @@
 
 ---
 
+## Alcance: vestigios y vínculos son mecanismos humanoides
+
+Los vestigios y vínculos son mecanismos de acceso al Tauma exclusivos de criaturas humanoides — PJs y PNJs humanoides. Los monstruos no usan vestigios ni vínculos. Su relación con el Tauma es directa, estructural o constitutiva: no necesitan un objeto conducto porque el Tauma ya es parte de ellos o de lo que son.
+
+---
+
 ## Qué es un Primordial
 
 Un Primordial es una entidad compuesta enteramente de Tauma puro. No tiene estructura biológica. Toda entidad del Limbo es un Primordial — no existe otra clase de Primordial.
 
 El Tauma es la energía elemental del mundo. Los Primordiales son sus manifestaciones conscientes. La relación entre el Tauma y las entidades no es de identidad sino de composición: el carbono existe sin ser un ser vivo, pero todo ser vivo está hecho de carbono. El Tauma existe sin ser una entidad, pero toda entidad del Limbo está hecha de Tauma.
 
+Para la mayoría de las criaturas, los Primordiales son imperceptibles. Sin la capacidad de detección adecuada, una criatura no puede ver ni sentir la entidad — solo puede percibir sus efectos en el entorno, o no percibir nada en absoluto antes de morir. Un Primordial de escala suficiente puede habitar una capilla, una ciudad o un valle entero sin que sus habitantes lo perciban jamás como una presencia: solo como una acumulación de muertes inexplicables, enfermedades, visiones, o una sensación persistente de que algo está mal. Quienes tienen Instinto, Resonancia o Taumaturgia pueden empezar a ver la forma real de lo que está allí.
+
 ---
 
-## Los cuatro niveles
+## Las tres naturalezas de criatura
+
+### Mortal
+
+Criatura biológica sin acceso inherente al Tauma. Para ella, el Tauma es invisible e inaccesible — a menos que descubra un vestigio o vínculo, que son los únicos mecanismos por los que un mortal puede canalizar Tauma intencionalmente.
+
+### Anomalía
+
+Una Anomalía no "adquirió" el Tauma — evolucionó para recibirlo. Generaciones de exposición a zonas de alta condensación taumática reorganizaron su biología hasta que el Tauma se integró en su estructura como receptor natural. No necesita un objeto conducto. No necesita un canal externo. El Tauma fluye a través de su propio cuerpo porque su cuerpo evolucionó para eso.
+
+El Tauma existe en todas partes — se filtra desde el Limbo de forma continua hacia el mundo físico. Las Anomalías son criaturas que aprendieron, evolutivamente, a ser permeables a esa filtración. Una bestia que habitó durante generaciones en una tundra con alta condensación de Tauma elemental de hielo puede desarrollar la capacidad de canalizarlo a través de su tracto respiratorio. Sin ritual. Sin entidad vinculada. Sin objeto.
+
+La naturaleza taumática de una Anomalía refleja el Tauma dominante de la zona en la que su especie evolucionó.
+
+### Primordial
+
+Ver sección anterior.
+
+---
+
+## Los cuatro niveles de entidad
 
 ### Fragmento
 
@@ -90,6 +118,150 @@ Un vínculo con múltiples sentidos requiere aflicción activa en todos ellos pa
 El NR es el promedio de los rangos de todas las competencias del personaje. Un personaje comienza con NR 1. NR 3 requiere progresión real; NR 5 requiere competencias avanzadas en múltiples áreas.
 
 El NR no es el único requisito para usar un vínculo. También se requiere tener la aflicción activa del sentido vinculado con la severidad mínima especificada por esa entidad. El NR es el umbral de capacidad del personaje para sostener la conexión — la aflicción es la llave.
+
+---
+
+## El cuerpo como canal
+
+> El Tauma no se mueve al portador. El portador se convierte en el medio por el que el Tauma llega al mundo.
+
+La materia orgánica y el Tauma son distintos. El Tauma no puede existir en un cuerpo vivo de la misma forma que existe en un objeto inerte — la estructura biológica lo convierte, lo filtra, lo distorsiona. Cuando el Tauma del objeto entra en contacto con el cuerpo del portador, lo que queda no es energía pura: es impregnación. El tejido nervioso, los sentidos, el sistema perceptivo del portador quedan marcados. Eso es una Aflicción.
+
+La aflicción no es un efecto secundario molesto. Es el canal. Sin impregnación en el sentido vinculado, el Tauma del objeto no tiene por dónde fluir hacia el mundo. Por eso un vestigio no puede activarse antes de que el portador tenga la aflicción del sentido correcto — no hay atalajo, no hay forma de forzarlo. El canal se construye o no existe.
+
+Esto también explica la transferencia: cuando el objeto cambia de manos, el nuevo portador no tiene impregnación en ese sentido. El canal que tenía el portador anterior era suyo, no del objeto.
+
+---
+
+## Detectar sin interactuar
+
+Cuatro especializaciones permiten identificar que un objeto tiene carga taumática antes de tocarlo. Ninguna equivale al descubrimiento — ninguna revela el patrón de uso.
+
+**Instinto** (Aura) actúa de forma pasiva e involuntaria. El personaje siente que algo no pertenece — atracción o repulsión sin justificación articulable. No da precisión sobre tipo, sentido ni intensidad. Es la primera señal de que algo ocurre.
+
+**Resonancia** (Aura) es activa y dirigida. El personaje puede sondar el objeto con su aura y percibir la carga esencial: confirmar que hay Tauma, distinguir si la señal es activa (vínculo) o residual (vestigio), estimar intensidad relativa. Más información que Instinto, pero sin estructura formal.
+
+**Taumaturgia** (Intelecto) es análisis. El personaje estudia la firma del Tauma: distingue vestigio de vínculo con certeza, identifica el sentido vinculado, puede clasificar aproximadamente el nivel de la entidad. Es la lectura más precisa disponible antes de la interacción, pero sigue sin revelar el patrón de uso.
+
+**Teología** (Intelecto) interpreta por doctrina. El personaje que conoce la tradición religiosa que ha sistematizado el conocimiento de las manifestaciones del Limbo puede reconocer que el objeto tiene presencia del Limbo e inferir la clase de entidad implicada según los signos de esa tradición. No es ciencia del Tauma — es exégesis religiosa aplicada al objeto.
+
+Estas cuatro especializaciones son complementarias, no excluyentes. Un personaje con Resonancia y Taumaturgia sabe más que uno que solo tiene Instinto. Un creyente con doctrina sistematizada puede llegar a conclusiones parecidas a las de un taumaturgo por un camino completamente distinto.
+
+---
+
+## El proceso de descubrimiento
+
+La primera interacción significativa con un vestigio — sostenerlo en un momento de necesidad real, activarlo sin saber lo que hace — genera automáticamente una Aflicción de severidad Leve en el sentido vinculado. Eso abre el canal. La entidad ahora tiene por dónde llegar.
+
+A partir de ahí, las pistas llegan a través de ese canal. La entidad no elige palabras: usa lo que tiene disponible, que es la aflicción activa del portador. El portador experimenta lo que su aflicción le permite — pero coloreado por las `claves_pista` y la naturaleza de la entidad.
+
+La claridad de las pistas depende de la severidad de la aflicción:
+
+| Severidad | Claridad |
+| --- | --- |
+| Leve | Críptica. Impresionista. Múltiples interpretaciones posibles. |
+| Moderado | Reconocible. El patrón empieza a tomar forma. |
+| Grave | Decodificable. La función del vestigio se vuelve comprensible. |
+
+No existe un número fijo de pistas necesarias. Cuando el jugador considera que su personaje ha entendido suficiente, declara el descubrimiento: describe qué hace el objeto, qué sentido vincula y qué se requiere para usarlo. El Narrador confirma o deniega basándose en si la declaración captura el patrón real — no en si usa la terminología exacta.
+
+Si el Narrador confirma, el portador pasa al estado descubierto y puede usar el vestigio intencionalmente. Sin este paso, no puede activarlo.
+
+### Por qué no hay atajos
+
+No es posible forzar el descubrimiento estudiando el objeto. Taumaturgia puede revelar el sentido vinculado — pero no el patrón de uso, que solo emerge de la comunicación directa a través del canal. La investigación académica puede orientar; no puede sustituir la impregnación.
+
+---
+
+## Transferencia del objeto
+
+Cuando el vestigio cambia de portador, el estado de descubrimiento se reinicia. El canal era del portador original — su cuerpo tenía la impregnación. El nuevo portador comienza desde cero: sin canal, sin descubrimiento.
+
+La excepción es la herencia explícita de comprensión: si el portador original pudo articular el patrón del vestigio y enseñó ese conocimiento al nuevo portador, este puede comenzar ya sabiendo qué hace el objeto. Pero sigue necesitando construir su propio canal — la primera Aflicción del sentido vinculado sigue siendo necesaria para activarlo.
+
+Esa articulación es difícil. Si el conocimiento llegó principalmente a través de pistas crípticas, el portador original quizás nunca tuvo palabras para describirlo. La herencia de comprensión es una decisión narrativa, no un trámite.
+
+---
+
+## Vínculos: identidad, no efecto
+
+> El vínculo no le da al personaje un poder. Le da una forma de ser.
+
+Un personaje con un vínculo de sombras no "genera sombras mágicas que hacen daño extra." Es un personaje que existe de una forma que las sombras hacen posible — sus ataques van a través de ellas, su presencia se confunde con ellas, su defensa se organiza alrededor de ellas. El daño sigue viniendo de sus competencias de arma. La resistencia sigue viniendo de su constitución. El vínculo no crea poder: estructura cómo se expresa el poder que el personaje ya tiene.
+
+Esto es consecuencia directa del principio central del Tauma: el Tauma no genera de la nada. Modifica, canaliza, transforma lo que ya existe.
+
+---
+
+## Caminos y convergencia
+
+Cada sentido vinculado a un vínculo corresponde a un **camino** — una línea de escalado con su propia temática dentro de la identidad central. Los caminos son completamente independientes: acceder a uno no requiere tener canal en los otros. Un portador con aflicción de Vista puede usar el camino de Vista aunque no tenga ninguna aflicción de Tacto.
+
+Cada camino tiene tres etapas, acumulativas, una por severidad de aflicción del sentido correspondiente:
+
+| Severidad | Acceso |
+| --- | --- |
+| Leve | Primera expresión del camino — limitada pero real |
+| Moderado | El efecto se expande — más alcance, duración, control o precisión |
+| Grave | La expresión máxima del camino — la versión más extrema del efecto de ese sentido |
+
+**Ejemplo:** Un vínculo de sombras con Vista y Tacto.
+
+- Camino de Vista (Leve): la sombra del portador se mueve levemente independiente — distrae.
+- Camino de Vista (Moderado): la sombra puede imitar movimientos exactos de forma desfasada.
+- Camino de Vista (Grave): la sombra es visualmente indistinguible del portador.
+- Camino de Tacto (Leve): la sombra puede absorber impactos menores.
+- Camino de Tacto (Moderado): la sombra puede redirigir fuerzas físicas.
+- Camino de Tacto (Grave): la sombra es completamente tangible al contacto físico.
+
+Cuando ambos caminos están activos, se desbloquea la **convergencia**: la síntesis de ambos, lo que ningún camino produce por separado. En este caso, quizás: la sombra puede ejecutar ataques del portador de forma independiente, usando sus competencias de arma. La potencia de la convergencia usa la severidad mínima entre todos los sentidos activos.
+
+Todos los vínculos son comparables en poder. No hay vínculos de tier superior o inferior — son formas distintas de existir y combatir. La escala de efectividad no viene del vínculo sino de las aflicciones del portador.
+
+---
+
+## El costo en Cordura
+
+Usar un vínculo cuesta Cordura — no aflicción. Esta es la distinción central entre vestigios y vínculos:
+
+- **Vestigio**: cada uso incrementa la aflicción del portador en el sentido vinculado.
+- **Vínculo**: el uso cuesta Cordura. La aflicción no aumenta por el uso.
+
+La Cordura de un personaje proviene de su Compostura (fórmula placeholder: Compostura × 2). Es la reserva de integridad psíquica frente a la presencia continua del Limbo.
+
+La aflicción de un portador de vínculo crece durante el descubrimiento, no durante el uso. Esto significa que un personaje sin experiencia previa con vestigios puede desarrollar las aflicciones necesarias para acceder a un vínculo solo a través del proceso de conocerlo. El canal se construye en el descubrimiento; el uso drena la Cordura.
+
+---
+
+## Descubrimiento de vínculos
+
+El descubrimiento de un vínculo sigue exactamente el mismo mecanismo que el de un vestigio. La primera interacción abre el canal en el sentido vinculado (o en cada sentido, si es multi-sentido). Las pistas llegan a través del canal. El jugador declara cuando comprende el patrón; el Narrador confirma.
+
+En vínculos multi-sentido, el descubrimiento puede ser progresivo: el portador puede comprender el camino de Vista antes de abrir el canal de Tacto. La declaración puede ser parcial: cada camino comprendido es usable; los no descubiertos, no. La convergencia requiere que todos los caminos hayan sido descubiertos.
+
+---
+
+## La naturaleza elemental del Tauma
+
+El Tauma no es una energía uniforme. Se organiza en naturalezas elementales — fuego, viento, tierra, agua, luz, oscuridad — cada una con múltiples caras posibles. La cara que adopta una naturaleza elemental en una zona específica no es inherente al elemento: emerge de la consciencia colectiva de las criaturas que lo han habitado.
+
+El fuego puede ser destrucción, transformación, renovación o sanación. La oscuridad puede ser ocultamiento, consumo, descanso u olvido. No es la energía lo que cambia — es la orientación que siglos de presencia consciente le han dado.
+
+La naturaleza elemental del Tauma de una zona determina qué Anomalías la habitan, qué Primordiales pueden manifestarse en ella y qué identidad temática tendrá cualquier vestigio o vínculo originado allí.
+
+---
+
+## Evolución y consciencia colectiva
+
+El Tauma de una zona se alimenta de la consciencia colectiva de lo que la habita. Este no es un proceso rápido ni voluntario — es la acumulación de rituales, creencias, patrones de comportamiento sostenidos, eventos de alta intensidad emocional y generaciones enteras viviendo bajo las mismas condiciones.
+
+Lo que ese proceso hace no es solo amplificar el Tauma. Lo orienta. Y esa orientación puede cambiar la naturaleza de las entidades que lo habitan.
+
+Una comunidad de adoradores fanáticos de la sangre y la destrucción en una zona de Tauma de fuego orienta ese fuego hacia destrucción. Las Anomalías que nacen allí serán criaturas de fuego-destrucción. Los Primordiales que habiten esa zona adoptarán esa cara. Generaciones después, si la zona es conquistada por sanadores que veneran el mismo fuego como agente de renovación, el proceso puede revertirse lentamente — pero nunca del todo. Las capas de historia permanecen en el Tauma.
+
+Un Primordial puede evolucionar de nivel a través de este proceso. Ese ascenso no es un incremento de poder con la misma naturaleza: la naturaleza puede cambiar radicalmente. Un Fragmento de fuego-transformación puede convertirse en una Entidad de fuego-destrucción si la zona fue consumida por siglos de guerra y fanatismo. Quienes conocían la entidad anterior pueden quedar completamente desorientados ante lo que encuentran ahora.
+
+> El mundo es inhóspito no solo porque las amenazas existen. Las propias criaturas y comunidades — deliberada o inconscientemente — moldean el Tauma de sus zonas y crean las condiciones de las amenazas que las acechan. El fanatismo de un culto puede volver el suelo de su territorio estructuralmente hostil. La desesperación acumulada de una ciudad puede orientar el Tauma local hacia la cara más oscura de su elemento. El mundo reacciona a las criaturas que lo habitan.
 
 ---
 

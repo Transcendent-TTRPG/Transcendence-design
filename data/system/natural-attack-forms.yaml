@@ -81,6 +81,32 @@ forms:
           Naghii bite Techniques should emphasize fang insertion, controlled
           venom delivery, exact contact, and punishment of hesitation. They
           should not become raw mauling or heavy jaw-crush identity.
+        stat_block:
+          assignment: Primary
+          attack_characteristic: Agility
+          impact_characteristic: Tenacity
+          reach: "1 m"
+          damage_die: d8
+          durability_formula: "4 per competency rank"
+          potency_formula: "5 per competency rank"
+          additional_effect:
+            trigger: "A.R. exceeds D.R. by 3 or more"
+            target_roll: "R.R. (Venom)"
+            effect: "Reduces target Tenacity"
+            severity_by_rank:
+              - ranks: "1-2"
+                severity: Minor
+                tenacity_reduction: 1d2
+              - ranks: "3-4"
+                severity: Moderate
+                tenacity_reduction: 1d4
+              - ranks: "5-6"
+                severity: Severe
+                tenacity_reduction: 1d6
+        variant:
+          group: naghii_biological_variant
+          variant_id: kha
+          rule: "Naghii players choose Kha or Saa at campaign start. Cannot have both Mordisco and Aliento Astral on the same character."
       - species: "Sauri"
         expression_id: "sauri_jaw_closure"
         availability: "All Sauri"
@@ -153,6 +179,28 @@ forms:
         identity_notes: >
           Naghii tail Techniques should emphasize restraint, curved contact,
           angle theft, and crossing disruption rather than raw mass.
+        stat_block:
+          assignment: Primary
+          attack_characteristic: Agility
+          impact_characteristic: Tenacity
+          reach: "1-2 m"
+          damage_die: d8
+          durability_formula: "5 per competency rank"
+          potency_formula: "7 per competency rank"
+          restriction: "Cannot use a two-handed weapon during the same activation when the tail is used as a primary weapon."
+          additional_effect:
+            trigger: "A.R. exceeds D.R. by 3 or more"
+            options:
+              - Knockdown
+              - Off-Balance
+            target_roll: "R.R. (Conditions)"
+            severity_by_rank:
+              - ranks: "1-2"
+                severity: Minor
+              - ranks: "3-4"
+                severity: Moderate
+              - ranks: "5-6"
+                severity: Severe
       - species: "Sauri"
         expression_id: "sauri_heavy_tail"
         availability: "All Sauri"
@@ -391,6 +439,47 @@ forms:
       - "Charge"
       - "Flow"
     identity_notes: "Fluid projection covers both clean targeted shots and degrading residues. Its profile spread depends on whether the biology emphasizes aim, cadence, rebound logic, or hostile substance."
+    species_profile_expressions:
+      - species: "Naghii"
+        expression_id: "naghii_aliento_astral"
+        name_es: "Aliento Astral"
+        availability: "Saa-Naghii only"
+        contact_logic: "Short-range phosphorescent venom projection; precise biological discharge with toxic persistence"
+        compatible_profiles:
+          - "Precision"
+          - "Volley"
+          - "Ricochet"
+          - "Corrosion"
+        restricted_profiles:
+          - "Bastion"
+          - "Charge"
+          - "Flow"
+        identity_notes: >
+          Saa-Naghii projection Techniques should emphasize targeted venom
+          delivery, persistent degradation, and controlled-range harassment.
+          The projection is biological precision, not brute discharge.
+        stat_block:
+          assignment: Primary
+          attack_characteristic: Agility
+          impact_characteristic: Tenacity
+          reach: "10 m"
+          damage_die: d6
+          durability_formula: "5 per competency rank"
+          potency_formula: "7 per competency rank"
+          additional_effect:
+            trigger: "Target fails R.R. by 3 or more"
+            effect: "Recurring damage at the start of each activation"
+            severity_by_rank:
+              - ranks: "1-2"
+                recurring_damage: 1d4
+              - ranks: "3-4"
+                recurring_damage: 1d6
+              - ranks: "5-6"
+                recurring_damage: 1d8
+        variant:
+          group: naghii_biological_variant
+          variant_id: saa
+          rule: "Naghii players choose Kha or Saa at campaign start. Cannot have both Mordisco and Aliento Astral on the same character."
 
   - id: pincers
     name: "Pincers"

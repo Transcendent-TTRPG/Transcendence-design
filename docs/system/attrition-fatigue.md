@@ -223,7 +223,32 @@ Si un personaje tiene **Aguante 7**:
 - Desgaste 28–34 → Fatiga 4
 - Desgaste 35+ → Fatiga 5
 
-Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Incapacitado por agotamiento. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
+Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Incapacitado. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
+
+---
+
+## Efectos de Fatiga
+
+Los efectos de Fatiga son **acumulativos**. Llegar a Fatiga 3 significa que el personaje carga simultáneamente con los efectos de Fatiga 1, 2 y 3. Cada nivel añade algo cualitativamente distinto; no repite más del mismo modificador.
+
+| Nivel | Efecto |
+| --- | --- |
+| **Fatiga 1** | Las T.E. físicas requieren una T.R. de Tenacidad previa. Si falla, la T.E. se pierde. |
+| **Fatiga 2** | Las acciones de ritmo 5 o mayor no están disponibles. |
+| **Fatiga 3** | Todas las acciones no gratuitas cuestan +1 Desgaste adicional. |
+| **Fatiga 4** | Las Reacciones no están disponibles. Solo se pueden usar Acciones Activas. |
+| **Fatiga 5** | Las Técnicas solo resuelven su efecto primario (T.A., T.I. o efecto de utilidad base). El reposicionamiento gratuito, las Alteraciones aplicadas y el control de posición no se activan. |
+| **Overflow** | **Incapacitado** — el cuerpo se apaga, el personaje pierde consciencia. Sin Acciones Activas, Reacciones ni Técnicas hasta descansar o recibir ayuda. |
+
+### Por qué este diseño
+
+Cada umbral cierra una capacidad concreta antes de añadir más del mismo costo. El objetivo es que cada nivel tenga su propio peso narrativo:
+
+- **Fatiga 1** golpea primero la precisión de movimiento y ejecución especializada — lo más fino se va primero.
+- **Fatiga 2** cierra el acceso a la mayoría de los ataques estándar — el personaje empieza a perder ofensiva real.
+- **Fatiga 3** encarece todo — cada acción que queda disponible cuesta más.
+- **Fatiga 4** elimina la capacidad reactiva — el personaje solo puede iniciar, no responder.
+- **Fatiga 5** deja las Técnicas en mínimos — el gesto todavía sale, pero el cuerpo no tiene margen para el payload adicional.
 
 ---
 
@@ -427,13 +452,91 @@ Toda hoja comienza con una especialización inicial de Tenacidad, elegida según
 5. Las acciones mentales y sociales significativas en combate también pueden generar Desgaste.
 6. La categoría del encuentro modifica la presión, no el umbral del personaje.
 7. La primera Fatiga debe llegar después del descubrimiento útil y antes del colapso completo de la amenaza.
+8. Los efectos de Fatiga son acumulativos; cada nivel añade algo cualitativamente distinto, no más del mismo costo.
+
+---
+
+## Sistema psíquico: Eco, Cordura y Disonancia
+
+El sistema físico tiene un paralelo estructural exacto para personajes humanoides con vínculos activos. Los dos tracks son independientes y se trackean por separado.
+
+| | Físico | Psíquico |
+| --- | --- | --- |
+| **Acumulado** | Desgaste | Eco |
+| **Reserva** | Aguante | Cordura |
+| **Consecuencia asentada** | Fatiga | Disonancia |
+| **Overflow** | Incapacitado | Incapacitado |
+
+Un personaje puede estar Incapacitado en un track y completamente operativo en el otro.
+
+---
+
+### Eco
+
+El **Eco** es la carga psíquica acumulada que deja en el personaje la activación de Aspectos a través de un vínculo. No representa daño: representa el residuo del vínculo presionando su realidad perceptual sobre la mente del personaje.
+
+El costo de Eco por activación se define por cada entrada de Aspecto (paralelo al costo de Desgaste por acción). El Eco se proyecta durante la escena y se asienta cuando termina, igual que el Desgaste.
+
+---
+
+### Cordura
+
+La **Cordura** representa cuánta carga psíquica acumulada puede absorber el personaje antes de empezar a sufrir Disonancia.
+
+```text
+Cordura = 3 + (Compostura × 2)
+```
+
+El valor mínimo es 3 (cuando Compostura es 0). El paralelo exacto con Aguante es intencional.
+
+---
+
+### Disonancia
+
+La **Disonancia** es el deterioro progresivo de la coherencia perceptual que aparece cuando el Eco supera lo que el personaje puede sostener.
+
+No surge por una sola activación aislada. Surge por acumulación. A medida que el Eco aumenta, la mente pierde precisión en el procesamiento de lo que percibe a través del vínculo — primero lo más fino, luego el acceso a profundidades mayores, finalmente la capacidad de integrar múltiples canales a la vez.
+
+#### Umbrales de Disonancia
+
+| Nivel | Condición |
+| --- | --- |
+| Disonancia 0 | Eco menor que la Cordura |
+| Disonancia 1 | Eco igual o mayor a la Cordura |
+| Disonancia 2 | Eco igual o mayor a 2 × Cordura |
+| Disonancia 3 | Eco igual o mayor a 3 × Cordura |
+| Disonancia 4 | Eco igual o mayor a 4 × Cordura |
+| Disonancia 5 | Eco igual o mayor a 5 × Cordura |
+
+#### Efectos de Disonancia
+
+Los efectos son **acumulativos**, igual que los de Fatiga.
+
+| Nivel | Efecto |
+| --- | --- |
+| **Disonancia 1** | Las T.E. de categoría mental y saberes requieren una T.R. de Compostura previa. Si falla, la T.E. se pierde. |
+| **Disonancia 2** | Los Aspectos en etapa Grave no están disponibles, independientemente de la intensidad de Aflicción. |
+| **Disonancia 3** | Todas las activaciones de Aspecto cuestan +1 Eco adicional. |
+| **Disonancia 4** | Los vínculos con más de un camino quedan completamente inutilizables — ningún camino puede activarse. Los caminos inactivos de un vínculo multi-sentido siguen generando carga de Aflicción activamente; en este nivel esa carga doble no se puede sostener. Solo los vínculos de camino único siguen disponibles. |
+| **Disonancia 5** | Los Aspectos solo resuelven su etapa Leve, independientemente de la intensidad de Aflicción. Los efectos de etapa Moderado y Grave no se activan. El vínculo sigue respondiendo, pero la mente no puede procesar la percepción profunda en acción. |
+| **Overflow** | **Incapacitado** — el cerebro activa el corte automático para evitar daño permanente. El personaje pierde consciencia. Sin activaciones de Aspecto. Todos los vínculos suspendidos hasta descansar o recibir ayuda. Las Aflicciones registran el daño perceptual acumulado; la incapacitación es el apagado total temporal. |
+
+#### Lógica del diseño de Disonancia
+
+El paralelo con Fatiga es intencional en estructura pero distinto en contenido:
+
+- **Disonancia 1** golpea primero la precisión mental y el saber — lo más fino del procesamiento cognitivo se va primero.
+- **Disonancia 2** cierra el acceso a la profundidad perceptual máxima del vínculo.
+- **Disonancia 3** encarece todas las activaciones.
+- **Disonancia 4** elimina la capacidad de sostener vínculos con carga dual — el personaje no puede mantener dos canales sensoriales abiertos.
+- **Disonancia 5** deja los Aspectos en mínimos — el vínculo todavía responde, pero solo en su expresión más superficial.
 
 ---
 
 ## Cuestiones aún abiertas
 
-1. Qué penalizadores exactos aplica cada nivel de Fatiga 1–5 a las distintas clases de acción.
-2. Qué condiciones concretas añaden Desgaste adicional y en qué nivel.
-3. Qué distribución de costos conviene para encuentros comunes, campeones y élites en términos de acciones esperadas.
-4. Cómo interactúan explícitamente las maniobras de coordinación con el Desgaste grupal.
-5. Qué piso mínimo de presión debe mantenerse incluso para grupos muy informados o muy bien coordinados.
+1. Qué condiciones concretas añaden Desgaste adicional y en qué nivel.
+2. Qué distribución de costos conviene para encuentros comunes, campeones y élites en términos de acciones esperadas.
+3. Cómo interactúan explícitamente las maniobras de coordinación con el Desgaste grupal.
+4. Qué piso mínimo de presión debe mantenerse incluso para grupos muy informados o muy bien coordinados.
+5. Costo de Eco por activación de Aspecto — definir la escala (¿paralela a Desgaste 0/1/2/3 según etapa Leve/Moderado/Grave?) — ver E-05 en `limbo-entities.yaml`.

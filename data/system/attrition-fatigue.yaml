@@ -38,6 +38,51 @@ fatigue_thresholds:
     Reactions, or Techniques until they can rest, receive help, or apply a
     specific rule that removes them from that state.
 
+fatigue_effects:
+  stacking_rule: cumulative
+  stacking_note: >
+    Each Fatigue level adds its own restriction on top of all lower levels.
+    A character at Fatigue 3 is under the effects of Fatigue 1, 2, and 3
+    simultaneously.
+  levels:
+    - id: fatigue_1
+      effect_type: check_before_action
+      target: physical_specializations
+      rule: >
+        Physical Specialization Rolls (T.E. Físicas) require a successful
+        T.R. Tenacidad before execution. On failure, the Specialization Roll
+        is lost.
+    - id: fatigue_2
+      effect_type: restriction
+      target: high_rhythm_actions
+      rule: >
+        Actions with a rhythm cost of 5 or higher are not available.
+    - id: fatigue_3
+      effect_type: cost_increase
+      target: all_non_free_actions
+      rule: >
+        All non-free actions cost +1 Attrition.
+    - id: fatigue_4
+      effect_type: restriction
+      target: reactions
+      rule: >
+        Reactions are not available. Only Active Actions can be taken.
+    - id: fatigue_5
+      effect_type: payload_strip
+      target: techniques
+      rule: >
+        Techniques resolve only their primary effect (T.A., T.I., or base
+        utility effect). Secondary effects — free repositioning, applied
+        Alterations, and position control — do not activate.
+  overflow:
+    trigger: "fatigue would exceed 5"
+    state: incapacitated
+    name_es: Incapacitado
+    description: >
+      The body shuts down. The character loses consciousness. Cannot take
+      Active Actions, Reactions, or Techniques until they rest, receive
+      help, or a specific rule removes this state.
+
 fatigue_timing:
   structural_rule: >
     Fatigue 1 must arrive after the enemy's main logic has become actionable,
@@ -213,3 +258,142 @@ encounter_category_and_pressure:
   attrition_belongs_to: scene
   fatigue_belongs_to: consequence_of_excess
   category_effect: pressure_shape_and_speed  # not threshold value
+
+# ─── PSYCHIC PARALLEL SYSTEM ────────────────────────────────────────────────
+# Mirror structure to Attrition / Endurance / Fatigue.
+# Applies only to humanoid characters with active vínculo connections.
+# Eco accumulates from Aspecto use; Cordura is the reserve; Disonancia is
+# the settled consequence when Eco exceeds Cordura.
+
+resonance_echo:
+  id: eco
+  name: Echo
+  name_es: Eco
+  type: accumulated_cost
+  description: >
+    Eco is the accumulated psychic load left in a character by activating
+    Aspectos through a vínculo. It is the psychic parallel to Attrition.
+    Eco does not represent damage; it represents the residue of the vínculo
+    pressing its perceptual reality into the character's mind.
+  applies_to: humanoid characters with at least one active vínculo
+  cost_basis: per Aspecto activation (cost defined per Aspecto entry)
+  projected_vs_settled: same timing rule as Attrition — projected during
+    the scene, settled when the scene ends or intensity drops.
+
+sanity:
+  id: cordura
+  name: Sanity
+  name_es: Cordura
+  type: derived_attribute
+  formula: "3 + (CMP * 2)"
+  components:
+    base_reserve: 3
+    base_reserve_rationale: >
+      Minimum operational coherence. Parallel to Endurance's base reserve
+      across body, mind, and composure.
+    characteristic: CMP
+  minimum_value: 3  # when CMP = 0
+  starting_minimum: 5  # CMP reaches at least 1 at creation
+
+dissonance_thresholds:
+  comparison: accumulated_echo vs sanity
+  name_es: Umbrales de Disonancia
+  levels:
+    - id: dissonance_0
+      name: No Dissonance
+      name_es: Disonancia 0
+      condition: "eco < cordura"
+    - id: dissonance_1
+      name: Dissonance 1
+      name_es: Disonancia 1
+      condition: "eco >= cordura"
+    - id: dissonance_2
+      name: Dissonance 2
+      name_es: Disonancia 2
+      condition: "eco >= 2 * cordura"
+    - id: dissonance_3
+      name: Dissonance 3
+      name_es: Disonancia 3
+      condition: "eco >= 3 * cordura"
+    - id: dissonance_4
+      name: Dissonance 4
+      name_es: Disonancia 4
+      condition: "eco >= 4 * cordura"
+    - id: dissonance_5
+      name: Dissonance 5
+      name_es: Disonancia 5
+      condition: "eco >= 5 * cordura"
+  overflow_rule: >
+    If any rule would add Dissonance while the character is already at
+    Dissonance 5, the character becomes Incapacitated. The brain activates
+    an automatic cutoff to prevent permanent damage. No Aspecto can be
+    activated. All vínculo connections are suspended until the character
+    rests, receives help, or a specific rule removes this state.
+
+dissonance_effects:
+  stacking_rule: cumulative
+  stacking_note: >
+    Each Dissonance level adds its restriction on top of all lower levels.
+    A character at Dissonance 3 is under the effects of Dissonance 1, 2,
+    and 3 simultaneously. Parallel to Fatigue stacking.
+  levels:
+    - id: dissonance_1
+      effect_type: check_before_action
+      target: mental_and_knowledge_specializations
+      rule: >
+        Mental and knowledge Specialization Rolls (T.E. Mentales y Saberes)
+        require a successful T.R. Compostura before execution. On failure,
+        the Specialization Roll is lost.
+    - id: dissonance_2
+      effect_type: restriction
+      target: grave_aspectos
+      rule: >
+        Aspectos at Grave stage are not available, regardless of affliction
+        intensity. Perception cannot sustain that depth of processing.
+    - id: dissonance_3
+      effect_type: cost_increase
+      target: all_aspectos
+      rule: >
+        All Aspecto activations cost +1 Eco.
+    - id: dissonance_4
+      effect_type: restriction
+      target: multi_camino_vinculos
+      rule: >
+        Vínculos with more than one camino become completely unusable — no
+        camino can be activated. Even inactive caminos actively generate
+        Affliction load; at this level that dual burden cannot be sustained.
+        Only single-camino vínculos remain available.
+    - id: dissonance_5
+      effect_type: payload_strip
+      target: aspecto_escalation
+      rule: >
+        Aspectos resolve only their Leve stage effect, regardless of the
+        affliction intensity level. Moderado and Grave stage effects do not
+        activate. The vínculo connection persists but the mind cannot process
+        deeper perception into meaningful action.
+  overflow:
+    trigger: "dissonance would exceed 5"
+    state: incapacitated
+    name_es: Incapacitado
+    description: >
+      The brain activates an automatic cutoff to prevent permanent damage.
+      The character loses consciousness. No Aspecto can be activated and all
+      vínculo connections are suspended until they rest, receive help, or a
+      specific rule removes this state. Afflictions record whatever perceptual
+      damage accumulated; incapacitation is the temporary total shutdown.
+
+psychic_system_parallel:
+  note: >
+    The physical and psychic systems are structurally identical and
+    independently tracked. A character can be Incapacitated on one track
+    while fully operational on the other.
+  physical_track:
+    accumulated: Desgaste
+    reserve: Aguante
+    settled_consequence: Fatiga
+    overflow: Incapacitado
+  psychic_track:
+    accumulated: Eco
+    reserve: Cordura
+    settled_consequence: Disonancia
+    overflow: Incapacitado

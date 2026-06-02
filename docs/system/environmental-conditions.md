@@ -82,7 +82,7 @@ Limit of what is survivable or executable. Extranatural conditions are common at
 
 **Natural:** maritime storm with simultaneous boarding and structure collapse; earthquake combined with nearby volcanic eruption.
 
-**Extranatural:** complete elemental storm (all elements in simultaneous active conflict); light and darkness with simultaneous physical effects; environment in active dimensional collapse (the Void touching directly); unstable physical rules — irregular gravity, perceptible time distortion.
+**Extranatural:** complete elemental storm (all elements in simultaneous active conflict); light and darkness with simultaneous physical effects; environment in active dimensional collapse (the Limbo filtering directly into the physical plane); unstable physical rules — irregular gravity, perceptible time distortion.
 
 **Effect model:** Narrator may Accelerate — probable at this range; may generate passive Attrition.
 
@@ -138,6 +138,6 @@ The following specializations interact directly with environmental conditions:
 | Equilibrio (Agility) | Natural — terrain | Reactive response to involuntary balance loss |
 | Supervivencia (Wisdom) | Natural — field | Practical decision-making in hostile environments |
 
-**Open design question (D-08):** Whether Aclimatación and other natural specializations apply equally to extranatural conditions. A combined elemental storm is not simply "extreme cold" — it may require different capacities (Instinct, Resonance, Thaumaturgy). Cannot be resolved without designing the Void system.
+**Open design question (D-08):** Whether Aclimatación and other natural specializations apply equally to extranatural conditions. A combined elemental storm is not simply "extreme cold" — it may require different capacities (Instinct, Resonance, Thaumaturgy). Cannot be resolved without designing the full Limbo manifestation system.
 
-Provisional rule: Aclimatación applies to Disastrous-level conditions with an extranatural component. Its effectiveness in Extreme conditions of vacual origin is undefined.
+Provisional rule: Aclimatación applies to Disastrous-level conditions with an extranatural component. Its effectiveness in Extreme conditions of taumatic origin is undefined.

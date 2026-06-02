@@ -31,7 +31,7 @@ limbo:
       - id: taumaturgia
         descripcion: identifica la estructura taumática y su origen dimensional
       - id: teologia
-        descripcion: interpreta las señales por las señales canónicas del culto de Kaodis
+        descripcion: interpreta las señales del Limbo por la doctrina de la tradición religiosa que conoce
 
 # ──────────────────────────────────────────────────────
 # MANIFESTACIONES
@@ -82,6 +82,7 @@ manifestaciones:
       - fatiga_de_patron_su_agotamiento_es_impredecible_y_debe_permanecer_oculto_para_los_jugadores
       - poder_moderado_da_ventaja_pero_no_define_jerarquias
       - cada_uso_significativo_aumenta_la_intensidad_de_afliccion_del_portador
+      - costo_en_uso_es_afliccion_no_cordura
       - opcion_debil_entre_objetos_del_limbo_por_su_efecto_acotado_y_sus_usos_finitos
     descubrimiento:
       undiscovered_state: >
@@ -140,11 +141,13 @@ manifestaciones:
       - sigue_siendo_un_objeto_fisico_pero_con_una_relacion_activa
       - es_la_opcion_mas_poderosa_entre_los_objetos_del_limbo
       - no_tiene_cargas_finitas_como_un_vestigio
-      - su_poder_escala_segun_la_severidad_de_la_afliccion_vinculada
-      - su_costo_de_largo_plazo_debe_pagarse_en_cordura
+      - su_poder_escala_segun_la_severidad_de_la_afliccion_vinculada_por_sentido
+      - cada_camino_de_sentido_escala_independientemente
+      - costo_en_uso_es_cordura_no_afliccion
+      - la_afliccion_del_portador_crece_durante_el_descubrimiento_no_durante_el_uso
     requisitos_de_uso:
       regla_base: >
-        El portador debe tener al menos una Aflicción del Vacío en el sentido
+        El portador debe tener al menos una Aflicción activa en el sentido
         requerido por el vínculo.
       single_sense_link: usa_la_severidad_de_la_afliccion_de_ese_sentido
       multi_sense_link: usa_la_severidad_minima_entre_todos_los_sentidos_requeridos
@@ -158,7 +161,7 @@ manifestaciones:
     deteccion:
       taumaturgia: firma claramente activa y direccional; puede medir intensidad y estabilidad
       instinto: reacción fuerte — claramente algo que no pertenece
-      teologia: reconoce las señales canónicas de presencia del Limbo
+      teologia: reconoce señales de presencia del Limbo según la doctrina de la tradición religiosa que conoce
     open_questions:
       - ¿Pueden los vínculos ser creados intencionalmente por practicantes de Tauma?
       - ¿Pueden los vínculos ser cerrados o sellados? ¿Por quién?

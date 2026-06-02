@@ -152,7 +152,7 @@ slot_effects:
     heavy: "bonus to R.R. against concussion, blindness, and stun-like effects equal to piece grade"
   torso:
     dependency: sanity_system
-    sanity_formula: "Composure * 2"
+    sanity_formula: "3 + (Composure * 2)"
     light: "Sanity bonus = grade"
     medium: "Sanity bonus = grade * 2"
     heavy: "Sanity bonus = grade * 3"

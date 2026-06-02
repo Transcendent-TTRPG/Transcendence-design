@@ -4,7 +4,7 @@
 
 The Limbo is a parallel dimension imperceptible to normal creatures and the origin of Tauma energy. It does not interact with the physical world directly — its energy filters through in three distinct forms. These manifestations are the substrate behind extranatural conditions and Tauma use.
 
-In the elemental religion, Limbo phenomena are attributed to Kaodis (deity of the Void, son of Lampsi and Nytha). Kaodis is the theological interpretation, not the mechanical cause.
+Traditions that have systematized knowledge of the Limbo interpret its phenomena through their own doctrinal frameworks. These are theological interpretations, not the mechanical cause.
 
 ---
 
@@ -98,7 +98,7 @@ An active link generates ambient flow in its surroundings. A sufficiently powerf
 
 - Object with active relation: a link is still a physical object, but unlike a
   vestige it maintains an ongoing connection to an entity or force of the
-  Void/Limbo
+  Limbo
 - More powerful option: links are the stronger class of Limbo-bearing objects
 - No finite hidden uses: the limit is not stored charges the way a vestige
   depletes
@@ -110,7 +110,7 @@ An active link generates ambient flow in its surroundings. A sufficiently powerf
 
 ### Link use requirements
 
-The bearer must have at least one **Void Affliction** on the sense required by
+The bearer must have at least one active **Affliction** on the sense required by
 the link.
 
 - Single-sense link: use the severity of that sense's Affliction
@@ -152,7 +152,7 @@ Normal creatures cannot perceive the Limbo directly. Detection requires:
 | --- | --- |
 | **Instinct** | Primal non-rational response — senses something does not belong; imprecise |
 | **Thaumaturgy** | Identifies taumatic structure and dimensional origin; distinguishes flow vs. vestige vs. link by active vs. fading signature |
-| **Theology** | Recognizes canonical markers of Kaodis's presence (theological layer) |
+| **Theology** | Recognizes markers of Limbo presence through the doctrine of any tradition that has systematized this knowledge |
 
 Detection and discovery are different things.
 

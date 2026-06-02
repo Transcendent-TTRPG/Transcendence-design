@@ -70,6 +70,16 @@ If two specializations would generate nearly identical Technique spaces, one of 
 
 This file exists to force differentiation at the domain level before actual Technique authoring begins.
 
+### Reading the invalid list
+
+The **Invalid or overlapping techniques** section in each domain entry blocks three distinct problems — not one:
+
+1. **Same-specialization upgrades.** Techniques that simply make the character better at the base specialization itself: jump farther, throw harder, track more accurately. This is the core invalid category.
+2. **Domain trespass.** Techniques that reproduce what another specialization is specifically supposed to do — Deception replacing Stealth, Riding replacing Balance.
+3. **Logic bypass.** Techniques that claim broad effects without using the specialization's actual logic — gaining general defense from Jumping without any impulse, landing, or impact mechanism.
+
+A technique that **transfers** the specialization's underlying capabilities to a different problem is always valid. The invalid list does not block legitimate capability transfers. When reading an invalid entry, ask: *Is this blocked because it IS the base specialization done better, because it trespasses another specialization's core territory, or because it bypasses the specialization's logic requirements entirely?* If none of those apply, the technique is valid.
+
 ---
 
 ## Force — Derived Technique Domains
@@ -108,7 +118,7 @@ Instead, each technique should express a transferable capability developed by th
 - Jump higher.
 - Cross a gap without a check.
 - Ignore difficult jump terrain.
-- Gain a generic bonus to all movement.
+- Gain a flat, passive bonus to all movement checks, unconnected from impulse, landing, commitment, or impact logic.
 - Stay balanced indefinitely in the air.
 - Avoid all fall damage without impact or landing logic.
 - Move silently because the character is “good at jumping.”
@@ -186,7 +196,7 @@ Instead, each technique should express a transferable capability developed by th
 - Replace bows, slings, crossbows, or other projectile weapons.
 - Make constant passive ranged attacks.
 - Apply non-physical control with no object, force, trajectory, or impact logic.
-- Defend against all attacks because the character “understands trajectories.”
+- Gain broad defense against attacks using trajectory expertise as the only justification, without specific projectile interception, arc deflection, or direct impact redirection logic.
 - Create broad area control without enough material or projectile logic.
 - Inflict complex conditions without a clear impact, object, or delivery method.
 
@@ -303,7 +313,7 @@ Instead, each technique should express a transferable capability developed by th
 #### Invalid or overlapping techniques
 
 - Perform a generic acrobatic stunt with no tactical consequence.
-- Gain a flat bonus to all movement.
+- Gain a flat, passive bonus to all movement checks, unconnected from momentum redirection, evasion, recovery, or movement continuity logic.
 - Maintain static balance on a narrow surface.
 - Pick locks, tie knots, or manipulate small mechanisms.
 - Command a mount through difficult terrain.
@@ -603,7 +613,7 @@ Instead, each technique should express a transferable mental process developed b
 - Resist poison, cold, heat, or altitude.
 - Lie convincingly about where the group went.
 - Create a perfect map with no observation.
-- Gain a bonus to all movement.
+- Gain a flat, passive bonus to all movement checks, unconnected from spatial recovery, reference anchoring, or direction logic.
 - Predict enemy strategy without spatial or route logic.
 - Replace Tracking by reconstructing another creature’s path from marks.
 - Replace Perception by noticing hidden details with no directional relevance.

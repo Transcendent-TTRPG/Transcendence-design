@@ -22,6 +22,24 @@ authoring.
 
 ---
 
+## Backfill Status
+
+Conversion of authored techniques to play-facing surfaces: corebook entry (chapter 9) + individual technique card. Updated per completed backfill run.
+
+| | Sauri | Naghii | Zarnag | Total |
+| --- | ---: | ---: | ---: | ---: |
+| Authored | 24 | 24 | 26 | 74 |
+| Corebook entries done | 24 | 24 | 24 | 72 |
+| Cards done | 24 | 24 | 24 | 72 |
+
+**Last completed:** Cobrar con la Otra (#73, Zarnag / Impredecible)
+
+**Sauri:** complete
+
+**Zarnag:** complete. 26 en autoridad; 24 publicadas (2 reatribuibles a otra especie: Hacer que el Ángulo Muerda y Esconder la Segunda Línea). Los dos duales publicados (Cerrar la Salida / Cobrar con la Otra) se redesignaron con perfiles reales (`Fluidez`, `Impredecible`) en lugar del "no profile gate" original.
+
+---
+
 ## Current Authored Species Passes
 
 - `Sauri`: `24` Techniques
@@ -36,54 +54,50 @@ authoring.
 Counts below refer to authored species-origin Techniques in the current
 Sauri, Naghii, and Zarnag passes.
 
-Two Zarnag dual-wield Techniques (`Dar de Comer a la Segunda Mano`,
-`Cerrar la Salida a Dos Manos`) carry no single weapon profile gate. They
-are noted separately at the bottom.
-
 | Weapon Technique Profile | Sauri | Naghii | Zarnag | Total |
 | --- | ---: | ---: | ---: | ---: |
-| `Interruption` | 2 | 1 | 1 | **4** |
+| `Interruption` | 2 | 1 | 2 | **5** |
 | `Perforation` | 0 | 3 | 0 | **3** |
+| `Unpredictability` | 0 | 1 | 2 | **3** |
 | `Line Control` | 2 | 0 | 0 | **2** |
 | `Interception` | 2 | 0 | 0 | **2** |
 | `Bastion` | 2 | 0 | 0 | **2** |
 | `Impact` | 2 | 0 | 0 | **2** |
-| `Rend` | 1 | 0 | 1 | **2** |
+| `Rend` | 1 | 0 | 2 | **3** |
 | `Corrosion` | 0 | 1 | 1 | **2** |
-| `Unpredictability` | 0 | 1 | 1 | **2** |
 | `Precision` | 0 | 1 | 1 | **2** |
 | `Skirmish` | 0 | 1 | 1 | **2** |
+| `Volley` | 0 | 1 | 1 | **2** |
 | `Unstoppable` | 1 | 0 | 0 | **1** |
 | `Torsion` | 0 | 1 | 0 | **1** |
 | `Ricochet` | 0 | 1 | 0 | **1** |
-| `Volley` | 0 | 1 | 0 | **1** |
 | `Ward` | 0 | 1 | 0 | **1** |
 | `Shadow Pressure` | 0 | 0 | 1 | **1** |
-| `Charge` | 0 | 0 | 1 | **1** |
+| `Charge` | 0 | 0 | 2 | **2** |
 | `Lethality` | 0 | 0 | 1 | **1** |
 | `Sunder` | 0 | 0 | 1 | **1** |
-| `Dual-wield (no profile gate)` | 0 | 0 | 2 | **2** |
+| `Flow` | 0 | 0 | 1 | **1** |
 
 ### Currently unrepresented profiles in species-origin authored Techniques
 
-- `Flow`
 - `Deflection`
 
-### Immediate reading
+### Immediate reading — Perfiles
 
 - `Interruption` is the most established authored profile surface across all three species.
 - `Perforation` is dominant within Naghii but still Naghii-exclusive.
 - `Line Control`, `Interception`, `Bastion`, and `Impact` are Sauri-exclusive so far — no other species has touched them.
-- Zarnag closed four previously zero-count profiles: `Shadow Pressure`, `Charge`, `Lethality`, and `Sunder`.
-- `Corrosion`, `Unpredictability`, `Precision`, and `Skirmish` are now at 2 each — confirmed by two different species.
-- `Unstoppable`, `Torsion`, `Ricochet`, `Volley`, and `Ward` are each still held by a single species.
-- `Flow` and `Deflection` have not appeared in any finished species-origin Technique.
+- Zarnag closed five previously zero-count profiles: `Shadow Pressure`, `Charge`, `Lethality`, `Sunder`, and `Flow`.
+- `Unpredictability` is now at 3 — the most-shared non-Interruption profile across species.
+- `Corrosion`, `Precision`, `Skirmish`, and `Volley` are now at 2 each — confirmed by two different species.
+- `Unstoppable`, `Torsion`, `Ricochet`, and `Ward` are each still held by a single species.
+- `Deflection` has not appeared in any finished species-origin Technique.
 
 ---
 
 ## Species By Weapon Profile
 
-### Sauri
+### Sauri — Perfiles
 
 | Profile | Count |
 | --- | ---: |
@@ -95,7 +109,7 @@ are noted separately at the bottom.
 | `Rend` | 1 |
 | `Unstoppable` | 1 |
 
-### Naghii
+### Naghii — Perfiles
 
 | Profile | Count |
 | --- | ---: |
@@ -110,21 +124,22 @@ are noted separately at the bottom.
 | `Interruption` | 1 |
 | `Ward` | 1 |
 
-### Zarnag
+### Zarnag — Perfiles
 
 | Profile | Count |
 | --- | ---: |
+| `Interruption` | 2 |
+| `Rend` | 2 |
+| `Charge` | 2 |
+| `Unpredictability` | 2 |
 | `Corrosion` | 1 |
 | `Shadow Pressure` | 1 |
-| `Rend` | 1 |
-| `Charge` | 1 |
 | `Skirmish` | 1 |
-| `Interruption` | 1 |
 | `Lethality` | 1 |
 | `Sunder` | 1 |
 | `Precision` | 1 |
-| `Unpredictability` | 1 |
-| `Dual-wield (no profile gate)` | 2 |
+| `Volley` | 1 |
+| `Flow` | 1 |
 
 ---
 
@@ -163,7 +178,7 @@ a specialization as a primary prerequisite are counted.
 | `Sigilo` | 1 |
 | `Trampas` | 1 |
 
-### Immediate reading
+### Immediate reading — Especializaciones
 
 - `Tolerancia` is the only specialization with three species claiming it — strong cross-species pattern.
 - `Intimidación`, `Medicina`, and `Resonancia` are now shared by two species each.
@@ -174,7 +189,7 @@ a specialization as a primary prerequisite are counted.
 
 ## Species By Specialization
 
-### Sauri
+### Sauri — Especializaciones
 
 | Specialization | Count |
 | --- | ---: |
@@ -189,7 +204,7 @@ a specialization as a primary prerequisite are counted.
 | `Aclimatación` | 1 |
 | `Teología` | 1 |
 
-### Naghii
+### Naghii — Especializaciones
 
 | Specialization | Count |
 | --- | ---: |
@@ -204,7 +219,7 @@ a specialization as a primary prerequisite are counted.
 | `Equilibrio` | 1 |
 | `Arqueología` | 1 |
 
-### Zarnag
+### Zarnag — Especializaciones
 
 | Specialization | Count | Source |
 | --- | ---: | --- |

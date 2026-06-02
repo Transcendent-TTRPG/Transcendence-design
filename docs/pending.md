@@ -74,7 +74,7 @@ Nota: este pase quedó cerrado bajo el bucket anterior de `defense`. El estánda
 
 - **Referenciado en:** `rolling-system-and-competencies.md` (T.R. de Aflicciones), `desgaste-aguante-fatiga.md`
 - **Descripción:** Qué son las Aflicciones, cómo se aplican, cómo progresan, cómo se resuelven
-- **Destino sugerido:** Cap. 11 (Cosmic Horror and Corruption) o sección dentro de Ch10
+- **Destino sugerido:** Cap. 11 (Ailments) — catálogo completo; reglas de Aflicciones en contexto de vínculo van en Cap. 12 (Cosmic Horror and Corruption)
 
 ### Sistema de Maldiciones
 
@@ -113,14 +113,15 @@ Decisiones que no han sido tomadas todavía. El sistema no puede estar completo 
 
 | # | Pregunta | Contexto |
 | --- | --- | --- |
-| D-01 | ¿Qué efectos concretos aplica cada nivel de Fatiga? | El sistema puede escalar a 5 niveles en lugar de 3; los umbrales están definidos pero los efectos no — requiere vocabulario mecánico más amplio (condiciones, restricciones, modificadores) antes de cerrarse |
+| D-01 | ~~¿Qué efectos concretos aplica cada nivel de Fatiga?~~ | **Resuelto 2026-05** — ver `data/system/attrition-fatigue.yaml` |
+| D-12 | ¿Cuál es el costo de Eco por activación de Aspecto? | ¿Escala paralela a Desgaste (0/1/2/3 según etapa Leve/Moderado/Grave)? ¿O costo fijo por Aspecto definido en su entrada individual? — ver E-05 en `limbo-entities.yaml` |
 | D-02 | ¿Los ataques apuntados (aimed) se quedan dentro de las familias de arma o se vuelven una categoría de ritmo separada? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-03 | ¿En qué punto el movimiento se divide en movimiento controlado vs. forzado o desesperado? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-04 | ¿Los escudos se convierten en su propia familia de acción base? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-05 | ¿Ciertos usos de especialización de alta demanda (fabricación compleja en combate) merecen banda Pesada en lugar de Estándar? | Ver open question en `combat-atb-rhythm-costs.md` |
 | D-06 | ¿Qué restricciones tiene la acción Correr? | Referenciado en `acciones.md` sin definir |
 | D-07 | ¿Cómo funcionan los combates en movimiento (pursuits, combate en desplazamiento sostenido)? | Marcha aparece como reactiva secundaria en esos escenarios; Equitación, Acrobacias y Equilibrio también son candidatas; la mecánica no existe todavía |
-| D-08 | ¿Aclimatación y otras especializaciones naturales aplican igual a condiciones extranaturales? | Una tormenta elemental no es solo frío extremo — puede requerir Instinto, Resonancia o Taumaturgia; no puede cerrarse sin el sistema del Vacío — ver `data/system/environmental-conditions.yaml` |
+| D-08 | ¿Aclimatación y otras especializaciones naturales aplican igual a condiciones extranaturales? | Una tormenta elemental no es solo frío extremo — puede requerir Instinto, Resonancia o Taumaturgia; no puede cerrarse sin el sistema de manifestaciones del Limbo — ver `data/system/environmental-conditions.yaml` |
 | D-09 | ¿Cómo interactúa el uso de Tauma con las tres manifestaciones del Limbo? | ¿Necesita el practicante un flujo o vínculo, o la energía es interna? — ver `data/system/limbo-manifestations.yaml` |
 | D-10 | ¿Cuál es la tasa de disipación de vestigios? | ¿Depende del material del objeto, del tiempo, de la intensidad original, de la proximidad a un vínculo? — ver `data/system/limbo-manifestations.yaml` |
 | D-11 | ¿Los vínculos tienen NR? ¿Ese NR afecta los umbrales de condiciones extranaturales del área? | Parámetro del vínculo vs. parámetro del entorno — ver `data/system/limbo-manifestations.yaml` |
@@ -135,6 +136,8 @@ Para referencia — ítems que estaban abiertos y ya se cerraron.
 
 | Fecha | Ítem | Resolución |
 | --- | --- | --- |
+| 2026-05 | Efectos concretos de cada nivel de Fatiga (D-01) | Resuelto: efectos acumulativos F1–F5 definidos. F1: T.E. físicas requieren T.R. Tenacidad. F2: ritmo 5+ no disponible. F3: +1 Desgaste a todo. F4: sin Reacciones. F5: Técnicas sin efectos secundarios. Ver `data/system/attrition-fatigue.yaml` |
+| 2026-05 | Sistema psíquico completo (Eco / Cordura / Disonancia) | Resuelto: Eco = costo acumulado de Aspectos. Cordura = 3 + (CMP × 2). Disonancia = consecuencia asentada D1–D5. Efectos paralelos a Fatiga. Ver `data/system/attrition-fatigue.yaml` |
 | 2026-04 | "Basic read / understand" como acción base | Renombrado a Especialización; costo 5/1 aplicado a todo uso de especialización en escena hostil |
 | 2026-04 | Desgaste de arma a dos manos y dos armas | Cambiado de 2 a 1; el ritmo 7 ya genera desventaja de cadencia suficiente |
 | 2026-04 | Nombre canónico para habilidades de competencia | Adoptado: **Técnicas (ES) / Techniques (EN)** |
