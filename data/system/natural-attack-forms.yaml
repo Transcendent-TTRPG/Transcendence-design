@@ -272,9 +272,9 @@ forms:
       - species: "Drak'kai"
         expression_id: "drakkai_grip_claws"
         availability: "All Drak'kai"
-        contact_logic: "Functional grip, space control, and supplementary close pressure — handling and holding rather than raking or tearing"
+        contact_logic: "Functional grip, angle redirection, and supplementary close pressure — handling and holding rather than raking or tearing"
         compatible_profiles:
-          - "Line Control"
+          - "Deflection"
           - "Interception"
           - "Torsion"
           - "Interruption"
@@ -283,12 +283,13 @@ forms:
           - "Shadow Pressure"
           - "Charge"
         identity_notes: >
-          Drak'kai claw Techniques should emphasize grip, control, and
-          supplementary close pressure. They are not aggressive raking tools —
-          they manage space, hold opponents in difficult positions, and support
-          the bite or weapon strikes rather than dealing primary damage. Their
-          most natural role is as an auxiliar surface that creates persistent
-          positional problems rather than raw harm.
+          Drak'kai claw Techniques should emphasize grip, contact redirection,
+          and supplementary close pressure. They are not aggressive raking tools
+          — they catch incoming force, hold opponents in difficult positions,
+          redirect angle, and support the bite or weapon strikes rather than
+          dealing primary damage. Their most natural role is as an auxiliar
+          surface that creates persistent positional problems and angle
+          disruption rather than raw harm.
       - species: "Zarnag"
         expression_id: "zarnag_scavenger_claws"
         availability: "All Zarnag"
