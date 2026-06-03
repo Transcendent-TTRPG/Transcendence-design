@@ -78,6 +78,31 @@ Current overall state: `Narratively strong, not yet socially complete`
 
 ---
 
+## Drak'kai
+
+Primary file: [drakkai.md](drakkai.md)
+
+| Layer | Status | Notes |
+| --- | --- | --- |
+| Identity | Strong | Animal base, civilizational motivation (accumulation as completeness), cosmicist hook (epistemological rather than eschatological horror), and first impression are clear. No clean cultural analog — intentional. |
+| Body | Strong | Physical parameters, shell integration, crushing jaw logic, functional claws, magnetoreception, and evolutionary perception calibration are all defined. |
+| Culture | Strong | Conclave institution, hermit-wanderer structure, what earns respect, the internal tension around dangerous knowledge, and the difference between accumulation-for-completeness and accumulation-for-power are established. |
+| Theology and Cosmology | Strong | Empirical relationship with Tauma entities through vínculo/vestigio encounters, the non-fixed pantheon observation, and the specific form of horror (epistemological, not eschatological) are clear and distinctive. |
+| Organization and Internal Variation | Partial | Major community forms (route-based, ruin-specialist, conclave keeper, withdrawal) and internal fault lines are defined, but named conclave sites, regional variation, and the mechanics of conclave exchange need expansion. |
+| Daily Life and Life Cycle | Partial | Mentor-apprentice travel period, long solitary wandering, food as opportunistic, elder status, and what they fear losing are present. Family structure, mourning, domestic detail beyond travel, and community support systems need more. |
+| External Relations | Partial | External pressure patterns are clear (knowledge makes them targets, isolation as strategy, theological hostility from affirming communities). Named neighbors, geographic placement, and specific recurring relationships need expansion. |
+| Material Expression and Language | Partial | Shell markings as biography, Drakar's vocabulary structure, conclave site practices, and object-handling tools are present. Naming patterns, titles, clothing, and non-conclave material culture need expansion. |
+| System Connections | Strong | Natural attacks (bite, claws, shell), arsenal fit, competency affinities, Características/Herencia/Legado candidates, and Technique implications are all defined. Seeds skeleton established. |
+| Player Character Hooks and Open Questions | Strong | What a PC knows and doesn't know, departure reasons, what they carry, and the open questions that follow them are all clearly articulated. |
+
+### Drak'kai summary
+
+The Drak'kai are a narratively robust species for cosmological positioning, combat identity, technique authoring, and player character hooks. Their most distinctive contribution is an epistemological cosmological horror that does not require an incoming threat — they simply know that collective belief shapes Tauma and that nothing anyone believes has ever been stable. Their primary gaps are geographic placement, named relationships with other species, and richer domestic/non-wandering life detail.
+
+Current overall state: `Narratively strong, geographically and socially incomplete`
+
+---
+
 ## Shared Next Steps
 
 If Sauri and Naghii are the reference-standard species, the next most valuable
