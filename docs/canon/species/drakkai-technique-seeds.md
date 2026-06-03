@@ -358,3 +358,177 @@ Escudo · Control de Línea · Activo
 **authoring_pressure:** The primary output is chosen repositioning, not knockdown, not Desequilibrado, not displacement in a single fixed direction. Distinguish from the Sauri Line Control shield stance (which blocks a lane and stays stationary) and from the Sauri anti-displacement self-brace (which prevents the user's own movement): this technique actively steers the opponent to a chosen position using committed mass. The Drak'kai must move with the shield during the drive — this is not a passive gate but a committed push with direction. The target must be redirectable: this cannot work against targets that are already anchored, in Bastion stance, or have more mass committed than the user can overcome.
 
 **avoid:** Knockdown (Derribado) as the primary output. Desequilibrado as the primary output — the target is repositioned, not destabilized. Stationary use — the Drak'kai moves with the push. Broad multi-target sweeping — this steers one body to one chosen position. Infinite mass override — the target's Bastion or anchored state should resist this.
+
+---
+
+## Defensa
+
+### El Golpe Que Cobra
+
+Armadura Pesada · Reactivo
+
+**world_root:** The Drak'kai have been a species that things collide with for a very long time. Over generations of long routes, load-bearing, and accumulated encounters, they learned something that lighter species do not: mass does not simply absorb force — it returns it. The ground does not apologize for being hard. When something strikes a Drak'kai who has learned to receive correctly, the force that went in does not disappear — it finds the attacker's hand, wrist, and weapon arm on the way back out. Not as a counterattack. As a consequence of having committed to the contact.
+
+**technique_space:** Reactive armor technique that activates when a physical attack successfully connects with the user's medium or heavy armor — that is, when a T.D. fails and the hit resolves through the armor. The attacker pays a rhythm or attrition cost from the contact itself: the structural counter-pressure of the armor and the mass behind it makes the act of landing the hit expensive. This is not a counterattack and deals no damage. It is the structural cost of choosing to hit something that does not yield easily. The magnitude of the cost scales with rank and competency in medium or heavy armor.
+
+**authoring_pressure:** The trigger must be a landed hit — T.D. fails, hit resolves through armor. Distinct from Cerrar la Coraza (Sauri: declares a line and improves Block in a held posture) and Volver la Placa (Sauri: angle-corrects one hit onto plate). This technique does not improve the user's Block or change the angle — it adds a cost to the attacker after the hit resolves. The cost should be rhythm or attrition, not damage, not a condition on the attacker. It should not trigger on hits that bypass armor entirely.
+
+**avoid:** Damage output on the attacker. Conditions applied to the attacker. Triggering on T.D. successes — this only fires when the hit lands. Triggering on hits that explicitly bypass armor. Becoming a universal hit tax that discourages all combat with the Drak'kai — the cost should be real but scaled, not prohibitive.
+
+---
+
+### El Cuerpo Que Se Calibra
+
+Armadura Pesada · Activo
+
+**world_root:** Most species lose function as hits accumulate — each blow degrades the body's ability to respond to the next. A Drak'kai who has worn load across long routes, endured terrain and exposure without urgency, and built their endurance through years of sustained pressure learns something different: the body can calibrate to what it receives. The first blow is the worst. The structure does not break down under repeated contact — it adjusts. By the time others would be slowing, the Drak'kai has already learned the weight of what is hitting them.
+
+**technique_space:** Active armor technique that tracks the cumulative impact load received in the current encounter. After a threshold number of hits have resolved through the user's medium or heavy armor, the technique triggers an adaptation: the user's Block value increases, their armor-based attrition costs from hits are reduced, or their resistance to being degraded by subsequent hits improves. The Drak'kai becomes progressively harder to damage through repeated contact rather than progressively easier. The adaptation threshold and the magnitude of the improvement scale with rank.
+
+**authoring_pressure:** The identity is temporal accumulation — the technique improves AFTER being hit multiple times, not from the start. Distinct from Cerrar la Coraza (which declares a line and holds a posture from the start) and Volver la Placa (which corrects one incoming angle). This technique does not front-load any defense — it rewards staying in sustained contact and absorbing hits. The threshold must be meaningful: this should not fire after one or two hits at Novice rank. Define carefully whether the output is Block increase, attrition reduction, or both — and keep it concrete, not a vague "resilience bonus."
+
+**avoid:** Front-loading the benefit before any hits are received. Triggering on evaded hits or T.D. successes — only landed hits count. Becoming an immortality loop where enough hits make the Drak'kai unkillable — the improvement should be real but bounded at Novice. Framing as regeneration or recovery — the body is not healing, it is adjusting to the load it is already under.
+
+---
+
+## Especializaciones
+
+### El Espacio Se Sabe
+
+Orientación · Activo
+
+**world_root:** Long-route Drak'kai do not know where they are through landmarks — they know where they are through spatial reasoning built from accumulated travel. When landmarks are gone, the logic of relative position does not disappear. A Drak'kai who has navigated sufficiently hostile terrain learns to reconstruct geometry from movement alone: who moved where, at what speed, at what angle, through what space. The scene becomes legible when others see only chaos.
+
+**technique_space:** Active information technique triggered when the scene loses spatial reference — darkness, heavy smoke, disorienting terrain, sudden structural shift, or any condition that makes position and relative geometry unclear to the other parties. The character immediately reconstructs the current relative positions of all present beings from spatial reasoning: who is where, which directions they are facing, what lines of approach or retreat are open. This is not sensory detection — the character does not perceive through the obscuring condition. They reconstruct the geometry from what they knew before the reference loss and what movement has occurred since. The output is a declared map of relative positions that creates one specific tactical or informational advantage for the next action taken. Accuracy and detail scale with rank.
+
+**authoring_pressure:** The output is spatial reconstruction, not sensory extension — the character does not see through smoke or darkness. They reason from what they knew before. Distinguish from Percepción (which catches a present signal) and from Rastreo (which reads movement history from traces). This technique works entirely from spatial logic: who was where, what has moved, what geometry follows. The technique should not become an omniscience tool — at Novice rank, the reconstruction covers relative positions and open lines, not intentions or hidden details.
+
+**avoid:** Sensory bypass — this is reasoning, not perception. Revealing intentions, equipment, or non-spatial facts about other parties. Becoming a universal invisibility counter. Working in situations where the character has no prior spatial reference at all — they need to have been in the space long enough to have a baseline.
+
+---
+
+### La Línea Que No Se Rompe
+
+Enfoque · Reactivo
+
+**world_root:** A Drak'kai holds things for a long time. Objects, routes, questions, positions. The practice of carrying something carefully over years — not letting the load shift, not letting the attention drift — produces a specific mental muscle: the ability to keep a thread alive through events that would normally sever it. When a Drak'kai is in a held position and something tries to break it, the hold does not end. The thread continues. What was being maintained continues to be maintained.
+
+**technique_space:** Reactive technique that triggers when an event would normally end an active stance, sustained posture, ongoing effect, or maintained action that the character is currently holding. Instead of the effect ending, the character pays the cost of this technique and the held state continues through the interruption. The interrupting event still resolves — the Drak'kai still takes the hit, still receives the pressure, still experiences the distraction — but the technique they were maintaining does not collapse. One interruption is survived per use. At higher ranks, the threshold of what can be survived expands.
+
+**authoring_pressure:** This technique preserves a held state through one interruption — it does not make the character immune to all interruptions permanently. The interrupting event still resolves fully; only the continuity of the held technique is preserved. Distinguish from Focus's domain (concentration in the abstract): this technique is specifically about mechanical persistence of an active game state. The held state must be one that has a defined "ends when X" condition — this technique overrides that condition once.
+
+**avoid:** Preventing the interrupting event from resolving. Applying to states that have no defined ending condition. Becoming a universal immunity to all disruption. Working more than once per triggering event — one interruption per use. Preserving a stance that the character voluntarily dropped rather than being forced out of.
+
+---
+
+### El Marco Antes Del Paso
+
+Identificación · Activo
+
+**world_root:** A Drak'kai who has handled enough objects, sites, and phenomena — many of them not fully understood — learns something more fundamental than identification: they learn to determine which category of knowledge applies before committing to a specific answer. The wrong framework applied to an unknown thing is more dangerous than ignorance. The Drak'kai who has survived misidentified relics knows to ask what kind of thing this is before asking what this thing is.
+
+**technique_space:** Active information technique that fires before a character or party interacts with an unknown entity, phenomenon, object, site, or situation. The character determines the correct category of knowledge that applies — not what the thing is, but what type of thing it is and therefore what the correct response framework is. The output is: one wrong approach ruled out, one valid approach confirmed, or one category determination that shapes the next action. This is not full identification — it is framework selection. The character does not learn the specifics; they learn which domain of understanding applies, which protects the next action from the most dangerous category error.
+
+**authoring_pressure:** The output is framework selection, not revelation — the technique does not name what something is, it names what kind of thing it is. One wrong approach ruled out or one correct framework confirmed per use. Distinguish from Identificación's base specialization (which identifies more accurately with better rolls) and from Historia (which applies precedent). This technique is pre-identification: it prevents the costliest errors before they happen. Should not become a general "detect danger" or "notice all hidden things."
+
+**avoid:** Full identification of unknown things. Revealing lore, history, or context beyond framework. Triggering automatically on all unknown objects — requires the character's active deliberate attention before interaction. Replacing Percepción by detecting unobservable things.
+
+---
+
+### La Grieta Que Ya Apareció Antes
+
+Historia · Activo
+
+**world_root:** A Drak'kai who carries centuries of accumulated encounter records — not as abstract knowledge but as a specific collection of incidents, failures, and their patterns — learns to recognize a situation not by what it appears to be now but by what it has been before. The present crisis is not novel. Something with this shape has happened. And when it happened before, it broke at a specific place.
+
+**technique_space:** Active information technique that fires when the character is facing a situation, entity method, social configuration, institutional behavior, or structural pattern that has a historical analog. The character identifies the precedent: a known prior instance where a situation of this type occurred. From that precedent, they extract one specific failure point — the place where this type of situation has historically broken down, failed, or revealed its weakness. The output is a declared failure point that creates one specific tactical or investigative advantage for the next action taken toward that weak point. At higher ranks, the precision and breadth of the applicable precedent expands.
+
+**authoring_pressure:** The output is one specific failure point derived from historical precedent — not a general advantage, not a vague "insight," not lore delivery. The failure point must be actionable: it should tell the character what to target, what to avoid, or what to wait for. Distinguish from Identificación (which determines category, not history) and from Percepción (which reads present signals). This technique requires that a real historical analog exists — if the situation is genuinely unprecedented in the character's knowledge, the technique fails. Should not become a general "wisdom tells me what to do next."
+
+**avoid:** Delivering lore dumps. Creating general advantages not tied to a specific failure point. Replacing field judgment with historical authority. Working in genuinely unprecedented situations where no prior analog exists. Revealing the full history of an entity or phenomenon rather than one specific actionable precedent.
+
+---
+
+### El Cuello Que Todo Lo Atraviesa
+
+Geografía · Activo
+
+**world_root:** A Drak'kai who has spent decades navigating terrain — mountains, passes, flood plains, ruins, built spaces — learns to read any space as a system of flows and constraints. Movement does not distribute evenly. It concentrates. There is always one feature that everything else passes through, avoids, or depends on. The character who identifies it first does not need to be the fastest or the strongest. They need only to be there first.
+
+**technique_space:** Active information technique that fires when the character enters or observes a new scene, space, or terrain configuration. The character immediately identifies the one physical feature that most constrains all movement in this space — the chokepoint, the funnel, the threshold, the elevated position, the only water source, the structural weakness. The output is a declared feature and a specific positional or tactical advantage for the next action that claims, contests, or acts through that feature. The character does not need to move to gain the benefit — the identification itself creates the advantage, which is then spent on one action. At higher ranks, the character can identify secondary features or predict how contesting the primary feature will affect overall movement.
+
+**authoring_pressure:** The output is identification of the controlling terrain feature and one derived advantage — not omniscient battlefield control. The advantage must be spent on one declared action through or around that feature. Distinguish from Orientación (which reconstructs spatial geometry under confusion) and from Geografía's base specialization (which provides factual knowledge of regions). This technique works at scene scale, not route scale — it reads the current space, not regional geography. The identified feature must be physically real and observable, not inferred from strategic theory.
+
+**avoid:** Applying at regional or route scale — this is immediate scene geometry. Providing persistent battlefield control beyond one derived advantage. Working in featureless spaces with no meaningful constraining feature. Replacing Orientación by solving disorientation. Replacing Survival by solving field resource problems.
+
+---
+
+### El Margen Que Quedó Abierto
+
+Lingüística · Activo
+
+**world_root:** A Drak'kai who has traveled long routes encounters many languages, dialects, registers, and conventions of speech. They learn not just vocabulary but the gap between what is said and what is bound by: the phrase that sounds complete but carries a hidden exception, the oath that is absolute in one reading and qualified in another, the instruction that presupposes a context the speaker never stated. The Drak'kai does not manipulate this gap. They see it. That is enough.
+
+**technique_space:** Active information technique that fires when an instruction, declaration, contract, oath, agreement, order, or formal statement is made in the scene — by any party. The character identifies the hidden ambiguity, unstated assumption, or unconsidered qualification in the statement: the gap that makes the apparently definitive thing not actually definitive. The output is a declared margin — one actionable space the statement does not actually close. This is not creative reinterpretation; it is accurate detection of a real linguistic gap that was already present. The margin can be used to: act within the apparent prohibition without violating the literal constraint, predict where the statement will be disputed, or reveal to another party that the agreement does not bind what they think it binds.
+
+**authoring_pressure:** The output is detection of a real gap, not creation of a new interpretation. The margin must be genuinely present in the statement — this technique does not invent loopholes. Distinguish from Linguistics' base specialization (which translates more accurately) and from social manipulation specializations (Deception, Persuasion). The character is reading language as a formal structure, not as social leverage. Should not become a general "find a way out of any obligation" tool.
+
+**avoid:** Creating loopholes that were not present. Social persuasion or negotiation framing. Triggering on informal speech with no formal constraint structure. Replacing Deception by inventing false interpretations. Revealing information beyond the linguistic structure of the statement itself.
+
+---
+
+### Antes De Que Cambie
+
+Percepción · Reactivo
+
+**world_root:** The Drak'kai magnetoreceptive sense reads gradient changes — shifts in what the environment is doing, not just what the environment is. A Drak'kai who has spent decades reading magnetic routes, pressure variations, and atmospheric shifts learns to notice a change in the gradient before its cause becomes visible. Something has shifted. The air, the field, the composition of the space has changed in a way that precedes what is about to happen. The Drak'kai acts before the cause becomes apparent.
+
+**technique_space:** Reactive technique that triggers when a significant change is about to occur in the immediate environment — an approach entering range, a trap activating, a structural element failing, a concealed entity shifting position, or an environmental hazard becoming active. The character receives a one-exchange early warning: they know something has changed before its cause is observable by normal means. This early warning translates into one specific action taken before the change fully manifests: a movement, a defensive posture, a warning to others, or an interruption of the incoming event. The technique does not identify what is coming — only that something is. At higher ranks, the character can narrow the source direction of the change.
+
+**authoring_pressure:** The output is early warning — one exchange of advance notice — not identification of the source or nature of the change. The character knows something has shifted; they do not know what. Distinguish from Percepción's base specialization (which notices present details more accurately) and from Rastreo (which reads movement history). This technique catches the moment of change as it is beginning, not after it has resolved. Should not become a general "never be surprised" ability.
+
+**avoid:** Identifying what is coming — only that something is. Triggering on changes that are already fully observable. Working at long range beyond the immediate scene. Becoming a universal ambush immunity. Replacing Tracking by reading the history of the source's movement.
+
+---
+
+### Lo Que Este Lugar Recuerda
+
+Rastreo · Activo
+
+**world_root:** A Drak'kai who has traveled the same routes multiple times learns that a space carries the memory of what has moved through it — not in tracks alone, but in how the environment has been shaped by sustained passage: the worn stone, the disturbed sediment that settled again, the plant growth that bent and recovered, the magnetic residue of routes repeatedly taken. A space that has been used carries its history differently than one that has not. The Drak'kai reads that difference.
+
+**technique_space:** Active information technique that fires when the character takes time to read a space — a room, a clearing, a corridor, a site — for its movement history. Through environmental memory rather than conventional tracks, the character determines: what has moved through this space, in what general pattern, with what frequency, and in what direction. The output is a specific piece of movement intelligence: a route that has been regularly used, a space that has been avoided, an approach that was made once versus one made habitually, or the general direction from which the most recent passage came. This is not investigation in the forensic sense — it is route memory reading from accumulated environmental change. Accuracy and detail scale with rank.
+
+**authoring_pressure:** The output is movement history from environmental memory — not forensic analysis, not creature identification, not intent reading. The character learns what moved through and in what pattern; they do not learn who or why. Distinguish from Rastreo's base specialization (which follows active trails and tracks directly) and from Percepción (which catches present signals). This technique reads accumulated change over time, not fresh tracks. It should require meaningful time in the space — this is not an instant scan.
+
+**avoid:** Identifying who or what made the passage — only that movement occurred and in what pattern. Forensic analysis beyond environmental memory. Replacing active trail-following. Working in spaces with no meaningful passage history. Instant results — reading environmental memory takes real dwell time in the space.
+
+---
+
+## Híbridos de Resistencia
+
+### La Carga Que No Acaba
+
+Aflicciones · Meditación · Híbrido
+
+**world_root:** A Drak'kai does not rest from accumulated load — they carry it further. The internal practice that makes long-route travel sustainable is not recovery; it is the development of a relationship with sustained fatigue that does not allow it to decide the next step. The body is tired. The decision is not made by the body. This is not endurance in the sense of physical toughness — it is the practiced refusal to let accumulation become collapse. Meditación, for the Drak'kai, is not a pause in the load. It is the method of remaining functional inside it.
+
+**technique_space:** Resistance hybrid that activates when the character would receive an Aflicción — fatigue accumulation, mental stress, sustained degradation, or any effect that compounds over time. The technique does not prevent the Aflicción from applying; it reduces the rate at which accumulation converts into functional loss. Specifically: the severity threshold at which the Aflicción begins to affect actions is raised by a value that scales with the character's Meditación rank. The character still carries the load — they do not eliminate it — but the point at which carrying it begins to cost them function is delayed. Requires both a meaningful Aflicciones competency and a meaningful Meditación rank to access.
+
+**authoring_pressure:** The primary output is threshold delay — the Aflicción still applies and still accumulates, but impairs function later. This is not immunity, not removal, and not recovery. Distinguish from Contención (which prevents internal rupture from panic or horror) and from Tolerancia (which endures physical pain). Meditación contributes the transferable capability of sustained internal state maintenance under prolonged pressure — not rest, not emotional suppression, but the practiced continuation of function while something accumulates inside. The dual-competency gate must be real: this technique genuinely requires both.
+
+**avoid:** Preventing Aflicciones from applying at all. Clearing or recovering from accumulated Aflicciones. Emotional suppression — this is not Contención. Physical pain endurance — this is not Tolerancia. Triggering on single-hit effects rather than accumulating conditions. Becoming a general immunity to all Aflicciones at high rank.
+
+---
+
+### Lo Que Se Conoce No Sorprende
+
+Alteraciones · Taumaturgia · Híbrido
+
+**world_root:** The Drak'kai have had more contact with active Tauma phenomena than any other species — not by seeking them, but because their collections make inadvertent contact more likely and more prolonged. Through generations of this exposure, the species has accumulated a specific form of knowledge: not how to stop a Tauma effect, but how to recognize its signature before it consolidates. The Alteration that surprises others does not fully surprise a Drak'kai who has seen this kind of thing before — and the moment of recognition creates a window that did not exist without it.
+
+**technique_space:** Resistance hybrid that activates when the character would receive an Alteration (Alteración) with a Tauma, extranatural, or phenomenon-sourced origin. The character's accumulated knowledge of how such effects behave creates a brief recognition window: they identify the incoming effect's signature before it fully settles, and this recognition translates into an improved T.R. (resistance roll) against that specific Alteration. The bonus to the T.R. scales with the character's Taumaturgia rank. This does not apply to Alterations caused by mundane physical force, conventional weapons, or non-Tauma sources. Requires both a meaningful Alteraciones competency and a meaningful Taumaturgia rank to access.
+
+**authoring_pressure:** The output is a T.R. bonus specifically against Tauma-sourced Alterations — not immunity, not reversal, not a general bonus to all resistance rolls. The Taumaturgia contribution is recognition, not suppression: the character knows what kind of thing this is before others do, and that knowing is what creates the advantage. Distinguish from Sauri Taumaturgia techniques (which operate the law of a Tauma manifestation) — this technique does not manipulate the Tauma effect, it resists its physical consolidation. The extranatural origin requirement is the meaningful gate: if the Alteration is mundane, this technique does not apply.
+
+**avoid:** Applying to Alterations from non-Tauma sources. Suppressing, dispelling, or reversing the Tauma effect itself — this is resistance, not intervention. Becoming a general anti-magic immunity. Triggering automatically without an active resistance roll. Working against effects with no Tauma, extranatural, or phenomenon-rooted origin.
