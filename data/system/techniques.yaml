@@ -7116,7 +7116,7 @@ pilot_examples:
       Technique improves Bloqueo and physical stability only through one
       declared armored line.
     origin:
-      main: Armadura intermedia / Armadura pesada
+      main: Armadura pesada
       secondary: []
     world_origin:
       primary_front: Species
@@ -7225,7 +7225,7 @@ pilot_examples:
       create broad protection; it only prepares one armored line to survive
       contact better while the posture is maintained.
     restrictions:
-      - only_works_with_armadura_intermedia_or_armadura_pesada
+      - only_works_with_armadura_pesada
       - only_applies_when_the_declared_armor_really_participates_in_absorbing_the_impact_on_the_struck_zone
       - does_not_improve_td_interception_ally_protection_or_cover_by_itself
       - does_not_help_against_poison_fear_curses_taumatic_pressure_sensory_overload_mental_influence_social_pressure_or_other_nonphysical_effects

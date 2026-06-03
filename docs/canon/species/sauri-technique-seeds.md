@@ -1507,12 +1507,12 @@ On success, choose one:
 | --- | --- |
 | `name` | Cerrar la Coraza |
 | `name_en` | Close the Carapace |
-| `origin` | Armadura intermedia / Armadura pesada |
+| `origin` | Armadura pesada |
 | `world_origin` | Species: Sauri; seed: Vessel Under Pressure / Procession Of Force; transmission: temple armor drills, floodgate guard posture training, and sovereign escort procession discipline; availability: Restricted |
 | `category` | defense |
 | `type` | active stance |
 | `trigger` | You deliberately set your body to receive incoming pressure through the part of your armor that was built to hold it. |
-| `requirements` | Minimum rank: Novice; defensive competency: Armadura intermedia or Armadura pesada; the user must be wearing a functional piece of that armor on the line they intend to present, must be standing or otherwise able to hold posture, and must be able to keep the declared armored facing toward the pressure being received. |
+| `requirements` | Minimum rank: Novice; defensive competency: Armadura pesada; the user must be wearing a functional piece of heavy armor on the line they intend to present, must be standing or otherwise able to hold posture, and must be able to keep the declared armored facing toward the pressure being received. |
 | `target` | self |
 | `range` | self |
 | `area` | one declared armored facing / pressure line |
@@ -1539,7 +1539,7 @@ On success, choose one:
 
 While the stance remains active, you are considered to be using an `active armor posture`.
 
-If an attack or physical impact comes through that declared line, hits a zone where the chosen medium or heavy armor actually participates in absorbing the impact, and does not bypass the armor entirely, add a bonus equal to the rank bonus of the armor competency used for this Technique to that zone's `Bloqueo`.
+If an attack or physical impact comes through that declared line, hits a zone where the heavy armor actually participates in absorbing the impact, and does not bypass the armor entirely, add a bonus equal to the rank bonus of the armor competency used for this Technique to that zone's `Bloqueo`.
 
 If that same triggering effect would also force physical displacement or require an `R.R.` against `Derribado` or `Desequilibrado` through impact, shove, posture loss, or bodily collision coming through that same declared line, add the same rank bonus to that `R.R.`.
 
@@ -1547,7 +1547,7 @@ If the pressure comes from a different line, strikes an unarmored or lightly arm
 
 **Restrictions:**
 
-- only works with `Armadura intermedia` or `Armadura pesada`
+- only works with `Armadura pesada`
 - only applies when the declared armor really participates in absorbing the impact on the struck zone
 - does not improve `T.D.`, interception, ally protection, or cover by itself
 - does not help against poison, fear, curses, taumatic pressure, sensory overload, mental influence, social pressure, or other non-physical effects
