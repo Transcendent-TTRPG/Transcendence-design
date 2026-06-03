@@ -11074,3 +11074,129 @@ pilot_examples:
       - dual_wield
       - close_sequence
       - exit_pressure
+
+  # ── Drak'kai ──────────────────────────────────────────────────────────────
+
+  - name: Cierre en el Umbral
+    name_en: Closure at the Threshold
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Interception Technique using the bite to
+      catch an attacking limb at the moment of committed extension, creating
+      Impedido on the weapon arm rather than protecting an ally.
+    origin:
+      main: Bite
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: Accumulated Contact Reading
+      focus: Guard / Committed Close Interception
+      holder: "Drak'kai long-route travelers with bite competency"
+      transmission: long_route_contact_experience_and_conclave_timing_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that commitment can
+        be read before impact and that the bite closes not as a reaction but
+        as a decision already made. Non-Drak'kai can learn it through any
+        Interception-profile natural form that can credibly catch an attacking
+        limb at the moment of extension.
+    category: defense
+    type: reactive
+    trigger: >
+      An enemy within the user's bite reach makes a physical attack against
+      the user and commits to an attacking extension the user has read before
+      it resolves.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interception
+      support_specializations: []
+      equipment:
+        - bite_or_natural_weapon_with_interception_access_within_attacker_reach
+      states:
+        - attacker_within_bite_reach
+        - user_has_not_yet_resolved_their_td_against_the_triggering_attack
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires repeated exposure to committed attackers and practice reading
+          the extension moment before it resolves. Progress is slow without a
+          partner who can reliably drill committed attacks.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai with bite interception experience, or any trainer able to
+          demonstrate committed-extension timing drills, can compress the
+          learning significantly.
+      material_cost: null
+      access_notes: >
+        Most commonly encountered in Drak'kai route-travel and conclave
+        contexts. Non-Drak'kai require access to a trainer or tradition that
+        preserves the committed-extension reading logic.
+      final_validation: one_successful_supervised_reactive_bite_that_closes_on_an_attacking_limb
+    target: attacking_enemy
+    range: bite_reach
+    area: single_attacking_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: opposed_attack_roll_then_alteration_resistance
+      effect_on_success: >
+        If the reactive T.A. meets or exceeds the attacker's T.A., the
+        triggering attack fails. The attacker then makes a T.R. de
+        Alteraciones: failure applies Impedido at the severity for the user's
+        rank; success resists the condition but the attack still fails. If the
+        reactive T.A. falls short, the interception fails and the attack
+        resolves as if the user's T.D. had failed — no additional T.D. is
+        made.
+    description: >
+      Cuando el brazo llegó, ya lo estaba esperando.
+    effect: >
+      Cuando un enemigo dentro de tu alcance de arma realiza un ataque físico
+      contra ti, realiza una T.A. reactiva con tu perfil de Intercepción contra
+      el atacante. Esta tirada reemplaza tu T.D. contra ese ataque. Si tu T.A.
+      es igual o mayor que la del atacante, el ataque falla; el atacante
+      realiza una T.R. de Alteraciones: si falla, queda Impedido a la severidad
+      determinada por tu rango de competencia. Si tu T.A. es menor, la
+      intercepción falla y el ataque resuelve como si tu T.D. hubiera fallado.
+    scaling: >
+      La severidad de Impedido escala con el rango de competencia en Mordisco:
+      rango 1–2 Leve, rango 3–4 Moderado, rango 5–6 Grave. Rangos más altos
+      también mejoran la T.A. reactiva a través del escalado normal de
+      competencia.
+    cost_note: >
+      Ritmo 5 / Desgaste 2 es deliberado. La Técnica es reactiva, puede negar
+      completamente un ataque entrante, y aplica Impedido sobre el brazo
+      atacante. Su limitador principal es el riesgo: declararla requiere
+      comprometerse antes de saber si la intercepción tendrá éxito — una
+      intercepción fallida deja al ataque resolverse normalmente.
+    restrictions:
+      - requires_a_physical_attack_from_an_enemy_within_bite_reach
+      - requires_declaration_before_the_users_own_td_resolves
+      - cannot_intercept_effects_that_are_not_committed_physical_attacks
+      - cannot_intercept_attacks_the_bite_cannot_physically_reach
+      - does_not_protect_an_ally_by_itself
+      - does_not_function_against_mental_social_aura_curse_poison_or_non_contact_effects
+    tags:
+      - defense
+      - interception
+      - control
+      - disruption
