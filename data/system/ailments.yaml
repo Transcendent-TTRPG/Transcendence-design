@@ -941,3 +941,47 @@ entries:
       The terrified state never creates parallel copies. A stronger terror
       line replaces a weaker one; an equal application usually refreshes
       persistence while the same feared line remains active.
+
+  - name: Desarmado
+    family: Alteration
+    description: >
+      The target has lost their grip on a held weapon or object. The item is
+      no longer held and has fallen to the ground in the target's space.
+    severity_levels:
+      minor:
+        - "the designated weapon or held object is dropped; it falls in the target's space"
+        - "retrieving it requires a movement action"
+      moderate:
+        - "the designated weapon or held object is dropped; it falls in the target's space"
+        - "retrieving it requires a movement action"
+      severe:
+        - "the designated weapon or held object is dropped; it falls in the target's space"
+        - "retrieving it requires a movement action"
+        - "the target's grip on any other held weapon or object is treated as unstable until the state ends"
+    application_requirements:
+      - joint_stress_or_torsion_beyond_grip_threshold
+      - forced_grip_release_through_pain_or_structural_disruption
+      - other_fictionally_credible_grip_failure_source
+    effect: >
+      The target's grip on the designated weapon or held object fails. The
+      item falls to the ground in the target's current space and is no longer
+      held. The target may not use that weapon until it is retrieved.
+    duration:
+      model: until_removed
+      notes: >
+        The state ends the moment the target retrieves the dropped item.
+    recovery:
+      notes: >
+        The target must spend a movement action to retrieve the dropped weapon
+        or object. Once retrieved, the Desarmado state ends for that item.
+        If another creature picks up the item first, it cannot be retrieved
+        by the target through this recovery route.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        the item is dropped, the state is resolved by retrieval rather than
+        by a separate resistance roll.
+    stacking_rule: >
+      Desarmado can apply to one designated weapon or held object at a time.
+      A second application against the same target designates a different
+      held item rather than stacking on the same one.

@@ -11529,3 +11529,231 @@ pilot_examples:
       - pressure
       - disruption
       - wound_pressure
+
+  - name: El Ángulo Que Falla
+    name_en: The Angle That Fails
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Deflection Technique using a
+      Deflection-profile surface that replaces T.D. with a reactive T.A.,
+      and on success enables an immediate follow-up T.A. with a different
+      natural weapon at a bonus equal to competency rank. Restricted to
+      natural weapon follow-ups to avoid hand-management ambiguity.
+    origin:
+      main: Claws
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Angle That Fails Opens What Follows
+      focus: Guard / Deflect And Follow
+      holder: "Drak'kai long-route travelers with claw and bite competency"
+      transmission: natural_weapon_contact_drills_and_deflect_follow_practice
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that a deflection is
+        not a defense — it is the preparation of the next contact. Non-Drak'kai
+        can learn it through any Deflection-profile natural form or weapon
+        combined with a separate natural weapon available for the follow-up.
+        The follow-up must be a natural weapon: fabricated weapons require hand
+        management that natural forms do not.
+    category: attack
+    type: reactive
+    trigger: >
+      An enemy within the user's reach makes a physical attack against the user.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Deflection
+      support_specializations: []
+      equipment:
+        - deflection_profile_surface_claw_or_weapon
+        - a_different_natural_weapon_available_for_the_follow_up
+      states:
+        - attacker_within_deflection_surface_reach
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 12
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the deflection timing and the follow-up window
+          as a single committed motion rather than two sequential decisions.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai with natural weapon deflect-and-follow experience can
+          teach the transition from deflection to follow-up without losing
+          the contact window.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai close-contact training. Non-Drak'kai require the
+        combination of a Deflection-profile surface and a natural follow-up
+        weapon.
+      final_validation: one_successful_supervised_deflection_that_opens_and_resolves_a_follow_up_attack
+    target: attacking_enemy
+    range: deflection_surface_reach
+    area: single_attacking_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 7
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: opposed_attack_roll_then_defense_roll_for_followup
+      effect_on_success: >
+        If the reactive T.A. meets or exceeds the attacker's T.A., the
+        incoming attack fails. The user resolves their deflection T.I. normally
+        and may immediately make a follow-up T.A. with a different natural
+        weapon at a bonus equal to their Deflection-surface competency rank,
+        resolving against normal T.D. and T.I. If the reactive T.A. falls
+        short, the deflection fails and the attack resolves as if the user's
+        T.D. had failed.
+    description: >
+      El golpe encontró aire. La mandíbula encontró al golpe.
+    effect: >
+      Cuando un enemigo dentro de tu alcance realiza un ataque físico contra ti,
+      realiza una T.A. reactiva con tu perfil de Desvío contra el atacante. Esta
+      tirada reemplaza tu T.D. Compara tu T.A. con la T.A. del atacante. Si tu
+      T.A. es igual o mayor, el ataque falla y resuelves tu T.I. normalmente.
+      Puedes realizar de inmediato una T.A. adicional con una arma natural
+      distinta a la usada en el desvío, con un bonificador a la T.A. igual al
+      valor de tu rango de competencia. Si tu T.A. es menor, la deflexión falla
+      y el ataque resuelve como si tu T.D. hubiera fallado.
+    scaling: >
+      The follow-up T.A. bonus equals the Deflection-surface competency rank
+      value — rank 1 grants +1, rank 6 grants +6. Higher rank also improves
+      the reactive T.A. through normal competency scaling.
+    cost_note: >
+      Rhythm 7 / Attrition 2 is deliberate. The Technique replaces T.D. with
+      risk, deals deflection T.I., and enables a bonused follow-up — three
+      meaningful outputs in a single reactive window. The natural weapon
+      restriction on the follow-up is the key limiter.
+    restrictions:
+      - reactive_ta_replaces_td_not_supplements_it
+      - follow_up_must_use_a_different_natural_weapon_not_a_fabricated_weapon
+      - follow_up_ta_is_optional_not_mandatory
+      - does_not_function_against_non_physical_attacks
+    tags:
+      - defense
+      - attack
+      - interception
+      - counterattack
+      - natural_weapon_synergy
+
+  - name: La Vuelta Que Suelta
+    name_en: The Turn That Releases
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Torsion Technique using the claw that
+      applies Desarmado through rotational joint stress rather than raw grip
+      strength or damage. Distinct from El Peso Que Gira (bite Torsion) which
+      repositions the whole body; this technique targets a specific held item.
+    origin:
+      main: Claws
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Hand Opens Because The Joint Left It No Choice
+      focus: Control / Grip Failure
+      holder: "Drak'kai long-route travelers with claw competency"
+      transmission: object_handling_experience_and_joint_rotation_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding of how grips fail
+        through angular stress rather than direct force. Non-Drak'kai can
+        learn it through any Torsion-profile natural form or flexible weapon
+        that can credibly wrap and rotate a gripping surface.
+    category: utility
+    type: active
+    trigger: >
+      The user makes a Torsion-profile attack against a target holding a
+      weapon or object within reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Torsion
+      support_specializations: []
+      equipment:
+        - claw_or_natural_weapon_with_torsion_access
+      states:
+        - target_is_holding_a_weapon_or_object_with_a_hand_or_limb_within_reach
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the angle of rotation against joint resistance
+          rather than pulling or striking.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai with object-handling and grip-failure experience can
+          teach the distinction between pulling (raw force) and rotating
+          (angular stress through the joint axis).
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai object-handling and close-contact training.
+      final_validation: one_successful_supervised_execution_that_produces_desarmado_through_rotation
+    target: enemy
+    range: claw_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: defense_roll_then_alteration_resistance
+      effect_on_success: >
+        Normal T.D. against the T.A. If the attack connects, the target makes
+        a T.R. de Alteraciones against Desarmado. Failure applies Desarmado at
+        the severity for the user's rank; success resists the disarm.
+    description: >
+      No se arranca. Se convence al ángulo de que es imposible.
+    effect: >
+      Realiza una T.A. con tu perfil de Torsión contra el objetivo. Si impacta,
+      el objetivo realiza una T.R. de Alteraciones contra Desarmado: si falla,
+      queda Desarmado a la severidad determinada por tu rango de competencia en
+      la superficie de ataque usada.
+    scaling: >
+      Severidad de Desarmado escala con rango: 1–2 Leve, 3–4 Moderado,
+      5–6 Grave. La T.A. también mejora a través del escalado normal de
+      competencia.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is deliberate. The Technique produces no T.I.
+      — the output is exclusively the disarm condition. Its limiter is that
+      it requires the target to be holding something and that the claw must
+      reach the gripping surface.
+    restrictions:
+      - requires_target_to_be_holding_a_weapon_or_object_with_a_reachable_limb
+      - does_not_deal_damage_to_the_target_directly
+      - does_not_reposition_the_target
+    tags:
+      - control
+      - disruption
+      - setup
