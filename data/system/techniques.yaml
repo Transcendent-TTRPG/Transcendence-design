@@ -11200,3 +11200,332 @@ pilot_examples:
       - interception
       - control
       - disruption
+
+  - name: El Peso Que Gira
+    name_en: The Weight That Turns
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Torsion Technique using the bite that
+      establishes jaw contact and body rotation as a single committed action,
+      producing forced repositioning to a user-chosen angle rather than
+      knockdown or raw damage amplification.
+    origin:
+      main: Bite
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Jaw As Anchor
+      focus: Control / Committed Rotation
+      holder: "Drak'kai long-route travelers with bite competency"
+      transmission: long_route_contact_experience_and_body_commitment_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that the jaw is not
+        a striking instrument but an anchor, and that the body's rotation
+        around that anchor point is the actual mechanism of force. Non-Drak'kai
+        can learn it through any Torsion-profile natural form or weapon that
+        can credibly establish a firm contact point and rotate through it.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Torsion-profile attack against a target within
+      bite reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Torsion
+      support_specializations: []
+      equipment:
+        - bite_or_natural_weapon_with_torsion_access
+      states:
+        - target_within_bite_reach
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the timing of jaw close and body rotation as a
+          single committed motion rather than two sequential actions.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai with body-rotation contact experience can teach the
+          distinction between a rotation that uses the jaw as an anchor versus
+          one that simply swings through the contact.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai close-contact training. Non-Drak'kai require a
+        trainer or tradition that preserves the anchor-and-rotate logic.
+      final_validation: one_successful_supervised_execution_that_repositions_a_target_through_jaw_contact_and_body_rotation
+    target: enemy
+    range: bite_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 6
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: defense_roll
+      effect_on_success: >
+        Normal defense roll against the attack. If the attack connects, the
+        repositioning is a physical consequence of the jaw hold and body
+        rotation — it cannot be separately resisted.
+    description: >
+      El peso decide adónde van los dos.
+    effect: >
+      Realiza una T.A. con tu perfil de Torsión. Si impacta, resuelve la T.I.
+      normalmente. Elige una posición adyacente a ti dentro del alcance del
+      arma: el objetivo es reposicionado a esa posición. El reposicionamiento
+      es consecuencia física directa del cierre y la rotación — no puede ser
+      resistido por separado. Si la posición elegida está ocupada o es
+      inaccesible, el objetivo queda en el espacio legal más cercano a lo
+      largo de la trayectoria de rotación.
+    scaling: >
+      Higher competency rank improves the reactive T.A. through normal
+      competency scaling. Higher-tier versions may increase the repositioning
+      distance or allow repositioning to positions not immediately adjacent.
+    cost_note: >
+      Rhythm 6 / Attrition 2 is deliberate. The Technique requires full body
+      commitment: jaw close and rotation are a single action, not a sequential
+      pair. The repositioning output is controlled rather than random knockback,
+      and the damage resolves normally alongside it.
+    restrictions:
+      - requires_bite_reach_contact_with_the_target
+      - repositioning_cannot_place_the_target_in_an_occupied_or_inaccessible_space
+      - repositioning_distance_is_one_adjacent_position_at_novice_rank
+      - does_not_apply_derribado_or_desequilibrado_by_itself
+    tags:
+      - attack
+      - control
+      - reposition
+      - pressure
+
+  - name: La Masa Continúa
+    name_en: The Mass Continues
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Impact Technique using the bite that drives
+      full body mass through the contact point, applying Derribado without
+      requiring the target to be actively defending. Distinct from La Corriente
+      No Retrocede (Sauri, Unstoppable) which targets defenders specifically.
+    origin:
+      main: Bite
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Mass Does Not Stop At Contact
+      focus: Attack / Frontal Drive
+      holder: "Drak'kai long-route travelers with bite competency"
+      transmission: long_route_contact_experience_and_frontal_commitment_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that mass does not
+        stop at the contact point — the body continues through. Non-Drak'kai
+        can learn it through any Impact-profile natural form or weapon that can
+        deliver meaningful frontal drive through committed body mass.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Impact-profile attack against a target within
+      bite reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Impact
+      support_specializations: []
+      equipment:
+        - bite_or_natural_weapon_with_impact_access
+      states:
+        - target_within_bite_reach
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires drilling committed frontal drive through the contact point
+          without losing structural integrity on contact.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai or Impact-weapon instructor with frontal-drive experience
+          can correct the tendency to pull back at contact.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai close-contact training. Non-Drak'kai require access
+        to a frontal-drive Impact tradition.
+      final_validation: one_successful_supervised_execution_that_applies_derribado_through_frontal_mass_drive
+    target: enemy
+    range: bite_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 6
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: defense_roll_then_alteration_resistance
+      effect_on_success: >
+        Normal defense roll against the attack. If the attack connects, the
+        target makes a T.R. de Alteraciones against Derribado. Failure applies
+        Derribado at the severity for the user's rank; success resists the
+        condition but the attack's damage resolves normally.
+    description: >
+      La masa no negocia con lo que encuentra.
+    effect: >
+      Realiza una T.A. con tu perfil de Impacto. Si impacta, resuelve la T.I.
+      normalmente. El objetivo realiza una T.R. de Alteraciones contra Derribado:
+      si falla, queda Derribado a la severidad determinada por tu rango de
+      competencia en la superficie de ataque usada.
+    scaling: >
+      Severidad de Derribado escala con rango: 1–2 Leve, 3–4 Moderado,
+      5–6 Grave. Rangos más altos también mejoran la T.A. a través del escalado
+      normal de competencia.
+    cost_note: >
+      Rhythm 6 / Attrition 2 is deliberate. The Technique produces T.I. plus
+      a Derribado application against any target — not only defenders or
+      bracing targets. The cost reflects the full-body frontal commitment the
+      drive requires.
+    restrictions:
+      - requires_bite_reach_contact_with_the_target
+      - does_not_require_the_target_to_be_actively_defending_or_bracing
+      - does_not_produce_lateral_sweep_or_displacement_by_itself
+    tags:
+      - attack
+      - disruption
+      - pressure
+      - knockdown
+
+  - name: El Cierre Que No Se Negocia
+    name_en: The Closure That Does Not Negotiate
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Unstoppable Technique using the bite that
+      reduces the target's Block on the contact zone by the user's competency
+      rank value. Distinct from La Corriente No Retrocede (Sauri, Unstoppable)
+      which targets actively defending targets and produces displacement.
+    origin:
+      main: Bite
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Force Does Not Negotiate With What Is In The Way
+      focus: Attack / Block Penetration
+      holder: "Drak'kai long-route travelers with bite competency"
+      transmission: long_route_contact_experience_and_committed_close_drills
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that a committed
+        close carries force through whatever passive protection stands in the
+        way. Non-Drak'kai can learn it through any Unstoppable-profile natural
+        form or weapon that can credibly drive through passive protection
+        without relying on active defense penetration alone.
+    category: attack
+    type: active
+    trigger: >
+      The user makes a committed Unstoppable-profile attack against a target
+      within bite reach.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Unstoppable
+      support_specializations: []
+      equipment:
+        - bite_or_natural_weapon_with_unstoppable_access
+      states:
+        - target_within_bite_reach
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires drilling committed closing force that does not decelerate
+          on contact with passive protection.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai or Unstoppable-weapon instructor can correct the tendency
+          to redirect force around protection rather than through it.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai close-contact training. Non-Drak'kai require access
+        to an Unstoppable tradition that preserves the Block-penetration logic.
+      final_validation: one_successful_supervised_execution_that_resolves_damage_through_reduced_block
+    target: enemy
+    range: bite_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: defense_roll
+      effect_on_success: >
+        Normal defense roll against the attack. If the attack connects, the
+        damage resolves ignoring Block on the contact zone equal to the user's
+        competency rank value.
+    description: >
+      Lo que decidió cerrarse no encontró muro suficiente.
+    effect: >
+      Realiza una T.A. con tu perfil de Imparable. Si impacta, resuelve la T.I.
+      ignorando una cantidad de Bloqueo de la zona impactada igual al valor de
+      tu rango de competencia en la superficie de ataque usada.
+    scaling: >
+      Block ignored scales with competency rank: rank 1 ignores 1 Block, rank 6
+      ignores 6 Block. At high ranks this can bypass the Block of a zone
+      entirely. The T.A. also improves through normal competency scaling.
+    cost_note: >
+      Rhythm 5 / Attrition 2 is deliberate. The Technique penetrates passive
+      Block without requiring the target to be actively defending — broader than
+      La Corriente No Retrocede (which requires active defense). The cost
+      matches other committed Unstoppable techniques.
+    restrictions:
+      - requires_bite_reach_contact_with_the_target
+      - block_reduction_applies_only_to_the_zone_actually_struck
+      - does_not_bypass_active_intercept_effects_or_evasion_based_defense
+      - does_not_apply_derribado_desequilibrado_or_displacement_by_itself
+    tags:
+      - attack
+      - pressure
+      - disruption
+      - wound_pressure
