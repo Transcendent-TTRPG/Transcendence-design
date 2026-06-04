@@ -11861,3 +11861,114 @@ pilot_examples:
       - control
       - disruption
       - setup
+
+  - name: La Base Que Falta
+    name_en: The Base That Is Missing
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Interruption Technique using the claw that
+      replaces T.D. with a reactive T.A. against a telegraphed committed action,
+      applying Desequilibrado on success in addition to T.I. First Interruption
+      technique to produce Desequilibrado through this profile.
+    origin:
+      main: Claws
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Preparation Is The Vulnerability
+      focus: Guard / Stance Disruption
+      holder: "Drak'kai long-route travelers with claw competency"
+      transmission: contact_reading_and_setup_moment_drilling
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that the moment a
+        combatant adjusts their stance for a heavy technique is also the moment
+        their stance is most vulnerable. Non-Drak'kai can learn it through any
+        Interruption-profile natural form or weapon that can credibly disrupt a
+        stance during its visible preparation moment.
+    category: attack
+    type: reactive
+    trigger: >
+      An enemy within the user's claw reach begins a Technique, heavy action,
+      or telegraphed committed action with a visible preparatory transition.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interruption
+      support_specializations: []
+      equipment:
+        - claw_or_natural_weapon_with_interruption_access
+      states:
+        - attacker_within_claw_reach
+        - triggering_action_has_visible_preparatory_transition
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 12
+        text_or_manual_required: false
+        notes: >
+          Requires drilling the recognition of preparatory transitions and the
+          timing to act in that window before the action commits to execution.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai or Interruption-weapon instructor can teach the distinction
+          between the preparation window and the execution window.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai close-contact training.
+      final_validation: one_successful_supervised_execution_that_disrupts_a_committed_action_and_applies_desequilibrado
+    target: attacking_enemy
+    range: claw_reach
+    area: single_attacking_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 6
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: opposed_attack_roll_then_alteration_resistance
+      effect_on_success: >
+        If the reactive T.A. meets or exceeds the attacker's T.A., the
+        triggering action fails, the user resolves T.I. normally, and the
+        attacker makes a T.R. de Alteraciones against Desequilibrado. If the
+        reactive T.A. falls short, the action resolves as if T.D. had failed.
+    description: >
+      Cuando el pie busca apoyo, la garra ya lo está esperando.
+    effect: >
+      Cuando un enemigo dentro de tu alcance comienza una Técnica, acción
+      pesada o acción comprometida con preparación visible, realiza una T.A.
+      reactiva con tu perfil de Interrupción contra el atacante. Esta tirada
+      reemplaza tu T.D. Compara tu T.A. con la T.A. del atacante. Si tu T.A.
+      es igual o mayor, la acción falla y resuelves tu T.I. normalmente. El
+      atacante realiza una T.R. de Alteraciones contra Desequilibrado: si
+      falla, queda Desequilibrado a la severidad determinada por tu rango. Si
+      tu T.A. es menor, la acción resuelve como si tu T.D. hubiera fallado.
+    scaling: >
+      Severidad de Desequilibrado escala con rango: 1–2 Leve, 3–4 Moderado,
+      5–6 Grave. La T.A. también mejora a través del escalado normal.
+    cost_note: >
+      Rhythm 6 / Attrition 2 is deliberate. Replaces T.D. with risk, deals
+      T.I., and applies Desequilibrado through T.R. The narrower trigger
+      (telegraphed committed actions only) is the key limiter.
+    restrictions:
+      - reactive_ta_replaces_td_not_supplements_it
+      - requires_a_visible_preparatory_transition_not_just_any_attack
+      - does_not_function_against_non_contact_or_non_physical_effects
+    tags:
+      - defense
+      - attack
+      - disruption
+      - counterattack
