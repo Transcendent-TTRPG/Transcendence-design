@@ -11888,3 +11888,120 @@ pilot_examples:
       - attack
       - disruption
       - counterattack
+
+  - name: El Tránsito Que No Llega
+    name_en: The Transit That Never Arrives
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Interception Technique using the claws that
+      intercepts a body in transit (movement, not attack), stopping the
+      movement without T.I. or condition. Fills the claw Interception slot.
+      Distinct from all existing Interception techniques: first to trigger on
+      movement, first with purely spatial output (no T.I., no condition, no
+      follow-up mechanic). The bite opportunity that follows is a positional
+      consequence, not a built-in mechanic.
+    origin:
+      main: Claws
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: Already There
+      focus: Guard / Movement Interception
+      holder: "Drak'kai long-route travelers with claw competency"
+      transmission: spatial_positioning_and_transit_reading_through_long_route_experience
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that interception is
+        not a reaction to movement but a consequence of being positioned before
+        the movement began. Non-Drak'kai can learn it through any
+        Interception-profile natural form or weapon that can credibly stop a
+        body in transit through a held space.
+    category: utility
+    type: reactive
+    trigger: >
+      An enemy within the user's claw reach begins a movement to reposition,
+      flank, or transit through the user's occupied space toward another target
+      or destination.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Interception
+      support_specializations: []
+      equipment:
+        - claw_or_natural_weapon_with_interception_access
+      states:
+        - enemy_within_claw_reach_beginning_a_transit_movement_not_an_attack
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires developing spatial awareness of approach lines and the
+          timing to position the claw on a transit line before the movement
+          commits rather than after it resolves.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Drak'kai with long-route positioning experience can teach the
+          distinction between reacting to movement and being positioned for it
+          — the technique fires because the claw was already there, not because
+          the user responded.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai positional training and close-contact drilling.
+      final_validation: one_successful_supervised_execution_that_stops_a_transit_movement_through_claw_positioning
+    target: moving_enemy
+    range: claw_reach
+    area: single_moving_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: attack_vs_defense
+      effect_on_success: >
+        If the T.A. meets or exceeds the target's T.D., the movement does not
+        complete: the target is stopped inside the user's space. No T.I. is
+        resolved. If the T.A. falls short, the movement completes normally.
+    description: >
+      La ruta que eligió ya no existía.
+    effect: >
+      Cuando un enemigo dentro de tu alcance de arma inicia un movimiento para
+      reposicionarse, flanquearte o cruzar el espacio que ocupas hacia otro
+      objetivo o destino, realiza una T.A. con tu perfil de Intercepción contra
+      la T.D. del objetivo. Si tu T.A. iguala o supera su T.D., el movimiento
+      no completa: el objetivo queda detenido dentro de tu espacio. Si tu T.A.
+      es menor que su T.D., el movimiento completa normalmente.
+    scaling: null
+    cost_note: >
+      Rhythm 4 / Attrition 1 reflects the limited output: no T.I., no
+      condition, no follow-up mechanic. The output is purely spatial — the
+      movement fails. Matched to Levantar el Dique (also Interception,
+      Reactive-Utility, no T.I.) as the cost reference. Lower than all
+      other Drak'kai reactive techniques because this one does nothing beyond
+      stopping the transit.
+    restrictions:
+      - triggers_on_movement_not_on_attacks_directed_at_the_user
+      - no_ti_resolved_on_the_catch
+      - no_condition_applied
+      - no_built_in_follow_up_mechanic
+      - requires_enemy_movement_to_be_physically_interceptable_from_user_position
+    tags:
+      - utility
+      - interception
+      - movement_denial
+      - positioning
