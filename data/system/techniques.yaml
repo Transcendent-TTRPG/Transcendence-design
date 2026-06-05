@@ -7205,8 +7205,7 @@ pilot_examples:
       value: null
       sustain_rule: while_the_user_keeps_the_declared_armored_facing_and_posture
       end_rule: >
-        ends_if_the_user_moves_more_than_1_meter_turns_away_falls_loses_footing
-        breaks_the_presented_facing_or_loses_the_relevant_functional_armor_on_a_struck_zone
+        ends_if_the_user_is_Derribado_loses_fewer_than_3_functional_heavy_armor_pieces_or_voluntarily_chooses_to_end_the_stance
     cost:
       rhythm_cost: 3
       attrition_cost: 3
@@ -7252,7 +7251,7 @@ pilot_examples:
       - does_not_improve_td_interception_ally_protection_or_cover_by_itself
       - does_not_help_against_poison_fear_curses_taumatic_pressure_sensory_overload_mental_influence_social_pressure_or_other_nonphysical_effects
       - does_not_help_against_attacks_or_effects_that_explicitly_bypass_armor_strike_from_outside_the_declared_line_or_hit_a_zone_the_declared_posture_was_not_actually_covering
-      - ends_if_the_user_voluntarily_moves_more_than_1_meter_turns_away_falls_loses_footing_or_otherwise_breaks_the_presented_armored_facing
+      - ends_if_the_user_is_Derribado_loses_fewer_than_3_functional_heavy_armor_pieces_or_voluntarily_ends_it
       - ends_for_any_struck_zone_whose_relevant_armor_piece_is_broken_and_no_longer_contributes_bloqueo
       - does_not_stack_with_another_active_armor_posture_unless_a_later_rule_explicitly_says_otherwise
     tags:
