@@ -12123,3 +12123,123 @@ pilot_examples:
       - rend
       - structural_fault
       - knowledge_gated
+
+  - name: El Peso Que Planta
+    name_en: The Weight That Plants
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Bastion Technique using a mace that plants
+      the weapon as a physical contact anchor to control an approach axis.
+      Distinct from Asentar la Piedra (Sauri shield Bastion: body anchoring,
+      T.D. + T.R. bonus) and Sellar la Presa (Sauri Bastion attack + Derribado).
+      First Bastion technique that uses the weapon as the axis anchor and
+      outputs movement denial against enemies rather than defensive bonuses
+      to the user.
+    origin:
+      main: Mace
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Weight That Plants
+      focus: Axis Control / Approach Denial
+      holder: "Drak'kai who have spent decades carrying weight over long routes"
+      transmission: long_route_load_bearing_and_structural_positioning_practice
+      availability: Common
+      adaptation_notes: >
+        The Technique expresses the Drak'kai understanding that mass does not
+        only swing — it also holds. Any character with a Bastion-profile weapon
+        and the patience to commit to a contact axis can learn it.
+    category: utility
+    type: active
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Bastion
+      support_specializations: []
+      equipment:
+        - mace_or_weapon_with_bastion_access
+      states: []
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 8
+        practice_hours: 10
+        text_or_manual_required: false
+        notes: >
+          Requires learning to commit mass through the weapon shaft to a fixed
+          contact axis rather than completing a swing — a different relationship
+          with weight than offensive striking.
+      guided_training:
+        allowed: true
+        study_hours: 4
+        practice_hours: 6
+        mentor_required: true
+        notes: >
+          A Drak'kai with long-route load-bearing experience can teach the
+          distinction between planting for anchoring and swinging for impact.
+      material_cost: null
+      access_notes: >
+        Common in Drak'kai positional and load-bearing training.
+      final_validation: one_successful_supervised_execution_that_holds_an_axis_and_stops_an_enemy_advance
+    target: self_and_area
+    range: personal
+    area: weapon_reach_plus_one
+    duration:
+      model: permanent_until_broken
+      value: null
+      sustain_rule: null
+      end_rule: >
+        User voluntarily moves from the contact axis, is forced to abandon it,
+        or the physical contact is no longer sustainable in the scene.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: alteration_resistance_on_enemy_movement
+      effect_on_success: >
+        Any enemy within the area attempting to advance through the controlled
+        axis must make a T.R. de Alteraciones against Desequilibrado. On
+        failure, the movement does not complete. Severity scales with the
+        user's competency rank. The user also gains a bonus equal to their
+        rank to T.R. against forced displacement from the controlled axis.
+        The user may attack, use techniques, and take any other action without
+        breaking the posture.
+    description: >
+      No es una guardia. Es una razón por la que ese camino ya no existe.
+    effect: >
+      Declara un eje de contacto y ancla tu masa con la maza. La postura queda
+      activa. Mientras esté activa, cualquier enemigo dentro del área que
+      intente avanzar a través del eje controlado debe realizar una T.R. de
+      Alteraciones contra Desequilibrado: si falla, el movimiento no completa.
+      La severidad corresponde a tu rango de competencia. Además, recibes un
+      bonificador igual a tu rango de competencia a tu T.R. contra
+      desplazamiento forzado proveniente del eje controlado. Puedes atacar,
+      usar técnicas y realizar cualquier otra acción sin romper la postura.
+      La postura termina si te desplazas voluntariamente del eje de contacto,
+      si un efecto te fuerza a abandonarlo, o si el contacto físico ya no es
+      sostenible en la escena.
+    scaling: >
+      Severidad de Desequilibrado escala con rango de competencia: 1–2 Leve,
+      3–4 Moderado, 5–6 Grave. El bonificador a T.R. también = rango.
+    cost_note: >
+      Rhythm 3 / Attrition 2 matches stance techniques that require positional
+      commitment. The movement restriction (cannot leave the contact axis) is
+      the primary cost, not the rhythm. The extended area (+1 beyond weapon
+      reach) prevents trivial routing around the anchor.
+    restrictions:
+      - requires_declared_contact_axis_not_general_area_control
+      - posture_ends_on_voluntary_or_forced_movement_from_axis
+      - enemy_movement_denial_only_on_declared_axis_not_all_directions
+    tags:
+      - utility
+      - stance
+      - bastion
+      - axis_control
+      - movement_denial
+      - positioning
