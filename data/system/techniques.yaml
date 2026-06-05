@@ -12005,3 +12005,121 @@ pilot_examples:
       - interception
       - movement_denial
       - positioning
+
+  - name: La Costura Que Cede
+    name_en: The Seam That Gives
+    status: authored_example
+    purpose: >
+      Add a novice Drak'kai-origin Rend Technique using a mace that targets a
+      structural weak point in worn armor, creating a lasting Block reduction on
+      the declared zone. Distinct from Abrir la Vasija (Sauri Rend: applies
+      Lacerado condition on body), Abrir la Costura (Zarnag Rend: bypasses Block
+      on this attack only), and El Cierre Que No Se Negocia (Imparable: reduces
+      Block for one closing bite). First Rend technique with a persistent armor
+      fault and an identification requirement.
+    origin:
+      main: Mace
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: The Seam
+      focus: Armor Defeat / Structural Knowledge
+      holder: "Drak'kai who have accumulated knowledge of armor construction and material failure"
+      transmission: accumulated_object_handling_and_material_study_through_long_route_experience
+      availability: Common
+      adaptation_notes: >
+        The Technique requires reading a structural fault in a worn assembly
+        before exploiting it. Non-Drak'kai can learn it, but the identification
+        requirement means they must have genuinely observed or contacted the
+        zone — the mace does not find the seam by luck.
+    category: attack
+    type: active
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Rend
+      support_specializations: []
+      equipment:
+        - mace_or_weapon_with_rend_access
+      states:
+        - target_must_wear_armor_on_declared_zone
+        - user_must_have_read_zone_through_prior_contact_observation_or_accumulated_knowledge
+      prerequisite_techniques: []
+    learning:
+      self_study:
+        allowed: true
+        study_hours: 10
+        practice_hours: 14
+        text_or_manual_required: false
+        notes: >
+          Requires developing the ability to read armor assemblies for
+          structural fault lines — where material meets grain, where riveting
+          runs thin, where one piece seats against another. Study of object
+          construction and material failure accelerates this significantly.
+      guided_training:
+        allowed: true
+        study_hours: 5
+        practice_hours: 8
+        mentor_required: true
+        notes: >
+          A Drak'kai with accumulated object-handling experience can teach the
+          reading of assembly faults — identifying the place that remembers
+          contact before the mace arrives there.
+      material_cost: null
+      access_notes: >
+        Common among Drak'kai who have studied armor construction or who have
+        sufficient encounter history with armored opponents.
+      final_validation: one_successful_supervised_execution_that_creates_a_lasting_block_reduction_on_a_declared_armored_zone
+    target: armored_enemy
+    range: weapon_reach
+    area: single_enemy_zone
+    duration:
+      model: permanent_until_encounter_ends
+      value: null
+      sustain_rule: null
+      end_rule: encounter_ends
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: attack_vs_defense_no_resistance
+      effect_on_success: >
+        If the T.A. hits, the user resolves T.I. normally. The armor on the
+        declared zone is structurally faulted: its Block contribution on that
+        zone is reduced by a value equal to the user's Rend-surface competency
+        rank for the rest of the encounter. If the target does not wear armor
+        on the declared zone, the technique cannot be used against that zone.
+    description: >
+      La armadura recuerda el lugar. El cuerpo todavía no lo sabe.
+    effect: >
+      Declara una zona de armadura en el objetivo. Realiza una T.A. con tu
+      perfil de Ruptura contra el objetivo. Si el ataque impacta, resuelve tu
+      T.I. normalmente. Además, la armadura en esa zona queda estructuralmente
+      fallada: su contribución de Bloqueo en esa zona se reduce en un valor
+      igual a tu rango de competencia en el arma usada por el resto del
+      encuentro. Si el objetivo no lleva armadura en la zona declarada, la
+      técnica no puede ser usada contra esa zona.
+    scaling: >
+      La reducción de Bloqueo es igual al valor del rango de competencia en el
+      arma usada: rango 1 reduce en 1, rango 6 reduce en 6.
+    cost_note: >
+      Rhythm 5 / Attrition 2 matches Abrir la Vasija (also Rend, also deals
+      T.I., also has a persistent output via Lacerado). The identification
+      requirement is the key limiter — the mace does not find the seam by luck.
+      The persistent Block reduction is the primary output; T.I. is secondary.
+    restrictions:
+      - requires_worn_armor_on_declared_zone
+      - requires_prior_zone_identification_through_contact_observation_or_accumulated_knowledge
+      - block_reduction_does_not_stack_strongest_value_applies
+      - does_not_affect_held_shields_or_unarmored_zones
+    tags:
+      - attack
+      - armor_defeat
+      - rend
+      - structural_fault
+      - knowledge_gated
