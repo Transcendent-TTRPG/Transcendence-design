@@ -1536,24 +1536,31 @@ Examples:
 
 Duration needs explicit handling because Transcendence does not assume all effects are instantaneous.
 
-Canonical `duration` forms:
+Canonical final-play `duration` forms:
 
 - `instant`
-- `until_trigger`
-- `until_next_turn`
-- `for_n_rounds`
-- `for_n_atb_cycles`
-- `scene`
-- `sustained`
 - `permanent`
 
 ### Design rule
 
-If a Technique persists in time, it must also declare:
+If a Technique persists in time, it must declare:
 
 - what keeps it active
 - what ends it
-- whether it occupies ongoing attention or cost
+- whether it occupies ongoing attention or positional commitment
+
+Avoid final authoring that depends on:
+
+- `until_next_turn`
+- `for_n_rounds`
+- `for_n_atb_cycles`
+- "the next action"
+- "the next roll"
+
+If a Technique seems to need a one-use future promise, prefer either:
+
+- an immediate resolution
+- or a permanent state with a clear fictional end condition
 
 ---
 
@@ -1684,6 +1691,9 @@ Rhythm measures:
 - how large its timing permission is inside the ATB flow
 
 It should be judged by scene function, not by flavor intensity alone.
+
+Rhythm is calibrated against sibling Techniques, not against base actions.
+Base actions are fallback floor and are intentionally inefficient.
 
 ### Rhythm range rule
 
@@ -1822,6 +1832,15 @@ Attrition does **not** mean:
 
 Attrition measures how much strain the Technique creates across body, mind, and composure while performed under real pressure.
 
+In practice, it should mainly price:
+
+- continuity pressure between hostile scenes
+- unusual strain or overextension
+- broad persistent leverage that will keep mattering once active
+
+It should not be treated as the main limiter on what the user can still do in
+the current combat exchange.
+
 ### Attrition range rule
 
 For normal authored Techniques, `0` to `3` is the main working band.
@@ -1894,6 +1913,29 @@ A Technique may be:
 - slow but mechanically sustainable
 - rhythm-heavy because of commitment, not because of strain
 - strain-heavy because of pressure absorption, not because of long execution time
+
+### Persistence rule
+
+Do not charge extra just because an effect is persistent.
+
+In this project, persistence is a normal system surface. The real questions are:
+
+- how broad is the effect once active?
+- how many exchanges can it keep altering?
+- how easy is it to capitalize repeatedly?
+
+Charge for coverage and repeat leverage, not for abstract duration alone.
+
+### Posture rule
+
+Anchored postures should usually stay low in Rhythm unless their coverage or
+payoff is extreme.
+
+Being pinned to a point is already part of their cost. Raise their price for:
+
+- unusually broad coverage
+- repeated pressure across many exchanges
+- extreme protection, taxation, or control once active
 
 ### Cost assignment rule
 
