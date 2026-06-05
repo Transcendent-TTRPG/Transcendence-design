@@ -12242,3 +12242,95 @@ pilot_examples:
       - axis_control
       - movement_denial
       - positioning
+  - name: La Posición Que Se Hunde
+    name_en: The Position That Sinks
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin Bastion stance using a shield that deepens
+      over time through sustained commitment. Distinct from Asentar la Piedra
+      (Sauri shield Bastion: flat rank bonus to T.D. + T.R. from the first
+      moment) and El Peso Que Planta (Drak'kai mace Bastion: axis control,
+      movement denial on approach). This is the first Bastion technique whose
+      defensive value accumulates through interactions — each T.D. or T.R.
+      resolved from the held position increases the bonus, up to rank × 2.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Sovereign Weight / Shell as Vessel
+      focus: Defensive Anchor / Temporal Deepening
+      holder: Drak'kai shield bearers and line holders
+      transmission: shield_anchor_drills_and_sustained_pressure_resistance_training
+      availability: Restricted
+    category: utility
+    type: active stance
+    trigger: >
+      The user commits to a held position with a shield, choosing depth over
+      mobility. The longer the position is held under pressure, the harder it
+      becomes to break.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Bastion
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_bastion_access
+      states:
+        - user_can_commit_to_held_position
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: sustained_while_condition_holds
+      value: held_position
+      sustain_rule: >
+        User may attack, use techniques, and take any other action without
+        breaking the stance, as long as they do not voluntarily move from the
+        held position.
+      end_rule: >
+        Ends if the user voluntarily moves or is forced to abandon the position.
+        Accumulated bonus resets to zero when the stance ends.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The position does not hold by force alone. It holds because each attempt
+      to break it makes it harder to move.
+    effect: >
+      While the stance is active, each time the user resolves a T.D. or T.R.
+      (Alterations) from the held position, they gain +1 to subsequent T.D.
+      and T.R. (Alterations) while remaining in that position. This bonus
+      accumulates with each resolution, up to a maximum equal to twice the
+      user's competency rank. When the stance ends, the accumulated bonus
+      resets to zero.
+    scaling: >
+      Maximum accumulation = competency rank × 2. At Novice rank 1 the ceiling
+      is +2; at rank 6 it is +12. The scaling identity is the ceiling — higher
+      investment in the competency allows the position to deepen further before
+      saturating.
+    cost_note: >
+      Rhythm 3 / Attrition 2 matches other immobile stances. Positional
+      commitment is the primary price. The accumulation starts at zero and must
+      be built through sustained pressure — the player gets nothing for free.
+    restrictions:
+      - bonus_accumulates_only_while_user_remains_in_the_held_position
+      - accumulation_resets_to_zero_when_stance_ends_for_any_reason
+      - maximum_accumulation_equals_competency_rank_times_two
+      - only_one_postura_may_be_active_at_a_time
+      - user_may_attack_and_use_techniques_freely_while_stance_is_active
+    tags:
+      - utility
+      - stance
+      - bastion
+      - accumulation
+      - anti_displacement
+      - shield
