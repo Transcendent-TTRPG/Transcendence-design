@@ -12334,3 +12334,93 @@ pilot_examples:
       - accumulation
       - anti_displacement
       - shield
+  - name: El Margen Que Se Mueve
+    name_en: The Margin That Moves
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin Line Control technique using a shield that
+      actively steers a target to a user-chosen position. Distinct from Cerrar
+      la Compuerta (Sauri Line Control: static zone stance, penalizes attacks
+      against allies) and Anclar el Contrapeso (Sauri Line Control: reactive,
+      reduces forced displacement on user). First Line Control technique whose
+      primary output is chosen repositioning of the target — not knockdown,
+      not Desequilibrado, not fixed-direction push.
+    origin:
+      main: Shield
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Sovereign Weight / The Wall That Moves
+      focus: Active Steering / Committed Mass Push
+      holder: Drak'kai shield bearers and line pressers
+      transmission: shield_drive_drills_and_line_control_mass_commitment_training
+      availability: Restricted
+    category: attack
+    type: active
+    trigger: >
+      The user commits their full body mass behind the shield and drives it
+      forward as a steering surface, contacting the target and redirecting
+      them to a chosen position.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: Line Control
+      support_specializations: []
+      equipment:
+        - any_weapon_natural_attack_or_item_with_line_control_access
+      states:
+        - user_can_drive_forward_with_shield_as_steering_surface
+      prerequisite_techniques: []
+    target: enemy
+    range: weapon_reach
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The shield is not raised to block. It is pressed forward to say where
+      the opponent will be instead.
+    effect: >
+      Make an active Line Control-profile attack against the target. If the
+      attack hits, the target is repositioned to a valid space the user
+      designates, at a maximum distance equal to the user's competency rank
+      in meters. The target remains upright and can act normally. The user
+      may optionally move up to 1 meter in the direction of the drive as part
+      of the technique. If the target is in an immobile Postura, or has
+      significantly more committed mass than the user, the repositioning does
+      not occur even if the attack hits.
+    scaling: >
+      Repositioning distance = competency rank in meters. At rank 1 the target
+      can be steered up to 1 meter; at rank 6, up to 6 meters. Higher rank
+      also improves reliability through the attack roll. The user's optional
+      follow-up movement stays at 1 meter regardless of rank.
+    cost_note: >
+      Rhythm 4 / Attrition 1. No damage, no condition — the payoff is chosen
+      repositioning of the target, which has high tactical value in ATB
+      geometry. Attrition 1 reflects the single committed drive with no
+      persistent pressure between scenes.
+    restrictions:
+      - repositioning_does_not_apply_derribado_or_desequilibrado
+      - target_remains_upright_and_able_to_act_after_repositioning
+      - cannot_reposition_targets_in_immobile_postura_or_with_significantly_more_committed_mass
+      - repositioning_destination_must_be_a_valid_space_within_rank_meters
+      - user_follow_up_movement_is_optional_up_to_1_meter_does_not_scale
+      - single_target_only
+    tags:
+      - attack
+      - repositioning
+      - forced_movement
+      - line_control
+      - shield
