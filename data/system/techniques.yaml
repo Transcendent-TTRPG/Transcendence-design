@@ -12507,3 +12507,96 @@ pilot_examples:
       - atb_cost
       - counter_pressure
       - drakkai
+  - name: El Cuerpo Que Se Calibra
+    name_en: The Body That Calibrates
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active armor technique that improves the
+      user's Block after absorbing a threshold of hits through heavy armor.
+      Distinct from Cerrar la Coraza (Sauri: mobile postura that front-loads
+      Block improvement on a declared line from the start) and Volver la Placa
+      (Sauri: reactive, corrects one hit's angle). This is the first armor
+      technique whose Block improvement is earned through sustained contact —
+      the user starts at zero and must absorb hits before the benefit triggers.
+    origin:
+      main: Heavy armor
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Sovereign Weight / Shell as Vessel
+      focus: Temporal Adaptation / Earned Block Improvement
+      holder: Drak'kai who have worn heavy armor under sustained pressure
+      transmission: long_route_load_bearing_and_sustained_contact_endurance
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates the technique and begins tracking hits resolved through
+      their heavy armor. After absorbing the threshold number of hits, their
+      Block values improve for the remainder of the technique's duration.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: heavy_armor
+      support_specializations: []
+      equipment:
+        - minimum_3_functional_heavy_armor_pieces_equipped
+      states: []
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: sustained_while_condition_holds
+      value: permanent_until_broken
+      sustain_rule: >
+        User may attack, use techniques, and take any other action while the
+        technique is active. The hit counter and Block bonus persist as long as
+        the technique remains active.
+      end_rule: >
+        Ends if the user is Derribado, carries fewer than 3 functional heavy
+        armor pieces, or voluntarily chooses to end it.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The first hit is the worst. The body learns the rest.
+    effect: >
+      While this technique is active, track a counter of hits that resolve
+      through the user's heavy armor. When the counter reaches 3, the Block
+      value of all equipped armor pieces increases by an amount equal to the
+      user's heavy armor competency rank. This bonus persists while the
+      technique remains active.
+    scaling: >
+      Block bonus = heavy armor competency rank. At rank 1 the bonus is +1
+      to all armor Block values; at rank 6 it is +6. The threshold of 3 hits
+      is fixed at Novice rank; higher ranks decrease the threshold and increase
+      the magnitude. The bonus applies to all equipped armor zones, not only
+      the zones that received hits.
+    cost_note: >
+      Rhythm 3 / Attrition 2. The technique front-loads no defense — the user
+      must absorb 3 hits before any benefit. Attrition 2 reflects the active
+      cognitive-physical investment of reading and calibrating to the attacker's
+      pattern across multiple hits, not just passive endurance.
+    restrictions:
+      - counter_only_increments_on_hits_that_resolve_through_heavy_armor
+      - counter_does_not_increment_on_evaded_hits_or_t_d_successes
+      - counter_does_not_increment_on_hits_that_bypass_armor_block
+      - block_bonus_applies_to_all_equipped_armor_zones_once_threshold_is_met
+      - technique_ends_on_derribado_fewer_than_3_functional_pieces_or_voluntary
+    tags:
+      - utility
+      - active
+      - armor
+      - accumulation
+      - block_improvement
+      - adaptation
+      - drakkai
