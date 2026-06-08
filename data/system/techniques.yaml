@@ -12424,3 +12424,86 @@ pilot_examples:
       - forced_movement
       - line_control
       - shield
+  - name: El Golpe Que Cobra
+    name_en: The Blow That Collects
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin reactive armor technique that imposes an ATB
+      tempo cost on the attacker when a hit resolves through the user's heavy
+      armor. Distinct from Cerrar la Coraza (Sauri: postura that improves Block
+      on a declared line from the start) and Volver la Placa (Sauri: reactive,
+      corrects one hit's angle to prevent armor break). This is the first armor
+      technique whose output is a cost imposed on the attacker rather than a
+      benefit for the user — the structural counter-pressure of mass returning
+      force.
+    origin:
+      main: Heavy armor
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Sovereign Weight / Shell as Vessel
+      focus: Structural Counter-Pressure / ATB Tempo Cost on Attacker
+      holder: Drak'kai who have worn heavy armor across long routes
+      transmission: long_route_load_bearing_and_impact_absorption_practice
+      availability: Restricted
+    category: utility
+    type: reactive
+    trigger: >
+      The user fails a T.D. and the attack resolves in a zone covered by a
+      functional piece of heavy armor, without bypassing the armor's Block.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: heavy_armor
+      support_specializations: []
+      equipment:
+        - functional_heavy_armor_piece_on_the_impacted_zone
+      states: []
+      prerequisite_techniques: []
+    target: attacker
+    range: personal
+    area: single_enemy
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The armor does not absorb everything. A portion always comes back.
+    effect: >
+      When the user fails a T.D. and the attack resolves in a zone covered by a
+      functional piece of their armor, the attacker's token advances a number of
+      positions on the ATB track equal to the user's heavy armor competency
+      rank. This technique does not activate if the attack ignores armor Block.
+    scaling: >
+      ATB advancement = user's heavy armor competency rank. At rank 1 the
+      attacker's token advances 1 position; at rank 6, 6 positions. Higher rank
+      makes every landed hit increasingly costly for the attacker in tempo.
+    cost_note: >
+      Rhythm 3 / Attrition 1 matches other reactive armor techniques (Volver la
+      Placa). The output is an immediate ATB cost on the attacker rather than a
+      benefit for the user — meaningful against all enemies since it fires in
+      combat, not at scene end.
+    restrictions:
+      - only_activates_on_failed_t_d_not_on_successful_defense
+      - only_activates_when_hit_resolves_through_armor_not_bypassing_it
+      - does_not_deal_damage_or_apply_conditions_to_the_attacker
+      - does_not_activate_if_the_attack_ignores_armor_block
+    tags:
+      - utility
+      - reactive
+      - armor
+      - atb_cost
+      - counter_pressure
+      - drakkai
