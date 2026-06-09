@@ -13384,3 +13384,163 @@ pilot_examples:
       - movement
       - rastreo
       - drakkai
+
+  - name: La Carga Que No Acaba
+    name_en: The Load That Does Not End
+    id: 96
+    status: authored
+    origin:
+      main: Meditación
+      secondary:
+        - Alteraciones
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Alteraciones / Meditación — Passive Endurance Threshold
+      focus: Physical Endurance / Sustained Load Management
+      holder: Drak'kai long-route travelers who have developed internal practice for carrying accumulated physical strain without collapse
+      transmission: sustained_load_conditioning_and_meditative_endurance_practice
+      availability: Restricted
+    category: resistance
+    type: passive
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - meditacion
+      equipment: []
+      states:
+        - meditacion_specialization_at_novice_rank_or_higher
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Always active while the character retains Meditación at Novice rank
+        or higher. If the rank drops below Novice, the bonus suspends until
+        the rank is restored.
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other:
+        - no_atb_cost_passive_technique
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The practice does not empty the load. It expands what carries it.
+    effect: >
+      The character's Endurance (Aguante) increases permanently by a value
+      equal to their Meditación rank. Recalculate Fatigue thresholds using
+      this new value. If the character's Meditación rank drops below Novice,
+      this bonus suspends until the rank is restored.
+    scaling: >
+      The bonus scales directly with Meditación rank. At Novice rank, the
+      bonus is +1. As the character advances in Meditación, the permanent
+      Endurance increase grows accordingly.
+    cost_note: >
+      Rhythm 0 / Attrition 0 is correct for a passive technique. The cost
+      is paid through the sustained conditioning that earns Meditación rank,
+      not in the ATB.
+    restrictions:
+      - applies_only_while_meditacion_rank_is_novice_or_higher
+      - bonus_equals_meditacion_rank_not_a_flat_value
+      - no_stacking_with_equivalent_endurance_bonus_sources
+    tags:
+      - resistance
+      - passive
+      - hybrid
+      - specialization
+      - endurance
+      - fatigue_threshold
+      - meditacion
+      - drakkai
+
+  - name: Lo Que Se Conoce No Sorprende
+    name_en: What Is Known Does Not Surprise
+    id: 97
+    status: authored
+    origin:
+      main: Taumaturgia
+      secondary:
+        - Aflicciones
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Aflicciones / Taumaturgia — Passive Sanity Threshold
+      focus: Psychic Endurance / Vínculo and Vestígio Exposure Resistance
+      holder: Drak'kai collectors and wanderers who have accumulated enough contact with Vínculos and Vestígios that extranatural pressure no longer finds them entirely unprepared
+      transmission: accumulated_extranatural_exposure_and_taumaturgical_study
+      availability: Restricted
+    category: resistance
+    type: passive
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - taumaturgia
+      equipment: []
+      states:
+        - taumaturgia_specialization_at_novice_rank_or_higher
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: >
+        Always active while the character retains Taumaturgia at Novice rank
+        or higher. If the rank drops below Novice, the bonus suspends until
+        the rank is restored.
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 0
+      other:
+        - no_atb_cost_passive_technique
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      What has already been seen does not destroy in the same way.
+    effect: >
+      The character's Sanity (Cordura) increases permanently by a value
+      equal to their Taumaturgia rank. Recalculate Dissonance thresholds
+      using this new value. If the character's Taumaturgia rank drops below
+      Novice, this bonus suspends until the rank is restored.
+    scaling: >
+      The bonus scales directly with Taumaturgia rank. At Novice rank, the
+      bonus is +1. As the character advances in Taumaturgia, the permanent
+      Sanity increase grows accordingly.
+    cost_note: >
+      Rhythm 0 / Attrition 0 is correct for a passive technique. The cost
+      is paid through the accumulated exposure and systematic study that
+      earns Taumaturgia rank, not in the ATB.
+    restrictions:
+      - applies_only_while_taumaturgia_rank_is_novice_or_higher
+      - bonus_equals_taumaturgia_rank_not_a_flat_value
+      - no_stacking_with_equivalent_sanity_bonus_sources
+    tags:
+      - resistance
+      - passive
+      - hybrid
+      - specialization
+      - sanity
+      - dissonance_threshold
+      - taumaturgia
+      - drakkai
