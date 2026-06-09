@@ -13097,3 +13097,97 @@ pilot_examples:
       - navigation
       - geografia
       - drakkai
+
+  - name: El Margen Que Quedó Abierto
+    name_en: The Margin That Remained Open
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Lingüística that allows the character to substitute T.E. (Lingüística)
+      for four social specialization rolls when the situation has a genuine
+      linguistic or communicative component. Parallel design to El Cuello Que
+      Todo Lo Atraviesa (Geografía → physical navigation substitution) but for
+      social/communicative domains. Distinct from prior Drak'kai techniques
+      (bite/claw/maza/escudo/armadura) — this is a pure Intelecto specialization
+      technique. Engaño excluded (Astucia domain, not linguistic); Sigilo
+      excluded (no linguistic component); Interpretación excluded (also
+      Intelecto — no cross-characteristic gain).
+    origin:
+      main: Lingüística
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Language Knowledge / Communicative Mastery
+      focus: Social Action Substitution / Language Understanding as Execution
+      holder: Drak'kai speakers whose mastery of language structure replaces raw social presence
+      transmission: accumulated_multilingual_and_communicative_knowledge
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates when about to make a T.E. (Liderazgo), T.E.
+      (Negociación), T.E. (Intimidación), or T.E. (Imitación) roll in a
+      situation with a genuine linguistic or communicative component that the
+      character can observe.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - linguistica
+      equipment: []
+      states:
+        - situation_must_have_observable_linguistic_or_communicative_component
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instantaneous
+      value: instantaneous
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The tongue does not lie about who speaks it.
+    effect: >
+      When about to make a T.E. (Liderazgo), T.E. (Negociación), T.E.
+      (Intimidación), or T.E. (Imitación) in a situation with an observable
+      linguistic or communicative component, the user may substitute it with
+      T.E. (Lingüística) and add a bonus equal to their Lingüística rank to
+      the roll. The Narrator confirms whether the substitution is plausible
+      before the roll is made. If the situation has no genuine linguistic
+      component, the substitution does not apply.
+    scaling: >
+      No progressive scaling table. The technique is complete at rank 1 —
+      all four valid substitution targets are available from the start.
+      Natural scaling comes from Lingüística rank growth: the bonus added to
+      the substituted roll equals the current Lingüística rank at time of use.
+    cost_note: >
+      Rhythm 3 / Attrition 2. Parallel to El Cuello Que Todo Lo Atraviesa
+      (Geografía, Ritmo 3 / Desgaste 2). Rhythm 3 reflects the time cost of
+      the social action being performed — the substitution does not shorten
+      the action. Attrition 2 for consolidating four distinct social
+      specialization rolls into one mental one.
+    restrictions:
+      - narrator_confirms_plausibility_before_roll
+      - substitution_does_not_apply_when_situation_has_no_linguistic_component
+      - bonus_applies_only_to_user_not_shared_with_allies
+    tags:
+      - utility
+      - active
+      - specialization
+      - substitution
+      - social
+      - linguistica
+      - drakkai
