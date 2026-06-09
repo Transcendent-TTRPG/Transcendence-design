@@ -13287,3 +13287,100 @@ pilot_examples:
       - movement
       - percepcion
       - drakkai
+
+  - name: Lo Que Este Lugar Recuerda
+    name_en: What This Place Remembers
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Rastreo that reads a space's accumulated environmental movement history
+      through route memory — worn paths, avoided sections, passage patterns,
+      and approach directions — and converts that intelligence into immediate
+      repositioning. Distinct from Leer lo que Siguió (Zarnag, reads fresh
+      visible damage on a creature for offensive setup): this technique reads
+      the space itself, not a creature, and produces movement not combat setup.
+      Distinct from Rastreo base specialization (follows active trails):
+      this technique reads accumulated environmental change over time, not
+      fresh tracks. First Rastreo technique for Drak'kai.
+    origin:
+      main: Rastreo
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Route History / Environmental Movement Memory
+      focus: Spatial Intelligence / Pre-emptive Repositioning
+      holder: Drak'kai long-route travelers who read spaces through accumulated passage memory rather than active trail-following
+      transmission: accumulated_route_reading_and_environmental_memory_through_long_distance_travel
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The character takes deliberate attention to read the environmental
+      movement history of a space they are currently in — a room, corridor,
+      clearing, or bounded area with enough passage history to read.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - rastreo
+      equipment: []
+      states:
+        - space_must_have_meaningful_passage_history
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instantaneous
+      value: instantaneous
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      What walked here did not entirely leave.
+    effect: >
+      Make a T.E. (Rastreo). On success, the Narrator declares one of the
+      following readings of this space: (a) a route used regularly in this
+      space, (b) a consistently avoided section and the concrete cause that
+      makes it dangerous, (c) whether the most recent passage was a one-time
+      event or part of a habitual pattern, or (d) the general direction from
+      which the most recent passage came. Immediately after, the character
+      moves up to their Movement Speed toward a position that the declared
+      knowledge indicates. The character does not learn who or why — only
+      the pattern.
+    scaling: >
+      No progressive scaling table at Novice rank. Natural scaling comes
+      from Rastreo rank growth affecting T.E. roll reliability and from
+      Movement Speed affecting repositioning distance.
+    cost_note: >
+      Rhythm 3 / Attrition 1. Rhythm 3 matches the fast identification
+      reference (Ritmo 3 / Desgaste 1) from the actions chapter and is
+      consistent with other novice specialization techniques that include
+      immediate movement as their mechanical payoff. Attrition 1 is the
+      minimum for any active technique.
+    restrictions:
+      - space_must_have_meaningful_passage_history
+      - narrator_selects_which_of_four_readings_applies
+      - for_option_b_narrator_must_declare_concrete_mechanical_cause_not_just_description
+      - movement_follows_immediately_no_delay
+      - character_learns_pattern_not_identity_or_intent
+    tags:
+      - utility
+      - active
+      - specialization
+      - environmental_memory
+      - movement_history
+      - movement
+      - rastreo
+      - drakkai
