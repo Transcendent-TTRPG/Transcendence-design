@@ -13191,3 +13191,99 @@ pilot_examples:
       - social
       - linguistica
       - drakkai
+
+  - name: Antes De Que Cambie
+    name_en: Before It Changes
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin reactive specialization technique rooted in
+      Percepción that gives the character one exchange of advance notice when a
+      creature of Medium size or larger enters magnetoreceptive range without
+      being observable by ordinary means. The output is a free movement before
+      the creature manifests — the character repositions before the threat is
+      visible. First Percepción technique for Drak'kai. Distinct from Leer el
+      Calor del Paso (Naghii, active, reads a present living creature's signals
+      to extract one immediate truth). This technique is reactive, creature-size
+      gated, and produces movement rather than information. Trigger is mass
+      displacement in the local magnetic field — creature must be Medium or
+      larger; smaller creatures do not create a detectable gradient shift.
+    origin:
+      main: Percepción
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Magnetoreceptive Environmental Reading / Gradient Shift Detection
+      focus: Early Warning / Pre-emptive Repositioning
+      holder: Drak'kai long-route travelers whose magnetoreceptive sense has been calibrated across decades of environmental reading
+      transmission: accumulated_magnetoreceptive_gradient_reading_through_long_route_travel
+      availability: Restricted
+    category: utility
+    type: reactive
+    trigger: >
+      A creature of Medium size or larger enters the character's sensory range
+      or moves within it without being observable by ordinary means (out of
+      sight, in darkness, behind structure, concealed position shifting).
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - percepcion
+      equipment: []
+      states:
+        - creature_must_be_medium_size_or_larger
+        - creature_must_not_be_observable_by_ordinary_means
+      prerequisite_techniques: []
+    target: self
+    range: sensory_reach
+    area: self
+    duration:
+      model: instantaneous
+      value: instantaneous
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The gradient changes before the danger has a name.
+    effect: >
+      When a creature of Medium size or larger enters the character's sensory
+      range without being observable by ordinary means, make a T.E.
+      (Percepción). On success, the gradient shift arrives one exchange early:
+      the character may move up to their Movement Speed before the creature
+      becomes perceptible by other means. The character knows something has
+      changed; they do not know what.
+    scaling: >
+      No progressive scaling table at Novice rank. The technique is complete
+      at rank 1 — the early warning and the movement are available from the
+      start. Natural scaling comes from Percepción rank growth affecting the
+      T.E. roll reliability and from Movement Speed increases affecting the
+      distance covered.
+    cost_note: >
+      Rhythm 3 / Attrition 1. Rhythm 3 matches other reactive techniques that
+      include a physical response (movement or positional change). Attrition 1
+      is the minimum for any reactive technique — the gradient read under
+      active threat still costs something permanently.
+    restrictions:
+      - creature_must_be_medium_size_or_larger
+      - creature_must_not_be_observable_by_ordinary_means_at_trigger
+      - movement_only_no_attack_or_other_action
+      - character_knows_something_changed_not_what
+    tags:
+      - utility
+      - reactive
+      - specialization
+      - magnetoreception
+      - early_warning
+      - movement
+      - percepcion
+      - drakkai
