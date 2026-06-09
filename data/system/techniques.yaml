@@ -12693,3 +12693,93 @@ pilot_examples:
       - spatial
       - orientacion
       - drakkai
+
+  - name: La Línea Que No Se Rompe
+    name_en: The Line That Does Not Break
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin reactive specialization technique rooted in
+      Enfoque that preserves an active stance or technique through one
+      interrupting event. First Enfoque technique across all species. Distinct
+      from techniques that prevent interrupting events from resolving — the
+      event resolves fully; only the continuity of the held state is preserved.
+      Expresses the Drak'kai principle of patient structural hold: what is
+      committed to does not end because something tried to end it.
+    origin:
+      main: Enfoque
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Route / Patient Concentration
+      focus: Mental Thread Persistence / Stance Continuity Under Interruption
+      holder: Drak'kai who have maintained long-route practices of sustained attention and careful object care
+      transmission: long_route_sustained_attention_and_patient_hold_under_pressure
+      availability: Restricted
+    category: utility
+    type: reactive
+    trigger: >
+      An event activates the end condition of an active stance or technique the
+      user is currently maintaining (e.g., a hit that would trigger Derribado,
+      a forced position change that would end a positional lock, an effect that
+      would remove a required equipment state).
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - enfoque
+      equipment: []
+      states:
+        - currently_maintaining_active_stance_or_technique_with_defined_end_condition
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      It's not that it didn't arrive. It's that it arrived and wasn't enough.
+    effect: >
+      When an event activates the end condition of an active stance or technique
+      the user is maintaining, they may activate this technique as a response.
+      The interrupting event resolves normally — the user receives the hit,
+      effect, or condition — but the stance or technique they were maintaining
+      does not end. This technique may only be used once per interrupting event.
+    scaling: >
+      At Novice rank, preserves one held state through one interrupting event.
+      Higher ranks expand the threshold of what interrupting events can be
+      survived and may allow preservation through multiple simultaneous
+      conditions.
+    cost_note: >
+      Rhythm 0 / Attrition 2. Rhythm 0 because the technique is a purely
+      internal cognitive snap with no external manifestation — it does not
+      occupy the ATB track. Attrition 2 because this is the maximum cognitive
+      effort Enfoque trains for: holding the thread while something actively
+      tries to cut it.
+    restrictions:
+      - interrupting_event_resolves_fully_user_still_receives_hit_effect_or_condition
+      - only_preserves_states_with_a_defined_ends_when_x_condition
+      - does_not_apply_to_states_voluntarily_dropped_by_the_user
+      - one_use_per_interrupting_event_cannot_chain_multiple_activations
+    tags:
+      - utility
+      - reactive
+      - specialization
+      - concentration
+      - persistence
+      - enfoque
+      - drakkai
