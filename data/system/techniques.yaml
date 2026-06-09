@@ -12878,3 +12878,121 @@ pilot_examples:
       - framework_selection
       - identificacion
       - drakkai
+
+  - name: La Grieta Que Ya Apareció Antes
+    name_en: The Crack That Already Appeared Before
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Historia that declares a historical failure point for a current situation,
+      granting a cumulative scaling bonus across all roll types as Historia rank
+      increases. First Historia technique across all species. Distinct from
+      Identificación (which determines category, not history), Percepción (which
+      reads present signals), and base Historia rolls (which provide narrative
+      context only). This technique anchors historical knowledge to concrete
+      mechanical output: bonus to T.D., then T.A., T.E., T.R., T.I., and
+      finally critical threshold expansion at Virtuoso rank.
+    origin:
+      main: Historia
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Route / Incident Records and Pattern Recognition
+      focus: Historical Failure Point / Precedent-Based Mechanical Leverage
+      holder: Drak'kai long-route travelers who carry centuries of specific incident records
+      transmission: long_route_accumulated_encounter_failure_pattern_records
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates on their ATB turn or during exploration when facing a
+      situation, entity method, social configuration, institutional behavior, or
+      structural pattern that has a possible historical analog in the character's
+      accumulated experience.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - historia
+      equipment: []
+      states:
+        - situation_method_or_pattern_must_have_historical_analog_in_character_experience
+      prerequisite_techniques: []
+    target: situation_or_pattern
+    range: sensory_range
+    area: single_target
+    duration:
+      model: sustained_while_condition_holds
+      value: permanent_until_broken
+      sustain_rule: >
+        The failure point and all associated bonuses remain active as long as
+        the declared pattern or situation persists and applies to the current
+        context.
+      end_rule: >
+        Ends when the failure point is no longer applicable: the situation
+        changes, the pattern shifts or is abandoned, or the Narrator declares
+        the crack has been exploited or closed. Also ends if the situation is
+        revealed to be genuinely unprecedented in the character's experience
+        (automatic failure on activation).
+    cost:
+      rhythm_cost: 2
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The crack was already here. You just need to know where.
+    effect: >
+      Make a T.E. (Historia). On failure, no applicable precedent is located.
+      On success, the Narrator declares one specific failure point extracted
+      from a historical analog — the place where a situation of this type has
+      previously broken down, failed, or revealed its vulnerability. While the
+      failure point is active, the user receives a bonus equal to their Historia
+      rank to T.D. when the attack or effect they face corresponds to the
+      declared pattern. The bonus applies only to the user. If the situation is
+      genuinely unprecedented in the character's experience, the technique fails
+      automatically.
+    scaling: >
+      Bonuses are cumulative — each rank adds a new roll type to which the bonus
+      applies. All bonuses apply only to the user and only while the failure
+      point is active.
+      Rank 1 (Novice): +Historia rank to T.D. when the attack or effect
+      corresponds to the declared failure point pattern.
+      Rank 2 (Apprentice): also +Historia rank to T.A. targeting the failure
+      point.
+      Rank 3 (Practitioner): also +Historia rank to T.E. related to the failure
+      point.
+      Rank 4 (Expert): also +Historia rank to T.R. against effects from the
+      failure point source.
+      Rank 5 (Master): also +1 additional die of the weapon type to T.I. when
+      targeting the failure point directly.
+      Rank 6 (Virtuoso): also the designated critical die activates Impacto
+      Crítico on (maximum value − 1) as well as maximum value, expanding the
+      critical threshold by one step.
+    cost_note: >
+      Rhythm 2 / Attrition 1. Rhythm 2 reflects the focused recall and pattern
+      recognition time required. Attrition 1 matches the domain's low-attrition
+      profile. The Permanente duration is justified by clear fictional end
+      conditions with no tracking burden: the failure point is either active or
+      it isn't.
+    restrictions:
+      - failure_point_declared_by_narrator_not_chosen_by_player
+      - auto_fail_if_situation_genuinely_unprecedented_in_character_experience
+      - all_bonuses_apply_only_to_user_not_shared_with_allies
+      - rank_5_ti_bonus_is_plus_one_die_of_weapon_type_not_plus_rank_flat
+      - rank_6_critical_threshold_reduction_is_fixed_minus_1_not_scaled_by_rank
+    tags:
+      - utility
+      - active
+      - specialization
+      - information
+      - precedent
+      - scaling
+      - historia
+      - drakkai
