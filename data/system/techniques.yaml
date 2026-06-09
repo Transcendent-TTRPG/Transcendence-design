@@ -12783,3 +12783,98 @@ pilot_examples:
       - persistence
       - enfoque
       - drakkai
+
+  - name: El Marco Antes Del Paso
+    name_en: The Framework Before the Step
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Identificación that determines the correct category of an unknown object,
+      creature, or phenomenon before the party interacts with it. First
+      Identificación technique across all species. Distinct from Identificación's
+      base specialization roll (which identifies more accurately with better
+      rolls) and from Historia (which applies historical precedent). This
+      technique is pre-identification: it determines what framework applies,
+      not what the thing specifically is. Grounded in accumulated encounter
+      knowledge, not Tauma detection.
+    origin:
+      main: Identificación
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Route / Object Encounter Knowledge
+      focus: Framework Selection / Category Determination Before Interaction
+      holder: Drak'kai long-route travelers who have encountered many unknown objects, sites, and phenomena
+      transmission: long_route_accumulated_object_and_encounter_handling_experience
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates on their ATB turn or during exploration before a
+      character or party interacts with an unknown entity, phenomenon, object,
+      site, or situation whose category is ambiguous or unclear.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - identificacion
+      equipment: []
+      states:
+        - must_be_able_to_observe_the_target
+        - target_must_be_unknown_or_ambiguous_in_category
+      prerequisite_techniques: []
+    target: object_creature_or_phenomenon
+    range: sensory_range
+    area: single_target
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 2
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      The wrong question kills before the thing does.
+    effect: >
+      Make a T.E. (Identificación). On failure, the framework remains unclear.
+      On success, the Narrator confirms which category the target belongs to:
+      common object, equipment, vestige, bond, natural phenomenon, taumatic
+      phenomenon, mortal creature, anomaly, or primordial. This does not reveal
+      which entity was or is present, nor the specific properties of the target
+      beyond its category. The determination comes from accumulated pattern
+      recognition of physical and behavioral evidence — not from direct Tauma
+      perception. A vestige or bond can be identified as such without the
+      character being able to see or sense the Tauma that defines it.
+    scaling: >
+      At Novice rank, the technique determines first-level category only. Higher
+      ranks allow finer distinctions within categories (e.g., entity level within
+      bonds: Fragment, Entity, Sovereign, or Abyssal) and expand the accuracy
+      of behavioral pattern recognition under partial observation.
+    cost_note: >
+      Rhythm 2 / Attrition 1. Rhythm 2 reflects the focused observation time
+      required to read physical and behavioral patterns. Attrition 1 matches
+      the domain's low-attrition profile — classification is cognitively
+      demanding but brief.
+    restrictions:
+      - does_not_identify_specific_entity_nature_properties_or_history
+      - does_not_require_tauma_perception_works_from_physical_behavioral_patterns
+      - target_must_be_observable_cannot_fire_on_fully_concealed_targets
+      - novice_rank_determines_first_level_category_only
+    tags:
+      - utility
+      - active
+      - specialization
+      - information
+      - framework_selection
+      - identificacion
+      - drakkai
