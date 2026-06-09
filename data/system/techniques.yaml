@@ -12599,4 +12599,97 @@ pilot_examples:
       - accumulation
       - block_improvement
       - adaptation
+
+  - name: El Espacio Se Sabe
+    name_en: Space Knows Itself
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Orientación that lets the user reconstruct the relative positions of all
+      creatures in the scene when ordinary spatial reference has been lost.
+      First Orientación technique across all species. Distinct from sensory
+      detection techniques (Percepción: reads present signals) and tracking
+      techniques (Rastreo: reads movement history). This technique works from
+      accumulated spatial logic only — no signal required, only a prior
+      reference baseline.
+    origin:
+      main: Orientación
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Route / Spatial Logic Over Landmarks
+      focus: Spatial Reconstruction / Positional Awareness Under Disorientation
+      holder: Drak'kai long-route travelers who have navigated without landmarks
+      transmission: long_route_spatial_reasoning_from_movement_not_landmarks
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates on their ATB turn when the scene has lost ordinary
+      spatial reference (darkness, heavy smoke, sudden disorientation,
+      structural shift, or any equivalent condition making relative positions
+      unclear). The user must have established a prior spatial reference
+      baseline in this scene before the condition occurred.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - orientacion
+      equipment: []
+      states:
+        - scene_spatial_reference_lost_by_ordinary_means
+        - prior_spatial_baseline_established_in_this_scene
+      prerequisite_techniques: []
+    target: self
+    range: sensory_range
+    area: self
+    duration:
+      model: instant
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 1
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      Space doesn't change when it stops being visible.
+    effect: >
+      Make a T.E. (Orientación). On failure, no reconstruction is obtained. On
+      success, the Narrator confirms the current relative positions of all
+      creatures in the scene within the user's sensory range. The
+      reconstruction comes from accumulated spatial reasoning, not direct
+      perception — it reveals no intentions, hidden equipment, or information
+      beyond positional geometry.
+    scaling: >
+      Narrator sets the difficulty based on the severity of the disorienting
+      condition. Precision and detail of the reconstruction scale with roll
+      quality; a marginal success gives approximate positions while a strong
+      success gives precise relative placement.
+    cost_note: >
+      Rhythm 3 / Attrition 1. Comparable to Leer el Calor del Paso
+      (Rhythm 3 / Attrition 1); broader scope (all creatures vs. one) but no
+      Salvación roll and gated by constraining scene conditions. Attrition 1
+      reflects the compressed cognitive effort of executing spatial
+      reconstruction under combat pressure.
+    restrictions:
+      - fires_only_when_scene_lacks_ordinary_positional_discernibility
+      - requires_prior_spatial_reference_baseline_established_before_condition
+      - reconstruction_is_positional_only_not_intentions_equipment_or_hidden_details
+      - does_not_bypass_active_concealment_techniques_or_illusion_effects
+    tags:
+      - utility
+      - active
+      - specialization
+      - information
+      - spatial
+      - orientacion
       - drakkai
