@@ -12996,3 +12996,104 @@ pilot_examples:
       - scaling
       - historia
       - drakkai
+
+  - name: El Cuello Que Todo Lo Atraviesa
+    name_en: The Pass That Everything Crosses
+    status: draft
+    purpose: >
+      Add a novice Drak'kai-origin active specialization technique rooted in
+      Geografía that allows the character to substitute T.E. (Geografía) for
+      six physical navigation specialization rolls when the task has a spatial
+      or terrain component. First Geografía technique across all species.
+      Distinct from El Espacio Se Sabe (Orientación — reconstructs who is where
+      under confusion) and from base Geografía rolls (which provide narrative
+      context only). The substitution uses Intelecto instead of Fuerza/Agilidad/
+      Tenacidad, letting characters who have invested in mental specializations
+      navigate terrain-based challenges without requiring parallel physical
+      investment. Cost (Ritmo 3 / Desgaste 2) reflects the centralization: six
+      specializations replaced by one. Reference: Cruzar la Punta (Evasión,
+      Ritmo 3 / Desgaste 1) for a single-substitution baseline; Desgaste raised
+      to 2 for the breadth of coverage.
+    origin:
+      main: Geografía
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Drakkai
+      seed: Accumulated Route Knowledge / Macro-Spatial Understanding
+      focus: Physical Navigation Substitution / Terrain Knowledge as Execution
+      holder: Drak'kai long-route travelers whose accumulated terrain knowledge replaces physical execution requirements
+      transmission: long_route_accumulated_terrain_and_spatial_knowledge
+      availability: Restricted
+    category: utility
+    type: active
+    trigger: >
+      The user activates when about to make a T.E. (Saltar), T.E. (Trepar),
+      T.E. (Marcha), T.E. (Orientación), T.E. (Acrobacias), or T.E.
+      (Lanzamiento) roll in a space they can observe or have previously
+      traversed, when the task has a genuine spatial or terrain component.
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations:
+        - geografia
+      equipment: []
+      states:
+        - space_must_be_observable_or_previously_traversed
+        - task_must_have_genuine_spatial_or_terrain_component
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instantaneous
+      value: instantaneous
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: none
+      effect_on_success: null
+    description: >
+      You do not need strength when you already know where the weight goes.
+    effect: >
+      When about to make a T.E. (Saltar), T.E. (Trepar), T.E. (Marcha),
+      T.E. (Orientación), T.E. (Acrobacias), or T.E. (Lanzamiento) in a
+      space the user can observe or has previously traversed, the user may
+      substitute it with T.E. (Geografía) and add a bonus equal to their
+      Geografía rank to the roll. The Narrator confirms whether the
+      substitution is plausible before the roll is made. If the space is
+      completely unknown to the character or the task has no spatial
+      component, the substitution does not apply.
+    scaling: >
+      No progressive scaling table. The technique is complete at rank 1 —
+      all six valid substitution targets are available from the start.
+      Natural scaling comes from Geografía rank growth: the bonus added to
+      the substituted roll equals the current Geografía rank at time of use.
+    cost_note: >
+      Rhythm 3 / Attrition 2. Rhythm 3 matches Cruzar la Punta (Evasión,
+      single-substitution reference at Ritmo 3 / Desgaste 1) and reflects
+      the time cost of the physical action being performed. Attrition raised
+      to 2 because this technique centralizes six distinct physical
+      specialization rolls into one mental one — a significant investment
+      consolidation that warrants higher permanent effort cost.
+    restrictions:
+      - narrator_confirms_plausibility_before_roll
+      - substitution_does_not_apply_in_completely_unknown_space
+      - substitution_does_not_apply_when_task_has_no_spatial_component
+      - bonus_applies_only_to_user_not_shared_with_allies
+    tags:
+      - utility
+      - active
+      - specialization
+      - substitution
+      - navigation
+      - geografia
+      - drakkai
