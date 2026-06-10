@@ -126,7 +126,7 @@ This creates the intended asymmetry:
 - links are the stronger object class: they create a true bond to a Limbo
   entity and trade power for worsening dependence and eventual Cordura cost
 
-### Authoring note
+### Authoring note — links
 
 Like vestiges, links should usually begin from real-world mythic, historical,
 superstitious, or folkloric object patterns and then be translated into the
@@ -165,8 +165,8 @@ Detection and discovery are different things.
 
 ## Open design questions
 
-- **D-09** — How does Tauma use interact with the three manifestations? Does a practitioner need ambient flow or a link to use Tauma, or is the energy internal?
+- **D-09** — ~~How does Tauma use interact with the three manifestations?~~ **RESOLVED.** The Tauma is not internal to the practitioner. The practitioner IS the medium — their nervous system, impregnated through afflictions, is the channel through which Tauma crosses from the Limbo into physical reality. Directed Tauma use requires a living channel (active affliction in the linked sense + an object with Tauma — vestige or link). Without the living channel, there is no translation mechanism. Ambient flow and objects are prerequisites; the practitioner is the crossing point. See `docs/system/tauma-cosmology.md`.
 - **D-10** — What is the vestige dissipation rate? Does it depend on object material, time elapsed, original intensity, or proximity to a link?
 - **D-11** — Do links have NR? Does that NR directly affect extranatural condition thresholds in the area, or is it a separate parameter?
 
-All three blocked on: Tauma system design.
+D-10 and D-11 remain open.

@@ -3,6 +3,7 @@
 **Purpose:** Referencia narrativa y guía de autoría para entidades del Limbo (Primordiales).
 **Autoridad mecánica:** `data/system/limbo-entities.yaml`
 **Relacionado:** `docs/system/limbo-manifestations.md` · `data/system/ailments.yaml`
+**Fundamento cosmológico:** `docs/system/tauma-cosmology.md` — leer primero para entender la física subyacente de todo lo que sigue.
 
 ---
 
@@ -17,6 +18,8 @@ Los vestigios y vínculos son mecanismos de acceso al Tauma exclusivos de criatu
 Un Primordial es una entidad compuesta enteramente de Tauma puro. No tiene estructura biológica. Toda entidad del Limbo es un Primordial — no existe otra clase de Primordial.
 
 El Tauma es la energía elemental del mundo. Los Primordiales son sus manifestaciones conscientes. La relación entre el Tauma y las entidades no es de identidad sino de composición: el carbono existe sin ser un ser vivo, pero todo ser vivo está hecho de carbono. El Tauma existe sin ser una entidad, pero toda entidad del Limbo está hecha de Tauma.
+
+Los Primordiales no preexisten como seres independientes. Emergen cuando el Tauma concentrado en una zona adquiere suficiente impronta de la consciencia colectiva de las criaturas que la habitan. La voluntad del Primordial no es anterior ni separada de esa consciencia — es esa consciencia, ahora semi-autónoma. El Primordial quiere cosas porque fue formado por los deseos, miedos y patrones de generaciones. El querer es emergente, no original. Ver `docs/system/tauma-cosmology.md` §Formación de Primordiales.
 
 Para la mayoría de las criaturas, los Primordiales son imperceptibles. Sin la capacidad de detección adecuada, una criatura no puede ver ni sentir la entidad — solo puede percibir sus efectos en el entorno, o no percibir nada en absoluto antes de morir. Un Primordial de escala suficiente puede habitar una capilla, una ciudad o un valle entero sin que sus habitantes lo perciban jamás como una presencia: solo como una acumulación de muertes inexplicables, enfermedades, visiones, o una sensación persistente de que algo está mal. Quienes tienen Instinto, Resonancia o Taumaturgia pueden empezar a ver la forma real de lo que está allí.
 
@@ -69,6 +72,8 @@ Diseñar un Soberano implica construir un personaje con historia. No es un ítem
 El Abismal no es una mecánica. Es un evento.
 
 No se desbloquea por progresión. No tiene NR requerido porque ningún NR lo hace accesible — su presencia en el mundo es una circunstancia narrativa excepcional, no una recompensa de avance.
+
+Un Abismal no es un Soberano con más poder. Es un Primordial que ha alcanzado escala ecosistémica: lleva tiempo suficiente fluyendo a través del entorno vivo de su zona que su expresión a través de organismos simples produce coordinación funcionalmente equivalente a inteligencia deliberada. La ecología, la geología, la química y el clima de su territorio sirven a su naturaleza — no porque dirija cada elemento, sino porque el flujo sostenido durante tiempo geológico ha organizado todo el entorno según esa orientación. Entrar en territorio Abismal es entrar en el cuerpo de cruce de la entidad.
 
 No deja vestigios. Si alguna vez estuvo en un objeto, lo transformó en un vínculo permanente o lo destruyó. Los Abismales son frecuentemente únicos. Sus consecuencias sobre la cordura son permanentes y de alcance narrativo.
 
@@ -127,7 +132,11 @@ El NR no es el único requisito para usar un vínculo. También se requiere tene
 
 La materia orgánica y el Tauma son distintos. El Tauma no puede existir en un cuerpo vivo de la misma forma que existe en un objeto inerte — la estructura biológica lo convierte, lo filtra, lo distorsiona. Cuando el Tauma del objeto entra en contacto con el cuerpo del portador, lo que queda no es energía pura: es impregnación. El tejido nervioso, los sentidos, el sistema perceptivo del portador quedan marcados. Eso es una Aflicción.
 
-La aflicción no es un efecto secundario molesto. Es el canal. Sin impregnación en el sentido vinculado, el Tauma del objeto no tiene por dónde fluir hacia el mundo. Por eso un vestigio no puede activarse antes de que el portador tenga la aflicción del sentido correcto — no hay atalajo, no hay forma de forzarlo. El canal se construye o no existe.
+La aflicción no es un efecto secundario molesto. Es el canal. La razón por la que los seres vivos con sistema nervioso complejo son los únicos umbrales completos es que son los únicos con capacidad adaptativa real: la plasticidad neural puede reorganizarse para percibir el Limbo. Un objeto inerte puede guardar la huella del paso del Tauma o mantener un flujo activo, pero no puede traducir señales del Limbo en efectos físicos — no tiene la capacidad de adaptarse a lo que está procesando.
+
+Sin impregnación en el sentido vinculado, el Tauma del objeto no tiene por dónde fluir hacia el mundo. Por eso un vestigio no puede activarse antes de que el portador tenga la aflicción del sentido correcto — no hay atalajo, no hay forma de forzarlo. El canal se construye o no existe.
+
+La asimetría fundamental: el portador experimenta esto como despertar — percepción expandida, acceso a poder. Causalmente, su sistema nervioso se está volviendo permeable al gradiente dimensional. No es el portador quien accede al Limbo: es el Tauma que accede al mundo a través del portador. La ilusión de agencia es funcional para el proceso — un portador que entendiera esto tendría razones para cerrar el canal. Ver `docs/system/tauma-cosmology.md` §Asimetría fundamental.
 
 Esto también explica la transferencia: cuando el objeto cambia de manos, el nuevo portador no tiene impregnación en ese sentido. El canal que tenía el portador anterior era suyo, no del objeto.
 
