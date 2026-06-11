@@ -985,3 +985,49 @@ entries:
       Desarmado can apply to one designated weapon or held object at a time.
       A second application against the same target designates a different
       held item rather than stacking on the same one.
+
+  - name: Corroído
+    family: Alteration
+    description: >
+      An acid or corrosive agent has degraded the target's protective layer —
+      armor, exoskeleton, or outer tissue — compromising the defensive
+      integrity of the affected zone.
+    severity_levels:
+      minor:
+        - "D.R. and blocking for the affected zone suffer a penalty equal to the rank bonus of the source that applied Corroído"
+      moderate:
+        - "D.R. and blocking for the affected zone suffer a penalty equal to the rank bonus of the source that applied Corroído"
+        - "cannot use the affected zone for deliberate blocking or interception without first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+      severe:
+        - "D.R. and blocking for the affected zone suffer a penalty equal to the rank bonus of the source that applied Corroído"
+        - "cannot use the affected zone for deliberate blocking or interception without first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "the first time on each activation the target attempts to use the affected zone defensively, it must first attempt that Tolerancia Specialization Roll; on a failure, the defensive action does not resolve and the zone provides no effective protection for that attempt as the fiction requires"
+    application_requirements:
+      - acid_splash_or_projection
+      - prolonged_corrosive_exposure
+      - other_fictionally_credible_protective_layer_degradation_source
+    effect: >
+      The target's defensive capacity in the affected zone is degraded.
+      Defense rolls and blocking that rely on that zone weaken as the
+      corrosive agent continues to compromise the protective layer.
+    duration:
+      model: until_removed
+      notes: >
+        Persists until the corrosive substance is neutralized, cleaned, or the
+        damaged protective layer is repaired or replaced.
+    recovery:
+      notes: >
+        Ends when the corrosive agent is neutralized or removed and the
+        protective layer is treated. Medicina can end the state when treatment
+        is part of the fiction; some natural regeneration effects may provide
+        their own recovery route if the fiction supports it.
+    resistance_or_escape:
+      notes: >
+        Normally resisted with Alteration Resistance when first applied. Once
+        active, recovery requires physical treatment — neutralizing the acid,
+        repairing the protection, or replacing the compromised layer. Mental
+        or positional recovery does not apply.
+    stacking_rule: >
+      The same corrosive degradation never creates parallel copies on the same
+      zone. A stronger application replaces a weaker one; an equal application
+      usually deepens the existing degradation or refreshes its persistence.
