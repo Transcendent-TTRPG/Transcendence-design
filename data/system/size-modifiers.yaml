@@ -1,0 +1,86 @@
+# Size Modifiers
+# Canonical reference for all size-based numeric modifiers in the system.
+# See corebook publication: 08-conflict-and-combat/es/08-tamaño-y-escala.md
+
+size_categories:
+  - id: diminuto
+    name_es: Diminuto
+    name: Tiny
+  - id: pequeño
+    name_es: Pequeño
+    name: Small
+  - id: mediano
+    name_es: Mediano
+    name: Medium
+  - id: grande
+    name_es: Grande
+    name: Large
+  - id: enorme
+    name_es: Enorme
+    name: Huge
+  - id: gigantesco
+    name_es: Gigantesco
+    name: Gigantic
+
+endurance_base:
+  # Base constant in Aguante = base_tamaño + (TEN × 2)
+  # Only Pequeño, Mediano, Grande are player-relevant (player species size categories)
+  # NPCs and creatures do not track Endurance
+  player_categories:
+    pequeño: 2
+    mediano: 4
+    grande: 6
+  rationale: >
+    Option B: symmetric ±2 gaps per size step. Mediano base shifts from 3 to 4.
+    Tenacidad×2 dominates at higher levels; the base constant matters mainly at
+    level 1. A Pequeño character with Tenacidad 2 gets 6; a Grande character with
+    Tenacidad 2 gets 10.
+
+physical_modifiers:
+  # Inversely proportional: small = better T.E. físicas propias, worse T.R. físicas.
+  # Mediano = 0 baseline; ±2 per size step.
+  # te_fisicas_propias: modifier to T.E. rolls for Acrobacias, Equilibrio, Trepar,
+  #   and Sigilo when the acting creature is of this size.
+  # tr_fisicas: modifier to T.R. rolls against Derribado, Desequilibrado, and
+  #   Atrapado when the affected creature is of this size.
+  sizes:
+    diminuto:
+      te_fisicas_propias: +4
+      tr_fisicas: -4
+    pequeño:
+      te_fisicas_propias: +2
+      tr_fisicas: -2
+    mediano:
+      te_fisicas_propias: 0
+      tr_fisicas: 0
+    grande:
+      te_fisicas_propias: -2
+      tr_fisicas: +2
+    enorme:
+      te_fisicas_propias: -4
+      tr_fisicas: +4
+    gigantesco:
+      te_fisicas_propias: -6
+      tr_fisicas: +6
+  te_fisicas_propias_applies_to:
+    - Acrobacias
+    - Equilibrio
+    - Trepar
+    - Sigilo
+  tr_fisicas_applies_to:
+    - Derribado
+    - Desequilibrado
+    - Atrapado
+
+visual_range:
+  # Standard visual range in clear conditions. Beyond this range, a Percepción T.E.
+  # is required to distinguish relevant visual details.
+  # +1 NR per 10 meters beyond effective visual range.
+  base_mediano_meters: 60
+  by_size_meters:
+    diminuto: 30
+    pequeño: 45
+    mediano: 60
+    grande: 80
+    enorme: 100
+    gigantesco: 140

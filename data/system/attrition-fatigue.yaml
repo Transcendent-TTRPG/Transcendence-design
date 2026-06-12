@@ -3,12 +3,12 @@ endurance:
   name: Endurance
   name_es: Aguante
   type: derived_attribute
-  formula: "3 + (TEN * 2)"
+  formula: "size_base + (TEN * 2)"
   components:
-    base_reserve: 3
-    base_reserve_rationale: "Represents minimum operational capacity across three conflict planes: body, mind, and composure"
+    size_base: "base constant by size category; see data/system/size-modifiers.yaml endurance_base"
+    size_base_values: {pequeño: 2, mediano: 4, grande: 6}
     characteristic: TEN
-  starting_minimum: 7  # TEN reaches at least 2 at creation after the universal Tenacity Synapsis
+  starting_minimum: 8  # Mediano base 4 + TEN 2 (reaches at least 2 after universal Tenacity Synapsis)
 
 fatigue_thresholds:
   comparison: accumulated_attrition vs endurance
