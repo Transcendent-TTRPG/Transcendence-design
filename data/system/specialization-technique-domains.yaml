@@ -393,7 +393,7 @@ domains:
 
   - specialization: Supervivencia
     specialization_en: Survival
-    associated_characteristic: Sabiduría
+    associated_characteristic: Astucia
     fantasy_core: making the right practical decision to keep people alive and functional in hostile terrain or natural pressure
     primary_tags: [survival_window, utility, setup]
     secondary_tags: [recovery, mitigation, stability]

@@ -136,7 +136,7 @@ The following specializations interact directly with environmental conditions:
 | Aclimatación (Tenacity) | Natural — environmental | Adapting to hostile or extreme environments |
 | Tolerancia (Tenacity) | Natural — physiological | Enduring pain and physical strain from conditions |
 | Equilibrio (Agility) | Natural — terrain | Reactive response to involuntary balance loss |
-| Supervivencia (Wisdom) | Natural — field | Practical decision-making in hostile environments |
+| Supervivencia (Cunning) | Natural — field | Practical decision-making in hostile environments |
 
 **Open design question (D-08):** Whether Aclimatación and other natural specializations apply equally to extranatural conditions. A combined elemental storm is not simply "extreme cold" — it may require different capacities (Instinct, Resonance, Thaumaturgy). Cannot be resolved without designing the full Limbo manifestation system.
 

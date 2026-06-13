@@ -455,6 +455,12 @@ This catalog establishes working identities and design boundaries. Full player-f
 - **Covers:** gut-level reading, indirect suspicion, sensing when something is wrong
 - **Does not cover:** formal perception, academic interpretation, emotional empathy
 
+**Supervivencia** · Mental
+
+- **Core domain:** practical living and decision-making in hostile or uncertain environments
+- **Covers:** shelter choice, food/water judgment, hazard response, keeping people alive in the field
+- **Does not cover:** precise tracking, navigation as a separate skill, medicine as treatment science
+
 **Engaño** · Social
 
 - **Core domain:** misleading others through falsehood, omission, framing, or manipulation of appearances
@@ -484,12 +490,6 @@ This catalog establishes working identities and design boundaries. Full player-f
 - **Core domain:** active noticing of meaningful details
 - **Covers:** observing, detecting, recognizing relevant sensory input
 - **Does not cover:** deep interpretation, tracking, intuitive suspicion
-
-**Supervivencia** · Mental
-
-- **Core domain:** practical living and decision-making in hostile or uncertain environments
-- **Covers:** shelter choice, food/water judgment, hazard response, keeping people alive in the field
-- **Does not cover:** precise tracking, navigation as a separate skill, medicine as treatment science
 
 **Medicina** · Arts and Crafts
 
