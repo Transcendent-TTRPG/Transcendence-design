@@ -94,10 +94,10 @@ Entries marked `confirmed` have design docs and corebook entries. Entries marked
 ### Ceratox — *in progress*
 **Animal / Size:** Rhinoceros · Grande  
 **Anchor:** Karkadann (Persian/Arabic medieval mythology) — the solitary horn-bearing creature whose horn detects poison and purifies contaminated water, dangerous to approach, capable of specific intense bonding that contrasts with its general hostility  
-**Core:** Their horn detects Tauma-corruption biologically — whether an object, place, or creature has been altered by the Tauma in ways it shouldn't have been. The biological response to a horn-signal is the charge. The civilization they built is organized around the problem of deciding which signals to act on and which to suppress, because they cannot stop detecting.  
-**Tauma:** The horn is the detection instrument. In a world saturated with Tauma-residue, the horn is rarely quiet. Old Ceratox near heavily corrupted sites have horns that almost never stop signaling. The horror is the question of whether the compulsion to charge what the horn identifies is information or loss of control, and whether that distinction holds at the margin.  
-**Friction:** Loxod infrasound registers to the horn as a corruption signal (false positive). Talpi umbral-material operations register strongly — the horn reacts to deliberate Tauma manipulation as contamination. Vesper biological experiments on Tauma-carrier organisms similarly trigger the horn. Ceratox near Sauri heavily-preserved corpses may react to Tauma-saturated preservation.  
-**Status:** Concept confirmed. Design doc and corebook entry not yet written.
+**Core:** Their horn is a biological Tauma-reactive instrument — it physically reacts to the signatures that Tauma-saturation produces in matter and zones, not to the Tauma itself. The reaction produces a physical sensation; the sensation produces a compulsion to charge. Their civilization is organized around managing that compulsion: knowing when to act, when to suppress, and whether the distinction still holds.  
+**Tauma:** The horn reacts continuously to Tauma-saturated material. The mechanism is opaque to them — they know what produces a reaction, not why. Their theology distrusts elaborate interpretive systems because the horn doesn't explain, it only signals. The horror is double: the world's Tauma-saturation is increasing (the horn is getting louder), and there is no way to know from the inside whether what feels like a changing world is the world changing or the individual losing calibration.  
+**Friction:** Loxod infrasound operates at Tauma-adjacent frequencies — the horn reacts as if to Tauma-saturation, producing an irresolvable false positive (neither species can change their biology). Talpi umbral-material operations trigger strong reactions. Vesper biological research on Tauma-carrier organisms triggers the horn. Sauri heavily-preserved Tauma-saturated corpses trigger the horn. Zarnag work death-saturated sites that are high-signal zones — transactional mutual need (Ceratox has the zone-reaction data Zarnag needs; Zarnag works sites the Ceratox monitors). Drak'kai collections with active vestigos/vínculos trigger the horn — the Drak'kai finds this useful as external confirmation; the Ceratox finds collections anxiety-inducing. Rokhart want longitudinal horn-reaction data as pattern calibration; the Ceratox finds their presence non-threatening. Chelicer interpret Tauma events as verdicts; Ceratox have only the signal, not the interpretation — the Chelicer finds this frustrating, the Ceratox finds the Chelicer's framework irrelevant.  
+**Status:** Design doc in progress.
 
 ---
 
@@ -212,3 +212,108 @@ Entries marked `confirmed` have design docs and corebook entries. Entries marked
 **Tauma:** The Tauma is their instrument. By shaping the collective consciousness of rat populations (and through proximity, the surrounding human populations), they produce the local Tauma conditions they want. This is the most direct manipulation of the Tauma-belief feedback loop in the setting. The horror: it works, and it requires no contact with the Tauma directly.  
 **Friction:** Direct conflict of interest with Rokhart (who study what the Myo exploit — if Rokhart understand what is happening, this ends). Drak'kai have probably noticed something is wrong with the Tauma-belief patterns in Myo-adjacent areas without being able to identify the source. Naghii monitoring would flag unusual Tauma activity in Myo-dense population centers.  
 **Needs:** Specific oracle mechanics; how the inner circle maintains secrecy; what the oracles want that they're using this power to achieve.
+
+---
+
+## Pantheon framework
+
+*Canonical reference for how gods work in Transcendence. All species theology is an interpretation of this underlying mechanism. Canonical basis: `docs/system/tauma-cosmology.md` and `docs/system/limbo-entities.md`.*
+
+---
+
+### The mechanism
+
+Gods are not external entities who created the world. They are Primordials — entities composed entirely of Tauma — that emerged when Tauma concentrated in a zone reached sufficient density and the collective consciousness of creatures living there imprinted on it long enough to produce coherent, semi-autonomous will.
+
+The will is emergent, not original. A Primordial wants things because it was formed by the desires, fears, and patterns of generations of creatures. It does not preexist those creatures. Its theology is the record of what those creatures believed, solidified into something that now acts.
+
+**Two factors determine a Primordial's power:**
+
+- *Densidad taumática*: how much Tauma exists in the zone to compose the entity
+- *Cohesión de la consciencia colectiva*: how clear, sustained, and intense the collective imprint was
+
+Dense Tauma with fragmented belief produces powerful but erratic entities. Moderate Tauma with highly cohesive belief produces well-defined but smaller-scale entities. The most dangerous Primordials have both factors high simultaneously.
+
+The relationship is bidirectional and ongoing: the Primordial, once formed, continues to shape the collective consciousness of those in its zone, which in turn continues to shape the Primordial. This loop is what the Rokhart have documented and cannot resolve directionally. It is what the Drak'kai hold as their deepest cosmological finding. It is what the Myo exploit.
+
+---
+
+### The elemental structure
+
+The Tauma is not uniform — it organizes into elemental natures. The documented primaries are fire, water, earth, wind, light, and darkness. These are not six gods. They are six types of Tauma-energy around which Primordials can cohere.
+
+Each elemental type has multiple *faces*: the specific orientation that centuries of collective consciousness gave it in a particular zone. Fire can be destruction, transformation, renewal, or purification. Darkness can be concealment, consumption, rest, or forgetting. The energy does not change — the orientation does.
+
+**What this means for the pantheon:**
+
+- A "fire god" in one culture and a "fire god" in another may be genuinely distinct entities — different Primordials that cohered around the same elemental type but in different zones with different collective consciousness orientations
+- They may also be the same arquetípico entity type manifesting in different places with different faces
+- There is no universal fire god. There are fire Primordials, each with a name, face, and history that belongs to the culture that formed them
+
+Combination elements — fire+water, earth+wind — are not lesser gods. They are Primordials that cohered around zones where two elemental types co-dominated. The collective consciousness of a culture that lives on a volcanic coastline may produce exactly such an entity.
+
+---
+
+### Levels and what they mean theologically
+
+The four levels of Primordial (Fragmento, Entidad, Soberano, Abismal) correspond to how much Tauma-coherence and historical depth an entity has.
+
+**Fragmento** — minimal coherence. No stable will. What you find in a recently disturbed site, a shallow ritual gone wrong, a zone that hasn't yet accumulated enough history. Not worshipped — encountered.
+
+**Entidad** — recognized personality and agenda. This is what most cultures call gods. They have a face, a name (culture-specific), a history, and intentions that interact with the lives of those in their zone. A community relationship with a local Entity-level deity is the baseline for organized religion in the setting.
+
+**Soberano** — strong identity, high power, narrative consequences. Major deities. Interacting with a Soberano is never neutral — the entity has agenda, and that agenda is legible. The largest, most durable religious traditions are built around Soberanos.
+
+**Abismal** — not a god. A condition. An entity that has flowed through an ecosystem for geological time, until the distinction between "expressing the gradient" and "conscious control" has collapsed. Its territory is its body. The ecology, geology, and chemistry of the zone serve its nature — not because it planned them, but because geological time of continuous flow organized everything according to its orientation. You do not worship an Abismal. You enter its territory and discover that everything there already serves something you cannot see.
+
+---
+
+### Names are always culture-specific
+
+In the world's history, no deity ever had a universal name — not until the late emergence of expansionist organized religions, which the current world has not yet produced at scale. The same elemental force has a different name in every culture that has organized belief around it.
+
+The setting does not have canonical deity names at the cross-cultural level. What it has is:
+
+- Canonical elemental types (fire, water, etc.) as organizing principles
+- Culture-specific names for specific Primordials within each culture
+- The rule that the same concept has different names, and those names may or may not correspond to the same underlying entity
+
+When writing species theology, give the deity the name that species uses. Do not assume any other species uses the same name for the same concept.
+
+---
+
+### Historical layering
+
+"Las capas de historia permanecen en el Tauma." Old belief does not fully disappear when a community changes. A zone conquered centuries ago still carries traces of the original collective consciousness that shaped the Tauma there. A Primordial that evolved through a community's shift from peace to war and back is not the same entity it was at each stage — but the layers of what it was remain, accessible in ruins, in objects, in the behavior of Anomalías that evolved during earlier eras.
+
+A Primordial can evolve level and change face entirely over centuries. A Fragment of fire-transformation can become an Entity of fire-destruction if the zone was consumed by generations of war. Those who knew the earlier entity will not recognize what it became. What they remember may still be visible in old vestiges, old artifacts, old Anomalías that predate the shift.
+
+This is why ruins are dangerous in ways that new construction is not: the Tauma inside ancient structures carries the imprint of what was believed there, which may be nothing that currently-living cultures recognize, understand, or can safely interact with.
+
+---
+
+### How each species relates to this framework
+
+The following is a compact cross-species theology map. Each entry describes what that species believes about the gods, not what the gods actually are.
+
+| Species | Theological stance |
+| --- | --- |
+| **Naghii** | Celestial Primordials (their Abzu-sourced entities) are the only genuine divine presence. Other species' deities are local distortions. Their sky-monitoring is early warning for Khataar — the entity whose return they cannot discount. |
+| **Sauri** | The Tauma is a current that flows through correctly prepared vessels. Their preserved-body theology is the management of Primordial current through contained channels. Their sovereign is the living vessel of a specific Primordial orientation. |
+| **Zarnag** | Theology starts at occupational data: death doesn't always close. They are not certain the entities they encounter at death-saturated sites are Primordials or something else. They are cautious about naming what they find. |
+| **Drak'kai** | No interpretation has ever been stable. They hold the cosmological knowledge (belief shapes Tauma shapes belief) as a tool that dissolves frameworks, not a framework itself. They do not worship Primordials — they document encounters with them. |
+| **Rokhart** | Pattern documentation without verdict. They have more data on how collective belief produces specific Primordial faces than any other species and no theological conclusion from that data. The absence of a conclusion is also the absence of comfort. |
+| **Formix** | No inherited theology. They are borrowing frameworks from other species that were built for beings with childhood, family, and personal continuity — none of which Formix have. Their deepest theological question is what the Queens were in Tauma terms. |
+| **Loxod** | Archive culture as Tauma-processing practice. Their infrasonic biology overlaps with Tauma-active frequencies non-deliberately — they are not worshippers of Primordials but they are biologically interfaced with them in ways they understand imprecisely. |
+| **Ceratox** | Theological question is practical: the horn detects Tauma-corruption and the body compels response. Whether the compulsion is information or loss of control at the margin is the civilizational problem that their religion exists to manage. |
+| **Chelicer** | Verdict theology: all Tauma manifestations are judgments. They are not confused about the physics — they have chosen an interpretation and built a civilization on enforcing it. The Drak'kai cosmological data threatens this. |
+| **Ursaris** | Battle-ecstasy as divine attention. Their theology treats combat-adjacent Tauma expression as the gods observing mortal valor. Whether berserker states produce genuine Tauma-interface is an open question their *goðar* class works with directly. |
+| **Bufoni** | Dozens of regional theologies, each locally developed in isolation. There is no unified Bufoni understanding of the Primordials — there are deep regional knowledge silos that no outside observer has fully mapped. |
+| **Lapinni** | Moon-Tauma correlation theology. Lunar phases correspond to measurable Tauma patterns. Their resurrection tradition is their theological data point — things come back under certain conditions. What exactly comes back is the horror their theology cannot resolve. |
+| **Manto** | Transcendence theology: the Tauma is the medium through which a fully prepared consciousness moves beyond flesh. Advanced practitioners claim direct Tauma interface in meditative states. Their internal debate is whether this is what they believe it is. |
+| **Talpi** | No theology. The Tauma is a manufacturing input. Umbral materials are a resource. Primordials are a hazard to manage around extraction operations. |
+| **Arakhel** | Undefined. Likely instrumental — they would treat Tauma-related information and access as commodities. Whether they have genuine theological convictions or treat theology as another market is TBD. |
+| **Panin** | Unaware. Their collective consciousness generates significant Tauma pressure that no individual caused or intended. They do not know this is happening. Their "theology" (where it exists) is probably locally borrowed from nearby species. |
+| **Vesper** | Research frame. Theology is data about what cultures believe about the Tauma. Their actual conviction is that the answers are in biology, not doctrine. They study what Primordials have done to living things, not what Primordials want. |
+| **Myo** | Oracle class: operational exploitation of the mechanism. Most Myo: whatever theology is locally available in their population area. The secrecy of the oracle class depends on most Myo not knowing what their oracles are doing. |
+| **Luphran** | Undefined. |
