@@ -1,5 +1,6 @@
 # Ciclos Autónomos
 
+**Parent doc:** `docs/system/creatures.md`
 **Related docs:** `docs/system/techniques.md`, `docs/system/ailments.yaml`
 **Authority data:** pending — no YAML entry yet
 
