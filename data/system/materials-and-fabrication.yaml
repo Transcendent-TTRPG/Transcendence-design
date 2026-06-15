@@ -1,7 +1,7 @@
 meta:
-  version: "1.0"
+  version: "1.1"
   status: draft
-  last_updated: "2026-05-07"
+  last_updated: "2026-06-15"
 
 system_scope:
   purpose:
@@ -80,6 +80,9 @@ material_model:
       "1": common
       "2": rare
       "3": exceptional
+    durability_and_potency_scaling:
+      rule: "durability_base and potency_base are grade-1 values. Actual D = base × grade. Actual P = base × grade."
+      applies_to: all_materials
   living_material_behaviors:
     - growth
     - regeneration
@@ -142,85 +145,85 @@ extraction:
     catalog:
       pelaje:
         unit: kg
-        durability_formula: "6 * q"
-        base_potency_formula: "4 * q"
+        durability_base: 4
+        potency_base: 2
         cost_formula: "10 * q"
         sensitivity_group: non_sensitive
         default_accessibility: general
-      escamas:
-        unit: kg
-        durability_formula: "8 * q"
-        base_potency_formula: "5 * q"
-        cost_formula: "20 * q"
-        sensitivity_group: non_sensitive
-        default_accessibility: limited
-      caparazon:
-        unit: kg
-        durability_formula: "10 * q"
-        base_potency_formula: "6 * q"
-        cost_formula: "30 * q"
-        sensitivity_group: non_sensitive
-        default_accessibility: limited
       plumaje:
         unit: kg
-        durability_formula: "4 * q"
-        base_potency_formula: "3 * q"
+        durability_base: 3
+        potency_base: 1
         cost_formula: "10 * q"
         sensitivity_group: non_sensitive
         default_accessibility: general
-      huesos:
-        unit: kg
-        durability_formula: "3 * q"
-        base_potency_formula: "5 * q"
-        cost_formula: "16 * q"
-        sensitivity_group: non_sensitive
-        default_accessibility: limited
       cuernos:
         unit: kg
-        durability_formula: "4 * q"
-        base_potency_formula: "6 * q"
+        durability_base: 12
+        potency_base: 14
         cost_formula: "16 * q"
         sensitivity_group: non_sensitive
         default_accessibility: general
       garras:
         unit: kg
-        durability_formula: "4 * q"
-        base_potency_formula: "6 * q"
+        durability_base: 8
+        potency_base: 16
         cost_formula: "16 * q"
         sensitivity_group: non_sensitive
         default_accessibility: general
-      colmillos:
+      huesos:
         unit: kg
-        durability_formula: "5 * q"
-        base_potency_formula: "7 * q"
+        durability_base: 10
+        potency_base: 8
         cost_formula: "16 * q"
         sensitivity_group: non_sensitive
         default_accessibility: limited
+      colmillos:
+        unit: kg
+        durability_base: 10
+        potency_base: 18
+        cost_formula: "16 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      escamas:
+        unit: kg
+        durability_base: 16
+        potency_base: 4
+        cost_formula: "20 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      caparazon:
+        unit: kg
+        durability_base: 22
+        potency_base: 5
+        cost_formula: "30 * q"
+        sensitivity_group: non_sensitive
+        default_accessibility: limited
+      fluidos:
+        unit: liter
+        durability_base: 2
+        potency_base: 0
+        cost_formula: "20 * q"
+        sensitivity_group: sensitive
+        default_accessibility: general
       glandulas:
         unit: unit
-        durability_formula: "0"
-        base_potency_formula: "0"
+        durability_base: 2
+        potency_base: 0
         cost_formula: "30 * q"
         sensitivity_group: sensitive
         default_accessibility: limited
       organos:
         unit: unit
-        durability_formula: "0"
-        base_potency_formula: "0"
+        durability_base: 2
+        potency_base: 0
         cost_formula: "40 * q"
         sensitivity_group: sensitive
         default_accessibility: limited
-      fluidos:
-        unit: liter
-        durability_formula: "0"
-        base_potency_formula: "0"
-        cost_formula: "20 * q"
-        sensitivity_group: sensitive
-        default_accessibility: general
       sistema_nervioso:
         unit: unit
-        durability_formula: "0"
-        base_potency_formula: "0"
+        durability_base: 1
+        potency_base: 0
         cost_formula: "150 * q"
         sensitivity_group: sensitive
         default_accessibility: singular
@@ -398,324 +401,319 @@ craft_materials:
         - structural_use_of_already_worked_materials
   natural_catalog:
     metals:
-      hierro:
-        durability: 15
-        base_potency: 25
+      # General tier
+      estano:
+        durability_base: 5
+        potency_base: 5
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
+      plomo:
+        durability_base: 6
+        potency_base: 14
+        cost_formula_per_kg: "15 * q"
+        default_accessibility: general
+        design_note: "Dense but soft — high blunt potency from mass, low durability (deforms easily)"
+      oro:
+        durability_base: 6
+        potency_base: 10
+        cost_formula_per_kg: "100 * q"
+        default_accessibility: general
+        design_note: "Soft and dense; deforms under impact"
+      peltre:
+        durability_base: 8
+        potency_base: 7
+        cost_formula_per_kg: "12 * q"
+        default_accessibility: general
+      cobre:
+        durability_base: 8
+        potency_base: 8
         cost_formula_per_kg: "10 * q"
         default_accessibility: general
       bronce:
-        durability: 12
-        base_potency: 22
+        durability_base: 12
+        potency_base: 11
         cost_formula_per_kg: "15 * q"
         default_accessibility: general
-      cobre:
-        durability: 10
-        base_potency: 20
+      hierro:
+        durability_base: 14
+        potency_base: 12
         cost_formula_per_kg: "10 * q"
         default_accessibility: general
-      estano:
-        durability: 9
-        base_potency: 18
-        cost_formula_per_kg: "20 * q"
-        default_accessibility: general
-      acero:
-        durability: 18
-        base_potency: 30
-        cost_formula_per_kg: "30 * q"
-        default_accessibility: limited
-      peltre:
-        durability: 8
-        base_potency: 15
-        cost_formula_per_kg: "18 * q"
-        default_accessibility: general
+      # Limited tier
       plata:
-        durability: 16
-        base_potency: 28
+        durability_base: 10
+        potency_base: 9
         cost_formula_per_kg: "40 * q"
         default_accessibility: limited
       platino:
-        durability: 17
-        base_potency: 29
-        cost_formula_per_kg: "50 * q"
+        durability_base: 12
+        potency_base: 14
+        cost_formula_per_kg: "120 * q"
         default_accessibility: limited
-      oro:
-        durability: 10
-        base_potency: 20
-        cost_formula_per_kg: "100 * q"
+      acero:
+        durability_base: 20
+        potency_base: 18
+        cost_formula_per_kg: "30 * q"
         default_accessibility: limited
       cromo:
-        durability: 20
-        base_potency: 27
+        durability_base: 22
+        potency_base: 12
         cost_formula_per_kg: "60 * q"
         default_accessibility: limited
-      plomo:
-        durability: 12
-        base_potency: 18
-        cost_formula_per_kg: "15 * q"
-        default_accessibility: general
+        design_note: "Very hard surface; does not transmit force well on its own"
+      # Singular tier
       titanio:
-        durability: 22
-        base_potency: 35
-        cost_formula_per_kg: "80 * q"
+        durability_base: 32
+        potency_base: 18
+        cost_formula_per_kg: "200 * q"
         default_accessibility: singular
-      mithril:
-        durability: 28
-        base_potency: 45
-        cost_formula_per_kg: "500 * q"
-        default_accessibility: singular
-      adamantium:
-        durability: 30
-        base_potency: 50
-        cost_formula_per_kg: "1000 * q"
-        default_accessibility: singular
-      oricalco:
-        durability: 25
-        base_potency: 40
-        cost_formula_per_kg: "800 * q"
-        default_accessibility: singular
+        design_note: "Exceptional fracture toughness; light, no natural edge"
     stone_and_precious_materials:
+      # General tier — rocks and minerals
+      carbon:
+        type: rock
+        durability_base: 3
+        potency_base: 2
+        cost_formula_per_kg: "5 * q"
+        default_accessibility: general
       piedra:
         type: rock
-        durability: 8
-        base_potency: 16
+        durability_base: 10
+        potency_base: 10
         cost_formula_per_kg: "5 * q"
         default_accessibility: general
       roca:
         type: rock
-        durability: 9
-        base_potency: 18
-        cost_formula_per_kg: "5 * q"
-        default_accessibility: general
-      carbon:
-        type: rock
-        durability: 5
-        base_potency: 10
+        durability_base: 10
+        potency_base: 10
         cost_formula_per_kg: "5 * q"
         default_accessibility: general
       ambar:
         type: rock
-        durability: 4
-        base_potency: 8
+        durability_base: 5
+        potency_base: 5
         cost_formula_per_kg: "20 * q"
         default_accessibility: general
       coral:
         type: rock
-        durability: 6
-        base_potency: 10
+        durability_base: 5
+        potency_base: 6
         cost_formula_per_kg: "20 * q"
         default_accessibility: general
-      obsidiana:
-        type: rock
-        durability: 12
-        base_potency: 12
-        cost_formula_per_kg: "30 * q"
-        default_accessibility: singular
       vidrio:
         type: rock
-        durability: 3
-        base_potency: 6
-        cost_formula_per_kg: "15 * q"
+        durability_base: 3
+        potency_base: 8
+        cost_formula_per_kg: "8 * q"
         default_accessibility: general
-      jade:
-        type: precious_stone
-        durability: 10
-        base_potency: 15
-        cost_formula_per_kg: "50 * q"
+      # Singular tier — volcanic
+      obsidiana:
+        type: rock
+        durability_base: 6
+        potency_base: 22
+        cost_formula_per_kg: "40 * q"
         default_accessibility: singular
+        design_note: "Highest potency of any known material; shatters under torsion or counter-strike"
+      # Limited tier — precious stones
       lapislazuli:
         type: precious_stone
-        durability: 8
-        base_potency: 14
+        durability_base: 8
+        potency_base: 7
         cost_formula_per_kg: "30 * q"
         default_accessibility: limited
       cuarzo:
         type: precious_stone
-        durability: 6
-        base_potency: 11
+        durability_base: 10
+        potency_base: 10
         cost_formula_per_kg: "20 * q"
-        default_accessibility: limited
-      marfil:
-        type: precious_material
-        durability: 7
-        base_potency: 13
-        cost_formula_per_kg: "40 * q"
         default_accessibility: limited
       cristales:
         type: precious_stone
-        durability: 7
-        base_potency: 12
+        durability_base: 10
+        potency_base: 9
         cost_formula_per_kg: "30 * q"
         default_accessibility: limited
-      rubi:
+      marfil:
+        type: precious_material
+        durability_base: 12
+        potency_base: 8
+        cost_formula_per_kg: "40 * q"
+        default_accessibility: limited
+      # Singular tier — precious stones
+      topacio:
         type: precious_stone
-        durability: 16
-        base_potency: 9
+        durability_base: 13
+        potency_base: 13
         cost_formula_per_kg: "120 * q"
         default_accessibility: singular
       esmeralda:
         type: precious_stone
-        durability: 15
-        base_potency: 9
-        cost_formula_per_kg: "140 * q"
+        durability_base: 13
+        potency_base: 12
+        cost_formula_per_kg: "170 * q"
         default_accessibility: singular
       zafiro:
         type: precious_stone
-        durability: 16
-        base_potency: 9
-        cost_formula_per_kg: "110 * q"
+        durability_base: 16
+        potency_base: 16
+        cost_formula_per_kg: "130 * q"
         default_accessibility: singular
+        design_note: "Corundum: 9 Mohs hardness AND high toughness"
+      rubi:
+        type: precious_stone
+        durability_base: 16
+        potency_base: 16
+        cost_formula_per_kg: "150 * q"
+        default_accessibility: singular
+        design_note: "Same mineral as zafiro (corundum)"
+      jade:
+        type: precious_stone
+        durability_base: 20
+        potency_base: 8
+        cost_formula_per_kg: "150 * q"
+        default_accessibility: singular
+        design_note: "Highest fracture toughness of any known mineral; not a cutting material"
       diamante:
         type: precious_stone
-        durability: 18
-        base_potency: 10
-        cost_formula_per_kg: "200 * q"
+        durability_base: 12
+        potency_base: 26
+        cost_formula_per_kg: "250 * q"
         default_accessibility: singular
-      topacio:
-        type: precious_stone
-        durability: 14
-        base_potency: 8
-        cost_formula_per_kg: "90 * q"
-        default_accessibility: singular
+        design_note: "Hardest known material (10 Mohs) but brittle under impact — high P, moderate D"
     woods:
       pino:
-        durability: 15
-        base_potency: 7
+        durability_base: 7
+        potency_base: 4
         cost_formula_per_kg: "5 * q"
         default_accessibility: general
-      roble:
-        durability: 20
-        base_potency: 10
-        cost_formula_per_kg: "10 * q"
-        default_accessibility: general
-      arce:
-        durability: 18
-        base_potency: 8
-        cost_formula_per_kg: "12 * q"
-        default_accessibility: general
       caoba:
-        durability: 22
-        base_potency: 12
+        durability_base: 9
+        potency_base: 6
         cost_formula_per_kg: "15 * q"
         default_accessibility: general
+      arce:
+        durability_base: 10
+        potency_base: 6
+        cost_formula_per_kg: "12 * q"
+        default_accessibility: general
+      roble:
+        durability_base: 12
+        potency_base: 7
+        cost_formula_per_kg: "10 * q"
+        default_accessibility: general
       ebano:
-        durability: 25
-        base_potency: 11
+        durability_base: 16
+        potency_base: 8
         cost_formula_per_kg: "20 * q"
         default_accessibility: limited
       secoya:
-        durability: 30
-        base_potency: 15
-        cost_formula_per_kg: "25 * q"
+        durability_base: 22
+        potency_base: 7
+        cost_formula_per_kg: "60 * q"
         default_accessibility: singular
     fibers_and_hide_derived:
+      algodon:
+        type: fiber
+        durability_base: 2
+        potency_base: 1
+        cost_formula_per_kg: "8 * q"
+        default_accessibility: general
       lana:
         type: fiber
-        durability_formula: "2 * q"
-        base_potency_formula: "3 * q"
+        durability_base: 3
+        potency_base: 1
         cost_formula_per_kg: "12 * q"
         default_accessibility: general
       lino:
         type: fiber
-        durability_formula: "2 * q"
-        base_potency_formula: "3 * q"
+        durability_base: 4
+        potency_base: 2
         cost_formula_per_kg: "10 * q"
-        default_accessibility: general
-      algodon:
-        type: fiber
-        durability_formula: "1 * q"
-        base_potency_formula: "2 * q"
-        cost_formula_per_kg: "8 * q"
-        default_accessibility: general
-      seda:
-        type: fiber
-        durability_formula: "3 * q"
-        base_potency_formula: "4 * q"
-        cost_formula_per_kg: "20 * q"
         default_accessibility: general
       yute:
         type: fiber
-        durability_formula: "2 * q"
-        base_potency_formula: "4 * q"
+        durability_base: 4
+        potency_base: 2
         cost_formula_per_kg: "6 * q"
         default_accessibility: general
-      seda_de_arakhel:
+      seda:
         type: fiber
-        durability: 18
-        base_potency: 18
-        cost_formula_per_kg: "50 * q"
-        default_accessibility: singular
+        durability_base: 6
+        potency_base: 2
+        cost_formula_per_kg: "20 * q"
+        default_accessibility: general
       tela:
         type: fiber
-        durability_formula: "1 * q"
-        base_potency_formula: "2 * q"
-        cost_formula_per_kg: "5 * q"
+        processing_source: natural_fibers
+        durability_base: 4
+        potency_base: 1
+        cost_formula_per_kg: "8 * q"
         default_accessibility: general
       cuero:
         type: leather
-        durability_formula: "5 * q"
-        base_potency_formula: "6 * q"
+        processing_source: pelaje
+        processing_domain: Sastreria
+        durability_base: 10
+        potency_base: 3
         cost_formula_per_kg: "18 * q"
         default_accessibility: limited
       cuero_escamado:
         type: leather
-        durability_formula: "7 * q"
-        base_potency_formula: "8 * q"
-        cost_formula_per_kg: "25 * q"
+        processing_source: escamas
+        processing_domain: Sastreria
+        durability_base: 14
+        potency_base: 4
+        cost_formula_per_kg: "30 * q"
         default_accessibility: limited
-      cuero_acorazado:
-        type: leather
-        durability_formula: "9 * q"
-        base_potency_formula: "10 * q"
-        cost_formula_per_kg: "35 * q"
-        default_accessibility: limited
+      seda_de_arakhel:
+        type: fiber
+        processing_note: "Market price for treated silk; raw silk production — see Arakhel species entry"
+        durability_base: 18
+        potency_base: 5
+        cost_formula_per_kg: "120 * q"
+        default_accessibility: singular
   processed_materials:
     cuero:
       source: pelaje
       domain: Sastreria
-      durability_formula: "7 * q"
-      base_potency_formula: "5 * q"
-      cost_formula: "15 * q * qty"
-    escamado:
+      durability_base: 10
+      potency_base: 3
+      cost_formula: "18 * q * qty"
+    cuero_escamado:
       source: escamas
-      domain: Herreria
-      durability_formula: "9 * q"
-      base_potency_formula: "6 * q"
-      cost_formula: "25 * q * qty"
-    acorazado:
-      source: caparazon
-      domain: Herreria
-      durability_formula: "11 * q"
-      base_potency_formula: "7 * q"
-      cost_formula: "35 * q * qty"
-    tela:
-      source: fiber_source
       domain: Sastreria
-      durability_formula: "material + q"
-      base_potency_formula: "material + q"
-      cost_formula: "material * 0.2 * q * qty"
+      durability_base: 14
+      potency_base: 4
+      cost_formula: "30 * q * qty"
+    tela:
+      source: natural_fibers
+      domain: Sastreria
+      durability_base: 4
+      potency_base: 1
+      cost_formula: "8 * q * qty"
     bronce:
       source: "cobre + estano"
       domain: Herreria
-      durability: 12
-      base_potency: 20
-      cost_formula: "20 * q * qty"
+      durability_base: 12
+      potency_base: 11
+      cost_formula: "15 * q * qty"
     acero:
       source: "hierro + carbon"
       domain: Herreria
-      durability: 18
-      base_potency: 30
+      durability_base: 20
+      potency_base: 18
       cost_formula: "30 * q * qty"
     peltre:
       source: estano
       domain: Herreria
-      durability: 8
-      base_potency: 15
-      cost_formula: "15 * q * qty"
+      durability_base: 8
+      potency_base: 7
+      cost_formula: "12 * q * qty"
     vidrio:
       source: mineral_or_sand_feed
       domain: Herreria
-      durability: 5
-      base_potency: 10
+      durability_base: 3
+      potency_base: 8
       cost_formula: "8 * q * qty"
   accessibility:
     tiers:
@@ -1220,7 +1218,7 @@ production_documents:
       mechanism: 50
       illusory: 100
       environmental: 100
-      psychic: 200
+      umbral: 250
       living: 150
   formulas:
     scope:
