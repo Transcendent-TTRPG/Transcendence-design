@@ -14,7 +14,7 @@ system_scope:
     - full_material_catalog
     - full_recipe_catalog
     - exact_plant_catalog
-    - full_physea_production_catalog
+    - full_world_production_catalog
 
 material_model:
   required_fields:

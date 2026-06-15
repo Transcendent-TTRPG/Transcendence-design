@@ -760,7 +760,7 @@ Living materials should usually require one of these extra authored constraints:
 | forged weapons, metal armor, worked plate, structural metal parts | `Herrería` |
 | cloth armor, garments, leatherwork, flexible gear | `Sastrería` |
 | fine-setting, gemstone work, ornaments, precision adornment | `Joyería` |
-| mechanisms, assemblies, complex structural function | `Ingeniería` |
+| kits and tools for all other specializations; creature harnesses and riding equipment; exploration tools; equipment for operating on gigantic-scale creatures | `Ingeniería` |
 | prepared compounds, elixirs, poisons, alchemical products | `Alquimia` |
 
 ### Fabrication requirements
@@ -1319,13 +1319,12 @@ They should usually define:
 
 #### Trap diagram type surcharge
 
-| Trap type | Added cost |
-| --- | --- |
-| `mechanism` | `50` |
-| `illusory` | `100` |
-| `environmental` | `100` |
-| `psychic` | `200` |
-| `living` | `150` |
+| Trap type | Added cost | Notes |
+| --- | --- | --- |
+| `mechanism` | `50` | Physical trigger, pressure plate, tensioned release |
+| `illusory` | `100` | Tricks perception through natural means: perspective, camouflage, misalignment, shadow |
+| `environmental` | `100` | Exploits terrain: flooding, collapse, heat, fall |
+| `living` | `150` | Incorporates a living component as part of the trap logic |
 
 ### Formulas
 
@@ -1494,6 +1493,6 @@ This framework intentionally leaves later catalogs to define:
 - exact plant catalogs;
 - exact alchemical formulas;
 - exact trap diagrams;
-- exact Physea production materials.
+- exact world-specific production materials and regional variants.
 
 Those catalogs should plug into this framework rather than redefining it.
