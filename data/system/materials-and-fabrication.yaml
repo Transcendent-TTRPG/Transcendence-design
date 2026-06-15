@@ -470,12 +470,6 @@ craft_materials:
         design_note: "Exceptional fracture toughness; light, no natural edge"
     stone_and_precious_materials:
       # General tier — rocks and minerals
-      carbon:
-        type: rock
-        durability_base: 3
-        potency_base: 2
-        cost_formula_per_kg: "5 * q"
-        default_accessibility: general
       piedra:
         type: rock
         durability_base: 10
@@ -487,18 +481,6 @@ craft_materials:
         durability_base: 10
         potency_base: 10
         cost_formula_per_kg: "5 * q"
-        default_accessibility: general
-      ambar:
-        type: rock
-        durability_base: 5
-        potency_base: 5
-        cost_formula_per_kg: "20 * q"
-        default_accessibility: general
-      coral:
-        type: rock
-        durability_base: 5
-        potency_base: 6
-        cost_formula_per_kg: "20 * q"
         default_accessibility: general
       vidrio:
         type: rock
@@ -533,12 +515,6 @@ craft_materials:
         potency_base: 9
         cost_formula_per_kg: "30 * q"
         default_accessibility: limited
-      marfil:
-        type: precious_material
-        durability_base: 12
-        potency_base: 8
-        cost_formula_per_kg: "40 * q"
-        default_accessibility: limited
       # Singular tier — precious stones
       topacio:
         type: precious_stone
@@ -552,20 +528,13 @@ craft_materials:
         potency_base: 12
         cost_formula_per_kg: "170 * q"
         default_accessibility: singular
-      zafiro:
+      corindon:
         type: precious_stone
         durability_base: 16
         potency_base: 16
-        cost_formula_per_kg: "130 * q"
+        cost_formula_per_kg: "140 * q"
         default_accessibility: singular
-        design_note: "Corundum: 9 Mohs hardness AND high toughness"
-      rubi:
-        type: precious_stone
-        durability_base: 16
-        potency_base: 16
-        cost_formula_per_kg: "150 * q"
-        default_accessibility: singular
-        design_note: "Same mineral as zafiro (corundum)"
+        design_note: "Corundum: 9 Mohs hardness AND high toughness — appears as zafiro (blue) or rubí (red)"
       jade:
         type: precious_stone
         durability_base: 20
