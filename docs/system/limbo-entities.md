@@ -184,11 +184,11 @@ No es posible forzar el descubrimiento estudiando el objeto. Taumaturgia puede r
 
 ## Transferencia del objeto
 
-Cuando el vestigio cambia de portador, el estado de descubrimiento se reinicia. El canal era del portador original — su cuerpo tenía la impregnación. El nuevo portador comienza desde cero: sin canal, sin descubrimiento.
+Cuando el vestigio cambia de portador, el canal biológico se reinicia. La Aflicción era del portador original. El nuevo portador necesita construir su propio canal desde cero — la primera Aflicción del sentido vinculado sigue siendo necesaria para activarlo, sin excepción.
 
-La excepción es la herencia explícita de comprensión: si el portador original pudo articular el patrón del vestigio y enseñó ese conocimiento al nuevo portador, este puede comenzar ya sabiendo qué hace el objeto. Pero sigue necesitando construir su propio canal — la primera Aflicción del sentido vinculado sigue siendo necesaria para activarlo.
+Lo que no se reinicia necesariamente es el conocimiento. Si el nuevo portador sabe lo que hace el objeto, puede comenzar ya con ese entendimiento completo y saltarse la fase de pistas y declaración. Dentro de un grupo que comparte la misma campaña, el conocimiento sobre un vestigo o vínculo es información del grupo: la fase de descubrimiento es una experiencia que el grupo vive una sola vez con cada objeto. El conocimiento viaja con las personas; el canal biológico no.
 
-Esa articulación es difícil. Si el conocimiento llegó principalmente a través de pistas crípticas, el portador original quizás nunca tuvo palabras para describirlo. La herencia de comprensión es una decisión narrativa, no un trámite.
+Si el objeto llega de una fuente desconocida — un portador que no pudo articular el patrón, un objeto sin historia rastreable — el nuevo portador empieza sin conocimiento y el descubrimiento comienza desde cero.
 
 ---
 

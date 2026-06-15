@@ -76,8 +76,8 @@ fatigue_effects:
         Alterations, and position control — do not activate.
   overflow:
     trigger: "fatigue would exceed 5"
-    state: incapacitated
-    name_es: Incapacitado
+    state: unconscious
+    name_es: Inconsciente
     description: >
       The body shuts down. The character loses consciousness. Cannot take
       Active Actions, Reactions, or Techniques until they rest, receive
@@ -373,27 +373,28 @@ dissonance_effects:
         deeper perception into meaningful action.
   overflow:
     trigger: "dissonance would exceed 5"
-    state: incapacitated
-    name_es: Incapacitado
+    state: unconscious
+    name_es: Inconsciente
     description: >
       The brain activates an automatic cutoff to prevent permanent damage.
       The character loses consciousness. No Aspecto can be activated and all
       vínculo connections are suspended until they rest, receive help, or a
       specific rule removes this state. Afflictions record whatever perceptual
-      damage accumulated; incapacitation is the temporary total shutdown.
+      damage accumulated; unconsciousness is the temporary total shutdown.
 
 psychic_system_parallel:
   note: >
-    The physical and psychic systems are structurally identical and
-    independently tracked. A character can be Incapacitated on one track
-    while fully operational on the other.
+    The physical and psychic systems accumulate independently — Fatiga does
+    not affect Eco and Disonancia does not affect Desgaste. Overflow on
+    either track renders the character Unconscious. This is an OR condition,
+    not AND.
   physical_track:
     accumulated: Desgaste
     reserve: Aguante
     settled_consequence: Fatiga
-    overflow: Incapacitado
+    overflow: Inconsciente
   psychic_track:
     accumulated: Eco
     reserve: Cordura
     settled_consequence: Disonancia
-    overflow: Incapacitado
+    overflow: Inconsciente

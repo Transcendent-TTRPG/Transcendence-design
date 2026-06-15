@@ -185,7 +185,7 @@ Fatiga por carga sostenida:
 
 Esta Fatiga no chequea umbral de Desgaste. Es consecuencia directa de transportar carga significativa durante tiempo prolongado.
 
-La escala normal no crea niveles por encima de Fatiga 5. Si una nueva aplicación de carga sostenida empujaría al personaje más allá de Fatiga 5, queda Incapacitado por agotamiento y debe descansar o recibir ayuda.
+La escala normal no crea niveles por encima de Fatiga 5. Si una nueva aplicación de carga sostenida empujaría al personaje más allá de Fatiga 5, queda Inconsciente por agotamiento y debe descansar o recibir ayuda.
 
 Esta regla mide carga sostenida durante viaje, exploración, marcha, transporte o trabajo físico prolongado. No se usa para cada asalto de combate. Una carga que supera el 100% de la capacidad no puede transportarse de forma funcional sin ayuda, equipo, Técnica, criatura de carga o una regla específica.
 
@@ -223,7 +223,7 @@ Si un personaje tiene **Aguante 7**:
 - Desgaste 28–34 → Fatiga 4
 - Desgaste 35+ → Fatiga 5
 
-Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Incapacitado. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
+Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Inconsciente. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
 
 ---
 
@@ -238,7 +238,7 @@ Los efectos de Fatiga son **acumulativos**. Llegar a Fatiga 3 significa que el p
 | **Fatiga 3** | Todas las acciones no gratuitas cuestan +1 Desgaste adicional. |
 | **Fatiga 4** | Las Reacciones no están disponibles. Solo se pueden usar Acciones Activas. |
 | **Fatiga 5** | Las Técnicas solo resuelven su efecto primario (T.A., T.I. o efecto de utilidad base). El reposicionamiento gratuito, las Alteraciones aplicadas y el control de posición no se activan. |
-| **Overflow** | **Incapacitado** — el cuerpo se apaga, el personaje pierde consciencia. Sin Acciones Activas, Reacciones ni Técnicas hasta descansar o recibir ayuda. |
+| **Overflow** | **Inconsciente** — el cuerpo se apaga, el personaje pierde consciencia. Sin Acciones Activas, Reacciones ni Técnicas hasta descansar o recibir ayuda. |
 
 ### Por qué este diseño
 
@@ -465,9 +465,9 @@ El sistema físico tiene un paralelo estructural exacto para personajes humanoid
 | **Acumulado** | Desgaste | Eco |
 | **Reserva** | Aguante | Cordura |
 | **Consecuencia asentada** | Fatiga | Disonancia |
-| **Overflow** | Incapacitado | Incapacitado |
+| **Overflow** | Inconsciente | Inconsciente |
 
-Un personaje puede estar Incapacitado en un track y completamente operativo en el otro.
+Los tracks acumulan de forma independiente — la Fatiga no afecta al Eco y la Disonancia no afecta al Desgaste. Pero el overflow en cualquiera de los dos deja al personaje **Inconsciente**: es un OR, no un AND.
 
 ---
 
@@ -519,7 +519,7 @@ Los efectos son **acumulativos**, igual que los de Fatiga.
 | **Disonancia 3** | Todas las activaciones de Aspecto cuestan +1 Eco adicional. |
 | **Disonancia 4** | Los vínculos con más de un camino quedan completamente inutilizables — ningún camino puede activarse. Los caminos inactivos de un vínculo multi-sentido siguen generando carga de Aflicción activamente; en este nivel esa carga doble no se puede sostener. Solo los vínculos de camino único siguen disponibles. |
 | **Disonancia 5** | Los Aspectos solo resuelven su etapa Leve, independientemente de la intensidad de Aflicción. Los efectos de etapa Moderado y Grave no se activan. El vínculo sigue respondiendo, pero la mente no puede procesar la percepción profunda en acción. |
-| **Overflow** | **Incapacitado** — el cerebro activa el corte automático para evitar daño permanente. El personaje pierde consciencia. Sin activaciones de Aspecto. Todos los vínculos suspendidos hasta descansar o recibir ayuda. Las Aflicciones registran el daño perceptual acumulado; la incapacitación es el apagado total temporal. |
+| **Overflow** | **Inconsciente** — el cerebro activa el corte automático para evitar daño permanente. El personaje pierde consciencia. Sin activaciones de Aspecto. Todos los vínculos suspendidos hasta descansar o recibir ayuda. Las Aflicciones registran el daño perceptual acumulado; la inconsciencia es el apagado total temporal. |
 
 #### Lógica del diseño de Disonancia
 

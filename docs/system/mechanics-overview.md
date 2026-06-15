@@ -25,6 +25,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Materials & Fabrication | `materials-and-fabrication.yaml` | Material family, durability, base potency, accessibility, conservation, extraction, fabrication, refinement |
 | Faction Reputation & Alliances | `faction-reputation-and-alliances.yaml` | Standing state, renown profile, alliance status, availability ceiling, trade access, price pressure |
 | Attrition & Fatigue | `attrition-fatigue.yaml` | Attrition cost reduction, Endurance increase, recovery amount |
+| Psychic track (Eco / Cordura / Disonancia) | `attrition-fatigue.yaml` | Eco cost per Aspecto, Cordura increase, Disonancia threshold, Aspecto access |
 | Rest & Recovery | `attrition-fatigue.yaml` | Recovery amount modifier, additional task access, favorable condition criteria |
 | ATB combat timeline | `combat-atb-timeline.md` (ADR) | Rhythm cost reduction, initial position bonus, reaction access |
 | Conditions & Resistances | `attrition-fatigue.yaml` | R.R. bonus by type, condition immunity, progression block |
@@ -881,6 +882,64 @@ Conditions accelerate Fatigue but do not replace Attrition. Three stages:
 | Delay, project, or settle pressure differently | Scene pacing |
 | Function while under Fatigue pressure | Endurance expression |
 | Make hostile scene pressure matter sooner or later | Tempo through exhaustion |
+
+---
+
+## Psychic track: Eco / Cordura / Disonancia
+
+**Authority:** `data/system/attrition-fatigue.yaml`
+
+Structural parallel to the physical Attrition / Fatigue track. Applies only to characters with at least one active Vínculo.
+
+| Physical | Psychic |
+| --- | --- |
+| Desgaste | Eco |
+| Aguante | Cordura |
+| Fatiga | Disonancia |
+| Inconsciente | Inconsciente |
+
+### Eco
+
+Accumulated psychic load from activating Aspectos through a Vínculo. Like Desgaste, Eco is projected during a scene and settles when it ends. Cost is defined per Aspecto entry — there is no universal scale.
+
+### Cordura
+
+```text
+Cordura = 3 + (Compostura × 2)
+```
+
+The psychic reserve. Disonancia thresholds are multiples of this value.
+
+### Disonancia thresholds
+
+| Level | Condition |
+| --- | --- |
+| Disonancia 0 | Eco < Cordura |
+| Disonancia 1 | Eco ≥ Cordura |
+| Disonancia 2 | Eco ≥ 2 × Cordura |
+| Disonancia 3 | Eco ≥ 3 × Cordura |
+| Disonancia 4 | Eco ≥ 4 × Cordura |
+| Disonancia 5 | Eco ≥ 5 × Cordura |
+
+### Disonancia effects (cumulative)
+
+| Level | Effect |
+| --- | --- |
+| **Disonancia 1** | S.R. rolls of the mental and knowledge category require a prior R.R. de Compostura. On failure, the S.R. is lost. |
+| **Disonancia 2** | Aspectos at the Grave tier are unavailable, regardless of Affliction intensity. |
+| **Disonancia 3** | All Aspecto activations cost +1 Eco. |
+| **Disonancia 4** | Vínculos with more than one active path become completely unusable. Only single-path Vínculos remain available. |
+| **Disonancia 5** | Aspectos resolve only their Leve tier, regardless of Affliction intensity. |
+| **Overflow** | **Inconsciente** — the character loses consciousness. All Aspectos suspended until rest or aid. |
+
+### Ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Reduce Eco cost of Aspecto X | Psychic efficiency |
+| Increase Cordura permanently | Psychic reserve expansion |
+| Delay or reduce Disonancia threshold | Sustained access under load |
+| Recover Eco after scene | Inter-scene restoration |
 
 ---
 
