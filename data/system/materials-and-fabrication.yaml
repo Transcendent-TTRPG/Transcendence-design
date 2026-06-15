@@ -1215,11 +1215,11 @@ production_documents:
         detect_difficulty: Demanding
         disarm_difficulty: Demanding
     type_surcharge:
-      mechanism: 50
-      illusory: 100
-      environmental: 100
+      mechanism: 0
+      illusory: 50
+      environmental: 50
       umbral: 250
-      living: 150
+      living: 100
   formulas:
     scope:
       - elixirs
