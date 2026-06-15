@@ -258,14 +258,13 @@ They are the remnants of structures built using direct Tauma-manipulation, made
 from materials that survived a planetary cataclysm because they were constructed
 under principles no living being understands.
 
-They are both resource and death trap.
-
-**As resource:** The materials in human ruins — inorganic, Tauma-infused at the
-structural level — have properties no bio-organic technology can produce. Umbral
-materials extracted from ruins or from zones saturated by ruins have mechanical
-and Tauma-reactive properties that make them valuable for specific applications.
-This is why species like the Talpi run extraction operations at ruin sites and
-why the trade value of umbral materials justifies the death rate of extraction.
+They cannot be used. Nothing inside a human ruin is extractable, repurposable,
+or safe to interact with. The construction materials themselves — built with
+Tauma-manipulation no living being understands — cannot be worked, harvested,
+or incorporated into any bio-organic process. Attempts to do so have uniformly
+failed, often fatally. The technology that produced them is not recoverable
+because it is not legible: no current species has any framework for understanding
+what those materials are doing or why they behave as they do.
 
 **As death trap:** The Tauma residue inside human ruins from whatever was being
 done there millions of years ago has not fully dissipated. Ruins are among the
@@ -285,6 +284,30 @@ from this is constructed meaning applied to incomprehensible objects. This is
 not false — it is what culture has always been. But it means that some of the
 most foundational beliefs of some species rest on a misreading of something
 that was never intended to communicate anything to them.
+
+---
+
+## Umbral materials
+
+Umbral materials are naturally occurring matter found in zones of very high
+extranatural concentration — places where the Tauma gradient is so intense that
+it has structurally altered the physical properties of the matter in the zone
+over geological time. These are not human-made materials. They are what
+natural matter becomes when it has spent long enough in conditions no living
+species deliberately created.
+
+Zones of this kind exist independently of human ruins, though ruins tend to
+be among the highest-concentration environments because of what was happening
+in them during the human era. Primordial territories can also produce these
+conditions. Other high-Tauma anomaly zones exist without any human-era origin.
+
+Umbral materials have fixed, documented extranatural properties — they behave
+predictably once identified, but cannot be controlled or directed by a user.
+Their properties are the result of the Tauma that saturated them, not of
+anything the user is doing. Working with umbral materials is like working with
+an extremely dangerous substance that happens to have useful fixed behaviors:
+the danger is intrinsic to the zone from which it came, the yield is limited,
+and the extraction process has a high mortality rate.
 
 ---
 
