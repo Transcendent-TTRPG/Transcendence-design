@@ -122,10 +122,10 @@ Role defines the creature's combat function and modifies HP across all zones.
 
 | Role | HP multiplier | Function |
 | --- | --- | --- |
-| Protector | × 2 | Absorbs attacks; protects Comunes; prioritizes Bloqueo |
-| Golpeador | × 1.5 | Primary damage source; zone-targeting attacks |
+| Protector | × 3 | Absorbs attacks; protects Comunes; prioritizes Bloqueo |
+| Golpeador | × 2 | Primary damage source; zone-targeting attacks |
+| Soporte | × 1.5 | Coordinates allies; applies conditions; enables others |
 | Lanzador | × 1 | Ranged or elemental attacks; lower zone HP |
-| Soporte | × 1 | Coordinates allies; applies conditions; enables others |
 
 ---
 
@@ -149,13 +149,18 @@ have had.
 
 ### Zone types
 
-Once behaviors and their body parts are identified, assign each zone to a type:
+Every zone must be tied to a specific behavior. A zone without a behavior does not exist in the system. There are two designations:
 
-| Type | What it is | HP base | Bloqueo base |
-| --- | --- | --- | --- |
-| Núcleo | The zone the creature cannot function without. Collapse ends the creature or triggers a major phase. | NR × 4 | NR × 2 |
-| Estructura | Load-bearing mass. No specific behavior tied to it, but sustains everything else. | NR × 6 | NR × 1.5 |
-| Apéndice | A zone tied to a specific behavior: a limb, organ, or appendage. Collapsing it stops that behavior. | NR × 3 | NR × 1 |
+**Zona** — any body part the system tracks. Tied to a specific behavior. When it collapses, that behavior stops and any autonomous cycle anchored to it is removed from the ATB.
+
+**Núcleo** — a zone (one or more in complex creatures) whose collapse is existentially significant: it ends the creature or triggers a major Metamorfosis phase. The Núcleo also has a behavior — it is not an abstract life total.
+
+All zones share the same base HP formula. The Núcleo designation raises that base to reflect its critical role:
+
+| Designation | HP base | Bloqueo base |
+| --- | --- | --- |
+| Zona | NR × 10 | NR × 2 |
+| Núcleo | NR × 15 | NR × 2 |
 
 Apply the role multiplier to HP. Apply the nature multiplier to Bloqueo:
 
@@ -165,6 +170,31 @@ Apply the role multiplier to HP. Apply the nature multiplier to Bloqueo:
 | Anomalía | × 1.5 |
 | Primordial | × 2 |
 
+### Zone Bloqueo modifier by body covering
+
+The creature-level Bloqueo (NR × 2 × nature multiplier) is a per-creature baseline.
+Each zone applies a modifier based on its biological covering. A creature's carapace
+zone and exposed abdomen zone will have meaningfully different Bloqueo values:
+
+| Covering | Bloqueo modifier |
+| --- | --- |
+| Soft tissue, membrane, viscera | × 0.5 |
+| Skin, feathers, fur | × 1 |
+| Scales, thick hide | × 1.5 |
+| Shell, bone plates, exoskeleton | × 2 |
+
+The Narrator assigns the appropriate covering per zone during creature design. A
+single creature can have zones at very different Bloqueo values — this is intentional.
+It creates targeted weak points and makes zone selection meaningful.
+
+### Physical damage and Primordials
+
+Primordial zones are **immune to physical damage**. Any physical attack deals 0
+damage regardless of Impact or Bloqueo. The nature multiplier × 2 applies only to
+Tauma-based damage (Aspectos). Players cannot meaningfully harm a Primordial without
+Aspectos, and even with them must identify which zones can receive Tauma-based damage
+given the creature's structural logic.
+
 ### Damage to zones
 
 Damage to a zone = Impact − Bloqueo (minimum 0). Applied directly to that zone's
@@ -173,6 +203,7 @@ HP. No wound tracking, no ranuras. The Narrator tracks one number per zone.
 ### Zone collapse
 
 When a zone reaches 0 HP:
+
 - The zone is destroyed
 - Any technique or autonomous cycle anchored to that zone is disabled and removed
   from the ATB
@@ -218,6 +249,7 @@ for Ventaja de Ejecución apply.
 ### Discovering and neutralizing traits
 
 Traits are not visible to players by default. To identify a trait:
+
 - Successful T.E. of Identificación, Interpretación, or Medicina during combat
   reveals one trait and its trigger condition
 - The roll reveals that the condition exists and what it is; players must act on
@@ -293,14 +325,16 @@ behavior does not, or behavior exists but the body cannot explain it.
    flavor — it is the design work. If you cannot identify a body part for a
    behavior, the behavior is not ready to be authored.
 
-3. **Assign each zone a type** (Núcleo / Estructura / Apéndice) based on its
-   function, not its anatomical position. The throat of a fire-breathing creature
-   may be Núcleo if everything depends on it.
+3. **Assign each zone its designation** (Zona or Núcleo) based on its function,
+   not its anatomical position. The throat of a fire-breathing creature may be
+   Núcleo if everything depends on it.
 
 4. **Set nature, category, and role.** This gives you NR offset, cycle scope,
    HP multipliers, and Bloqueo multipliers.
 
 5. **Apply zone formulas.** HP and Bloqueo per zone are now derived, not invented.
+   Then apply the body covering modifier per zone to differentiate Bloqueo values
+   across zones.
 
 6. **Write the techniques** anchored to their zones.
 

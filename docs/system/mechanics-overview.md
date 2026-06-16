@@ -11,6 +11,21 @@ For detailed system descriptions, see the individual files in this folder.
 
 ---
 
+## Quick load index
+
+Load only the sections relevant to the current task. Do not read the full document.
+
+| Task | Sections to load |
+| --- | --- |
+| Species corebook authoring — Phase 0 comparison | §Species |
+| Species corebook authoring — weapon effects / ailments | §Ailments · §Natural Attack Forms |
+| Species corebook authoring — size stats | §Size & Scale |
+| Technique authoring — interaction surfaces | §Ailments · §Wounds & Damage · §ATB Combat Timeline · §Environmental Conditions · §General Rules |
+| Creature design | §Creature System · §Ailments · §Size & Scale |
+| Limbo / vestigo design | §Limbo Manifestations · §Ailments |
+
+---
+
 ## Systems at a glance
 
 | System | Authority | Ability surfaces |
@@ -38,7 +53,7 @@ For detailed system descriptions, see the individual files in this folder.
 | Natural Attack Forms | `natural-attack-forms.yaml` | Anatomy contact logic, compatible profiles, restricted profiles, species-level combat expression |
 | Backgrounds | `backgrounds.md` | Starting specialization package, major affinity, creation-time Synapsis spread |
 | Technique Origins | `technique-origins.md` | Origin front, transmission, availability, world-grounded access to Techniques |
-| NPC / Creature Logic | `general-rules.md` | Trait-based exceptions, subsystem timing, encounter-layer pressure |
+| Creature System | `docs/system/creatures.md` · `14-adversaries-and-bestiary/es/` (corebook) | Nature, Category, Role, Zone HP/Bloqueo, zone covering, NR offset, roll formulas, traits, autonomous cycles, Elite phases, natural weapon grade |
 
 ---
 
@@ -258,7 +273,7 @@ These rules are not just editorial background. They are active design constraint
 | Specific over general | A Technique may override a baseline rule, but only inside its own clearly bounded scope |
 | Thematic-mechanical synthesis | First ask what the fiction most credibly supports, then test what the numbers most safely support, and keep the strongest middle ground between both |
 | Round up | Any derived Technique value using fractions should assume upward rounding unless its own text says otherwise |
-| Strongest condition | A Technique should usually replace, refresh, or fail to stack against a stronger same-type effect |
+| Strongest condition | A Technique should usually replace, refresh, or fail to stack against a stronger same-type effect. Tie-breaking: same magnitude → longer duration wins. Same magnitude and same duration → Narrator decides. |
 | Tool handling | Some Techniques should explicitly require valid tools, implements, or interfaces to function properly |
 | Narrative flexibility | Not a blank check for vagueness; Techniques still need stable default resolution |
 
@@ -378,18 +393,45 @@ When the challenge is a direct opposed roll (another character), both sides roll
 
 ## Environmental Conditions
 
-**Authority:** `data/system/environmental-conditions.yaml`
+**Authority:** `data/system/environmental-conditions.yaml` · `core-books/transcendence-corebook/13-gm-toolkit/es/01-condiciones-del-entorno.md`
 
-Environmental Conditions are a major Technique surface because they govern scene pressure when no narrower subsystem already owns the resolution.
+Environmental Conditions are a major Technique surface because they govern scene pressure when no narrower subsystem already owns the resolution. If a specific rule already handles an action, that rule takes precedence. If not, environmental severity sets the threshold.
 
-### Key structure
+### Source types
 
-| Layer | What it does |
+| Source | What it describes |
 | --- | --- |
-| Natural vs. extranatural | Distinguishes world-consistent pressure from Limbo-derived distortion |
-| Severity | Sets the difficulty tier family |
-| `NR` | Scales the specific intensity of the current scene |
-| Hinder / Restrict / Accelerate | Changes what is penalized, limited, or made more exhausting |
+| Ambiental | Terrain, climate, darkness, heat, cold, height, water, noise, exposure |
+| Hostil | A dominant presence that constrains normal action (creature, chase, controlled space) |
+| Extranatural | A perceptible world alteration caused by Limbo filtration or Tauma acting on existing things |
+
+The key mechanical distinction is natural vs. extranatural origin — not intensity. An extreme hurricane is natural; any phenomenon that contradicts the world's physical logic is extranatural.
+
+### Severity levels
+
+| Severity | Difficulty tier | Base | NR range | Origin |
+| --- | --- | ---: | --- | --- |
+| Leve | Fundamentos | 5 | 1 | Natural |
+| Moderada | Desafiante | 8 | 1–3 | Natural |
+| Severa | Rigurosa | 11 | 3–6 | Natural or extranatural |
+| Desastrosa | Exigente | 14 | 6–9 | Natural or extranatural |
+| Extrema | Extrema | 17 | 9–12 | Natural or extranatural |
+
+NR reflects how much a specific instance of a condition presses beyond the baseline expression of its severity tier.
+
+### Stacking multiple pressure sources
+
+When the scene combines multiple pressure sources (environmental, hostile, extranatural): the **dominant source** sets the severity level. Secondary sources can add up to a maximum of **+2 NR** on top. No more than two sources stack.
+
+### Narrator Tools
+
+Two tools available beyond the threshold — neither has an automatic trigger; both are narrative and contextual:
+
+**Limitar** — eliminate specific action options entirely. The condition doesn't make the action harder; it makes it impossible. The Narrator decides which options and when.
+
+**Acelerar** — add +1 Attrition cost to all non-free actions while the pressure lasts. Applies while the environmental condition is active; Narrator determines when it ends.
+
+Severe or Extreme conditions make both tools likely. Light conditions make neither probable.
 
 ### Ability surfaces
 
@@ -397,42 +439,88 @@ Environmental Conditions are a major Technique surface because they govern scene
 | --- | --- |
 | Ignore or reduce a severity expression | Environmental mitigation |
 | Change whether a condition only hinders or fully restricts | Access preservation |
-| Prevent or trigger acceleration | Attrition pressure control |
+| Prevent or trigger Acceleration | Attrition pressure control |
 | Function differently in natural vs. extranatural scenes | World-logic interaction |
 | Require terrain, weather, heat, cold, water, darkness, or unstable footing | Context gating |
+| Resist or bypass Limitar elimination | Action access restoration |
 
 ---
 
 ## Limbo Manifestations
 
-**Authority:** `data/system/limbo-manifestations.yaml`
+**Authority:** `data/system/limbo-manifestations.yaml` · `core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/`
 
 Techniques should stay non-magical, but some may still interact with manifestation logic in cautious, bounded ways.
 
-### Allowed interaction space
+### Vestigo mechanics
+
+A vestigo is an object impregnated with Tauma from a Limbo entity. It can be activated intentionally once discovered.
+
+**Medium requirement**: activation always requires a real physical medium present in the scene — light, sound, vibration, heat, pressure. The vestigo redirects or filters what already exists; it does not create energy from nothing.
+
+**Activation cost**: each significant use may require `T.R. de Aflicción = 1d10 + Compostura + Resistencia Aflicciones level + bonuses`. On failure, +1 intensity to the bearer's Affliction in the linked sense. The vestigo activates regardless — failure only adds Affliction.
+
+**Pattern exhaustion (Fatiga del patrón)**: vestigos have a finite number of uses unknown to the bearer. No counter, no warning. The pattern exhausts unpredictably. The object remains but the Tauma dissipates. Accumulated Affliction persists.
+
+**The bearer does not retain the vestigo's ability** once the object is lost, destroyed, or exhausted — only the Affliction and the expanded perception that comes with it.
+
+### Aspecto / camino system (vínculos)
+
+A vínculo reorganizes how the bearer exists in combat, space, and perception. Aspectos are concrete expressions of an active vínculo — not independent abilities.
+
+Each linked sense corresponds to a **camino** — an independent escalation line. Three stages determined by Affliction severity in that sense:
+
+| Affliction severity | Camino access |
+| --- | --- |
+| Leve | First expression — limited but real |
+| Moderado | Expanded effect: more reach, duration, control, or precision |
+| Grave | Maximum expression |
+
+**Convergencia**: when all caminos of a multi-sense vínculo are discovered and active, the Convergencia unlocks — an effect no single camino produces alone. Potency uses the **minimum severity** across all active linked senses.
+
+**Eco cost**: each Aspecto activation costs Eco defined per entry. Unlike Desgaste, Eco is psychic load accumulated during a scene and settled when it ends. Using a vínculo does not grow Affliction — the Affliction was built during the discovery process.
+
+### Entity levels
+
+Four levels determine vestigo durability, vínculo access requirements, and narrative consequence:
+
+| Level | Vestigo charges (approx.) | Vínculo NR minimum | Character |
+| --- | ---: | ---: | --- |
+| Fragmento | 2–5 | 1 | Minimal cohesion; archetypal, no distinct will; multiple instances |
+| Entidad | 5–10 | 3 | Recognizable will, intent, and personality; most vestigos/vínculos in play |
+| Soberano | 10–15 | 5 | Strong identity; remembers past bearers; narrative consequences on use |
+| Abismal | — | narrative only | No vestigos; a territory-scale event, not a rewardable resource |
+
+The Abismal has no NR minimum because no NR makes it accessible — entering Abismal territory is entering the creature's body.
+
+### Discovery process
+
+The Narrador tracks what level the entity is and plans when the pattern exhausts as a narrative event (for Soberano), not a resource depletion. Investigation into a zone's history can reveal what kind of entity is there and why.
+
+### Allowed interaction space for Techniques
 
 | Surface | Effect type |
 | --- | --- |
-| Detection support | Help identify flow, vestige, or link presence |
+| Detection support | Help identify flow, vestigo, or vínculo presence |
 | Safe approach or handling | Improve interaction with manifestation-linked scenes |
 | Interpretation aid | Clarify what kind of manifestation is present |
-| Discovery gate | Determine whether a vestige can be intentionally used |
-| Medium requirement | Check whether light, sound, vibration, heat, or another valid carrier exists |
+| Discovery gate | Determine whether a vestigo can be intentionally used |
+| Medium requirement | Check whether light, sound, vibration, heat, or another carrier exists |
 | Affliction pressure | Track whether use raises sensory Affliction intensity |
-| Link qualification | Check whether the bearer has the required linked Affliction severity |
+| Vínculo qualification | Check whether the bearer has the required Affliction severity |
 
 ### Out of bounds for standard Techniques
 
 | Surface | Why not here |
 | --- | --- |
-| Creating supernatural energy or effects from nothing | Belongs to later Limbo / magic design |
+| Creating supernatural energy or effects from nothing | Belongs to Limbo / magic design layer |
 | Full manifestation control | Too far beyond trained non-magical Technique scope |
 
 ---
 
 ## Ailments
 
-**Authority:** `data/system/ailments.yaml`
+**Authority:** `data/system/ailments.yaml` · `core-books/transcendence-corebook/11-ailments/es/`
 
 Ailments are one of the main cross-system surfaces for Techniques because they
 carry named ongoing consequences instead of vague penalties.
@@ -447,49 +535,220 @@ carry named ongoing consequences instead of vague penalties.
 | Poisons | Toxic states resolved through delivery method and persistence in the organism |
 | Curses | Extranatural binding rules attached to a target, object, place, or relation |
 
+### Agravio thresholds
+
+All ailment families share the same severity-threshold structure. The applying Technique's source rank determines the bonus applied to the T.R. difficulty. The target's T.R. result is compared against:
+
+| Severity | Threshold |
+| --- | --- |
+| Leve | 8 + NR |
+| Moderado | 13 + NR |
+| Grave | 17 + NR |
+
+NR = Nivel de Referencia of the applying source. A target whose T.R. fails to reach the Moderado threshold but reaches Leve threshold receives the Leve tier.
+
+Three duration models: instantaneous (applies once), scene-persistent (lasts until scene ends or condition clears), and indefinite (persists until actively treated or a specific condition is met).
+
+### Alteraciones catalog
+
+18 named Alteraciones. Each has three severity tiers (Leve / Moderado / Grave) with distinct mechanical effects per tier. Full tier effects in the ailments chapter.
+
+| Alteración | Primary disruption domain |
+| --- | --- |
+| Asfixiado | Breathing and oxygen — action restriction, suffocation |
+| Aterrorizado | Fear response — flight imperative, T.A. and T.E. penalties |
+| Atrapado | Physical restraint — movement locked, T.D. and mobility penalties |
+| Aturdido | Consciousness disruption — disorientation, reaction loss |
+| Cegado | Vision loss — targeting and perception penalties |
+| Confundido | Cognitive disruption — action reliability, intent reading impaired |
+| Congelado | Thermal restriction — mobility and action speed impaired |
+| Conmocionado | Physical shock — temporary function loss |
+| Derribado | Knocked prone — positional vulnerability, movement cost increase |
+| Desarmado | Weapon loss — forced unarmed state |
+| Desequilibrado | Postural instability — T.D. penalties, restricted technique access |
+| Desorientado | Spatial disorientation — positioning and targeting impaired |
+| Electrizado | Electrical disruption — muscle control and equipment interference |
+| Ensordecido | Hearing loss — verbal coordination and sound-based perception impaired |
+| Impedido | Limb restriction — specific action families blocked |
+| Lacerado | Open wound — bleeding, healing difficulty |
+| Paralizado | Full motor lockout — cannot take physical actions |
+| Sobrecargado | Sensory or cognitive overload — compound penalties |
+
+### Affliction intensity system
+
+Afflictions (Aflicciones) use an intensity track, not round counts. There are three severity bands:
+
+| Band | Intensity value |
+| --- | --- |
+| Leve | 5 |
+| Moderado | 10 |
+| Grave | 15 |
+
+**Worsening** (+1 intensity each): night without full rest; using or discovering a vestigo; discovering a vínculo.
+
+**Recovery** (−1 intensity each): full rest night in adequate conditions; effective Meditación.
+
+At Grave: a new triggering application creates a new separate Affliction at Leve instead of worsening the existing one.
+
+12 Affliction types, each tied to a specific sensory channel (vision, hearing, touch, etc.), each with a Canal Extranatural side effect that activates at Moderado or Grave.
+
+### Infection mechanics
+
+Distinct from Venenos — dynamic, with incubation period and propagation on physical contact. T.R. formula: `1d10 + Tenacidad + nivel Resistencia Infecciones + bonuses`. Each infection entry specifies separate Contagio difficulty and Propagación difficulty. Incubation = asymptomatic window before symptoms and spread activate.
+
+### Poison mechanics
+
+Requires Kit de Venenos for safe manipulation. Autocontamination risk: 50% / 75% / 100% by venom severity when handling without a kit. Identification via Alquimia using an Índice Alquímico. Four administration routes. Treatment capability by Kit de Medicina tier (Básico → Leve, Avanzado → Moderado, Especializado → Grave).
+
 ### Key Technique surfaces
 
 | Surface | Effect type |
 | --- | --- |
-| Apply a named Ailment | Direct ongoing state pressure |
+| Apply a named Alteración at a specific severity | Direct state pressure |
 | Escalate or downgrade severity | Ailment pressure by tier |
-| Modify the qualifying `R.R.` | Delivery or resistance logic |
+| Modify the qualifying R.R. | Delivery or resistance logic |
 | Suppress, stabilize, or shorten persistence | Relief without erasing the whole subsystem |
-| Interact with Affliction intensity | Vestigio / Vínculo pressure and recovery logic |
+| Interact with Affliction intensity | Intensity worsening or recovery |
+| Trigger infection Contagio or Propagación | Spread mechanic surface |
 
 ### Design rule
 
-If a Technique wants to create an ongoing state, first check whether a named
-Ailment already owns that effect. If not, the missing mechanic should be
-defined in the Ailment layer before the Technique treats it as freeform text.
+If a Technique wants to create an ongoing state, first check whether a named Alteración already owns that effect. If not, the missing mechanic should be defined in the Ailment layer before the Technique treats it as freeform text.
 
 ---
 
 ## Wounds & Damage
 
-**Authority:** `data/system/wounds-and-damage.yaml`
+**Authority:** `data/system/wounds-and-damage.yaml` · `core-books/transcendence-corebook/08-conflict-and-combat/es/05-heridas-y-dano.md` · `06-impacto-critico-y-romper-partes.md`
 
 Wounds and damage are not just "lose HP." This layer distinguishes impact,
 zone block, wound slots, collapse, durability, and break logic.
 
-### Key structure
+### Two damage models
 
-| Layer | What it does |
+| Case | Model |
 | --- | --- |
-| Impact vs. Block | Determines whether harm penetrates protection |
-| Wound slots by zone | Tracks bodily saturation and collapse on PCs |
-| NPC / creature surfaces | Uses parts, HP, durability, and linked functions |
-| Critical break logic | Resolves whether a valid critical can break a part or object |
+| PC attacks NPC / creature | Use target's own damage model (HP, zones, parts) |
+| NPC attacks PC | Localized wound to specific zone |
+
+### PC Bloqueo formula
+
+```text
+Bloqueo = BC + BM + CD + CO
+```
+
+| Component | Meaning |
+| --- | --- |
+| BC | Base block by armor category |
+| BM | Material bonus = floor(Durabilidad / 10) |
+| CD | Armor competency level in the zone's armor type |
+| CO | Item quality or grade |
+
+| Armor | BC |
+| --- | ---: |
+| Ligera | 2 |
+| Intermedia | 4 |
+| Pesada | 6 |
+
+A zone with no armor provides no armor block. **Umbral de Herida = max(Bloqueo, 1).**
+
+### PC wound zones and thresholds
+
+| Zone | Wound slots |
+| --- | ---: |
+| Cabeza | 3 |
+| Torso | 5 |
+| Brazos | 4 |
+| Piernas | 4 |
+| Pies | 3 |
+
+| Impact vs. threshold | Wound severity | Slots |
+| --- | --- | ---: |
+| Impact ≤ threshold | No wound | 0 |
+| Impact > threshold, ≤ 2× threshold | Leve | 1 |
+| Impact > 2× threshold, ≤ 3× threshold | Grave | 2 |
+| Impact > 3× threshold | Crítica | 3 |
+
+**Saturation:** zone reaches slot maximum → Penalizador de Saturación = number of slots occupied.
+**Collapse:** a wound overflows into a full zone → zone collapses with zone-specific effect.
+
+### Zone collapse and body states
+
+| Zone | Saturated | Collapsed |
+| --- | --- | --- |
+| Cabeza | Penalty to T.E. mental/Preparation | Must pass T.R. Alteración or Inconsciente |
+| Torso | Penalty to T.E. Tenacity and T.R. | Incapacitado; Crítica also → Agonía |
+| Brazos | Penalty to T.A. | One arm disabled; Impedido applies |
+| Piernas | Penalty to T.E. Fuerza; movement ÷ 2 | No Fuerza actions possible |
+| Pies | Penalty to T.E./T.C. Agilidad; cannot run | Movement requires support or roll |
+
+| Body state | Meaning |
+| --- | --- |
+| Operativo | Active with zone, ailment, fatigue, and attrition penalties |
+| Incapacitado | Rhythm > 3 actions unavailable |
+| Inconsciente | Cannot act or perceive usefully |
+| Agonía | Dying; stabilization required |
+| Muerto | Unrecoverable by normal means |
+
+### Stabilization and treatment
+
+| Step | Function | Releases slots |
+| --- | --- | --- |
+| Estabilizar | Stops active deterioration | No |
+| Tratar (during Full Rest) | On success, releases 1 slot | Yes |
+
+| Slots occupied | Stabilize difficulty | Kit | Treat difficulty | Kit |
+| --- | --- | --- | --- | --- |
+| 1–2 | Fundamental | Básico | Desafiante | Básico |
+| 3–4 | Desafiante | Avanzado | Rigurosa | Avanzado |
+| 5 / Colapsada | Rigurosa | Especializado | Exigente | Especializado |
+
+### Durabilidad / Potencia (D/P) system
+
+**Durabilidad** = structural resistance of a part or piece of equipment.
+**Potencia Crítica** = how much structural force the weapon delivers on a critical.
+
+```text
+Potencia Crítica = Potencia base × Multiplicador de Potencia
+```
+
+Potencia base comes from material, construction, or weapon profile. BM = floor(Durabilidad / 10) feeds PC Bloqueo.
+
+| Weapon type | Multiplier | Best against |
+| --- | ---: | --- |
+| Lanzas | 80% | Openings, light protection |
+| Hachas | 120% | Material, rigid edges |
+| Mazas | 150% | Armor, bone, dense structure |
+| Hojas largas | 100% | Wide cuts, medium resistance |
+| Dagas | 50% | High critical frequency, low break power |
+| Hojas cortas | 75% | Fast cuts, moderate break |
+| Arrojadizas | 40% | Precision, low structural break |
+| Armas a distancia | 60% | Ranged perforation or impact |
+| Armas flexibles | 30% | Control and destabilization |
+
+### Break resolution
+
+```text
+Potencia Crítica >= Durabilidad → part breaks / disabled
+Potencia Crítica < Durabilidad → part loses 1 Durabilidad (intact; Bloqueo unchanged)
+```
+
+Break attempts are valid only on Impacto Crítico, or when a Technique/rule explicitly allows breaking without a critical. Normal attacks do not reduce Durabilidad.
+
+Equipement retains its full Bloqueo until it breaks; partial Durabilidad loss does not reduce Bloqueo gradually.
 
 ### Ability surfaces
 
 | Surface | Effect type |
 | --- | --- |
-| Add or reduce Impact pressure | Damage-facing attack shaping |
-| Change how Block matters in one narrow case | Protection interaction |
+| Add or reduce Impact | Attack damage shaping |
+| Change how Block matters in a narrow case | Protection interaction |
 | Stabilize or preserve a wounded target | Medical or endurance continuity |
-| Mark a part, zone, or structural weakness | Break setup or follow-up pressure |
-| Modify valid break attempts | Potency, critical range, or durability interaction |
+| Mark a part or structural weakness | Break setup or follow-up pressure |
+| Increase Potencia Crítica | Break power amplification |
+| Ignore or reduce target Durabilidad | Penetration against hard structures |
+| Allow break attempt without Impacto Crítico | Extended break access |
+| Modify wound severity | Zone-level impact shaping |
 
 ### Design rule
 
@@ -1132,6 +1391,346 @@ Abilities should cross systems where it serves the thematic concept. A bonus tha
 | +R.R. and reduce settled Fatigue threshold by N | Conditions + Fatigue | Resilience focus — shrug off conditions before they settle |
 | Reduce rhythm cost of reactions when Preparation > attacker's | ATB + Characteristics | Anticipation — faster read means faster counter |
 | Enable a reaction that also recovers N Attrition | ATB + Attrition | Reactive recovery — reward for well-timed defense |
+
+---
+
+## Creature System
+
+**Authority (design):** `docs/system/creatures.md`
+**Authority (corebook):** `core-books/transcendence-corebook/14-adversaries-and-bestiary/es/`
+
+Governs all non-PC entities. NPCs use PC rules. Mortales, Anomalías, and Primordiales of any category use this system.
+
+### Nature
+
+| Nature | Elemental affinity | Elemental vulnerability | Physical damage |
+| --- | --- | --- | --- |
+| Mortal | — | — | Normal |
+| Anomalía | 50% reduction from affiliated element | +50% from opposing element | Normal |
+| Primordial | 100% reduction from affiliated element | +100% from opposing element | **Immune** — always 0; Tauma damage (Aspectos) applies normally with × 2 Bloqueo multiplier |
+
+### Category
+
+Determines cycle scope, not power. NR determines power.
+
+| Category | Cycle scope | NR offset vs NRg |
+| --- | --- | --- |
+| Común | Biological only (physiology, posture, regeneration) | NRg + 1–2 |
+| Campeón | Biological + ally coordination | NRg + 3–5 |
+| Elite | Biological + environmental (battlefield changes) | NRg + 6–10+ |
+
+Elite also has: **Metamorfosis** (phase shifts on zone collapse) · **Apoteosis** (final phase: +3 all attack rolls; reduced critical threat range for attackers) · **Golpe Final** (specific coordinated action required to end creature — cannot drop below 1 HP per zone until executed).
+
+### Role
+
+Multiplies HP across all zones.
+
+| Role | HP multiplier | Function |
+| --- | --- | --- |
+| Protector | × 3 | Absorbs attacks; prioritizes Block |
+| Golpeador | × 2 | Primary damage source |
+| Soporte | × 1.5 | Coordinates allies; applies conditions |
+| Lanzador | × 1 | Ranged or elemental; lowest zone HP |
+
+### Zone system
+
+Every zone must be tied to a specific behavior. No behavior = no zone.
+
+**Zona** — tracked body part. Collapse: behavior stops + anchored cycle removed from ATB.
+**Núcleo** — zone whose collapse defeats the creature or triggers Metamorfosis (Elite). Also has a behavior.
+
+#### HP
+
+| Designation | Base | Then apply |
+| --- | --- | --- |
+| Zona | NR × 10 | × Role multiplier |
+| Núcleo | NR × 15 | × Role multiplier |
+
+#### Bloqueo
+
+```text
+Bloqueo = (NR × 2) × Nature multiplier × Zone covering modifier
+```
+
+| Nature | Multiplier |
+| --- | --- |
+| Mortal | × 1 |
+| Anomalía | × 1.5 |
+| Primordial | × 2 (Tauma damage only) |
+
+| Zone covering | Modifier |
+| --- | --- |
+| Soft tissue, membrane, viscera | × 0.5 |
+| Skin, feathers, fur | × 1 |
+| Scales, thick hide | × 1.5 |
+| Shell, bone plates, exoskeleton | × 2 |
+
+### Creature roll formulas
+
+Characteristics and attack die are defined per creature.
+
+| Roll | Común | Campeón | Elite |
+| --- | --- | --- | --- |
+| T.A. | 1d10 + NR + char | 1d10 + ⌈NR × 1.5⌉ + char | 1d10 + NR × 2 + char |
+| T.D. | 1d10 + NR + char | 1d10 + ⌈NR × 1.5⌉ + char | 1d10 + NR × 2 + char |
+| T.R. | 1d10 + NR + char | 1d10 + ⌈NR × 1.5⌉ + char | 1d10 + NR × 2 + char |
+| T.E. | 1d10 + NR + char | 1d10 + ⌈NR × 1.5⌉ + char | 1d10 + NR × 2 + char |
+| T.I. | die × ⌈NR/3⌉ + char | die × ⌈NR/2⌉ + char × 2 | die × NR + char × 3 |
+
+### Natural weapon grade equivalent
+
+For player characters using natural weapons, grade is derived from competency rank (no weapon grade exists):
+
+| Competency rank | Grade equivalent |
+| --- | --- |
+| 1–2 | 1 |
+| 3–4 | 2 |
+| 5–6 | 3 |
+
+I.R. formula is structurally identical to crafted weapons — only the grade source changes.
+
+### Traits (Rasgos)
+
+Conditional Ventaja de Ejecución. No active condition = direct roll.
+
+| Element | Definition |
+| --- | --- |
+| Trigger condition | State that must be true |
+| Effect | Ventaja de Ejecución on T.A., T.D., T.R., or T.E. |
+
+When players neutralize the trigger, creature switches to **Ventaja de Aprendizaje** for that roll. Traits are hidden by default; revealed by successful T.E. of Identificación, Interpretación, or Medicina in combat.
+
+### Autonomous cycles
+
+Separate ATB entries for biological, physiological, or environmental processes — not creature decisions. Rhythm cost of next activation is hidden from players by default.
+
+- **Biological cycles:** anchored to a zone; removed from ATB when zone collapses.
+- **Environmental cycles (Elite only):** not zone-anchored; persist through Metamorfosis; end with creature defeat.
+
+Difficulty to read a specific cycle's pattern (T.E.):
+
+| Active autonomous cycles | Difficulty |
+| --- | --- |
+| 1 | Fundamental |
+| 2–3 | Challenging |
+| 4–5 | Rigorous |
+| 6–7 | Demanding |
+| 8+ | Extreme |
+
+### Creature ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Reveal a creature trait | Information access |
+| Neutralize a trait condition | Advantage removal |
+| Target a zone to collapse a behavior | Structural disruption |
+| Read or predict a cycle's Rhythm pattern | Cycle anticipation |
+| Force a phase or behavior shift | Encounter pacing |
+| Delay or disable an anchored cycle | Cycle disruption |
+| Apply Tauma damage (Aspectos) to Primordials | Physical-immunity bypass |
+
+---
+
+## Size & Scale
+
+**Authority:** `core-books/transcendence-corebook/08-conflict-and-combat/es/08-tamaño-y-escala.md` · `data/system/size-modifiers.yaml`
+
+Size affects T.E. for bodily self-movement, T.R. for physical stability alterations, Aguante base, load capacity, and visual range. Medium is the reference (0).
+
+| Size | T.E. físicas propias | T.R. físicas | Aguante base |
+| --- | ---: | ---: | ---: |
+| Diminuto | +4 | −4 | — |
+| Pequeño | +2 | −2 | 2 |
+| Mediano | — | — | 4 |
+| Grande | −2 | +2 | 6 |
+| Enorme | −4 | +4 | — |
+| Gigantesco | −6 | +6 | — |
+
+Aguante base (playable species only) = base + (TEN × 2).
+
+**T.E. físicas propias** applies to: Acrobacias, Equilibrio, Trepar, Sigilo (creature as agent).
+
+**T.R. físicas** applies to resistance against: Derribado, Desequilibrado, Atrapado.
+
+Species traits may declare a creature treated as a different size for specific calculations only — real size and all other modifiers are unaffected.
+
+---
+
+## Species
+
+**Authority:** `core-books/transcendence-corebook/06-species/es/` · `docs/canon/species/`
+
+Nine playable species. Each grants +1 to three characteristics, one Herencia penalty, three Legado abilities, and natural weapons. All characteristics are 0-based before species bonus and Synapsis.
+
+### Naghii
+
+**Size:** Mediano · **Speed:** 10 m · **Longevity:** 90–100 years
+
+**Characteristics:** +1 AGI, WIS, PRE
+
+**Herencia — Susceptibilidad al Abzu:** −3 to all T.R., T.C., T.E. of Compostura, Aura, and Sabiduría against extranatural phenomena.
+
+**Legado:** Resistencia al Veneno (+1/4 NR to T.R. Veneno) · Camuflaje (+1/4 NR Sigilo/Supervivencia for hiding) · Lengua Bífida (+1/4 NR Rastreo and Percepción by smell, even without line of sight)
+
+**Natural weapons:**
+
+| Weapon | Variant | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- | --- |
+| Cola | All | AGI | TEN | 1–2 m | d8 | Intercepción · Control de Línea · Torsión · Interrupción |
+| Mordisco | Kha-Naghii | AGI | TEN | 1 m | d8 | Perforación · Corrosión · Presión de Sombra · Precisión |
+| Aliento Astral | Saa-Naghii | AGI | TEN | 10 m | d6 | Precisión · Cadencia · Rebote · Corrosión (+ veneno effect) |
+
+---
+
+### Sauri
+
+**Size:** Grande · **Speed:** 8 m · **Longevity:** 60–80 years
+
+**Characteristics:** +1 STR, WIS, AUR
+
+**Herencia — Receptividad al Tauma:** −3 to T.E. Enfoque, Meditación, Vínculo when near active Tauma manifestations.
+
+**Legado:** Cicatrización Acelerada (+1 slot per 4 NR on Full Rest treatment success, requires external heat source) · Protección Natural (spend 2 Attrition to reduce incoming non-critical wound severity by one grade) · Dominio Extranatural (+1/4 NR Taumaturgia/Resonancia vs extranatural)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Cola | STR | STR | 1–2 m | d10 | Impacto · Control de Línea · Intercepción · Interrupción |
+| Mordisco | STR | STR | 1 m | d10 | Impacto · Bastión · Desgarramiento · Imparable |
+
+---
+
+### Zarnag
+
+**Size:** Mediano · **Speed:** 10 m · **Longevity:** 50–70 years
+
+**Characteristics:** +1 TEN, CUN, PRE
+
+**Herencia — Umbral del Resto:** −3 to T.R. Aflicciones near active infection foci, active vestigos, or mass death sites (Narrator-determined).
+
+**Legado:** Tolerancia a la Putrefacción (+1/4 NR T.R. Veneno and Infecciones) · Lectura del Umbral (+1/4 NR Supervivencia/Rastreo) · Carcajada de Manada (+1/4 NR Intimidación/Liderazgo)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Mordisco | STR | TEN | 1 m | d8 | Perforación · Corrosión · Desgarramiento · Imparable |
+| Garras | AGI | AGI | 1 m | d6 | Hostigamiento · Torsión · Desgarramiento · Interrupción |
+
+---
+
+### Drak'kai
+
+**Size:** Mediano · **Speed:** 8 m · **Longevity:** 150–200 years
+
+**Characteristics:** +1 TEN, WIS, CMP
+
+**Herencia — Percepción Interferida:** Permanent −3 to T.E. Instinto and Intuición when reading the intent or behavior of living creatures. Not a state — a species-level perceptual calibration.
+
+**Legado:** Caparazón (+4 Bloqueo to Torso zone per 4 NR, Torso only) · Magnetismo (+1/4 NR Percepción, Supervivencia, Orientación, Rastreo) · Reliquias (use WIS instead of INT for knowledge T.E.: Historia, Geografía, Lingüística, etc.; +1/4 NR to these)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Mordisco | STR | TEN | 1 m | d8 | Impacto · Imparable · Intercepción · Torsión |
+| Garras | STR | TEN | 1 m | d6 | Desvío · Intercepción · Torsión · Interrupción |
+
+---
+
+### Rokhart
+
+**Size:** Mediano · **Speed:** 12 m · **Longevity:** 70–80 years
+
+**Characteristics:** +1 AGI, CMP, INT
+
+**Herencia — Fragilidad Ósea:** While Derribado, incoming physical attacks gain one die step advance on T.I. (hollow bone structure).
+
+**Legado:** Imperturbable (+1/4 NR Enfoque, Contención, Meditación, Aplomo) · Visión de Rapaz (visual range 70m; +1/4 NR Percepción/Orientación when visibility uncompromised) · Red de la Concordia (use INT instead of PRE for Liderazgo/Negociación; +1/4 NR to these)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Pico | AGI | AGI | 1 m | d6 | Intercepción · Perforación · Precisión · Ruptura |
+| Garras | AGI | AGI | 1 m | d6 | Desvío · Hostigamiento · Interrupción · Fluidez |
+
+---
+
+### Formix
+
+**Size:** Mediano · **Speed:** 9 m · **Longevity:** 60–80 years
+
+**Characteristics:** +1 TEN, CUN, CMP
+
+**Herencia — Receptor Abierto:** Permanent −3 to T.R. vs Veneno and vs Alteraciones Confundido, Aturdido, Sobrecargado. Not a condition — the species' nervous architecture.
+
+**Legado:** Exoesqueleto (treated as Grande for Aguante base and load capacity; size and size modifiers unchanged) · Señal Química (+1/4 NR Percepción/Rastreo/Supervivencia/Intuición via chemical signals; within 10m detects living creatures without line of sight) · Umbral del Dolor (Lacerado and Electrizado affect Formix at one severity tier lower)
+
+**Natural weapons (variants: Guerrero or Destilador):**
+
+| Weapon | Variant | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- | --- |
+| Mordisco | All | TEN | TEN | 1 m | d8 | Imparable · Intercepción · Perforación · Torsión |
+| Aguijón | Guerrero | AGI | AGI | 1 m | d6 | Hostigamiento · Intercepción · Perforación · Precisión |
+| Expulsión Corrosiva | Destilador | AGI | TEN | 5 m | d6 | Hostigamiento · Interrupción · Precisión · Ruptura (+ Corroído effect) |
+
+---
+
+### Loxod
+
+**Size:** Grande · **Speed:** 8 m · **Longevity:** 200–300 years
+
+**Characteristics:** +1 TEN, INT, CMP
+
+**Herencia — Firma Sísmica:** −3 to all T.E. Sigilo in environments where Tauma is active or boundaries are diffuse (continuous involuntary infrasonido emission, not suppressable). Not a condition.
+
+**Legado:** Archivo Viviente (+1/4 NR Historia, Geografía, Lingüística for information absorbed directly by the character) · Percepción Química (+1/4 NR Percepción/Rastreo/Intuición via chemical signal; within 10m detects living creatures without line of sight) · Trompa Versátil (+1/4 NR Trepar/Agarre; +1/4 NR Percepción for signals through solid surfaces: vibration, distant movement, Loxod infrasonido)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Colmillos | TEN | TEN | 2 m | d10 | Carga · Perforación · Ruptura · Intercepción |
+| Trompa | TEN | TEN | 3 m | d8 | Control de Línea · Torsión · Bastión · Ruptura |
+
+---
+
+### Ceratox
+
+**Size:** Grande · **Speed:** 9 m · **Longevity:** 100–140 years
+
+**Characteristics:** +1 STR, WIS, AUR
+
+**Herencia — Ruido de Calibración:** −3 to T.E. Percepción in environments with multiple simultaneous active sources (crowded areas, high organism density, overlapping signals). Not a condition — the horn's perceptual architecture.
+
+**Legado:** Calibración (+1/4 NR Supervivencia, Orientación, Intuición) · Carga (+1/4 NR T.A. for Carga profile techniques and natural Cuerno attacks) · Dermis (+2 Bloqueo to all zones per 4 NR, from biologically hardened outer layer)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Cuerno | STR | TEN | 1 m | d10 | Carga · Impacto · Interrupción · Ruptura |
+
+---
+
+### Chelicer
+
+**Size:** Mediano · **Speed:** 9 m · **Longevity:** 60–90 years
+
+**Characteristics:** +1 AGI, CUN, CMP
+
+**Herencia — Brecha en la Quitina:** Each active wound imposes a T.D. penalty in the affected zone: Leve −1, Grave −2, Crítico −3. Persists until the wound in that zone is treated.
+
+**Legado:** Fe Inquebrantable (+1/4 NR T.E. Compostura) · Veneno Consagrado (apply own or external venoms to stinger/weapons without autocontamination; higher-tier venoms accessible without kit at NR 4/8+) · Transmutación del Dolor (each active wound raises maximum Aguante: Leve +1, Grave +2, Crítico +3; persists while wound untreated — same condition that reduces T.D. also extends Attrition tolerance)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Profiles |
+| --- | --- | --- | --- | --- | --- |
+| Aguijón | AGI | TEN | 1–5 m | d6 | Perforación · Precisión · Corrosión · Hostigamiento |
+| Garras | STR | STR | 1 m | d6 | Intercepción · Torsión · Interrupción · Desgarramiento |
 
 ---
 
