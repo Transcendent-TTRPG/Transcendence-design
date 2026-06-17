@@ -1570,7 +1570,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Susceptibilidad al Abzu:** −3 to all T.R., T.C., T.E. of Compostura, Aura, and Sabiduría against extranatural phenomena.
 
-**Legado:** Resistencia al Veneno (+1/4 NR to T.R. Veneno) · Camuflaje (+1/4 NR Sigilo/Supervivencia for hiding) · Lengua Bífida (+1/4 NR Rastreo and Percepción by smell, even without line of sight)
+**Legado:** Termorrecepción (ignore natural visibility penalties on T.A./T.D. vs warm-blooded targets in weapon range; extranatural darkness unaffected) · Piel de Sombra (Active tech #100; Ritmo 5, Desgaste 2; T.C. Agilidad vs enemy Perception; grants Oculto from Light Cover) · Lengua Bífida (+1/4 NR Rastreo and Percepción by smell, even without line of sight)
 
 **Natural weapons:**
 
@@ -1590,7 +1590,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Receptividad al Tauma:** −3 to T.E. Enfoque, Meditación, Vínculo when near active Tauma manifestations.
 
-**Legado:** Cicatrización Acelerada (+1 slot per 4 NR on Full Rest treatment success, requires external heat source) · Protección Natural (spend 2 Attrition to reduce incoming non-critical wound severity by one grade) · Dominio Extranatural (+1/4 NR Taumaturgia/Resonancia vs extranatural)
+**Legado:** Cicatrización Acelerada (+1 slot per 4 NR on Full Rest treatment success, requires external heat source) · Protección Natural (Reactive tech #99; Ritmo 0, Desgaste 2; reduces non-critical incoming wound severity by one grade in reaction window) · Dominio Extranatural (+1/4 NR Taumaturgia/Resonancia vs extranatural)
 
 **Natural weapons:**
 
@@ -1609,7 +1609,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Umbral del Resto:** −3 to T.R. Aflicciones near active infection foci, active vestigos, or mass death sites (Narrator-determined).
 
-**Legado:** Tolerancia a la Putrefacción (+1/4 NR T.R. Veneno and Infecciones) · Lectura del Umbral (+1/4 NR Supervivencia/Rastreo) · Carcajada de Manada (+1/4 NR Intimidación/Liderazgo)
+**Legado:** Tolerancia a la Putrefacción (+1/4 NR T.R. Veneno and Infecciones) · Mandíbula Trituradora (Mordisco ignores +1/4 NR target Bloqueo on damage) · Carcajada (Active tech #98; Ritmo 5, Desgaste 2, 8m area; T.C. Presencia to activate; T.R. Alteraciones save; Aterrorizado scaled by NR: 1–4 Leve, 5–8 Moderado, 9+ Grave)
 
 **Natural weapons:**
 
@@ -1628,7 +1628,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Percepción Interferida:** Permanent −3 to T.E. Instinto and Intuición when reading the intent or behavior of living creatures. Not a state — a species-level perceptual calibration.
 
-**Legado:** Caparazón (+4 Bloqueo to Torso zone per 4 NR, Torso only) · Magnetismo (+1/4 NR Percepción, Supervivencia, Orientación, Rastreo) · Reliquias (use WIS instead of INT for knowledge T.E.: Historia, Geografía, Lingüística, etc.; +1/4 NR to these)
+**Legado:** Caparazón (+4 Bloqueo to Torso zone per 4 NR, Torso only) · Magnetorrecepción (Active tech #101; Ritmo 3, Desgaste 2, 15m area; T.C. Sabiduría vs environment threshold; know exact position of all creatures, negate Oculto against Drak'kai) · Reliquias (use WIS instead of INT for knowledge T.E.: Historia, Geografía, Lingüística, etc.; +1/4 NR to these)
 
 **Natural weapons:**
 
@@ -1647,7 +1647,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Fragilidad Ósea:** While Derribado, incoming physical attacks gain one die step advance on T.I. (hollow bone structure).
 
-**Legado:** Imperturbable (+1/4 NR Enfoque, Contención, Meditación, Aplomo) · Visión de Rapaz (visual range 70m; +1/4 NR Percepción/Orientación when visibility uncompromised) · Red de la Concordia (use INT instead of PRE for Liderazgo/Negociación; +1/4 NR to these)
+**Legado:** Imperturbable (+1/4 NR Enfoque, Contención, Meditación, Aplomo) · Visión de Rapaz (visual range 70m; enemies cannot establish Oculto from Light Cover — need Medium Cover minimum) · La Batida (Reactive tech #102; Ritmo 3, Desgaste 2; T.C. Agilidad; move up to 6m without reactions on melee hit; if out of range, attack fails)
 
 **Natural weapons:**
 
@@ -1666,7 +1666,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Receptor Abierto:** Permanent −3 to T.R. vs Veneno and vs Alteraciones Confundido, Aturdido, Sobrecargado. Not a condition — the species' nervous architecture.
 
-**Legado:** Exoesqueleto (treated as Grande for Aguante base and load capacity; size and size modifiers unchanged) · Señal Química (+1/4 NR Percepción/Rastreo/Supervivencia/Intuición via chemical signals; within 10m detects living creatures without line of sight) · Umbral del Dolor (Lacerado and Electrizado affect Formix at one severity tier lower)
+**Legado:** Exoesqueleto (treated as Grande for Aguante base and load capacity; size and size modifiers unchanged) · Señal Química (Active tech #103; T.C. Astucia vs environment saturation threshold; negate Oculto within 10m; detect traces, chemical threats, known substances; enemies can contaminate area to raise difficulty) · Umbral del Dolor (+1/4 NR T.R. vs Lacerado, Electrizado, Corroído, Aturdido)
 
 **Natural weapons (variants: Guerrero or Destilador):**
 
@@ -1686,7 +1686,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Firma Sísmica:** −3 to all T.E. Sigilo in environments where Tauma is active or boundaries are diffuse (continuous involuntary infrasonido emission, not suppressable). Not a condition.
 
-**Legado:** Archivo Viviente (+1/4 NR Historia, Geografía, Lingüística for information absorbed directly by the character) · Percepción Química (+1/4 NR Percepción/Rastreo/Intuición via chemical signal; within 10m detects living creatures without line of sight) · Trompa Versátil (+1/4 NR Trepar/Agarre; +1/4 NR Percepción for signals through solid surfaces: vibration, distant movement, Loxod infrasonido)
+**Legado:** Archivo Viviente (+1/4 NR Historia, Geografía, Lingüística) · Olfato Profundo (Active tech #104; T.C. Compostura vs environment threshold; reveals Alteraciones+severity of visible creatures; detects Aflicción presence without detail; detects hidden creatures with active states by chemical signal without breaking Oculto) · Trompa Versátil (passive mechanic: trunk as independent limb — hold additional item without weapon slot; interact with environment without free hands; +1/4 NR Trepar y Agarre; +1/4 NR Percepción for vibration through solid surfaces; does NOT apply to weapon T.A. or hand-specific structure tasks)
 
 **Natural weapons:**
 
@@ -1705,7 +1705,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Ruido de Calibración:** −3 to T.E. Percepción in environments with multiple simultaneous active sources (crowded areas, high organism density, overlapping signals). Not a condition — the horn's perceptual architecture.
 
-**Legado:** Calibración (+1/4 NR Supervivencia, Orientación, Intuición) · Carga (+1/4 NR T.A. for Carga profile techniques and natural Cuerno attacks) · Dermis (+2 Bloqueo to all zones per 4 NR, from biologically hardened outer layer)
+**Legado:** Calibración (+1/4 NR Supervivencia, Orientación, Intuición) · La Embestida (Active-Attack tech #105; T.A. + T.I.; move straight line up to Velocidad then strike; on hit choose: push 3m OR Desequilibrado via T.R. Alteraciones; first technique combining full movement + attack + alteration choice) · Dermis (+2 Bloqueo to all zones per 4 NR, from biologically hardened outer layer)
 
 **Natural weapons:**
 
@@ -1723,7 +1723,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Brecha en la Quitina:** Each active wound imposes a T.D. penalty in the affected zone: Leve −1, Grave −2, Crítico −3. Persists until the wound in that zone is treated.
 
-**Legado:** Fe Inquebrantable (+1/4 NR T.E. Compostura) · Veneno Consagrado (apply own or external venoms to stinger/weapons without autocontamination; higher-tier venoms accessible without kit at NR 4/8+) · Transmutación del Dolor (each active wound raises maximum Aguante: Leve +1, Grave +2, Crítico +3; persists while wound untreated — same condition that reduces T.D. also extends Attrition tolerance)
+**Legado:** El Veredicto (Reactive-Attack tech #106; when attacked, choose not to defend — accept full damage, Aguijón auto-contacts attacker resolving T.I., attacker makes T.R. Veneno; on fail: +1/4 NR Ritmo permanent until venom treated; no T.A. roll, no weapon competency exploit) · Fe Inquebrantable (+1/4 NR T.E. Compostura) · Transmutación del Dolor (each active wound raises maximum Aguante: Leve +1, Grave +2, Crítico +3; persists while wound untreated — same condition that reduces T.D. also extends Attrition tolerance)
 
 **Natural weapons:**
 
@@ -1740,7 +1740,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Instinto Caótico:** Permanent −3 to all T.R. and T.E. de Compostura (Enfoque, Contención, Meditación, Aplomo) and to T.R. against ailments.
 
-**Legado:** Curiosidad (use CUN instead of INT for T.E. Identificación and Interpretación; +1/4 NR to T.E. Identificación, Interpretación, Intuición) · Agilidad Superior (Aguante = 3 + AGI × 2 instead of 3 + TEN × 2) · Adaptabilidad (once per day, swap one major affinity specialization for a different one; lasts until next extended rest or next use)
+**Legado:** Adaptabilidad (Active-Utility tech #107; swap up to X major affinity specializations for different ones; permanent until next extended rest or next use; X = 1 at NR 1–4, 2 at NR 5–8, 3 at NR 9+; Ritmo 3 / Desgaste 2) · Curiosidad (use CUN instead of INT for T.E. Identificación and Interpretación; +1/4 NR to T.E. Identificación, Interpretación, Intuición) · Agilidad Superior (Aguante = 3 + AGI × 2 instead of 2 + TEN × 2)
 
 **Natural weapons:**
 

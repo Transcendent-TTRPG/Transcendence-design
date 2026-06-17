@@ -13544,3 +13544,685 @@ pilot_examples:
       - dissonance_threshold
       - taumaturgia
       - drakkai
+
+- name: La Carcajada
+    name_en: The Cackle
+    id: 98
+    status: authored
+    origin:
+      main: Innato
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Zarnag
+      seed: Innate vocalization — area fear induction
+      focus: Area psychological disruption / territorial dominance
+      holder: All Zarnag
+      transmission: innate_species_biology
+      availability: Species-restricted
+    category: utility
+    type: active
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations: []
+      equipment: []
+      states:
+        - species_zarnag
+      prerequisite_techniques: []
+    target: all_enemies_in_area
+    range: personal
+    area: circular_8m
+    duration:
+      model: instantaneous
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    roll:
+      model: tc_presencia
+      effect_on_failure: technique_does_not_activate
+    saving_roll:
+      model: tr_alteraciones
+      difficulty: desafiante_plus_nr
+      effect_on_success: no_effect
+      effect_on_failure: aterrorizado_scaled_by_nr
+    scaling:
+      nr_1_4: leve
+      nr_5_8: moderado
+      nr_9_plus: grave
+    description: >
+      The Zarnag emits a characteristic high-pitched, broken vocalization that
+      induces an involuntary fear response. The Zarnag must first succeed on a
+      T.C. (Presencia) roll; if successful, all enemies within 8 meters must
+      resist or become Terrified at a severity scaled by the Zarnag's NR.
+    effect: >
+      Make a T.C. (Presencia). On success, all enemy creatures within an
+      8-meter radius make a T.R. (Alteraciones) against Challenging difficulty
+      increased by the Zarnag's NR. Those that fail become Aterrorizado at the
+      severity corresponding to the Zarnag's NR: Leve at NR 1-4, Moderado at
+      NR 5-8, Grave at NR 9+.
+    cost_note: >
+      Rhythm 5 / Attrition 2 reflects that this is a Standard ATB action with
+      significant physical and social exertion — a forceful sustained vocalization
+      under combat pressure. The cost is the natural limitation; no per-scene
+      restriction is needed.
+    restrictions:
+      - species_zarnag_only
+      - no_specialization_required
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - zarnag
+      - aterrorizado
+      - alteration
+      - area
+
+- name: Protección Natural
+    name_en: Natural Protection
+    id: 99
+    status: authored
+    origin:
+      main: Innato
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Sauri
+      seed: Innate biological resilience — scale redistribution of wound force
+      focus: Wound severity reduction / reactive body armor
+      holder: All Sauri
+      transmission: innate_species_biology
+      availability: Species-restricted
+    category: utility
+    type: reactive
+    trigger: non_critical_wound_incoming
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations: []
+      equipment: []
+      states:
+        - species_sauri
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instantaneous
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    scaling: null
+    description: >
+      The Sauri's natural scales absorb and redistribute incoming wound force,
+      reducing wound severity by one grade as an immediate reaction.
+    effect: >
+      When a non-critical wound is about to be applied to any body zone, the Sauri
+      may declare this technique in their reaction window. The wound reduces its
+      severity by one grade: a Grave wound becomes Leve, and a Leve wound is not
+      applied. Critical wounds cannot be reduced by this technique.
+    cost_note: >
+      Rhythm 0 / Attrition 2: fires in the reaction window without moving the ATB
+      ficha; the Sauri retains their position on the track. The Desgaste 2 reflects
+      the biological effort of forcibly redistributing a wound under combat pressure.
+    restrictions:
+      - species_sauri_only
+      - no_specialization_required
+      - trigger_non_critical_wound_only
+    tags:
+      - reactive
+      - utility
+      - innate
+      - species
+      - sauri
+      - herida
+      - wound
+
+- name: Piel de Sombra
+    name_en: Shadow Skin
+    id: 100
+    status: authored
+    origin:
+      main: Innato
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Naghii
+      seed: Innate chromatic camouflage — biological concealment from light cover
+      focus: State grant / concealment access relaxation
+      holder: All Naghii
+      transmission: innate_species_biology
+      availability: Species-restricted
+    category: utility
+    type: active
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations: []
+      equipment: []
+      states:
+        - species_naghii
+        - light_cover_available
+        - not_precisely_located_by_enemy
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: ends_per_concealment_rules
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: tc_agilidad
+      contested_against: enemy_perception_or_environment_threshold
+    scaling: null
+    description: >
+      The Naghii activates their innate chromatic skin response, allowing them
+      to achieve concealment from Light Cover — which normally requires Medium
+      or Total Cover.
+    effect: >
+      Make a T.C. (Agilidad) contested against the relevant observer's Perception,
+      or against a threshold set by environmental conditions. On success, gain the
+      Oculto state. The state ends per the standard Concealment rules.
+    cost_note: >
+      Rhythm 5 / Attrition 2: a full ATB action reflecting the physical chromatic
+      adjustment. Costs more than Pasar Como Parte del Fondo (Ritmo 3) because
+      this grants Permanente concealment from Light Cover — a far easier terrain
+      requirement than the 4-meter crossing window that technique requires.
+    restrictions:
+      - species_naghii_only
+      - no_specialization_required
+      - requires_light_cover
+      - not_precisely_located
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - naghii
+      - oculto
+      - concealment
+
+- name: Magnetorrecepción
+    name_en: Magnetoreception
+    id: 101
+    status: authored
+    origin:
+      main: Innato
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: "Drak'kai"
+      seed: Innate biological magnetic sense — focused area detection and concealment denial
+      focus: Positional awareness / anti-concealment field
+      holder: "All Drak'kai"
+      transmission: innate_species_biology
+      availability: Species-restricted
+    category: utility
+    type: active
+    trigger: null
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations: []
+      equipment: []
+      states:
+        - species_drakkai
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: circular_15m
+    duration:
+      model: permanent
+      value: null
+      sustain_rule: null
+      end_rule: ends_if_unconscious_or_voluntary
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: tc_sabiduria
+      contested_against: environment_threshold
+    scaling: null
+    description: >
+      The Drak'kai focuses their innate magnetic sense on the immediate
+      environment, gaining precise positional awareness of all creatures with
+      active biomagnetic signatures or significant metallic mass within range,
+      regardless of visual conditions or concealment.
+    effect: >
+      Make a T.C. (Sabiduría) against a threshold set by environmental
+      conditions. On success, the Drak'kai knows the exact position of all
+      creatures within the area with active biomagnetic signatures or
+      significant metallic mass, regardless of visibility, darkness, cover,
+      or Oculto state. Creatures within the area cannot establish or maintain
+      the Oculto state against the Drak'kai. The Drak'kai cannot be surprised
+      by creatures within the area. The state ends if the Drak'kai becomes
+      Inconsciente or voluntarily ends it.
+    cost_note: >
+      Rhythm 3 / Attrition 2: this is a focused concentration action that
+      grants sustained positional awareness — not an attack boost. Knowing
+      where creatures are does not eliminate T.A. penalties from cover; it
+      only cancels positional uncertainty and concealment advantages. The
+      lower rhythm cost (vs La Carcajada's 5) reflects the purely informational
+      nature of the effect.
+    restrictions:
+      - species_drakkai_only
+      - no_specialization_required
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - drakkai
+      - detection
+      - oculto
+      - concealment
+
+- name: La Batida
+    name_en: The Wing Strike
+    id: 102
+    status: authored
+    origin:
+      main: Innato
+      secondary: []
+    world_origin:
+      primary_front: Species
+      secondary_front: null
+      source: Rokhart
+      seed: Innate wing-assisted reactive displacement — never be where the hit terminates
+      focus: Reactive repositioning / attack negation through distance
+      holder: All Rokhart
+      transmission: innate_species_biology
+      availability: Species-restricted
+    category: utility
+    type: reactive
+    trigger: melee_attack_executed_against_user
+    requirements:
+      level: null
+      rank: Novice
+      technique_tier: 1
+      weapon_profile: null
+      armor_competency: null
+      support_specializations: []
+      equipment: []
+      states:
+        - species_rokhart
+      prerequisite_techniques: []
+    target: self
+    range: personal
+    area: self
+    duration:
+      model: instantaneous
+      value: null
+      sustain_rule: null
+      end_rule: null
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: tc_agilidad
+      effect_on_failure: technique_does_not_activate
+    scaling: null
+    description: >
+      The Rokhart uses their non-flight wings to generate an explosive burst of
+      thrust, moving away from an incoming melee strike. If the displacement
+      takes them out of the attacker's weapon range, the attack fails entirely.
+    effect: >
+      When a melee attack is executed against the Rokhart, they may declare this
+      technique in their reaction window. Make a T.C. (Agilidad). On success,
+      move up to half Velocidad (6 m) in any direction without provoking
+      reactions from the attacker. If this movement takes the Rokhart out of
+      the attacker's weapon range, the attack fails automatically. If within
+      range, the attack proceeds normally but the Rokhart is repositioned.
+    cost_note: >
+      Rhythm 3 / Attrition 2: reactive techniques still cost Rhythm because
+      they take real time — the Rokhart's ficha advances on the ATB track.
+      Rhythm 3 reflects that an explosive wing-assisted burst through 6 meters
+      is faster than a full action (Rhythm 5) but is genuine physical movement,
+      not an instantaneous internal response. Attrition 2 reflects the physical
+      cost of explosive exertion under combat pressure.
+    restrictions:
+      - species_rokhart_only
+      - no_specialization_required
+      - trigger_melee_attack_only
+    tags:
+      - reactive
+      - utility
+      - innate
+      - species
+      - rokhart
+      - movement
+      - repositioning
+
+  - id: 103
+    name: "Señal Química"
+    slug: senal-quimica
+    species_origin: species_formix
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: circular
+        radius_m: 10
+    duration:
+      type: permanent
+      end_rule: >
+        Ends if Inconsciente, if chemical saturation rises to the point where
+        the roll would fail retroactively, or if voluntarily ended.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: tc_astucia
+      effect_on_failure: technique_does_not_activate
+    scaling:
+      - condition: "Neutral environment"
+        difficulty: fundamentals
+        threshold: "5 + NR"
+      - condition: "Moderate chemical activity (venom traces, recent fire, strong materials)"
+        difficulty: challenging
+        threshold: "8 + NR"
+      - condition: "Significant contamination (active acid, dense smoke, airborne venom)"
+        difficulty: rigorous
+        threshold: "11 + NR"
+      - condition: "Extreme saturation (active chemical battle, area flooded with acid or gas)"
+        difficulty: demanding
+        threshold: "14 + NR"
+    description: >
+      The Formix focuses their antennal chemical sense on the immediate
+      environment. The roll difficulty scales with how chemically saturated the
+      environment is — enemy contamination can deliberately raise this threshold.
+    effect: >
+      Make a T.C. (Astucia) vs a threshold based on chemical saturation. On
+      success, within 10 m: living creatures cannot establish or maintain Oculto
+      against the Formix (detected by metabolic signature regardless of
+      visibility); recent traces of creatures that passed through are detectable
+      even if no longer present; active chemical threats (venoms, acids, gases)
+      are located; specific known substances can be identified if the Formix has
+      relevant specialization (Destilación, etc.). Ends if Inconsciente, if
+      saturation rises past the threshold, or if voluntarily ended.
+    restrictions:
+      - species_formix_only
+      - no_specialization_required
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - formix
+      - detection
+      - oculto
+      - tracking
+      - chemical
+
+  - id: 104
+    name: "Olfato Profundo"
+    slug: olfato-profundo
+    species_origin: species_loxod
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: circular
+        radius_m: 8
+    duration:
+      type: permanent
+      end_rule: >
+        Ends if Inconsciente or voluntarily ended.
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: tc_compostura
+      effect_on_failure: technique_does_not_activate
+    scaling:
+      - condition: "Environmental conditions (density of physiological signals)"
+        difficulty: narrator_determined
+        threshold: "set by Narrator based on scene conditions"
+    description: >
+      The Loxod focuses their chemical reception to read the physiological and
+      anomalous state of creatures in the area. Unlike Formix (detects position)
+      and Drak'kai (detects biomagnetic position), Loxod reads condition and
+      state — Ailments, Affliction presence, and the chemical signature of
+      hidden creatures carrying active states.
+    effect: >
+      Make a T.C. (Compostura) vs a threshold set by environmental conditions.
+      On success within 8m: know the active Alteraciones and their severity on
+      each visible creature; know if a creature has an active Aflicción (but not
+      which or its intensity — only that something deeper affects it); if a
+      hidden (Oculto) creature has active Alteraciones or Aflicciones, perceive
+      its chemical presence — you know something is in the area but not its
+      exact position. Oculto state is not broken by this signal.
+    restrictions:
+      - species_loxod_only
+      - no_specialization_required
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - loxod
+      - detection
+      - ailments
+      - afflictions
+      - chemical
+      - state_reading
+
+  - id: 105
+    name: "La Embestida"
+    slug: la-embestida
+    species_origin: species_ceratox
+    tier: novice
+    type: active
+    subtype: attack
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: single_target
+    duration:
+      type: instantaneous
+      end_rule: null
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: tr_alteraciones
+      applies_when: player_chooses_desequilibrado
+      effect_on_success: negates_desequilibrado
+    roll:
+      model: ta
+      effect_on_failure: attack_misses
+    scaling:
+      - condition: "NR 1–4"
+        effect: "Desequilibrado Leve"
+      - condition: "NR 5–8"
+        effect: "Desequilibrado Moderado"
+      - condition: "NR 9+"
+        effect: "Desequilibrado Grave"
+    description: >
+      The Ceratox charges in a straight line at full Velocidad and strikes with
+      the Cuerno. On hit, deals normal T.I. and the player chooses one of two
+      effects: push the target 3m in the charge direction, or apply
+      Desequilibrado (T.R. Alteraciones negates).
+    effect: >
+      Move in a straight line up to Velocidad (9 m) toward a target within
+      Cuerno range at the end of movement. Make a T.A. On hit, resolve T.I.
+      normally and choose one: (a) push target 3 m in the direction of the
+      charge; (b) target makes T.R. Alteraciones or becomes Desequilibrado at
+      severity based on competency rank.
+    restrictions:
+      - species_ceratox_only
+      - no_specialization_required
+      - cuerno_natural_weapon_only
+    tags:
+      - active
+      - attack
+      - innate
+      - species
+      - ceratox
+      - movement
+      - charge
+      - displacement
+      - desequilibrado
+
+
+  - id: 106
+    name: "El Veredicto"
+    slug: el-veredicto
+    species_origin: species_chelicer
+    tier: novice
+    type: reactive
+    subtype: attack
+    trigger: attacked_choose_not_to_defend
+    range:
+      origin: personal
+      area:
+        type: single_target
+    duration:
+      type: permanent
+      end_rule: "until the venom in the target is treated"
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 2
+      other: []
+    saving_roll:
+      model: tr_veneno
+      applies_when: stinger_contact
+      effect_on_success: negates_ritmo_penalty
+    roll:
+      model: none
+      note: "no T.A. required; contact is automatic on receiving the hit"
+    scaling:
+      - condition: "per 4 NR of the Chelicer (minimum 1)"
+        effect: "+1 Ritmo permanent to attacker on T.R. Veneno failure"
+    description: >
+      When attacked, the Chelicer may declare El Veredicto instead of defending.
+      They take full damage without a defense roll. On contact, the Aguijón
+      automatically resolves T.I. The attacker makes T.R. de Veneno. On failure,
+      the attacker's Ritmo permanently increases by 1 per 4 NR of the Chelicer
+      (minimum 1), until the venom is treated. No T.A. roll is made; no weapon
+      competency exploitation is possible.
+    effect: >
+      When attacked, instead of defending, accept full damage with no defense
+      roll. On contact, the Aguijón automatically resolves T.I. The attacker
+      makes T.R. de Veneno. On failure: attacker gains +1 Ritmo per 4 NR
+      of the Chelicer (minimum 1), permanently, until venom is treated.
+    restrictions:
+      - species_chelicer_only
+      - no_specialization_required
+      - aguijón_natural_weapon_only
+    tags:
+      - reactive
+      - attack
+      - innate
+      - species
+      - chelicer
+      - venom
+      - ritmo
+      - no_ta_roll
+      - permanent
+      - atb_disruption
+
+  - id: 107
+    name: "Adaptabilidad"
+    slug: adaptabilidad
+    species_origin: species_panin
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: personal
+    duration:
+      type: permanent
+      end_rule: "until next extended rest, or until technique is used again"
+    cost:
+      rhythm_cost: 3
+      attrition_cost: 2
+      other: []
+    saving_roll: null
+    roll:
+      model: none
+      note: "no roll required; purely cognitive reorientation"
+    scaling:
+      - condition: "NR 1–4"
+        effect: "swap up to 1 major affinity specialization"
+      - condition: "NR 5–8"
+        effect: "swap up to 2 major affinity specializations"
+      - condition: "NR 9+"
+        effect: "swap up to 3 major affinity specializations"
+    description: >
+      The Panin cedes up to X of their current major affinity specializations
+      and adopts different ones in their place. The new configuration is
+      functional until the next extended rest or until this technique is used
+      again, whichever comes first. X scales with NR: 1 at NR 1–4, 2 at NR 5–8,
+      3 at NR 9+.
+    effect: >
+      Cede up to X current major affinity specializations and replace them with
+      different ones. New configuration lasts until next extended rest or next
+      use of this technique. X = 1 (NR 1–4), 2 (NR 5–8), 3 (NR 9+).
+    restrictions:
+      - species_panin_only
+      - no_specialization_required
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - panin
+      - specialization
+      - affinity
+      - permanent
+      - no_roll
