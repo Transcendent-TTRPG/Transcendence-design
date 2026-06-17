@@ -1560,7 +1560,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Authority:** `core-books/transcendence-corebook/06-species/es/` · `docs/canon/species/`
 
-Nine playable species. Each grants +1 to three characteristics, one Herencia penalty, three Legado abilities, and natural weapons. All characteristics are 0-based before species bonus and Synapsis.
+20 playable species total; 10 documented here so far. Each grants +1 to three characteristics, one Herencia penalty, three Legado abilities, and natural weapons. All characteristics are 0-based before species bonus and Synapsis.
 
 ### Naghii
 
@@ -1731,6 +1731,22 @@ Nine playable species. Each grants +1 to three characteristics, one Herencia pen
 | --- | --- | --- | --- | --- | --- |
 | Aguijón | AGI | TEN | 1–5 m | d6 | Perforación · Precisión · Corrosión · Hostigamiento |
 | Garras | STR | STR | 1 m | d6 | Intercepción · Torsión · Interrupción · Desgarramiento |
+
+### Panin
+
+**Size:** Pequeño · **Speed:** 12 m · **Longevity:** 40–50 years
+
+**Characteristics:** +1 AGI, CUN, AUR
+
+**Herencia — Instinto Caótico:** Permanent −3 to all T.R. and T.E. de Compostura (Enfoque, Contención, Meditación, Aplomo) and to T.R. against ailments.
+
+**Legado:** Curiosidad (use CUN instead of INT for T.E. Identificación and Interpretación; +1/4 NR to T.E. Identificación, Interpretación, Intuición) · Agilidad Superior (Aguante = 3 + AGI × 2 instead of 3 + TEN × 2) · Adaptabilidad (once per day, swap one major affinity specialization for a different one; lasts until next extended rest or next use)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Dur | Pot | Profiles |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Mordisco | AGI | AGI | 1 m | d6 | 3 × rank | 4 × rank | Interrupción · Precisión · Desgarro · Acecho |
 
 ---
 
