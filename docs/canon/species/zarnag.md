@@ -10,23 +10,22 @@
 
 ## 1. Identity
 
-The Zarnag are feared because they live where rot, ruin, carrion, and taboo
-meet. They are sought for the same reason.
+The Zarnag are feared because they go where the dead have not finished leaving.
+They are sought for the same reason.
 
 Other peoples speak of them as corpse-eaters, plague walkers, grave defilers,
-or night scavengers, but the Zarnag do not define themselves by desecration.
-They define themselves by the labor no one else is willing to perform once
-death stops behaving cleanly. In a world where battlefields do not empty
-themselves, where pits of disease reopen after rain, where scavengers gather
-around exposed dead, and where some remains seem to keep a dangerous pressure
-even after life is gone, the Zarnag endure by going where disgust and fear
-become survival work.
+or night scavengers. The Zarnag do not define themselves by desecration. They
+define themselves by what they understand that others do not: the dying leave
+their wanting in what they held. Fear, search, grief, rage — whatever the
+dying did not finish passes into the objects they carried. If no one receives
+that weight, it pulls at the living who come near.
 
-Their oldest civilizational claim is simple: the dead do not always leave
-properly, and someone must deal with what remains.
+Their oldest civilizational claim is not that they do what others refuse. It
+is that they are the only ones who learned what to do with what the dead leave
+behind.
 
-They are not a people of abstract darkness. They are a people of bad remains,
-foul thresholds, unfinished death, and necessary contact.
+They are not a people of abstract darkness. They are a people of unfinished
+wanting, dangerous weight, and the work of closure.
 
 ---
 
@@ -72,65 +71,72 @@ ecologically, but do not yet imply rigid biological castes.
 
 ## 3. Culture
 
-Zarnag culture formed around margins that other peoples avoid: battlefield
-edges, plague trenches, carrion routes, refuse caverns, grave slopes, ruined
-burial grounds, bone yards, and the half-abandoned outskirts of settlements too
-frightened or too proud to manage their own dead properly.
+Zarnag culture formed around a single inherited observation: the dying leave
+their wanting in what they held. Fear, search, grief, unfinished purpose —
+whatever consciousness did not resolve passes into objects at the moment of
+death. If no one receives that weight, it pulls at the living who approach the
+site. In places where many died, the accumulation is not metaphorical. It is
+measurable in what happens to people who enter without preparation.
 
-Their central civilizational idea is the **dangerous remainder**. Corpses,
-spoiled stores, stripped bones, broken graves, battlefield runoff, scavenger
-trails, and contaminated pits are not passive aftermath to the Zarnag. They
-are unstable residues that can poison the living, attract predators, spread
-illness, distort mourning, and invite horrors best left unnamed. A settlement
-that refuses this truth is not pure. It is simply delaying payment.
+Their central civilizational idea is **the weight that remains**. Battlefield
+objects, possessions of plague dead, items left in failed burials, things
+found in ruins — these are not passive remnants. They carry the unfinished
+wanting of whoever held them last. A settlement that ignores this is not pure.
+It is simply delaying the consequences.
 
-Because of this, Zarnag communities often specialize in tasks others consider
-filthy, degrading, or spiritually dangerous:
+Because of this, Zarnag communities specialize in what they call closure work:
 
-- battlefield stripping and body recovery
+- battlefield stripping and object recovery
 - plague disposal and quarantine trench work
 - grave correction and reburial
-- carcass rendering and salvage
-- scavenger-route management
-- ruin clearance where the dead are not at rest
+- ruin clearance where the dead are old and disturbed
+- scavenger-route management where weight has accumulated at kill sites
 
 Respect inside Zarnag society does not come from innocence. It comes from
-stamina, nerve, accuracy of judgment, and the ability to work near disgust
-without losing clarity.
+stamina, nerve, and the precision to distinguish weight that can be received
+from weight that cannot — and to know when to burn rather than carry.
 
-Laughter plays a large role in this culture. It releases fear, marks boldness,
-pressures the weak, exposes unease, and helps groups keep rhythm in darkness or
-low visibility. But the Zarnag are well aware that this same laughter can slide
-into cruelty, domination, or delight in humiliation. Many of their moral
-warnings revolve around the moment necessary hardness becomes appetite.
+Laughter plays a specific role in this culture that outsiders misread as
+bravado. Near the dead, laughter is an assertion of presence: we are here,
+we still want, we are alive — what you left cannot claim us. It is a way of
+holding against the pull of accumulated wanting. But the Zarnag know that
+this same laughter can cross into something else: the signal that someone is
+no longer asserting life against the weight, but beginning to enjoy the weight
+itself. Many of their moral warnings revolve around that moment.
 
 ---
 
 ## 4. Theology and Cosmology
 
-Zarnag cosmology begins from a brutal observation: death is not always a clean
-departure. Something can linger in remains, in sites of mass death, in
-unfinished rites, in flesh that rots wrong, or in pits where too many endings
-were forced together under pressure.
+Zarnag cosmology begins from one shared observation: the dying leave their
+wanting in what they held. Different communities name it differently — corpse
+hunger, grave weight, what the Limbo did not collect when life closed — but
+the underlying claim is the same. Whatever the dying did not finish passes
+into their objects. If no one receives it, it pulls.
 
-Different Zarnag communities explain this differently. Some speak of corpse
-hunger, some of grave echo, some of spiritual residue, some of the Limbo
-pressing too close through unsealed death. But most agree on a common truth:
-the interval between life and true departure can become dangerous if neglected.
-
-This gives their death-work a sacred dimension. Burial, stripping, burning,
-sorting, rendering, sealing, and moving remains are never merely practical.
-They are acts of judgment against unfinished pressure.
+Burial, stripping, burning, sorting, sealing — none of these acts are purely
+practical to the Zarnag. They are acts of reception: taking the weight that
+remained, holding it long enough to neutralize it, returning to the world
+something that no longer pulls. The most experienced practitioners know that
+this weight leaves a mark in whoever carries it. Not always visible from
+outside. Sometimes from inside, in ways that take years to become legible.
 
 Their horror is not rooted in “darkness” as a generic force. It is rooted in
-the possibility that the world no longer finishes its dead properly. Battle
-trenches, plague caverns, old sacrificial grounds, ruined cities, and exposed
-ossuaries may all be signs of a wider cosmic failure. The Zarnag do not ask
-whether death is frightening. They ask whether anything truly leaves at all.
+the specific possibility that the world has stopped being able to close its
+dead — that battlefield trenches, plague caverns, ruined cities, and disturbed
+ossuaries are evidence of a failure already in progress that no one else wants
+to look at. Every site that resists closure, every object still wanting past
+its time, is a data point.
 
-This produces a theology that is suspicious, practical, and uncomfortably
-close to decay. A people who make themselves necessary around corpses are always
-at risk of being reshaped by them.
+The Zarnag do not ask whether death is frightening. They ask whether anything
+truly leaves at all.
+
+The elders call the defining moral threshold **the crossing**: the moment when
+someone who received weight in order to close it began to need the weight to
+exist in order to receive it. A community that has lived close to this work
+for generations learns to recognize that moment in its members before the
+member recognizes it in themselves. Every community has stories about what
+happened when someone crossed and no one caught it in time.
 
 ---
 

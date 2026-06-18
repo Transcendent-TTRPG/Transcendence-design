@@ -47,9 +47,9 @@ Entries marked `confirmed` have design docs and corebook entries. Entries marked
 ### Zarnag — *confirmed*
 **Animal / Size:** Hyena · Mediano  
 **Anchor:** Ethiopian urban hyena tradition + the cross-cultural association of hyenas with witchcraft, death-workers, and the companions of those who move between the living and dead — feared, used, marginal  
-**Core:** They work where other species won't when the work cannot wait: battlefields, plague pits, failed burials, ruins where the dead are still present. The knowledge that death doesn't always close is not theology for them — it is occupational data.  
-**Tauma:** Death sites carry Tauma-residue when the dying was traumatic, mass, or ritually incomplete. The Zarnag are exposed to this more than any other species. Their biology tolerates it; their perception opens to it; their greatest professional risk is that the work slowly opens the practitioner to what the sites contain.  
-**Friction:** Their access to death-saturated Tauma sites gives them information no other species easily gets. Sauri view unmanaged death-residue as a containment failure. Naghii are wary of what Zarnag find in ruins they haven't yet entered.
+**Core:** The dying leave their wanting in what they held. Fear, search, grief, unfinished purpose — whatever consciousness did not resolve passes into objects at the moment of death. If no one receives that weight, it pulls at the living who approach. The Zarnag are the only species that developed systematic knowledge of this: which sites are still active, which objects still carry weight, what it takes to make a site safe to enter. Their civilizational claim is not that they do what others refuse — it is that they are the only ones who know what to do with what the dead leave behind.  
+**Tauma:** Sites of mass death accumulate extreme vestige density — objects whose Tauma-imprint from the dying has not dissipated. The Zarnag interpret this correctly (something persists and pulls) without understanding the mechanism (vestige physics). Their biology opens to what the sites contain; their greatest occupational risk is that sustained reception of others' weight eventually becomes indistinguishable from wanting it. The elders call this the crossing.  
+**Friction:** Their access to high-vestige sites gives them information no other species easily gets. Sauri view unmanaged death-residue as a containment failure. Naghii are wary of what Zarnag find in ruins they haven't yet entered.
 
 ---
 
