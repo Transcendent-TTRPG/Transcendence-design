@@ -32,6 +32,36 @@ Un Tauma muy denso con comunidad fragmentada o incoherente produce entidades pod
 
 ---
 
+## Formación de vestigios y vínculos
+
+El mecanismo que produce Primordiales opera en escalas distintas. El mismo proceso que a escala territorial y durante siglos produce una entidad semi-autónoma, a escala de objeto produce un vestigio.
+
+### La impronta de conciencia
+
+Un objeto recibe impronta cuando la conciencia que lo rodea le invierte significado intenso y sostenido. Ese significado puede venir de un individuo — una criatura que carga el mismo objeto durante décadas como extensión de su identidad, su creencia, su propósito — o de una comunidad entera: un símbolo ritual usado generación tras generación con la misma intención concentrada. El uso casual no produce impronta. La inversión de identidad sí.
+
+### El anclaje taumático
+
+La impronta no es Tauma — es la condición que permite que el Tauma se organice ahí. Para que esa organización ocurra, hace falta que la impronta alcance suficiente intensidad y que la densidad taumática del entorno sea suficiente. En zonas de concentración ordinaria, solo las improntas más intensas anclan. Cerca de un Primordial, en ruinas humanas, o en sitios de muerte masiva, el Tauma disponible es tan denso que improntas más moderadas son suficientes. Esto explica por qué los vestigios se concentran en zonas de alta presencia taumática y no están distribuidos uniformemente por el mundo.
+
+### El vestigio: deseo cristalizado
+
+Cuando la impronta ancla Tauma, el patrón resultante refleja la forma de la creencia que lo produjo. El vestigio hace lo que la civilización, cultura o individuo siempre creyó que hacía ese objeto — no como interpretación posterior, sino porque esa creencia es exactamente el mecanismo que dio forma al Tauma anclado. Un objeto al que generaciones de criaturas invirtieron la creencia de que protegía contra el veneno produce un patrón taumático orientado en esa dirección. El deseo colectivo no representaba el poder del objeto. Era el poder del objeto, sin que nadie lo supiera.
+
+El Tauma anclado en un vestigio es finito: es el que se concentró en ese objeto en ese período histórico. Sin entidad activa que lo reponga, el patrón se expende en cada uso hasta agotarse. La duración es variable porque depende de cuánta impronta se acumuló y en qué condiciones taumáticas.
+
+Cuando múltiples tradiciones invirtieron creencias distintas en el mismo tipo de objeto, el patrón ancla alrededor de la creencia más intensa y coherente — no el promedio de todas las interpretaciones sino la que concentró mayor densidad de conciencia en una sola dirección. Un portador moderno puede descubrir que el patrón no corresponde a lo que su propia cultura cree sobre ese objeto.
+
+### El vínculo: resonancia de entidad
+
+Un vínculo no se forma por impronta directa. Se forma cuando una entidad del Limbo, cuya naturaleza resuena con el patrón de una impronta existente, se establece activamente en ese punto de anclaje. La entidad es atraída por la forma de la impronta — una entidad de búsqueda encuentra improntas de búsqueda; una de fuego encuentra improntas donde el fuego fue el significado central — y usa esa resonancia para cruzar.
+
+La diferencia crítica: el vínculo no hace lo que la civilización creyó. La entidad tiene naturaleza y agenda propias. El patrón original de la impronta es solo el punto de entrada — lo que el vínculo produce refleja la naturaleza de la entidad, no la creencia de quienes la imprimieron.
+
+A diferencia del vestigio, el vínculo no se agota: la entidad mantiene activamente la conexión. Lo que limita su uso es la capacidad del portador de sostener la presión de ese cruce, no una reserva finita de Tauma.
+
+---
+
 ## Por qué la vida es el umbral
 
 El gradiente taumático existe en todas partes. Pero para que el Tauma cruce del Limbo al mundo físico de forma significativa — más allá de la filtración ambiental pasiva — necesita un punto de umbral: algo que exista en ambas dimensiones simultáneamente.
