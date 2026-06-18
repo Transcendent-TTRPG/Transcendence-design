@@ -235,6 +235,7 @@ They should avoid:
 ### Open questions
 
 - What exactly do Drak'kai do with objects they've confirmed are vínculos or vestígios? Keep, transfer, bury, destroy?
+- A Drak'kai's research advantage — knowing what civilizations believed about an object — only functions for vestiges. A vínculo does what the entity's nature produces, not what the historical belief record says. Do Drak'kai scholars recognize this as a known failure mode? How do they account for objects where the belief record and observed behavior diverge?
 - Is there a sub-community of Drak'kai who specifically seek out Tauma-charged objects rather than general accumulation?
 - What happens at a conclave when someone brings something they cannot identify and cannot control?
 - How do young Drak'kai (small collections, limited encounters) establish credibility at conclaves?
