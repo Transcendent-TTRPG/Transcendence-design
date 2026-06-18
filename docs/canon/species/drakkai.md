@@ -230,7 +230,7 @@ They should avoid:
 - Physical: a collection of objects whose full nature they have not entirely determined
 - Historical: context for events and places that most other species have no record of
 - Uncomfortable: the knowledge that no one's religious framework is accurate in a stable sense
-- Open: the question of whether anything they've accumulated is a vínculo or vestigio — and what that means for them if it is
+- Open: the question of whether anything they've accumulated is a vínculo or vestigio — and what that means for them if it is. Whether decades of carrying an object have added their own imprint to it. Whether their collection is as much a record of who they are as of what they found.
 
 ### Open questions
 
