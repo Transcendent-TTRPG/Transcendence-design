@@ -266,11 +266,15 @@ failed, often fatally. The technology that produced them is not recoverable
 because it is not legible: no current species has any framework for understanding
 what those materials are doing or why they behave as they do.
 
-**As death trap:** The Tauma residue inside human ruins from whatever was being
-done there millions of years ago has not fully dissipated. Ruins are among the
-highest-Tauma-concentration environments in the world. Entering one without
-understanding what is inside — what objects are active, what Tauma-patterns are
-still operating — is one of the most reliable ways to die or acquire severe
+**As death trap:** Human ruins contain extreme vestige density — objects whose
+Tauma imprint from human-era operations has not yet fully dissipated — plus
+embedded vínculos whose linked entities may still be active. The danger is not
+the ambient Tauma concentration, which is passive and pre-conscious. The danger
+is the cumulative pressure of hundreds of active vestiges in close proximity,
+and the Limbo entities behind vínculos that continue to use whatever nervous
+systems enter the space. Entering a ruin without understanding what is inside —
+which objects are still active, what sense each requires, what entity is on the
+other side of each vínculo — is one of the most reliable ways to acquire severe
 afflictions. The objects inside do not announce what they do. They simply do it
 when the conditions they were built to respond to are met, and those conditions
 are not legible from the outside.
@@ -314,8 +318,12 @@ and the extraction process has a high mortality rate.
 ## Design implications
 
 **For encounter design:**
-- The environment is a threat, not just the creatures in it. Zones of high Tauma
-  concentration produce afflictions from extended exposure. Abismal territory
+- The environment is a threat, not just the creatures in it. High ambient Tauma
+  concentration does not directly cause afflictions — the critical factor is
+  whether that Tauma is organized. Primordial territory produces afflictions
+  through sustained exposure because the flow there is not pre-conscious but
+  directed by the entity. Ruins produce afflictions through extreme vestige
+  density, not through ambient Tauma concentration. Abismal territory
   functions as the body of the entity — the terrain, weather, and flora serve
   its nature. A ruin is not a set piece; it is an active Tauma environment.
 - Anomalía difficulty scales naturally with integration level. Low-integration

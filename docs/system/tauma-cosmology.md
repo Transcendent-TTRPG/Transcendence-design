@@ -44,6 +44,22 @@ La aflicción no es daño accidental del proceso. Es el mecanismo del proceso. E
 
 ---
 
+## Fuentes de aflicción
+
+El flujo ambiental pre-consciente no produce aflicciones, incluso a alta concentración, porque carece de dirección. El Tauma fluye, pero no presiona. La distinción que importa no es la cantidad de Tauma sino si hay agencia organizándolo.
+
+Las aflicciones tienen tres fuentes:
+
+**1. Contacto con vestigio o vínculo.** El objeto es el locus. El Tauma que fluye a través del contacto impregna el tejido neural. Es el mecanismo más discreto y más documentable.
+
+**2. Exposición sostenida en territorio de un Primordial.** En territorio de un Primordial, el flujo ambiental ya no es pre-consciente: es la expresión organizada del Primordial a través de la zona. Ese flujo organizado presiona sobre los sistemas nerviosos disponibles de forma difusa y gradual, sin que ningún objeto sea el locus. La exposición prolongada abre canales. La duración reemplaza la intensidad del contacto directo. Este es el mecanismo que hace peligroso habitar territorio de un Primordial, no la concentración de Tauma en sí.
+
+**3. Densidad extrema de vestigios en un área.** Las ruinas humanas no tienen Primordiales activos, pero contienen densidad extrema de objetos que no han disipado aún la impronta taumática de lo que se hacía en ellos. La presión acumulativa de múltiples vestigios en proximidad produce el mismo efecto que el contacto intencional con un solo objeto, sin que la criatura sea consciente de qué locus origina el contacto. Las ruinas son peligrosas por densidad de vestigio, no por concentración de Tauma ambiental.
+
+Lo que **no** produce aflicciones: el flujo ambiental pre-consciente a cualquier concentración, si no hay Primordial presente y no hay contacto con objetos vestigio o vínculo. Una zona de alta concentración taumática sin entidad que organice ese Tauma no aflicta a los que viven en ella. Les expone a que se acumulen vestigios en objetos a su alrededor con el tiempo, pero el flujo en sí no cruza hacia sus sistemas nerviosos.
+
+---
+
 ## La asimetría fundamental
 
 Desde la perspectiva del portador: está abriendo su percepción, accediendo a poder, despertando a una dimensión que antes no existía para él. Las aflicciones no se perciben como pérdida — se perciben como expansión. La degradación de percepción ordinaria es gradual, y lo que se gana en percepción del Limbo llega antes de que el costo sea visible.
