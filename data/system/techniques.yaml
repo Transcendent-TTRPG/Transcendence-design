@@ -14286,3 +14286,58 @@ pilot_examples:
       - trapped
       - grapple
       - permanent
+
+  - id: 109
+    name: "El Ancestro Despierta"
+    slug: el-ancestro-despierta
+    species_origin: species_luphran
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: self
+    duration:
+      type: permanent
+      end_rule: "ends when combat concludes, or on a successful Enfoque C.R. against Narrator-set difficulty based on environmental conditions"
+    cost:
+      rhythm_cost: 2
+      attrition_cost: 1
+    roll:
+      model: none
+    description: >
+      The Luphran releases the cognitive filter that keeps the wolf-mind subdued.
+      What surfaces is not madness — it is the biological neurological state the
+      species evolved for sustained predatory engagement. Instinct sharpens;
+      cognition recedes. Veterans accumulate vestigo contact in this state.
+      Their theology names what moves through them. Their horror is that the
+      name was never theirs to give.
+    effect: >
+      Enter the Instinctive Fury state and begin tracking a Fury counter starting
+      at 0. Each time the Luphran makes a T.E. of an instinctive specialization
+      (Saltar, Trepar, Acrobacias, Supervivencia, Intuición, Rastreo), the counter
+      increases by 1 before the roll resolves; that roll receives a modifier equal
+      to the new counter value. Each time the Luphran makes a T.E. of a cognitive
+      specialization (Identificación, Interpretación, Percepción, Saberes), the
+      counter decreases by 1 before the roll resolves; that roll receives a modifier
+      equal to the negated counter value (positive counter = penalty; negative
+      counter = bonus). The counter cannot exceed the Luphran's Tenacity or fall
+      below its negative equivalent; rolls of the corresponding type no longer
+      shift it once either limit is reached. The state ends when combat concludes,
+      or when the Luphran succeeds on an Enfoque C.R. against a difficulty set by
+      the Narrator based on current environmental conditions.
+    restrictions:
+      - species_luphran_only
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - luphran
+      - fury
+      - instinct
+      - counter
+      - permanent
+      - no_roll
