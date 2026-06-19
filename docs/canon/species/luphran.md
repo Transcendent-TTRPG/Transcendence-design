@@ -191,7 +191,7 @@ Primarily carnivorous dietary orientation. Crews hunt, fish, and raid for protei
 
 ## 8. Material Expression and Language
 
-**Language:** Name TBD (Luphran native tongue). Común for cross-species exchange.
+**Language:** Ulfral (native tongue). Común for cross-species exchange.
 
 **The vessel:** The bio-organic vessel is the most significant material object in Luphran culture. Living hull organism, cultivated and shaped for river and coastal travel. Requires feeding, specific water conditions, periodic beaching for rest. If neglected, it dies. A crew whose vessel dies is stranded with everything they own in hostile terrain.
 
@@ -209,33 +209,27 @@ Vessels carry accumulated history in their structure — repaired sections, grow
 
 ## 9. System Connections
 
-### Proposed characteristics
+### Characteristics
 
-`+1 Agilidad, Astucia, Presencia` *(to confirm)*
+`+1 Agilidad, Astucia, Presencia`
 
 Agility: pursuit predator biology, terrain traversal over long distance, the transition between stillness and full movement.  
 Cunning: tactical pack coordination, route intelligence, reading social dynamics under pressure.  
 Presence: pack leadership signal; the quality that makes a crew follow when the situation is unclear.
 
-### Heritage *(design decision needed)*
+### Heritage
 
-The heritage mechanic should reflect a cost arising from what the Luphran are — not an external threat but something structural to their biology or social organization.
+**Instinto de Jauría** — When the Luphran has no ally within weapon range, −3 to T.R. and T.E. Compostura.
 
-*Options under consideration:*
+The pack animal operating alone is neurologically stressed. Not a failure of character — a structural biological cost. Creates a tactical incentive to remain near allies and a genuine disadvantage in isolated situations. Distinct from all existing heritages.
 
-- **Compulsive hierarchy reading:** The continuous involuntary reading of dominance signals makes Luphran vulnerable to social manipulation and to sudden status-challenge impulses. Could manifest as penalty to T.R. Compostura or T.E. Compostura in situations of explicit dominance assertion.
-- **Battle-fury threshold:** The state can be triggered involuntarily by extreme threat to crew members — the body enters the state without deliberate induction, at a cost (Desgaste, or the penalties without the bonuses).
-- **Pack dependence:** Significant penalties to certain T.E. or T.R. when operating without crew support for extended periods — the social animal is structurally less capable alone.
+### Legados
 
-*Heritage should be: thematically Luphran, a genuine tactical constraint, and not a repeat of Ursari's Umbral Bajo (Aflicciones penalty).*
+**Legado 1 — Technique (species-origin):** The battle-fury state. Active technique producing a Permanente transformation state — instinct-based competencies increase (Rastreo, Intuición, Supervivencia, physical checks), cognitive competencies decrease (Identificación, Interpretación, Saberes, Percepción). Two-stage escalation possible (Stage 1 basic induction; Stage 2 deepening from Stage 1 while already in state). Exact costs and stat lists to be determined in technique-design phase.
 
-### Legados *(to confirm)*
+**Legado 2 — Skill bonus:** `+1/4 NR` to T.E. of Rastreo, Intuición, and Supervivencia. The persistence-predator's essential competencies. Also the same skills amplified by Legado 1 — the species is biologically inclined toward these, and the battle-fury state deepens that inclination further.
 
-**Legado 1 — Technique (species-origin):** The battle-fury state. Provisional concept: active technique that produces a Permanente transformation state — instinct-based competencies increase, cognitive competencies decrease. Two-stage design possible (Stage 1 basic induction; Stage 2 deepening from Stage 1). Exact cost, stat list, and escalation to be determined in technique-design phase.
-
-**Legado 2 — Skill bonus:** Likely Rastreo, Intuición, and Supervivencia — route-reading, environmental threat assessment, sustained-condition endurance. Proposed: `+1/4 NR to T.E. of Rastreo, Intuición, and Supervivencia`. *(to confirm)*
-
-**Legado 3 — Mechanic:** Something that modifies pack/crew coordination or the structural dynamics of working in groups. Could involve: bonuses when crew members are adjacent, the ability to read enemy pack/group coherence as tactical information, or a mechanic for distributing the jarl's authority through shared combat action. *(design decision needed — has not been discussed)*
+**Legado 3 — El Lobo No Suelta (passive mechanic):** Enemies that move out of physical contact with the Luphran always trigger a reaction opportunity for the Luphran, without exception. No technique, ability, or special action — including those specifically designed to generate movement without triggering reactions — prevents this. An enemy in physical contact with a Luphran has no clean exit.
 
 ### Natural weapons *(to confirm in technique-design phase)*
 
@@ -291,10 +285,7 @@ Second: the certainty that their own decisions are their own. This fear is usual
 
 ### Open questions
 
-- What is the Luphran native language called? What are its characteristics?
-- What is the exact Heritage mechanic — which biological or social cost is most thematically precise?
-- What is the crew-coordination Legado 3 mechanic — how does it modify group operation?
-- What are the exact natural weapon statistics and profile list?
-- What is the two-stage battle-fury technique called? What are its precise costs and bonus/penalty lists?
+- What are the exact natural weapon statistics and profile list for Mordisco and Garras?
+- What is the battle-fury technique called? What are its precise costs, bonus list, and penalty list? Two-stage escalation: what triggers Stage 2 and what deepens at that point?
 - Do any law-speaker records contain notations about jarls whose decisions "changed after great battles"? Are these records accessible, protected, or lost?
 - What is the Luphran cosmological name for the approaching confrontation they believe the marked warriors are being prepared for? Is this belief in dialogue with Naghii Khataar records — and if any Luphran law-speaker and Naghii priest-astronomer have ever compared notes, what happened?
