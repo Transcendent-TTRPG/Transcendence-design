@@ -130,22 +130,22 @@ Entries marked `confirmed` have design docs and corebook entries. Entries marked
 
 ---
 
-### Ursaris — *provisional — concept confirmed*
+### Ursari — *provisional — concept confirmed*
 
 **Animal / Size:** Bear · Grande  
 **Anchor:** Celtic — Goibniu/Gofannon (divine smith tradition), druidic sacred geography and oral law, individual champion combat, weapons as objects with a life-cycle (forged, used, returned to forge site or destroyed — not accumulated)  
 **Core:** A forge civilization built at high-Tauma mineral sites where the best materials are also the most dangerous. Their entire social hierarchy tracks craft mastery and witnessed honor — and the most honored members (the master smiths and the druida class who navigate sacred geography) are also those whose nervous systems have been most thoroughly opened by prolonged proximity to the forge sites. Their culture cannot distinguish "seeing the divine" from "becoming the crossing point."  
 **Tauma:** Exposure and vulnerability. Forge sites sit in zones of high Tauma concentration where organic matter geologically absorbed into umbral materials has acquired genuine Tauma-permeable physical properties — superior weapons, alloys with real mechanical advantages. Prolonged work in these zones produces afflictions: the nervous system becomes permeable to the Limbo gradient, experienced as elevated perception and divine contact. The druida class navigates the most saturated zones most deeply and is considered most sacred — they are also the most compromised. No one is manipulating the Tauma; the Tauma is systematically selecting those whose nervous systems it can most easily cross through, and their meritocracy promotes exactly those individuals.  
-**Friction:** Ceratox horns react strongly to umbral-material weapons and forge-zone signatures — an Ursaris master smith carrying freshly worked umbral metal is a high-signal stimulus; the Ursaris reads the Ceratox reaction as disrespect for the work. Talpi treat Ursaris forge sites as underdeveloped extraction zones; both species work umbral materials from high-Tauma ground, one as sacred practice, one as industrial throughput. Drak'kai collections include weapons whose life-cycle was intended to end at the forge site or in the ground — an interrupted return the Ursaris treats as theft of what the weapon owed. Rokhart want longitudinal data on druida affliction progression; the most ritually honored individuals are also the most protected from outside observation. Vesper biological interest in advanced-affliction druidas reads as profanation rather than research.
+**Friction:** Ceratox horns react strongly to umbral-material weapons and forge-zone signatures — an Ursari master smith carrying freshly worked umbral metal is a high-signal stimulus; the Ursari reads the Ceratox reaction as disrespect for the work. Talpi treat Ursari forge sites as underdeveloped extraction zones; both species work umbral materials from high-Tauma ground, one as sacred practice, one as industrial throughput. Drak'kai collections include weapons whose life-cycle was intended to end at the forge site or in the ground — an interrupted return the Ursari treats as theft of what the weapon owed. Rokhart want longitudinal data on druida affliction progression; the most ritually honored individuals are also the most protected from outside observation. Vesper biological interest in advanced-affliction druidas reads as profanation rather than research.
 
 ---
 
-### Luphran — *provisional*
-**Animal / Size:** Wolf · Mediano (est.)  
-**Anchor:** Norse/Viking (confirmed). Swapped from Ursaris — the pack-as-crew and nomadic raiding structure maps to wolf biology more directly than to bear.  
-**Core:** Undefined. Concept development not yet started.  
-**Tauma:** Undefined.  
-**Needs:** Full concept development: biological base filter, civilizational concept, Tauma relationship, cross-species friction, horror.
+### Luphran — *provisional — concept confirmed*
+**Animal / Size:** Wolf · Mediano  
+**Anchor:** Norse/Viking — Úlfhéðnar warrior tradition, jarl meritocracy (drengskapr), law-speaker oral tradition, Varangian river-route model, wyrd cosmology  
+**Core:** A crew-based mobile civilization built on earned loyalty, route knowledge, and a biological battle-fury state their theology reads as divine contact. Their meritocracy selects as leaders the warriors most proven in combat — who are also the most exposed to vestigos in their most-open neurological state. The pack cannot know when its leader stopped being entirely its own.  
+**Tauma:** Biological. The battle-fury state is a genuine neurological capacity — not Tauma-mediated — that suppresses cognitive processing and amplifies instinctual response. In this state the nervous system is at its most permeable. Veterans accumulate vestigo exposure from combat environments over years. The permanent changes their culture reads as sacred marks of divine favor are vestigo-driven, not state-driven. Their theology has no vocabulary for the horror it cannot name: whether the god moves through the warrior or whether something else makes the warrior's choices feel like their own.  
+**Friction:** Ceratox horns react to high-marked Luphran veterans as irresolvable false positives — accumulated vestigo signature is indistinguishable from Tauma-saturated object. Ursari parallel: both meritocracies independently select for Tauma-permeable individuals as most honored, through completely different mechanisms; neither can name what they share. Zarnag find Luphran battlefield sites anomalous — not just death-vestigios but residue from combat in heightened-permeability state, hard to categorize. Rokhart want longitudinal data on marked veterans; Luphran don't grant outsiders access to their most honored. Naghii monitoring registers high-marked Luphran as unresolved anomalous readings that don't fit their archive categories.
 
 ---
 
@@ -319,4 +319,4 @@ The following is a compact cross-species theology map. Each entry describes what
 | **Panin** | Unaware. Their collective consciousness generates significant Tauma pressure that no individual caused or intended. They do not know this is happening. Their "theology" (where it exists) is probably locally borrowed from nearby species. |
 | **Vesper** | Research frame. Theology is data about what cultures believe about the Tauma. Their actual conviction is that the answers are in biology, not doctrine. They study what Primordials have done to living things, not what Primordials want. |
 | **Myo** | Oracle class: operational exploitation of the mechanism. Most Myo: whatever theology is locally available in their population area. The secrecy of the oracle class depends on most Myo not knowing what their oracles are doing. |
-| **Luphran** | Undefined. |
+| **Luphran** | The battle-fury state is divine contact — the wolf-ancestor moving through the warrior's body. Warriors marked most often are most favored. Their theology has no vocabulary for the question their horror requires: whether the god moves through the leader or whether something else makes the leader's choices feel like their own. |
