@@ -14226,3 +14226,63 @@ pilot_examples:
       - affinity
       - permanent
       - no_roll
+  - id: 108
+    name: "La Presa del Oso"
+    slug: la-presa-del-oso
+    species_origin: species_ursari
+    tier: novice
+    type: active
+    subtype: attack
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: creature
+        count: 1
+    duration:
+      type: permanent
+      end_rule: "ends when the Trapped target succeeds on an opposed Strength C.R., or the Ursari voluntarily releases"
+    cost:
+      rhythm_cost: 4
+      attrition_cost: 1
+      other:
+        - "optional: pay 1 Attrition each own activation to apply garras I.R. without a new A.R."
+    saving_roll:
+      type: alterations
+      trigger: "on garras A.R. hit"
+    roll:
+      model: attack
+      attribute: strength
+      weapon: garras
+    scaling:
+      - condition: "NR 1–2"
+        effect: "Trapped Minor"
+      - condition: "NR 3–4"
+        effect: "Trapped Moderate"
+      - condition: "NR 5–6"
+        effect: "Trapped Severe"
+    description: >
+      The Ursari wraps both claws around a target and applies sustained inward
+      pressure with the full mass of the body behind it. Once both claws find
+      purchase, extracting from the hold requires more opposing force than most
+      creatures can generate from a position of disadvantage. Releasing is always
+      the Ursari's choice.
+    effect: >
+      Make a garras A.R. On hit, resolve I.R. normally; target makes Alterations
+      R.R. On failure, target is Trapped (Minor NR 1–2, Moderate NR 3–4, Severe
+      NR 5–6). While target remains Trapped: each Ursari activation may pay
+      1 Attrition to apply garras I.R. without a new A.R. The Ursari cannot move
+      while maintaining the hold. Target may attempt to escape via opposed
+      Strength C.R. on their activation; success ends the hold.
+    restrictions:
+      - species_ursari_only
+    tags:
+      - active
+      - attack
+      - innate
+      - species
+      - ursari
+      - garras
+      - trapped
+      - grapple
+      - permanent
