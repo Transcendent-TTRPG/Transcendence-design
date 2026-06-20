@@ -40,6 +40,8 @@ El mecanismo que produce Primordiales opera en escalas distintas. El mismo proce
 
 Un objeto recibe impronta cuando la conciencia que lo rodea le invierte significado intenso y sostenido. Ese significado puede venir de un individuo — una criatura que carga el mismo objeto durante décadas como extensión de su identidad, su creencia, su propósito — o de una comunidad entera: un símbolo ritual usado generación tras generación con la misma intención concentrada. El uso casual no produce impronta. La inversión de identidad sí.
 
+No toda inversión de identidad garantiza el anclaje. Lo que determina si una impronta se convierte en vestigio es la combinación de tres factores: la **escala de la conciencia** que invierte (cuántos seres apuntan en la misma dirección), la **duración** de esa inversión y la **coherencia** de la creencia. Una comunidad entera rodeando un símbolo con veneración sostenida durante generaciones representa la escala más alta. Una familia que carga el mismo objeto generación tras generación con el mismo propósito es un colectivo más pequeño pero puede ser suficiente. Un individuo con décadas de inversión coherente e intensa puede anclar en condiciones de Tauma favorable. Lo que no ancla es el uso habitual difuso — el objeto presente pero nunca el centro de una creencia sostenida. Esto explica por qué hay miles de objetos generacionales en el mundo y solo algunos se vuelven vestigios.
+
 La escala de tiempo varía según la fuente: una impronta individual intensa puede formarse en décadas; una impronta colectiva requiere generaciones. Un portador que carga el mismo objeto durante décadas está añadiendo su propia impronta, independientemente de si lo sabe. Una nueva comunidad que invierte creencia sostenida en un objeto que ya tiene patrón taumático añade una segunda capa sobre la existente — con la mismo escala. Si esa nueva impronta supera en intensidad y coherencia a la original, el patrón dominante puede desplazarse.
 
 ### El anclaje taumático
@@ -82,15 +84,13 @@ La aflicción no es daño accidental del proceso. Es el mecanismo del proceso. E
 
 El flujo ambiental pre-consciente no produce aflicciones, incluso a alta concentración, porque carece de dirección. El Tauma fluye, pero no presiona. La distinción que importa no es la cantidad de Tauma sino si hay agencia organizándolo.
 
-Las aflicciones tienen tres fuentes:
+Las aflicciones tienen dos fuentes:
 
 **1. Contacto con vestigio o vínculo.** El objeto es el locus. El Tauma que fluye a través del contacto impregna el tejido neural. Es el mecanismo más discreto y más documentable.
 
 **2. Exposición sostenida en territorio de un Primordial.** En territorio de un Primordial, el flujo ambiental ya no es pre-consciente: es la expresión organizada del Primordial a través de la zona. Ese flujo organizado presiona sobre los sistemas nerviosos disponibles de forma difusa y gradual, sin que ningún objeto sea el locus. La exposición prolongada abre canales. La duración reemplaza la intensidad del contacto directo. Este es el mecanismo que hace peligroso habitar territorio de un Primordial, no la concentración de Tauma en sí.
 
-**3. Densidad extrema de vestigios en un área.** Las ruinas humanas no tienen Primordiales activos, pero contienen densidad extrema de objetos que no han disipado aún la impronta taumática de lo que se hacía en ellos. La presión acumulativa de múltiples vestigios en proximidad produce el mismo efecto que el contacto intencional con un solo objeto, sin que la criatura sea consciente de qué locus origina el contacto. Las ruinas son peligrosas por densidad de vestigio, no por concentración de Tauma ambiental.
-
-Lo que **no** produce aflicciones: el flujo ambiental pre-consciente a cualquier concentración, si no hay Primordial presente y no hay contacto con objetos vestigio o vínculo. Una zona de alta concentración taumática sin entidad que organice ese Tauma no aflicta a los que viven en ella. Les expone a que se acumulen vestigios en objetos a su alrededor con el tiempo, pero el flujo en sí no cruza hacia sus sistemas nerviosos.
+Lo que **no** produce aflicciones: el flujo ambiental pre-consciente a cualquier concentración, si no hay Primordial presente y no hay contacto con objetos vestigio o vínculo. Una zona de alta concentración taumática sin entidad que organice ese Tauma no aflicta a los que viven en ella. La densidad de vestigios en un área tampoco produce aflicciones por sí sola — el Tauma de un vestigio está contenido en el objeto, no irradia hacia el entorno. Las ruinas humanas son peligrosas no porque la densidad en sí aflicte, sino porque el contacto físico con sus objetos es prácticamente inevitable al moverse dentro de ellas, y muchos de esos objetos han desarrollado vínculos con entidades que siguen activas.
 
 ---
 
