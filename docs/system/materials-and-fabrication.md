@@ -551,7 +551,7 @@ The baseline natural-material catalog uses `q` as the material grade when the ma
 | Algodón | fiber | `1 × q` | `2 × q` | `8 × q` |
 | Seda | fiber | `3 × q` | `4 × q` | `20 × q` |
 | Yute | fiber | `2 × q` | `4 × q` | `6 × q` |
-| Seda de Arakhel | fiber | `18` | `18` | `50 × q` |
+| Seda de Arakhel | fiber | `6 × q` | `8 × q` | `80 × q` |
 | Tela | fiber | `1 × q` | `2 × q` | `5 × q` |
 | Cuero | leather | `5 × q` | `6 × q` | `18 × q` |
 | Cuero escamado | leather | `7 × q` | `8 × q` | `25 × q` |

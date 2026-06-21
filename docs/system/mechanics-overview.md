@@ -1560,7 +1560,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Authority:** `core-books/transcendence-corebook/06-species/es/` · `docs/canon/species/`
 
-20 playable species total; 10 documented here so far. Each grants +1 to three characteristics, one Herencia penalty, three Legado abilities, and natural weapons. All characteristics are 0-based before species bonus and Synapsis.
+20 playable species total; 11 documented here so far. Each grants +1 to three characteristics, one Herencia penalty, three Legado abilities, and natural weapons. All characteristics are 0-based before species bonus and Synapsis.
 
 ### Naghii
 
@@ -1747,6 +1747,24 @@ Species traits may declare a creature treated as a different size for specific c
 | Weapon | T.A. | T.I. | Range | Die | Dur | Pot | Profiles |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Mordisco | AGI | AGI | 1 m | d6 | 3 × rank | 4 × rank | Interrupción · Precisión · Desgarro · Acecho |
+
+---
+
+### Arakhel
+
+**Size:** Mediano · **Speed:** 10 m · **Longevity:** 50–70 years
+
+**Characteristics:** +1 AGI, CUN, AUR
+
+**Herencia — Umbral Vibratorio:** Permanent −3 to T.R. vs Desorientado and Conmocionado. Not a condition — the species' distributed vibration-sensing architecture.
+
+**Legado:** Percepción Estructural (+1/4 NR T.E. Percepción detecting movement through solid surfaces or connected structures without line of sight; +1/4 NR T.E. Rastreo when tracking by vibration through surfaces without visual trace) · Glándulas de Seda (Full Rest activity produces raw Seda de Arakhel: NR 1–4 → 250 g grade 1; NR 5–8 → 500 g grade 2; NR 9+ → 1,000 g grade 3) · Urdimbre (Active tech #110; Ritmo 5, Desgaste 2; T.C. Agilidad vs environment threshold; 6 m radius area from anchor within 10 m; Permanente until cleared; moving creatures T.R. Alteraciones or Atrapado scaled by rank; Arakhel navigates own network unaffected; detectable by Percepción vs NR × 3)
+
+**Natural weapons:**
+
+| Weapon | T.A. | T.I. | Range | Die | Dur | Pot | Profiles |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Mordisco | AGI | TEN | 1 m | d8 | 4 × rank | 6 × rank | Perforación · Precisión · Corrosión · Hostigamiento |
 
 ---
 

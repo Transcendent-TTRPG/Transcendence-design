@@ -14341,3 +14341,69 @@ pilot_examples:
       - counter
       - permanent
       - no_roll
+
+  - id: 110
+    name: "Urdimbre"
+    slug: urdimbre
+    species_origin: species_arakhel
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: 10m
+      area:
+        type: circular
+        radius: 6m
+        anchor: "placed at any point within range"
+    duration:
+      type: permanent
+      end_rule: "ends when the network is manually cleared or the Arakhel ends it voluntarily"
+    cost:
+      rhythm_cost: 5
+      attrition_cost: 2
+    saving_roll:
+      type: alterations
+      trigger: "when a creature moves within the network area"
+    roll:
+      model: competency
+      attribute: agility
+      difficulty: environment_threshold
+    scaling:
+      - condition: "NR 1–2"
+        effect: "Trapped Minor"
+      - condition: "NR 3–4"
+        effect: "Trapped Moderate"
+      - condition: "NR 5–6"
+        effect: "Trapped Severe"
+    description: >
+      The Arakhel anchors a network of silk threads across an area in combat,
+      extending their vibration-sensing biology into the space itself. Anything
+      that moves through the network transmits its position and mass before it
+      can act on them. The network does not stop movement on its own — it
+      registers it, and holds what it catches.
+    effect: >
+      Make an Agility C.R. against a difficulty set by environmental conditions.
+      On failure, nothing happens. On success, the 6 m radius area around the
+      anchor point is covered by the network. While active: the Arakhel receives
+      vibration signatures from all movement within the area without requiring
+      line of sight or illumination; every creature that moves within the area
+      makes an Alterations R.R. — on failure, the creature is Trapped (Minor
+      at NR 1–2, Moderate at NR 3–4, Severe at NR 5–6); the Arakhel may move
+      within the network without triggering the Trapped effect; the network is
+      detectable via a Perception S.R. against difficulty equal to the Arakhel's
+      NR × 3. The network ends when manually cleared or when the Arakhel ends it
+      voluntarily.
+    restrictions:
+      - species_arakhel_only
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - arakhel
+      - trapped
+      - zone-control
+      - vibration
+      - silk
+      - permanent
