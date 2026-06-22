@@ -184,7 +184,7 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 - *Sabiduría:* ritual depth, kunitsukami reading, generational knowledge of the specific, recognition of what the domain is actually saying vs. what one wants it to say
 - *Astucia:* intelligence gathering, pattern recognition, toxin-signature reading, shinobi strategic thinking
 
-**Herencia — Secreción Parotoidea:** Passive. The Bufoni's parotoid glands secrete defensively under physical stress. Any creature that makes direct sustained physical contact with the Bufoni (successful grapple, sustained melee contact) is exposed to the secretion and must make a T.R. (Veneno). This is not an action — it is biological response. The Bufoni does not activate it; it activates. Effect on failure and severity scaling to be determined in weapon design session.
+**Herencia — Piel Permeable:** The same cutaneous permeability that enables parotoid toxin production and environmental chemical reading also absorbs hostile compounds faster than other species. Bufoni receive a permanent −3 penalty to T.R. (Veneno). Not a cultural sensitivity or learned condition — it is the physics of a skin with no absorption barrier. The same surface that makes the Lengua work is the same surface that makes them vulnerable to it.
 
 **Competency affinities:**
 - Sigilo — ambush biology, domain knowledge
@@ -206,11 +206,17 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 - Information-gathering and signature-reading (Astucia/Sabiduría-based)
 - Shinobi traditions likely as specialization-level techniques rather than innate species
 
-**Likely Legado design:**
-1. A passive or reactive technique tied to the Herencia (expanding parotoid exposure conditions or effects)
-2. A kunitsukami-reading or ritual-knowledge utility (domain-specific context, high Sabiduría requirement)
-3. A zone-control or ambush technique rooted in patience biology
-4. Potentially: a signature-reading technique (toxin identification of other Bufoni, detecting remapping)
+**Confirmed Legado design:**
+
+**Legado 1 — Sabiduría Corporal (skill bonus):** Sabiduría replaces the default characteristic for T.E. de Saltar, Nadar, and Sigilo. +1 per 4 NR on all three. The Bufoni's jump is body knowledge of that exact surface; their swim is rhythmic pattern, not brute force; their stealth is knowing when not to move, not how to move fast.
+
+**Legado 2 — passive property on Lengua (T.I. bonus while hidden):** While the Bufoni is Oculto and T.A. > T.D., the attack adds bonus impact dice by rango:
+- Rango 1–2: +1d6
+- Rango 3–4: +2d6
+- Rango 5–6: +3d6
+The predator that waited longest hits hardest when it moves.
+
+**Legado 3 — Golpe Sin Eco (Reactivo - Utilidad · Ritmo 0 · Desgaste 2):** Trigger: after a Lengua attack from Oculto, in the moment the state would be compromised. At non-melee range: no enemy attempts Percepción; the attack generates no locatable signal; Oculto remains intact. At melee range: the technique includes an immediate repositioning movement before the source can be identified; if that movement reaches a valid Oculto-sustaining position, the effect applies; if no valid position exists, the technique produces no effect. Restricted to Lengua attacks.
 
 ---
 
@@ -244,8 +250,7 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 
 **Open questions (pending design sessions):**
 
-1. **Herencia effect:** Specific mechanical effect and severity of T.R. (Veneno) failure on parotoid contact (passive exposure, not weapon hit)
-2. **Clan/lineage weapon variation:** Specific toxin compound effect per lineage — what each variant does on T.R. failure, how many canonical variants, whether any lineage has a different delivery mechanism
-3. **Language name:** The Bufoni common language and its ritual dialect layer need names
-4. **Technique seeds:** Formal technique seeds session after this design doc is confirmed
-5. **Kunitsukami interaction mechanic:** Whether there is a system mechanic for domain Bufoni interacting with their kunitsukami during play, or whether this is entirely narrative
+1. **Clan/lineage weapon variation:** Specific toxin compound effect per lineage — what each variant does on T.R. (Veneno) failure, how many canonical variants, whether any lineage has a different delivery mechanism
+2. **Language name:** The Bufoni common language and its ritual dialect layer need names
+3. **Technique seeds:** Formal technique seeds session after this design doc is confirmed
+4. **Kunitsukami interaction mechanic:** Whether there is a system mechanic for domain Bufoni interacting with their kunitsukami during play, or whether this is entirely narrative
