@@ -38,7 +38,13 @@ concept_confirmed: true
 
 **Throat sac:** A retractable vocal sac at the base of the throat, visible when inflated. Inflated, it amplifies vocalization to a resonance range that has territorial and ritual uses. In the right acoustic conditions — a domain's specific terrain, near the kunitsukami's anchoring sites — the specific frequency pattern a Bufoni produces can be read by the local Entidad. Generations of the same family producing the same frequencies in the same territory have made this recognition reciprocal. For outsiders, the sound is simply loud.
 
-**Natural weapon:** *Reserved for weapon design session.* The parotoid gland secretion is the central biological weapon vector. Delivery mechanism and combat profiles to be determined. The tongue as a strike surface with secretion transfer is under consideration alongside other options.
+**Natural weapon — Lengua:** The tongue is attached at the front of the jaw and extends with high speed and adhesive surface contact. Under combat stress the parotoid glands activate and the tongue carries the secretion on extension, delivering it on contact. The weapon is silent, flexible, and resolves from an angle the opponent did not track — the body stays still; the strike comes from below the chin line at 3 m range. All Bufoni have access to the Lengua from the start.
+
+| T.A. | T.I. | Alcance | Dado | Perfiles |
+| --- | --- | --- | --- | --- |
+| Agilidad | Agilidad | 3 m | d6 | Torsión · Interrupción · Impredecibilidad · Corrosión |
+
+**Efecto:** Si T.A. > T.D., el objetivo realiza T.R. Veneno. Si falla, queda afectado por el compuesto. Severidad escala por rango del portador: 1–2 Leve, 3–4 Moderado, 5–6 Grave. El efecto específico del compuesto varía por linaje — ver variantes de clan (pendiente de sesión de diseño).
 
 **Senses:** Visual field is the primary sense for detection. Vibration sensitivity through ground contact is moderate — useful for detecting movement in familiar terrain, limited in unfamiliar environments. No equivalent to Arakhel vibratory network reading. Olfactory reading of toxin composition is sharp: a Bufoni can identify another Bufoni's domain origin by close proximity or direct contact, and detect when a signature is inconsistent or has been modified.
 
@@ -187,7 +193,7 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 - Intuición — kunitsukami reading, ritual awareness
 - Sabiduría-based ritual specialization rolls
 
-**Natural weapon:** *Reserved for weapon design session.* Tongue-strike with toxin transfer and Mordisco are both under consideration. Parotoid secretion as delivery vector is confirmed; mechanism is not.
+**Natural weapon — Lengua:** T.A. Agilidad / T.I. Agilidad / Alcance 3 m / d6 / Torsión · Interrupción · Impredecibilidad · Corrosión. Toxin triggers on any hit (T.A. > T.D.): target makes T.R. Veneno, severity scales by rango (1–2 Minor, 3–4 Moderate, 5–6 Severe). Specific compound effect varies by lineage — pending clan variation design session.
 
 **Armor identity:** Light to medium. Heavy armor limits skin contact with the environment and impedes the sensory biology that reads terrain and toxin signatures. Some domains have developed medium armor traditions for specific roles; shinobi wear nothing that interferes with biological signature management.
 
@@ -238,9 +244,8 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 
 **Open questions (pending design sessions):**
 
-1. **Natural weapon:** Tongue-strike vs. Mordisco — delivery mechanism and combat profiles to be resolved in weapon design session
-2. **Herencia effect:** Severity and specific mechanical effect of T.R. (Veneno) failure on parotoid contact
-3. **Clan/lineage weapon variation:** Whether different domain lineages have distinct natural weapon variants (delivery mechanism or toxin effect), how many variants, what they are
-4. **Language name:** The Bufoni common language and its ritual dialect layer need names
-5. **Technique seeds:** Formal technique seeds session after this design doc is confirmed
-6. **Kunitsukami interaction mechanic:** Whether there is a system mechanic for domain Bufoni interacting with their kunitsukami during play, or whether this is entirely narrative
+1. **Herencia effect:** Specific mechanical effect and severity of T.R. (Veneno) failure on parotoid contact (passive exposure, not weapon hit)
+2. **Clan/lineage weapon variation:** Specific toxin compound effect per lineage — what each variant does on T.R. failure, how many canonical variants, whether any lineage has a different delivery mechanism
+3. **Language name:** The Bufoni common language and its ritual dialect layer need names
+4. **Technique seeds:** Formal technique seeds session after this design doc is confirmed
+5. **Kunitsukami interaction mechanic:** Whether there is a system mechanic for domain Bufoni interacting with their kunitsukami during play, or whether this is entirely narrative
