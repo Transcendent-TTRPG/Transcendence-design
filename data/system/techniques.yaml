@@ -14407,3 +14407,48 @@ pilot_examples:
       - vibration
       - silk
       - permanent
+
+  - id: 111
+    name: "Golpe Sin Eco"
+    slug: golpe-sin-eco
+    species_origin: species_bufoni
+    tier: novice
+    type: reactive
+    subtype: utility
+    trigger: "when a Lengua attack from Oculto would compromise the hidden state"
+    range:
+      origin: personal
+      area:
+        type: self
+    duration:
+      type: instantaneous
+    cost:
+      rhythm_cost: 0
+      attrition_cost: 2
+    description: >
+      The Bufoni's tongue strike carries no locatable origin — it exits and
+      returns before the environment registers where it came from. At range,
+      the attack produces no detectable signal. In melee, the Bufoni
+      repositions before their position can be identified.
+    effect: >
+      When declaring a Lengua attack while in the Hidden state, at the moment
+      the state would normally be compromised, the Bufoni may activate this
+      technique. At non-melee range: the attack generates no locatable signal;
+      no enemy attempts Perception; the Hidden state remains intact. At melee
+      range: the Bufoni moves immediately before their position can be
+      identified; if that movement reaches a position that sustains the Hidden
+      state, the effect applies; if no valid position exists, the technique
+      produces no effect.
+    restrictions:
+      - species_bufoni_only
+      - requires_hidden_state
+      - requires_lengua_attack
+    tags:
+      - reactive
+      - utility
+      - innate
+      - species
+      - bufoni
+      - oculto
+      - lengua
+      - stealth
