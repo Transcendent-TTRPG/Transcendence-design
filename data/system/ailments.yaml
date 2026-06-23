@@ -1031,3 +1031,268 @@ entries:
       The same corrosive degradation never creates parallel copies on the same
       zone. A stronger application replaces a weaker one; an equal application
       usually deepens the existing degradation or refreshes its persistence.
+
+  - name: Entorpecido
+    family: Poison
+    delivery_method: inoculation
+    alchemic_index: 7
+    treatment_kit:
+      minor: Avanzado
+      moderate: Especializado
+      severe: Especializado
+    description: >
+      A neurotransmitter-disrupting compound that slows motor nerve signaling.
+      The body responds to intention, but the delay between command and
+      execution widens progressively. Every action demands more time than
+      the organism is accustomed to spending.
+    severity_levels:
+      minor:
+        - "all actions cost additional Rhythm equal to the rank bonus of the source that applied Entorpecido"
+      moderate:
+        - "all actions cost additional Rhythm equal to the rank bonus of the source that applied Entorpecido"
+        - "free actions that require physical execution cost 1 Rhythm instead of 0"
+      severe:
+        - "all actions cost additional Rhythm equal to the rank bonus of the source that applied Entorpecido"
+        - "free actions that require physical execution cost 1 Rhythm instead of 0"
+        - "the Rhythm penalty for reactions is doubled — the rank-bonus addition applies twice for reactions specifically"
+    application_requirements:
+      - successful_inoculation_through_stated_delivery_route
+      - target_fails_T.R._Venenos
+    effect: >
+      The target's motor speed is chemically suppressed. All actions on the
+      ATB track advance the marker further than normal, reducing how often
+      the target can act relative to other combatants.
+    duration:
+      model: until_removed
+      notes: >
+        The compound remains active until neutralized by treatment or
+        metabolized out. It does not end when the applying creature is
+        defeated or leaves the scene.
+    recovery:
+      notes: >
+        Requires Kit de Medicina at the tier corresponding to severity.
+        Neutralization through Entendimiento (Alquimia) identifies the
+        compound and enables targeted treatment. Full rest alone is not
+        sufficient — the compound must be actively neutralized.
+    resistance_or_escape:
+      notes: >
+        Resisted with T.R. de Venenos when first delivered. Once active,
+        severity can be reduced one tier through successful treatment;
+        full removal requires treatment of all active severity.
+    stacking_rule: >
+      Entorpecido does not create parallel copies on the same target.
+      A stronger application replaces a weaker one. An equal application
+      refreshes persistence. Coexists with ailments from other Veneno
+      families on the same target.
+
+  - name: Escaldado
+    family: Poison
+    delivery_method: inoculation
+    alchemic_index: 5
+    treatment_kit:
+      minor: Básico
+      moderate: Avanzado
+      severe: Avanzado
+    description: >
+      A caustic alkaloid that reacts with sensory tissues — mucous membranes,
+      eyes, and nerve endings near the skin surface. The effect is not
+      primarily destructive but perceptual: involuntary tearing, reflexive
+      flinching, spasming of fine motor muscles. The target can act but
+      cannot execute with precision.
+    severity_levels:
+      minor:
+        - "all T.A. rolls suffer a penalty equal to the rank bonus of the source that applied Escaldado"
+      moderate:
+        - "all T.A. rolls suffer a penalty equal to the rank bonus of the source that applied Escaldado"
+        - "T.A. rolls against targets beyond 3 m suffer an additional −1 penalty (visual disruption worsens with distance)"
+      severe:
+        - "all T.A. rolls suffer a penalty equal to the rank bonus of the source that applied Escaldado"
+        - "T.A. rolls against targets beyond 3 m suffer an additional −1 penalty"
+        - "the target cannot benefit from Ventaja de Ejecución on T.A. rolls — even when conditions that would normally grant it are present, the sensory disruption prevents exploiting the advantage"
+    application_requirements:
+      - successful_inoculation_through_stated_delivery_route
+      - target_fails_T.R._Venenos
+    effect: >
+      The target's ability to execute accurate attacks is chemically impaired.
+      Sensory disruption — not pain alone — degrades the precision required
+      to land effective strikes.
+    duration:
+      model: until_removed
+      notes: >
+        The compound persists until neutralized or metabolized. It does not
+        end when the applying creature is no longer present.
+    recovery:
+      notes: >
+        Requires Kit de Medicina at the tier corresponding to severity.
+        The relatively low Índice Alquímico makes identification
+        straightforward; physical treatment is still required to neutralize it.
+    resistance_or_escape:
+      notes: >
+        Resisted with T.R. de Venenos when first delivered. Once active,
+        severity can be reduced one tier through successful treatment.
+    stacking_rule: >
+      Escaldado does not create parallel copies on the same target.
+      A stronger application replaces a weaker one. Coexists with ailments
+      from other Veneno families on the same target.
+
+  - name: Erosionado
+    family: Poison
+    delivery_method: inoculation
+    alchemic_index: 8
+    treatment_kit:
+      minor: Especializado
+      moderate: Especializado
+      severe: Especializado
+    description: >
+      An enzyme complex that breaks down structural proteins in the target's
+      protective biological layers — scales, thick hide, subdermal connective
+      tissue. Unlike surface corrosion, this compound operates systemically
+      through the bloodstream, degrading protective integrity across all
+      zones rather than at a single point of contact.
+    severity_levels:
+      minor:
+        - "all zone Bloqueo values are reduced by the rank bonus of the source that applied Erosionado"
+      moderate:
+        - "all zone Bloqueo values are reduced by the rank bonus of the source that applied Erosionado"
+        - "the target cannot benefit from Bloqueo bonuses granted by external sources (equipment upgrades, technique buffs, or ally actions) while Erosionado is active — the degraded tissue cannot integrate supplemental protection"
+      severe:
+        - "all zone Bloqueo values are reduced by the rank bonus of the source that applied Erosionado"
+        - "the target cannot benefit from Bloqueo bonuses granted by external sources while Erosionado is active"
+        - "the target's effective Bloqueo in any zone cannot exceed 1 — the structural protein breakdown is complete at this severity"
+    application_requirements:
+      - successful_inoculation_through_stated_delivery_route
+      - target_fails_T.R._Venenos
+    effect: >
+      The target's natural and equipped protective layers are chemically
+      degraded throughout the body. Defensive integrity weakens systemically
+      as the enzyme complex dissolves structural proteins across all zones.
+    duration:
+      model: until_removed
+      notes: >
+        The enzyme complex remains active until neutralized. It does not end
+        when the applying creature is no longer present.
+    recovery:
+      notes: >
+        Requires Kit de Medicina Especializado at all severity levels due to
+        the complexity of the enzyme compound. Entendimiento (Alquimia) at
+        Riguroso or higher is needed for identification.
+    resistance_or_escape:
+      notes: >
+        Resisted with T.R. de Venenos when first delivered. Erosionado does
+        not degrade spontaneously — the enzyme complex requires active
+        neutralization.
+    stacking_rule: >
+      Erosionado does not create parallel copies on the same target.
+      A stronger application replaces a weaker one. Coexists with ailments
+      from other Veneno families, including the Alteration-family Corroído
+      (which targets a single zone) — both can be active simultaneously.
+
+  - name: Saturado
+    family: Poison
+    delivery_method: inoculation
+    alchemic_index: 9
+    treatment_kit:
+      minor: Especializado
+      moderate: Especializado
+      severe: Especializado
+    description: >
+      A compound that accumulates in the renal system, overwhelming the
+      body's primary filtration mechanism. Metabolic waste and foreign
+      substances build up in the bloodstream, compromising the organism's
+      capacity to resist any harmful agent. The body's defensive systems
+      are not destroyed — they are simply too burdened to respond.
+    severity_levels:
+      minor:
+        - "all T.R. rolls — against Alteraciones, Venenos, Infecciones, Aflicciones, and Maldiciones — suffer a penalty equal to the rank bonus of the source that applied Saturado"
+      moderate:
+        - "all T.R. rolls suffer a penalty equal to the rank bonus of the source that applied Saturado"
+        - "T.R. de Venenos specifically is made at one difficulty tier higher — the filtration system is most directly overwhelmed, leaving the target almost unable to resist additional toxic agents"
+      severe:
+        - "all T.R. rolls suffer a penalty equal to the rank bonus of the source that applied Saturado"
+        - "T.R. de Venenos specifically is made at one difficulty tier higher"
+        - "the target's Resistencia a Venenos competency level does not contribute to T.R. de Venenos while Saturado is active — trained resistance cannot be leveraged when the filtration system is fully compromised"
+    application_requirements:
+      - successful_inoculation_through_stated_delivery_route
+      - target_fails_T.R._Venenos
+    effect: >
+      The target's resistance capacity is chemically saturated across all
+      threat types. Every incoming harmful effect finds the body less able
+      to mount an effective response.
+    duration:
+      model: until_removed
+      notes: >
+        The compound accumulates and persists until actively flushed from
+        the system. It does not clear spontaneously.
+    recovery:
+      notes: >
+        Requires Kit de Medicina Especializado to flush the renal system.
+        Entendimiento (Alquimia) at Exigente difficulty is needed for
+        identification. Given its role in amplifying all other ailments,
+        Saturado should be prioritized in treatment.
+    resistance_or_escape:
+      notes: >
+        Resisted with T.R. de Venenos when first delivered. Once active,
+        full removal requires Kit de Medicina Especializado — there is no
+        partial removal route at this complexity level.
+    stacking_rule: >
+      Saturado does not create parallel copies on the same target.
+      A stronger application replaces a weaker one. Coexists with ailments
+      from all other Veneno families on the same target — and actively
+      worsens the target's ability to resist them.
+
+  - name: Inhibido
+    family: Poison
+    delivery_method: inoculation
+    alchemic_index: 9
+    treatment_kit:
+      minor: Básico
+      moderate: Especializado
+      severe: Especializado
+    description: >
+      A hepatotoxic compound that suppresses the liver's synthesis of
+      repair-enabling proteins — clotting factors, growth factors,
+      inflammatory modulators. While active, the body cannot process or
+      benefit from healing substances or techniques. The organism remains
+      in metabolic stasis: neither deteriorating rapidly from the poison
+      alone nor able to recover from any damage received.
+    severity_levels:
+      minor:
+        - "Kit de Medicina actions targeting this creature operate at one difficulty tier higher than normal"
+        - "healing techniques restore half their normal amount (round down)"
+      moderate:
+        - "Kit de Medicina actions for wound treatment targeting this creature have no effect"
+        - "healing techniques restore one-quarter their normal amount (round down)"
+        - "neutralizing Inhibido itself requires Kit de Medicina Especializado and functions normally — treating the poison compound is distinct from wound healing and is not blocked by this restriction"
+      severe:
+        - "no wound treatment (Kit de Medicina), healing technique, or recovery action targeting this creature has any effect while Inhibido is active"
+        - "neutralizing Inhibido itself requires Kit de Medicina Especializado and a T.E. Medicina at Exigente difficulty"
+        - "once Inhibido is successfully neutralized, normal healing and treatment resume"
+    application_requirements:
+      - successful_inoculation_through_stated_delivery_route
+      - target_fails_T.R._Venenos
+    effect: >
+      The target's capacity to benefit from healing is chemically suppressed.
+      Medical treatment and healing techniques cannot function effectively
+      until the compound is neutralized. Inhibido must be addressed before
+      any other damage on the same target can be treated.
+    duration:
+      model: until_removed
+      notes: >
+        The compound persists until neutralized. It does not end when the
+        applying creature is no longer present or when the scene ends.
+    recovery:
+      notes: >
+        Inhibido must be neutralized before wounds or other ailments on the
+        same target can be treated. Neutralizing the compound is direct
+        treatment of the poison — it is not blocked by the compound's own
+        restriction. Severity determines the kit tier required.
+    resistance_or_escape:
+      notes: >
+        Resisted with T.R. de Venenos when first delivered. Once active,
+        only direct neutralization of the compound ends the state. Recovery
+        from wounds sustained while Inhibido was active can only begin after
+        Inhibido is cleared.
+    stacking_rule: >
+      Inhibido does not create parallel copies on the same target.
+      A stronger application replaces a weaker one. Coexists with ailments
+      from other Veneno families on the same target.
