@@ -1703,9 +1703,9 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Characteristics:** +1 STR, WIS, AUR
 
-**Herencia — Ruido de Calibración:** −3 to T.E. Percepción in environments with multiple simultaneous active sources (crowded areas, high organism density, overlapping signals). Not a condition — the horn's perceptual architecture.
+**Herencia — Ruido de Saturación:** −3 to T.E. Percepción in environments with multiple simultaneous active sources (crowded areas, high organism density, overlapping signals). Not a condition — the horn's perceptual architecture.
 
-**Legado:** Calibración (+1/4 NR Supervivencia, Orientación, Intuición) · La Embestida (Active-Attack tech #105; T.A. + T.I.; move straight line up to Velocidad then strike; on hit choose: push 3m OR Desequilibrado via T.R. Alteraciones; first technique combining full movement + attack + alteration choice) · Dermis (+2 Bloqueo to all zones per 4 NR, from biologically hardened outer layer)
+**Legado:** Señal Guía (+1/4 NR Supervivencia, Orientación, Intuición) · Integridad de la Señal (Active-Utility tech #105; T.C. Aura; scan circular 8 m area for anomalous signal and determine whether it is Estable, Escalando, or Cediendo; classify visible ciclos autónomos in the area as Biológicos, de Coordinación de Aliados, or Ambientales; grants self-only bonus to identify Puntos Vitales or zonas vinculadas) · Dermis (+2 Bloqueo to all zones per 4 NR, from biologically hardened outer layer)
 
 **Natural weapons:**
 

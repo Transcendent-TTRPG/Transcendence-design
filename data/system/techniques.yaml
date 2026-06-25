@@ -14057,63 +14057,60 @@ pilot_examples:
       - state_reading
 
   - id: 105
-    name: "La Embestida"
-    slug: la-embestida
+    name: "Integridad de la Señal"
+    slug: integridad-de-la-senal
     species_origin: species_ceratox
     tier: novice
     type: active
-    subtype: attack
+    subtype: utility
     trigger: voluntary
     range:
       origin: personal
       area:
-        type: single_target
+        type: circular
+        radius_m: 8
     duration:
       type: instantaneous
       end_rule: null
     cost:
-      rhythm_cost: 5
+      rhythm_cost: 4
       attrition_cost: 2
       other: []
-    saving_roll:
-      model: tr_alteraciones
-      applies_when: player_chooses_desequilibrado
-      effect_on_success: negates_desequilibrado
+    saving_roll: null
     roll:
-      model: ta
-      effect_on_failure: attack_misses
+      model: tc_aura
+      effect_on_failure: no_anomalous_read_acquired
     scaling:
-      - condition: "NR 1–4"
-        effect: "Desequilibrado Leve"
-      - condition: "NR 5–8"
-        effect: "Desequilibrado Moderado"
-      - condition: "NR 9+"
-        effect: "Desequilibrado Grave"
+      - condition: "Per 4 NR"
+        effect: "+1 to user's T.E. to identify Puntos Vitales or zonas vinculadas to ciclos classified by this technique, until end of scene"
     description: >
-      The Ceratox charges in a straight line at full Velocidad and strikes with
-      the Cuerno. On hit, deals normal T.I. and the player chooses one of two
-      effects: push the target 3m in the charge direction, or apply
-      Desequilibrado (T.R. Alteraciones negates).
+      The Ceratox expands horn-reading across the surrounding area to confirm
+      whether an anomalous signal is present, whether it is stable, increasing,
+      or fading, and what broad class of autonomous cycles are operating inside
+      that disturbed space.
     effect: >
-      Move in a straight line up to Velocidad (9 m) toward a target within
-      Cuerno range at the end of movement. Make a T.A. On hit, resolve T.I.
-      normally and choose one: (a) push target 3 m in the direction of the
-      charge; (b) target makes T.R. Alteraciones or becomes Desequilibrado at
-      severity based on competency rank.
+      Make a T.C. (Aura) over a circular area of 8 m. On success, know whether
+      an anomalous signal is present in the area and whether it is Estable,
+      Escalando, or Cediendo. This does not reveal origin, cause, or exact
+      nature of the anomaly. If visible ciclos autónomos in the ATB are
+      operating on creatures, zones, or effects inside the area, classify them
+      as Biológicos, de Coordinación de Aliados, or Ambientales. Until the end
+      of the scene, the user gains +1 per 4 NR on T.E. made to identify Puntos
+      Vitales or zonas vinculadas associated with those cycles. This benefit
+      applies only to the user.
     restrictions:
       - species_ceratox_only
       - no_specialization_required
-      - cuerno_natural_weapon_only
     tags:
       - active
-      - attack
+      - utility
       - innate
       - species
       - ceratox
-      - movement
-      - charge
-      - displacement
-      - desequilibrado
+      - signal
+      - detection
+      - cycles
+      - vital_points
 
 
   - id: 106
