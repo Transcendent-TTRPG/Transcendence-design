@@ -240,19 +240,39 @@ The Vesper belong naturally to:
 
 They are not wanderers by preference, yet their houses depend on dangerous retrieval from beyond the chamber. That makes them both inward and hungry.
 
-Major external tensions:
+**Major external tensions:**
 
-**Loxod** — priceless to Vesper comparison and therefore right to distrust them. A Loxod smells too much of what the chamber wants.
+*To the Loxod:* Invaluable to them, and therefore they have reasons to distrust. A Loxod perceives too soon when a Vesper's attention becomes instrumental. To a Vesper, the Loxod body offers memory, burden, and vital medium with extraordinary density. To the Loxod, a Vesper chamber can feel like a place where receiving too much stops being a wound and becomes a resource.
 
-**Ceratox** — Vesper sanctuaries, altered lines, and bond-work generate signal conditions the horn reads as threat or unresolved pressure.
+*To the Ceratox:* They react poorly to Vesper pressure chambers, altered lines, and especially to whatever a house has held too close to a bond. The horn doesn't always distinguish well between sanctuary, evidence, and problem. A Ceratox might declare a chamber saturated before the house admits the line started responding poorly. Vespers respect that alarm, but despise that it arrives without a blood vocabulary.
 
-**Rokhart** — rivals in method. Rokhart seek pattern with minimal interference. Vesper accept blood, intervention, breeding, and prolonged pressure as legitimate means of approach.
+*To the Rokhart:* They are rivals in method. Both want to understand what rewrites the world. The difference is the Rokhart distrusts early intervention, while the Vesper accepts blood, repetition, and cultivation as legitimate paths if discipline is maintained. To a Rokhart, a chamber that produces its own phenomenon ruins the observation. To a Vesper, perhaps it finally created enough conditions for the phenomenon to stop hiding.
 
-**Talpi** — seek usable altered matter where the Vesper seek legible altered life.
+*To the Zarnag:* They live near the same edge, but from the other side. They work where death didn't close properly. Vespers want to know what was trying to be born there before the failed closure. In sites where a line died incompletely, the Zarnag asks what hunger remained. The Vesper asks what sequence didn't finish. Both point to the same horror without reconciling.
 
-**Zarnag** — work what remains after closure fails. The Vesper want to know what a line was becoming before that closure.
+*To the Ursari:* Uncomfortably close. They also know the place participates in what is done within it. The difference is the Vesper insists on bringing that truth to the living body with an intensity Ursari find suspicious. An Ursari can understand a sanctuary like a forge: site, practice, and body in relation. But when a Vesper calls "consecration" what the Ursari smells as "prolonged exposure", the conversation gets difficult.
 
-**Ursari** — respect the relation between body, site, and practice, but distrust the Vesper habit of treating biological reading as the highest road to truth.
+*To the Naghii:* They recognize another culture obsessed with incomplete signals. But where the Naghii preserves celestial archives, translations, and ruins, the Vesper preserves blood, lines, and living sequences. To a Naghii, the Vesper danger is that the answer is too close to the reader's desire. To a Vesper, the Naghii danger is that a signal that never touched flesh believes itself sufficient to speak of transformation.
+
+*To the Sauri:* They react strongly to Vesper cosmology. The idea of pushing a body near the living pulse seems arrogant, suicidal, or profoundly revealing. A Sauri asks what vessel can hold that pressure without spilling. A Vesper replies that a consecrated one is precisely the body that didn't spill. Both speak of containment, but Sauri seek a channel and Vesper seek a line capable of bearing destiny.
+
+*To the Drak'kai:* They are attracted to Vesper ceremonial vestiges and horrified by their use. To a Drak'kai, a piece that learned a correct gesture can be a collection object. To a Vesper, that piece can be part of a living ritual sequence and loses meaning if separated from the house. Both accumulate. The Drak'kai accumulates pieces; the Vesper accumulates conditions.
+
+*To the Formix:* An irresistible problem. Body, function, caste, Signal, residual obedience, learned freedom: everything in them seems like a living line once bred to respond specifically. Prudent Vesper houses know that studying free Formix without turning their freedom into a specimen requires discipline. Less prudent houses have already failed that test.
+
+*To the Panin:* Almost impossible inside a Vesper house. They touch, interrupt, follow inspiration, alter sequences, open doors that shouldn't be opened, and ask aloud why something everyone looks at solemnly smells like a lie. Still, a Panin can detect a false consecration before a custodian too invested in preserving it. The problem is keeping them from touching the evidence before speaking.
+
+*To the Chelicer:* Fascinating and annoying. Both believe truth demands correct conditions. But Chelicer seek a verdict: something that was already true and must be revealed. Vesper seek sequence: something that perhaps only becomes true if life endures it over time. To a Chelicer, the Vesper chamber seems impure because it intervenes too much. To a Vesper, the Chelicer court seems naive for believing controlling conditions is enough without breeding continuity.
+
+*To the Arakhel:* They understand the value of the right space. A node and a chamber aren't the same, but both make legible what the open world scatters. The Arakhel distrusts a truth torn from its crossing and locked in a room. The Vesper distrusts a truth too dependent on a local relationship to be compared. Both know space reads back. Neither is calm with what the other does with that certainty.
+
+*To the Bufoni:* They have protocols, presences, and domains; Vespers have houses, lines, and blood. Both believe a sustained relationship can make legible what would otherwise remain mute. The difference is the center: the Bufoni asks if the territory recognized. The Vesper asks if life endured. A fallen domain and an aberrant line can look more alike than either wants to admit.
+
+*To the Luphran:* They offer Vespers a dangerous temptation: fury, crossing, mark, return, a captain returning changed. Some houses suggest marked Luphrans could be read as natural attempts at consecration by right or destiny. Luphrans hate this. To them, fury belongs to crew, ancestor, and return. To an interested Vesper, it belongs to blood, line, and the capacity to sustain the pulse.
+
+*To the Myo:* They unsettle ancient houses because they sometimes announce failure before the sequence shows it. A Myo can say a consecration will be false when bodily signs still seem promising, or that an aberration contains a pattern the house decided to close. Vespers listen little and remember much. Nothing irritates a house more than someone without blood on their hands predicting what blood will take generations to prove.
+
+*To the Talpi:* They see useful materials where Vespers see legible life. Each thinks the other is looking in the wrong direction. The Talpi wants to extract from the earth what can be transformed. The Vesper wants to know what happens when the transformed enters blood. Their collaborations are productive, tense, and rarely clean.
 
 ---
 

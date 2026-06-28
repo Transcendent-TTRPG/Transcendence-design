@@ -244,6 +244,32 @@ Typical external pressures include:
 The Zarnag are therefore shaped by a contradiction: they are useful exactly
 where others most want distance.
 
+**To the Naghii:** The Naghii usually recognize Zarnag value in places where ruins and the dead mix, but rarely trust their method. To a Naghii, a Remnant must be read within a chain of meaning, inscription, sky, and archive. To a Zarnag, it must first be determined if it will poison the water, raise scavengers, bite the living, or leave active Weight on the site. This difference produces useful cooperation and mutual contempt: the Naghii can seem too slow; the Zarnag, too willing to touch before understanding.
+
+**To the Sauri:** The Sauri understand better than most the idea of handling what others prefer not to see. But their relationship with preservation can be unsettling for the Zarnag. A preserved body can be a record, authority, or warning. It can also be something that should have been satiated and was retained out of pride, lineage, or theology. Where the Sauri ask what can be contained, the Zarnag ask what is happening because it is kept here.
+
+**To the Panin:** The Panin are a practical problem. In zones of death, infection, or active Remnants, their curiosity can break perimeters before they understand the perimeter exists for a reason. The Zarnag don't usually hate them; they just get exhausted quickly around them. A Panin touching what they shouldn't can turn a difficult day into a crisis. A Panin who listens, however, can be useful for tracking routes, entrances, and small environmental changes others miss.
+
+**To the Rokhart:** The Rokhart document and the Zarnag remember with the body. They can work well together in disaster fields, provided the Rokhart understands that not everything should be preserved as data before being treated as a risk. Tension appears when someone wants to register a site that is still active, move pieces before satiating the perimeter, or take evidence the Zarnag consider contaminated.
+
+**To the Myo:** The Myo treat the Zarnag with a different caution. Where the Zarnag read the material Remnant, the Myo can read echoes, omens, or patterns that do not depend on the physical body. Some Zarnag circles respect that ability. Others consider it a dangerous way of staying too close to what should be satiated.
+
+**To the Drak'kai:** The Drak'kai are especially problematic in ancient death sites. A Remnant found among old dead is not simply an interesting object for the Zarnag. It is part of a scene that remains hungry until proven otherwise. The Drak'kai might want to keep, study, or claim. The Zarnag might want to burn, seal, or bury deep. More than one conflict has started with both convinced they are preventing a greater loss.
+
+**To the Loxod:** The Loxod can receive layers of grief, fear, death, waiting, and permanence in a site before the Zarnag finish their practical reading. This can be both useful and dangerous. A Loxod can say what emotional charge sustains the Weight. A Zarnag can reply that knowing it too early doesn't help if no one has closed the perimeter. The best work between both species happens when the Loxod reads without appropriating and the Zarnag satiates without denying what was read.
+
+**To the Ceratox:** The Ceratox detect territorial pressure where the Zarnag detect accumulated Hunger. In mass death sites, their readings can overlap in unsettling ways. A Ceratox might feel an area is too heavily charged to cross; a Zarnag might know which Remnant is producing that charge. Cooperation is valuable, but difficult: an alert Ceratox can make a perimeter that is already close to biting even tenser.
+
+**To the Ursari:** The Ursari understand the cost of years of exposure to a craft that changes the body and judgment. The forge and the mass grave are not the same, but both teach that working close to something powerful leaves a mark. The Ursari usually respect Zarnag discipline more than other species. The Zarnag, for their part, distrust any tradition that sees prolonged exposure as a source of authority without asking frequently enough what part of the worker is still their own.
+
+**To the Arakhel:** The Arakhel are useful interlocutors in places where paths, crossings, and deaths overlap. An ancient node near a battlefield might know who passed before the grave opened. An Arakhel family can distinguish transit from permanence where the Zarnag distinguish Remnant from waste. But the Arakhel sometimes preserve crossings the Zarnag would prefer to close, and the Zarnag sometimes burn or seal things the Arakhel consider part of a reading of the in-between.
+
+**To the Bufoni:** The Bufoni matter especially when a domain falls. To the Bufoni, a kunitsukami without attention can continue responding without vocabulary, protocol, or community to recognize it. To the Zarnag, a fallen domain is usually full of Remnants: offerings, soil, bodies, names, and territorial Last Hungers no one finished satiating. The exchange can save survivors or open deep disputes about whether something should be restored or closed.
+
+**To the Formix:** The Formix offer refuge in a way many Zarnag don't expect. A free Formix community can receive marginalized workers without carrying the same historical contempt for their craft. But they can also ask uncomfortable questions: if a Zarnag exists to work the Hunger, what remains of them when there is no Hunger around? That question can sound too much like Gluttony to some old Zarnag.
+
+**To the Chelicer:** The Chelicer find it difficult to accept that such an important craft depends so much on dirty, situated, bodily judgment. For a Chelicer, truth must be revealed under procedure. For a Zarnag, procedure only serves if someone can still smell when the site changed. Both understand the value of the correct conditions, but disagree on what happens when those conditions keep producing something that shouldn't be there.
+
 ---
 
 ## 8. System Connections

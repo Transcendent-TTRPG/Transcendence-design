@@ -111,6 +111,37 @@ They do not typically leverage this asymmetry. The discipline of not acting on i
 
 Species that have had extended contact with Loxod tend to describe them as the most reliably patient beings they've encountered, and also as the ones most capable of ending a relationship permanently without apparent anger. The patience comes from genuine long-term orientation. The clean endings come from the same place: when a Loxod decides something is no longer worth the resonance it creates, that decision does not reverse.
 
+**To the Naghii:** The Naghii respect Loxod archives, but do not always understand their nature. For a Naghii, the archive preserves a chain of interpretation. For a Loxod, the archive also discharges a pressure that would otherwise remain inside someone. Both peoples fear transmitting badly. But the Naghii fear incorrect translation above all; the Loxod fear formless reception.
+
+**To the Sauri:** The Sauri share with the Loxod the idea that certain forces must be contained by structure, body, and space. However, the Loxod usually distrust the Sauri's willingness to preserve bodies, sovereigns, or charged chambers for too long. For a Sauri, containing can be victory. For a Loxod, containing without discharge can simply be a slow form of contamination.
+
+**To the Zarnag:** The Zarnag work with what is left after death; the Loxod receive what death leaves in the air. This can produce deep cooperation in disaster sites. The Zarnag knows what must be closed in earth, flesh, water, and Remnant. The Loxod knows what continues to resonate in those who enter. It can also produce tension: the Zarnag distrust any people who listen too closely to the dead without getting their hands dirty, and the Loxod fear that the Zarnag habit of resisting horror normalizes burdens that should be processed.
+
+**To the Drak'kai:** The Drak'kai attract Loxod caution because of their collections. An object carried for decades might have accumulated impressions its owner does not fully perceive. The Drak'kai value the finding, the route, and the permanence. The Loxod ask what is resonating inside the object and what it will do when someone receives it unprepared.
+
+**To the Rokhart:** The Rokhart produce a complex intellectual relationship. The Concord observes, records, and avoids intervening. The Loxod record because not recording can destroy the receiver. Both value method, but the emotional origin of the archive is different. A Rokhart might consider a Loxod too close to the data. A Loxod might reply that some data only exists because someone was willing to receive it in their body.
+
+**To the Formix:** The Formix pose a difficult question about agency to the Loxod. The residual obedience chemistry, the Queen's Signal, and the bodily marks of function reach the Loxod body as intense information. Free Formix can feel invaded by a species that perceives too much of what they are trying to separate from themselves. The most careful Loxod communities treat Formix with strict protocols of perceptual consent.
+
+**To the Panin:** The Panin are almost the opposite of the Loxod in their experience of time. Where the Loxod carry impressions for decades, the Panin live in the present signal. That difference can produce frustration, but also relief. A Panin can enter a charged situation and act before being trapped by the historical weight. A Loxod can prevent that action from ignoring what the place is still saying.
+
+**To the Myo:** The Myo are listened to with attention and fear. Their oracles can name patterns the Loxod have felt for years without being able to convert into safe language. But the Loxod distrust any transmission that arrives without the proper discharge process. An oracular truth might be correct. It can also be unbearable for whoever receives it without structure.
+
+**To the Ceratox:** The Ceratox share the experience of living with a body that constantly processes the environment. The difference lies in the type of signal and its social management. The Ceratox calibrate. The Loxod encode and discharge. Both can understand the cost of not being able to completely close off perception.
+
+**To the Arakhel:** The Arakhel inhabit crossings where memory, passage, offering, and transit accumulate without becoming an archive in the Loxod sense. For a Loxod, an Arakhel node can resonate with too many layers at once: who crossed, who promised, who returned, who couldn't return. The Arakhel usually remind them that not everything a place guards must be discharged into a body. The Loxod usually reply that not everything a place guards knows when to stop speaking.
+
+**To the Bufoni:** The Bufoni work with domains that recognize, respond, and remember territorially. To the Loxod, that can seem like a form of living archive distributed in soil, water, offering, and custom. To the Bufoni, the Loxod gaze can be dangerous if it tries to receive too much from a domain without belonging to its protocol. Both understand that a place can carry memory. They disagree on who has the right to receive it.
+
+**To the Ursari:** The Ursari understand the body transformed by prolonged craft. A forge, like a Loxod archive, can be a place where matter, memory, and work leave a mark. The Loxod respect the Ursari who know when a work weighs too heavily on the artisan. They distrust those who call mastery what might already be distortion. The Ursari, for their part, might consider that the Loxod encode too much of what must sometimes be resolved by striking, melting, or transforming.
+
+**To the Chelicer:** The Chelicer produce a clear ethical tension. For a Chelicer, certain truths are revealed under trial, risk, and procedure. For a Loxod, a truth revealed carelessly can displace the receiver who receives it. The Chelicer ask if someone is willing to endure the verdict. The Loxod ask if that body will still be theirs afterward.
+
+**To the Luphran:** The Luphran preserve memory in crew, route, jarl, song, and living ship. That interests the Loxod because not all Luphran memory is written or isolated in an archive; it lives in coordination, loyalty, and shared repetition. A Loxod can feel the resonance of a crew before understanding its history. A Luphran might distrust someone who receives too much from the ship or the dead without having sworn loyalty aboard.
+
+For many species, the Loxod are memory, patience, and judgment. For the Loxod, that reputation is incomplete.
+Memory is not a virtue if it is not processed. Patience is not kindness if it only delays a necessary decision. And judgment should not belong to whoever received more than they could carry.
+
 ---
 
 ## 8. Material Expression and Language

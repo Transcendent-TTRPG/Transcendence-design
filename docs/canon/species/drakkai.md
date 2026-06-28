@@ -132,6 +132,34 @@ What external pressures they face:
 
 They are not widely welcomed anywhere. They are widely useful when specific things are needed. This gap — between the utility others want to extract and the conditions under which Drak'kai are willing to provide it — defines most of their external relationships.
 
+**To the Naghii:** The Naghii respect the antiquity of Drak'kai knowledge, but distrust their informality. For a Naghii, an object must be situated within archive, translation, sequence, and authorization. For a Drak'kai, the object itself may have survived too many mistaken authorizations to wait for permission. Both understand the danger of knowing. Neither entirely trusts how the other administers it.
+
+**To the Sauri:** The Sauri relate to the Drak'kai from material suspicion. An object carried for generations can be a vessel, contamination, relic, or crack. The Drak'kai see in the Sauri a dangerous willingness to preserve bodies, lineages, and chambers beyond what is prudent. The Sauri see in the Drak'kai hoarders who carry things without subjecting them to a sufficiently strong ritual order. Both know some things must be contained. They disagree on who has the right to decide how.
+
+**To the Zarnag:** The Zarnag produce a specific discomfort in the Drak'kai. Where a Drak'kai might want to keep a Remnant for its historical value, a Zarnag might recognize that Remnant is still active and must be satiated, burned, or buried. In ancient death sites, this tension can become immediate. The Drak'kai asks what will be lost if it is destroyed. The Zarnag asks who will pay the price if it is kept.
+
+**To the Panin:** The Panin fascinate and despair the Drak'kai. A Panin can find relationships between objects, routes, or signals that the Drak'kai hadn't noticed, but they can also move pieces, touch without context, or lose interest before finishing explaining what they saw. Some Drak'kai avoid traveling with Panin entirely. Others seek them out for specific problems and then spend years trying to reconstruct the logic of an observation made in three sentences and a gesture.
+
+**To the Rokhart:** The Rokhart are natural allies and inevitable rivals. They document, compare, classify, and preserve patterns, but they do so from institutions and public methods that the Drak'kai usually consider vulnerable. A Rokhart might accuse a Drak'kai of hiding necessary data. A Drak'kai might accuse a Rokhart of publishing paths to things that shouldn't be found by just anyone.
+
+**To the Myo:** The Myo unsettle many Drak'kai because they reach conclusions without carrying the full route of evidence. An oracular vision might coincide with decades of accumulation or contradict it in a way impossible to dismiss. Some Drak'kai consider the Myo a valuable source of non-linear patterns. Others treat them as dangerous shortcuts: knowledge without enough weight to make the receiver responsible.
+
+**To the Ceratox:** The Ceratox are usually useful interlocutors in environments where the environmental signal matters. Their continuous reading of the environment can confirm gradients that the Drak'kai feel en route. However, the Drak'kai tend to distinguish between recording a signal and understanding its history. For them, perception without temporal accumulation can be precise and still incomplete.
+
+**To the Arakhel:** The Arakhel interest the Drak'kai for reasons the Arakhel don't always find comfortable. An ancient node can behave as a route, archive, border, and restless piece all at once. Arakhel families know things about crossings that no object records. The Drak'kai would like to compare those readings across generations; the Arakhel usually remind them that the crossing does not exist to become anyone's burden.
+
+**To the Bufoni:** The Bufoni offer another kind of problem. An active domain cannot be cleanly separated from its soil, lineage, protocol, and kunitsukami. To a Drak'kai, that makes it hard to transport, but not impossible to compare. They can recognize patterns among fallen domains, ancient offerings, and territorial responses that the Bufoni themselves would consider dangerously decontextualized. The Bufoni asks if the domain recognizes. The Drak'kai asks what changed after a hundred years of recognition.
+
+**To the Loxod:** The Loxod are perhaps the interlocutors who most question Drak'kai accumulation. Where the Drak'kai carries pieces, notes, and routes, the Loxod receives chemical layers, vibrations, and environmental memory without needing to possess the object. To a Drak'kai, that reception can seem incomplete without a record and too exposed without a filter. To a Loxod, a Drak'kai collection can seem like a fragmented memory that someone insists on carrying on their back because they don't know how to release it to the place that produced it.
+
+**To the Ursari:** The Ursari understand the mark left by a prolonged craft. A forge and a collection are not the same, but both teach that working for years with charged materials changes the body and judgment. The Drak'kai respect the Ursari who recognize when a work must be abandoned. They distrust those who confuse endurance with wisdom. The Ursari, for their part, might see in the Drak'kai a culture that accumulates too much without transforming enough.
+
+**To the Chelicer:** The Chelicer are difficult for a precise reason: they trust procedure too much as a path to a truth that reveals itself. For a Drak'kai, a truth might have been correctly revealed three generations ago and be responding differently now. A Chelicer might consider that dangerous relativism. A Drak'kai considers it a case history. Both respect the trial, but disagree on how long it remains valid after it occurs.
+
+**To the Formix:** The Formix make the Drak'kai uncomfortable because they force the question of what is accumulation and what is inherited programming. A free Formix might look at a Drak'kai collection and ask how much of that burden was really chosen and how much became identity because the carrier doesn't know how to exist without it. The Drak'kai might answer with irritation. Or they might spend years unable to forget the question.
+
+**To the Luphran:** The Luphran experience the route in the opposite way. Where the Drak'kai walks alone to accumulate without noise, the Luphran navigates with a crew, oral memory, jarl, and shared mandate. Both understand that a route changes whoever follows it for years. But the Luphran measures the path by loyalty and group survival; the Drak'kai, by what the route allowed them to carry, compare, or discover. They can respect each other greatly and still not stand each other's rhythm.
+
 ---
 
 ## 8. Material Expression and Language

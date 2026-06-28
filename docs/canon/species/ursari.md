@@ -71,15 +71,17 @@ Honor is not an award. It is a public verified record. Someone had to see it. So
 
 ### The druida class
 
-Druidas are at the top of the hierarchy. Not always because they have the best forge technique — though many do — but because they have worked the highest-gradient sites the longest, and what they bring back from that work carries weight the community recognizes as distinct.
+Druidas hold a unique and revered place in the hierarchy. The Ursari cycle of creation begins with an object of deep personal or communal importance, but it is the druida who must take it into the wild. They travel to the most ferocious, untamed natural sites—geographies highly saturated with Tauma, which they simply consider pure nature. 
 
-The word *druida* among the Ursari does not carry its usual meaning. It is not who speaks for trees or guards an abstract cycle. It is who listens to matter when matter stops being entirely silent. Who works close enough to the threshold that fire, metal, and site begin to respond in ways an ordinary artisan cannot produce.
+They spend long periods in isolated rituals, seeking a "communion" with the environment. Because Tauma anchors to the collective belief of a species, exposing these deeply significant objects to high-gradient sites causes the Tauma to anchor to them, granting them strange properties based on what the Ursari collectively believe they should do. 
 
-This makes them necessary. It also makes them dangerous.
+When the druida returns with the altered object, the master smiths finally intervene, working the material into its final, functional form (weapons, tools, communal forges) and applying the necessary adornments or structural changes.
 
-The distinction the culture has no comfortable language for: the difference between the body that mastered the site's conditions and the body the site's conditions could cross most easily.
+This makes the druidas necessary. It also makes them dangerous.
 
-A druida can be a master. A druida can also be a symptom. Both look the same. The system sustains this ambiguity because the results are real.
+The deep communion they seek alters their perception, bringing them dangerously close to the Limbo dimension. The neurological and spiritual damage caused by this exposure is culturally framed as a sacred connection. The culture has no comfortable language for the difference between the druida who successfully communed with nature, and the one whose mind was simply broken by gradient exposure. 
+
+A druida returns with a relic of incredible power. They also return as a symptom. The system sustains this ambiguity because the results are real.
 
 ### Champion combat
 
@@ -97,25 +99,15 @@ Weapons are objects with an intended lifecycle: forged, used, returned to the fo
 
 ## 4. Theology and Cosmology
 
-The forge fire is the point of contact between work and what exists behind work.
+The Ursari believe that an object's true power is not born in the forge, but in the wild. The forge is where the work ends, not where it begins. 
 
-This is not how the Ursari usually explain it. Their language is concrete, technical, practice-bound. They speak of temperature, response, color, temper, grain, tension, metal memory, furnace air, correct water, bad stone, dirty fire, long fire, fire that obeys, fire that asks.
+When an ordinary object accrues enough collective belief or personal weight, it is taken by a druida into the most ferocious natural environments. They do not explicitly speak of Tauma or Limbo. They believe they are communicating with the raw will of nature. 
 
-But what they describe as *calidad del sitio* — the responsiveness of metal in specific places, the difference between ordinary forge and one where work speaks — corresponds from outside to what other cultures identify as active Tauma presence in geography. The Ursari do not begin with the Tauma. They begin with the piece.
+By taking objects heavy with collective meaning into Tauma-saturated sites, the primordial energy anchors to the objects, changing reality to match the species' belief. This is the mechanism by which they unwittingly create empowered objects, though they simply consider it nature responding to the object's importance. Once the druida returns, the smith finishes the piece, shaping the empowered material into its final form.
 
-**Metal is not inert.** It is past. Every piece of armor, every weapon, every tool holds the form of the force applied to it. An experienced Ursari can read that history: how many times it was tempered, what temperature it sustained, whether it was worked under pressure, whether the hand that finished it knew what it was doing, whether subsequent repair respected or violated the original structure.
+The tragedy of their theology is their interpretation of the druidas' deterioration. The exposure to high-gradient Tauma sites causes severe neurological and spiritual damage. The Ursari interpret this deterioration—fever, auditory hallucinations, erratic behavior—as the sacred cost of communion. 
 
-The most sensitive artisans say the highest-quality pieces still speak. That if you know how to listen, a piece remembers its own process.
-
-The druida listens deepest. The druida has also spent the most hours in the highest-gradient forge. These two statements are not separated in lived experience, because no accepted instrument or test distinguishes between whoever reached authentic understanding of the process and whoever has the most permeable nervous system for Limbo gradient crossing.
-
-**Ursari theology is honest about what it can affirm.** It cannot affirm these are the same person.
-
-The objection exists. The hammer keeps striking.
-
-Their cosmology does not organize around explicit faith but around accumulated practice. If something responds in the forge, it exists. If a technique fails everywhere else but works here, the site matters. If a master returns changed after years working a deep chamber, the change must be registered, not denied. If a piece kills three different bearers in the same way, the piece has unresolved history.
-
-They do not usually ask what the fire wants. They ask what it permits. And what it charges for permission.
+They cannot distinguish between a successful spiritual connection and a broken nervous system. The objection exists. The rituals continue.
 
 ---
 
@@ -185,23 +177,35 @@ Ursari products are valued almost everywhere. Weapons, armor, tools, bridge fitt
 
 This utility does not imply understanding. Most species want the result. Few want to understand the cost of the site, the body, and the transmission that produced it.
 
-**Ceratox:** The most directly useful and most silently tense relationship. The horn responds to Tauma-saturated materials before any Ursari instrument can detect them — invaluable for evaluating metal from unknown sites. The tension: the horn signal does not only indicate danger. It also indicates the best available forge materials. Working alongside a Ceratox at an active site means the Ceratox knows exactly what the Ursari are doing with those materials.
+**To the Ceratox:** The most directly useful and most silently tense relationship. The horn responds to Tauma-saturated materials before any Ursari instrument can detect them — invaluable for evaluating metal from unknown sites. The tension: the horn signal does not only indicate danger. It also indicates the best available forge materials. Working alongside a Ceratox at an active site means the Ceratox knows exactly what dangerous gradients the Ursari are exposing themselves to.
 
-**Drak'kai:** Weapons of highest Ursari quality circulate outward — used, passed between hands, modified, lost, recovered, appearing decades later in collections nobody consulted with the originating forge. Drak'kai who accumulate high-value objects understand that a piece of Ursari origin holds something replicas do not. Some masters believe work should return: the metal of an active forge, at the end of its use, deserves to be returned to fire. What Drak'kai do with their collections — preserving indefinitely, not returning — violates no explicit agreement. That does not prevent it from feeling like a debt.
+**To the Drak'kai:** Weapons of highest Ursari quality circulate outward, pass between hands, are lost, recovered, and appear decades later in collections nobody consulted with the originating forge. Drak'kai who accumulate high-value objects understand that a piece of Ursari origin holds something replicas do not. Some masters believe work should return: the metal of an active forge, at the end of its use, deserves to be returned to fire. What Drak'kai do with their collections — preserving indefinitely, not returning — violates no explicit agreement. That does not prevent it from feeling like an unpayable debt.
 
-**Talpi:** Treat forge sites as underdeveloped extraction zones. Both species work umbral materials from high-Tauma ground — one as sacred practice, one as industrial throughput. No formal conflict. Competition for resources both need, with completely different valuation criteria.
+**To the Rokhart:** They observe druidas with the systematic interest they apply to any phenomenon generating Tauma pattern data. The process by which a druida survives years of deep-site exposure and remains functional is unusual even for them. The Rokhart do not hide this interest. The Ursari do not appreciate it: no Ursari wants to be treated as a case file while they are holding the hammer and being consumed by the site.
 
-**Rokhart:** Observe druidas with the systematic interest they apply to any phenomenon generating Tauma pattern data. The process of prolonged-exposure affliction with functional output rather than immediate destruction is unusual. A druida who has worked an active site for decades while maintaining coherence is documentable. The Rokhart do not hide this interest. The Ursari do not appreciate it, but don't entirely refuse it: if the Rokhart can establish what distinguishes a surviving druida from one who doesn't, that knowledge has value. The problem: no Ursari wants to be treated as a case file while holding the hammer.
+**To the Talpi:** They use forge sites as extraction zones. The mineral that Ursari value for its behavior during work, the Talpi value for composition and density. There is competition for resources that both cultures need, with completely different valuation criteria. For a Talpi, the correct mineral must leave the earth. For an Ursari, not all mineral should leave the site that makes it capable of responding.
 
-**Vesper:** Biological interest in advanced-affliction druidas reads as profanation rather than research. The Vesper's frame (answers are in the biology) applied to the most honored members of the community is experienced as disrespect for what those members endured and became.
+**To the Sauri:** The Sauri respect Ursari durability and commission pieces for chambers, gates, channels, and containment structures. The relationship can be solid when both peoples agree form must endure. But Ursari distrust any culture that preserves too much without returning anything to the fire. A sealed chamber for centuries may look like a masterwork or like a refusal to finish the job.
 
-**Sauri:** Respect Ursari durability and commission pieces for chambers, gates, channels, and containment structures. The relationship can be solid when both peoples agree form must endure. But Ursari distrust any culture that preserves too much without returning anything to the fire. A sealed chamber for centuries may look like masterwork or like refusal to finish the job.
+**To the Naghii:** They value Ursari pieces found in ruins, especially when forge marks allow tracing ancient routes or lost workshops. Ursari often become impatient with communities that want to interpret too much before touching the material. Still, both understand something common: a tradition can survive in fragments, and a misreading can cost generations.
 
-**Naghii:** Value Ursari pieces found in ruins, especially when forge marks allow tracing ancient routes or lost workshops. Ursari often become impatient with communities that want to interpret too much before touching the material. Still, both understand something common: a tradition can survive in fragments, and a misreading can cost generations.
+**To the Zarnag:** They buy and repair hard tools: hooks, shovels, blades, chains, masks, quarantine closures. Ursari respect those who do necessary work without seeking beauty. Zarnag respect those who manufacture things that don't fail when the site is already failing. The relationship tends to be direct, rough, and functional.
 
-**Zarnag:** Buy and repair hard tools — hooks, shovels, blades, chains, masks, clamps, cremation pieces, quarantine closures. Ursari respect those who do necessary work without seeking beauty. Zarnag respect those who manufacture things that don't fail when the site is already failing. The relationship tends to be direct, rough, and functional.
+**To the Loxod:** A Loxod can receive the chemical and vibratory history of an ancient forge in ways an Ursari would find disturbing. Together they can reconstruct more than either could alone. The difficulty is that the Loxod ask what burden the work left on the artisan, while the Ursari usually ask if the work was done well.
 
-**Luphran:** Two meritocracies that independently select for Tauma-permeable individuals as their most honored — the Ursari through craft proximity, the Luphran through battle-fury exposure. Neither species can name what they share. If they ever noticed, they would not have the vocabulary for it. The parallel is more legible from outside both cultures than from inside either.
+**To the Formix:** They produce a particular discomfort. A body made for function reminds the Ursari of the least comfortable part of their own culture: the possibility that the craft devours the person carrying it. A Formix Warrior who doesn't want to fight and an Ursari apprentice who doesn't want to forge can understand each other without saying much. They can also be used by their communities in similar ways, under very different words.
+
+**To the Panin:** They are difficult in the forge. They touch, test, ask, move too close to hot pieces, and can see a solution in a mechanism before understanding why no one should move it yet. Ursari usually expel them from delicate work zones. Later, sometimes, they discover the Panin noticed a flaw all the masters had normalized. For an Ursari, Panin talent seems wasted. For a Panin, an entire life around one technique seems suffocating.
+
+**To the Chelicer:** They respect the public testimony of Ursari honor, but are uncomfortable that artisanal truth depends so much on the body and the human witness. Ursari find strange a society where procedure can weigh more than visible work. Both peoples understand the value of being present when something is verified. They disagree on who, or what, has the right to say the verification is finished.
+
+**To the Arakhel:** Their nodes and crossings keep transit, debt, and relationship; Ursari lines keep technique, body, and work. The Arakhel tend to ask what bonds sustain the crossing, while the Ursari ask who taught the hand that made the piece. They can collaborate well when a forge depends on an ancient crossing, but can also deeply irritate each other: to an Ursari, too much Arakhel truth seems dispersed in relationships; to an Arakhel, too much Ursari truth seems trapped in the hammer.
+
+**To the Bufoni:** A Bufoni domain recognizes, demands protocol, and can punish the lack of correct relationship. A deep Ursari forge also responds, although Ursari prefer to speak of fire, matter, and work rather than will. The Bufoni can see druida artisans entering too deep into a domain without admitting they are negotiating with something. Both know the place matters. They disagree on whether the place should be treated as an interlocutor, a condition, or a debt.
+
+**To the Luphran:** Both meritocracies independently select for Tauma-permeable individuals as their most honored — the Ursari through craft proximity, the Luphran through battle-fury exposure. Both produce individuals who survive because they endured closer to something that others could not touch. This can create admiration. It can also create competition over which form of exposure deserves authority.
+
+**To the Myo:** They make Ursari uncomfortable because sometimes they name things before the workshop wants to name them. A Myo omen about a druida or a line can sound like unbearable meddling. However, some communities have learned to listen when a Myo warns that a communion called a "gift" has already started to look too much like an affliction.
 
 ---
 

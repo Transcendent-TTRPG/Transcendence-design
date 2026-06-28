@@ -285,12 +285,35 @@ The outside pressures most likely to damage Naghii continuity are:
 
 ### How they are read by others
 
-To outsiders, the Naghii often look like a species that would rather classify a
-disaster than prevent it. Their patience can read as cowardice, their ritual
-gates as arrogance, and their caution as a form of cruelty that lets danger
-spread while permission is debated.
+To outsiders, the Naghii often look like a species that would rather classify a disaster than prevent it. Their patience can read as cowardice, their ritual gates as arrogance, and their caution as a form of cruelty that lets danger spread while permission is debated.
 
 Sometimes that judgment is unfair. Sometimes it is exactly what happened.
+
+**To the Sauri:** With the Sauri, the Naghii share a basic understanding of sequence, access, and contained danger. But where the Sauri seek to channel the Current through body, chamber, and sovereignty, the Naghii prefer to observe, translate, and restrict. To Naghii eyes, the Sauri get too close to what should remain interpreted from a distance. To Sauri eyes, the Naghii watch for centuries and still hesitate when the time comes to contain something.
+
+**To the Panin:** The Panin are an almost metaphysical irritant. Their presence introduces noise, impulse, variation, and movement where the Naghii try to sustain long series of observation. A Panin can trigger a sequence of events without any intention, simply by touching, tasting, changing focus, or crossing a place that for the Naghii should have remained stable during a night of reading. The Naghii rarely consider the Panin enemies. That doesn't make them less dangerous.
+
+**To the Rokhart:** The Rokhart provoke a mix of respect and distrust. Their documentary discipline is familiar, even admirable, but the Naghii distinguish between recording and understanding. For a Rokhart, a contradiction can be data. For a Naghii, a contradiction in the right archive can be an open door in the wrong direction. They cooperate well as long as the goal is to preserve information, and poorly as soon as someone asks who has the right to interpret it.
+
+**To the Myo:** The Myo are treated with special caution. Their relationship with patterns, omens, and altered states touches territories the Naghii recognize but do not control in the same way. A Myo oracle might say in a single sentence what a Naghii archive would take years to permit formulating. This fascinates some priests and deeply offends others. The question that divides Naghii communities is whether the Myo are seeing via another route or entering unprotected through doors the Naghii learned to fear.
+
+**To the Drak'kai:** The Drak'kai both interest and worry them. Their relationship with relics often leads them toward objects the Naghii would prefer to keep cataloged, sealed, or at least observed from a safe distance. A Drak'kai might value a piece for its presence, its memory, or its power; a Naghii wants to know where it was found, under what sky, associated with what inscription, and how many times it changed hands before arriving there.
+
+**To the Ceratox:** The Ceratox are often difficult but useful interlocutors. Their continuous environmental reading can confirm patterns the Naghii record more slowly. However, the Naghii tend to distrust any perception that does not pass through archive, sequence, and historical comparison. A datum felt in the body can be valuable, or it can be interpretive contamination.
+
+**To the Arakhel:** The Arakhel unsettle the Naghii because they inhabit something the Naghii would prefer to map from the outside. An ancient Arakhel node can accumulate offerings, transit, and memory in ways that remind them too much of a living archive, but without tablets, formal sequence, or central interpretive authority. Where the Arakhel read the 'in-between' from the thread, the Naghii read the ruin from the archive; both know a place can answer, but they disagree on whether that answer should be inhabited or restricted.
+
+**To the Loxod:** The Loxod produce a different discomfort. Where the Naghii need text, sequence, and comparison, the Loxod might receive chemical layers, vibrations, and residues of death or presence before having built an interpretation. To some Naghii, this is a precious tool. To others, an exposure without protocol. A Loxod in an ancient ruin might speak too soon about what an archive would have taken decades to permit saying.
+
+**To the Formix:** The Formix force the Naghii to look at a different kind of archive: one written in function, obedience, and designed bodies. A free Formix trying to reconstruct desire after the hive can seem, to certain priests, like a living translation of broken signs. The Formix, for their part, might find a civilization that calls a chain of instructions sacred—instructions perhaps no one fully understands—quite strange.
+
+**To the Chelicer:** The Chelicer are almost theological opposites. For the Chelicer, truth pre-exists and the ordeal finds it under correct conditions. For the Naghii, truth perhaps existed, perhaps was mistranslated, perhaps changed through the act of reading it, and still must be guarded. Both control access, procedure, and testimony. But where the Chelicer seeks a verdict, the Naghii fear that any verdict on Khataar might arrive before the inscription is understood.
+
+**To the Ursari:** The Ursari understand the relationship between site, practice, and exposure in a way the Naghii respect more than they admit. A gradient forge and a sky-threshold are not the same, but both teach that the place participates in the craft and that working too close changes the worker. The Ursari asks what the site allows to be made; the Naghii asks what it means that the site answers. Both questions can arrive too late.
+
+**To the Luphran:** The Luphran unsettle the Naghii through fury. A warrior marked by repeated crossings can look like a reading of the Abzu made flesh without an archive to contain it. The Naghii would want to record the sequence, compare marks, and observe the sky under which the battle occurred. The Luphran usually want to know if the question is an insult, a threat, or weakness.
+
+**To the Bufoni:** The Bufoni offer an uncomfortable mirror. Their territorial protocol sustains relations with presences that respond cumulatively. The Naghii recognize the discipline of protocol, but distrust a cosmology so localized, so dependent on a living domain and a territory that can recognize or reject lineages. To a Bufoni, the Naghii might look like someone who looks too far away and forgets that the ground beneath their feet also answers.
 
 ---
 

@@ -122,6 +122,34 @@ The thing most external observers notice about free Formix communities is the as
 
 Species with strong theological frameworks find the Formix disorienting in a different way: not hostile to religion, but genuinely unable to receive it the way it was designed to be received. A Formix asking questions about a faith tradition is not challenging it — they are trying to figure out if it has anything to offer them. Most traditions were not built to answer the questions a Formix is actually asking.
 
+**To the Naghii:** Naghii view Formix with caution and fascination. A conscious species that existed for generations under interrupted agency raises questions their archives don't resolve. Naghii priests want to study the Queen's Signal; Formix respond poorly to being "studied" without permission.
+
+**To the Sauri:** Sauri understand the weight of structure and function, but where Sauri seek to contain the Current in bodies and temples, Formix have suffered what happens when the individual body becomes too useful to a totality. The relationship depends on how much ritual authority the Sauri attempt to impose.
+
+**To the Zarnag:** Zarnag treat newly freed Formix with a roughness that is sometimes useful. They recognize the scent of those who have emerged from something that still touches them. In quarantine or chemical risk work, they collaborate well. Tension arises if a Zarnag interprets residual obedience as danger and the Formix experiences it as humiliation.
+
+**To the Drak'kai:** Drak'kai might collect hive objects, chemical maps, or liberation tales. Formix do not always distinguish between respectful accumulation and appropriation. A Drak'kai preserving a fallen hive piece thinks they preserve knowledge; a Formix sees someone carrying pieces of a prison.
+
+**To the Rokhart:** Concordia finds Formix an exceptional case: communities forming without inherited tradition, biology designed for collective obedience, political language born in real time. Older Formix know Rokhart help is usually real, but observation rarely arrives alone.
+
+**To the Panin:** Panin baffle many Formix. Their immediate desire and natural abandonment of structures seem like pure freedom or unbearable irresponsibility. Young Formix admire them; old Formix watch with sadness, knowing that following a signal without sustaining a decision is just another lack of freedom.
+
+**To the Myo:** Myo are perhaps the most unsettling. Their work with internal patterns and omens touches questions Formix are just learning to ask. Some Myo suggest the Queen's Signal leaves residual forms in perception, leading to both cooperation and immediate expulsions.
+
+**To the Ceratox:** Ceratox understand environmental noise better than expected. A Ceratox feels a saturated territory; a Formix smells it. Collaboration is precise but difficult: Ceratox want to calibrate the environment, while Formix try to know what part of the signal comes from the world and what part comes from a body still open to obey.
+
+**To the Arakhel:** Arakhel nodes are networks without a Queen. To some Formix, this proves a network can sustain belonging without erasing decision. To others, the Arakhel thread looks too much like a structure that always knows where every body is.
+
+**To the Bufoni:** Bufoni offer a dangerous comparison between radius and domain. A domain recognizes and shapes; a radius orders and directs. Bufoni insist the difference is consent and reciprocity. Formix accept the explanation but wonder how a body knows it is being recognized and not directed.
+
+**To the Loxod:** Loxod perceive too much. Their chemical memory can read traces of fear or obedience in Formix spaces with invasive depth. Yet veterans seek them out to reconstruct what happened in a city that started acting too much like a hive.
+
+**To the Ursari:** Ursari understand the body as a craft. For Formix, that's dangerous. An Ursari speaks of mastery; a Formix hears assigned function with another name. Relationships are fertile when Ursari respect decision, but break fast if they confuse bodily skill with destiny.
+
+**To the Chelicer:** Chelicer pose an impossible conflict: responsibility. They seek clarity in act and verdict. For Formix, clarity fails where there was consciousness without agency. Can someone be judged who thought but did not choose? Formix distrust quick answers to these questions.
+
+**To the Luphran:** Luphran offer intense belonging that doesn't always look like a hive but can frighten by proximity. Crew, jarl, and tactical obedience feel dangerously comfortable to a newly freed Formix. The best Luphran understand that chosen loyalty is not imposed function; the worst don't notice when a Formix obeys too well.
+
 ---
 
 ## 8. Material Expression and Language

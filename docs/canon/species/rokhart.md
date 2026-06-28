@@ -129,6 +129,30 @@ Their reputation varies by species and region:
 
 **To the Myo:** the Rokhart have observed Myo territories and found them unusually resistant to pattern analysis. The behavior of Tauma in those zones does not follow the correlations observed elsewhere. They have not identified why. This is recorded as an anomaly, not a priority. If they understood what the Myo were actually doing — that their oracles are intentionally directing collective consciousness to shape local reality — it would be the most significant confirmation of their central hypothesis they have ever encountered. They do not know this yet.
 
+**To the Naghii:** the relationship oscillates between admiration and frustration. Both preserve, compare, and distrust quick conclusions. But Naghii organize knowledge around sacred archives and restricted access; Rokhart organize it around replicable method and distributed observation. To a Naghii, Concordia separates knowledge from reverence; to a Rokhart, Naghii protect interpretations out of fear of not having another.
+
+**To the Sauri:** Sauri are valuable for the model and dangerous as observation neighbors. A Sauri sovereign or sealed chamber is phenomenon, symbol, technology, and government all at once. Sauri do not always tolerate those who take notes on vessels they consider sacred or secret.
+
+**To the Zarnag:** Rokhart value Zarnag memory of death sites and contamination, but often underestimate the cost of Zarnag work. An observation necessary for a Rokhart might require a Zarnag to enter toxic air first. Zarnag quickly detect when a Rokhart wants to preserve a site that should be closed.
+
+**To the Drak'kai:** natural allies and inevitable rivals. Both accumulate knowledge on long scales but oppositely: Drak'kai carry objects and personal experience; Rokhart distribute protocols and archives. Drak'kai accuse Concordia of turning living findings into dead files; Rokhart accuse Drak'kai of keeping truths tied to private collections.
+
+**To the Panin:** noise and revelation. Their presence alters patterns and interrupts sequences. But precisely because they don't respect structure, they can reveal hidden assumptions in the method. Rokhart posts tolerate Panin better in theory than in practice.
+
+**To the Ceratox:** Ceratox pursue through biology what Rokhart pursue through historical patterns (how environment, manifestation, and perception modify each other). There is local collaboration, technical respect, and mutual distrust about who is looking at the wrong part of the phenomenon.
+
+**To the Arakhel:** Arakhel nodes are involuntary observatories of transit. Concordia would love to measure them from the outside, but Arakhel families inhabit the crossing. To Arakhel, the Rokhart gaze is a way of failing to understand that the 'in-between' cannot be conserved as data without changing its nature.
+
+**To the Bufoni:** active Bufoni domains confirm many Rokhart suspicions about conductors (soil, lineage, rite, offering, accumulated response). Bufoni distrust anyone who compares domains as if they were equivalent cases; to them, each domain responds from a concrete relationship.
+
+**To the Ursari:** Rokhart respect Ursari material discipline and distrust their reliance on personal mastery. Ursari see in Concordia a culture that records the risk of exposure but doesn't always know when to stop looking.
+
+**To the Chelicer:** an almost intolerable challenge. Chelicer believe truth is revealed under correct procedure; Rokhart believe every procedure produces conditions of observation that become part of the result. Chelicer see Rokhart doubt as evasion; Rokhart see Chelicer certainty as institutionalized contamination.
+
+**To the Formix:** Concordia observes communities from distributed posts; free Formix know from the body what it means to live in a structure where signal precedes the individual. Rokhart study free Formix cautiously, aware their own network might be reflected in ways they'd prefer not to record.
+
+**To the Luphran:** Luphran preserve route memory and crew oral law in ways Concordia cannot reduce to reports without losing the essence. Rokhart value that memory but suspect its dependence on personal authority. Luphran distrust a species that remembers much but responds little when the crew demands action.
+
 ---
 
 ## 8. Material Expression and Language

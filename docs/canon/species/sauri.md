@@ -270,6 +270,32 @@ that enough discipline can survive anything.
 
 That certainty is one of the things most likely to destroy them.
 
+**To the Naghii:** The Naghii tend to understand the Sauri's emphasis on sequence, but distrust their willingness to turn bodies into theological instruments. The Sauri, in turn, find the Naghii's distance insufferable: watching, translating, restricting, and waiting for centuries without accepting that sometimes the Current is already inside the chamber and someone must hold it. The Naghii fear opening. The Sauri fear not having prepared the correct vessel when the time comes.
+
+**To the Panin:** The Panin alter the environments the Sauri try to channel. They touch, change, test, skip lines, and lose interest just when procedure demands continuity. A Panin might discover a Crack the Sauri had normalized, but they might also turn a manageable Leak into a Spill before knowing what they did. The Sauri don't hate them. They treat them like a spark near resin.
+
+**To the Rokhart:** The Rokhart might admire Sauri engineering and despair at their funerary secrets. They want to document chambers, sequences, preserved bodies, scale changes, and sovereignty trials. The Sauri allow observation only up to the point where it does not compromise containment. To a Rokhart, a sealed chamber without a record is a loss of information. To a Sauri, it might be the only thing keeping everyone alive.
+
+**To the Myo:** The Myo usually treat Sauri settlements with caution. Where there are sealed chambers, preserved bodies, and signs watched for generations, there is always the possibility that something has learned to wait. Some Myo feel patterns in Sauri temples that do not match the ritual explanation. The Sauri listen to these warnings only when they were already afraid of something similar.
+
+**To the Drak'kai:** The Drak'kai are partners and risks. They can recognize Charge in objects the Sauri have not yet classified, and their relationship with relics inevitably draws them toward pieces the Sauri would prefer to keep inside chambers. A Drak'kai might say an object wants to be carried. A Sauri might reply that this is precisely why it must not be moved.
+
+**To the Ceratox:** The Ceratox are useful near cracked vessels. Their horns react to environmental Pressure in ways that can confirm scale readings or warn before a chamber leaks. But an alert Ceratox inside a Sauri temple can destabilize rituals, guards, and decisions. The Sauri value their data. They don't always value their presence.
+
+**To the Ursari:** The Ursari understand something the Sauri rarely explain well to others: site, matter, heat, and craft can change the one working too closely. A gradient forge and a Sauri chamber are not the same, but both produce respect for form, sequence, and the body that endures. The Sauri see in the Ursari a culture capable of sustaining Pressure without calling it sovereignty. The Ursari see in the Sauri a culture that perhaps preserves too much and closes too late.
+
+**To the Arakhel:** The Arakhel unsettle the Sauri because their nodes do not contain the relationship: they extend it. To a Sauri, a significant place must receive form, chamber, channel, seal. To an Arakhel, the crossing speaks through thread, transit, and accumulation. An old node can seem to the Sauri like an open vessel no one wants to admit as such. A Sauri temple can seem to the Arakhel like an attempt to force a living place to breathe through a single channel.
+
+**To the Bufoni:** The Bufoni are difficult but recognizable interlocutors. Both understand that a territory can answer and that a body changes through prolonged relationship with a place. But the Bufoni trust domain, protocol, and kunitsukami; the Sauri trust vessel, channel, and trial. To a Bufoni, the territory recognizes. To a Sauri, the territory presses. The difference can sustain an alliance or produce deep distrust.
+
+**To the Zarnag:** The Zarnag are perhaps the most uncomfortable. Where the Sauri preserve, the Zarnag ask if something should have been closed. A sovereign body preserved for generations can be an archive to the Sauri and a dangerous Remnant to the Zarnag. The Sauri see brutal loss of historical Charge in Zarnag closure. The Zarnag see in some Sauri chambers the exact kind of denial that allows the dead to keep working on the living.
+
+**To the Loxod:** The Loxod can receive layers of memory, pressure, and Charge in preserved bodies or ancient chambers before Sauri ritual allows speaking of them. Some preservers respect that sensitivity. Others consider it unsequenced exposure. A Loxod can touch the memory the Sauri wanted to keep, but not necessarily in the way the Sauri wanted to authorize.
+
+**To the Formix:** The Formix produce an uncomfortable reflection on function and body. To the Sauri, a body can be a vessel for duty, lineage, and Charge. To a free Formix, that kind of language can sound dangerously close to justifying that a person exists for a function. The Sauri don't usually understand the objection immediately. The Formix do.
+
+**To the Chelicer:** The Chelicer recognize the importance of trial, procedure, and public presence. But for a Chelicer, the ordeal reveals a verdict. For a Sauri, the trial does not reveal abstract truth: it demonstrates whether a form can sustain Pressure without breaking. Both can respect each other deeply and still distrust the other's foundation. The Chelicer asks what was revealed; the Sauri asks what remained contained.
+
 ---
 
 ## 8. System Connections
