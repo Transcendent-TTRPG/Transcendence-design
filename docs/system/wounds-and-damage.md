@@ -518,7 +518,7 @@ Las caídas no utilizan la tirada de ataque ni aplican el Bloqueo de armadura (e
 ```text
 Umbral de Caída = 5 + Tenacidad
 ```
-*(No se suma BC, BM ni CD, a menos que un equipo mágico o rasgo específico mencione absorción de caídas).*
+*(No se suma BC, BM ni CD, a menos que un equipo o rasgo específico mencione absorción de caídas).*
 
 El impacto se tira con dados d6 dependiendo de la distancia de la caída y la categoría de **Tamaño** de la criatura (basado en la masa y la tensión estructural bípeda):
 
@@ -533,7 +533,7 @@ El impacto se tira con dados d6 dependiendo de la distancia de la caída y la ca
 ### Zonas Afectadas y Control de Caída
 La severidad de la herida se calcula con la misma tabla de Relación Impacto / Bloqueo (reemplazando Bloqueo por Umbral de Caída). Sin embargo, la zona afectada depende de si la criatura logró controlar su descenso:
 
-- **Caída Controlada:** Si la criatura salta voluntariamente o supera una `T.E. de Acrobacias` o `Atletismo` (según defina el Narrador) al caer, aterriza de pie. La herida se aplica íntegramente a las **Piernas**.
+- **Caída Controlada:** Si la criatura salta voluntariamente o supera una `T.E. de Acrobacias` (según defina el Narrador) al caer, aterriza de pie. La herida se aplica íntegramente a las **Piernas**.
 - **Caída Descontrolada:** Si la criatura es empujada por sorpresa, lanzada por un enemigo, está inconsciente o falla su tirada para controlar el descenso, la herida se aplica directamente al **Torso**.
 
 ### Caídas Letales (Colapso Masivo)
