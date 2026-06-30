@@ -510,6 +510,37 @@ Los ataques de jugadores contra NPCs no usan esta tabla por defecto. El jugador 
 
 ---
 
+## Daño por Caída
+
+Las caídas no utilizan la tirada de ataque ni aplican el Bloqueo de armadura (el metal pesado no mitiga la desaceleración contra el suelo, e incluso puede agravarla). En su lugar, toda caída superior a 2 metros utiliza su propio cálculo de Impacto y un Umbral físico bruto.
+
+### Umbral y Cálculo de Impacto
+```text
+Umbral de Caída = 5 + Tenacidad
+```
+*(No se suma BC, BM ni CD, a menos que un equipo mágico o rasgo específico mencione absorción de caídas).*
+
+El impacto se tira con dados d6 dependiendo de la distancia de la caída y la categoría de **Tamaño** de la criatura (basado en la masa y la tensión estructural bípeda):
+
+| Tamaño | Impacto de Caída |
+| --- | --- |
+| Pequeño | `1d6` por cada `3 metros` completos |
+| Mediano | `1d6` por cada `2 metros` completos |
+| Grande | `1d6` por cada `1 metro` completo |
+
+*Ejemplo: Una criatura Mediana que cae 10 metros tira `5d6` de Impacto contra su Umbral de Caída. Una criatura Grande que cae 4 metros tira `4d6`.*
+
+### Zonas Afectadas y Control de Caída
+La severidad de la herida se calcula con la misma tabla de Relación Impacto / Bloqueo (reemplazando Bloqueo por Umbral de Caída). Sin embargo, la zona afectada depende de si la criatura logró controlar su descenso:
+
+- **Caída Controlada:** Si la criatura salta voluntariamente o supera una `T.E. de Acrobacias` o `Atletismo` (según defina el Narrador) al caer, aterriza de pie. La herida se aplica íntegramente a las **Piernas**.
+- **Caída Descontrolada:** Si la criatura es empujada por sorpresa, lanzada por un enemigo, está inconsciente o falla su tirada para controlar el descenso, la herida se aplica directamente al **Torso**.
+
+### Caídas Letales (Colapso Masivo)
+Si el Impacto de Caída supera **4 veces** el Umbral de Caída, el daño estructural es devastador. Se aplica una Herida Crítica de forma simultánea tanto en las **Piernas** como en el **Torso**. Esto lleva inmediatamente a la criatura al estado de `Agonía`, independientemente de si la caída fue controlada o no.
+
+---
+
 ## Estabilización de Heridas
 
 Estabilizar una herida significa intervenir para que deje de producir deterioro inmediato, dolor incapacitante, pérdida de función o riesgo de empeorar durante la escena o el interludio.
