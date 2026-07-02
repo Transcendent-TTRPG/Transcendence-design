@@ -14449,3 +14449,47 @@ pilot_examples:
       - oculto
       - lengua
       - stealth
+
+  - id: 117
+    name: "Saturación"
+    slug: saturacion
+    species_origin: species_yacani
+    tier: novice
+    type: active
+    subtype: utility
+    trigger: voluntary
+    range:
+      origin: personal
+      area:
+        type: self
+    duration:
+      type: instantaneous
+    cost:
+      rhythm_cost: 2
+      attrition_cost: 3
+    roll:
+      model: characteristic_check
+      characteristic: tenacity
+      target: alteration_severity
+    description: >
+      The Yacani's oval erythrocytes push oxygen saturation to an extreme
+      threshold — a metabolic burst that forces the body to override and expel
+      a physical disruption. It is not a trained technique; it is a physiological
+      ceiling the body was built to reach under sufficient pressure.
+    effect: >
+      Make a Tenacity C.R. against the severity of an active physical Alteration
+      the Yacani is currently suffering. On success, the Alteration is eliminated.
+      This technique does not apply to Afflictions or Poisons — only to Alterations
+      of physical origin.
+    restrictions:
+      - species_yacani_only
+      - requires_active_physical_alteration
+    tags:
+      - active
+      - utility
+      - innate
+      - species
+      - yacani
+      - alteration
+      - metabolic
+      - removal
