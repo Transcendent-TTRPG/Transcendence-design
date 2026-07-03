@@ -87,9 +87,7 @@ Chelicer civilization has a persistent internal fault line that has never been r
 
 Conservative doctrine holds that a verdict rendered under formally correct conditions is absolute. The conditions are defined procedurally: authorized light source, trained priest, qualified witnesses of record, participating parties present voluntarily or per established obligation. If these conditions are met, the outcome is the verdict. Period. Any effort to revisit, appeal, or reinterpret is itself evidence of contaminated belief attempting to subvert divine truth. The conservative school is dominant in the interior settlements of Chelicer territory, where the Light-Primordial's influence is strongest and verdicts behave most reliably.
 
-Progressive doctrine holds that the spirit of the conditions matters, not only the formal checklist. A verdict conducted with a light source whose quality was uncertain, or in a space that was later found to have been structurally compromised, or with witnesses who were later discovered to have been coerced, is a verdict rendered in impure conditions regardless of procedural compliance. Retrial is not only possible — it is obligatory when the conditions cannot be confirmed. The progressive school is strongest in border communities, where verdicts sometimes fail to cohere with subsequent reality in ways that the conservative school's explanations (contaminated belief in the participants) cannot fully account for.
-
-The conservative school's position on the progressive school is that the progressive school's existence is itself evidence of exactly the kind of interpretive corruption that caused the prior age's collapse: people who want verdicts to be reviewable always want that because a verdict went against their interests, and an unfalsifiable divine system that can be appealed is no longer unfalsifiable or divine. The progressive school's position is that a system that cannot distinguish between a pure reading and a corrupted one, and treats both as equally binding, will eventually render a wrong verdict that destroys a community by binding it to a false outcome — and that this too is what happened before.
+Progressive doctrine does not doubt the faith, the god, or the mechanism of the ordalía. Their position is that if a verdict fails to cohere with reality, the god did not fail, nor did the faith of the priest. Instead, the reading must have been victim to **external intervention or sabotage**. An entity interfered, the light source was secretly poisoned, or a hidden vestigo altered the glow. For a progressive, a contradictory verdict demands an investigation into *who* or *what* sabotaged the conditions, because the faith itself is flawless. Retrial is obligatory to purge the interference.
 
 Beyond this central tension, variation occurs along several other axes:
 
@@ -173,46 +171,23 @@ The stinger carries weight that the claws do not. It is the delivery instrument 
 
 ## 9. System Connections
 
-**Natural attack forms:**
+### Species-specific mechanics (Updated from Corebook)
 
-The aguijón operates in two modes:
+**Brecha en la Quitina (Herencia)** — The exoskeleton protects against distributed impacts, but when penetrated, the internal tissue is dangerously exposed. Mechanically: Each active wound imposes a penalty to T.D. on the affected zone based on severity (Leve -1, Grave -2, Crítico -3).
 
-- **Injection** — direct stinger penetration at contact range, delivering hemotoxic venom. This is the formal mode, associated with ordalía administration and close-range precision. The attack profile emphasizes accuracy and positioning: you need to have the target in the right position and the stinger correctly angled. The venom produces physical consequence that develops over time — likely expressed as Lacerado (from the tissue breakdown mechanism) or a comparable alteración.
-- **Expulsion** — projected venom spray at short range, neurotoxic, delivered as a directed cone. This is the field and combat mode. It trades single-target precision for area coverage and range. The mechanical effect likely emphasizes disorientation or coordination disruption rather than pure tissue damage.
+**El Veredicto (Legado)** — Mechanically: Reactive technique. When attacked, instead of defending, you take full damage automatically. In exchange, your Aguijón automatically hits the attacker (resolving T.I.). Attacker rolls T.R. Veneno; on failure, their Ritmo increases permanently by 1 per 4 NR.
 
-Las garras function as an auxiliary: grasping, restraining, positioning the target for the stinger or forcing an unfavorable position. Their mechanical identity is control rather than damage output.
+**Fe Inquebrantable (Legado)** — Mechanically: +1 per 4 NR to Compostura.
 
-**Competency affinities:**
+**Transmutación del Dolor (Legado)** — The same breach that compromises defense expands their capacity to absorb suffering. Mechanically: Each active wound increases maximum Aguante (Leve +1, Grave +2, Crítico +3).
 
-Chelicer naturally justify:
-- **Intuición (Astucia):** interpretive reading under uncertainty is the core cultural and survival practice. Chelicer who cannot read between what is visible and what it means do not survive their own system.
-- **Percepción (Sabiduría):** UV-spectrum vision gives them access to information other species cannot perceive at all. Their perception range is wider than most.
-- **Rastreo (Astucia):** ground-vibration sensing and hunting as individual practice. The territory they maintain is read as much by what moves through it as by what they see.
-- **Supervivencia (Astucia):** private territory management, arid-terrain subsistence, the kind of pragmatic environmental reading that comes from spending significant time alone in hostile ground.
+**Armas Naturales:**
+- *Aguijón (Todos los Chelicer)*: Principal. Agilidad/Tenacidad. Forces T.R. (Veneno) on strong hit, reduces Agilidad.
+- *Garras (Todos los Chelicer)*: Auxiliar. Fuerza. Forces T.R. (Alteraciones) on strong hit, inflicts Sobrecargado.
 
-Social specializations are less natural — not because Chelicer cannot function socially, but because their social interactions are almost entirely mediated through formal procedure. They are not intuitive social readers; they are procedural ones.
+### Combat identity
 
-**Herencia:**
-
-The solitary-instinct tension with community requirement. A Chelicer's biology pushes toward isolation; forced proximity creates a persistent low-level sensory strain from the ground-vibration system and the UV-input from other Chelicer's glow. In dense mixed-species settlements, the UV input from other Chelicer's glow in light-source conditions, combined with the vibration noise of many bodies moving simultaneously, produces something that is not pain but is constant. This should express as a penalty to social or concentration-based T.E. in high-density conditions — not a profound debility, but a biological tax the species pays for building civilization against its grain.
-
-**Legado:**
-
-Scale with Nivel de Referencia across their core capacities: aguijón attack rolls, Intuición, and either UV-perception-related Percepción or the grasping control of las garras. One legado should probably address venom potency or delivery effectiveness directly.
-
-**Armor identity:**
-
-Chitin exoskeleton is biological medium armor — better than nothing, not as comprehensive as Ceratox dermis. Its benefit is passive and consistent across all zones without gaps, but it is less extreme in any given zone. Mechanically, this should express as a modest Bloqueo contribution rather than the full Dermis-level bonus Ceratox carry.
-
-**Technique implications:**
-
-Chelicer technique seeds will concentrate on:
-- Aguijón technique variants (injection accuracy, expulsion area, venom alteration effects)
-- Interpretive/sensing techniques tied to Intuición or Percepción
-- Control-and-position techniques through garras
-- Possibly territory-based techniques reflecting their tactical preference for known ground
-
-The species should not develop high-mobility or heavy-armor technique lines. Their identity is precision and patience, not aggression or defense-through-bulk.
+The Chelicer is the inquisitorial martyr. Their mechanics (Brecha en la Quitina and Transmutación del Dolor) mean they become easier to hit but capable of enduring much more punishment as they bleed. "El Veredicto" exemplifies this: they are willing to take the full force of a strike without defending, purely to guarantee their venom reaches the target. They fight like fanatics who believe their suffering is a divine test.
 
 ---
 
@@ -234,10 +209,19 @@ What they lose when they leave: the legitimacy that ordalía confers. Outside Ch
 
 What they keep: UV vision. The venom. The ground-vibration awareness. The habit of interpretive patience: waiting to read before acting, looking for what is revealed by the conditions rather than acting on the first available information. And the private difficulty of never fully trusting a reading again once they've seen one that was wrong — because the system has no mechanism for a wrong reading, and a Chelicer who has witnessed one is now carrying a fact the system cannot process.
 
-**Open design questions:**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- The precise biochemical and Tauma-adjacent mechanism by which the Light-Primordial's presence is expressed in the fluorescence needs to be defined enough to support technique design, without making the mechanism something Chelicer can interact with consciously (which would create Tauma-interaction problems).
-- Technique profile coverage should be decided before writing seeds: aguijón (injection) and aguijón (expulsion) are likely separate profiles, or variants within one. The relationship between the two delivery modes in technique design needs a clear ruling.
-- Whether the neurotoxic expulsion creates a specific alteración or a standard one, and whether that alteración has a canonical name.
-- The exact Herencia formulation needs to specify what "high-density" means mechanically — a headcount trigger, a context-based Narrator ruling, or a specific condition tag.
-- The progressive versus conservative internal tension should be flagged as a potential adventure hook driver: a community whose ordalía history is being contested is a site where Chelicer PCs and outsiders both have reasons to be involved.
+- **El Martirio Inquisitorial:** La combinación de su Herencia (*Brecha en la Quitina*) y su Legado (*Transmutación del Dolor*) define su carácter. Sufren más el daño físico al perder defensa por sus heridas, pero ese dolor los expande, dándoles más Aguante. Esto ancla narrativamente su teología: creen firmemente que soportar el castigo y dejarse golpear (*El Veredicto*) es una prueba divina que purga el pecado.
+- **El Mecanismo de la Fluorescencia:** No hay magia involucrada. Es pura bioquímica cruzada con Tauma ambiental. El estrés, la culpa o la certidumbre profunda alteran sutilmente las feromonas y la segregación química de la quitina, cambiando el patrón bajo luz UV. El sacerdote lee estrés biológico, pero la cultura insiste en que está leyendo la mente de Dios.
+- **Escuelas Marciales del Aguijón:** La inyección (precisión hemotóxica) y la expulsión (spray neurotóxico) generan el mismo efecto mecánico (reducción de Agilidad). Narrativamente representan dos escuelas: la litúrgica de las cortes (inyección de cerca) y la pragmática del exilio (expulsión de lejos).
+
+---
+
+## 11. Cultura Material y Herramientas de Ordalía
+
+La cultura material Chelicer (inspirada en la Inquisición Medieval y la mitología mesopotámica de Serqet/Girtablilu) está obsesionada con establecer tribunales, leer revelaciones y marcar permanentemente al pecador.
+
+- **Fósforo de Serqet (Minerales de Revelación):** Piedras taumáticas y resinas alquímicas pesadas que, al quemarse o activarse, producen la luz ultravioleta necesaria para leer la quitina. Sin estas fuentes de luz, la corte de ordalía está paralizada. Su custodia y transporte es la tarea principal de los acólitos.
+- **Relicarios de Juramento:** Pequeñas cajas forjadas con la quitina de los primeros sumos sacerdotes. Las colocan frente al acusado; la doctrina sostiene que la reliquia es tan pura que obligará al cuerpo del culpable a brillar de forma delatadora bajo la luz UV si este intenta mentir.
+- **Tablillas del *Girtablilu*:** Marcadores de piedra pesados grabados con edictos inquisitoriales. Los clavan en las fronteras de sus asentamientos para delimitar el "umbral de la verdad". Cualquier cosa que cruce la tablilla entra formalmente en jurisdicción de la corte.
+- **Sellos de Condena:** Estigmas de metales alquímicos que se queman físicamente sobre el exoesqueleto del condenado o exiliado. La marca altera permanentemente la refracción de luz UV de esa zona, haciendo que el individuo sea inmediatamente reconocido como "impuro" por cualquier otro Chelicer bajo luz de ordalía.

@@ -167,26 +167,15 @@ Their reputation varies by species and region:
 
 ---
 
-## 9. System Connections
+### Species-specific mechanics (Updated from Corebook)
 
-**Characteristic affinities:** Intelecto is the primary characteristic of the species — pattern recognition, systematic analysis, and the ability to hold multiple competing hypotheses simultaneously. Compostura is equally central: a species whose entire operational model depends on not revealing what they actually know cannot afford visible reactions. Agilidad reflects the combat body — light, fast, mobile, not built to absorb force.
+**Fragilidad Ósea (Herencia)** — Their hollow skeleton makes blunt impact extremely dangerous. Mechanically: While Prone, physical attacks received step up their damage die.
 
-**Natural weapons:**
+**Imperturbable (Legado)** — Unbreakable methodological composure. Mechanically: Scaling bonuses (+1 per 4 NR) to Enfoque, Contención, Meditación, and Aplomo.
 
-*Pico (beak) — Principal*
-Piercing attack. Agilidad. The beak is a precision instrument — its combat value is in accurate placement rather than brute impact. Works best against unarmored targets or specific structural points. High critical threshold reduction potential at advanced ranks.
+**Visión de Rapaz (Legado)** — Their corvid-raptor eyes are built to track small changes across vast distances. Mechanically: Visual range extended to 70m. Enemies cannot Hide using Light Cover; they require at least Medium Cover.
 
-*Garras (talons) — Auxiliar*
-Cutting attack. Agilidad. The real value is not in damage but in what the strike enables: a successful talon attack allows immediate repositioning without provoking reactions. The Rokhart fighting style is built around this — strike, reposition, strike again from a different angle.
-
-**Heritage — Fragilidad ósea:**
-Hollow bones reduce weight and increase movement speed. Against blunt force, the structural vulnerability is significant: blunt attacks against a Rokhart advance their damage die.
-
-**Specialization affinities:**
-Taumaturgia (systematic observation of Tauma phenomena), Historia (comparative records across civilizations), Geografía (strategic mapping), Percepción (exceptional range and detail), Lingüística (communication with many species — necessary for field operation).
-
-**Combat identity:**
-Never absorb hits. Never fight from a fixed position. The Rokhart combat model is mobile precision — enter, strike at the right point, exit before retaliation. They are fragile in sustained exchanges and highly effective in skirmishes where positioning can be controlled. They do not use heavy armor — the weight cost is too high. They prefer armor that preserves mobility over armor that maximizes protection.
+**La Batida (Legado)** — Strike and reposition without absorbing retaliation. Mechanically: Reactive technique (TC Agility) against melee attacks. Displaces the Rokhart up to half their Speed without provoking reactions. If out of range, the attack fails.
 
 ---
 
@@ -206,9 +195,23 @@ A Rokhart in a world of theological species is a character who sees the frame ar
 
 A Rokhart who broke the methodology is a more extreme case: they have subjective experience of something the Concordia has only ever observed from the outside. They are carrying data the institution would desperately want and has officially categorized as invalid. They may not know how to interpret what they experienced. They have no community that fully understands where they are.
 
-**Open design questions:**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- Specific terminology for Concordia ranks/roles in Alar
-- Technique seeds (separate document — see `rokhart-technique-seeds.md` when created)
-- How Rokhart PCs are expected to interact with the Vínculo/Vestígio system — given the species' methodological prohibition on direct exposure, is a Rokhart who uses a vínculo automatically a dissenter, or does the Concordia permit controlled use under specific conditions?
-- Precise relationship between Concordia field observer protocol and what counts as methodology violation
+- **Los PJs Rokhart y los Vestigos:** Un Personaje Jugador Rokhart es, casi por definición, alguien que ha roto con la Concordia. Han intervenido en el mundo (violación metodológica) o han decidido vagar por su cuenta. Al no operar bajo la doctrina institucional estricta, un PJ Rokhart es completamente libre de usar Vestigos y reliquias; ya no tienen que proteger "la muestra", ahora deben sobrevivir en el mundo.
+- **La Doctrina del Secreto:** La Concordia no es una "sociedad secreta" por motivos ocultistas; su secretismo es puramente metodológico. Lo primero que aprende un observador es a ocultar sus verdaderas intenciones, porque cualquier emoción visible contamina a la comunidad estudiada. Su aparente doble intención es, desde adentro, simple rigor de laboratorio.
+- **Jerarquía Institucional (Terminología Alar):**
+    - *Nidos / Postulantes* (Novicios en formación).
+    - *Augures* (Observadores de Campo infiltrados en otras culturas).
+    - *Custodios* (Guardianes de Puesto y analistas de datos locales).
+    - *El Círculo de Archiveros* (El cuerpo administrativo central que cruza las observaciones globales).
+
+---
+
+## 11. Cultura Material y Herramientas de Registro
+
+El mapeo cultural de los Rokhart amalgama a los cuervos de Odín (Huginn y Muninn), a Thoth (el dios egipcio de los registros) y a los Augures Romanos. Los Rokhart no buscan Vestigos de guerra; buscan y fabrican herramientas sagradas de registro para asegurar que la historia sea inalterable.
+
+- **Plumas de Muninn:** Objetos rituales escasos (a veces plumas petrificadas o de cristal volcánico). Si un Rokhart encuentra una, puede reproducir pasivamente ante sus ojos la escena exacta que la pluma "grabó", aunque haya ocurrido hace siglos, actuando como la memoria perfecta.
+- **Piedras Rúnicas de Archivo:** En lugar de papel, los Custodios de la Concordia usan losas de piedra magnética para inscribir los hallazgos más peligrosos o anómalos. Las tallan de forma que el entorno o la radiación de los monstruos locales no pueda borrar la verdad.
+- **Báculos de Augur (*Lituus*):** Bastones curvos, similares a los usados en la antigua Roma. Los utilizan para demarcar físicamente el *templum*: un espacio trazado en la tierra donde toda observación empírica es válida. Es una herramienta de aislamiento psíquico; dentro del círculo trazado, ninguna ilusión extranatural puede distorsionar los sentidos del Rokhart.
+- **Plumas de Ma'at:** Pequeñas pesas rituales o estiletes. Usados durante interrogatorios o recolección de datos orales, estas plumas vibran o cambian de peso para revelar si el sujeto observado miente en su intención basal.

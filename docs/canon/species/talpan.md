@@ -92,24 +92,37 @@ Enormes manos como palas, diseñadas para despedazar la roca viva.
 - Efecto Sistémico (Onda de Ruptura): En lugar de atacar a una criatura, puedes declarar un ataque contra la estructura sólida del terreno. Realizas tu T.A. normal y se compara tu Potencia Crítica contra la Durabilidad del material del suelo. Si superas su Durabilidad, el poder del impacto hace colapsar el terreno en un cono frontal con longitud en metros igual a tu Fuerza. El área se convierte en **Terreno Difícil** permanentemente, y cualquier criatura dentro del cono debe superar una T.R. de Agilidad o quedar **Derribada**.
 
 **Herencia — Miopía Táctil:**
-Su biología no está diseñada para enfocar la luz lejana. Su rango visual máximo efectivo está limitado permanentemente a **30 metros**. Adicionalmente, dado que compensan esto con oídos e hipersensibilidad táctil, obtienen una penalización de `-3` a las T.R. para evitar las alteraciones **Ensordecido**, **Desorientado** y **Sobrecargado**.
+Su biología subterránea no está diseñada para procesar estímulos visuales lejanos. Su rango visual máximo efectivo está limitado permanentemente a **25 metros**. Para compensar, dependen del tacto y el oído, lo que les otorga una penalización de `-3` a las T.R. frente a **Ensordecido**, **Desorientado** y **Sobrecargado**.
 
 **Legados:**
 
-*Mente de Ensamblaje (Marcador Biológico)*
-Su obsesión empírica les otorga un bonificador de `+1` por cada cuatro Niveles de Referencia a las T.E. de **Identificación** y **Artes y Oficios** (mecánica, herrería, tecnología).
+*Mente de Ensamblaje*
+Su obsesión empírica les otorga un bonificador de `+1` por cada 4 NR a las T.E. de **Identificación** y **Artes y Oficios** (mecánica, herrería, tecnología).
 
-*Ojos en la Oscuridad (Marcador Biológico)*
-La percepción dentro de su rango confinado es absoluta. Dentro de sus 30 metros de rango visual efectivo, los Talpán ignoran completamente las reducciones de rango o penalizadores otorgados por **condiciones de visibilidad reducida** (lluvia, humo asfixiante, niebla, oscuridad absoluta o extranatural). 
+*Ojos en la Oscuridad*
+La percepción dentro de su rango confinado es absoluta. Dentro de sus 25 metros de rango visual efectivo, los Talpán ignoran completamente las reducciones de rango o penalizadores otorgados por **condiciones de visibilidad reducida** (lluvia, humo, oscuridad absoluta). Para ellos, la densidad táctil de una habitación oscura es igual a la plena luz del día.
 
-*Tórax de Forja (Técnica Reactiva)*
-*Reacción · Utilidad · Ritmo 0 · Desgaste 1 · Gatillo: Fallas una T.R. contra Asfixiado, Infección o Veneno por vías respiratorias.*
-Tus densos pulmones intentan purgar la toxina con un espasmo violento. Pagas 1 de Desgaste y realizas de inmediato una **Tirada de Característica (T.C.) de Tenacidad** contra la misma dificultad del efecto original. Si la superas, tu biología neutraliza el agente nocivo y evitas por completo el agravio o alteración.
+*Tórax de Forja*
+*Reacción · Utilidad · Ritmo 0 · Desgaste 1 · Requisito: Fallas una T.R. contra Asfixiado, o un Veneno/Infección respiratorio.*
+Tus densos pulmones purgan la sustancia nociva. Realizas de inmediato una **T.C. de Tenacidad** contra la dificultad original. Si la superas, tu biología destruye la toxina antes de que asiente, evitando el agravio por completo.
 
 ---
 
 ## 10. Player Character Hooks and Open Questions
 
 - Un Talpán aventurero suele ser un ingeniero comisionado a la superficie para conseguir recursos, o un exiliado que robó un Vestigio demasiado valioso.
-- La dinámica de rol de un Talpán frente a un aliado amputado. ¿Le sugeriría una de sus prótesis parasitarias?
-- ¿Cómo actúa un personaje que ve el "magma del infierno" o los "monstruos cósmicos" no como horrores lovecraftianos, sino como simples anomalías termodinámicas que pueden ser medidas?
+
+### Canon Resolutivo: Base para el Módulo de Campaña
+
+- **El aliado amputado:** Si un compañero pierde una extremidad, el Talpán sugerirá inmediatamente implantarle una prótesis parasitaria extraída de su inventario. No lo hace por malicia ni traición, sino por eficiencia pragmática. Entenderá la negación del compañero como "apego irracional a la biología débil".
+- **Horror Cósmico Clínico:** Un Talpán carece del marco conceptual para aterrorizarse ante deidades arcanas o monstruosidades tentaculares. Si ven una falla vomitando pesadillas, no ven el "Infierno"; ven un problema de termodinámica extremo o un tejido material anómalo que, si consiguen las herramientas correctas, puede medirse, desarmarse y venderse.
+
+---
+
+## 11. Cultura Material 
+
+Su expresión material mezcla la fría ingeniería con una versión mecánica del animismo minero de las culturas andinas y griegas antiguas.
+
+- **Estatuillas de la Falla (*El Tío de Potosí*):** Ídolos grotescos tallados en acero pesado que depositan en los límites de sus excavaciones abisales. Representan a la "Falla Primordial". Saben que la falla exige tributo; si no "pagan" sacrificando a los mineros implantados, la falla colapsa la mina.
+- **Registros de Leva (*Quipus de Mita*):** Sistemas de registro mecánicos hechos de cables e hilos de cobre entrelazados. Sirven para contabilizar el inventario de las minas, incluyendo a los esclavos quirúrgicos de la superficie, tratados literalmente como "propiedad consumible de la excavación".
+- **Cristales de Calibración (*Gnomos* alquímicos):** Fragmentos estabilizados de Vestigios radiactivos que utilizan como burdos lentes táctiles. Al tocar o iluminar minerales con ellos, descubren la debilidad atómica de cualquier roca, aceptando sangrar por los ojos o la nariz como un daño colateral necesario.

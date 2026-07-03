@@ -202,16 +202,15 @@ Less natural:
 - Light or fast weapons — their identity is not speed
 - Dual-wield — not the natural expression of a species built around commitment over volume
 
-### Candidate species mechanics
+### Species-specific mechanics (Updated from Corebook)
 
-**Características:** +1 Tenacidad, Sabiduría, Compostura
+**Percepción Interferida (Herencia)** — Their evolutionary adaptation to read the world leaves them blind to social subtlety. Mechanically: -3 penalty to Instinct and Intuition rolls when reading the intent of living creatures.
 
-**Herencia — Percepción Interferida:** Evolutionary baseline — their perception is calibrated toward environmental and extranatural signals. Always active: −3 to T.E. de Instinto e Intuición when reading the intent or behavior of living creatures. Not from affliction exposure; this is how the species is built.
+**Caparazón (Legado)** — Their bone structure grants immense passive defense. Mechanically: +4 to Torso Block per 4 NR.
 
-**Legados:**
-- **Caparazón:** +2 to Torso block per 4 Niveles de Referencia (natural structural integration, zone-specific)
-- **Magnetismo:** +1/4NR to T.E. de Percepción, Supervivencia, Orientación, Rastreo
-- **Reliquias:** May use Sabiduría instead of Intelecto for T.E. de knowledge specializations (Identificación, Historia, Geografía, Arqueología, Lingüística, Astronomía, etc.); +1/4NR to those rolls
+**Magnetorrecepción (Legado)** — Their ability to read the magnetic lines of the world. Mechanically: Active technique (TC Wisdom). Reveals all active biomagnetic or metallic signatures in 15m, ignoring stealth, darkness, and cover.
+
+**Reliquias (Legado)** — Their deep accumulation translates to practical knowledge. Mechanically: They can use Wisdom instead of Intellect for knowledge and identification rolls, gaining scaling bonuses (+1 per 4 NR).
 
 ### Technique implications
 
@@ -260,11 +259,23 @@ They should avoid:
 - Uncomfortable: the knowledge that no one's religious framework is accurate in a stable sense
 - Open: the question of whether anything they've accumulated is a vínculo or vestigio — and what that means for them if it is. Whether decades of carrying an object have added their own imprint to it. Whether their collection is as much a record of who they are as of what they found.
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What exactly do Drak'kai do with objects they've confirmed are vínculos or vestígios? Keep, transfer, bury, destroy?
-- A Drak'kai's research advantage — knowing what civilizations believed about an object — only functions for vestiges. A vínculo does what the entity's nature produces, not what the historical belief record says. Do Drak'kai scholars recognize this as a known failure mode? How do they account for objects where the belief record and observed behavior diverge?
-- Is there a sub-community of Drak'kai who specifically seek out Tauma-charged objects rather than general accumulation?
-- What happens at a conclave when someone brings something they cannot identify and cannot control?
-- How do young Drak'kai (small collections, limited encounters) establish credibility at conclaves?
-- What is the oldest confirmed Drak'kai collection, and where is it now?
+- **La Paradoja del Registro:** Si un texto antiguo afirma que un objeto curaba, pero el Drak'kai comprueba que ahora envenena, el Drak'kai no cree que el historiador se equivocó. Su cosmología afirma que la *Interferencia* (lo que otras especies llaman Tauma) muta por la creencia acumulada. La historia está viva y es radiactiva.
+- **¿Qué sucede en un Cónclave con un objeto incontrolable?** Si un Drak'kai lleva un objeto extremadamente peligroso, el Cónclave no se dispersa ciegamente: debaten la mejor forma de **sellarlo**. Los objetos no se "usan", se aíslan en vasijas de bronce rituales para anular su frecuencia. Si el objeto no puede ser sellado, el Cónclave emite un mandato de **"Ruta de Contención"**: el portador asume el deber de vagar perpetuamente por tierras despobladas, alejando el objeto del mundo hasta morir de viejo.
+- **Las Facciones Drak'kai:** Existen dos posturas fundamentales sobre el conocimiento:
+    - *Los Hermenéuticos:* Prefieren entender sin tocar. Sellan las reliquias en cofres de jade y las aíslan, catalogando sus efectos desde lejos para proteger su propia biología.
+    - *Buscadores de Interferencia:* Creen que la razón es un filtro que oculta la verdad del mundo. Se exponen deliberadamente a las aflicciones y "radiaciones" de los objetos, alterando sus propios cuerpos para entender la frecuencia del objeto en primera persona.
+- **La Colección más Antigua:** El *Primer Oráculo* no es un mito muerto. Es un Drak'kai tan anciano que se fundió con su propia colección. Su inmenso caparazón alberga registros geológicos del cataclismo de hace millones de años. Se le busca no por poder, sino porque es la única biblioteca caminante que sabe cómo era el mundo antes del gran desvío.
+
+---
+
+## 11. Cultura Material y Herramientas de Acumulación
+
+La estética Drak'kai remite a los eruditos itinerantes, los adivinos y los navegantes de la Dinastía Shang y Zhou de la antigua China. No acumulan espadas brillantes; acumulan herramientas de lectura y cajas fuertes portátiles para la realidad.
+
+- **Huesos Oraculares (*Jia Gu*):** Placas de caparazón (a veces de sus propios ancestros) que calientan al fuego para revelar fisuras. No ven el futuro, sino que las grietas resuenan con la *Interferencia* del lugar, adivinando qué evento catastrófico ocurrió allí hace milenios.
+- **Cuchara Sinan (Primer Compás):** Instrumentos de magnetita pura tallados en forma de cuchara. Las usan para navegar las "Rutas Magnéticas" (líneas ley) y para detectar anomalías taumáticas invisibles al ojo.
+- **Discos de Jade (*Bi*):** Anillos de jade pulido que funcionan como lentes o filtros. Al mirar a través de un Disco Bi, un Drak'kai Hermenéutico sintoniza patrones acústicos o visuales del entorno, logrando "leer" el eco de una reliquia sin tocarla.
+- **Vasijas de Bronce Ritual (*Ding*):** Contenedores extremadamente pesados, forjados con aleaciones muertas, diseñados específicamente para **sellar**. Un objeto depositado en un *Ding* queda acústicamente y taumáticamente mudo. Los Drak'kai las cargan en sus espaldas para transportar reliquias inestables.
+- **Caparazones Biográficos:** La máxima prueba de erudición de un Drak'kai no está en un pergamino, sino en su propia espalda. Tallan la historia de las reliquias que han sellado y las rutas de contención que han sobrevivido directamente en sus escudos, convirtiendo a los más ancianos en libros vivos de historia prohibida.

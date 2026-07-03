@@ -372,15 +372,15 @@ Some compatible profiles are anatomical possibilities rather than core Naghii tr
 | `Axes` | Rare / non-foundational | `Line Control`, `Rend`, `Sunder`, `Unstoppable` | Axes can appear as tools or local adaptations, but broad cleaving, tearing, and breaker traditions are not central to Naghii archive culture. |
 | `Maces` | Rare / non-foundational | `Bastion`, `Impact`, `Sunder`, `Unstoppable` | Blunt shock and mass commitment conflict with the Naghii preference for lightness, reading distance, and precise consequence. Individual use is possible, but it is not a species tradition. |
 
-### Species-specific mechanics
+### Species-specific mechanics (Updated from Corebook)
 
-**Lengua Bifurcada / Forked Tongue** — The Naghii's forked tongue grants enhanced detection of heat and chemical signatures. They can track living creatures by heat or scent in conditions where visual tracking fails, and this extends to detecting movement and proximity outside their direct line of sight. Provides a bonus to tracking and perception rolls in relevant situations.
+**Susceptibilidad al Abzu (Herencia)** — Generations of *igi-an* practice have left a biological trace. The Naghii carry a structural susceptibility to enchantment and Abzu-origin effects (Mechanically: -3 penalty to resistance rolls against extranatural Afflictions/Curses that control or deceive).
 
-**Susceptibilidad al Abzu / Abzu Susceptibility** — Generations of *igi-an* practice have left a biological trace. The Naghii carry a structural susceptibility to enchantment, mental influence, and Abzu-origin effects. Manifests as a penalty to resistance rolls against effects that seek to control, deceive, or influence behavior.
+**Termorrecepción (Legado)** — Their anatomy allows them to ignore visibility penalties (darkness, fog) against targets with active body heat within 10m.
 
-**Kha-Naghii — Resistencia al Veneno / Venom Resistance** — Extended biological proximity to their own venom glands has produced systemic tolerance. Kha-Naghii have enhanced resistance to venom effects, including those from other sources.
+**Piel de Sombra (Legado)** — A natural cloaking technique that allows them to enter a Hidden state when in light cover, blending their scales with the environment.
 
-**Saa-Naghii — Alcance Perceptivo / Extended Perception** — The Saa-Naghii's configuration for projecting outward extends to perception. They read signs, patterns, and signals at ranges where others see noise. Provides a bonus to lore-based interpretation rolls and to perception rolls that involve reading patterns rather than direct sensory input.
+**Lengua Bífida (Legado)** — Enhanced detection of chemical signatures. Provides scaling bonuses (+1 per 4 NR) to Tracking, Perception, and Intuition via scent, ignoring visual blocking.
 
 ### Technique implications
 
@@ -424,9 +424,21 @@ The Naghii, of course, do not believe it is over.
 - **Locking technique identity to biology** — Naghii-origin techniques should describe methods that emerged from Naghii history and physicality without requiring a Naghii body to execute.
 - **Celestial triggers in technique conditions** — the Naghii's astronomical identity is fiction-level, not trigger-condition level. Techniques should not require specific celestial events or time-of-day conditions that players cannot influence.
 
-### Open design questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What do the pre-Khataar ruins actually contain? What patterns did the first Naghii interpret, and how wrong were they?
-- Are there Naghii communities whose interpretation of Khataar led them to a fundamentally different theology — one that does not see the Firstborn as divine at all?
-- What does a Naghii player character who has left the priestly community know, and what are they cut off from?
-- How do the three schools of Khataar interpretation map onto the Kha/Saa political divide — do they align, cut across it, or vary by community?
+- **La Verdad sobre Khataar y las Ruinas:** Los "Primigenios" no eran dioses, eran la humanidad. El Tauma es una energía moldeadora —similar en concepto a espíritus vivos de modificación— que la humanidad aprendió a controlar a cabalidad mediante tecnología que hoy es excesivamente avanzada e incomprensible (formas excepcionalmente antinaturales). *Khataar* fue la catástrofe resultante: la humanidad se extinguió junto con cientos de miles de otras especies. Las ruinas no son templos, son infraestructuras inhumanas que los Naghii han malinterpretado, y que **nadie** sabe operar.
+- **La Herejía de la "Finalización" (Los Hijos del Cénit):** Esta facción radical no busca "activar" las ruinas (ya que es imposible interactuar lógicamente con tecnología humana muerta), sino que creen que la catástrofe fue una bendición. Su herejía consiste en romper sellos de cuarentena biológica y exponerse a la energía residual de las ruinas (radiación taumática) creyendo que los "mutará" o los elevará a la condición de Primigenios, desatando horrores en el proceso.
+- **El Cisma Kha/Saa en la Herejía:** Los Hijos del Cénit suelen estar liderados por sacerdotes Saa-Naghii llevados a la locura por sus lecturas del cielo, mientras que los guardias Kha-Naghii ortodoxos intentan contener la fisura físicamente, provocando verdaderas guerras civiles teológicas.
+- **El Personaje de la Diáspora:** Un jugador Naghii fuera de la orden es el explorador perfecto. Sabe reconocer las señales de peligro, los rituales de contención y sabe exactamente *cuándo* aterrorizarse, pero carece de los códigos y secuencias profundas del archivo, forzándolo a adentrarse físicamente para descubrir la verdad.
+
+---
+
+## 10. Vestigos y Cultura Material
+
+La cultura material Naghii está profundamente influenciada por la antigua Mesopotamia y la mitología Naga. Sus vestigos **no son** tecnología humana (la cual no comprenden ni pueden operar), sino objetos sagrados de su propia civilización que el Tauma ha cristalizado gracias a siglos de uso sacerdotal continuo y desesperado.
+
+- **Tablillas de los Destinos (*Dup Shimati*):** Fragmentos de la civilización Primigenia o ruinas estelares que los Naghii inscribieron con su propia escritura cuneiforme. Su uso permite alterar ligeramente probabilidades a corto plazo, como si el portador pudiera leer un patrón futuro en la piedra y forzar que ocurra.
+- **Sellos Cilíndricos de Autoridad:** Herramientas sagradas de los Kha-Naghii usadas tradicionalmente para sellar puertas de cuarentena. Poseer un sello auténtico e imbuido permite anclar físicamente entidades menores o clausurar umbrales mediante la autoridad conceptual impuesta en el cilindro.
+- **Astrolabios de Kholan:** Dispositivos de bronce, obsidiana o hueso diseñados originalmente para predecir posiciones celestiales. Como vestigos, reaccionan a fluctuaciones masivas de Tauma en el entorno, girando solos para actuar como radares de perturbación sobrenatural.
+- **Nagamani (Gema de la Cobra):** Las glándulas de veneno calcificadas de ancianos Saa-Naghii extraídas post-mortem. Brillan con una luz fosforescente fría y otorgan al portador que las expone a su piel una agudísima percepción química/térmica de su entorno absoluto, ignorando oscuridad u obstáculos visuales.
+- **Pieles de Muda Ritual:** Consideradas reliquias sagradas de transferencia. En estados de alta concentración o trauma (como el *igi-an*), una muda de piel retiene la impronta biológica y emocional del momento. Quien se envuelve en ella puede percibir el conocimiento residual o la visión que atormentaba al portador original.

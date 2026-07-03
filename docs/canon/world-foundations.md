@@ -215,6 +215,28 @@ that went to intelligence did not branch back.
 
 ---
 
+## Species distribution and cultural coherence
+
+**Species do not own territory.** The playable species occupy refuges — settlements and routes where collective survival margins are high enough to sustain a population. No species holds exclusive claim to any region. What determines who lives where is environmental tolerance, historical proximity, route availability, and the Anomaly or Primordial pressure in the surrounding area.
+
+**Migration is constant and forced.** Settlements are sometimes abandoned when their defensive margins collapse — when Anomaly pressure increases, when a Primordial expands its territory, when population can no longer be sustained. When a community migrates, it migrates together. The cultural specialists — oral archivists, ritual practitioners, the individuals who carry accumulated survival knowledge — move with the community. A community that abandons its cultural infrastructure loses what makes the community function.
+
+**This is why species identity persists across geographic distance.** A Naghii community that relocates to a river basin three thousand kilometers from its origin is still, structurally, a Naghii community. They brought their astronomical records, their priests, their river-ritual specialists. Their children learn the same mythological framework because that framework is the archive that tells them what the river does, what the stars signal, how to read the flood calendar. The culture travels because the culture is the survival technology.
+
+**Surface adaptation is normal and expected.** What diverges across geographic distance is expression, not structure. A Naghii settlement in a mountain river system develops different construction practices than one in a delta, because the materials and flood behaviors differ. The festival calendar may shift by a season to match local astronomical patterns. The specific predators in the area enter the mythology. Local place names become sacred. Two Naghii communities separated by fifteen generations of independent development will recognize each other's cosmological core while being surprised by each other's surface forms.
+
+**The Tauma creates long-term pressure toward cultural preservation.** A vestigo's imprint is not static matter — it is a dynamic structure sustained by the same collective belief that created it. The Tauma seeks and maintains that imprint as long as the belief continues to feed it. When belief erodes, the imprint does not vanish instantly; it degrades gradually, weakening the vestigo's effects over time until nothing functional remains. This means vestigos deplete through two independent paths: activation exhausts the pattern through use, and belief-decay erodes it from the source. A community that loses its cosmological continuity will see its vestigos weaken regardless of how carefully it avoids using them.
+
+Vínculos follow a different logic. The imprint in a vínculo object serves one function: to call the Primordial it is connected to. Once the Primordial responds and the connection is established, the imprint is no longer the mechanism sustaining that relationship — the connection exists through the Primordial's own nature and intention. The imprint becomes secondary.
+
+The practical consequence for communities: vestigos from extinct civilizations are rare and continue to become rarer. They lose potency through use and through the absence of the belief that sustained them, with nothing producing replacements. Communities that understand this have a non-ideological reason to maintain cosmological continuity — not because the belief is true, but because the alternative is observable decline in the tools that keep them alive.
+
+**Multicultural settlements are the norm, not the exception.** Because no species controls territory and migration is constant, most functioning settlements of significant size contain multiple species. The dominant species' culture sets the structural baseline — the settlement was built around their architectural methods, their water management, their defensive organization. Minority communities maintain their own cultural practices within that structure: their language, their festivals, their internal hierarchy, while engaging with the external world in the dominant community's terms.
+
+An individual from any species can live within a settlement of another. Xenophobia between communities exists as a natural product of social friction — it is not uniformly present nor uniformly absent. What determines coexistence is not harmony but margin: the survival advantage that the settlement's collective provides must exceed the friction of living alongside people who are not your own. When that calculus holds, coexistence persists regardless of tension. When it breaks, either the minority leaves or the settlement fractures.
+
+---
+
 ## Bio-organic technology
 
 The technology of the current world is bio-organic: the combination of living
@@ -346,3 +368,8 @@ and the extraction process has a high mortality rate.
 - Human ruins are not decorative. They are active Tauma environments that
   change what is safe in their vicinity. A ruin near a settlement changes the
   settlement's ecology, its theology, its threat profile.
+- A settlement does not need to be monospecies. The dominant species sets the
+  structural and cultural baseline; minority communities and individual migrants
+  from other species are the default, not an exception requiring justification.
+  When designing a settlement, define who built it and who lives there now — they
+  are often not the same.

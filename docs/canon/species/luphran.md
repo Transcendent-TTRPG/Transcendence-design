@@ -223,47 +223,23 @@ Vessels carry accumulated history in their structure — repaired sections, grow
 
 ## 9. System Connections
 
-### Characteristics
+### Species-specific mechanics (Updated from Corebook)
 
-`+1 Agilidad, Astucia, Presencia`
+**Instinto de Jauría (Herencia)** — The pack animal operating alone is neurologically stressed. Not a failure of character — a structural biological cost. Mechanically: When the Luphran has no ally within 10 m, they suffer a -3 penalty to all T.R. and T.E. of Compostura.
 
-Agility: pursuit predator biology, terrain traversal over long distance, the transition between stillness and full movement.  
-Cunning: tactical pack coordination, route intelligence, reading social dynamics under pressure.  
-Presence: pack leadership signal; the quality that makes a crew follow when the situation is unclear.
+**Memoria de Ruta (Legado)** — Mechanically: +1 per 4 NR to T.E. of Rastreo, Intuición, and Supervivencia. The persistence-predator's essential competencies.
 
-### Heritage
+**El Ancestro Despierta (Legado)** — Mechanically: Active technique. Enters the *Furia Instintiva* state and tracks a **Fury Counter** starting at 0. Each time they perform an instinctive T.E. (Saltar, Trepar, Acrobacias, Supervivencia, Intuición, Rastreo), they add +1 to the counter before rolling, and the roll gains the counter as a bonus. Each time they perform a cognitive T.E. (Identificación, Interpretación, Percepción, Saberes), they subtract 1 from the counter, and the roll receives the counter (as a negative) as a penalty. The counter maxes out at their Tenacidad (positive and negative). The state ends at combat end or via a T.C. Enfoque.
 
-**Instinto de Jauría** — When the Luphran has no ally within weapon range, −3 to T.R. and T.E. Compostura.
+**El Lobo No Suelta (Legado)** — Passive. Enemies moving out of physical contact with a Luphran ALWAYS generate an opportunity reaction. No technique or ability that prevents movement opportunity attacks works if the movement starts adjacent to the Luphran.
 
-The pack animal operating alone is neurologically stressed. Not a failure of character — a structural biological cost. Creates a tactical incentive to remain near allies and a genuine disadvantage in isolated situations. Distinct from all existing heritages.
+**Armas Naturales:**
+- *Mordisco (Todos los Luphran)*: Principal. Fuerza/Fuerza. Restriction: No other weapon can be used in the same activation. On strong hit (3+ NR), target fails T.R. Alteraciones -> Target cannot perform reactions until their next activation. (Locking down the prey).
+- *Garras (Todos los Luphran)*: Auxiliar. Agilidad/Agilidad. Attacks with claws do not generate opportunity reactions for the target, allowing tactical repositioning without reprisal.
 
-### Legados
+### Combat identity
 
-**Legado 1 — Technique (species-origin):** The battle-fury state. Active technique producing a Permanente transformation state — instinct-based competencies increase (Rastreo, Intuición, Supervivencia, physical checks), cognitive competencies decrease (Identificación, Interpretación, Saberes, Percepción). Two-stage escalation possible (Stage 1 basic induction; Stage 2 deepening from Stage 1 while already in state). Exact costs and stat lists to be determined in technique-design phase.
-
-**Legado 2 — Skill bonus:** `+1/4 NR` to T.E. of Rastreo, Intuición, and Supervivencia. The persistence-predator's essential competencies. Also the same skills amplified by Legado 1 — the species is biologically inclined toward these, and the battle-fury state deepens that inclination further.
-
-**Legado 3 — El Lobo No Suelta (passive mechanic):** Enemies that move out of physical contact with the Luphran always trigger a reaction opportunity for the Luphran, without exception. No technique, ability, or special action — including those specifically designed to generate movement without triggering reactions — prevents this. An enemy in physical contact with a Luphran has no clean exit.
-
-### Natural weapons *(to confirm in technique-design phase)*
-
-**Mordisco (Principal)** — Primary weapon. Locking bite, sustained pressure. Full commitment (no other weapon same activation).  
-*Proposed: Fuerza/Fuerza · 1m · d8 or d10 · Profiles: Impacto · Restricción · Imparable*
-
-**Garras (Auxiliar)** — Secondary. Grip and positional control, not slashing.  
-*Proposed: Fuerza/Fuerza · 1–2m · d6 · Profiles: Impacto · Control de Línea · Intercepción*
-
-*Note: mordisco as Principal follows the same logic as Ursari — the wolf bite requires full-body commitment and cannot be combined in two-weapon mode. Garras Auxiliar captures the wolf's use of claws for pinning and positioning while the primary attack is being applied.*
-
-### Technique profile coverage
-
-From natural weapons: Impacto, Restricción, Imparable, Control de Línea, Intercepción  
-Species technique: battle-fury transformation state  
-Likely profile development: movement-based, pack-coordination, sustained-pressure weapon profiles
-
-### Competency affinities
-
-Rastreo, Supervivencia, Intuición (biological persistence-predator instincts); Fuerza and Agilidad physical checks; Astucia-based reading of social and tactical situations.
+The Luphran combat identity is about relentless pursuit and escalating violence. They are not ambushers; they outlast. *El Lobo No Suelta* makes them impossible to flee from safely. *El Ancestro Despierta* turns combat into a snowballing spiral where instinct takes over, making them terrifyingly effective at savage, physical actions while rapidly losing their cognitive grip on the situation.
 
 ---
 
@@ -297,9 +273,18 @@ The crew. Not the jarl, not the route, not the vessel — the crew as social coh
 
 Second: the certainty that their own decisions are their own. This fear is usually unnamed and unexamined — the culture does not have vocabulary for it — but it surfaces as unease around the question of why they do things, and discomfort when people ask them to explain decisions that felt obvious in the moment.
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What are the exact natural weapon statistics and profile list for Mordisco and Garras?
-- What is the battle-fury technique called? What are its precise costs, bonus list, and penalty list? Two-stage escalation: what triggers Stage 2 and what deepens at that point?
-- Do any law-speaker records contain notations about jarls whose decisions "changed after great battles"? Are these records accessible, protected, or lost?
-- What is the Luphran cosmological name for the approaching confrontation they believe the marked warriors are being prepared for? Is this belief in dialogue with Naghii Khataar records — and if any Luphran law-speaker and Naghii priest-astronomer have ever compared notes, what happened?
+- **Registros de Jarls Corruptos:** Los Portavoces (*Law-speakers*) mantienen un archivo oral encriptado llamado "El Invierno del Comandante". Es la lista de los Jarls cuyas mentes fueron devoradas por repetidos estados de furia. Nunca se discute con las tripulaciones para no quebrar la moral; es un secreto de estado.
+- **La Gran Cacería (El Primordial):** La teología Luphran sostiene que el ancestro los está preparando para una confrontación final ("La Gran Cacería"). Trágicamente, los registros de los astrónomos Naghii insinúan que, si llega esa cacería orquestada por el Limbo, los guerreros marcados Luphran no serán los cazadores, sino los perros controlados.
+- **Armas Naturales y Furia:** Se consolidaron las Garras como tácticas (para reposicionarse sin sufrir ataques) y el Mordisco como inmovilizador (para anular las reacciones del enemigo).
+
+---
+
+## 11. Cultura Material 
+
+La cultura material Luphran (inspirada en la era vikinga y la Mongolia nómada) está diseñada para el movimiento constante. No construyen para la eternidad; construyen para la ruta.
+
+- **Pieles de *Ulfhednar*:** Mantos ceremoniales confeccionados a partir del cuero y pelo de depredadores salvajes imbuidos con Tauma. Se utilizan en los rituales de iniciación para inducir la *Furia Instintiva*. Los Jarls veteranos suelen usarlos en batalla, aunque a veces el cuero actúa como un vestigo, dificultando que el guerrero "apague" la furia.
+- **Estandartes de Ruta (*Sulde*):** Lanzas ceremoniales rematadas con crines o tiras de cuero que marcan el espíritu de la tripulación. Mientras el Jarl porte el *Sulde* o este esté clavado en el centro del combate, la jauría pelea con cohesión absoluta. Perder el estandarte es un golpe letal a la moral de la tripulación.
+- **Bastones de Memoria (*Skáld*):** Los Portavoces no escriben; tallan muescas en largos bastones de madera taumática o hueso. El bastón no es un libro, es una ayuda mnemotécnica. Un Portavoz que pasa el dedo por una muesca específica puede recitar siglos de precedentes legales y linajes de Jarls sin equivocarse jamás.

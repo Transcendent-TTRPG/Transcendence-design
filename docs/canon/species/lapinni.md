@@ -106,17 +106,17 @@ Su fisiología colapsa bajo el encierro. Reciben una penalización permanente de
 
 **Legados:**
 
+*Evasión Espasmódica*
+Obtienen un bonificador de `+1` por cada cuatro Niveles de Referencia a las T.E. de **Agilidad** cuando se usan exclusivamente para acciones de desenganche, huida o reposicionamiento táctico repentino.
+
 *Familiaridad del Umbral (Modificador Ambiental)*
-Cuando los Lapinni actúan bajo Condiciones Ambientales de origen Natural ligadas a la reducción de visibilidad (oscuridad, niebla, humo) o inestabilidad climática (vientos, tormentas), tratan la Severidad del entorno como un grado menor al calcular el Umbral de Dificultad (ej. Severo opera como Moderado). Además, no pueden ser blanco de la herramienta narrativa "Acelerar" (+1 costo de desgaste) a causa de estas condiciones.
+Cuando actúan bajo Condiciones Ambientales de origen Natural ligadas a la reducción de visibilidad (oscuridad parcial, niebla, humo) o inestabilidad climática (vientos, tormentas), los Lapinni tratan la Severidad del entorno como un grado menor al calcular el Umbral de Dificultad general. Además, el Narrador no puede aplicarles la herramienta narrativa *Acelerar* (+1 costo de desgaste) a causa de estas condiciones.
 
-*Aceleración del Caos (Técnica Activa)*
-*Reacción · Utilidad · Ritmo 0 · Desgaste 2 · Gatillo: Recibir Daño (El impacto perfora el Umbral de Herida).*
-Cuando el cuerpo de un Lapinni sufre trauma físico, tu sistema nervioso te fuerza a una transición inmediata. Al activar esta técnica como reacción, eliges una de las siguientes opciones:
-- Retrocedes tu ficha en el ATB hasta 1 casilla por cada cuatro niveles de referencia.
-- Realizas un movimiento inmediato de hasta 1 metro por cada cuatro niveles de referencia, ignorando terreno difícil y sin provocar reacciones de los enemigos de los que te alejas.
-
-*Sismograma Viviente (Marcador Biológico)*
-Poseen oídos sobredimensionados y vibrisas hipersensibles. Como acción gratuita una vez por escena, el Lapinni puede detectar la posición exacta, tamaño aproximado y postura de todas las criaturas (visibles o no) dentro de un radio de 20 metros, siempre que dichas criaturas estén en contacto con la misma estructura física o suelo sólido que el Lapinni.
+*Aceleración del Caos*
+*Reacción · Utilidad · Ritmo 0 · Desgaste 2 · Requisito: Al recibir una herida.* 
+Cuando tu cuerpo sufre trauma físico, tu sistema nervioso te fuerza a una transición inmediata. Al activar esta técnica como reacción, eliges una de las siguientes opciones:
+- Retrocedes tu ficha en el ATB hasta 1 casilla por cada 4 NR.
+- Realizas un movimiento inmediato de hasta 1 metro por cada 4 NR, ignorando terreno difícil y sin provocar reacciones.
 
 ---
 
@@ -124,4 +124,17 @@ Poseen oídos sobredimensionados y vibrisas hipersensibles. Como acción gratuit
 
 - Un Lapinni que abandona su Bandada porque presenció un "estancamiento" imperdonable en los líderes de su tribu.
 - La tensión de jugar con alguien que deliberadamente busca el riesgo táctico y evita resolver las cosas "para siempre".
-- ¿Cómo justifica un Lapinni el uso de armaduras pesadas que dificultan el movimiento si su herencia biológica teme el encierro del propio cuerpo?
+
+### Canon Resolutivo: Base para el Módulo de Campaña
+
+- **El Tabú del Estancamiento:** En el diseño temprano se preguntaba cómo justifica un Lapinni usar armaduras pesadas. El canon establece que **no lo justifican**. Usar armadura pesada o encerrarse voluntariamente en fortificaciones es un tabú absoluto. Quien lo hace es considerado un hereje o un alma "espiritualmente muerta" que ha cedido a la mentira de la permanencia. Si la usan, es bajo desesperación extrema y arrastrando una profunda vergüenza cultural.
+
+---
+
+## 11. Cultura Material 
+
+La cultura material de los Lapinni no está hecha para durar. Está diseñada para ser consumida, arrojada o destruida como catalizador de transiciones.
+
+- **Bolsas de Transición (*Nanabozho*):** Morrales taumáticos que se rellenan con materiales impredecibles de su entorno. Se usan como catalizadores de un solo uso para forzar un cambio rápido (un milagro táctico, una explosión, etc.) y luego se descartan por completo. Acumular poder sin gastarlo es corrupción.
+- **Marcadores de *Samhain*:** Piedras talladas que delimitan un espacio liminal. Se arrojan al suelo durante combates o ritos para crear zonas temporales donde las energías estancadas se disipan o las realidades fluctúan.
+- **Taladros de Fuego Nuevo (*Toxiuhmolpilli*):** Herramientas mecánicas rudimentarias usadas en momentos de inestabilidad climática severa o eclipses. Se utilizan para detonar reliquias capturadas, quemando el vestigo para extraer su energía de un solo tajo antes de que "pudra" a quien lo porte.

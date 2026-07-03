@@ -339,17 +339,15 @@ Likely core or supporting surfaces:
 | Light blades | Peripheral | Possible in court intrigue, but not central to broad Sauri technique identity. |
 | Flexible weapons | Peripheral | Possible as ritual tools or capture implements, but less foundational than jaw, shield, and weight. |
 
-### Species-specific mechanics
+### Species-specific mechanics (Updated from Corebook)
 
-These are concept placeholders, not final rules.
+**Riesgo de Contención (Herencia)** — Their belief in their own bodies as vessels creates a structural vulnerability when the container is breached. Mechanically: -3 penalty to resistance rolls against extranatural Afflictions and the Alterations Confused, Disoriented, and Overloaded.
 
-**Tauma-Reactive Scales / Escamas Reactivas al Tauma** - Sauri scales visibly respond to environmental pressure, especially heat, humidity, mineral saturation, ambient flow, vestiges, or nearby links. This supports detection, interpretation, and survival in Tauma-charged scenes without granting automatic control over Tauma.
+**Cicatrización Acelerada (Legado)** — Their metabolism depends on external heat to repair tissue at speeds other species cannot match. Mechanically: They unlock extra wound slots during a Full Rest if they have sustained external heat (sun, hot water, fire). Without heat, the recovery is minimal, and Medicine checks on them are always harder.
 
-**Vessel Body / Cuerpo Recipiente** - Sauri bodies are trained and interpreted as vessels for force. This suggests resistance to exhaustion, pressure, and physical degradation, but should not become universal toughness against every threat.
+**Protección Natural (Legado)** — A reactive defense leveraging their dense scale armor and posture to turn impact into survivable pressure. Mechanically: Reduces a non-critical wound severity by one step (e.g. Severe to Moderate).
 
-**Jaw Closure / Cierre de Mandibula** - Sauri bite identity should focus on what happens after contact: hold, drag, pin, drown, break rhythm, or force resistance. It should not be written as a flat high-damage natural attack only.
-
-**Containment Risk / Riesgo de Contencion** - Their same sensitivity to Tauma may make them vulnerable to overload, fixation, false readings, or hostile effects that exploit a prepared vessel.
+**Dominio Extranatural (Legado)** — The Sauri's culture of recording current and pressure translates to practical knowledge. Mechanically: Scaling bonuses (+1 per 4 NR) to Lore, Resonance, Instinct, and History rolls when interacting with extranatural manifestations or Tauma phenomena.
 
 ### Technique implications
 
@@ -405,11 +403,23 @@ To neighboring peoples, the Sauri can seem like guardians of ancient stability o
 - **Simple pharaoh copy** - Egyptian influence should become fluvial authority, divine vessel politics, funerary technique, temple procession, and cosmic order, not surface costume.
 - **Automatic Tauma mastery** - their scales read pressure; their rituals prepare vessels. They do not freely command Tauma unless later systems establish that capability.
 
-### Open design questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What do the Sauri call the primordial current in their own theological vocabulary?
-- Is the living sovereign truly altered by Tauma, or is the avatar doctrine a political-theological construction?
-- Are preserved rulers conscious, consulted symbolically, or sometimes affected by vestiges or links?
-- What specific ancient ruins did the first Sauri settle around, and what did they misunderstand?
-- Which habitats are primary: river kingdoms, marsh temples, desert-edge reservoirs, subterranean cistern cities, or several regional variants?
-- What is the Sauri relationship to the Naghii interpretation of the Abzu and the Firstborn?
+- **Las Ruinas Primigenias Sauri:** La humanidad extinta dominó el Tauma construyendo infraestructuras monstruosas e incomprensibles. Las ciudades y pantanos Sauri están construidos directamente sobre, o alrededor de, antiguas mega-represas hidroeléctricas, plantas desalinizadoras y enormes torres de enfriamiento nuclear. Lo que los Sauri veneran como "Altares de Presión" o "Cisternas de La Corriente" son en realidad turbinas o reactores inundados.
+- **El Soberano como Batería Viva:** La doctrina del avatar es una ficción insostenible. El soberano *sí* absorbe y soporta enormes presiones de Tauma radiactivo en su cuerpo, pero esta carga lo está matando lentamente. La corte sacerdotal encubre el deterioro físico y neurológico del líder hasta que finalmente estalla o debe ser momificado en secreto para poner al siguiente candidato a prueba.
+- **Los Soberanos Preservados:** Los gobernantes momificados en las bóvedas no descansan. Debido a toda la radiación taumática que absorbieron en vida, quedan atrapados en un estado de semi-consciencia eterna. Funcionan como cajas de resonancia o "baterías" que los sacerdotes pueden consultar, o cuya energía drena peligrosamente hacia las napas de la ciudad si las tumbas se agrietan.
+- **La Perspectiva Sauri vs. Naghii:** Los Naghii temen al evento que borró a la humanidad y lo llaman vacío (Abzu). Los Sauri creen que la energía que destrozó el mundo es un flujo vital (La Corriente). Ambas especies malinterpretan la misma catástrofe radiactiva de la tecnología humana.
+
+---
+
+## 10. Cultura Material y Contención
+
+La civilización Sauri no tiene el concepto de "usar objetos mágicos para ganar poder". Lo que otras culturas llaman Vestigos o Vínculos, los Sauri los llaman **"Cargas"** o **"Pruebas de Presión"**. Un Sauri no usa un objeto para ser más fuerte; un Sauri porta un objeto peligroso para *demostrar* que su cuerpo es un recipiente lo suficientemente perfecto como para no quebrarse bajo su peso. 
+
+Cuando un Avatar o sacerdote muere, **todos los objetos que probó poder contener se entierran con él en su tumba**, a la manera de los faraones egipcios. El objetivo es que la momia, ahora convertida en batería viva, siga ejerciendo y soportando esa presión en el más allá. El robo de tumbas Sauri no es solo un crimen monetario: es liberar presiones que llevan siglos equilibradas.
+
+- **Jarros Canopios Sauri:** Vasijas pesadas que no se usan para guardar órganos físicos (el cuerpo debe quedar intacto para no filtrar la presión), sino para preservar cosas intangibles: ecos de Tauma, un recuerdo peligroso, o un fragmento de cordura arrancada al que intentó cruzar un canal prohibido.
+- **Pilares Djed:** Artefactos de estabilización estructural originados de núcleos de control humanos. Los Sauri los erigen en túneles inestables o pasajes sumergidos; anclan el espacio, impidiendo tanto el colapso de la piedra como el colapso mental de quienes caminan cerca.
+- **Natrón Ritual Sellado:** Sal y arcilla especial que absorbe, aísla y ralentiza la radiación taumática. Es el material clave que permite momificar a los soberanos sobrecargados sin que contaminen todo el templo exterior.
+- **Escarabajos de Corazón:** Placas gruesas de caparazón talladas con genealogías de resistencia. Cuando la presión (daño) es demasiada para el cuerpo, el Escarabajo se quiebra, absorbiendo un impacto crítico que habría destrozado al portador.
+- **Ushabtis:** Figuras toscas de arcilla cocida que funcionan como fuerza bruta desechable. Son animadas temporalmente mediante Tauma residual para sostener el peso de enormes compuertas de piedra, palancas de canales o esclusas en ruinas inundadas donde un cuerpo vivo no podría sobrevivir a la presión.

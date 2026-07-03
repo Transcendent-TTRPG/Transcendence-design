@@ -87,13 +87,11 @@ What they fear is contamination:
 
 The great split inside the species is not between "ethical" and "unethical" Vesper in a modern sense. It is between those who believe disciplined cultivation reveals destiny and those who fear the chamber may be manufacturing the shape of what it later claims merely to have discovered.
 
-This is where their experience with **aberrations** begins. By forcing blood, corpse, vestige, bond, pressure, and living sequence into contact, they have created many things that were not mortal life anymore and not stable higher life either. Some lasted hours. Some bred. Some consumed each other. Some bloated and burst. Some learned one behavior too well and could not stop repeating it.
+This is where their experience with **aberrations** begins. By forcing blood (which they call *el néctar carmesí*), corpse, vestige, bond, pressure, and living sequence into contact, they have created many things that were not mortal life anymore and not stable higher life either. Some lasted hours. Some bred. Some consumed each other. Some bloated and burst. Some learned one behavior too well and could not stop repeating it.
 
 Aberrations are not just failed experiment.
 
-They are cultural evidence of what happens when the pulso vivo del mundo is forced without rightful passage.
-
-The Vesper still use them when they must: in hazardous work, outer containment, testing dangerous bonds, sacrificial burden, or labor no one wants near a respected line-house. Officially they are held away from the center. In practice, whole parts of Vesper survival still lean on them.
+They are cultural evidence of what happens when the pulso vivo del mundo is forced without rightful passage. Because aberrations have incomplete or defective anatomical structures, they are manageable. The Vesper use them constantly: in hazardous work, outer containment, testing dangerous bonds, or as war beasts to harass other species. Officially they are held away from the center. In practice, whole parts of Vesper survival lean on these chained failures.
 
 ---
 
@@ -113,15 +111,15 @@ Their cosmology of life is tripartite:
 
 Not all consagrados are the same.
 
-Some are **consagrados por derecho**: beings for whom such nearness belongs to nature, origin, or office. These stand closest to what other traditions might call primordial powers or their legitimate living expressions.
+Some are **consagrados por derecho**: beings for whom such nearness belongs to nature, origin, or office.
 
-Others are **consagrados por destino**: creatures carried toward that state through blood, ritual, sequence, enclosure, selection, and — when the work is dangerous enough — the use of a true bond.
+Others are **consagrados por destino**: creatures carried toward that state through the *néctar carmesí*, ritual, sequence, enclosure, and selection. 
 
-The Vesper do not say they create such beings from nothing.
+Crucially, **Consagrados are not Vesper citizens or leaders. They are beasts.** They are apex biological horrors that have survived the Tauma pressure and stabilized. They possess more intellect than a normal mortal animal, but they are not humanoids with political power. Because they are "perfect" anomalies, they wield Tauma natively, making them excessively powerful and virtually impossible for the Vesper to control. 
 
-They say they guide bodies toward the destiny they may or may not be able to bear.
+The Vesper relationship to a Consagrado is platonic and reverential. When a Consagrado gets out of hand, the Vesper do not try to leash it—they worship it. The fact that it cannot be controlled is precisely what proves its divinity. They feed it, revere it from a distance, and accept the casualties it causes as holy tithes.
 
-If the body cannot bear it, it falls into aberration.
+If the body cannot bear the pressure, it falls into aberration.
 
 This is where **vestiges** and **bonds** enter Vesper life.
 
@@ -305,412 +303,29 @@ Language should be rich in words for:
 - unstable life
 - chambers that read well and chambers that have gone wrong
 
-The language does not need to sound academic. It should sound old, precise, and burdened by repetition. The objects should not feel decorative. They should feel used enough to have learned their place.
+The language does not need to sound academic. It should sound old, precise, and burdened by repetition. The objects should not feel decorative. They should feel used enough to have ## 9. System Connections
 
----
+### Species-specific mechanics (Updated from Corebook)
 
-## 9. System Connections
+**Cámara Dependiente (Herencia)** — La lectura espacial Vesper depende de rebote acústico controlado. Mechanically: In open spaces without nearby surfaces, wind-whipped terrain, or acoustically chaotic environments, the Vesper receives a permanent -3 penalty to T.E. of Percepción, Orientación, and Interpretación when those checks depend on acoustic, spatial, or structural reading.
 
-This section remains partially provisional, but the species now has a clear enough
-mechanical direction to establish constraints and likely surfaces.
+**Método Anatómico (Legado)** — Mechanically: +1 per 4 NR to T.E. of Identificación and Interpretación when applied to living specimens, dead bodies, circulating media, breeding lines, or preserved anatomical evidence. Also grants this bonus to Destreza for fine tissue manipulation and precise anatomical work.
 
-### Locked baseline
+**Oficio Anatómico (Legado)** — Mechanically: In biological extractions, the Vesper treats the base time as if the source were one size category smaller, without reducing the real yield. Additionally, reduces the threshold of Medicina checks by 1 for biological extraction, sample preservation, and stabilization.
 
-- **Size:** Medium
-- **Speed:** 9 m
+**Zona de Eco (Legado)** — Active utility technique (Ritmo 4, Desgaste 2). The Vesper emits a sequence of pulses to map an enclosed space (chamber, vault, ruins). While inside the zone and its geometry doesn't change:
+- Vesper's `Movement` increases within the zone.
+- Enemies cannot use `Cobertura` by itself as sufficient support to establish `Oculto` against the Vesper in that zone.
+- The Vesper gains a bonus to Orientación, Arquitectura, and Arqueología for reading the immediate space.
+Scales up in Radius, Movement bonus, and T.E. bonus with competency rank.
 
-### Characteristics
+**Armas Naturales:**
+- *Mordisco (Todos los Vesper)*: Principal. Agilidad/Tenacidad. Restriction: No other weapon same activation. Profiles: Perforación, Letalidad, Acecho, Hostigamiento. Effect (*Lectura Hemática*): If T.A. exceeds T.D. by 3+, adds extra damage. Additionally, grants a permanent bonus to Percepción and Rastreo against that specific target's blood trail and physical presence until the scene ends.
+- *Garras (Todos los Vesper)*: Auxiliar. Agilidad/Agilidad. Profiles: Fluidez, Acecho, Hostigamiento, Desgarramiento. Effect: The first time each activation you land two claw hits on the same target, the second attack deals additional damage.
 
-Most likely spread:
+### Combat identity
 
-`+1 Agilidad, Sabiduría, Compostura`
-
-**Agilidad** — chamber movement, suspended-surface confidence, close controlled work, precision rather than force.  
-**Sabiduría** — procedural patience, sensory discipline, long custody of lines, and the judgment required to handle dangerous living systems without rushing them.  
-**Compostura** — institutional self-control, emotional containment, silence under pressure, and the ability to preserve record integrity even when a result is spectacular, disturbing, or tempting.
-
-Possible alternate spread:
-
-`+1 Agilidad, Intelecto, Compostura`
-
-if the species later leans harder into formal anatomical doctrine, classification,
-and archive-method over sensory patience and chamber stewardship.
-
-### Heritage
-
-Locked Heritage direction:
-
-**Cámara Dependiente** — La lectura espacial Vesper depende de rebote acústico
-controlado, superficies cercanas y geometría interior legible. En espacios
-abiertos sin cierre cercano, terreno azotado por viento o entornos
-acústicamente caóticos, los Vesper reciben una penalización permanente de `−3`
-a las T.E. de **Percepción**, **Orientación** e **Interpretación** cuando esas
-tiradas dependan de lectura acústica, espacial o de estructura. Esta
-penalización no proviene de un estado ni de una condición — es la limitación de
-un cuerpo y una civilización construidos para leer cámaras, no intemperie.
-
-The species is biologically and civilizationally built for controlled interiors.
-In broad open spaces, wind-heavy terrain, or loud mixed environments, their best
-reading habits degrade first.
-
-Alternative Heritage direction:
-
-**Sangre Compartida** — vulnerability to contamination, transfer, or line-confusion
-through direct contact with circulating media.
-
-This would be stronger if later design decides that the Vesper's own comparative
-blood practice leaves them structurally more vulnerable to certain exposures.
-
-### Legados
-
-Locked Legado 1 direction:
-
-**Método Anatómico** — Los Vesper obtienen un bonificador de `+1` por cada
-cuatro Niveles de Referencia a las T.E. de **Identificación** e
-**Interpretación** cuando la tirada se aplique a especímenes vivos, cuerpos
-recién muertos, sangre u otros medios circulatorios, líneas de cría,
-consagraciones en desarrollo o evidencia anatómica preservada. Además, obtienen este mismo
-bonificador a las T.E. de **Destreza** cuando la acción consista en manipulación
-fina de tejido, separación de muestra, apertura exacta o trabajo anatómico de
-precisión.
-
-This keeps the species anchored in comparative biological reading and exact
-handling without turning them into generic physicians or granting broad sensory
-superiority by default.
-
-**Legado 2 — Oficio Anatómico** — En extracciones de partes de criatura, el
-Vesper trata el tiempo base como si la fuente fuera de una categoría de tamaño
-menor, sin reducir el rendimiento base real de la criatura. Además, reduce en
-`1` el umbral de las T.E. de **Medicina** cuando se apliquen a extracción
-biológica, preservación de muestra, apertura anatómica controlada o
-estabilización para conservación.
-
-This keeps the species on real system surfaces — extraction, preservation, and
-bounded medical handling — without colliding with the echolocation technique or
-turning the species into generic healers.
-
-**Legado 3 — Technique direction now under refinement.**
-
-Echolocation should not be defined primarily as "anti-`Oculto`."
-
-Its actual fantasy is:
-
-- converting enclosed space into a readable structure
-- reading void, angle, depth, support, interruption, and passage
-- making interior movement and positioning more reliable
-- only secondarily reducing the value of darkness or simple concealment
-
-The technique should therefore touch real system surfaces in this order:
-
-1. **Environment** or **Position / Zone** as the primary surface
-2. **Cover / Visibility / Concealment** as the secondary surface
-
-Current best candidate directions:
-
-### Option A — structural read
-
-**Sondeo de Cámara** — active utility echolocation that reveals one immediate
-spatial truth of the local enclosed area.
-
-Primary surface:
-
-- `Environment`
-
-Secondary surface:
-
-- bounded `Visibility / Concealment`
-
-What it would do:
-
-- reveal one useful structural truth in a chamber, tunnel, vault, corridor, or
-  similar interior
-- examples: hidden drop, side passage, hollow wall, support line, suspended
-  obstruction, ceiling change, opening behind a facade, unsafe floor segment
-- optionally prevent `Oculto` from relying only on darkness or brief line loss
-  inside that same read space
-
-Why it works:
-
-- strongest ecological match to echolocation
-- feels distinct from generic detection
-- supports exploration and conflict equally
-
-Risk:
-
-- can become too soft if it only gives descriptive truth and no strong play
-  consequence
-
-### Option B — route read
-
-**Leer la Ruta Interior** — active utility echolocation that lowers the pressure
-of one immediate spatial action inside enclosed terrain.
-
-Primary surface:
-
-- `Threshold`
-
-Secondary surface:
-
-- `Position / Zone`
-
-What it would do:
-
-- reduce the threshold of one immediate interior movement or navigation action
-- examples: crossing a broken passage, moving in darkness through clutter,
-  climbing an interior support, passing a narrow ledge, dropping without losing
-  orientation, advancing through a suspended workspace
-- may also let the Vesper ignore one local spatial penalty caused purely by
-  darkness or clutter in that same action
-
-Why it works:
-
-- turns echolocation into a practical mobility discipline
-- gives clear value without becoming omniscient
-- reads as chamber-trained body logic
-
-Risk:
-
-- may feel too exploration-facing if it does not create enough tactical value in
-  combat scenes
-
-### Option C — tactical chamber read
-
-**Geometría de Eco** — active utility echolocation that stabilizes the Vesper's
-read of an enclosed combat space.
-
-Primary surface:
-
-- `Position / Zone`
-
-Secondary surface:
-
-- `Visibility / Concealment`
-
-What it would do:
-
-- define a short-radius enclosed area as acoustically owned by the Vesper
-- within that area, darkness and brief line loss do not by themselves create a
-  reliable hidden-state against the Vesper
-- additionally grants one bounded positional advantage such as cleaner route
-  judgment, better immediate reposition understanding, or a bonus to one
-  movement-linked reaction or setup inside the area
-
-Why it works:
-
-- strongest combat identity
-- still tied to geometry rather than pure body detection
-- makes chamber fighting feel different from open fighting
-
-Risk:
-
-- easiest option to drift back into "anti-`Oculto` with extra steps"
-
-### Current refined candidate
-
-The best current synthesis is a **mapped echolocation zone**:
-
-**Zona de Eco** — active utility echolocation that reads and stabilizes one
-bounded interior area.
-
-Core logic:
-
-- the Vesper creates a persistent read of one enclosed area
-- the area remains useful while the Vesper stays inside it and while its
-  geometry does not materially change
-- the Vesper may establish multiple zones over time, but each costs real
-  `Rhythm` and `Attrition`
-
-Primary surface:
-
-- `Position / Zone`
-
-Secondary surfaces:
-
-- `Visibility / Concealment`
-- bounded `Roll` support for space-reading specializations
-
-Most promising effect package:
-
-- while the Vesper remains inside a mapped zone, increase their effective
-  `Movement` within that zone because the space is better understood through
-  echo-read geometry
-- creatures inside that zone cannot use `Cobertura` by itself as sufficient
-  support to establish `Oculto` against the Vesper; this does not immediately
-  reveal already-hidden creatures and does not remove the defensive value of
-  cover on attack lines
-- while inside the mapped zone, the Vesper gains a bounded bonus to
-  specializations that read or navigate space, especially:
-  - `Orientación`
-  - `Arquitectura`
-  - `Arqueología`
-  - possibly `Geografía` when the scene is about local spatial reading rather
-    than broad world knowledge
-
-Important limits:
-
-- it should only function in enclosed, echo-readable spaces
-- open exterior space, heavy wind, flood-noise, collapse, active machinery, or
-  major geometry shift can invalidate the zone
-- it should not grant exact omniscience of all creatures in the area
-- it should not erase real specialized concealment methods, only deny simple
-  cover-based hidden-state generation against a Vesper who has mapped the space
-
-### Draft final proposal
-
-**Zona de Eco** — *Activo · Utilidad · Ritmo 4 · Desgaste 2 · Alcance
-Personal · Área Variable · Duración Permanente · Tirada T.C.
-(Compostura).*
-
-El Vesper emite una secuencia de pulsos controlados y establece una zona de
-lectura ecolocativa anclada al espacio que ocupa. La técnica solo funciona en
-espacios cerrados o suficientemente contenidos: cámaras, túneles, corredores,
-bóvedas, pasajes suspendidos, ruinas interiores y estructuras equivalentes.
-
-Con éxito en la T.C., mientras permanezcas dentro de la zona y la geometría del
-espacio no cambie materialmente:
-
-- tu `Movement` aumenta dentro de la zona;
-- otras criaturas no pueden usar `Cobertura` por sí sola como soporte suficiente
-  para establecer `Oculto` contra ti dentro de la zona; esto no revela
-  automáticamente a una criatura ya oculta y no anula métodos especializados de
-  ocultamiento;
-- obtienes un bonificador a las T.E. de **Orientación**, **Arquitectura** y
-  **Arqueología** cuando la tirada dependa de leer el espacio inmediato, su
-  estructura, rutas internas, huecos, soportes, desniveles o cambios de
-  geometría.
-
-La técnica falla o termina de inmediato si:
-
-- sales de la zona;
-- el espacio deja de ser eco-legible por viento fuerte, ruido extremo,
-  inundación ruidosa, maquinaria, derrumbe o interferencia equivalente;
-- la geometría del área cambia de forma material.
-
-#### Escalado propuesto
-
-- **Alcance de la zona:** `4 m` por cada `3 Niveles de Referencia`
-- **Movement dentro de la zona:** `+1 m` por cada `3 Niveles de Referencia`
-- **Bono a T.E.:** `+1` por cada `3 Niveles de Referencia`
-
-Reference examples:
-
-| NR | Alcance de la zona | Movement dentro de la zona | Bono a T.E. |
-| --- | --- | --- | --- |
-| 1–3 | 4 m | +1 m | +1 |
-| 4–6 | 8 m | +2 m | +2 |
-| 7–9 | 12 m | +3 m | +3 |
-| 10–12 | 16 m | +4 m | +4 |
-
-Why this draft currently feels strongest:
-
-- primary surface: `Position / Zone`
-- secondary surfaces: `Visibility / Concealment` and bounded `Roll`
-- the scaling makes the technique feel like a chamber-mastery progression
-  instead of a flat sensory switch
-- the area stays local enough that paying repeated `Rhythm` / `Attrition` to map
-  new spaces remains meaningful
-
-### Natural weapons
-
-Recommended final direction:
-
-- two natural weapons
-- `Mordisco` as `Principal`
-- `Garras` as `Auxiliar`
-- split identity:
-  - mordisco = puncture / extraction / anatomical breach
-  - garras = contact mobility / angle spoil / close reposition
-
-#### Proposed natural weapon block
-
-**Mordisco**  
-*Principal*
-
-| T.A. | T.I. | Range | Damage | Durability | Potency |
-| --- | --- | --- | --- | --- | --- |
-| Agility | Tenacity | 1 m | d6 | 3 x rank | 5 x rank |
-
-**Profiles:** Perforation · Lethality · Shadow Pressure · Skirmish
-
-**Effect — Lectura Hemática:** If the `T.A.` exceeds the target's `T.D.` by `3`
-or more, the attack adds additional damage according to competency rank.
-Additionally, until the scene or combat ends, the Vesper gains a permanent bonus
-to `Perception` and `Tracking` checks directed specifically at that target's
-physical trail, blood trace, body signature, displacement, or immediate presence.
-
-| Rank | Additional damage | Bonus to Perception and Tracking |
-| --- | --- | --- |
-| 1-2 | +1d6 | +1 |
-| 3-4 | +2d6 | +2 |
-| 5-6 | +3d6 | +3 |
-
-Why this currently fits best:
-
-- it does not repeat poison-space already occupied by Arakhel, Chelicer, Bufoni,
-  Naghii, or Formix
-- it does not repeat hard control-space already occupied by Luphran, Rokhart,
-  Sauri, Naghii, or Drakkai
-- the immediate damage expresses `Lethality`
-- the permanent read on the same target expresses species identity without
-  needing turn logic
-- `Lectura Hemática` ties the bite back to Vesper anatomy, blood-reading, and
-  specimen logic
-
-**Garras**  
-*Auxiliar*
-
-| T.A. | T.I. | Range | Damage | Durability | Potency |
-| --- | --- | --- | --- | --- | --- |
-| Agility | Agility | 1 m | d6 | 3 x rank | 4 x rank |
-
-**Profiles:** Flow · Shadow Pressure · Skirmish · Rend
-
-**Effect:** If you make two `Garras` attacks against the same target during the
-same activation and both attacks hit, the second attack adds additional damage
-according to competency rank.
-
-| Rank | Additional damage on the second hit |
-| --- | --- |
-| 1-2 | +1d6 |
-| 3-4 | +2d6 |
-| 5-6 | +3d6 |
-
-Why this secondary weapon works:
-
-- it does not duplicate the mordisco's puncture / blood-read role
-- it gives the species a short close-range claw sequence without entering poison,
-  hard control, or TD-reduction space
-- it keeps the effect fully `instant` by resolving on the second successful hit
-  instead of waiting on a later attack
-- it fits the natural claw profile family better than the previous draft, which
-  leaned too far into restricted or off-identity profile space
-
-### Technique profile coverage
-
-The species should probably open toward:
-
-- Perforación
-- Letalidad
-- Acecho
-- Hostigamiento
-
-They should probably avoid:
-
-- Carga
-- Bastión
-- heavy Impacto-first identities
-- straightforward battlefield domination through mass or frontal force
-
-### Competency affinities
-
-Strong candidates:
-
-- Identificación
-- Interpretación
-- Destreza
-- Medicina or anatomy-adjacent medical handling
-- Supervivencia in enclosed hostile environments
-- Sigilo in controlled interiors
+The Vesper combat identity is surgical, investigatory, and highly dependent on enclosed spaces. They are not frontline chargers. They use *Zona de Eco* to map a chamber, preventing enemies from hiding and granting themselves superior mobility. Their *Método Anatómico* makes them the premier biological harvesters in the game. In combat, their *Mordisco* does not just deal damage; it grants them the biological data needed to track the target flawlessly (*Lectura Hemática*). They are analytical hunters.
 
 The main rule: their affinities should make them better at extracting meaning
 from altered life, not just better at "science" in the abstract.
@@ -775,12 +390,18 @@ The sequence.
 
 Not just life, not just blood, not just the house itself — the continuity that lets one body speak truth against the next. A Vesper can survive injury, exile, even the loss of a specimen if sequence remains. If sequence collapses, everything becomes story, and story is where false destiny learns to dress like revelation.
 
-**Open questions:**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-1. How often have the Vesper mistaken a stable aberration for a consagration worthy of preservation?
-2. What is the exact ritual difference between a blood rite that prepares and a blood rite that forces?
-3. What Vesper term unifies blood, hemolymph, and other circulating life-media into one sacred-comparative category?
-4. Are consagrados por destino ever allowed political authority over ordinary houses, or are they always kept apart?
-5. How many bond shrines exist, and how many houses deny owning one while living by its pressure?
-6. What becomes of aberrations that are too useful to kill but too dangerous to honor?
-7. At what point does a house stop reading the pulso and begin teaching it what shape to take?
+- **Néctar Carmesí:** Es el término teológico que unifica la sangre, hemolinfa y medios vivos circulantes bajo una sola categoría sagrada.
+- **Aberraciones vs Consagrados:** Las *aberraciones* son biológicamente defectuosas y, por tanto, controlables; los Vesper las usan como perros de guerra y guardianes. Los *Consagrados*, en cambio, son bestias apex perfectas que manipulan Tauma de forma innata. Son incontrolables. La relación de los Vesper con ellos es platónica y reverencial; si un Consagrado devora a media bóveda, los sacerdotes lo consideran un acto divino irrefutable.
+- **La mentira Vesper:** Fingen que hay una diferencia ritual entre "preparar" a un sujeto y "forzarlo". La tragedia es que esa diferencia no existe; es solo burocracia para justificar la manufactura constante de monstruos.
+
+---
+
+## 11. Cultura Material 
+
+La cultura material Vesper está diseñada para el encierro, la lectura biológica y la disección ceremonial.
+
+- **Cuencos de *Camazotz*:** Vasijas ceremoniales talladas en hueso taumático que analizan la pureza genética y las aflicciones activas en el *néctar carmesí* derramado dentro de ellas.
+- **Cuchillos de Obsidiana (*Tecpatl*):** Herramientas quirúrgicas sagradas. Los Vesper creen que un corte preciso revela instantáneamente la biología oculta de una criatura.
+- **Bastidores de Aberración:** Cadenas y grilletes usados en sus bóvedas inferiores. No solo aprisionan el cuerpo de una aberración, sino que actúan como vestigos menores que estabilizan sus defectos anatómicos lo suficiente como para obligarlas a servir de guardianes sin desintegrarse.

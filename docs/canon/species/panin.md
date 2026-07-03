@@ -10,15 +10,11 @@
 
 ## 1. Identity
 
-The Panin are individually intelligent and collectively amnesiac. Every Panin alive right now can learn fast, read situations accurately, improvise under pressure, and execute on a problem with full attention. What they cannot do reliably is care about that problem tomorrow — or remember, three generations from now, that anyone ever solved it before.
+The Panin are individually brilliant and collectively amnesiac. Imagine an entire civilization operating with what other species would diagnose as severe ADHD: exceptionally intelligent, capable of reading situations with terrifying accuracy, but biologically devoid of long-term executive function. When a Panin is inspired, their hyperfocus is absolute and their problem-solving capacity is formidable. What they cannot do reliably is care about that problem tomorrow, or execute a ten-year plan to maintain what they built today.
 
-The cognitive architecture that produces this is species-wide: an underdevelopment of the prefrontal analog that filters, defers, and accumulates, combined with dopamine dysregulation that makes meaning volatile. Hyperfocus is real — when signal arrives, a Panin's attention is total, their engagement genuine, their output often formidable. The collapse of that signal is equally real, equally total, and arrives without warning. The Panin did not decide to abandon the project. The signal went quiet. There is no version of them that could have held it.
+The cognitive architecture that produces this is not a lack of intelligence, but a dopamine dysregulation combined with an underdevelopment of the executive filter that defers gratification. They try to fit into the world, to build habits and minimize the fallout of their volatile attention, but biology inevitably wins. They are trapped in a reality where their intense, brilliant inspiration is not enough to sustain the maintenance that civilization demands.
 
-This is not chaos as identity. It is the operational logic of beings who live fast, die at forty, and cannot bet on the future to be legible from where they currently stand. Their culture adapted to that logic entirely: no monuments, no archives, no hierarchy that outlasts its holder's signal, no intergenerational doctrine. What looks like disorder from outside is often the absence of any investment in the forms that disorder would require to be defined against.
-
-The civilizational anxiety the Panin carry — without articulating it, because that would require a sustained doctrine — is the possibility that intelligence without accumulation is just noise that reorganizes itself. That they are not building anything. That the things they rediscover every generation are the same things their great-grandparents discovered, and were certain about, and then forgot.
-
-They are mostly not thinking about this. They are thinking about whatever has signal right now.
+This is the tragedy of the Panin: they are not animals acting on reflex. They are sapient beings fully aware of their genius, who watch their own grand projects crumble because they simply cannot force their brains to care about the maintenance phase.
 
 ---
 
@@ -59,7 +55,7 @@ Authority inside the band is **signal-current**: the individual whose attention 
 
 **Hierarchy** in the conventional sense does not form. There are no titles, no inherited positions, no offices that persist across signal cycles. An individual can have a strong local reputation — for accuracy, for survival skill, for the quality of their stress-testing — and that reputation shapes how much weight others give their reads. But the reputation is personal and present-day. It does not transfer to their children. It does not authorize them to direct others who don't see the current signal.
 
-**Stress-testing** is the one consistent practice across all bands. When a Panin population arrives in a new location, the first phase is not settling — it is systematic environmental evaluation: food sources tested for safety, structures assessed for stability, routes mapped for risk, water evaluated before dependency. This is learned behavior that has survived across generations not because anyone documented it but because bands that skip it die faster and produce fewer offspring. The practice persists as reflex, not doctrine. No Panin band has a formal stress-testing protocol. They all do the same things anyway.
+**La Doctrina del Testing (Curiosidad Innata):** When a Panin population arrives in a new location, they immediately begin systematic environmental evaluation. They push walls, taste water, test ropes, and bite unfamiliar materials. This is not a mindless animal reflex; it is the manifestation of their immense, restless intellect. They possess a profound need to *understand how things work* and to find the structural flaws in their environment before the environment kills them. They just never bother to write down what they learn for the next generation. What looks like chaotic tampering is actually rigorous, real-time stress testing by hyper-intelligent engineers who refuse to take notes.
 
 What a band does not have: records, archive, formal debt memory, oath-binding, intergenerational institution of any kind. What happened before the oldest living member arrived is functionally gone, unless the physical environment preserved it — an old stress-test marker, a structural modification, a cache that someone made and someone else found. The environment holds what the culture cannot.
 
@@ -167,59 +163,22 @@ Decorative practice is immediate and perishable: body paint, woven materials att
 
 ## 9. System Connections
 
-### Competency affinities
+### Species-specific mechanics (Updated from Corebook)
 
-- **Agilidad:** Acrobacia, Sigilo — arboreal movement inheritance, small-body maneuvering, environmental adaptation
-- **Astucia:** Orientación, Identificación, Geografía — rapid environmental reading, stress-test methodology, route evaluation
-- **Aura:** Intuición, Instinto — social signal-reading, intent detection, real-time behavioral interpretation
+**Instinto Caótico (Herencia)** — The Panin nervous system lacks the executive filter that other hominids developed. The impulse arrives and the response arrives with it. Resisting requires active effort that biology penalizes. Mechanically: Permanent -3 penalty to all T.R. and T.E. of Compostura (Enfoque, Contención, Meditación, Aplomo) and to T.R. against afflictions.
 
-### Natural attack logic
+**Adaptabilidad (Legado)** — Mechanically: Active technique. Temporarily trade a number of your major affinities (based on NR) for different ones. The new configuration lasts until the next long rest or until used again.
 
-- **Mordisco (Principal):** T.A. AGI / T.I. AGI / d6 / 1 m / Durabilidad 3 × rango / Potencia 4 × rango. Profiles: Interrupción · Precisión · Desgarro · Acecho. Effect on T.A. exceeding T.D. by 3+: T.R. de Alteraciones; failure → Lacerado (Leve rango 1–2 / Moderado rango 3–4 / Grave rango 5–6).
+**Curiosidad (Legado)** — Mechanically: They can use Astucia instead of Intelecto for T.E. of Identificación and Interpretación. They gain +1 per 4 NR to Identificación, Interpretación, and Intuición, reflecting their hyper-attention to present detail.
 
-### Arsenal fit
+**Agilidad Superior (Legado)** — Mechanically: Aguante is calculated as 3 + (Agilidad × 2) instead of Tenacidad. Their capacity to absorb physical punishment depends on how much they can move to reduce it, not mass.
 
-Natural affinities:
+**Armas Naturales:**
+- *Mordisco (Todos los Panin)*: Principal. Agilidad/Agilidad. Forces T.R. (Alteraciones) on strong hit, inflicts Conmocionado.
 
-- Light weapons — fast, low-commitment, consistent with the Panin's mobility profile and small body
-- Natural weapons as fallback — the Mordisco is there when everything else is gone
-- Light or no armor — a Panin in heavy armor has lost their primary defensive advantage, which is speed and unpredictability
+### Combat identity
 
-Less natural:
-
-- Heavy weapons or armor — inconsistent with size and the mobility-dominant combat identity
-- Sustained defensive positions — the Panin combat logic is motion, not anchor
-
-### Candidate species mechanics
-
-**Idiomas:** Maki (nativo) · Común
-
-**Tamaño:** Pequeño · 12 m · 40–50 años
-
-**Características:** +1 Agilidad, Astucia, Aura
-
-**Herencia — Instinto Caótico:** Permanente. −3 a todas las T.R. y T.E. de Compostura (Enfoque, Contención, Meditación, Aplomo) y a las T.R. contra aflicciones. El sistema nervioso Panin no tiene el filtro ejecutivo que otros homínidos desarrollaron — la señal llega y la respuesta llega con ella. Resistir requiere un esfuerzo activo que la biología penaliza por defecto.
-
-**Legados:**
-
-- **Curiosidad:** Identificación e Interpretación utilizan Astucia en lugar de Intelecto. +1/4 NR a T.E. de Identificación, Interpretación e Intuición. La atención de un Panin a señales ambientales y sociales presentes supera la capacidad analítica acumulada; lo que ven ahora es más preciso que lo que pueden sistematizar.
-- **Adaptabilidad:** Una vez al día, el personaje puede cambiar una especialización de afinidad mayor por otra distinta. La nueva afinidad mayor es funcional hasta el próximo cambio o hasta el descanso siguiente, lo que ocurra primero. La afinidad cedida vuelve a su estado anterior.
-- **Agilidad Superior:** Aguante = 3 + (Agilidad × 2) en lugar de 3 + (Tenacidad × 2). La capacidad de absorber castigo físico en un Panin depende de cuánto puede moverse para reducirlo, no de cuánta estructura corporal tiene para aguantarlo.
-
-### Technique implications
-
-Panin techniques should emerge from:
-
-- Rapid environmental entry and stress-testing applied as tactical advantage — knowing routes, cover, and structural state of a zone faster than opponents
-- Social signal reading as an active combat tool — reading intent before action, not after
-- Momentum-based engagement: techniques that reward continuous motion and punish positional lock
-- The collapse of the executive filter as a tool: techniques that involve reacting before thinking, with the right design to make the reaction useful
-
-They should avoid:
-
-- Sustained defensive positions or stance techniques (contradicts the mobility identity and the Compostura penalty)
-- Area-hold mechanics (anchor logic is incompatible with the species' dispersal profile)
-- Techniques that require accumulated attention over multiple rounds (volatile meaning makes multi-round setup unreliable as a mechanical identity)
+The Panin combat identity is extreme mobility and real-time tactical genius without long-term commitment. Their Adaptabilidad means they can re-spec their combat role daily based on whatever inspires them right now. They don't block; they dodge (Agilidad Superior). They don't use heavy weapons; they strike fast, exploiting structural weaknesses they identified instantly (Curiosidad).
 
 ---
 
@@ -253,10 +212,18 @@ They should avoid:
 - Uncomfortable: the knowledge that the thing currently holding their attention may not hold it tomorrow, and that this is not a decision they make
 - Open: what to do with the things they have learned in previous high-signal phases, now that the signal is quiet
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- Does the Primordial of pure intensity have any stable form, or is it constitutively unstable — present only in the collective peak and absent between them?
-- Is there any Panin community that has managed to sustain a cultural institution across more than two generations? If so, what did they sacrifice to do it?
-- What does a Panin elder look like in a non-Panin community — one who stayed, who has been in one place for twenty years? What does that do to the biology?
-- How do Myo oracles describe the Panin collective effect in their internal records, and do any of those records include direct approaches to individual Panin, and if so, what happened?
-- Does the stress-testing practice, transmitted behaviorally without doctrine, represent something functionally close to institutional knowledge? Could it be developed into something more explicit, and what would that cost?
+- **El Primordial del Fuego Corto:** Su Primordial no tiene una forma colosal ni yace dormido en ruinas. Es una entidad efímera que nace únicamente cuando una banda de Panins alcanza la sincronización absoluta en un estado de inspiración masiva. Existe por unos escasos minutos, pero su intensidad es tan grande que provoca alteraciones taumáticas gigantescas en el entorno, para luego disolverse sin dejar rastro cuando la atención del grupo se dispersa.
+- **TDAH Civilizacional:** Los Panin son hiper-inteligentes, pero carecen de función ejecutiva a largo plazo. Saben que son así e intentan compensarlo, pero su biología siempre gana. Su tragedia es ser genios tácticos atrapados en cuerpos que se niegan a mantener rutinas.
+- **El Asentado:** Un Panin que decide (o es forzado) a vivir en una sociedad estructurada y "hacer planes" se convierte en un *Asentado*. Se adaptan, pero sufren una profunda melancolía biológica, ya que reprimir su inspiración caótica para cumplir horarios les apaga la chispa vital.
+
+---
+
+## 11. Cultura Material Efímera
+
+La cultura material Panin está inspirada en la leyenda de Sun Wukong y la tribu Pirahã. Todo es utilitario en el presente y desechable en el futuro.
+
+- **Bastones de Masa Adaptativa (*Ruyi Jingu Bang*):** Armas u herramientas forjadas con maderas y vestigos taumáticos que responden a la necesidad inmediata del Panin. Si necesitan alcance, el bastón se alarga; si necesitan impacto, se densifica. No tienen forma fija, cambian según la "Inspiración" de quien lo empuña.
+- **Arte de Estrés Efímero:** Su entorno se llena de marcas temporales: nudos en lianas, piedras apiladas o pintura biológica. No es arte para la posteridad ni escritura sagrada, son simples "post-its" de su hiper-atención presente ("esta rama se rompe", "aquí el agua es segura"). Al día siguiente, la marca pierde su significado y es abandonada.
+- **Máscaras del Aullador (Hun Batz):** Amuletos ceremoniales tallados. Un Panin que necesita forzar un estado de hiper-enfoque absoluto (para una batalla o para resolver un problema crítico cuando su biología está exhausta) se pone la máscara, lo que canaliza el poder del *Fuego Corto* directamente en su cerebro, quemando sus reservas metabólicas a cambio de lucidez.

@@ -169,50 +169,26 @@ Arakhel name practices involve the node. Full identification includes the crossi
 
 ## 9. System Connections
 
-### Competency affinities
+### Species-specific mechanics (Updated from Corebook)
 
-- **Agilidad:** Acrobacia, Sigilo — crossing hostile terrain, moving through their own silk networks without disturbance, hunting by patience and approach
-- **Astucia:** Orientación, Rastreo, Oficio — reading the between, following vibration traces, silk production and maintenance
-- **Aura:** Instinto, Persuasión — reading what moves through their network; guidance offered to travelers at the node
+**Umbral Vibratorio (Herencia)** — La arquitectura sensorial Arakhel procesa el mundo a un nivel de grano vibratorio a través de la seda. Reciben una penalización permanente de `-3` a las T.R. de Alteraciones cuando se les aplica el estado **Desorientado** o **Conmocionado**. Esta penalización no es una dolencia; es el costo biológico de un sistema neurológico hipersensible vulnerable a perturbaciones espaciales extremas.
 
-### Natural weapon logic
+**Percepción Estructural (Legado)** — Mechanically: +1 per 4 NR to T.E. of **Percepción** when detecting movement through solid surfaces or connected structures without line of sight, and to **Rastreo** through surface vibration traces. Also applies to **Trampas** checks regardless of environment.
 
-- **Mordisco (Principal):** Chelicerae — hollow fangs below the jaw, fast and precise. The bite itself is brief and deliberate. Effect arrives through venom delivered at contact. Not a mauling weapon — a precise instrument of delivery. Profiles: Perforación, Precisión, Corrosión, Hostigamiento. The venom is neurotoxic; paralysis onset scales with venom concentration at higher ranks.
+**Glándulas de Seda (Legado)** — Mechanically: During full rest, Arakhel synthesize raw silk. Yield and quality scale with NR (e.g., NR 1-4 yields 250g grade 1). Used directly for anchoring, improvised traps, or signaling. Requires fabrication processing for durable crafting.
 
-### Arsenal fit
+**Urdimbre (Legado)** — Active utility technique (Ritmo 5, Desgaste 2, Alcance 10m). Anchor a web network covering a 6m radius.
+- Receives vibration signatures of all movement inside, ignoring line of sight.
+- Enemies moving inside must pass T.R. Alteraciones or become Atrapado (scales with rank).
+- The Arakhel moves freely without triggering penalties.
+- Permanent until cleared manually.
 
-Likely weapon affinities:
-- Light weapons and short blades — speed and precision over power
-- Improvised restraints, silk-based control tools
-- Weapons that pair with zone-denial techniques (the Arakhel method is to anchor the space, then act)
+**Armas Naturales:**
+- *Mordisco (Todos los Arakhel)*: Principal. Agilidad/Tenacidad. Profiles: Perforación, Precisión, Corrosión, Hostigamiento. Effect: If T.A. exceeds T.D. by 3+, target must pass T.R. Veneno or suffer the Paralizado condition. Severity scales with rank. A slow, deliberate assassination tool.
 
-Less natural:
-- Heavy weapons or shields — their identity is not mass or anchor
-- Ranged weapons in the conventional sense — their most valuable perceptual and attack range is within their own silk network, not at distance
+### Combat identity
 
-### Confirmed species mechanics
-
-**Características:** +1 AGI, CUN, AUR
-
-**Herencia — Umbral Vibratorio:** Permanent −3 to T.R. vs Desorientado and Conmocionado. Evolutionary baseline — their vibration-sensing architecture, which reads the world at grain-level through silk and body surface, is hypersensitive to stimuli that disrupt spatial signal. This is not a condition. It is how the species is built.
-
-**Legados:**
-- **Percepción Estructural:** +1/4 NR to T.E. Percepción when detecting movement through solid surfaces or connected structures without line of sight; +1/4 NR to T.E. Rastreo when tracking by vibration trace through surfaces. Requires contact with a connected surface — not airborne detection.
-- **Glándulas de Seda:** Full Rest activity produces raw Seda de Arakhel. NR 1–4 → 250 g grade 1 (Dur 6 / Pot 8). NR 5–8 → 500 g grade 2 (Dur 12 / Pot 16). NR 9+ → 1,000 g grade 3 (Dur 18 / Pot 24). Silk is unprocessed — requires fabrication before use as a crafting material. Can be used improvised for restraint and structural anchoring without processing.
-- **Urdimbre (Technique):** Active deployment of a silk network as combat zone control and sensory extension. See technique entry.
-
-### Technique implications
-
-Arakhel Techniques should emerge from:
-- Network deployment — silk anchored to terrain that changes the combat space
-- Vibration reading — knowing what is happening in an area without visual access
-- Venom vectors — the bite as a slow weapon whose effect arrives after the contact
-- Containment and zone denial — the spider's biological strategy is to anchor, trap, and wait
-
-They should avoid:
-- Direct heavy damage output — not the species' biological or cultural identity
-- Speed-chain harassment (Zarnag covers this; the Arakhel method is patience, not volume)
-- Social or psychological pressure techniques — their AUR-based strength is environmental, not interpersonal
+The Arakhel do not fight fair. They dominate the geometry of the space before the combat begins using *Urdimbre*, trapping those who do not know how to read the network. Once the prey is restrained, they deliver precise, venomous bites that scale into paralysis. They are patient trappers and executioners, relying on spatial awareness and area denial rather than frontal force.
 
 ---
 
@@ -247,10 +223,18 @@ They should avoid:
 - Uncomfortable: the possibility that what their family has been tending for generations is not what their cosmology says it is
 - Open: who they are when the node isn't there — their extended sensory reach is reduced to biological baseline away from their own silk, which means every other environment they move through is experienced at diminished resolution
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What happens when a node's offering accumulation is old enough to be studied by a Drak'kai who passes through? What does the Drak'kai say? What does the family do?
-- Is there an Arakhel community that has deliberately invited Rokhart researchers in, and what has that produced?
-- What is the oldest confirmed node, and is its family still tending it?
-- Do Arakhel nodes have formal names? If so, what is the naming tradition?
-- Can silk produced at an old node carry any imprint from what has accumulated there? If so, what does that mean for Arakhel who use their own silk as their primary building material?
+- **El Problema Drak'kai:** Cuando un erudito Drak'kai examina un Nodo Antiguo, a menudo reconoce el "despertar de la voluntad" no como una deidad, sino como un patrón parasitario de Tauma gigante que ha crecido gracias a las ofrendas acumuladas. Los Arakhel no debaten este hallazgo: asesinan al erudito en silencio en las redes. Es el único dogma que defienden con la muerte, porque la alternativa es aceptar que han sido el ganado de un parásito durante generaciones.
+- **La Seda como Objeto:** La seda Arakhel no es mágica por defecto; es un material orgánico y un objeto físico más. Puede anclar Tauma (convirtiéndose en vestigo), pero requiere el mismo tiempo, impronta y exposición que cualquier otra vasija u objeto en el mundo. No es un "atajo" sobrenatural.
+- **Nomenclatura y Distribución:** Guiados por el modelo de migración polinesio de Transcendence, las especies cubren vastas regiones mediante migraciones escalonadas, adaptando su arquitectura pero manteniendo su cosmología. Por tanto, los Nodos toman sus nombres de dos fuentes: la dinastía que los custodia o las características topográficas únicas que dictaron la migración (Ej: *El Nodo Kael*, o *El Cruce de la Piedra Hendida*). 
+
+---
+
+## 11. Cultura Material 
+
+La cultura material Arakhel está profundamente atada al viaje seguro, al cruce sagrado y al almacenamiento de vibración.
+
+- **Marcadores de *Sacbe*:** Monolitos de piedra envueltos en gruesas capas de seda antigua, ubicados en los bordes de sus redes. Es aquí donde los viajeros depositan sus ofrendas para lograr un paso seguro. Con los siglos, actúan como baterías de Tauma pasivo.
+- **Vasijas de los *Lares Compitales*:** Pequeños cuencos de cerámica que las familias Arakhel esconden en el centro del nodo. Contienen la ofrenda más antigua jamás depositada allí. Son veneradas como el espíritu fundacional del cruce.
+- **Husos de la Abuela Araña:** Herramientas de tejido talladas en madera taumática. Los tejedores los utilizan no solo para fabricar, sino para "leer" la tensión acumulada en hilos kilométricos, interpretando mensajes a enormes distancias.

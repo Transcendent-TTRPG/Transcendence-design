@@ -307,14 +307,15 @@ Possible but less central:
 - shields for trench or plague-front duty
 - heavy armor only in specialized roles
 
-### Candidate species mechanics
+### Species-specific mechanics (Updated from Corebook)
 
-Future Zarnag mechanics might explore:
+**Umbral del Hambre (Herencia)** — Their bodies and minds are permanently saturated by the weight of their labor. Mechanically: -3 penalty to resistance rolls against Afflictions.
 
-- carrion tolerance
-- twisted laughter as pressure signal
-- corpse-field judgment
-- contamination risk management
+**Tolerancia a la Putrefacción (Legado)** — Their anatomy processes decay naturally. Mechanically: Scaling bonuses (+1 per 4 NR) to Poison and Infection resistance rolls.
+
+**Mandíbula Trituradora (Legado)** — Their bite is designed to break armor and bone. Mechanically: Bite attacks ignore +1/4 NR points of the target's Block.
+
+**La Carcajada (Legado)** — An active cosmological assertion of presence that separates the living from the dead, unnerving enemies. Mechanically: Active technique (TC Presence) that inflicts the Terrified alteration in an 8m radius, severity scaling with NR.
 
 ### Technique implications
 
@@ -350,13 +351,20 @@ become unavoidable labor.
 - making them simply plague-immune
 - treating carrion and death only as style rather than survival logic
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What do the Zarnag believe happens when a corpse is neither properly consumed
-  nor properly buried?
-- Which Zarnag communities are more feared: battlefield followers, plague-edge
-  camps, or ruin-strip circles?
-- Do some Zarnag see themselves as protectors of the living, while others
-  increasingly identify with the dead and the remainder?
-- What kinds of ancient ruins or catastrophic zones first taught them that bad
-  death can spread?
+- **El Resto Insepulto y el Tauma:** Cuando una criatura muere en un estado de terror absoluto, rabia o deuda profunda, esa intensidad no se desvanece; la impronta emocional es tan violenta que *modifica el Tauma* local. Ese coágulo taumático es lo que los Zarnag llaman un "Resto" (similar al *Etemmu* sumerio). Si no se sacia o limpia, el Resto pudre el entorno, enloquece a la fauna y muerde a los vivos.
+- **La Verdad sobre las Ruinas y el Fin:** El apocalipsis que rompió el mundo ocurrió hace **millones de años**, provocado por una civilización extinta (los humanos) que causó un cambio en la rotación del planeta. Esa especie ya no existe, ni quedan "laboratorios" reconocibles, solo geología destrozada. La Tierra engendró nueva vida lentamente a lo largo de eones. Los Zarnag no limpian fantasmas humanos recientes; limpian masacres de su era, cubiles de monstruos alfa, o zonas catastróficas donde innumerables criaturas murieron de golpe, dejando manchas taumáticas insoportables.
+- **La Gula y los Círculos de Ruinas:** Los clanes Zarnag más temidos son los que operan en estas zonas de desastre masivo. El riesgo constante es "La Gula": el momento en que un Zarnag se acostumbra tanto al peso taumático de la impronta de los muertos que deja de limpiarla y empieza a atesorarla o consumirla para sentir poder.
+
+---
+
+## 10. Cultura Material y Herramientas de Cierre
+
+A diferencia de otras especies que buscan Vestigos para obtener habilidades extranaturales, los Zarnag emplean objetos imbuidos como **herramientas de limpieza y contención**. Su cultura material no busca acumular poder, sino "cerrar" heridas en el mundo. Estéticamente, mezclan las herramientas de los exorcistas babilónicos (*ashipu*) con el simbolismo mortuorio del Vudú haitiano.
+
+- **Clavos de Ataúd Primigenio:** Clavos de hierro pesado forjados en hornos alimentados con osamentas. Al clavarlos en el suelo de un perímetro, "anclan" literalmente una impronta taumática descontrolada, impidiendo que el Resto se expanda o escape de una zona.
+- **Bolsas Gris-Gris (Wangas):** Atados de cuero crudo, huesos de carroñero y tierra de fosa. Los Zarnag los preparan para que absorban pasivamente la presión o el miedo residual de una zona. La bolsa se pudre y se deshace lentamente, evitando que la impronta enloquezca la mente del Zarnag.
+- **Cuerdas de Ashipu:** Sogas trenzadas con resina amarga y ceniza. Se usan para trazar perímetros sagrados de los cuales las resonancias taumáticas muertas no pueden salir. Cruzar una cuerda de ashipu sin permiso es arriesgarse a recibir toda la infección del sitio de golpe.
+- **Efigies de Arcilla de Receptáculo:** Estatuillas toscas usadas como "trampas de gravedad". Cuando un Resto es demasiado intenso para disiparlo rápidamente, un Zarnag lo "atrapa" temporalmente dentro de la efigie y se la cuelga al cuello, cargando dolorosamente con su peso hasta encontrar un lugar seguro para quemarla o enterrarla apropiadamente.
+- **La Vestimenta del Juez de Carroña:** Los Zarnag más veteranos a menudo adoptan una estética absurdamente formal o pomposa (sombreros altos, abrigos de retazos finos), imitando a entidades del umbral como *Baron Samedi*. Esta vestimenta no es arrogancia; es una mofa ritual a la muerte, una afirmación de que el Zarnag rige el límite y no será consumido por él.

@@ -101,24 +101,37 @@ Herramientas de precisión para atacar puntos ciegos.
 - Efecto Sistémico: Si ejecutas un ataque con Garras contra un objetivo mientras estás en estado **Oculto**, tu golpe es tan preciso que puedes realizar un intento de Romper (reducir Durabilidad del equipo del objetivo) si superas la T.D., sin necesidad de haber obtenido un Impacto Crítico.
 
 **Herencia — Terror a la Exposición:**
-Su psicología colapsa cuando se ven rodeados y visibles. Si el Kesh pierde de manera involuntaria el estado **Oculto** (ya sea por iluminación, rastreo, etc.), obtiene una penalización de `-3` a las T.R. de Alteraciones hasta que logre superar una T.C. de Compostura frente a la severidad de las *Condiciones del Entorno* de la escena actual.
+Su psicología colapsa cuando el universo los obliga a ser el centro de atención. Si el Kesh pierde de manera involuntaria el estado **Oculto** (ya sea por iluminación repentina, rastreo, o al ser expuesto a la fuerza), entra en pánico liminal. Obtiene una penalización de `−3` a las T.R. de Alteraciones hasta que logre superar una T.C. de Compostura frente a la severidad de las Condiciones del Entorno de la escena actual.
 
 **Legados:**
 
-*Silencio Inerte (Marcador Biológico)*
-Obtienen un bonificador de `+1` por cada cuatro Niveles de Referencia a las T.E. de **Sigilo** y **Acrobacias**. Pierden este beneficio si equipan armaduras Intermedias o Pesadas que obstaculicen la fluidez de sus movimientos.
+*Silencio Inerte*
+Obtienen un bonificador de `+1` por cada 4 NR a las T.E. de **Sigilo**, **Acrobacias**, **Equilibrio** y **Trepar**. Este bono se pierde si el Kesh lleva equipada una armadura Pesada o Intermedia con bloqueos metálicos que generen ruido.
 
-*Anatomía Fluida (Marcador Biológico)*
-Poseen un equilibrio absoluto. Ignoran el estado de **Terreno Difícil** cuando trepan, escalan o se mueven por superficies verticales/estrechas. Además, mitigan su inercia al caer: reducen la distancia efectiva de cualquier caída en 1 metro por cada Nivel de Referencia antes de calcular el impacto en el sistema de heridas o posiciones.
+*Anatomía Fluida*
+Su estructura ósea y sentido vestibular son perfectos para la verticalidad. El movimiento de trepar no cuesta metros adicionales de movimiento, y no sufren penalizadores de **Terreno Difícil**. Además, reducen la distancia efectiva de cualquier caída en 2 metros por cada NR antes de calcular el impacto o las consecuencias mecánicas de la misma.
 
-*Depredador Umbrío (Técnica Activa)*
-*Reacción · Utilidad · Ritmo 0 · Desgaste 2 · Gatillo: Realizar un ataque físico estando Oculto.*
-Normalmente, atacar rompe el estado Oculto. Al activar esta técnica inmediatamente después de impactar, puedes realizar un movimiento gratuito de reposicionamiento de hasta 1 metro por cada 4 NR sin provocar ataques de oportunidad. Si terminas este movimiento en una zona que ofrezca cobertura o bloqueo visual, el Kesh no pierde su estado Oculto tras el ataque.
+*Depredador*
+*Reacción · Utilidad · Ritmo 0 · Desgaste 2 · Requisito: Realizar un ataque físico estando Oculto.*
+Atacar revela inmediatamente tu posición. Sin embargo, al activar esta técnica en el instante en que tu golpe conecta, reaccionas antes de que la sangre toque el suelo. Realizas un movimiento gratuito de reposicionamiento de hasta 1 metro por cada 4 NR sin provocar reacciones. Si terminas este movimiento en una zona que ofrezca cobertura o bloqueo visual válido, no pierdes el estado Oculto.
 
 ---
 
 ## 10. Player Character Hooks and Open Questions
 
-- Un Kesh aventurero probablemente lo es porque ha fallado en el dogma de su pueblo y tiene apegos.
-- ¿Cómo lidia un jugador Kesh con un grupo que constantemente atrae la atención (como los Bardos o Magos vistosos)?
+- Un Kesh aventurero probablemente lo es porque ha fallado en el dogma de su pueblo: tiene apegos. El mero acto de ser parte de un grupo, generar vínculos y exponerse al mundo lo vuelve un hereje para su cultura.
 - La tensión constante de jugar un personaje que debe usar el Ocultamiento como herramienta primaria de supervivencia.
+
+### Canon Resolutivo: Base para el Módulo de Campaña
+
+- **El Mecanismo del Cebo:** ¿Cómo lidia un jugador Kesh con un grupo que constantemente atrae la atención (como Bardos ruidosos o Magos vistosos)? El Kesh los utilizará pasiva o activamente como **cebo cósmico**. Para la psicología del Kesh, el bardo escandaloso está "iluminándose" para el Tauma. En situaciones de peligro liminal o emboscadas de horrores cósmicos, el Kesh se ocultará de inmediato, sabiendo que el depredador abismal irá instintivamente primero por el mago brillante, dándole tiempo al Kesh para atacar desde el punto ciego o escapar.
+
+---
+
+## 11. Cultura Material 
+
+El arte Kesh es el arte de borrar. Sus objetos más sagrados no están hechos para recordar, sino para olvidar y evadir la mirada cósmica, fusionando la mitología azteca de *Tezcatlipoca* con el registro andino quechua (*Keshwa*).
+
+- **Espejos Humeantes (*Tezcatlipoca*):** Cristales oscuros de obsidiana utilizados por los exploradores Kesh para percibir sutilmente la atención sobrenatural activa. Al mirar a través de ellos, no buscan enemigos, buscan ver "qué zonas están siendo miradas por el Universo", para luego guiar a su caravana por las zonas que el Cosmos ha decidido ignorar.
+- **Quipus de Borrado:** Su único sistema de registro escrito. Cuerdas anudadas tratadas con químicos taumáticos volátiles. Contienen información vital (rutas de escape, debilidades de un territorio) que el portador percibe o "lee" una sola vez antes de que el objeto se deshaga en ceniza sin dejar rastro físico.
+- **Vasijas del Vacío (*Wu*):** Vasijas rituales opacas y completamente vacías. Cuando un Espejismo Kesh levanta su campamento, dejan una de estas vasijas en el centro durante unas horas; la vasija "absorbe" la firma biológica y cualquier señal residual de Tauma que la caravana haya dejado, asegurando su completo anonimato.

@@ -99,15 +99,15 @@ Weapons are objects with an intended lifecycle: forged, used, returned to the fo
 
 ## 4. Theology and Cosmology
 
-The Ursari believe that an object's true power is not born in the forge, but in the wild. The forge is where the work ends, not where it begins. 
+The Ursari possess a robust, animistic and polytheistic theology modeled heavily on Celtic myth (e.g., the Tuatha Dé Danann and the Fomorians). They believe the world is divided between the forces of *Shape* (the forge) and the forces of *Raw Will* (the wild).
 
-When an ordinary object accrues enough collective belief or personal weight, it is taken by a druida into the most ferocious natural environments. They do not explicitly speak of Tauma or Limbo. They believe they are communicating with the raw will of nature. 
+**The Great Maker (Analog of Goibniu):** The patron deity of the forge, structure, and civilization. The Maker represents the hammer, the anvil, and the limits of the physical world. The masters pray to the Maker for the strength to endure the work.
 
-By taking objects heavy with collective meaning into Tauma-saturated sites, the primordial energy anchors to the objects, changing reality to match the species' belief. This is the mechanism by which they unwittingly create empowered objects, though they simply consider it nature responding to the object's importance. Once the druida returns, the smith finishes the piece, shaping the empowered material into its final form.
+**The Wild Gods:** Formless, ferocious deities that inhabit the deep forests, volcanic vents, and high peaks. They are not evil, but they are completely indifferent to mortal limits. They represent the raw, unshaped power of nature.
 
-The tragedy of their theology is their interpretation of the druidas' deterioration. The exposure to high-gradient Tauma sites causes severe neurological and spiritual damage. The Ursari interpret this deterioration—fever, auditory hallucinations, erratic behavior—as the sacred cost of communion. 
+The Ursari believe that an object's true power is not born in the forge, but in the wild. When an ordinary object accrues enough collective belief, it is taken by a *druida* into the domains of the Wild Gods. The druida performs long vigils, offering the object to the raw will of nature. 
 
-They cannot distinguish between a successful spiritual connection and a broken nervous system. The objection exists. The rituals continue.
+Because these wild sites are actually geographies highly saturated with Tauma, the environmental Tauma anchors to the object, changing reality to match the species' belief. However, this high-gradient Tauma exposure also shatters the druida's perception, inflicting severe psychological and sensory *aflicciones* (hallucinations, paranoia, sensory overload). The tragedy of their theology is their interpretation of this neurological damage: the Ursari see the druida's shattered perception as a "sacred fever," proof that the Wild Gods have spoken to them. They cannot distinguish between a successful spiritual connection and a mind broken by Tauma-induced afflictions.
 
 ---
 
@@ -227,53 +227,23 @@ This utility does not imply understanding. Most species want the result. Few wan
 
 ## 9. System Connections
 
-### Characteristics
+### Species-specific mechanics (Updated from Corebook)
 
-`+1 Fuerza, Sabiduría, Presencia`
+**Precio de la Comunión (Herencia)** — Generations of druidic isolation and incessant exposure to extreme nature have left a biological imprint on a species trained to endure tension that breaks others. Mechanically: Permanent -3 penalty to all T.R. against Aflicciones.
 
-Strength: the forge demands it; the body reflects generational selection for it.  
-Wisdom: craft mastery through accumulated observation, not theory. They read the world through sustained contact with how things behave.  
-Presence: the physical mass plus the cultural weight of the witnessed honor system. An Ursari who speaks in a dispute commands attention before the first word.
+**Constitución de Forja (Legado)** — Mechanically: +1 per 4 NR to T.E. of Aclimatación, Tolerancia, and Supervivencia.
 
-### Heritage
+**La Presa del Oso (Legado)** — Mechanically: Active technique (Ritmo 4, Desgaste 1). Attack with Garras. If it hits, deal damage and target rolls T.R. Alteraciones. If they fail, they are Atrapado. While Atrapado, you can spend 1 Desgaste each turn to deal Garras damage without rolling to hit. You cannot move while maintaining the grapple. Target can escape with opposed Fuerza check.
 
-**Umbral Bajo** — `−3` to all T.R. against Afflictions.
+**El Oso No Cede (Legado)** — Passive. While in Agonía, the Ursari can perform actions with Ritmo ≤ 3. All other Agonía effects (stabilization required, risk of death on Crítico to Head/Torso) remain active.
 
-The Tauma selects them. Their meritocracy rewards proximity to the most Tauma-saturated forge sites. The nervous system that can sustain the most gradient exposure without immediate collapse is the one their culture elevates. The vulnerability is not incidental — it is systematically cultivated and then called mastery.
+**Armas Naturales:**
+- *Garras (Todos los Ursari)*: Auxiliar. Fuerza/Fuerza. Forces T.R. (Alteraciones) on strong hit. Failure permanently reduces target's T.D. by 1 per rank until combat ends (armor tearing).
+- *Mordisco (Todos los Ursari)*: Principal. Fuerza/Fuerza. Restriction: No other weapon can be used in the same activation. On strong hit, adds +1d6 to +3d6 raw Impacto damage based on rank.
 
-### Legados
+### Combat identity
 
-**Constitución de Forja** (skill bonus) — `+1/4 NR` to T.E. of Aclimatación, Tolerancia, and Supervivencia.  
-Bodies trained for hostile environments: extreme heat, toxic fumes, sustained physical stress, environments that would disable less acclimated species.
-
-**La Presa del Oso** (technique — #108) — Active attack, garras. Full mechanics in `data/system/techniques.yaml` and corebook section 9.
-
-**El Oso No Cede** (passive mechanic) — While in Agonía, may perform actions with Ritmo ≤ 3. All other Agonía effects remain active. The bear does not stop when it should — this is a biological reality the culture codified as doctrine: finish what was started, do not mistake pain for limit. It is also what kills Ursari who carry the lesson too far.
-
-### Natural weapons
-
-**Garras (Auxiliar)** — Fuerza/Fuerza · 1–2m · d8 · Dur 4×rango · Pot 5×rango  
-Profiles: Impacto · Bastión · Desgarramiento · Control de Línea  
-Effect: T.A. exceeds T.D. by 3+ → target T.R. Alteraciones → Desequilibrado (Leve/Moderado/Grave by rango)
-
-The d8 damage base reflects the actual force of bear claws relative to other species' natural weapons — heavier than hyena claws (Zarnag d6), comparable in scale to elephant trunk (Loxod d8 as massive appendage of a large species).
-
-**Mordisco (Principal)** — Fuerza/Fuerza · 1m · d10 · Dur 5×rango · Pot 7×rango  
-Profiles: Impacto · Imparable · Intercepción  
-Restriction: no other weapon same activation  
-Effect: T.A. exceeds T.D. by 3+ → +1d6/+2d6/+3d6 additional Impacto damage by rango
-
-Principal/Auxiliar distinction: only relevant for two-weapon combat. The mordisco requires full-body commitment and cannot be combined in dual-weapon mode. Garras can be used individually or together — the dual-claw attack is what the Auxiliar classification captures.
-
-### Technique profile coverage
-
-Garras open: Bastión, Desgarramiento, Control de Línea, Impacto  
-Mordisco opens: Imparable, Intercepción, Impacto  
-Species technique (#108): La Presa del Oso — garras grapple, Atrapado
-
-Armor identity: Heavy armor users by cultural logic — they forge it, they know what it can and cannot do, and they wear what they made.
-
-Competency affinities: Aclimatación, Tolerancia, Supervivencia, Fuerza-based physical checks, craft-adjacent Saberes.
+The Ursari combat identity is built on unstoppable mass and suicidal endurance. They do not know how to let go. *La Presa del Oso* exemplifies this: they grab the enemy and crush them slowly, refusing to move or release them. *El Oso No Cede* means they will continue fighting and crushing their enemy even as they bleed to death in Agonía. They are terrifying because they interpret pain not as a signal to stop, but as a necessary friction to finish the job.
 
 ---
 
@@ -307,9 +277,19 @@ Ursari who appear in the open world have usually:
 
 The transmission chain. The forge identity. The knowledge that "what I know came from me and not from the crossing."
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What is the Bherac language's relationship to the oral law tradition — is it a distinct written register, or entirely oral?
-- Are there Ursari communities that have deliberately reduced druida exposure as policy? What happened to them and their forge output?
-- What specific Primordial entity has cohered in the most ancient and most Tauma-saturated Ursari forge zones — and does any Ursari theological tradition have a name for what they've been feeding?
-- What is the Ursari name for the Luphran parallel — do any druidas who have encountered marked Luphran veterans recognize what they see?
+- **El Lenguaje Bherac:** Su lenguaje tiene raíces orales profundas (gaélico/bretón). No existe lenguaje Bherac escrito para la ley, la teología o la poesía; todo se transmite de maestro a aprendiz. La única escritura Ursari son diagramas técnicos y matemáticos para la forja.
+- **Comunidades Proteccionistas:** Hubo forjas "modernas" que intentaron prohibir las inmersiones druídicas para salvar la salud mental de su gente. Sus armas salieron frágiles, ordinarias, sin "peso". Perdieron su estatus y fueron absorbidas.
+- **Tensión con Luphran:** Los Ursari llaman a los Luphran *Hermanos de la Quema*. Ambas culturas arrojan a sus mejores individuos al fuego (los Luphran al combate, los Ursari a la forja/naturaleza) hasta que se rompen, generando un respeto mutuo y tenso.
+
+---
+
+## 11. Cultura Material 
+
+La cultura material Ursari es pesada, duradera y profundamente atada al linaje del artesano.
+
+- **Torc de Autoridad:** Anillos de metal pesado para el cuello (inspiración celta). Un maestro forja un Torc para su aprendiz cuando este está listo para tomar su propia forja. Es un documento de identidad físico; el metal y la técnica del Torc cuentan la historia de todo el linaje de transmisión del herrero.
+- **Garras del *Karhunpeijaiset*:** Collares rituales hechos con las garras extraídas de maestros fallecidos. Los druidas los usan como anclajes táctiles de voluntad para intentar no perder la cordura durante sus terribles inmersiones en las zonas taumáticas.
+- **Hoces de Oro Taumático:** Herramientas ceremoniales (referencia druídica) usadas exclusivamente para "cortar" materiales del entorno sagrado. Su densidad previene que las propiedades anómalas del material se dispersen antes de llegar al yunque.
+- **Fragmentos de Yunque:** Literalmente, trozos de yunques que se partieron durante la forja de una obra maestra. Son conservados por las familias como prueba física de que la voluntad del herrero fue más dura que el hierro.

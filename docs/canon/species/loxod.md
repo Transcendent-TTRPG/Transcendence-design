@@ -156,50 +156,19 @@ Memory is not a virtue if it is not processed. Patience is not kindness if it on
 
 ## 9. System Connections
 
-**Characteristic affinities:** Tenacidad reflects the physical and neurological endurance required to carry what they carry — the ability to continue functioning under impressions that would incapacitate a less disciplined organism. It is also literal: at their size, physical resilience is baseline. Intelecto reflects the organizational cognitive architecture required to manage involuntary reception — their exceptional memory is not passive storage, it is active classification, and the classification system is built from analytical cognition. Compostura is the practiced management of internal state under continuous input; a Loxod who loses composure loses the ability to attenuate their reception, which has immediate practical consequences beyond the social ones.
+### Species-specific mechanics (Updated from Corebook)
 
-**Heritage — Firma Sísmica:**
-The Loxod infrasound emission is continuous, involuntary, and operates on frequencies shared with the fundamental vibrational texture of the Tauma. In ordinary environments, this is undetectable by other species and irrelevant. In environments where the Tauma is active or where its boundaries are thin — ruins of significant age, Tauma-proximate locations, places where entities have recently manifested — the Loxod signal becomes a distinct beacon. In such environments, a Loxod cannot benefit from Sigilo regardless of physical concealment: their infrasound signature persists through any material barrier and identifies their presence and position to anything that perceives in those frequencies. Additionally, entities and creatures that orient on Tauma-adjacent signals are automatically aware of any Loxod within a distance the Narrator determines by environment.
+**Firma Sísmica (Herencia)** — Loxod emit infrasound continuously. Mechanically: -3 penalty to all Stealth (Sigilo) rolls because their vibrational signature persists through barriers.
 
-This is not a conditional vulnerability. It is biology. The Loxod emit continuously; the world contains Tauma; the question is only how much of the world is currently listening.
+**Archivo Viviente (Legado)** — Perfect retention of directly absorbed impressions. Mechanically: +1 per 4 NR to Historia, Geografía, and Lingüística when exposed physically or chemically to the subject.
 
-**Legados:**
+**Olfato Profundo (Legado)** — Mechanically: Active technique (TC Compostura). Circular 8m. Detects active Alteraciones and Aflicciones on visible creatures, and detects general presence of Hidden creatures if they have conditions (without breaking their hidden state).
 
-*Archivo Viviente* — The Loxod olfactory-memory system retains absorbed impressions with a fidelity that no external archive can match. Per four NR, Loxod gain +1 to T.E. of Intelecto, Saberes, Historia, Lingüística, and Geografía when the relevant information is something they have directly encountered or absorbed — a place they've been to, a person they've met, a substance they've olfactorily processed. This is not theoretical knowledge retrieved from texts; it is the recovered experience of direct reception.
+**Trompa Versátil (Legado)** — Trunk manipulation. Mechanically: +1 per 4 NR to Trepar and Agarre. Also +1 per 4 NR to Percepción based on seismic resonance or solid-surface infrasound.
 
-*Percepción Química* — Chemical information from the immediate environment arrives continuously and involuntarily. Per four NR, Loxod gain +1 to T.E. of Percepción and Intuición when the information relevant to the check has a chemical component: deception (stress chemistry), concealed objects (material off-gassing), recently disturbed environments (oxidation and disruption compounds), or physiological states in nearby organisms. Within 15 meters, the Loxod is passively aware of the number and approximate position of living organisms through metabolic signature, independent of visibility conditions.
-
-*Trompa Versátil* — The trunk functions as a precision manipulation organ with exceptional force. Per four NR, Loxod gain +1 to T.E. of Atletismo when the action involves sustained grip, lift, or controlled application of force (climbing with anchor grip, holding position under sustained pressure, restraining movement). The trunk's seismic reception additionally gives +1 per four NR to T.E. of Percepción when the relevant signal is transmitted through solid surfaces — vibration, distant movement, infrasound from other Loxod.
-
-**Natural weapons:**
-
-*Colmillos — Principal — all Loxod*
-The tusks are permanent ivory structures used in forward-momentum attacks: charges, bracing, leveraged lifts. The attack pattern is not a slash or stab but a drive — the full weight of a Grande creature's mass behind two forward-facing points. Effect: on strong T.A. margin, the impact transfers momentum to the target, who must resist being thrown or knocked prone.
-- T.A.: Tenacidad
-- T.I.: Tenacidad
-- Alcance: 2 m
-- Daño: d10
-- Durabilidad: 7 × rango
-- Potencia: 9 × rango
-- Profiles: Carga · Perforación · Demolición · Intercepción
-- Effect: if T.A. exceeds T.D. by 3 or more, the target must pass a T.R. Alteraciones or become Derribado (severity scales by rank — to be confirmed at corebook stage)
-
-*Trompa — Auxiliar — all Loxod*
-The trunk as a combat weapon is a bludgeoning sweep or a controlling wrap — not a strike in the conventional sense but a reach-control option that operates at longer range than the tusks and exerts different force geometry. Grappling, sweeping, redirecting movement, pinning a limb. Effect: on strong T.A. margin, the target must resist being destabilized or controlled.
-- T.A.: Tenacidad
-- T.I.: Tenacidad
-- Alcance: 3 m
-- Daño: d8
-- Durabilidad: 8 × rango
-- Potencia: 8 × rango
-- Profiles: Control de Línea · Torsión · Bastión · Ruptura
-- Effect: if T.A. exceeds T.D. by 3 or more, the target must pass a T.R. Alteraciones or become Desequilibrado (severity scales by rank — to be confirmed at corebook stage)
-
-**Combat identity:**
-A Loxod in combat is a mass-and-reach problem. They do not move quickly, but they do not need to — at their size, changing the geometry of a fight without moving much is a natural capability. The tusks establish forward threat; the trunk creates a control radius that most opponents cannot match in reach. Their high Tenacidad means they sustain pressure better than most; their size modifiers give them natural T.R. bonuses against the physical conditions (Derribado, Desequilibrado, Atrapado) that their own weapons impose. They fight as territory, not as movement.
-
-**Specialization affinities:**
-Historia, Geografía, Lingüística (the archive functions and olfactory recall make these their primary scholarly domains), Percepción (chemical and seismic reception), Intuición (olfactory processing of emotional/physiological state), Atletismo (trunk-grip and trunk-anchor applications), Taumaturgia (empirical Tauma contact creates the most data-literate taumaturges in the world, if also the most exposed ones).
+**Armas Naturales:**
+- *Colmillos (Todos los Loxod)*: Principal. Tenacidad. Forces T.R. (Alteraciones) on strong hit, inflicts Aturdido.
+- *Trompa (Todos los Loxod)*: Auxiliar. Tenacidad. Forces T.R. (Alteraciones) on strong hit, inflicts Desequilibrado.
 
 ---
 
@@ -216,11 +185,20 @@ The accumulated impressions of a long life and deep archival training. Chemical 
 **What they need:**
 A stable partner or group to functionally replace part of the processing support the collective would normally provide. Not because they are incapable without it — but because the impressions keep accumulating, and organized transmission helps. A Loxod who travels alone for years without anyone to transmit to is carrying a growing weight. The older they are, the heavier what they hold already was before they left.
 
-**Open design questions:**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- The olfactory imprinting on significant death events is purely biological — stress hormones, trauma compounds, the chemical signature of death arriving through an exceptional olfactory architecture. This is not a Tauma phenomenon and requires no affliction. The design question is whether it has a mechanical trigger (T.R. in Narrator-defined mass-death or high-intensity environments) or remains in the narrative layer.
-- The two categories of anomalous infrasound return — fixed-pattern (vestige echoes, archiveable, finite) vs. adaptive (do not fix, seem to respond to the observer) — represent a crucial empirical distinction the Loxod have identified without knowing the underlying mechanism. Is there a specialization or practice that allows reliable classification? What are the institutional protocols when something in the archive is reclassified from fixed to adaptive?
-- Firma Sísmica as Herencia interacts directly with Sigilo mechanics. How does this interact with techniques or equipment that specifically suppress Tauma signatures? Is there a class of counter-material that partially dampens infrasound emission, creating tension in whether to wear it?
-- The Loxod as taumaturges: their empirical proximity to the Tauma and their involuntary signal-broadcast means they have the most direct experiential data about Tauma behavior of any species. Does this translate to a mechanical affinity in taumaturgic specializations, or is it solely narrative?
-- Technique seeds (separate document — see `loxod-technique-seeds.md` when created).
-- The relationship between Loxod infrasound and Naghii theology/practice — if Naghii have any perception of the Tauma's texture, do they experience a Loxod differently than other species do? This could create a specific cross-species dynamic worth developing.
+- **La Impronta Olfativa:** Sentir la muerte o el estrés residual de una habitación no es magia, ni es automático. Es el uso activo de su Legado *Olfato Profundo* (una tirada técnica). Lo leen químicamente, no taumáticamente.
+- **La Incomprensión del Tauma:** Los Loxod no entienden ni perciben el Tauma. Lo que perciben son *consecuencias físicas*. Cuando su infrasonido rebota en un Vestigo o una Entidad, no ven "magia", ven una distorsión acústica que no debería estar ahí, como si chocara con un muro invisible. Todo su conocimiento "taumático" es empírico y ciego: estudian la sombra que arroja la anomalía en el mundo físico, no la anomalía en sí.
+- **Supresión de Firma Sísmica:** Un Loxod no puede "apagar" su vibración biológica. Sin embargo, puede portar un Vestigo como el *Mandala Dhvani* que disipe físicamente esa resonancia hacia el exterior, anulando su penalización a Sigilo, pero como costo narrativo, "cegando" temporalmente su propia percepción de ecos.
+- **Relación con los Naghii:** Los sacerdotes Naghii ven a los Loxod como blasfemos fascinantes. Los ven como criaturas que literalmente "sienten la huella de los dioses" en la tierra, pero en lugar de adorarla, tratan de aislarla en un laboratorio de sonido.
+
+---
+
+## 11. Cultura Material y Herramientas de Atenuación
+
+La cultura material Loxod (inspirada en la India Védica y los Osarios de elefantes africanos) está diseñada casi exclusivamente para lidiar con el abrumador peso de la "sobrecarga" de memoria y su resonancia incontrolable con el mundo físico.
+
+- **Mandala *Dhvani* (Diagrama de Resonancia):** Placas pesadas talladas con geometría sagrada. Las instalan a gran escala en sus ciudades para disipar las distorsiones acústicas del ambiente. Los aventureros a veces cargan versiones pequeñas (como Vestigos) para silenciar su firma sísmica en territorio hostil, sacrificando su radar natural.
+- **El *Ankus* de Atenuación:** Un punzón ritual (análogo a la herramienta de los *mahouts*). No lo usan como arma para dañar, sino para tocar físicamente a un compañero en estado de "desplazamiento" o pánico químico, anclándolo de vuelta a la realidad presente.
+- **Colmillo de Registro (Estilógrafo de Memoria):** Así como Ganesha rompió su colmillo para escribir la historia del mundo, los Loxod graban sus hallazgos más insoportables en fragmentos de marfil de sus ancestros. Codificar la memoria en el hueso es la única forma de vaciarla de su propia mente.
+- **Osarios de Memoria:** Inspirado en los cementerios de elefantes africanos. Ciertas cuencas geográficas acústicamente neutras donde los ancianos Loxod van a morir. Dejan sus huesos grabados física y químicamente con la historia de siglos, sirviendo como los archivos definitivos para que las futuras generaciones los lean olfativamente.

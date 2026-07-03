@@ -166,27 +166,20 @@ Species with strong theological frameworks find the Formix disorienting in a dif
 
 **Characteristic affinities:** Tenacidad is the primary physical characteristic — the exoskeleton, the colonial work history, and the absence of a comfortable floor beneath them (no one is keeping them alive; they keep themselves alive). Astucia reflects the pattern recognition and task optimization that the hive trained without intending to give them: Formix who were assigned complex coordination tasks developed analytical cognition that persists after the colony. Compostura is not emotional calm — it is functional continuity under pressure. The Queen required perfect execution regardless of conditions. That wiring remains. A free Formix under threat or pain continues to function at a level that surprises other species; not because they don't feel it, but because they were never allowed to stop for it.
 
-**Heritage — Receptor Abierto:**
-The pheromonal reception architecture built by the Queen was never designed to close. Free Formix continue to process chemical signals through those open channels — including signals that were not intended for them. Any effect that operates through chemical pathways, chemical-adjacent Tauma, or direct influence on cognition and will finds reduced resistance in a Formix nervous system. The Formix receive a permanent penalty to T.R. against Veneno and against Alteraciones that affect cognition or will (Aturdido, Aterrorizado, Confundido, or similar). This is not psychological weakness — it is architectural. The channels were built to receive and they still do.
+### Species-specific mechanics (Updated from Corebook)
 
-**Legados:**
+**Receptor Abierto (Herencia)** — Their pheromonal channels cannot be closed. Mechanically: Permanent -3 penalty to T.R. against Veneno and the Alteraciones Confundido, Aturdido, and Sobrecargado.
 
-*Exoesqueleto* — For the purpose of all calculations involving Vigor (Aguante, carrying capacity, Talent rolls related to physical resilience), Formix are treated as Large size. This does not change their actual size category.
+**Exoesqueleto (Legado)** — Mechanically: For Aguante base and Carrying Capacity, treated as Large size (does not change actual size category).
 
-*Señal Química* — The antennae system that navigated hive-space and tracked colony members now operates in a world of continuous chemical information. Formix gain +1 per four NR to T.E. of Percepción, Supervivencia, Rastreo, and Intuición when the relevant information is available through chemical or olfactory channels (tracking by scent, identifying substances, detecting living beings through metabolic signature within 10 meters). Additionally, the presence of any living being within 10 meters registers as a baseline awareness — Formix cannot be fully surprised by organisms with metabolic signatures, even through visual barriers, as long as they are within that range.
+**Señal Química (Legado)** — Mechanically: Active technique (TC Astucia). Reveals all active biomagnetic or metabolic signatures in 10m, ignoring stealth, darkness, and cover. Can track recent passage by scent.
 
-*Umbral del Dolor* — Prolonged hive operation required the body to continue functioning under conditions that would stop a less trained organism. Formix reduce the mechanical penalty from pain-based Alteraciones by one severity step: Grave penalties are applied as Moderado, Moderado as Leve, and Leve as no penalty. This applies only to Alteraciones that impose penalties due to pain or physical distress (Lacerado, Agonía, and similar), not to conditions with other mechanical effects.
+**Umbral del Dolor (Legado)** — Hive conditioning to pain. Mechanically: +1 per 4 NR to T.R. against Lacerado, Electrizado, Corroído, and Aturdido.
 
-**Natural weapons:**
-
-*Mordisco (mandibles) — Principal — all Formix*
-Forceful bite capable of closing with significant pressure and maintaining it. Tenacidad. Not a snap attack — it's a closing grip that requires extraction to end. The profiles and stat values are to be confirmed at corebook entry stage.
-
-*Aguijón — Auxiliar — Guerrero variant only*
-Retractile stinger with venom injection. Agilidad. Precise placement over brute force. Effect: on strong T.A. margin, forces T.R. against venom effect (Debilitado severity scaling by rank). To be confirmed at corebook stage.
-
-*Expulsión Corrosiva — Auxiliar — Destilador variant only*
-Abdominal acid spray. Short ranged (5 m). Agilidad. Effect: on successful T.A., target must pass T.R. Alteraciones or become Corroído. The acid delivery is area-adjacent — exact mechanics to be confirmed at corebook stage, particularly regarding the ranged T.A. resolution.
+**Armas Naturales:**
+- *Mordisco (Todos los Formix)*: Principal. Tenacidad. Forces T.R. (Alteraciones) on strong hit, inflicts Confundido.
+- *Aguijón (Variante Guerrero)*: Auxiliar. Agilidad. Forces T.R. (Veneno) on strong hit, reduces Fuerza.
+- *Expulsión Corrosiva (Variante Destilador)*: Auxiliar. Agilidad. Forces T.R. (Alteraciones) on strong hit, inflicts Corroído.
 
 **Combat identity:**
 Formix are built to absorb and continue. They do not reposition the way Rokhart do — they establish position and hold it. The Guerrero identity is direct engagement: close, bite, inject, maintain pressure. The Destilador identity is zone control: the acid projection creates threat radius that shapes enemy positioning. Neither variant is built for the hit-and-run style; both are built to be standing when others stop.
@@ -212,10 +205,18 @@ A Formix in a party is someone who is genuinely still finding out who they are, 
 
 A Formix who escaped alone — without a refuge city — is a more isolated case: they've been building a self in a context where no one shares their reference point, which produces someone more adapted to other species' frameworks and more distant from the specifically Formix questions.
 
-**Open design questions:**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- Does proximity to a Queen, after years of freedom, risk re-establishing pheromonal control? The answer has significant implications for whether hive cities are navigable by free Formix PCs, and whether Queens are a credible direct threat to high-level PCs.
-- Specific terminology in Ferón for the untranslatable concepts (states of becoming, first-preference experiences) — to be developed at prose stage.
-- Technique seeds (separate document — see `formix-technique-seeds.md` when created).
-- Vínculo/Vestígio interaction: the Receptor Abierto heritage means Formix nervous systems offer reduced resistance to taumatic effects that operate through chemical or cognitive channels — the same pathways the Queen used. This does not make it easier to bond with a vínculo (that depends on finding a resonant object and the entity crossing, not on carrier permeability), but it does mean that afflictions from vínculo or vestígio contact develop faster when the effect operates through those channels, and that vínculo Aspectos using those pathways function with greater potency against a Formix. The question of whether this also applies in reverse — whether a Formix carrier's open channels amplify the output of a vínculo they hold, rather than simply receiving it — is unresolved.
-- Hive city as location: what happens when a party enters a hive city? Is the Queen's range limited enough that PCs can operate on the periphery? Or is any Formix PC immediately at risk?
+- **El Terror de la Ciudad Colmena:** Acercarse a la colmena de una Reina es el mayor miedo existencial de un Formix. Una Reina es una pesadilla viviente que colecciona Vestigos y Vínculos, y ejerce control total. Para un PJ Formix libre, entrar al radio de la Señal sin medidas extremas (bloqueadores químicos masivos o destrucción de sus propios receptores) significa sucumbir de nuevo a la voluntad de la colmena. La libertad no es inmunidad biológica, es mera distancia.
+- **La Paradoja del Receptor Abierto y los Vestigos:** Un Formix no amplifica un Vestigo ni recibe "órdenes" de él como si fuera una Reina. El Vestigo funciona exactamente igual que para cualquier otra especie. Lo que cambia es que, debido a su *Receptor Abierto*, el Formix sucumbe muchísimo más rápido a las Aflicciones del objeto. Su mente se quiebra más fácil ante la radiación taumática.
+- **La Identidad como Impronta:** En las ciudades refugio, donde no hay reproducción biológica, la lucha constante por forjar una identidad propia (separada de la colmena) es tan intensa que genera una impronta. Similar a los Zarnag (donde la muerte genera una huella), el esfuerzo emocional masivo de un Formix construyendo su "Yo" marca el Tauma del entorno a lo largo de décadas.
+
+---
+
+## 11. Cultura Material y Vestigos de la Identidad
+
+Los Formix son la única especie sin un referente histórico-cultural en el mundo real, porque la humanidad nunca ha experimentado la transición literal de una mente colmena a la individualidad. Sus Vestigos no provienen de devociones milenarias ni dogmas religiosos, porque los Formix libres no tienen eso.
+
+- **Los Vestigos Retrasados:** Los objetos taumáticos de los Formix libres se cristalizan a partir de la inmensa impronta emocional que genera la lucha por la identidad. Sin embargo, al no existir una cadena generacional biológica constante (padres enseñando a hijos), esta impronta es fragmentada y se cristaliza con mucho retraso temporal.
+- **Artefactos Incomprensibles:** Cuando un Formix libre encuentra un Vestigo forjado por su propia especie, rara vez lo entiende de inmediato. Estos objetos portan la impronta y la lucha de *generaciones pasadas* de Formix libres que ellos no conocieron. No hay una tradición oral continua que explique el objeto; el Vestigo resuena con su biología, pero el contexto cultural exacto está desconectado. Sienten afinidad, pero no familiaridad inmediata.
+- **Las Colecciones de la Reina:** En contraposición a los refugios, las Ciudades Colmena son vórtices de acumulación masiva. Las Reinas no son simples bestias; son entidades aterradoras que acumulan, entienden y utilizan Vestigos y Vínculos robados o asimilados de otras especies para potenciar la pesadilla estructural de su dominio.

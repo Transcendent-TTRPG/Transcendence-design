@@ -193,44 +193,24 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 
 ## 9. System Connections
 
-**Characteristics:** +1 **Agilidad**, **Sabiduría**, **Astucia**
-- *Agilidad:* burst movement, patient positioning, shinobi agility, surface reading in difficult terrain
-- *Sabiduría:* ritual depth, kunitsukami reading, generational knowledge of the specific, recognition of what the domain is actually saying vs. what one wants it to say
-- *Astucia:* intelligence gathering, pattern recognition, toxin-signature reading, shinobi strategic thinking
+### Species-specific mechanics (Updated from Corebook)
 
-**Herencia — Piel Permeable:** The same cutaneous permeability that enables parotoid toxin production and environmental chemical reading also absorbs hostile compounds faster than other species. Bufoni receive a permanent −3 penalty to T.R. (Veneno). Not a cultural sensitivity or learned condition — it is the physics of a skin with no absorption barrier. The same surface that makes the Lengua work is the same surface that makes them vulnerable to it.
+**Piel Permeable (Herencia)** — La permeabilidad cutánea que habilita la secreción parotoidea y la lectura química del entorno los vuelve hiper-receptivos a compuestos hostiles. Reciben una penalización permanente de `-3` a las T.R. de Veneno e Infección. No es una enfermedad, sino el costo biológico de absorberlo todo sin barreras.
 
-**Competency affinities:**
-- Sigilo — ambush biology, domain knowledge
-- Supervivencia — terrain reading in known territory
-- Rastreo — toxin-signature tracking of other Bufoni through territory
-- Intuición — kunitsukami reading, ritual awareness
-- Sabiduría-based ritual specialization rolls
+**Sabiduría Corporal (Legado)** — Utilizan **Sabiduría** en lugar de la característica por defecto en las T.E. de **Saltar**, **Nadar** y **Sigilo**. Además, reciben +1/4 NR en esas T.E. Para ellos, saltar es leer la superficie; nadar es seguir el ritmo; y ocultarse es saber cuándo no moverse.
 
-**Natural weapon — Lengua:** T.A. Agilidad / T.I. Agilidad / Alcance 3 m / d6 / Torsión · Interrupción · Impredecibilidad · Corrosión. Toxin triggers on any hit (T.A. > T.D.): target makes T.R. Veneno, severity scales by rango (1–2 Minor, 3–4 Moderate, 5–6 Severe). Specific compound effect varies by lineage — pending clan variation design session.
+**Acecho (Legado)** — Cuando atacan desde el estado **Oculto** y T.A. supera T.D., añaden dados de daño adicionales según rango (Rango 1-2: +1d6, 3-4: +2d6, 5-6: +3d6). El depredador que esperó más tiempo, golpea más fuerte.
 
-**Armor identity:** Light to medium. Heavy armor limits skin contact with the environment and impedes the sensory biology that reads terrain and toxin signatures. Some domains have developed medium armor traditions for specific roles; shinobi wear nothing that interferes with biological signature management.
+**Golpe Sin Eco (Legado)** — Reactivo (Utilidad, Ritmo 0, Desgaste 2). Tras un ataque con la Lengua desde Oculto, en el momento que se comprometería el estado:
+- *Fuera de cuerpo a cuerpo:* No genera señal, nadie tira Percepción, y Oculto se mantiene.
+- *En cuerpo a cuerpo:* Reposicionamiento inmediato; si hay posición válida, Oculto se mantiene. Restringido a ataques con Lengua.
 
-**Resistance:** Partial resistance to Veneno-category effects — biological, from constant low-level parotoid self-exposure. Severity: partial, not immunity. Exact threshold to be determined in system balance.
+**Armas Naturales:**
+- *Lengua (Todos los Bufoni)*: Principal. Agilidad/Agilidad. 3m alcance. Perfiles: Torsión, Interrupción, Impredecibilidad, Corrosión. Efecto: Si T.A. supera T.D., el objetivo hace T.R. Veneno o sufre el efecto de la neurotoxina de su linaje. Severidad escala con rango.
 
-**Technique implications:**
-- Zone control through patience and positioning (ambush setup, reading approach vectors)
-- Toxin application as Legado expansion of the natural weapon
-- Ritual/kunitsukami interaction (domain-specific, for domain Bufoni with active relationship)
-- Information-gathering and signature-reading (Astucia/Sabiduría-based)
-- Shinobi traditions likely as specialization-level techniques rather than innate species
+### Combat identity
 
-**Confirmed Legado design:**
-
-**Legado 1 — Sabiduría Corporal (skill bonus):** Sabiduría replaces the default characteristic for T.E. de Saltar, Nadar, and Sigilo. +1 per 4 NR on all three. The Bufoni's jump is body knowledge of that exact surface; their swim is rhythmic pattern, not brute force; their stealth is knowing when not to move, not how to move fast.
-
-**Legado 2 — passive property on Lengua (T.I. bonus while hidden):** While the Bufoni is Oculto and T.A. > T.D., the attack adds bonus impact dice by rango:
-- Rango 1–2: +1d6
-- Rango 3–4: +2d6
-- Rango 5–6: +3d6
-The predator that waited longest hits hardest when it moves.
-
-**Legado 3 — Golpe Sin Eco (Reactivo - Utilidad · Ritmo 0 · Desgaste 2):** Trigger: after a Lengua attack from Oculto, in the moment the state would be compromised. At non-melee range: no enemy attempts Percepción; the attack generates no locatable signal; Oculto remains intact. At melee range: the technique includes an immediate repositioning movement before the source can be identified; if that movement reaches a valid Oculto-sustaining position, the effect applies; if no valid position exists, the technique produces no effect. Restricted to Lengua attacks.
+Los Bufoni no buscan el choque frontal; son depredadores de emboscada que dominan el terreno. Aguardan inmóviles hasta que el objetivo se encuentra en la posición más vulnerable y entonces atacan usando su Lengua para entregar estados tóxicos paralizantes. Su mecánica de *Golpe Sin Eco* los convierte en asesinos indetectables que se mantienen ocultos mientras envenenan a su presa sistemáticamente.
 
 ---
 
@@ -262,9 +242,23 @@ The predator that waited longest hits hardest when it moves.
 
 **What a player character from this species fears losing first:** The domain. Not abstractly — the specific place whose kunitsukami is the only Tauma entity in the world whose ritual vocabulary they fully hold. When that is gone, what remains is someone who knows a great deal about a relationship that no longer exists in its prior form.
 
-**Open questions (pending design sessions):**
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-1. **Clan/lineage weapon variation:** Specific toxin compound effect per lineage — what each variant does on T.R. (Veneno) failure, how many canonical variants, whether any lineage has a different delivery mechanism
-2. **Language name:** The Bufoni common language and its ritual dialect layer need names
-3. **Technique seeds:** Formal technique seeds session after this design doc is confirmed
-4. **Kunitsukami interaction mechanic:** Whether there is a system mechanic for domain Bufoni interacting with their kunitsukami during play, or whether this is entirely narrative
+- **Idioma:** Zetsugo (el lenguaje de la lengua), que varía dramáticamente en dialectos rituales dependiendo del dominio.
+- **Variaciones de Veneno:** La adaptación biológica al territorio produce 5 clasificaciones de toxinas (que se manejan de forma conceptual a lo largo del mundo):
+  - **Pantano (Numachi):** Entorpecido (ralentiza).
+  - **Río (Kawanagi):** Escaldado (daño sensorial).
+  - **Bosque (Morita):** Erosionado (daño sistémico).
+  - **Costa (Uminata):** Saturado (colapso renal).
+  - **Montaña (Kirishima):** Inhibido (impide curación).
+- **El Kegare (Impureza):** Cuando un Bufoni pierde su dominio o se somete al entrenamiento shinobi, su química se "contamina". Son huérfanos de Kegare; su biología grita un nombre que la tierra ya no reconoce.
+
+---
+
+## 11. Cultura Material 
+
+La cultura material de los Bufoni es sutil y está diseñada para no perturbar a los kami locales. 
+
+- **Fragmentos de *Shintai*:** Pedazos de piedra, madera o reliquias que forman el núcleo del ancla del *Kunitsukami* del Dominio. Son portados por los viajeros para extender una fracción de la presencia territorial de forma temporal allá donde van.
+- **La Calabaza del Ermitaño (*Gama Sennin*):** Recipientes densos (usualmente construidos con flora taumática) que los infiltradores y líderes portan para liberar nieblas reactivas. Estas nieblas "leen" las firmas químicas, exponiendo a cualquiera que no pertenezca a su dominio.
+- **Sal de Purificación (*Harae*):** Cristales minerales triturados que esparcen en los límites geográficos. Eliminan firmas químicas foráneas y establecen el perímetro donde el Dominio comienza a "escuchar" activamente.

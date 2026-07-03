@@ -183,61 +183,18 @@ Horn markings accumulate from high-saturation exposures over time. The pattern i
 
 ---
 
-## 9. System Connections
+### Species-specific mechanics (Updated from Corebook)
 
-### Competency affinities
+**Ruido de Saturación (Herencia)** — The horn continuously registers density signatures, biological emissions, and extranatural pressure without an organic filter. Mechanically: Permanent -3 penalty to all Percepción (T.E.) rolls because of overlapping noise in dense settlements or high-saturation zones.
 
-- **Sabiduría:** Percepción, Supervivencia, Rastreo — continuous environmental signal reading, territory circuit knowledge, sustained exposure endurance
-- **Astucia:** Orientación, Rastreo — route intelligence, zone-condition reading
-- **Intelecto:** Identificación, Geografía — zone-saturation data, route mapping, calibration record maintenance
+**Señal Guía (Legado)** — Mechanically: +1 per 4 NR to Supervivencia, Orientación, and Intuición.
 
-### Natural attack logic
+**Integridad de la Señal (Legado)** — Mechanically: Active technique (TC Aura). Circular 8m. Detects if an abnormal signal in the area is Estable, Escalando, or Cediendo. Classifies ATB cycles as Biológicos, Coordinación, or Ambientales. Grants +1 per 4 NR to identify Puntos Vitales or Zonas linked to those cycles until end of scene.
 
-- **Cuerno (Principal):** The horn is a sense organ capable of doing structural damage in a direct charge. Contact logic: front-facing commitment, full-body force, singular point. Profiles: Carga, Impacto, Interrupción, Ruptura. Restricted: Sombra, Precisión, Control de Línea.
-- **Piel (defensive, not attack):** Natural thick integument. Functions as natural resistance to mechanical damage and Tauma-exposure-adjacent Desgaste accumulation in saturation zones. Already referenced in `natural-attack-forms.yaml` if applicable.
+**Dermis (Legado)** — Mechanically: +2 per 4 NR to Bloqueo on all body zones.
 
-### Arsenal fit
-
-Natural weapon affinities:
-
-- Heavy shields — front-line anchor and barrier role; the horn signals approach threats, the shield holds position
-- Maces and impact weapons — the commitment style of the charge expressed in hand-to-hand; not speed, force
-- Heavy armor — the integument already does this biologically; armor extends it
-
-Less natural:
-
-- Light or evasive weapons — not consistent with the species' combat identity
-- Ranged weapons — not the expression of a species whose biology is oriented toward approach rather than distance
-
-### Candidate species mechanics
-
-**Idiomas:** Rakan (nativo) · Común
-
-**Características:** +1 Fuerza, Sabiduría, Aura
-
-**Herencia — Reactividad del Cuerno:** Passive, always-on. The horn physically reacts to Tauma-saturation signatures in the environment. Mechanically: the character automatically registers zone conditions (hot zones, active vestigos, Tauma-adjacent biological processes) within a distance determined by saturation intensity, as a physical sensation rather than as information. This is not active perception — it is passive reception. The character can use this registration as context for knowledge checks related to zone conditions and route safety, but cannot suppress the sensation. In settlements or near Tauma-active sources (Loxod infrasound, active Drak'kai collections, Vesper research organisms), this creates calibration noise: -2 to all horn-based zone condition reads in that environment until the source is identified and discounted.
-
-**Legados:**
-
-- **Calibración:** The character has developed an accurate long-term model of horn reactions in a specific zone or route type. +1/4NR to T.E. de Percepción and Supervivencia in monitored territory or zone types the character has recorded significant history with. Requires maintaining calibration record.
-- **Carga:** The character's charge reflex has been trained into a reliable combat instrument. +1/4NR to T.A. on charge-based techniques and natural horn attack.
-- **Resistencia de Zona:** +1/4NR to T.R. against Tauma-exposure effects from ambient zone saturation (not from direct vestigo/vínculo contact — those are different).
-
-### Technique implications
-
-Ceratox techniques should emerge from:
-
-- Zone awareness applied as tactical positioning — knowing what the horn is reading about who is moving toward what
-- Charge commitment as a decisive action with real momentum consequences, not just damage
-- Suppression and control — the biology that wants to charge managed into structured timing
-- Endurance under Tauma-adjacent pressure that other species would find more cognitively costly
-- The calibration relationship in practice: supporting a partner's accuracy by providing external reference
-
-They should avoid:
-
-- Precision harassment or evasion-based styles (not the species identity)
-- Psychological interpretation of enemy intent (the horn reads zones, not minds)
-- Area control techniques that assume a detailed model of enemy positioning — the horn reports saturation, not creature location
+**Armas Naturales:**
+- *Cuerno (Todos los Ceratox)*: Principal. Fuerza. Forces T.R. (Alteraciones) on strong hit, inflicts Derribado and Lacerado.
 
 ---
 
@@ -271,10 +228,18 @@ They should avoid:
 - Uncomfortable: the knowledge that their most reliable information source — the horn — is also the thing they cannot fully trust at the margin
 - Open: the question they have carried for their entire adult life: is the compulsion to act on the signal information, or is it control?
 
-### Open questions
+### Canon Resolutivo: Base para el Módulo de Campaña
 
-- What happens when a Ceratox's horn stops reacting — biological quiet in an active zone? Is this the horn failing, or a zone condition no one has mapped?
-- Is there a Ceratox equivalent of long-term zone stewardship — an individual who has monitored the same territory for eighty years and whose calibration record represents something no other living Ceratox has?
-- What does the transmission of a calibration record look like when the holder dies? Is this formalized? Who inherits it?
-- How do Ceratox who have lost their calibration partner function differently? Is there a visible behavioral shift, or is it internal?
-- What is the oldest continuous calibration record, and what does it show about whether the signal is actually getting louder?
+- **El Terror de la Descalibración:** El cuerno del Ceratox lee presión de saturación de manera infalible, no es afectado por las Aflicciones taumáticas. Sin embargo, las Aflicciones sí alteran la vista, el oído y el olfato. El verdadero terror para un Ceratox no es que el cuerno se "apague", sino la disonancia cognitiva extrema: el cuerno grita que hay peligro masivo, pero sus ojos y oídos le dicen que el pasillo está vacío y seguro. Esta fractura entre sus sentidos lo lleva a la paranoia y a la pérdida total de calibración.
+- **La Herencia del Registro:** Cuando un Ceratox muere, su *Registro de Calibración* es la herencia más sagrada. Debe ser recuperado y entregado a su compañero de calibración. Un registro abandonado es una tragedia histórica para la especie.
+- **La Deriva (Pérdida del Compañero):** Un Ceratox que pierde a su compañero entra en "Deriva". Pierde su ancla externa de realidad y comienza a dudar de sus propias interpretaciones, volviéndose extremadamente dependiente de su grupo (los otros PJs) para confirmar si lo que ve o lo que siente el cuerno es la verdad.
+
+---
+
+## 11. Cultura Material y Herramientas de Registro
+
+La cultura material Ceratox (inspirada en la Persia del Karkadann y la China Imperial de las copas *Xi Jue*) es brutalmente pragmática, diseñada para documentar la anomalía y sobrevivir al constante bombardeo sensorial.
+
+- **Copas *Xi Jue* (Detectores de Señal):** Cuencos y recipientes tallados de la queratina pura de cuernos de Ceratox ancianos fallecidos. Al igual que la leyenda del cuerno que espumea ante el veneno, estos recipientes reaccionan físicamente (vibran, transpiran o cambian de densidad) cuando se exponen a sustancias, reliquias o aguas con alta saturación taumática. Son los detectores de contaminación más precisos del mundo.
+- **El Registro de Calibración:** Inspirado en los archivos burocráticos imperiales, son pesados compendios de tablillas de cuero y metal. Un Ceratox prefiere perder un brazo antes que perder su Registro. Contiene la historia pura de la señal (sin teología) y es el bien de intercambio más valioso para los exploradores de otras especies.
+- **Hebilla *Karkadann*:** Correas pesadas de contención que los Ceratox ajustan alrededor de su frente o su pecho, grabadas con patrones de disipación de presión. Funcionan como "tapones de oídos" para el cuerno, no anulando la señal, pero atenuando el ruido doloroso en asentamientos mixtos para que el Ceratox no enloquezca.
