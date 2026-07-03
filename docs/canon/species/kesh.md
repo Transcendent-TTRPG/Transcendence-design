@@ -10,11 +10,11 @@
 
 ## 1. Identity
 
-La palabra "Kesh" no significa depredador, garra, ni felino en la raíz proto-vharin; significa literalmente "El Espacio en Blanco" o "Aquello que no atrae la tinta". Los Kesh son una raza que ha convertido el instinto biológico de la emboscada en una filosofía cósmica de terror y aislamiento. 
+La palabra "Kesh" no significa depredador ni felino en la raíz proto-vharin; significa literalmente "El Espacio en Blanco". Han desarrollado una filosofía de nihilismo ontológico basada en el terror a la permanencia.
 
-Creen que el universo es un depredador ciego, y que la única forma de sobrevivir es pasar desapercibido. Para ellos, construir imperios, dejar registros escritos, forjar alianzas duraderas o simplemente ser "famosos", es un acto suicida porque atrae la mirada del mundo y, por ende, la corrupción del Tauma. Sobreviven borrando sus propias huellas, destruyendo su propia historia y asegurándose de que nadie, ni siquiera ellos mismos, los recuerde por mucho tiempo. 
+En su cosmología, el universo posee una entidad latente, una "Mirada" celosa y devoradora. Han observado a través de los siglos que aquellos imperios y héroes que construyeron grandes legados terminaron consumidos por monstruos y catástrofes. Concluyeron que la memoria colectiva y la fama actúan como un pozo de gravedad. Destacar, ser recordado o dejar tu nombre grabado en la piedra es encender un faro que irremediablemente atraerá la desgracia cósmica hacia ti y los tuyos. Para un Kesh, la fama es el peor de los pecados, una vulgaridad espiritual imperdonable.
 
-Su tragedia sistémica radica en que, en su obsesión por evitar que el universo los "note", se están borrando literalmente a sí mismos. Los ancianos y los más devotos de su cultura comienzan a perder densidad, desvaneciéndose en el Limbo en vida porque se han aislado tanto de las conexiones materiales y emocionales que la realidad física simplemente deja de anclarlos.
+Su "Culto a la Ausencia" es una rigurosa doctrina de aislamiento. Sobreviven asegurándose de no tener historia ni registros, buscando mantener su peso histórico en absoluto cero. Creen que si logran volverse verdaderos espacios en blanco, la Mirada del universo simplemente resbalará sobre ellos sin anclarse. Sin embargo, su existencia encierra una oscura ironía: ignoran que su devoción colectiva y fanática por "el vacío" es en sí misma una impronta inmensa. En su intento por no atraer monstruos, los Kesh dan a luz a sus propias pesadillas; engendran anomalías y entidades tan formidables, invisibles y silenciosas como ellos mismos. Su otra gran tragedia es que aquellos pocos maestros que sí logran la desconexión total comienzan a perder densidad, desvaneciéndose hacia el Limbo en vida porque el mundo material los olvida.
 
 ---
 
@@ -37,17 +37,17 @@ El problema biológico/cultural central es su colapso psicológico ante la expos
 
 ## 3. Culture
 
-La cultura Kesh es minimalista hasta el punto del nihilismo. No existen bibliotecas Kesh, ni monumentos, ni canciones de héroes. Su transmisión de conocimiento es puramente oral, práctica y temporal. 
+La cultura Kesh es una aplicación militar y monástica de la "No-Acción" (*Wu Wei*). No existen bibliotecas Kesh, ni monumentos, ni canciones de héroes; cada uno de estos conceptos es considerado un fallo estructural que eventualmente detonará en catástrofes taumáticas. Su conocimiento se transmite de forma puramente matemática y efímera.
 
-Consideran que los Vínculos y Vestigios (objetos tocados por el Limbo) son faros que atraen la catástrofe. Si un Kesh encuentra un Vestigio, no lo guarda; trata de enterrarlo, destruirlo o devolverlo al Limbo lo más rápido posible. Creen que el poder mágico "te marca" y te vuelve visible ante los horrores del Capítulo 12.
+Consideran que los Vínculos y Vestigios no son "mágicos", sino faros masivos de densidad cósmica que "iluminan" al portador. Si un Kesh encuentra un Vestigio, su protocolo no es guardarlo con temor primitivo, sino desmantelarlo ontológicamente o enterrarlo mediante rigurosos procedimientos de aislamiento, neutralizando el faro antes de que el Tauma voltee a mirar.
 
 ---
 
 ## 4. Theology and Cosmology
 
-Su religión no adora a dioses, sino a la "Ausencia". Veneran el silencio, la oscuridad y el olvido como los únicos escudos verdaderos. Creen que las **Aflicciones** son causadas por haber llamado demasiado la atención. Cuando un Kesh enferma del espíritu, no se le trata de curar; se le exilia inmediatamente para que no "ilumine" al resto del grupo con su corrupción.
+Su religión adora al "Cero". Veneran el silencio y el borrado no por debilidad, sino porque ven el universo como una ecuación defectuosa. La consciencia colectiva deforma la realidad, y por tanto, cualquier consciencia dirigida a ellos es una carga radiactiva. 
 
-Consideran que aquellos que caen al Limbo no fueron castigados, sino que simplemente fueron "leídos" por el Tauma.
+Creen que las **Aflicciones** cósmicas no son enfermedades biológicas ni castigos demoníacos, sino la manifestación de que un individuo acumuló demasiada "gravedad" social o histórica. Cuando un Kesh es diagnosticado con una aflicción, no se le trata médicamente; se le somete a un riguroso exilio ritual para cortar los vectores de anclaje antes de que su masa taumática arrastre al resto de la caravana.
 
 ---
 
@@ -59,7 +59,7 @@ Se organizan en grupos diminutos, rara vez superando las tres o cuatro unidades 
 
 ## 6. Daily Life and Life Cycle
 
-Duermen durante gran parte del día en lugares inalcanzables, no por pereza, sino porque consideran el sueño un estado de inercia donde no están modificando el mundo y, por lo tanto, no están atrayendo atención. Cazan de noche o en condiciones de visibilidad casi nula. Educan a sus crías bajo la regla del silencio absoluto: un cachorro que hace ruido es un peligro existencial para todos.
+El desapego dicta su rutina. Un Kesh no duerme en el mismo sitio dos veces, pues la repetición y la comodidad crean raíces emocionales, y las raíces anclan el desastre. Viven en un tránsito frío y calculado, cazando o viajando en condiciones de visibilidad nula. Educan a sus crías bajo la regla del silencio y la indiferencia: un cachorro que llora o demuestra pasiones desmedidas es un peligro existencial, pues las pasiones fuertes son exactamente lo que atrae la Mirada de la que huyen.
 
 ---
 
