@@ -361,7 +361,9 @@ Once an Infection has passed incubation and is active, it may spread through
 valid physical contact or another vector defined by the Infection.
 
 A creature exposed to an active carrier must make the Infection `R.R.` defined
-by that Infection to avoid becoming infected.
+by that Infection to avoid becoming infected. The propagation difficulty may
+differ from the initial contagion difficulty; each entry specifies both when
+they differ.
 
 ### Design note
 
@@ -424,8 +426,12 @@ other binding structures.
 
 ### Resistance Rule
 
-Curses normally use the Curse resistance formula or detection/resistance route
-defined by the specific curse.
+`R.R. = 1d10 + Composure + Resistances + Bonuses`
+
+Composure is the default characteristic because Curses threaten inner coherence
+and volitional resistance, parallel to Afflictions. Specific curse entries may
+define their own formula or route when the nature of the curse demands a
+different characteristic or a detection-based approach instead of a direct R.R.
 
 ### Scope note
 

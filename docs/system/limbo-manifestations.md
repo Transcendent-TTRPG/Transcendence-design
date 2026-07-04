@@ -151,6 +151,7 @@ Normal creatures cannot perceive the Limbo directly. Detection requires:
 | Capability | What it detects |
 | --- | --- |
 | **Instinct** | Primal non-rational response — senses something does not belong; imprecise |
+| **Resonance** | Active directed sounding of an object or area — confirms Tauma is present, distinguishes active (link) from residual (vestige), estimates relative intensity; more precise than Instinct but no structural detail |
 | **Thaumaturgy** | Identifies taumatic structure and dimensional origin; distinguishes flow vs. vestige vs. link by active vs. fading signature |
 | **Theology** | Recognizes markers of Limbo presence through the doctrine of any tradition that has systematized this knowledge |
 

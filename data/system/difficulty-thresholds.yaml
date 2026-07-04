@@ -75,6 +75,16 @@ tiers:
       Límite de lo ejecutable. Escenarios al borde de la supervivencia o tareas que
       requieren maestría absoluta. Reservado para los momentos más exigentes del juego.
 
+reference_level:
+  character_NR:
+    formula: "ceil(average of all base competencies listed on the character sheet)"
+    excluded: "competencies marked — (not tracked)"
+    update_trigger: "new competencies gained, several competencies rise in rank, or new arc/episode begins"
+    note: "Recalculating every session is not required."
+  group_NR:
+    formula: "ceil(average of individual NR values of all active PCs in the encounter)"
+    use: "Narrator uses NRg to scale creatures and set base difficulties without reviewing individual competencies."
+
 usage:
   opposed_roll_note: >
     Cuando el desafío es directamente otra criatura o personaje (tirada opuesta), ambas partes

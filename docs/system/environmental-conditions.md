@@ -27,10 +27,10 @@ Each severity level maps directly to one difficulty tier. The Narrator sets the 
 | Severity | Difficulty tier | Base | NR range | Type |
 | --- | --- | --- | --- | --- |
 | Mild | Fundamental | 5 | 1 | Natural |
-| Moderate | Challenging | 8 | 1–2 | Natural |
-| Severe | Rigorous | 11 | 2–3 | Natural or extranatural |
-| Disastrous | Demanding | 14 | 3–4 | Natural or early extranatural |
-| Extreme | Extreme | 17 | 4–5 | Natural or extranatural |
+| Moderate | Challenging | 8 | 1–3 | Natural |
+| Severe | Rigorous | 11 | 3–6 | Natural or extranatural |
+| Disastrous | Demanding | 14 | 6–9 | Natural or extranatural |
+| Extreme | Extreme | 17 | 9–12 | Natural or extranatural |
 
 ---
 
@@ -110,10 +110,10 @@ The environmental NR reflects how much a specific instance of a condition presse
 | Environmental NR | Meaning |
 | --- | --- |
 | 1 | Condition at its minimum expression for the severity level |
-| 2 | Notable condition within its level; some compound factors |
-| 3 | Intense condition; multiple simultaneous factors or extended duration |
-| 4 | Condition at its peak, or first confirmed extranatural marker |
-| 5 | Clear extranatural influence; reserved for Extreme severity |
+| 3 | Notable condition within its level; some compound factors |
+| 5 | Intense condition; multiple simultaneous factors or extended duration |
+| 7 | Condition at its peak, or first confirmed extranatural marker |
+| 9 | Clear extranatural influence; reserved for Extreme severity |
 
 ### When multiple sources of difficulty combine
 

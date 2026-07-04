@@ -219,33 +219,134 @@ conditions_and_environment:
         effect: "half movement (Restrict); +1 Attrition cost (Accelerate)"
 
 rest_recovery:
+  limit:
+    rule: >
+      Only the first Short Rest taken after a significant scene reduces Fatigue.
+      Subsequent short rests before a new significant scene allow tasks but do
+      not reduce Fatigue again unless a specific rule allows it.
   short_rest:
     description: >
-      Brief pause to catch breath and stabilize. Only the first Short Rest after
-      a hostile scene reduces Attrition normally. Subsequent pauses allow tasks
-      but do not reduce Attrition again unless a specific rule allows it.
+      Brief pause to catch breath and stabilize within the adventure.
+      Each character that rests recovers the listed Fatigue reduction.
+      The Fatigue limit (above) applies to all short rest durations.
     durations:
       - minutes: 15
-        attrition_recovery: 1
+        fatigue_reduction: 1
+        scope: one_character
+        condition: "current settled fatigue ≤ 2"
         tasks: 1
         task_type: brief
       - minutes: 30
-        attrition_recovery: 2
+        fatigue_reduction: 1
+        scope: each_character_that_rests
         tasks: 1
         task_type: significant
       - minutes: 60
-        attrition_recovery: 3
+        fatigue_reduction: 2
+        scope: each_character_that_rests
         tasks: 2
         task_type: significant
-        favorable_condition_bonus: 1
+        favorable_condition_bonus:
+          description: "Narrator grants one of three options if conditions are favorable"
+          options:
+            - fatigue_reduction_bonus: 1
+            - additional_tasks: 1
+            - reduced_risk: true
   full_rest:
     description: >
-      8-hour recovery requiring reasonably adequate conditions. Reduces Attrition,
-      progresses affliction relief, allows equipment repair, and recovers daily resources.
-    attrition_recovery: "2 × Endurance"
+      8-hour recovery requiring reasonably adequate conditions. Reduces Fatigue,
+      reduces residual Attrition, progresses affliction relief, allows equipment
+      repair, and recovers daily resources.
+    fatigue_reduction: 3
+    favorable_condition_bonus:
+      description: "If especially favorable, Narrator may allow 1 additional Fatigue level recovered"
+      fatigue_reduction_bonus: 1
+    attrition_residual_recovery: "2 × Endurance"
     affliction_progression: -1  # per active affliction, per day of Full Rest
+    primordial_territory_exception:
+      entity_or_sovereign: >
+        T.R. Compostura at scene severity threshold (see Environmental Conditions).
+        On success: normal affliction reduction applies.
+        On failure: affliction intensity in the Primordial's relevant sense increases
+        by 1 instead of decreasing.
+      abyssal: >
+        No T.R. — affliction intensity in the relevant sense increases by 1
+        automatically. Full Rest does not reduce that affliction.
+      create_rule: "If no affliction exists in the affected sense, the increase creates it at intensity 1."
     equipment_durability_recovery: 5  # per relevant item, on successful specialization roll
     daily_resources: "all abilities marked 'per day' or 'after full rest'"
+
+rest_risk:
+  description: >
+    The Narrator makes a secret risk roll when the party rests in conditions where
+    stopping has real consequences. Not rolled as routine — omit if the party
+    rests in a safe, controlled, or well-protected location.
+  trigger_conditions:
+    - hostile_territory
+    - active_pursuit
+    - probable_predators_or_enemies
+    - severe_weather
+    - unstable_or_unknown_zones
+    - rest_near_active_threat
+    - situations_with_clear_narrative_consequences
+  mechanics:
+    roll: "1d100 (secret)"
+    duration_modifiers:
+      - minutes: 15
+        modifier: +0
+      - minutes: 30
+        modifier: +10
+      - minutes: 60
+        modifier: +20
+      - full_rest: true
+        modifier: +30
+    situational_modifiers:
+      - situation: safe_refuge
+        modifier: -20
+      - situation: organized_watch
+        modifier: -10
+      - situation: bad_weather
+        modifier: +10
+      - situation: hostile_territory
+        modifier: +10
+      - situation: active_pursuit
+        modifier: +20
+      - situation: nearby_enemies
+        modifier: +20
+      - situation: hidden_or_hard_to_track_location
+        modifier: -10
+    modifier_note: >
+      Modifiers are suggested, not mandatory. They make risk depend on the
+      fiction of the scene rather than just the clock.
+  events_table:
+    - range: [1, 45]
+      id: no_incident
+      name_es: Sin incidentes
+      description_es: El descanso transcurre sin interrupciones. El grupo recupera con normalidad.
+    - range: [46, 55]
+      id: unsettling_sign
+      name_es: Señal inquietante
+      description_es: Huellas recientes, sonidos lejanos, olor extraño o signos de actividad cercana. Sin interrupción inmediata, pero la tensión aumenta.
+    - range: [56, 65]
+      id: environmental_change
+      name_es: Cambio ambiental
+      description_es: Clima peor, visibilidad reducida, temperatura adversa o terreno más difícil. El descanso se completa, pero la situación general empeora.
+    - range: [66, 75]
+      id: discomfort_or_displacement
+      name_es: Incomodidad o desplazamiento
+      description_es: El lugar resulta menos seguro de lo esperado. Humedad, derrumbes, escarcha, ruidos o incomodidad obligan a moverse o interrumpir parte del reposo.
+    - range: [76, 85]
+      id: position_loss
+      name_es: Pérdida de posición o rumbo
+      description_es: El grupo debe cambiar ubicación, pierde orientación o invierte tiempo adicional en recuperar posición o ruta.
+    - range: [86, 93]
+      id: hostile_interruption
+      name_es: Interrupción hostil
+      description_es: Criatura, explorador enemigo o amenaza del entorno interrumpe el descanso. Puede no derivar en combate inmediato, pero obliga al grupo a reaccionar.
+    - range: [94, 100]
+      id: dire_event
+      name_es: Evento nefasto
+      description_es: Complicación seria — emboscada, revelación peligrosa, traición, colapso del entorno o giro narrativo que altera gravemente la situación.
 
 encounter_category_and_pressure:
   principle: >

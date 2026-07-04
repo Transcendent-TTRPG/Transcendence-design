@@ -43,8 +43,8 @@ rolls:
         unarmored: full_AGI
       applicable_evasion_by_armor:
         light: full_evasion
-        medium: "ceil(evasion / 2), minimum 1"
-        heavy: none
+        medium: full_evasion
+        heavy: "ceil(evasion / 2), minimum 1"
         unarmored: full_evasion
     used_for: Avoiding an incoming attack through reflexes, mobility, armor
 
@@ -55,6 +55,17 @@ rolls:
     formula_untrained: "((1 * weapon_damage) + (associated_characteristic * grade)) / 2"
     competency: weapon_rank
     weapon_damage_dice: [d4, d6, d8, d10, d12]
+    natural_weapons:
+      note: >
+        Natural weapons have no equipment grade. Grade is derived from competency rank
+        so that the characteristic * grade component remains comparable to crafted weapons.
+      grade_by_rank:
+        1: 1
+        2: 1
+        3: 2
+        4: 2
+        5: 3
+        6: 3
     used_for: Damage dealt after attack surpasses defense
 
   - id: CR

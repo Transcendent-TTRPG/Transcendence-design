@@ -75,41 +75,37 @@ No deberían generar Desgaste, salvo regla especial, las acciones triviales o pu
 
 El **Aguante** es el atributo derivado que representa cuánta carga acumulada puede absorber un personaje antes de comenzar a sufrir Fatiga.
 
-No es una característica base independiente. Es el resultado de una **reserva mínima universal** más la resistencia corporal real del personaje, expresada en **Tenacidad**.
+No es una característica base independiente. Es el resultado de una **base de tamaño** más la resistencia corporal real del personaje, expresada en **Tenacidad**.
 
-### Reserva Base de Aguante
+### Base de tamaño
 
-Todo personaje posee una **Reserva Base de Aguante de 3**.
+El Aguante parte de una base determinada por el tamaño de la criatura:
 
-Esta reserva representa la capacidad mínima de seguir operando bajo presión en tres planos fundamentales del conflicto:
+| Tamaño | Base de Aguante |
+| --- | ---: |
+| Pequeño | 2 |
+| Mediano | 4 |
+| Grande | 6 |
 
-- **cuerpo**
-- **mente**
-- **compostura**
-
-Estos tres planos justifican el valor base común del sistema:
-
-- el **cuerpo** permite sostener esfuerzo, impacto y movimiento
-- la **mente** permite mantener atención, lectura e interpretación en medio del caos
-- la **compostura** permite conservar control, intención y presencia bajo tensión
-
-La Reserva Base no pretende reflejar entrenamiento, sino la capacidad mínima de funcionamiento de cualquier personaje jugable que puede entrar en una escena de conflicto y seguir actuando.
+La mayoría de las especies jugables son Mediano (base `4`).
 
 ### Relación con Tenacidad
 
-A la Reserva Base se suma **Tenacidad**, que expresa la resistencia física real del personaje.
+A la base de tamaño se suma **Tenacidad**, que expresa la resistencia física real del personaje.
 
 La especialización inicial universal de Tenacidad sigue siendo importante, pero lo es a través de **Sinapsis**: como esa elección otorga +1 a Tenacidad desde la creación, el Aguante ya refleja indirectamente esa trayectoria sin depender de una sola especialización fija.
 
 ### Fórmula de Aguante
 
-**Aguante = 3 + (Tenacidad × 2)**
+```text
+Aguante = base de tamaño + (Tenacidad × 2)
+```
 
 ### Interpretación práctica
 
 Con esta fórmula:
 
-- un personaje mínimo, tras recibir su Sinapsis inicial de Tenacidad, comienza con **Aguante 7**
+- un personaje Mediano, tras recibir su Sinapsis inicial de Tenacidad (Tenacidad 2), comienza con **Aguante 8**
 - una especie con bonificación adicional a Tenacidad eleva ese valor desde el inicio
 - personajes que desarrollen más Tenacidad aumentarán su capacidad de absorber Desgaste antes de entrar en Fatiga
 
@@ -214,14 +210,14 @@ La Fatiga se determina comparando el **Desgaste acumulado** con el **Aguante** d
 
 ### Ejemplo
 
-Si un personaje tiene **Aguante 7**:
+Si un personaje Mediano tiene Tenacidad 2 (**Aguante 8**):
 
-- Desgaste 0–6 → sin Fatiga
-- Desgaste 7–13 → Fatiga 1
-- Desgaste 14–20 → Fatiga 2
-- Desgaste 21–27 → Fatiga 3
-- Desgaste 28–34 → Fatiga 4
-- Desgaste 35+ → Fatiga 5
+- Desgaste 0–7 → sin Fatiga
+- Desgaste 8–15 → Fatiga 1
+- Desgaste 16–23 → Fatiga 2
+- Desgaste 24–31 → Fatiga 3
+- Desgaste 32–39 → Fatiga 4
+- Desgaste 40+ → Fatiga 5
 
 Este esquema mantiene la Fatiga como algo escalonado, legible y fácil de rastrear. Fatiga 5 es el último punto antes del colapso operativo: si una regla vuelve a añadir Fatiga cuando el personaje ya está en Fatiga 5, queda Inconsciente. No puede realizar Acciones Activas, Reacciones ni Técnicas hasta iniciar descanso, recibir ayuda o aplicar una regla específica que lo saque de ese estado.
 
@@ -394,15 +390,55 @@ Este principio es coherente con los hallazgos ya adoptados para comunes: los gru
 
 ---
 
+## Descanso y recuperación de Fatiga
+
+La recuperación no es un reinicio: es el tiempo biológico que el cuerpo necesita para metabolizar el estrés extremo y recuperar margen operativo.
+
+### Descanso Corto
+
+Pausa breve dentro de la aventura. Solo el primer Descanso Corto después de una escena significativa reduce Fatiga asentada. Las pausas posteriores permiten tareas, pero no reducen Fatiga nuevamente hasta la próxima escena significativa.
+
+| Duración | Recuperación de Fatiga | Ámbito | Condición |
+| --- | --- | --- | --- |
+| 15 minutos | −1 nivel | Un personaje | Solo si tiene Fatiga asentada 2 o inferior |
+| 30 minutos | −1 nivel | Cada personaje que descanse | — |
+| 60 minutos | −2 niveles | Cada personaje que descanse | — |
+
+Con 60 minutos en condiciones favorables, el Narrador puede añadir uno de estos beneficios: −1 Fatiga adicional, 1 tarea adicional, o reducción del riesgo de evento inesperado.
+
+### Descanso Completo
+
+Requiere 8 horas o más en condiciones razonablemente adecuadas.
+
+- **Fatiga asentada:** −3 niveles (−4 si las condiciones son especialmente favorables)
+- **Desgaste remanente:** se reduce en `2 × Aguante`
+- **Aflicciones:** −1 intensidad por Aflicción activa, por día de Descanso Completo
+- **Heridas:** permite liberar 1 Ranura de Herida con T.E. Medicina exitosa (zona estabilizada)
+- **Durabilidad:** hasta 5 puntos por pieza relevante con tirada de especialización exitosa
+
+**Excepción en territorio de Primordial:** el flujo taumático organizado contrarresta la recuperación normal de Aflicciones. Ver `attrition-fatigue.yaml` → `rest_recovery.full_rest.primordial_territory_exception` para reglas exactas de Entidad/Soberano y Abismal.
+
+### Riesgo del descanso
+
+Descansar en zona insegura puede producir eventos inesperados. El Narrador lanza 1d100 en secreto cuando el contexto lo justifica — no como rutina.
+
+Modificadores por duración: +0 (15 min) / +10 (30 min) / +20 (60 min) / +30 (Descanso Completo). Modificadores situacionales adicionales van de −20 (refugio seguro) a +20 (persecución activa / enemigos cercanos).
+
+Tabla de eventos: 1–45 sin incidentes, 46–55 señal inquietante, 56–65 cambio ambiental, 66–75 incomodidad o desplazamiento, 76–85 pérdida de posición, 86–93 interrupción hostil, 94–100 evento nefasto.
+
+---
+
 ## Ejemplo de personaje inicial
 
-Personaje recién creado:
+Personaje Mediano recién creado:
 
 - Tenacidad final 2 tras aplicar la Sinapsis inicial de Tenacidad
 
 Entonces:
 
-**Aguante = 3 + (2 × 2) = 7**
+```text
+Aguante = 4 + (2 × 2) = 8
+```
 
 Interpretación:
 
@@ -430,7 +466,15 @@ Toda hoja comienza con una especialización inicial de Tenacidad, elegida según
 
 ### Fórmulas clave
 
-**Aguante = 3 + (Tenacidad × 2)**
+```text
+Aguante = base de tamaño + (Tenacidad × 2)
+```
+
+| Tamaño | Base |
+| --- | ---: |
+| Pequeño | 2 |
+| Mediano | 4 |
+| Grande | 6 |
 
 | Umbral | Condición |
 | --- | --- |

@@ -72,9 +72,9 @@ A diferencia del vestigio, el vínculo no se agota: la entidad mantiene activame
 
 El gradiente taumático existe en todas partes. Pero para que el Tauma cruce del Limbo al mundo físico de forma significativa — más allá de la filtración ambiental pasiva — necesita un punto de umbral: algo que exista en ambas dimensiones simultáneamente.
 
-La materia inerte no puede ser ese umbral. Puede recibir una huella cuando el flujo pasa (vestígio) o sostener un flujo continuo si la entidad lo mantiene activo (vínculo), pero no puede **traducir** señales del Limbo en efectos físicos. Le falta la propiedad que hace posible la traducción: capacidad adaptativa.
+La materia inerte no puede ser ese umbral. Puede recibir una huella cuando el flujo pasa (vestigio) o sostener un flujo continuo si la entidad lo mantiene activo (vínculo), pero no puede **traducir** señales del Limbo en efectos físicos. Le falta la propiedad que hace posible la traducción: capacidad adaptativa.
 
-Los seres vivos con sistema nervioso complejo son los únicos que tienen esa capacidad de forma completa. La plasticidad del sistema nervioso les permite desarrollar nuevos canales perceptivos en respuesta a estímulos. Cuando un ser vivo entra en contacto significativo con un vestígio o vínculo, el Tauma que fluye por ese contacto empieza a impregnarse en el tejido neural. Lo que resulta es una **aflicción**: el sistema nervioso desarrollando capacidad para percibir el Limbo.
+Los seres vivos con sistema nervioso complejo son los únicos que tienen esa capacidad de forma completa. La plasticidad del sistema nervioso les permite desarrollar nuevos canales perceptivos en respuesta a estímulos. Cuando un ser vivo entra en contacto significativo con un vestigio o vínculo, el Tauma que fluye por ese contacto empieza a impregnarse en el tejido neural. Lo que resulta es una **aflicción**: el sistema nervioso desarrollando capacidad para percibir el Limbo.
 
 La aflicción no es daño accidental del proceso. Es el mecanismo del proceso. El sistema nervioso recalibrado tiene capacidad limitada: lo que gana en percepción del Limbo, lo redistribuye desde la percepción ordinaria. Las diez aflicciones documentadas en `data/system/ailments.yaml` son la descripción exacta de ese proceso en cada sentido — la experiencia concreta de volverse umbral.
 

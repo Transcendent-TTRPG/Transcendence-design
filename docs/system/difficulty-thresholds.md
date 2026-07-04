@@ -41,23 +41,49 @@ The Narrator declares the difficulty tier before the roll is made. If the roll c
 These tiers apply to **fixed threshold** tests. When the challenge is directly another creature or character, both parties roll and results are compared — no fixed threshold is set. The NR difference between characters is already embedded in the roll formulas through level, rank, and characteristic.
 
 Fixed threshold cases:
+
 - No active agent is directly opposing (environmental resistance, task complexity)
 - A system explicitly calls for a fixed threshold (fabrication, certain affliction triggers)
 - The Narrator judges that an opposed roll is not narratively grounded
 
 ---
 
+## Calculating NR
+
+### Character NR (NRₚ)
+
+```text
+NRₚ = average of all base competencies of the character, rounded up
+```
+
+All competencies listed on the character sheet with a numeric value are included. Competencies marked `—` are excluded.
+
+### Group NR (NRg)
+
+```text
+NRg = average of the individual NR values of all active PCs in the encounter, rounded up
+```
+
+The Narrator uses NRg to scale creatures, set base difficulties, and compare forces between sides without reviewing each individual competency.
+
+NRₚ may be updated when the character gains new competencies, several relevant competencies rise in rank, or a new arc or episode begins. Recalculating every session is not required.
+
+---
+
 ## Sources of NR
 
 ### Creature NR
+
 When a creature's ability sets the difficulty without a direct opposed roll — such as detecting a Sigilo roll result rather than rolling Perception against it — the creature's NR contributes to the threshold.
 
 ### Environmental NR
+
 The intensity of environmental conditions can be expressed as an NR equivalent. A mild forest path may have NR 1. A hurricane at sea may have NR 4. The Narrator assigns this.
 
 This is the foundation of the **dificultad del entorno** system. Environmental conditions are classified by tier, and the NR equivalent reflects how demanding those conditions are relative to the characters present.
 
 ### Task NR
+
 For knowledge rolls, crafting, and investigative systems, the task itself has inherent complexity. An ancient text of standard scholarly depth might be Challenging at NR 1. A corrupted cipher in a dead language might be Extreme at NR 3. The system or the Narrator sets the NR.
 
 ---

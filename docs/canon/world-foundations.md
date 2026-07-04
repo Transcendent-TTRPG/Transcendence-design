@@ -57,6 +57,19 @@ than in the physical world — and the difference in concentration creates a
 continuous gradient: the Tauma flows from the Limbo toward the physical world
 passively and without ceasing.
 
+The Tauma is present everywhere in the physical world, at all times, without
+exception. There is no location — no settlement, no wilderness, no ocean floor,
+no ruin — that exists outside the Tauma. What varies is concentration. Zones of
+high geological instability — active fault lines, volcanic zones, deep ocean
+rifts — have higher Tauma concentration than stable lowlands. Primordial
+territories have extremely high concentration because the Primordial itself is
+the organized expression of the Tauma in that zone. But even the most apparently
+ordinary location is saturated with Tauma at the baseline level. It is not
+detectable by any living species except through its organized effects — vestigos,
+vínculos, Anomalías, Primordials — because the gradient itself is pre-conscious
+and passes through biological tissue without leaving any trace that current
+biology can read.
+
 The world has always had Primordials. It has always had Anomalías. It has always
 been shaped by this energy that most of its inhabitants cannot perceive directly
 and none of the current species can manipulate.
@@ -143,6 +156,27 @@ express through the physical world — and that state requires living channels.
 The organisms that survived were shaped by evolution in a world saturated with
 Tauma residue from the human era plus the natural Tauma gradient, producing the
 current ecology over millions of years.
+
+**The current ecology is the biological inheritance of Primordial organization.**
+This is the design principle that explains why the world is dangerous at every
+level, not just in specific zones. The ancient Primordials spent millions of
+years organizing a dead world before life returned. The geology, the chemistry,
+the local climate conditions — all of it expressed their nature without any
+living thing to resist or redirect it. When life re-emerged, it did so into
+environments that had already been organized by entities with alien natures and
+no interest in biological survival.
+
+Everything that proliferated did so by succeeding within that organization — by
+fitting into the niches the Primordials' nature had defined, or by finding ways
+to persist despite it. The result is an ecology that is not neutral. Plants,
+fauna, terrain, weather patterns — none of this is random variation. It is what
+biology produces when it evolves for millions of years inside environments that
+were already structured by non-biological will.
+
+The playable species are intelligent but physically fragile precisely because
+their evolutionary advantage was cognition rather than Tauma integration. They
+emerged in the same context as everything else. They are not stronger than the
+world they live in. They are smarter than it — and that is not always enough.
 
 **The playable species have no memory of this.** Their oldest mythologies begin
 in the current world. Any belief about origins is constructed from what they
@@ -288,28 +322,45 @@ failed, often fatally. The technology that produced them is not recoverable
 because it is not legible: no current species has any framework for understanding
 what those materials are doing or why they behave as they do.
 
-**As death trap:** Human ruins contain extreme vestige density — objects whose
-Tauma imprint from human-era operations has not yet fully dissipated — plus
-embedded vínculos whose linked entities may still be active. The danger is not
-the ambient Tauma concentration, which is passive and pre-conscious. The danger
-is the cumulative pressure of hundreds of active vestiges in close proximity,
-and the Limbo entities behind vínculos that continue to use whatever nervous
-systems enter the space. Entering a ruin without understanding what is inside —
-which objects are still active, what sense each requires, what entity is on the
-other side of each vínculo — is one of the most reliable ways to acquire severe
-afflictions. The objects inside do not announce what they do. They simply do it
-when the conditions they were built to respond to are met, and those conditions
-are not legible from the outside.
+**As death trap:** The materials that compose human ruins have unknown properties
+derived from Tauma-manipulation no current species understands. What those
+materials do — passively, structurally, in response to contact or proximity — is
+not predictable from the outside. Objects found inside ruins may still be
+operating according to whatever human process produced them, but whether those
+processes have any relationship to the vestigo or vínculo mechanisms is not
+established. What is known is that entering a ruin and interacting with what is
+inside consistently produces outcomes that cannot be controlled or anticipated.
+The objects do not announce what they do. The consequences of contact are not
+legible before they occur. This is not a Tauma-concentration effect — a ruin
+does not have more Tauma than the surrounding area. It is an unknown-mechanism
+effect: things in ruins do things no current biology or theology predicts, for
+reasons no current species can investigate.
+
+**As the oldest fact in the world:** The ruins predate every species, every
+culture, every mythology in the current world. They were already there — already
+old beyond comprehension — when the ancestors of the playable species first
+emerged. No species has a cultural moment of "discovering" ruins because there
+was never a time without them. They are features of the landscape as permanent
+as mountains, and have been present throughout every stage of every
+civilization's development.
+
+This means civilizational forms, architectural traditions, and sacred geometries
+did not develop in a world free of ruins and then encounter them. They developed
+entirely within a world where ruins had always been there. The walls species
+build near, around, and sometimes incorporating ruin adjacency into — the
+structural forms that became "correct" over generations of practical experience
+— all of this accumulated while ruins were present as constant background
+features. What any given species considers normal building emerged in
+relationship to the ruins, even if that relationship was never named.
 
 **As cultural raw material:** Because the playable species have no memory of
-the human era, human ruins are interpreted rather than understood. A settlement
-that builds near a ruin, that uses its walls as a foundation, that incorporates
-its artifacts into ritual — is not doing so with any knowledge of what those
-things were. The mythology, the theology, the cultural identity that emerges
-from this is constructed meaning applied to incomprehensible objects. This is
-not false — it is what culture has always been. But it means that some of the
-most foundational beliefs of some species rest on a misreading of something
-that was never intended to communicate anything to them.
+the human era, ruins are interpreted rather than understood. Artifacts found
+inside that cannot be used or identified are incorporated into ritual, theology,
+and myth. Constructed meaning applied to incomprehensible objects. Some of the
+most foundational beliefs of some species rest on a misreading of something that
+was never intended to communicate anything to them — and they cannot know this,
+because there is nothing in their world that tells them what the original
+communication was supposed to be.
 
 ---
 
@@ -344,10 +395,13 @@ and the extraction process has a high mortality rate.
   concentration does not directly cause afflictions — the critical factor is
   whether that Tauma is organized. Primordial territory produces afflictions
   through sustained exposure because the flow there is not pre-conscious but
-  directed by the entity. Ruins produce afflictions through extreme vestige
-  density, not through ambient Tauma concentration. Abismal territory
-  functions as the body of the entity — the terrain, weather, and flora serve
-  its nature. A ruin is not a set piece; it is an active Tauma environment.
+  directed by the entity. Abismal territory functions as the body of the entity
+  — the terrain, weather, and flora serve its nature. Ruins are dangerous for a
+  different reason: not Tauma concentration (ruins have no more Tauma than their
+  surroundings) but unknown-mechanism effects from materials and objects that
+  operate according to principles no current species understands. A ruin is not
+  a set piece; it is an environment where the rules of cause and effect are not
+  fully legible.
 - Anomalía difficulty scales naturally with integration level. Low-integration
   Anomalías are manageable threats. High-integration Anomalías in Primordial
   territory are operating as part of a system that the players cannot fully
@@ -365,9 +419,12 @@ and the extraction process has a high mortality rate.
 - Bio-organic technology has hard environmental limits. Any technology that
   appears in the setting should have a maintenance or environmental dependency
   that creates pressure.
-- Human ruins are not decorative. They are active Tauma environments that
-  change what is safe in their vicinity. A ruin near a settlement changes the
-  settlement's ecology, its theology, its threat profile.
+- Human ruins are not decorative. They are the oldest features of the world,
+  present throughout every civilization's development, and their materials
+  operate according to unknown principles. A ruin near a settlement changes
+  the settlement's theology, its sense of what is safe, and the kinds of events
+  that can occur in its vicinity — not because it concentrates Tauma, but
+  because it introduces unknown-mechanism effects into the local environment.
 - A settlement does not need to be monospecies. The dominant species sets the
   structural and cultural baseline; minority communities and individual migrants
   from other species are the default, not an exception requiring justification.

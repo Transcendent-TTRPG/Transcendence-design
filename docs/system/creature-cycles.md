@@ -16,11 +16,13 @@ El ciclo autónomo no es una acción del Narrador en su turno de criatura. Es un
 
 ## Cuándo aparece
 
-Los ciclos autónomos aparecen principalmente en:
+Los ciclos autónomos están disponibles para todas las categorías de criatura. El tipo varía por categoría:
 
-- **Criaturas Elite** durante sus fases de Metamorfosis — habilidades recurrentes vinculadas a un Punto Vital que se activan en paralelo al turno principal de la criatura
-- **Efectos ambientales activos** generados por un encuentro — clima, terreno inestable, anomalías, o condiciones ambientales que tienen efectos propios en el campo de batalla
-- **Habilidades de criatura con activación independiente** — ataques, dones, o presiones que no se ejecutan en el turno principal sino en su propia ventana de Ritmo
+- **Criaturas Comunes** — ciclos biológicos únicamente: fisiología propia, carga elemental, postura defensiva, regeneración pasiva.
+- **Campeones** — ciclos biológicos y ciclos de coordinación: habilidades que modifican el comportamiento de criaturas cercanas en paralelo al turno principal.
+- **Criaturas Elite** — ciclos biológicos y ciclos ambientales: procesos que modifican el campo de batalla (visibilidad, terreno, condiciones elementales).
+
+Los ciclos ambientales generados por el encuentro — clima activo, terreno inestable, anomalías — también pueden aparecer como entradas independientes en el ATB, sin estar atados a la criatura que los originó.
 
 ---
 
@@ -34,12 +36,14 @@ Los ciclos autónomos aparecen principalmente en:
 
 ---
 
-## Vínculo a Puntos Vitales
+## Vínculo a zonas
 
-Los ciclos autónomos de criaturas Elite suelen estar **vinculados a un Punto Vital** (Parte Vinculada). Si ese Punto Vital es destruido:
+Los ciclos biológicos están anclados a la **zona** que los impulsa. Cuando esa zona colapsa:
 
 - El ciclo autónomo se interrumpe y se retira del ATB
 - Los efectos activos que generó pueden persistir según lo especificado en la criatura
+
+Los ciclos ambientales de criaturas Elite no están vinculados a ninguna zona específica — son una propiedad de la presencia de la criatura en el espacio. Persisten a través de las fases de Metamorfosis salvo que el diseño especifique lo contrario, y terminan con la derrota de la criatura.
 
 ---
 
@@ -49,7 +53,7 @@ Al diseñar un ciclo autónomo para una criatura o encuentro, el Narrador debe d
 
 - **Ritmo de cada paso** — cuánto Ritmo cuesta cada activación (puede ser constante o variable entre fases)
 - **Efecto al activarse** — qué ocurre cuando el ciclo dispara
-- **Condición de interrupción** — qué destruye o detiene el ciclo (normalmente un Punto Vital)
+- **Condición de interrupción** — qué destruye o detiene el ciclo (normalmente el colapso de una zona)
 - **Visibilidad inicial** — si los jugadores pueden identificar el ciclo al inicio o solo cuando se manifiesta por primera vez
 
 ---

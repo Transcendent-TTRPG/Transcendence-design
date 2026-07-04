@@ -107,7 +107,7 @@ severidades:
   - id: moderada
     nivel_dificultad: desafiante
     base: 8
-    nr_sugerido: "1–2"
+    nr_sugerido: "1–3"
     tipo: natural
     descripcion: >
       Retos menores pero reales. Requieren adaptación activa y afectan la concentración,
@@ -123,7 +123,7 @@ severidades:
   - id: severa
     nivel_dificultad: rigurosa
     base: 11
-    nr_sugerido: "2–3"
+    nr_sugerido: "3–6"
     tipo: natural_o_extranatural
     descripcion: >
       Factores ambientales significativos. Las acciones requieren mayor esfuerzo.
@@ -139,7 +139,7 @@ severidades:
   - id: desastrosa
     nivel_dificultad: exigente
     base: 14
-    nr_sugerido: "3–4"
+    nr_sugerido: "6–9"
     tipo: natural_o_extranatural
     descripcion: >
       Condiciones casi inhabilitantes. Pueden ser fenómenos naturales en su punto más extremo
@@ -160,7 +160,7 @@ severidades:
   - id: extrema
     nivel_dificultad: extrema
     base: 17
-    nr_sugerido: "4–5"
+    nr_sugerido: "9–12"
     tipo: natural_o_extranatural
     descripcion: >
       Límite de lo supervivible o ejecutable. Los fenómenos extranaturales son comunes
@@ -215,13 +215,13 @@ nr_del_entorno:
   guia:
     - nr: 1
       descripcion: Condición en su expresión mínima para ese nivel de severidad
-    - nr: 2
-      descripcion: Condición notable dentro de su nivel; algunos factores compuestos
     - nr: 3
-      descripcion: Condición intensa; múltiples factores simultáneos o duración prolongada
-    - nr: 4
-      descripcion: Condición en su pico o con primer marcador extranatural confirmado
+      descripcion: Condición notable dentro de su nivel; algunos factores compuestos
     - nr: 5
+      descripcion: Condición intensa; múltiples factores simultáneos o duración prolongada
+    - nr: 7
+      descripcion: Condición en su pico o con primer marcador extranatural confirmado
+    - nr: 9
       descripcion: Influencia extranatural clara; reservado para nivel Extrema
   multiples_fuentes:
     regla: >

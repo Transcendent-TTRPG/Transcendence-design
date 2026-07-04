@@ -115,12 +115,17 @@ families:
       main_sources:
         - vestigio
         - vinculo
+      first_contact_rule: >
+        The first interaction with any Vestigio or Vínculo — voluntary or
+        involuntary — automatically imposes an Affliction at Minor (intensity 5)
+        in the linked sense. No Resistance Roll is required.
       interaction_rule: >
-        Each meaningful interaction with a Vestigio or Vínculo may call for an
-        Affliction Resistance Roll. On a failure, the relevant sensory
-        Affliction intensity increases by 1.
+        After first contact, each subsequent interaction with a Vestigio
+        (discovered or not) or an undiscovered Vínculo calls for an Affliction
+        Resistance Roll. On a failure, the relevant sensory Affliction intensity
+        increases by 1. A discovered Vínculo no longer generates Affliction on
+        use — it accumulates Eco instead.
       manifestation_track:
-        latent_range: [0, 4]
         first_manifestation_at: 5
         moderate_at: 10
         severe_at: 15
@@ -129,7 +134,8 @@ families:
         next increase should usually manifest a new Affliction on the same
         sensory channel instead of extending the same one past Severe.
       recovery_and_worsening:
-        failed_qualifying_interaction: "+1 intensity"
+        first_contact: "Affliction at Minor (intensity 5) — automatic, no R.R."
+        failed_qualifying_interaction: "+1 intensity (on failed R.R.)"
         no_adequate_rest: "+1 intensity per night"
         good_sleep: "-1 intensity per night"
         effective_meditation: "-1 intensity per session"
@@ -158,7 +164,9 @@ families:
       propagation: >
         Once active after incubation, the Infection may spread through the
         vectors defined by its entry. Exposed creatures must make the stated
-        Infection Resistance Roll to avoid contagion.
+        Infection Resistance Roll to avoid contagion. The propagation
+        difficulty may differ from the initial contagion difficulty; each
+        entry specifies both when they differ.
   poison:
     definition: >
       Toxic Ailments introduced through a delivery method and resolved inside
@@ -180,7 +188,13 @@ families:
     definition: >
       Extranatural Ailments bound to beings, objects, places, vows, or hostile
       supernatural rules.
-    resistance_formula: "defined per curse entry"
+    resistance_formula: "1d10 + Composure + Resistances + Bonuses"
+    resistance_formula_note: >
+      Composure is the default characteristic because Curses threaten inner
+      coherence and volitional resistance, parallel to Afflictions. Specific
+      curse entries may define their own formula or route when the nature of
+      the curse demands a different characteristic or a detection-based
+      approach instead of a direct Resistance Roll.
     scope_note: >
       Curses should not be collapsed into Afflictions. An Affliction distorts
       perception or inner coherence; a Curse binds a hostile extranatural rule.
@@ -213,15 +227,15 @@ entries:
     severity_levels:
       minor:
         - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
-        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "Agility Specialization Rolls suffer a penalty equal to that same rank bonus"
       moderate:
         - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
-        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
-        - "cannot use precise reactive physical answers such as movement-dependent reactions, tight interception, or other timing-sensitive physical responses unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "Agility Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "cannot use Reactions without first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
       severe:
         - "attacks, movement, and Techniques tied to attacks or movement cost additional Rhythm equal to the rank bonus of the source that applied Electrizado"
-        - "physical Specialization Rolls suffer a penalty equal to that same rank bonus"
-        - "cannot use precise reactive physical answers such as movement-dependent reactions, tight interception, or other timing-sensitive physical responses unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
+        - "Agility Specialization Rolls suffer a penalty equal to that same rank bonus"
+        - "cannot use Reactions without first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
         - "the first time on each activation the target attempts movement, an attack, or a Technique tied to attacks or movement, it must first attempt that Tolerancia Specialization Roll; on a failure, the attempted action does not resolve and is lost to lock, spasm, or discharge recoil as the fiction requires"
     application_requirements:
       - meaningful_electrical_discharge
@@ -575,11 +589,11 @@ entries:
       The target cannot see.
     severity_levels:
       minor:
-        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+        - "-5 to A.R., D.R., C.R., and Specialization Rolls"
       moderate:
-        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+        - "-5 to A.R., D.R., C.R., and Specialization Rolls"
       severe:
-        - "-5 to A.R., D.R., I.R., and Specialization Rolls"
+        - "-5 to A.R., D.R., C.R., and Specialization Rolls"
     application_requirements:
       - light_or_vision_obscuration
       - trauma_or_debris
@@ -780,17 +794,17 @@ entries:
       The target cannot breathe properly and is fighting to remain operational.
     severity_levels:
       minor:
-        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity; on a failure, become Debilitado for that activation"
         - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
       moderate:
-        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity; on a failure, become Debilitado for that activation"
         - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
         - "while Asfixiado remains active, Preparation becomes 0, and the target cannot voluntarily sprint, shout forcefully, maintain long strain, or use another clearly breath-hungry line unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
       severe:
-        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity to avoid becoming incapacitated for that activation"
+        - "at the start of each activation, make a Tolerancia Specialization Roll against the original severity; on a failure, become Debilitado for that activation"
         - "suffers a cumulative -1 penalty to all rolls for each activation spent while Asfixiado remains active"
         - "while Asfixiado remains active, Preparation becomes 0, and the target cannot voluntarily sprint, shout forcefully, maintain long strain, or use another clearly breath-hungry line unless first succeeding on a Tolerancia Specialization Roll against the original severity for that attempt"
-        - "if the target fails the start-of-activation Tolerancia Specialization Roll, the lost activation also drops held breath-dependent lines, spoken coordination, maintained grips, or equivalent sustained effort as the fiction requires"
+        - "if the target fails the start-of-activation Tolerancia Specialization Roll, the target becomes Incapacitado"
     application_requirements:
       - choking_or_drowning
       - smoke_inhalation_or_crushing_pressure
@@ -818,17 +832,17 @@ entries:
   - name: Impedido
     family: Alteration
     description: >
-      The target cannot execute weapon-rooted Techniques cleanly.
+      The target cannot execute weapon-rooted actions cleanly.
     severity_levels:
       minor:
-        - "cannot use Techniques tied to weapon competencies"
+        - "weapon-based A.R., I.R., and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
       moderate:
-        - "cannot use Techniques tied to weapon competencies"
-        - "weapon-based A.R., I.R., and hand-critical physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
+        - "weapon-based A.R., I.R., and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
+        - "before the target can deliberately make a weapon-rooted attack, intercept, reload, or re-ready, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
       severe:
+        - "weapon-based A.R., I.R., and Agility Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
+        - "before the target can deliberately make a weapon-rooted attack, intercept, reload, or re-ready, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
         - "cannot use Techniques tied to weapon competencies"
-        - "weapon-based A.R., I.R., and hand-critical physical Specialization Rolls suffer a penalty equal to the rank bonus of the source that applied Impedido"
-        - "before the target can deliberately make a weapon-rooted attack, intercept, reload, re-ready, or other precise armed execution line, it must first succeed on an Enfoque Specialization Roll against the original severity for that attempt"
     application_requirements:
       - bodily_disruption_or_neural_interference
       - pain_lock_or_unstable_grip

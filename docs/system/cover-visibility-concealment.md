@@ -140,11 +140,18 @@ La visibilidad no reemplaza el sistema de Condiciones del Entorno. Cuando una si
 
 ### Rango visual estándar
 
-En condiciones claras, una criatura puede reconocer detalles relevantes hasta:
+En condiciones claras, una criatura Mediana puede reconocer detalles relevantes hasta `60 metros`.
 
-```text
-Rango visual estándar = 60 metros
-```
+El rango visual varía con el tamaño de la criatura que observa:
+
+| Tamaño | Rango visual estándar |
+| --- | ---: |
+| Diminuto | 30 m |
+| Pequeño | 45 m |
+| Mediano | 60 m |
+| Grande | 80 m |
+| Enorme | 100 m |
+| Gigantesco | 140 m |
 
 Más allá de ese rango, una acción que dependa de distinguir detalles visuales requiere una `T.E. de Percepción`. El Narrador aumenta la dificultad según distancia, tamaño, movimiento, contraste y condiciones ambientales.
 

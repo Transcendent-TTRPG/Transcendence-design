@@ -132,10 +132,12 @@ El atacante debe declarar qué intenta romper. El objetivo debe ser algo que el 
 - arma;
 - escudo;
 - pieza de armadura;
+- objeto sostenido o portado;
 - extremidad;
 - mandíbula;
 - cuerno;
 - caparazón;
+- placa natural;
 - cola;
 - ala;
 - articulación;
@@ -168,6 +170,32 @@ Si una pieza de equipo que aportaba Bloqueo se rompe, deja de aportar Bloqueo ha
 Cuando una zona queda sin una pieza funcional que contrarreste Impacto, el golpe se resuelve sin el Bloqueo de esa pieza. Esto puede llenar ranuras rápidamente, y es intencional: romper equipo o partes es una forma de abrir defensas que normalmente serían demasiado resistentes.
 
 La pérdida de Durabilidad no reduce Bloqueo automáticamente salvo que otra regla lo diga. La pieza funciona hasta romperse, aunque pueda estar más cerca de fallar ante el siguiente intento de ruptura.
+
+### Ruptura y golpe actual
+
+Por defecto, romper una pieza no elimina retroactivamente el Bloqueo, defensa o efecto que esa pieza ya aportó al golpe que se está resolviendo.
+
+La ruptura afecta el estado de la pieza desde ese momento en adelante.
+
+Una Técnica, arma, regla de criatura o efecto específico puede indicar lo contrario. Si lo hace, debe declarar claramente que la ruptura afecta el Impacto actual, ignora Bloqueo actual o modifica la resolución en curso.
+
+Para Técnicas con múltiples impactos en una misma activación: si una pieza se rompe al resolver el primer impacto, el Bloqueo de esa pieza ya estaba activo para toda la Técnica como momento global. La ruptura solo afecta impactos de activaciones posteriores.
+
+### Técnicas y ruptura
+
+Las Técnicas pueden modificar la relación normal entre crítico y ruptura.
+
+Una Técnica puede:
+
+- permitir un intento de ruptura sin Impacto Crítico;
+- ampliar los resultados del dado crítico que validan ruptura;
+- aumentar Potencia Crítica;
+- ignorar parte de la Durabilidad;
+- declarar como rompible una parte que normalmente no lo sería;
+- aplicar una consecuencia adicional si la ruptura ocurre;
+- hacer que la ruptura afecte el golpe actual.
+
+Una Técnica debe declarar exactamente cuál de esas cosas permite. Ampliar validación de ruptura no aumenta Potencia Crítica. Declarar una parte nueva como objetivo no exime de demostrar que el ataque puede alcanzarla.
 
 ### Consecuencias posibles
 
@@ -362,17 +390,17 @@ La severidad de la herida depende de cuánto supera el Impacto al Bloqueo.
 
 | Relación | Resultado |
 | --- | --- |
-| Impacto ≤ Bloqueo × 1 | Sin herida |
-| Impacto > Bloqueo × 1 y < Bloqueo × 2 | Herida Leve |
-| Impacto ≥ Bloqueo × 2 y < Bloqueo × 3 | Herida Grave |
-| Impacto ≥ Bloqueo × 3 | Herida Crítica |
+| Impacto ≤ Bloqueo | Sin herida |
+| Impacto > Bloqueo y ≤ Bloqueo × 2 | Herida Leve |
+| Impacto > Bloqueo × 2 y ≤ Bloqueo × 3 | Herida Grave |
+| Impacto > Bloqueo × 3 | Herida Crítica |
 
 En mesa, esto se puede leer así:
 
 - si el golpe no supera el Bloqueo, la protección absorbe la consecuencia seria;
-- si lo supera una vez, deja una herida leve;
-- si lo duplica, deja una herida grave;
-- si lo triplica, deja una herida crítica.
+- si lo supera pero no lo duplica (inclusive), deja una herida leve;
+- si supera el doble pero no el triple (inclusive), deja una herida grave;
+- si supera el triple, deja una herida crítica.
 
 ---
 
@@ -450,10 +478,10 @@ Los penalizadores de zona representan pérdida de función acumulada. Si un Agra
 
 | Zona | Saturada | Colapsada |
 | --- | --- | --- |
-| Cabeza | Penalizador de Saturación a `S.R.` mentales y de percepción visual/auditiva. Penalizador de Saturación a Preparación. | Aplica `Aturdido`. Además, debe superar una `R.R.` de Alteración contra la severidad de la herida que causó el Colapso o queda `Inconsciente`. |
-| Torso | Penalizador de Saturación a `Tolerancia`, acciones físicas exigentes, defensas pesadas, mantener postura bajo impacto y Técnicas que comprometan el torso. | Queda `Incapacitado` hasta estabilizarse. Si la herida que causó el Colapso fue Crítica, también entra en `Agonía`. |
+| Cabeza | Penalizador de Saturación a `S.R.` mentales y de percepción visual/auditiva. Penalizador de Saturación a Preparación. | Debe superar una `R.R.` de Alteración contra la severidad de la herida que causó el Colapso o queda `Inconsciente`. |
+| Torso | Penalizador de Saturación a `Tolerancia`, acciones físicas exigentes, defensas pesadas, mantener postura bajo impacto y Técnicas que comprometan el torso. | Queda `Debilitado` hasta estabilizarse. Si la herida que causó el Colapso fue Crítica, también entra en `Agonía`. |
 | Brazos | Penalizador de Saturación a `A.R.`, `I.R.` y `S.R.` físicas que dependan claramente de brazos, agarre, escudo, armas o manipulación. | Un brazo, agarre o línea de ejecución queda inutilizado. No puede usar armas a dos manos, escudo o Técnicas ligadas a esa extremidad si dependen de la parte colapsada. Puede aplicar `Impedido`. |
-| Piernas | Movimiento reducido a la mitad. Penalizador de Saturación a `S.R.` físicas de Fuerza o Tenacidad que dependan de piernas: carrera sostenida, salto, carga, trepar con apoyo inferior, empujar, resistir empuje o levantarse. | No puede caminar de forma funcional sin apoyo o ayuda. No puede cargar, correr ni saltar. |
+| Piernas | Movimiento reducido a la mitad. Penalizador de Saturación a `S.R.` físicas de Fuerza o Tenacidad que dependan de piernas: carrera sostenida, salto, carga, trepar con apoyo inferior, empujar, resistir empuje o levantarse. | No puede llevar a cabo ninguna acción relacionada con Fuerza. |
 | Pies | No puede esprintar. Penalizador de Saturación a `S.R.` físicas de Agilidad que dependan de apoyo fino: equilibrio, sigilo de pisada, giros, frenado, terreno difícil, esquiva fina o cambios bruscos de dirección. | Puede moverse solo con apoyo, ayuda o una `T.E.` apropiada. Si intenta moverse bajo presión sin apoyo y falla, queda `Derribado`. |
 
 La severidad de la `R.R.` por Colapso usa la herida que causó el Desbordamiento:
@@ -471,9 +499,10 @@ Los Estados Corporales describen la condición general de una criatura cuando el
 | Estado | Significado |
 | --- | --- |
 | Operativo | Puede actuar normalmente, con los penalizadores que tenga por zona, Agravio, Fatiga o Desgaste. |
-| Incapacitado | No puede realizar acciones significativas. Puede hablar, arrastrarse, sostener algo o reaccionar débilmente solo si la ficción lo permite. |
+| Debilitado | No puede realizar acciones con ritmo mayor a 3. Puede hablar, arrastrarse, sostener algo o reaccionar débilmente si la ficción lo permite. |
+| Incapacitado | Queda Derribado y no puede realizar acciones declaradas. Está consciente — puede percibir y hablar con dificultad — pero el dolor o la lesión impiden toda ejecución activa. |
 | Inconsciente | No puede actuar ni percibir de forma útil. No puede defenderse de forma activa. |
-| Agonía | Está en riesgo de morir si no recibe estabilización. No puede actuar de forma significativa. |
+| Agonía | Está en riesgo de morir si no recibe estabilización. Queda Incapacitado. |
 | Muerto | La criatura deja de ser recuperable por medios normales de escena. |
 
 Por defecto, una zona de brazos o piernas colapsada no mata al personaje. Puede dejarlo inutilizado, derribado o incapaz de pelear, pero la muerte requiere que el daño comprometa funciones vitales, que una regla lo declare o que el Narrador y la mesa lo acepten como consecuencia directa de la ficción.
@@ -576,35 +605,13 @@ Un personaje puede intentar estabilizar una criatura con una:
 T.E. de Medicina (Sabiduría)
 ```
 
-### Dificultad
-
-| Herida | Dificultad |
-| --- | --- |
-| Leve | Desafiante |
-| Grave | Rigurosa |
-| Crítica | Exigente |
-
-### Herramientas necesarias
-
-La estabilización requiere un kit médico adecuado para la severidad de la herida.
-
-| Herida | Kit requerido |
-| --- | --- |
-| Leve | Básico |
-| Grave | Avanzado |
-| Crítica | Especializado |
+| Ranuras ocupadas en la zona | Dificultad | Kit requerido | Tiempo |
+| --- | --- | --- | --- |
+| 1–2 | Fundamentos | Básico | 30 minutos |
+| 3–4 | Desafiante | Avanzado | 60 minutos |
+| 5 / Colapsada | Rigurosa | Especializado | Descanso Completo |
 
 Si el personaje no tiene el kit adecuado, el Narrador puede impedir la tirada, aumentar la dificultad o permitir una estabilización parcial si la ficción lo justifica.
-
-### Tiempo requerido
-
-| Herida | Tiempo |
-| --- | --- |
-| Leve | 30 minutos |
-| Grave | 60 minutos |
-| Crítica | 8 horas de reposo y tratamiento |
-
-Una herida crítica no se estabiliza de forma fiable con una intervención rápida. Requiere condiciones equivalentes a un descanso completo: tiempo, seguridad relativa, herramientas apropiadas y atención sostenida.
 
 ### Resultado
 
@@ -663,9 +670,9 @@ Las heridas deben estar estabilizadas antes de poder liberar ranuras. Una herida
 
 | Descanso | Puede estabilizar | Puede liberar ranuras |
 | --- | --- | ---: |
-| 30 minutos | Herida Leve | No |
-| 60 minutos | Herida Grave | No |
-| Descanso completo | Herida Crítica o cualquier herida estabilizada | 1 ranura con `T.E. Medicina` exitosa |
+| 30 minutos | Zona con 1–2 ranuras ocupadas | No |
+| 60 minutos | Zona con 3–4 ranuras ocupadas | No |
+| Descanso completo | Zona con 5 ranuras o Colapsada | 1 ranura con `T.E. Medicina` exitosa |
 
 Los descansos de 30 y 60 minutos sirven para estabilizar, preparar traslado, reducir presión inmediata o mantener a una criatura funcional, pero no liberan ranuras. La recuperación real de ranuras requiere descanso completo y tratamiento.
 
@@ -673,25 +680,13 @@ Los descansos de 30 y 60 minutos sirven para estabilizar, preparar traslado, red
 
 Al tratar una zona durante un descanso completo, el personaje que atiende al paciente realiza una `T.E. de Medicina (Sabiduría)`.
 
-La dificultad base y el kit dependen de la ranura más severa que todavía esté ocupada en esa zona:
+La dificultad y el kit dependen del total de ranuras ocupadas en esa zona al inicio del descanso completo:
 
-| Ranura ocupada más severa en la zona | Dificultad | Kit requerido |
+| Ranuras ocupadas en la zona | Dificultad | Kit requerido |
 | --- | --- | --- |
-| Leve | Desafiante | Básico |
-| Grave | Rigurosa | Avanzado |
-| Crítica | Exigente | Especializado |
-
-Después, aumenta el `NR` según cuántas ranuras estén ocupadas en la misma zona al inicio del descanso completo.
-
-| Ranuras ocupadas en la zona | Ajuste |
-| ---: | --- |
-| 1 | Sin ajuste |
-| 2-3 | `+1 NR` |
-| 4-5 | `+2 NR` |
-
-Si la zona está `Colapsada`, añade otro `+1 NR`.
-
-Esto significa que tratar una Herida Leve aislada en el torso no tiene la misma dificultad que liberar una ranura cuando el torso tiene cuatro ranuras ocupadas. La herida puede ser pequeña, pero el cuerpo está trabajando alrededor de una zona mucho más comprometida.
+| 1–2 | Desafiante | Básico |
+| 3–4 | Rigurosa | Avanzado |
+| 5 / Colapsada | Exigente | Especializado |
 
 En un éxito, el paciente libera `1` ranura ocupada de esa zona. La ranura liberada debe pertenecer a una herida estabilizada.
 

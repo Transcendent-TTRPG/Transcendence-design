@@ -229,16 +229,16 @@ Todos los vínculos son comparables en poder. No hay vínculos de tier superior 
 
 ---
 
-## El costo en Cordura
+## El costo en Eco y Cordura
 
-Usar un vínculo cuesta Cordura — no aflicción. Esta es la distinción central entre vestigios y vínculos:
+Esta es la distinción central entre vestigios y vínculos:
 
-- **Vestigio**: cada uso incrementa la aflicción del portador en el sentido vinculado.
-- **Vínculo**: el uso cuesta Cordura. La aflicción no aumenta por el uso.
+- **Vestigio**: cada uso exige una T.R. de Aflicción. Si falla, la intensidad de la aflicción del portador en el sentido vinculado sube +1.
+- **Vínculo**: cada activación acumula **Eco** — carga psíquica que se proyecta durante la escena y se asienta al final. La aflicción no aumenta por el uso.
 
-La Cordura de un personaje proviene de su Compostura (fórmula placeholder: Compostura × 2). Es la reserva de integridad psíquica frente a la presencia continua del Limbo.
+**Cordura** = `3 + (Compostura × 2)`. Valor mínimo: 3. Es la reserva de integridad psíquica frente a la presencia continua del Limbo. Cuando el Eco acumulado supera la Cordura, aparece la **Disonancia** — deterioro progresivo de la coherencia perceptual que limita el acceso a caminos y Aspectos. Los umbrales y efectos completos se desarrollan en el capítulo de vínculos y Aspectos.
 
-La aflicción de un portador de vínculo crece durante el descubrimiento, no durante el uso. Esto significa que un personaje sin experiencia previa con vestigios puede desarrollar las aflicciones necesarias para acceder a un vínculo solo a través del proceso de conocerlo. El canal se construye en el descubrimiento; el uso drena la Cordura.
+La aflicción de un portador de vínculo crece durante el descubrimiento, no durante el uso. Esto significa que un personaje sin experiencia previa con vestigios puede desarrollar las aflicciones necesarias para acceder a un vínculo solo a través del proceso de conocerlo. El canal se construye en el descubrimiento; el uso acumula Eco.
 
 ---
 

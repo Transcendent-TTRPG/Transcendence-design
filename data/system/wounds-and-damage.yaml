@@ -100,10 +100,12 @@ breaking_parts:
     - weapon
     - shield
     - armor_piece
+    - held_or_carried_object
     - limb
     - jaw
     - horn
     - shell
+    - natural_plate
     - tail_segment
     - wing
     - joint
@@ -226,19 +228,19 @@ npc_to_pc_wound_thresholds:
   bands:
     - id: none
       name_es: Sin herida
-      condition: "impact <= block * 1"
+      condition: "impact <= block"
       slots: 0
     - id: light
       name_es: Herida Leve
-      condition: "impact > block * 1 and impact < block * 2"
+      condition: "impact > block and impact <= block * 2"
       slots: 1
     - id: grave
       name_es: Herida Grave
-      condition: "impact >= block * 2 and impact < block * 3"
+      condition: "impact > block * 2 and impact <= block * 3"
       slots: 2
     - id: critical
       name_es: Herida Critica
-      condition: "impact >= block * 3"
+      condition: "impact > block * 3"
       slots: 3
 
 wound_slots:
@@ -310,13 +312,12 @@ wound_slots:
         - "Saturation penalty to mental and visual/auditory perception Specialization Rolls"
         - "Saturation penalty to Preparation"
       collapsed:
-        - "apply Aturdido"
         - "Alteration Resistance Roll against the severity of the wound that caused Collapse; on failure, become Inconsciente"
     torso:
       saturated:
         - "Saturation penalty to Tolerancia, strenuous physical actions, heavy defenses, holding posture under impact, and Techniques that stress the torso"
       collapsed:
-        - "become Incapacitado until stabilized"
+        - "become Debilitado until stabilized"
         - "if the collapsing wound was Critical, also enter Agonia"
     arms:
       saturated:
@@ -330,8 +331,7 @@ wound_slots:
         - "movement reduced by half"
         - "Saturation penalty to Strength or Tenacity physical Specialization Rolls that depend on legs: sustained running, jumping, charging, climbing with lower-body support, pushing, resisting push, or standing up"
       collapsed:
-        - "cannot walk functionally without support or help"
-        - "cannot charge, run, or jump"
+        - "cannot perform any action related to Fuerza"
     feet:
       saturated:
         - "cannot sprint"
@@ -367,18 +367,22 @@ body_states:
   operative:
     name_es: Operativo
     meaning: "Can act normally, subject to zone, Ailment, Fatigue, and Attrition penalties."
+  weakened:
+    name_es: Debilitado
+    meaning: >
+      Cannot perform actions with a rhythm cost greater than 3. May speak, crawl,
+      hold something, or react weakly if the fiction supports it.
   incapacitated:
     name_es: Incapacitado
     meaning: >
-      Cannot perform meaningful actions. May speak, crawl, hold something, or
-      react weakly only if the fiction supports it.
+      Knocked down and cannot perform declared actions. Conscious — may perceive
+      and speak with difficulty — but pain or injury prevents all active execution.
   unconscious:
     name_es: Inconsciente
     meaning: "Cannot act or perceive usefully and cannot actively defend."
   agony:
     name_es: Agonia
-    meaning: >
-      At risk of death without stabilization. Cannot perform meaningful actions.
+    meaning: "At risk of death without stabilization. Becomes Incapacitado."
   dead:
     name_es: Muerto
     meaning: "No longer recoverable by normal scene-level means."
@@ -406,22 +410,22 @@ stabilization:
     type: "S.R."
     specialization: Medicina
     characteristic: Sabiduria
-  difficulty_by_wound:
-    light:
-      name_es: Herida Leve
-      difficulty: Desafiante
+  difficulty_by_occupied_slots:
+    one_to_two:
+      occupied_slots: "1-2"
+      difficulty: Fundamentos
       required_kit: Basico
       time: "30 minutes"
-    grave:
-      name_es: Herida Grave
-      difficulty: Rigurosa
+    three_to_four:
+      occupied_slots: "3-4"
+      difficulty: Desafiante
       required_kit: Avanzado
       time: "60 minutes"
-    critical:
-      name_es: Herida Critica
-      difficulty: Exigente
+    five_or_collapsed:
+      occupied_slots: "5 / Colapsada"
+      difficulty: Rigurosa
       required_kit: Especializado
-      time: "8 hours of rest and treatment"
+      time: full_rest
   missing_tools_guidance:
     - narrator_may_disallow_roll
     - narrator_may_increase_difficulty
@@ -480,57 +484,45 @@ treatment_and_healing:
       - active_wounds_must_be_stabilized_first
     rest_windows:
       thirty_minutes:
-        can_stabilize: light
+        can_stabilize: "zones with 1-2 occupied slots"
         can_treat_for_slot_recovery: false
         recovered_slots: 0
       sixty_minutes:
-        can_stabilize: grave
+        can_stabilize: "zones with 3-4 occupied slots"
         can_treat_for_slot_recovery: false
         recovered_slots: 0
       full_rest:
-        can_stabilize: critical_or_any_stabilized_wound
+        can_stabilize: "zones with 5 slots or Collapsed"
         can_treat_for_slot_recovery: true
         recovered_slots_on_success: 1
-    treatment_roll_by_most_severe_occupied_slot:
-      light:
+    treatment_roll_by_occupied_slots:
+      one_to_two:
+        occupied_slots: "1-2"
         rest: "full rest"
         roll:
           specialization: Medicina
           characteristic: Sabiduria
           difficulty: Desafiante
           required_kit: Basico
-        result: "if the zone is treated during full rest, frees 1 occupied slot"
-      grave:
+        result: "frees 1 occupied slot"
+      three_to_four:
+        occupied_slots: "3-4"
         rest: "full rest"
         roll:
           specialization: Medicina
           characteristic: Sabiduria
           difficulty: Rigurosa
           required_kit: Avanzado
-        result: "if the zone is treated during full rest, frees 1 occupied slot"
-      critical:
+        result: "frees 1 occupied slot"
+      five_or_collapsed:
+        occupied_slots: "5 or Collapsed"
         rest: "full rest"
         roll:
           specialization: Medicina
           characteristic: Sabiduria
           difficulty: Exigente
           required_kit: Especializado
-        result: "if the zone is treated during full rest, frees 1 occupied slot"
-    zone_burden_modifier:
-      timing: "count occupied wound slots in the treated zone at the start of the full rest"
-      modifiers:
-        - occupied_slots: "1"
-          adjustment: "+0 NR"
-        - occupied_slots: "2-3"
-          adjustment: "+1 NR"
-        - occupied_slots: "4-5"
-          adjustment: "+2 NR"
-      collapsed_zone_extra_adjustment: "+1 NR"
-      principle: >
-        Treatment difficulty uses the most severe occupied slot in the treated
-        zone as the base difficulty, then increases with the total occupied
-        slots in that body zone. A small wound in a heavily damaged torso is
-        harder to recover than the same wound in an otherwise healthy torso.
+        result: "frees 1 occupied slot"
     target_selection:
       rule: "declare which occupied slot in the treated zone is being recovered before rolling"
       default_result: "only 1 occupied slot is freed on success; it must belong to a stabilized wound"

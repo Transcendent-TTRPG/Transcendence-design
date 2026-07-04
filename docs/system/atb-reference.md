@@ -10,11 +10,11 @@
 
 El combate en Transcendence no se divide en rondas.
 
-En su lugar, cada criatura, sistema o elemento importante del encuentro ocupa una posición en una **línea de tiempo**. La entidad cuya ficha esté más a la **izquierda** es la siguiente en actuar.
+En su lugar, cada criatura, sistema o elemento importante del encuentro ocupa una posición en un **track circular continuo**. Hay un **marcador de flujo** que representa el presente absoluto del combate. La entidad cuya ficha esté más próxima al marcador es la siguiente en actuar.
 
-Cuando una entidad actúa, su ficha se mueve a la **derecha** según el costo de ritmo de la acción elegida.
+Cuando una entidad actúa, su ficha se aleja del marcador según el costo de ritmo de la acción elegida. El marcador avanza inexorablemente hasta la siguiente ficha más próxima, que se activa a continuación.
 
-> **Regla de posición:** La ficha más a la izquierda actúa primero. Actuar mueve la ficha hacia la derecha.
+> **Regla de posición:** La ficha más próxima al marcador de flujo actúa primero. Actuar aleja la ficha del marcador.
 
 ---
 
@@ -40,7 +40,9 @@ El participante con el Valor de Apertura más alto queda en la posición **0** �
 
 ### Modificadores de situación
 
-| Situación | Modificador |
+El Narrador asigna estos modificadores según la ficción de la escena. Los valores de la tabla son sugeridos — no son fijos.
+
+| Situación | Modificador sugerido |
 | --- | --- |
 | Emboscando | +2 |
 | Arma lista / postura preparada | +1 |
@@ -98,7 +100,7 @@ Cuando una ficha es la más a la izquierda:
 
 Si dos o más fichas quedan en la misma posición — al inicio o durante el combate —:
 
-- actúa primero quien tenga mayor **Preparación bruta** (antes de modificadores situacionales)
+- actúa primero quien tenga mayor **Preparación**
 
 Si también empatan en Preparación bruta:
 
