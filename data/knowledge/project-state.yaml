@@ -13,21 +13,60 @@ project_state:
       - Hidden preserves its acquiring roll as the active value.
 
   ailments:
-    status: modernized_partial
+    status: complete
     notes:
-      - Major review pass completed for many Alterations.
-      - Rank-bonus penalty doctrine is established for the relevant family.
-      - Structural/binary states remain intentionally distinct.
+      - Full audit pass completed across all Alteraciones.
+      - Rank-bonus penalty doctrine established for the relevant family.
+      - Structural/binary states remain intentionally distinct from graded ailments.
+      - First-contact affliction rule established (corebook ch11).
+
+  natural_weapon_audit:
+    status: complete
+    notes:
+      - All 12 species audited. Each species now has a biologically distinct natural weapon effect.
+      - Naghii Cola Desorientado, Sauri Cola T.D. penalty, Drak'kai Mordisco Aterrorizado (max die),
+        Drak'kai Garras forced displacement, Loxod Colmillos Aturdido, Ursari Garras T.D. -1/rango,
+        Formix Mordisco Confundido, Chelicer Garras Sobrecargado, Panin Mordisco Conmocionado,
+        Luphran Mordisco no reactions, Luphran Garras no reactions generated, Zarnag Mordisco +Ritmo.
+      - No two species share the same trigger + output combination.
+
+  drakkai_technique_pass:
+    status: complete
+    notes:
+      - Novice technique pass complete for Drak'kai (#74–85).
+      - Includes armadura pesada, specialization, and resistance hybrid techniques.
 
   zarnag_species_pass:
     status: complete_for_current_scope
     notes:
-      - 24 novice species-origin techniques currently authored.
+      - 24 novice species-origin techniques authored.
       - 12 weapon, 2 defense, 2 hybrids, 8 specialization.
 
+  chapter_06_species:
+    status: complete
+    notes:
+      - All species corebook entries (ch06) considered complete for current scope.
+      - Output used to produce species-relations document.
+
+  chapter_10_sync:
+    status: complete
+    notes:
+      - Full design-to-core sync pass completed for ch10 (equipment and resources).
+      - materials-and-fabrication.md updated with all D/P/S values, grade determination,
+        alchemy two-stage process, trap tables, plan type split, accessibility lists.
+      - economy.md created as new design authority doc.
+      - Availability surcharge section added to corebook ch10 04-fabricacion-equipo.md.
+
+  corebook_sync_pass:
+    status: complete_through_ch14
+    notes:
+      - Design-to-core sync pass completed for chapters 03, 08, 10, 11, 12, 13, 14.
+      - Ch09 (techniques) deferred — not needed at this stage.
+      - Ch06 (species) complete via separate pass.
+
   knowledge_layer:
-    status: established_initial_structure
+    status: active
     notes:
       - Governance and concept-model documents are created.
-      - Structured registries are created.
-      - Further expansion should track more system concepts and species states.
+      - Structured registries expanded to cover materials, economy, combat/ATB, species coverage.
+      - Cost doctrine and natural weapon audit decisions added to registry.

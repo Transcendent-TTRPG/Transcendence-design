@@ -66,3 +66,53 @@ knowledge_manifest:
         - Transcendence-design/docs/canon/species/zarnag-technique-seeds.md
         - Transcendence-design/docs/system/techniques.md
         - Transcendence-design/data/system/techniques.yaml
+
+    - id: materials
+      concepts:
+        - material_grade
+        - material_state
+      decisions:
+        - material_dp_corebook_authority
+      preferred_sources:
+        - Transcendence-design/data/knowledge/concept-registry.yaml
+        - Transcendence-design/data/knowledge/decision-registry.yaml
+        - Transcendence-design/docs/system/materials-and-fabrication.md
+        - Transcendence-design/data/system/materials-and-fabrication.yaml
+      fallback_sources:
+        - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/01-materiales.md
+        - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/08-catalogo-de-materiales.md
+
+    - id: economy
+      concepts: []
+      decisions: []
+      preferred_sources:
+        - Transcendence-design/data/knowledge/project-state.yaml
+        - Transcendence-design/docs/system/economy.md
+      fallback_sources:
+        - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/
+
+    - id: combat_atb
+      concepts:
+        - autonomous_cycle
+        - base_action
+      decisions: []
+      preferred_sources:
+        - Transcendence-design/docs/adr/combat-atb-timeline.md
+        - Transcendence-design/docs/adr/combat-atb-rhythm-costs.md
+        - Transcendence-design/docs/adr/combat-encounter-architecture.md
+        - Transcendence-design/docs/adr/combat-enemy-readability.md
+        - Transcendence-design/docs/adr/combat-champion-encounter.md
+      fallback_sources:
+        - Transcendence-publications/core-books/transcendence-corebook/08-conflict-and-combat/es/
+
+    - id: species_coverage
+      concepts:
+        - technique
+      decisions:
+        - natural_weapon_species_distinctness
+      preferred_sources:
+        - Transcendence-design/data/knowledge/project-state.yaml
+        - Transcendence-design/docs/canon/species/species-technique-coverage.md
+        - Transcendence-design/docs/canon/species/
+      fallback_sources:
+        - Transcendence-design/data/system/techniques.yaml

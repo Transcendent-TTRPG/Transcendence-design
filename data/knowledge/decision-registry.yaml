@@ -66,3 +66,49 @@ decisions:
     authority_paths:
       - Transcendence-design/docs/system/techniques.md
       - Transcendence-design/docs/canon/species/zarnag-technique-seeds.md
+
+  - id: technique_cost_doctrine
+    title: Ritmo = time cost; Desgaste always ≥ 1 for active techniques
+    status: accepted
+    summary: >
+      Ritmo measures how much ATB position (ficha advancement) the technique costs —
+      the time it occupies in the combat timeline. Desgaste is permanent accumulated
+      strain. Active and reactive techniques always have Desgaste ≥ 1 because doing
+      anything under simultaneous combat pressure costs something permanently, even
+      when the action is fast or purely cognitive. Desgaste 0 is reserved exclusively
+      for passive hybrid resistance techniques (things the body executes without
+      conscious activation). Ritmo 0 is valid when the effect has no external
+      manifestation, movement, or timing requirement.
+    authority_paths:
+      - Transcendence-design/docs/work-runs/2026-06-04-technique-cost-stabilization.md
+      - Transcendence-design/docs/work-runs/2026-06-04-technique-cost-master-table.md
+
+  - id: natural_weapon_species_distinctness
+    title: Each species' natural weapon effect must be biologically distinct
+    status: accepted
+    summary: >
+      No two species may share the same trigger + output combination on their natural
+      weapon techniques. Every effect must be rooted in the species' actual animal
+      biology — the mechanism (mandible chemistry, pack coordination, venom, angular
+      force, etc.) must be legible from the creature's anatomy and ecology. Effects
+      that are generically "powerful" without biological grounding are rejected.
+      The same output state (e.g. Aterrorizado) may appear on two species only if
+      the trigger and delivery mechanism are clearly distinct.
+    authority_paths:
+      - Transcendence-design/docs/canon/species/
+      - Transcendence-design/data/system/techniques.yaml
+
+  - id: material_dp_corebook_authority
+    title: Corebook is the authority for material D/P values; design doc follows
+    status: accepted
+    summary: >
+      When D (Durabilidad) and P (Potencia) values in materials-and-fabrication.md
+      diverge from the corebook catalog (ch10-08), the corebook wins. The design doc
+      is updated to match the corebook, not the other way around. This applies to all
+      material categories: metals, rocks, gems, woods, fibers, creature parts, and
+      processed materials. Exception: materials marked as future content
+      (Mithril, Adamantium, Oricalco) may not yet appear in the corebook — their
+      design-doc values are held in place until corebook entries exist.
+    authority_paths:
+      - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/08-catalogo-de-materiales.md
+      - Transcendence-design/docs/system/materials-and-fabrication.md

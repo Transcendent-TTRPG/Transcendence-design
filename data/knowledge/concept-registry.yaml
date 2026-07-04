@@ -93,3 +93,56 @@ concepts:
     authority_paths:
       - Transcendence-design/docs/system/ailments.md
       - Transcendence-design/data/system/ailments.yaml
+
+  - id: autonomous_cycle
+    label: Autonomous Cycle
+    family: combat_subsystem
+    canonical_terms:
+      en: Autonomous Cycle
+      es: Ciclo Autónomo
+    summary: >
+      A separate ATB entry — distinct from a creature's main turn — that represents
+      a recurring biological function, coordination behavior, or environmental
+      process with its own Ritmo cost and activation timing. Available to all
+      creature categories; type varies by category (biological / coordination /
+      environmental). Biological cycles are anchored to a zona; environmental cycles
+      are not and persist through Metamorfosis phases.
+    authority_paths:
+      - Transcendence-design/docs/system/creature-cycles.md
+    key_notes:
+      - Narrator declares the cycle's existence when it enters the ATB, not its next Ritmo cost.
+      - Reading difficulty scales with total active cycles, not creature category.
+      - Technique "Medir el Ciclo" (Astronomía Novato) reveals upcoming activation costs.
+
+  - id: material_grade
+    label: Material Grade
+    family: material_system
+    canonical_terms:
+      en: Grade
+      es: Grado
+    summary: >
+      An integer 1–3 that represents the quality tier of an extracted or processed
+      material. Grade multiplies base stat and cost values (written as N × q).
+      Determined by a 1d100 roll for natural materials (01–60 → 1, 61–85 → 2,
+      86–100 → 3) or by creature category for harvested parts (Común → 1,
+      Campeón → 2, Elite → 3).
+    authority_paths:
+      - Transcendence-design/docs/system/materials-and-fabrication.md
+      - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/
+
+  - id: material_state
+    label: Material State
+    family: material_system
+    canonical_terms:
+      en: Material State
+      es: Estado del Material
+    summary: >
+      A property of any material describing its current structural and reactivity
+      condition. Five states: Inerte (chemically inert, no decay), Orgánico (once
+      alive, now dead — decays), Vivo (alive, requires maintenance), Tauma-reactivo
+      (responds to Tauma concentration), Tauma-impregnado (permanently altered by
+      Tauma, stable). State is independent of material type; the same substance
+      can exist in different states depending on origin and handling.
+    authority_paths:
+      - Transcendence-design/docs/system/materials-and-fabrication.md
+      - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/01-materiales.md

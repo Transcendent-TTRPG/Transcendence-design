@@ -61,3 +61,41 @@ retrieval_profiles:
       - system_data
     preferred_domains:
       - zarnag_species
+      - species_coverage
+
+  - id: material_fabrication_lookup
+    purpose: >
+      Resolve material D/P/S values, grade, accessibility tier, and fabrication
+      requirements for a given material or equipment type.
+    lookup_order:
+      - knowledge_data
+      - system_docs
+      - system_data
+      - publications
+    preferred_domains:
+      - materials
+
+  - id: economy_and_cost_lookup
+    purpose: >
+      Resolve cost of living, wage rates, contract pay ranges, equipment prices,
+      and inter-settlement surcharges without reading the full corebook.
+    lookup_order:
+      - knowledge_data
+      - system_docs
+      - publications
+    preferred_domains:
+      - economy
+      - materials
+
+  - id: technique_cost_review
+    purpose: >
+      Review or set Ritmo and Desgaste values for a technique against the adopted
+      cost doctrine.
+    lookup_order:
+      - knowledge_data
+      - knowledge_docs
+      - system_docs
+      - system_data
+    preferred_domains:
+      - techniques
+      - ailments
