@@ -191,7 +191,25 @@ The base framework assumes three common authored grades:
 - `2` — rare
 - `3` — exceptional
 
-Catalogs may later define how a source, biome, creature, or production method affects grade, but the framework only requires that grade remain a stable multiplier surface.
+### Grade determination
+
+Grade is determined at the moment of extraction and depends on the source type.
+
+**Natural materials (Minería, Herboristería):** Roll 1d100 after a successful extraction.
+
+| Roll | Grade |
+| --- | --- |
+| 01–60 | 1 — common |
+| 61–85 | 2 — rare |
+| 86–100 | 3 — exceptional |
+
+**Creature parts (Medicina):** Grade is fixed by the creature's category — not rolled.
+
+| Creature category | Part grade |
+| --- | --- |
+| Común | 1 — common |
+| Campeón | 2 — rare |
+| Elite | 3 — exceptional |
 
 ### Accessibility
 
@@ -329,18 +347,18 @@ The baseline creature-part catalog uses `q` as the material grade of the extract
 
 | Material | Unit | Durability | Base Potency | Cost / unit at grade 1 |
 | --- | --- | --- | --- | --- |
-| Pelaje | kg | `6 × q` | `4 × q` | `10 × q` |
-| Escamas | kg | `8 × q` | `5 × q` | `20 × q` |
-| Caparazón | kg | `10 × q` | `6 × q` | `30 × q` |
-| Plumaje | kg | `4 × q` | `3 × q` | `10 × q` |
-| Huesos | kg | `3 × q` | `5 × q` | `16 × q` |
-| Cuernos | kg | `4 × q` | `6 × q` | `16 × q` |
-| Garras | kg | `4 × q` | `6 × q` | `16 × q` |
-| Colmillos | kg | `5 × q` | `7 × q` | `16 × q` |
-| Glándulas | unit | `0` | `0` | `30 × q` |
-| Órganos | unit | `0` | `0` | `40 × q` |
-| Fluidos | liter | `0` | `0` | `20 × q` |
-| Sistema nervioso | unit | `0` | `0` | `150 × q` |
+| Pelaje | kg | `4 × q` | `2 × q` | `10 × q` |
+| Escamas | kg | `16 × q` | `4 × q` | `20 × q` |
+| Caparazón | kg | `22 × q` | `5 × q` | `30 × q` |
+| Plumaje | kg | `3 × q` | `1 × q` | `10 × q` |
+| Huesos | kg | `10 × q` | `8 × q` | `16 × q` |
+| Cuernos | kg | `12 × q` | `14 × q` | `16 × q` |
+| Garras | kg | `8 × q` | `16 × q` | `16 × q` |
+| Colmillos | kg | `10 × q` | `18 × q` | `16 × q` |
+| Glándulas | unit | `2` | `0` | `30 × q` |
+| Órganos | unit | `2` | `0` | `40 × q` |
+| Fluidos | liter | `2` | `0` | `20 × q` |
+| Sistema nervioso | unit | `1` | `0` | `150 × q` |
 
 ### Sensitivity groups
 
@@ -493,18 +511,18 @@ The baseline natural-material catalog uses `q` as the material grade when the ma
 
 | Material | Durability | Base Potency | Cost / kg at grade 1 |
 | --- | --- | --- | --- |
-| Hierro | `15` | `25` | `10 × q` |
-| Bronce | `12` | `22` | `15 × q` |
-| Cobre | `10` | `20` | `10 × q` |
-| Estaño | `9` | `18` | `20 × q` |
-| Acero | `18` | `30` | `30 × q` |
-| Peltre | `8` | `15` | `18 × q` |
-| Plata | `16` | `28` | `40 × q` |
-| Platino | `17` | `29` | `50 × q` |
-| Oro | `10` | `20` | `100 × q` |
-| Cromo | `20` | `27` | `60 × q` |
-| Plomo | `12` | `18` | `15 × q` |
-| Titanio | `22` | `35` | `80 × q` |
+| Hierro | `14` | `12` | `10 × q` |
+| Bronce | `12` | `11` | `15 × q` |
+| Cobre | `8` | `8` | `10 × q` |
+| Estaño | `5` | `5` | `20 × q` |
+| Acero | `20` | `18` | `30 × q` |
+| Peltre | `8` | `7` | `12 × q` |
+| Plata | `10` | `9` | `40 × q` |
+| Platino | `12` | `14` | `120 × q` |
+| Oro | `6` | `10` | `100 × q` |
+| Cromo | `22` | `12` | `60 × q` |
+| Plomo | `6` | `14` | `15 × q` |
+| Titanio | `32` | `18` | `200 × q` |
 | Mithril | `28` | `45` | `500 × q` |
 | Adamantium | `30` | `50` | `1000 × q` |
 | Oricalco | `25` | `40` | `800 × q` |
@@ -513,48 +531,47 @@ The baseline natural-material catalog uses `q` as the material grade when the ma
 
 | Material | Type | Durability | Base Potency | Cost / kg at grade 1 |
 | --- | --- | --- | --- | --- |
-| Piedra | rock | `8` | `16` | `5 × q` |
-| Roca | rock | `9` | `18` | `5 × q` |
+| Piedra | rock | `10` | `10` | `5 × q` |
+| Roca | rock | `10` | `10` | `5 × q` |
 | Carbón | rock | `5` | `10` | `5 × q` |
 | Ámbar | rock | `4` | `8` | `20 × q` |
 | Coral | rock | `6` | `10` | `20 × q` |
-| Obsidiana | rock | `12` | `12` | `30 × q` |
-| Vidrio | rock | `3` | `6` | `15 × q` |
-| Jade | precious_stone | `10` | `15` | `50 × q` |
-| Lapislázuli | precious_stone | `8` | `14` | `30 × q` |
-| Cuarzo | precious_stone | `6` | `11` | `20 × q` |
+| Obsidiana | rock | `6` | `22` | `40 × q` |
+| Vidrio | rock | `3` | `8` | `8 × q` |
+| Lapislázuli | precious_stone | `8` | `7` | `30 × q` |
+| Cuarzo | precious_stone | `10` | `10` | `20 × q` |
+| Cristales | precious_stone | `10` | `9` | `30 × q` |
+| Jade | precious_stone | `20` | `8` | `150 × q` |
+| Topacio | precious_stone | `13` | `13` | `120 × q` |
+| Esmeralda | precious_stone | `13` | `12` | `170 × q` |
+| Corindón | precious_stone | `16` | `16` | `140 × q` |
+| Diamante | precious_stone | `12` | `26` | `250 × q` |
 | Marfil | precious_material | `7` | `13` | `40 × q` |
-| Cristales | precious_stone | `7` | `12` | `30 × q` |
-| Rubí | precious_stone | `16` | `9` | `120 × q` |
-| Esmeralda | precious_stone | `15` | `9` | `140 × q` |
-| Zafiro | precious_stone | `16` | `9` | `110 × q` |
-| Diamante | precious_stone | `18` | `10` | `200 × q` |
-| Topacio | precious_stone | `14` | `8` | `90 × q` |
 
 #### Woods
 
 | Material | Durability | Base Potency | Cost / kg at grade 1 |
 | --- | --- | --- | --- |
-| Pino | `15` | `7` | `5 × q` |
-| Roble | `20` | `10` | `10 × q` |
-| Arce | `18` | `8` | `12 × q` |
-| Caoba | `22` | `12` | `15 × q` |
-| Ébano | `25` | `11` | `20 × q` |
-| Secoya | `30` | `15` | `25 × q` |
+| Pino | `7` | `4` | `5 × q` |
+| Roble | `12` | `7` | `10 × q` |
+| Arce | `10` | `6` | `12 × q` |
+| Caoba | `9` | `6` | `15 × q` |
+| Ébano | `16` | `8` | `20 × q` |
+| Secoya | `22` | `7` | `60 × q` |
 
 #### Fibers and hide-derived materials
 
 | Material | Type | Durability | Base Potency | Cost / kg at grade 1 |
 | --- | --- | --- | --- | --- |
-| Lana | fiber | `2 × q` | `3 × q` | `12 × q` |
-| Lino | fiber | `2 × q` | `3 × q` | `10 × q` |
-| Algodón | fiber | `1 × q` | `2 × q` | `8 × q` |
-| Seda | fiber | `3 × q` | `4 × q` | `20 × q` |
-| Yute | fiber | `2 × q` | `4 × q` | `6 × q` |
-| Seda de Arakhel | fiber | `6 × q` | `8 × q` | `80 × q` |
-| Tela | fiber | `1 × q` | `2 × q` | `5 × q` |
-| Cuero | leather | `5 × q` | `6 × q` | `18 × q` |
-| Cuero escamado | leather | `7 × q` | `8 × q` | `25 × q` |
+| Lana | fiber | `3 × q` | `1 × q` | `12 × q` |
+| Lino | fiber | `4 × q` | `2 × q` | `10 × q` |
+| Algodón | fiber | `2 × q` | `1 × q` | `8 × q` |
+| Seda | fiber | `6 × q` | `2 × q` | `20 × q` |
+| Yute | fiber | `4 × q` | `2 × q` | `6 × q` |
+| Seda de Arakhel | fiber | `18 × q` | `5 × q` | `120 × q` |
+| Tela | fiber | `4 × q` | `1 × q` | `8 × q` |
+| Cuero | leather | `10 × q` | `3 × q` | `18 × q` |
+| Cuero escamado | leather | `14 × q` | `4 × q` | `30 × q` |
 | Cuero acorazado | leather | `9 × q` | `10 × q` | `35 × q` |
 
 ### Processed materials
@@ -563,8 +580,8 @@ Processed materials are the ordinary conversion layer between raw inputs and fin
 
 | Processed material | Source | Domain | Durability | Base Potency | Cost logic |
 | --- | --- | --- | --- | --- | --- |
-| Cuero | pelaje | `Sastrería` | `7 × q` | `5 × q` | `15 × q × qty` |
-| Escamado | escamas | `Herrería` | `9 × q` | `6 × q` | `25 × q × qty` |
+| Cuero | pelaje | `Sastrería` | `10 × q` | `3 × q` | `18 × q × qty` |
+| Escamado | escamas | `Herrería` | `14 × q` | `4 × q` | `30 × q × qty` |
 | Acorazado | caparazón | `Herrería` | `11 × q` | `7 × q` | `35 × q × qty` |
 | Tela | fiber source | `Sastrería` | `material + q` | `material + q` | `material × 0.2 × q × qty` |
 | Bronce | cobre + estaño | `Herrería` | `12` | `20` | `20 × q × qty` |
@@ -589,8 +606,8 @@ Accessibility is one of the most important balancing surfaces in the material sy
 
 | Tier | Label | Base threshold model | Difficulty band | Labor cost / kg | Default fabrication time | Minimum kit |
 | --- | --- | --- | --- | --- | --- | --- |
-| `general` | High | `8 + creature level / NR pressure` | `Fundamental` | `15 × grade` | `1 week` | `basic` |
-| `limited` | Medium | `13 + creature level / NR pressure` | `Rigorous` | `45 × grade` | `2 weeks` | `advanced` |
+| `general` | High | `8 + creature level / NR pressure` | `Challenging` | `15 × grade` | `1 week` | `basic` |
+| `limited` | Medium | `13 + creature level / NR pressure` | `Demanding` | `45 × grade` | `2 weeks` | `advanced` |
 | `singular` | Low | `17 + creature level / NR pressure` | `Extreme` | `150 × grade` | `3 weeks` | `specialized` |
 
 The exact threshold still follows the universal system.
@@ -616,6 +633,7 @@ The table above establishes the baseline authored expectation for material work.
 - Carbón
 - Coral
 - Peltre
+- Oro
 - Pelaje
 - Plumaje
 - Cuernos
@@ -638,7 +656,6 @@ The table above establishes the baseline authored expectation for material work.
 - Ébano
 - Marfil
 - Lapislázuli
-- Oro
 - Cuarzo
 - Escamas
 - Caparazón
@@ -660,9 +677,8 @@ The table above establishes the baseline authored expectation for material work.
 - Obsidiana
 - Seda de Arakhel
 - Jade
-- Rubí
+- Corindón
 - Esmeralda
-- Zafiro
 - Diamante
 - Topacio
 - Sistema nervioso
@@ -811,6 +827,75 @@ Complexity changes:
 - tool expectations;
 - and whether the process can be improvised at all.
 
+### Equipment material requirements
+
+#### Weapons
+
+Each weapon type has required components with specific material families and weight.
+A component classified as `metal` may use any valid metallic material. A component classified as `wood` may use any valid wood. A component classified as `fiber` may use any valid fiber or leather.
+
+| Weapon type | Component | Material | kg required |
+| --- | --- | --- | --- |
+| **Polearm** | Shaft | Wood | 5 |
+| | Blade | Metal | 2 |
+| **Two-handed spear** | Shaft | Wood | 4 |
+| | Point | Metal | 2 |
+| **One-handed spear** | Shaft | Wood | 2 |
+| | Point | Metal | 1 |
+| **Two-handed axe** | Handle | Wood | 3 |
+| | Blade | Metal | 2 |
+| **One-handed axe** | Handle | Wood | 2 |
+| | Blade | Metal | 1 |
+| **Two-handed mace** | Handle | Wood or metal | 3 |
+| | Head | Metal | 3 |
+| **One-handed mace** | Handle | Wood or metal | 1 |
+| | Head | Metal | 1 |
+| **Two-handed longsword** | — | Metal | 3 |
+| **One-handed longsword** | — | Metal | 2 |
+| **Shortsword** | — | Metal | 1 |
+| **Dagger** | — | Metal | 1 |
+| **Kunai / Shuriken (×3)** | — | Metal | 1 |
+| **Pilum / Francisca** | Handle | Wood | 1 |
+| | Blade | Metal | 2 |
+| **Bow / Blowgun** | Body | Wood | 1 |
+| **Sling (balearic)** | Body | Fiber | 1 |
+| **Kusarigama / Kusari Fundo** | — | Metal | 2 |
+| **Nekode (×2)** | — | Metal | 1 |
+| **Whip (scourge)** | — | Fiber | 3 |
+
+#### Armor
+
+Armor is fabricated piece by piece. Total material depends on how many pieces are produced and their class.
+
+**kg of material per piece and class:**
+
+| Piece | Light | Medium | Heavy |
+| --- | --- | --- | --- |
+| Helmet | 1 kg | 2 kg | 3 kg |
+| Chest | 3 kg | 6 kg | 9 kg |
+| Legs | 2 kg | 4 kg | 6 kg |
+| Bracers | 2 kg | 3 kg | 4 kg |
+| Boots | 1 kg | 2 kg | 3 kg |
+| **Full set total** | **9 kg** | **17 kg** | **25 kg** |
+
+**Valid materials by armor class:**
+
+| Class | Valid materials |
+| --- | --- |
+| Light | Leather, cloth, creature leather, titanium |
+| Medium | Iron, copper, bronze, pewter, obsidian, scaled leather |
+| Heavy | Steel, lead, silver, gold, platinum |
+
+Tauma-impregnated materials of any category may be valid according to their structural equivalent — the Narrator evaluates case by case.
+
+#### Shields
+
+| Class | kg of material | Valid materials |
+| --- | --- | --- |
+| Light | 3 kg | Leather, oak, pine, mahogany, maple, titanium |
+| Medium | 7 kg | Iron, copper, bronze, pewter, scaled leather |
+| Heavy | 11 kg | Steel, lead, silver, gold, platinum |
+
 ---
 
 ## Refinement
@@ -863,6 +948,25 @@ Alchemy should be authored through:
 - a delivery route if the output is ingested, inhaled, inoculated, or applied by contact.
 
 The qualifying roll is `Alquimia`, not a generic concentration check.
+
+### Two-stage production
+
+Alchemical production has two distinct stages with different infrastructure requirements.
+
+**Stage 1 — Index preparation (field):** Grinding glands, isolating toxins, and stabilizing raw biological material before it spoils. This can be done in the field with a portable alchemical kit. A character may prepare their indices during an expedition and complete synthesis on return.
+
+**Stage 2 — Compound synthesis (fixed workshop):** Combining and reacting the prepared indices into a finished compound. Always requires a fixed installation — a still, a furnace, or an equivalent alchemical workbench. Cannot be performed in the field.
+
+### Fabrication difficulty by reagent
+
+The difficulty of the synthesis roll is set by the creature reagent the formula requires.
+
+| Creature reagent | Accessibility | Fabrication difficulty |
+| --- | --- | --- |
+| Fluids | General | Challenging |
+| Glands | Limited | Demanding |
+| Organs | Limited | Demanding |
+| Nervous system | Singular | Extreme |
 
 ### Plants
 
@@ -1231,6 +1335,37 @@ Examples of framework roles:
 
 These should be authored as tool families or kit families before they are authored as hundreds of individual named products.
 
+### Creature harnesses and riding equipment
+
+Harnesses and riding equipment are `Ingeniería`-produced systems for controlling, transporting, or operating on captured or domesticated creatures. They are not personal-use tools — they are purpose-built for a specific creature size.
+
+Creature harness scope:
+
+- **Control harnesses** — head, neck, and body harnesses for directing the creature during movement
+- **Load systems** — saddles, platforms, and containers for transporting weight on the creature
+- **Restraint equipment** — mechanisms for immobilizing a creature during Medicina procedures or extraction
+
+Creature size determines minimum harness complexity:
+
+| Creature size | Minimum harness complexity |
+| --- | --- |
+| Small | Simple |
+| Medium | Simple |
+| Large | Complex |
+| Huge | Complex |
+| Gigantic | Advanced |
+
+### Equipment for operation on gigantic-scale creatures
+
+A gigantic-scale creature is not just a large enemy — it is a hostile environment in motion. Its body surface may be the terrain for entire missions. `Ingeniería` produces the specialized systems that make this possible:
+
+- **Anchor hooks and cables** — for securing position while scaling thick skin, membranes, or chitin plates
+- **Portable work platforms** — collapsible structures that deploy at anchor points for stable work without constant grip
+- **Traction systems** — mechanisms for ascending or moving along the creature's exterior surface without constant effort expenditure
+- **Assisted drilling instruments** — for reaching internal zones without generic extraction tools
+
+Each system requires its own authored Plan. The Narrator determines which are available in the world and at what cost.
+
 ---
 
 ## Plans, Diagrams, and Recipes
@@ -1257,13 +1392,31 @@ At the framework level, a plan should usually define:
 - expected work time;
 - availability.
 
-#### Plan complexity
+#### Plan complexity (infrastructure and tools)
+
+Plans for infrastructure, tools, and kits use this cost structure:
 
 | Complexity | Difficulty band | Base market cost |
 | --- | --- | --- |
 | `simple` | `Fundamental` | `50 Shekels` |
 | `complex` | `Rigorous` | `200 Shekels` |
 | `advanced` | `Extreme` | `600 Shekels` |
+
+#### Fabrication time for plans
+
+Work time for a plan-governed object follows this formula:
+
+> **Hours = Object weight (kg) × Maximum material grade × Complexity factor**
+
+| Complexity | Factor |
+| --- | --- |
+| Simple | × 1 |
+| Complex | × 1.5 |
+| Advanced | × 2 |
+
+**Example:** An alchemical still weighs 10 kg, uses grade-2 materials, complex complexity: 10 × 2 × 1.5 = **30 hours**.
+
+**Example:** A tailoring kit weighs 2 kg, grade-1 materials, simple complexity: 2 × 1 × 1 = **2 hours**.
 
 #### Availability surcharge
 
@@ -1274,6 +1427,18 @@ At the framework level, a plan should usually define:
 | `specialized` | `200` |
 | `rare` | `300` |
 | `exceptional` | `400` |
+
+#### Equipment designs
+
+Equipment designs (weapons, armor, shields, jewelry) use a separate, lower cost structure than infrastructure plans. They are authored and used by the crafting specialization that produces the object, not by Ingeniería.
+
+| Complexity | Difficulty band | Base market cost |
+| --- | --- | --- |
+| `simple` | `Fundamental` | `50 Shekels` |
+| `complex` | `Rigorous` | `80 Shekels` |
+| `advanced` | `Extreme` | `100 Shekels` |
+
+Equipment design availability uses the same surcharge table as infrastructure plans.
 
 #### Design families
 
@@ -1311,20 +1476,21 @@ They should usually define:
 
 #### Trap diagram rarity
 
-| Rarity | Build time | Build difficulty | Detect difficulty | Disarm difficulty |
-| --- | --- | --- | --- | --- |
-| `common` | `4 hours` | `Fundamental` | `Challenging` | `Challenging` |
-| `rare` | `10 hours` | `Rigorous` | `Rigorous` | `Rigorous` |
-| `exceptional` | `24 hours` | `Extreme` | `Demanding` | `Demanding` |
+| Rarity | Build time | Build difficulty | Detect difficulty | Disarm difficulty | Labor cost | Material cost |
+| --- | --- | --- | --- | --- | --- | --- |
+| `common` | `4 hours` | `Challenging` | `Challenging` | `Challenging` | `200 S` | `50 S` |
+| `rare` | `10 hours` | `Demanding` | `Demanding` | `Demanding` | `500 S` | `150 S` |
+| `exceptional` | `24 hours` | `Extreme` | `Demanding` | `Demanding` | `1,200 S` | `400 S` |
 
 #### Trap diagram type surcharge
 
 | Trap type | Added cost | Notes |
 | --- | --- | --- |
-| `mechanism` | `50` | Physical trigger, pressure plate, tensioned release |
-| `illusory` | `100` | Tricks perception through natural means: perspective, camouflage, misalignment, shadow |
-| `environmental` | `100` | Exploits terrain: flooding, collapse, heat, fall |
-| `living` | `150` | Incorporates a living component as part of the trap logic |
+| `mechanism` | `0` | Physical trigger, pressure plate, tensioned release |
+| `illusory` | `50` | Tricks perception through natural means: perspective, camouflage, misalignment, shadow |
+| `environmental` | `50` | Exploits terrain: flooding, collapse, heat, fall |
+| `living` | `100` | Incorporates a living component (spore sacs, parasite nests, manipulated flora) as part of the trap logic |
+| `threshold` | `250` | Tauma-impregnated materials with fixed extranatural properties; only available at rare or exceptional rarity |
 
 ### Formulas
 
@@ -1341,11 +1507,11 @@ They should define:
 
 At the framework level, formula rarity should usually determine baseline time and output quantity.
 
-| Formula rarity | Build time | Default doses |
-| --- | --- | --- |
-| `common` | `12 hours` | `1d4` |
-| `rare` | `24 hours` | `1d3` |
-| `exceptional` | `36 hours` | `1d2` |
+| Formula rarity | Build time | Default doses | Difficulty band |
+| --- | --- | --- | --- |
+| `common` | `12 hours` | `1d4` | `Challenging` |
+| `rare` | `24 hours` | `1d3` | `Demanding` |
+| `exceptional` | `36 hours` | `1d2` | `Extreme` |
 
 #### Formula market cost
 
