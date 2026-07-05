@@ -3,6 +3,18 @@
 Documentos que cargar cuando se trabaja en módulos de campaña.
 Organizado por tipo de tarea. No es necesario leer todo — carga lo que aplique al trabajo del momento.
 
+**Skill:** Para cualquier trabajo de módulo, usar la skill `skills/module-development/SKILL.md`.
+
+---
+
+## Antes de cualquier trabajo de módulo
+
+Leer los axiomas de diseño primero. Toda decisión de módulo se valida contra estos 7 principios.
+
+| Documento | Qué da |
+| --- | --- |
+| `docs/modules/module-design-axioms.md` | Los 7 axiomas: presencia orgánica de sistemas, cadencia arrítmica, horror como textura, exposición progresiva, cohesión de setting, estructura anti-cliché, arco largo no exhaustivo |
+
 ---
 
 ## Siempre cargar primero
