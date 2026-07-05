@@ -1,23 +1,35 @@
 # ADR — ATB Base Rhythm Costs
 
-**Status:** Adopted (v0.1 baseline)
-**Scope:** Base rhythm costs and Attrition costs for universal combat actions
+**Status:** Updated (v0.2 — aligned to corebook 2026-06)
+**Scope:** Base rhythm costs and Desgaste costs for universal combat actions
 **Related:** `combat-atb-timeline.md`, `data/system/atb-combat.yaml`, `docs/system/atb-reference.md`
 
 ---
 
 ## Purpose
 
-This document defines the base rhythm costs and Attrition costs for the most universal action families in combat.
+This document defines the base rhythm costs and Desgaste costs for the most universal action families in combat.
 
-Its goal is not to assign final rhythm values to every aptitude, discipline, or derived ability. It establishes a simple, stable baseline that later design can build on without replacing.
+Its goal is not to assign final rhythm values to every technique or derived ability. It establishes the stable baseline that any creature can use in combat — and defines why that baseline is intentionally inefficient relative to trained technique use.
 
 This is consistent with the adopted ATB model:
 
 - combat flows through a continuous timeline
 - every meaningful action has a rhythm cost
-- rhythm cost and Attrition are related but not identical
-- competency may later reduce execution friction, making certain actions faster, less exhausting, or both
+- rhythm cost and Desgaste are related but not identical
+- competency and training unlock techniques that improve on base action efficiency
+
+---
+
+## Base Actions as the Inefficient Floor
+
+Base actions are the combat options available to **any creature** — trained or not. They are not the expected behavior of a player character with active competencies.
+
+For a trained character, techniques are the primary mode of executing combat activations. Techniques are faster, more efficient, cheaper in Desgaste, or produce direct mechanical effects that base actions cannot. A character who consistently falls back to base actions instead of using their trained techniques is playing below their capability.
+
+**The design rule:** techniques are not balanced against base actions. A technique that costs Ritmo 4 instead of Ritmo 6 is not discounted — it is the efficient output of training, replacing a blunt generic action with a precise one. Base actions are the floor for creatures without relevant competencies, not the benchmark for technique calibration.
+
+The Narrator should not treat base actions as the normal pace of play. They are the fallback state. Untrained creatures and characters without relevant competencies use them. Competent characters use techniques.
 
 ---
 
@@ -31,194 +43,166 @@ This means:
 - attacking with a one-handed weapon has one base rhythm
 - attacking with a two-handed weapon has one base rhythm
 - interacting has one base rhythm
-- basic observation has one base rhythm
+- using a specialization under pressure has one base rhythm
 
-More specific abilities may later override or modify these values. The baseline should remain simple enough to support quick table use.
+More specific techniques may override or replace these values for trained characters. The baseline should remain simple enough to support quick table use for untrained or generic situations.
 
 ---
 
-## Why this baseline is intentionally simple
+## Why This Baseline Is Intentionally Simple
 
-At this stage, the intent is not to fragment rhythm by weapon micro-category or specialization detail.
+The intent is not to fragment rhythm by weapon micro-category or specialization detail.
 
 Examples of what should NOT happen at the base layer:
 
 - a dagger and a sai should not need separate rhythm values
 - different one-handed blades share the same rhythm family
 - terrain should not change the rhythm cost of movement, but rather the distance, difficulty, or consequences
-- a universal read/understand action should exist before specialized reading abilities are added
 
-Specific abilities, aptitudes, techniques, or advanced uses may later assign their own rhythm costs. The base layer defines the common floor.
+Specific techniques assign their own rhythm costs. The base layer defines the common floor — not the ceiling.
 
 ---
 
-## Rhythm Scale
+## Rhythm Bands
+
+Base action costs are integers. The following bands describe the general tempo of an action category. Specific actions may fall at values between bands.
 
 | Band | Cost | Description |
 | --- | ---: | --- |
 | Free | 0 | No meaningful time cost within the combat timeline |
 | Quick | 3 | Light, immediate action with minimal commitment |
-| Standard | 5 | Normal committed action within standard combat pace |
-| Heavy | 7 | High-commitment action with significant recovery time |
-| Extreme | 9 | Maximum commitment — reserved for specialized maneuvers or major abilities |
+| Standard | 5 | Movement and moderate-commitment actions |
+| Heavy | 7 | Two-handed attacks — high commitment, real recovery time |
+| Extreme | 9 | Reserved for specific advanced techniques |
 
-No universal base action in this document uses cost 9. The Extreme band is reserved for specific advanced abilities.
+Several base actions fall between bands (attacks at 6, dual-wield at 8). The bands are orientation labels, not strict slots. No base action uses cost 9 — the Extreme band is reserved for specific techniques.
 
 ---
 
 ## Base Actions
 
-### Free Actions (Cost 0)
+### Free Actions (Cost 0, Desgaste 0)
 
-Free actions do not advance the ATB marker. They happen within the moment of activation.
-
-#### Drop
+#### Soltar (Drop)
 
 Releasing an item held in hand that is not actively engaged in a maneuver or grip.
 
-This covers:
+**Constraint:** Dropping an item that is actively part of a grip, hold, or committed joint maneuver is **not** free. That requires an Interactuar action (cost 3).
 
-- releasing a weapon held loosely while another hand acts
-- letting go of an object not involved in the current action
-- dropping something before or after the main action
+#### Hablar (Speak)
 
-**Constraint:** Dropping an item that is actively part of a grip, hold, or committed joint maneuver is **not** free. That requires an Interact action (cost 3). This prevents using free drop to escape engaged positions or committed weapon states.
+A brief, non-strategic utterance during combat: a short warning, a tactical signal, a one-word command to an ally.
 
-#### Speak
-
-A brief, non-strategic utterance during combat.
-
-This covers:
-
-- a short warning or tactical signal
-- a one-word or short-phrase command to an ally
-- an involuntary exclamation
-
-**Constraint:** Any communication intended to deceive, persuade, negotiate, issue complex orders, or apply social pressure is **not** free. That falls under the social action layer to be defined when social combat mechanics are added. The distinction is functional: speaking as information transmission is free; speaking as influence is not.
+**Constraint:** Communication intended to deceive, persuade, negotiate, issue complex orders, or apply social pressure is **not** free.
 
 ---
 
-### Interact (Cost 3 — Quick)
+### Interactuar (Cost 3 — Quick, Desgaste 0 or 1)
 
-Short, immediate physical interactions with the environment or held objects.
+Short, immediate physical interactions with the environment or held objects: grabbing something within reach, opening or closing something simple, activating a small mechanism, adjusting equipment, picking up an item.
 
-This covers:
-
-- grabbing something within reach
-- opening or closing something simple
-- activating a small mechanism or switch
-- making a quick practical adjustment to equipment
-- picking up an item from the ground or a nearby surface
-
-This is the lightest non-free action family. It uses the Quick band because it requires physical commitment and presence of mind but not full offensive or movement commitment.
+Desgaste is only generated when the interaction occurs under real scene pressure. A trivial or unrisky interaction generates 0 Desgaste.
 
 ---
 
-### Move (Cost 5 — Standard)
+### Usar Especialización (Cost 4, Desgaste 1)
+
+Use of any specialization under pressure in a hostile scene: jumping, acrobatics, perception, tracking, crafting under pressure, social reading, and any other specialization.
+
+Cost 4 (below the Standard band) reflects that specialization use is less physically committing than an attack — it occupies attention without requiring full body commitment or weapon recovery time.
+
+A specialization produces a narrative or practical result. Direct mechanical consequences require a follow-up action or a Technique.
+
+---
+
+### Movimiento (Cost 5 — Standard, Desgaste 1)
 
 Standard movement through the combat space.
 
-Movement does not change rhythm cost based on terrain. Terrain and context instead affect:
+Terrain does not change rhythm cost. It changes how far the character can move, whether movement requires a check, and the consequences of the movement.
 
-- how far the character can move
-- whether movement requires a check
-- whether the path is safe or interrupted
-- consequences of the movement (positioning, exposure)
-
-Movement matters too much tactically to be trivial or universally free. It is treated as a committed action within the ATB economy.
-
----
-
-### Specialization (Cost 5 — Standard)
-
-Use of any specialization in a hostile scene: jumping, acrobatics, perception, interpretation, tracking, social reading, crafting under pressure, and any other specialization a character can use.
-
-The cost is uniform across all specialization types because the reason is the same: the character is under active scene pressure and the action requires real attention and effort, regardless of whether the specialization is physical, mental, or social.
-
-This action does not itself grant special tactical bonuses beyond what the specialization's narrative result supports. Techniques may later replace or improve this with distinct rhythm values and direct mechanical effects.
+| Condition | Effect on distance |
+| --- | --- |
+| Difficult terrain | Speed halved |
+| Crawling | Speed halved |
+| Running | Speed doubled |
 
 ---
 
-### Attack with One-Handed Weapon (Cost 5 — Standard)
+### Ataque — Arma Natural (Cost 6, Desgaste 1)
 
-Standard baseline for all one-handed offensive weapon families.
-
-This covers the general family without splitting at the weapon-name level:
-
-- short blade, one-handed sword
-- one-handed axe, one-handed club
-- similar one-handed offensive tools
-
-Distinct weapon identity should emerge later through impact, effects, traits, aptitudes, vital point interaction, and specialized abilities — not through rhythm splitting at the base layer.
+Baseline for natural weapons: claws, bite, tail, horns, stinger, and any other body-integrated weapon. Cannot be disarmed while the creature's body remains intact.
 
 ---
 
-### Attack with Two-Handed Weapon (Cost 7 — Heavy)
+### Ataque — Arma a Una Mano (Cost 6, Desgaste 1)
+
+Baseline for all one-handed offensive weapon families: short blade, one-handed sword, one-handed axe, one-handed club.
+
+Cost 6 places one-handed attacks above movement but below two-handed attacks. Techniques derived from one-handed weapon competencies may reduce this cost for trained characters.
+
+---
+
+### Ocultarse (Cost 6, Desgaste 1)
+
+Deliberate attempt to evade tactical perception. Requires a valid opportunity: Cover (medium or total), reduced visibility range, a sufficient distraction, or a Technique or trait that permits hiding.
+
+Resolved with an appropriate specialization roll (Sigilo, Supervivencia, or another authorized by a Technique or trait). On success, the character gains the `Oculto` state against affected enemies.
+
+---
+
+### Ataque — Arma a Dos Manos (Cost 7 — Heavy, Desgaste 1)
 
 Heavy baseline for all two-handed offensive weapon families.
 
-The increased cost is not purely about weapon size. It reflects:
-
-- greater body commitment required for execution
-- slower recovery after the action resolves
-- larger tactical openings if the action is poorly timed
-- heavier offensive rhythm overall
-
-This family should feel more committed than one-handed offense even before advanced abilities modify it.
+Cost 7 reflects greater body commitment, slower recovery, and larger tactical openings if the action is poorly timed.
 
 ---
 
-### Attack with Two One-Handed Weapons (Cost 7 — Heavy)
+### Ataque — Dos Armas (Cost 8, Desgaste 1)
 
-Dual-wield attack also uses the Heavy baseline.
+Dual-weapon attack. The higher cost reflects coordination demand and the larger offensive commitment of managing two simultaneous strike lines.
 
-The cost is not about weight but about coordination and offensive commitment:
+Procedurally:
 
-- multiple strikes or a linked offensive sequence
-- greater technical demand than a single one-handed attack
-- stronger recovery need before the next activation
-
-This makes dual-weapon offense distinct from standard one-handed attacks without fragmenting the base system.
+1. T.A. initial with the primary hand — no penalty
+2. T.E. de combate con dos armas against the target's T.D.
+3. If T.E. exceeds T.D., additional attacks may be declared, alternating hands
+4. Additional attacks = 1 per 2 points of Agilidad (minimum 1)
 
 ---
 
-## Attrition Baseline
+## Desgaste Baseline
 
-The following values define the base Attrition cost for universal combat actions.
-
-These values assume the action is performed under meaningful scene pressure. Specific aptitudes, disciplines, or advanced maneuvers may later override or modify them.
-
-| Base Action | Rhythm Cost | Attrition |
+| Base Action | Rhythm Cost | Desgaste |
 | --- | ---: | ---: |
-| Free action (Drop, Speak) | 0 | 0 |
-| Interact | 3 | 1 * |
-| Move | 5 | 1 |
-| Specialization | 5 | 1 |
-| Attack with One-Handed Weapon | 5 | 1 |
-| Attack with Two-Handed Weapon | 7 | 1 |
-| Attack with Two One-Handed Weapons | 7 | 1 |
+| Soltar / Hablar | 0 | 0 |
+| Interactuar | 3 | 0 or 1 * |
+| Usar Especialización | 4 | 1 |
+| Movimiento | 5 | 1 |
+| Ataque — arma natural | 6 | 1 |
+| Ataque — arma a una mano | 6 | 1 |
+| Ocultarse | 6 | 1 |
+| Ataque — arma a dos manos | 7 | 1 |
+| Ataque — dos armas | 8 | 1 |
 
-\* Interact generates 1 Attrition only when the interaction is meaningful and performed under real pressure. Trivial or non-pressured interactions generate 0.
-
-Specialization generates 1 Attrition. Any use of a specialization in a hostile scene has real cost — the character diverts attention from active threats to execute the skill. Not as demanding as attacking or defending, but not free. Covers jumping, acrobatics, perception, interpretation, tracking, and all other specialization types equally.
+\* Interactuar generates 1 Desgaste only when the interaction is meaningful and performed under real scene pressure. Trivial or unrisky interactions generate 0.
 
 ### Structural rule
 
-- Standard meaningful actions under pressure → **1 Attrition**
-- Heavy or strongly committed actions → **2 Attrition**
-- Extreme actions → **3 Attrition** (pending specific ability definitions)
-
-This baseline is consistent with the adopted Fatigue timing principle: Fatigue 1 should arrive after the enemy's main logic has become actionable, but before that logic has been fully exploited and the threat has collapsed.
+- Standard meaningful actions under pressure → **1 Desgaste**
+- Free or trivial actions → **0 Desgaste**
+- Advanced techniques may have Desgaste > 1; this is defined per technique, not per base action family
 
 ---
 
 ## Competency and Rhythm
 
-Competency rank may interact with rhythm in two distinct ways:
+Competency rank interacts with rhythm in two distinct ways:
 
-1. **Ability unlock:** A competency rank unlocks new abilities that have their own rhythm values — faster or slower than the base action family. The base family rhythm is not changed; a new ability is added.
+1. **Technique unlock:** A competency rank unlocks techniques with their own rhythm values — usually faster or more efficient than the base action family. The base family rhythm is not changed; a better option is added alongside it.
 
-2. **Friction reduction:** A specific competency bonus may reduce the rhythm cost of a specific ability or action. This is always ability-specific, not family-wide. A high weapon rank does not automatically make all one-handed attacks cost less than 5 — it may unlock a specific attack that costs 3.
+2. **Friction reduction:** A specific technique may reduce the rhythm cost of a specific action. This is always technique-specific, not family-wide. A high weapon rank does not automatically reduce all one-handed attacks below cost 6 — it unlocks a specific technique that costs less.
 
 This keeps the base layer stable while allowing competency to create meaningful tempo advantages through deliberate design.
 
@@ -226,15 +210,17 @@ This keeps the base layer stable while allowing competency to create meaningful 
 
 ## Summary Table
 
-| Base Action | Rhythm Cost | Attrition |
+| Base Action | Rhythm Cost | Desgaste |
 | --- | ---: | ---: |
-| Free action | 0 | 0 |
-| Interact | 3 | 1 * |
-| Move | 5 | 1 |
-| Specialization | 5 | 1 |
-| Attack with One-Handed Weapon | 5 | 1 |
-| Attack with Two-Handed Weapon | 7 | 1 |
-| Attack with Two One-Handed Weapons | 7 | 1 |
+| Soltar / Hablar | 0 | 0 |
+| Interactuar | 3 | 0 or 1 |
+| Usar Especialización | 4 | 1 |
+| Movimiento | 5 | 1 |
+| Ataque — arma natural | 6 | 1 |
+| Ataque — arma a una mano | 6 | 1 |
+| Ocultarse | 6 | 1 |
+| Ataque — arma a dos manos | 7 | 1 |
+| Ataque — dos armas | 8 | 1 |
 
 ---
 
@@ -242,20 +228,22 @@ This keeps the base layer stable while allowing competency to create meaningful 
 
 1. Base rhythm costs are assigned by **action family**, not by exact weapon or specialization name.
 2. Terrain does not change the rhythm cost of movement; it changes distance, difficulty, and consequences.
-3. One-handed attacks use the Standard rhythm baseline (5).
-4. Two-handed attacks use the Heavy rhythm baseline (7).
-5. Dual-wield attacks use the Heavy rhythm baseline (7) due to coordination and offensive commitment.
-6. A universal read/understand action exists at Standard baseline before specific reading abilities are defined.
-7. Drop and Speak are free actions (cost 0) within defined constraints.
-8. Competency rank interacts with rhythm through ability unlocks or ability-specific friction reduction — not through automatic family-wide cost reduction.
-9. More specific abilities may later override or modify these values; this document defines the universal floor.
+3. Natural weapon attacks use rhythm cost 6.
+4. One-handed weapon attacks use rhythm cost 6.
+5. Two-handed weapon attacks use rhythm cost 7.
+6. Dual-wield attacks use rhythm cost 8, reflecting coordination demand and the offensive commitment of managing two simultaneous strike lines.
+7. Specialization use costs Ritmo 4 — below Standard — because it requires attention but not full physical commitment or weapon recovery time.
+8. Drop and Speak are free actions (cost 0) within defined constraints.
+9. Interactuar generates Desgaste only under real scene pressure; trivial interactions generate 0.
+10. **Base actions are the inefficient floor.** They are the fallback for creatures without relevant competencies, not the benchmark for technique calibration. Trained characters are expected to use techniques as their primary combat activations.
+11. Competency rank interacts with rhythm through technique unlocks or technique-specific friction reduction — not through automatic family-wide cost reduction.
 
 ---
 
 ## Open Questions
 
-1. Which advanced abilities should reduce rhythm below their family baseline, and which should instead reduce Attrition or increase reliability?
-2. Should certain shields or defensive styles become their own base action family?
-3. Should aimed attacks remain within weapon families or become a separate rhythm category?
-4. At what point should movement split into controlled movement vs. forced or desperate movement?
-5. Should certain high-demand specialization uses (e.g. a complex crafting action mid-combat) warrant a Heavy band instead of Standard?
+1. Which techniques should reduce rhythm below the base action family cost, and by how much?
+2. Should aimed attacks (apuntados) remain within their weapon family rhythm cost, or become a separate rhythm category with a defined base cost?
+3. Should certain shields or defensive styles become their own base action family with a defined base cost?
+4. At what point should movement split into controlled movement vs. forced or desperate movement with distinct costs?
+5. Should high-demand specialization uses (e.g. complex treatment or crafting mid-combat) use a higher cost than 4, or should that variation live entirely in techniques?
