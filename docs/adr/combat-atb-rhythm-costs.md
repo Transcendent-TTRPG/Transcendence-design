@@ -238,6 +238,8 @@ This keeps the base layer stable while allowing competency to create meaningful 
 9. Interactuar generates Desgaste only under real scene pressure; trivial interactions generate 0.
 10. **Base actions are the inefficient floor.** They are the fallback for creatures without relevant competencies, not the benchmark for technique calibration. Trained characters are expected to use techniques as their primary combat activations.
 11. Competency rank interacts with rhythm through technique unlocks or technique-specific friction reduction — not through automatic family-wide cost reduction.
+12. **The Desgaste scale runs from 0 to 5.** Base actions cap at Desgaste 3. Values of 4–5 are reserved for techniques of Experto rank and above. Higher-rank techniques cost more Desgaste; Aguante growth via Tenacidad (from Sinapsis at specialization ranks) is the mechanism that makes high-Desgaste techniques sustainable at higher character progression. Technique Desgaste is fixed to the technique's rank, not to the rank of the character using it.
+13. **Lower-rank techniques remain tactically valid alongside higher-rank ones.** They are the efficient option when the character wants to preserve Aguante. Higher-rank techniques are the powerful option when the situation justifies the cost. Neither family becomes obsolete.
 
 ---
 
