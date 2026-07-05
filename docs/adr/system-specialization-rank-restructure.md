@@ -1,12 +1,14 @@
 # ADR — Specialization Rank Restructure
 
-**Status:** Adopted
+**Status:** Adopted (historical — documents the 2025 rank restructure rationale; current structure is the adopted system)
 **Scope:** All competency types — specializations, weapons, armors, shields, evasion, resistances
 **Related:** `competencies.yaml`, `specializations.yaml`, `docs/system/mechanics-overview.md`
 
 ---
 
-## Problem
+## Historical Problem (resolved)
+
+The following problem no longer exists — it is documented here to explain why the restructure was adopted.
 
 Under the original rank structure (3 levels per rank, 4 ranks: Novice 1–3, Adept 4–6, Expert 7–9, Master 10+), real playtesting across approximately 20 sessions showed that no character ever advanced past Novice rank.
 

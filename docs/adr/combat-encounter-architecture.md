@@ -130,16 +130,17 @@ Not every vital point becomes its own entity in the ATB.
 
 A vital point may interact with the combat rhythm in one of three ways:
 
-### 1. It generates a secondary track
+### 1. It generates a secondary track or ciclo autónomo
 
-The point supports an active subsystem that deserves its own timing.
+The point supports an active subsystem that deserves its own timing. This may take the form of a ciclo autónomo — a distinct ATB entry with its own rhythm cost and hidden timing (see `docs/system/creature-cycles.md`).
 
 Examples:
 
-- a throat charging breath
+- a throat charging breath (ciclo autónomo — biological)
 - a tail preparing a sweeping strike
 - a ritual focus building energy
 - a collapse sequence in the terrain
+- a coordination pulse the Champion emits (ciclo autónomo — coordination)
 
 ### 2. It modifies the main track
 
@@ -177,6 +178,7 @@ An active layer is any element of the encounter that:
 Examples of active layers:
 
 - the enemy's main body
+- a ciclo autónomo (biological, coordination, or environmental)
 - a charged breath cycle
 - a sweeping tail system
 - a leadership tactic track
@@ -485,6 +487,7 @@ These are guidelines, not hard limits, but exceeding them should be done careful
 6. Elite/Boss encounters should create multifront pressure through layered systems, not only HP inflation.
 7. Subsystems are preferred over filler enemies when the goal is to preserve encounter identity.
 8. Encounter architecture must remain compatible with readability principles and fatigue-pressure principles already adopted elsewhere in the system.
+9. Ciclos autónomos are a recognized form of active layer available to all creature categories. Commons are limited to biological cycles; Champions may add coordination cycles; Elites may add environmental cycles. Full design authority: `docs/system/creature-cycles.md`.
 
 ---
 

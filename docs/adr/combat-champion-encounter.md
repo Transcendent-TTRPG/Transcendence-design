@@ -1,13 +1,12 @@
 # Champion Encounter Design: Readability, Group Structure, and Distributed Pressure
 
-**Status:** Draft — structural framework, no numerical calibration yet
+**Status:** Adopted (structural design — coordination framework; numerical calibration pending)
 **Scope:** Champion-category enemy combat design
 **Related systems:** Combat, Enemy Reading, Specializations, Attrition, Fatigue, Group Tactics
 **Related files:**
+- `docs/adr/combat-encounter-architecture.md`
 - `docs/adr/combat-enemy-readability.md`
-- `playtests/combat/champion-encounter-v1.md`
-- `playtests/combat/champion-encounter-v2.md`
-- `playtests/combat/champion-encounter-v3.md`
+- `docs/system/creature-cycles.md`
 
 ---
 

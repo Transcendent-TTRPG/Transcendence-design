@@ -36,7 +36,7 @@ El Narrador identifica el Valor de Apertura más alto entre todos los participan
 
 Posición inicial = Punto de Referencia − Valor de Apertura
 
-El participante con el Valor de Apertura más alto queda en la posición **0** — el extremo izquierdo del track — y actúa primero. Los demás quedan a la derecha, a una distancia igual a la diferencia entre el Punto de Referencia y su propio Valor de Apertura.
+El participante con el Valor de Apertura más alto queda en la posición **0** — el punto más próximo al marcador de flujo — y actúa primero. Los demás quedan más alejados del marcador, a una distancia igual a la diferencia entre el Punto de Referencia y su propio Valor de Apertura.
 
 ### Modificadores de situación
 
@@ -87,12 +87,12 @@ Puede representar:
 
 ## 4. Cómo se resuelve una activación
 
-Cuando una ficha es la más a la izquierda:
+Cuando una ficha es la más próxima al marcador de flujo:
 
 1. esa entidad actúa
 2. resuelve su acción
-3. mueve su ficha a la derecha según el costo de ritmo
-4. se vuelve a revisar cuál es ahora la ficha más a la izquierda
+3. su ficha se aleja del marcador según el costo de ritmo
+4. el marcador avanza en sentido horario a la siguiente ficha más próxima
 
 ---
 
@@ -215,7 +215,34 @@ Esta estructura hace que el combate sea interactivo y legible.
 
 ---
 
-## 10. Cuándo algo merece su propio track
+## 10. Ciclos autónomos
+
+Un **ciclo autónomo** es una ficha propia en el ATB, con su propio costo de Ritmo y su propio momento de activación. No es una acción del Narrador durante el turno de la criatura — es una entrada independiente en el track.
+
+Propiedades clave:
+
+- **Ritmo oculto por defecto:** los jugadores ven la ficha del ciclo en el track, pero no saben cuándo se disparará la próxima vez. Una Técnica puede revelar esta información.
+- **Disponibilidad por categoría:** todas las categorías de criatura pueden tener ciclos autónomos. El tipo varía:
+  - **Criaturas comunes:** solo ciclos biológicos (fisiología, carga elemental, regeneración, postura recurrente)
+  - **Campeones:** biológicos + ciclos de coordinación (modifican el comportamiento de criaturas cercanas)
+  - **Criaturas élite:** biológicos + ciclos ambientales (modifican visibilidad, terreno o condiciones elementales)
+- **Anclaje a zona (ciclos biológicos):** cuando la zona que impulsa el ciclo colapsa, el ciclo se retira del ATB.
+- **Persistencia ambiental (ciclos élite):** los ciclos ambientales persisten a través de las fases de Metamorfosis y terminan solo con la derrota de la criatura.
+- **Dificultad de lectura:** escala con el número de ciclos autónomos activos simultáneamente, no con la categoría de la criatura.
+
+| Ciclos activos simultáneos | Dificultad |
+| --- | --- |
+| 1 | Fundamental |
+| 2–3 | Desafiante |
+| 4–5 | Rigurosa |
+| 6–7 | Exigente |
+| 8+ | Extrema |
+
+**Doc de autoridad:** `docs/system/creature-cycles.md`
+
+---
+
+## 11. Cuándo algo merece su propio track
 
 No todo debe tener una ficha propia.
 
@@ -236,7 +263,7 @@ Ejemplos de buenos tracks secundarios:
 
 ---
 
-## 11. Puntos vitales y ATB
+## 12. Puntos vitales y ATB
 
 Un punto vital no solo debería cambiar daño. También puede cambiar **el ritmo del encuentro**.
 
@@ -253,7 +280,7 @@ Un punto vital puede:
 
 ---
 
-## 12. Categorías de encuentro y capas recomendadas
+## 13. Categorías de encuentro y capas recomendadas
 
 ### Común — capas
 
@@ -279,7 +306,7 @@ Un punto vital puede:
 
 ---
 
-## 13. Qué hace diferente a cada categoría
+## 14. Qué hace diferente a cada categoría
 
 ### Común — identidad
 
@@ -295,7 +322,7 @@ Presión multifrontal. El grupo pelea contra un cuerpo, sus funciones, su espaci
 
 ---
 
-## 14. Competencia y ritmo
+## 15. Competencia y ritmo
 
 La competencia puede reducir la fricción de ciertas acciones.
 
@@ -316,7 +343,7 @@ Ejemplos:
 
 ---
 
-## 15. Movimiento
+## 16. Movimiento
 
 Moverse no es gratis por defecto.
 
@@ -332,13 +359,13 @@ Moverse importa especialmente en un sistema donde el entorno presiona, los teleg
 
 ---
 
-## 16. Lectura rápida del combate en mesa
+## 17. Lectura rápida del combate en mesa
 
 Cuando mires el track, pregúntate:
 
 ### 1. ¿Quién actúa ahora?
 
-La ficha más a la izquierda.
+La ficha más próxima al marcador de flujo.
 
 ### 2. ¿Qué amenaza se está preparando?
 
@@ -358,7 +385,7 @@ Tanto en ritmo como en Desgaste.
 
 ---
 
-## 17. Mini ejemplo de track
+## 18. Mini ejemplo de track
 
 ### Estado inicial del track
 
@@ -391,7 +418,7 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 
 ---
 
-## 18. Preguntas rápidas al diseñar un encuentro
+## 19. Preguntas rápidas al diseñar un encuentro
 
 ### 1. ¿Cuál es el track principal?
 
@@ -419,10 +446,10 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 
 ---
 
-## 19. Reglas resumidas
+## 20. Reglas resumidas
 
-- La ficha más a la izquierda actúa primero.
-- Actuar mueve la ficha a la derecha.
+- La ficha más próxima al marcador de flujo actúa primero.
+- Actuar aleja la ficha del marcador de flujo; el marcador avanza en sentido horario a la siguiente ficha.
 - Valor de Apertura = Preparación + modificadores de situación.
 - Punto de Referencia = Valor de Apertura más alto entre todos los participantes.
 - Posición inicial = Punto de Referencia − Valor de Apertura.
@@ -432,6 +459,7 @@ El boss no necesita más monstruos de relleno para sentirse activo. Su cuerpo y 
 - Preparación bruta desempata en caso de empate. PNJ contra PJ: el Narrador decide. PJ contra PJ: los jugadores deciden.
 - Reacciones también cuestan ritmo.
 - Ritmo y Desgaste no son lo mismo.
+- Los ciclos autónomos son fichas independientes en el ATB con su propio ritmo — no forman parte del turno principal de la criatura.
 - Los subsistemas importantes pueden tener su propio track.
 - Los puntos vitales deben cambiar el comportamiento temporal del encuentro.
 - Los bosses sobreviven por capas de presión, no solo por números.

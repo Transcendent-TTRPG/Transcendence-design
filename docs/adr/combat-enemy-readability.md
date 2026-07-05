@@ -5,10 +5,9 @@
 **Case study:** Ice Wolf
 **Related systems:** Combat, Vital Points, Enemy Reading, Specializations, Attrition, Fatigue
 **Related files:**
-- `playtests/combat/common-enemy-readability-v1.md`
-- `playtests/combat/common-enemy-readability-v2.md`
-- `playtests/combat/common-enemy-readability-v3.md`
+- `docs/adr/combat-encounter-architecture.md`
 - `docs/adr/combat-champion-encounter.md`
+- `docs/adr/combat-elite-encounter.md`
 
 ---
 

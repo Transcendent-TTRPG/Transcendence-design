@@ -1,6 +1,6 @@
 # ATB Combat Timeline
 
-**Status:** Adopted (structural design)
+**Status:** Updated (v0.2 — aligned to corebook 2026-06)
 **Scope:** Combat timing, action order, encounter pressure, boss layering, reactive play
 **Related systems:** Combat, Encounter Architecture, Vital Points, Fatigue, Readability, Team Tactics
 **Related files:**
@@ -34,9 +34,9 @@ Combat is not divided into rounds.
 
 Combat is represented by a **continuous combat timeline**.
 
-Each creature, subsystem, or encounter element that matters in combat occupies a position on the timeline. The entity whose marker is currently furthest to the left is the next one able to act.
+Each creature, subsystem, or encounter element that matters in combat occupies a position on the timeline — a **track circular continuo** (continuous circular track). There is a **marcador de flujo** (flow marker) that represents the absolute present of combat. The entity whose ficha is currently closest to the marcador de flujo is the next one able to act.
 
-When that entity acts, its marker moves to the right according to the rhythm cost of the chosen action.
+When that entity acts, its ficha advances away from the marcador de flujo according to the rhythm cost of the chosen action. The marcador then advances clockwise to the next closest ficha.
 
 The system therefore does not ask:
 
@@ -77,9 +77,9 @@ This lets a fight feel like a whole situation instead of a queue of isolated uni
 
 ## The Timeline
 
-The combat timeline is represented by a horizontal track.
+The combat timeline is represented by a **track circular continuo** (continuous circular track).
 
-Every relevant combat entity has a marker on that track.
+Every relevant combat entity has a ficha on that track. There is a **marcador de flujo** (flow marker) that represents the present of combat at all times.
 
 Examples of possible tracked entities:
 
@@ -88,11 +88,12 @@ Examples of possible tracked entities:
 - champion tactical systems
 - elite subsystems
 - environmental cycles
+- ciclos autónomos
 - charged abilities that deserve their own timing
 
-The marker furthest to the left acts first.
+The ficha closest to the marcador de flujo acts first.
 
-After resolving an action, that marker moves right by the action's rhythm cost.
+After resolving an action, that ficha advances away from the marcador de flujo by the action's rhythm cost. The marcador then advances clockwise to the next closest ficha.
 
 ---
 
@@ -104,21 +105,21 @@ Combat does not begin from a neutral state. Before the first activation, every e
 
 The Narrator collects two values from every participant: their **Preparation** characteristic and any **situational modifiers** that apply to this specific encounter.
 
-### Step 1 — Opening Value
+### Step 1 — Opening Value (Valor de Apertura)
 
 Each participant calculates their individual score:
 
-Opening Value = **Preparation** + situational modifiers
+Opening Value (Valor de Apertura) = **Preparation (Preparación)** + situational modifiers
 
-### Step 2 — Reference Point
+### Step 2 — Reference Point (Punto de Referencia)
 
-The Narrator identifies the highest Opening Value among all participants. That value is the **Reference Point** for this encounter.
+The Narrator identifies the highest Opening Value among all participants. That value is the **Reference Point (Punto de Referencia)** for this encounter.
 
-### Step 3 — Initial Position
+### Step 3 — Initial Position (Posición inicial)
 
-Initial Position = Reference Point − Opening Value
+Initial Position (Posición inicial) = Reference Point − Opening Value
 
-The participant with the highest Opening Value is placed at position **0** — the leftmost point on the track — and acts first. All others are placed to the right at a distance equal to the difference between the Reference Point and their own Opening Value.
+The participant with the highest Opening Value is placed at position **0** — the point closest to the marcador de flujo — and acts first. All others are placed further from the marcador, at a distance equal to the difference between the Reference Point and their own Opening Value.
 
 Situational modifiers adjust Opening Values based on conditions at the start of the scene:
 
@@ -144,7 +145,7 @@ A wolf with Preparation 5 is ambushing (modifier +2). Opening Value = 7. Three p
 | Player A | 3 | 0 | 3 | 7 − 3 = **4** |
 | Player B | 2 | 0 | 2 | 7 − 2 = **5** |
 
-Wolf acts first. After a Standard action (rhythm cost 5), its marker moves to 5. Player C at position 3 acts next.
+Wolf acts first. After a Standard action (rhythm cost 5), its ficha advances to position 5, away from the marcador de flujo. Player C at position 3 acts next.
 
 The initial positioning phase is not separate from the track. It is the track's starting state. Rhythm costs stack on top of it from the first activation onward.
 
@@ -201,7 +202,7 @@ These bands are enough to make timing matter without forcing every action to hav
 
 ## Activation
 
-When a marker reaches the leftmost current position, that entity becomes the next to act.
+When a ficha is the closest to the marcador de flujo, that entity becomes the next to act.
 
 The acting entity chooses an available action, resolves it, and then moves its marker according to the action's rhythm cost.
 
@@ -219,7 +220,10 @@ Two entities may occupy the same track position in two situations: at the start 
 
 In both cases, resolve the tie by **raw Preparación value** (before situational modifiers are applied). The entity with the higher base Preparación acts first.
 
-If raw Preparación is also tied, the Narrator or table may break the tie according to the needs of clarity, consistency, or a fixed secondary rule chosen by the group.
+If raw Preparación is also tied, the resolution depends on who is involved:
+
+- **NPC and PC tied:** the Narrator decides who acts first.
+- **PC vs. PC:** the players decide the order themselves.
 
 ### Why raw Preparación matters here
 
@@ -336,6 +340,24 @@ A subsystem does not need a full creature stat block. It needs:
 - a timing identity
 - a way to be read
 - a way to be altered, delayed, weakened, or allowed to resolve
+
+---
+
+## Ciclos Autónomos
+
+A **ciclo autónomo** (autonomous cycle) is a distinct ATB entry — a ficha of its own — with its own rhythm cost and activation timing, separate from a creature's main turn or environmental triggers.
+
+A ciclo autónomo is not resolved during the main creature's activation. It occupies its own position on the track, visible to all players, and fires when the marcador de flujo reaches it.
+
+Key properties:
+
+- **Hidden timing:** the cycle's next rhythm cost is not declared by default. Players know the ciclo autónomo exists and can see it on the track, but they do not know exactly when it will fire next. A Technique can reveal this.
+- **Category availability:** all creature categories may have ciclos autónomos. Commons are limited to biological cycles (physiology, elemental charge, passive regeneration, recurring posture). Champions may add coordination cycles that modify nearby creature behavior. Elites may add environmental cycles that affect the battlefield (visibility, terrain, elemental conditions) and that persist through Metamorfosis phases.
+- **Zone-anchored (biological):** biological ciclos autónomos are anchored to the zone that drives them. When that zone collapses, the cycle is removed from the ATB. Any already-active effects may persist depending on the creature's design.
+- **Phase persistence (environmental):** environmental ciclos autónomos generated by Elite creatures are not anchored to a specific zone. They persist through Metamorfosis phases unless the design specifies otherwise, and end with the creature's defeat.
+- **Reading difficulty:** difficulty to identify and isolate a cycle's rhythm cost scales with the number of simultaneous active cycles on the track, not with creature category.
+
+**Design authority:** `docs/system/creature-cycles.md`
 
 ---
 
@@ -574,8 +596,8 @@ Is this still easy enough to read and run?
 ## Official Decisions Adopted
 
 1. Combat uses a continuous ATB timeline rather than round-based sequencing.
-2. The leftmost marker acts first.
-3. Actions move their marker right according to rhythm cost.
+2. The ficha closest to the **marcador de flujo** acts first. The marcador advances clockwise to the next closest ficha after each activation.
+3. Each action advances a ficha away from the marcador de flujo by its rhythm cost.
 4. Rhythm cost and Desgaste are related, but not identical.
 5. Reactions exist inside the same timing economy and are never automatically free.
 6. Telegraph → window → resolution is the preferred structure for major threats.
@@ -583,7 +605,8 @@ Is this still easy enough to read and run?
 8. Boss pressure should be solved through layered timing, not only HP inflation or filler adds.
 9. Vital points should alter encounter rhythm and pressure, not only damage values.
 10. The number of active tracks should remain proportional to encounter category and table readability.
-11. Initial position is derived in three steps: Opening Value = Preparation + situational modifiers; Reference Point = highest Opening Value among all participants; Initial Position = Reference Point − Opening Value. The participant with the highest Opening Value is placed at position 0 and acts first. Rhythm costs stack on top from the first activation onward. Ties at the same Initial Position are resolved by raw Preparation, then Narrator discretion.
+11. Initial position is derived in three steps: Opening Value (Valor de Apertura) = Preparation (Preparación) + situational modifiers; Reference Point (Punto de Referencia) = highest Opening Value among all participants; Initial Position (Posición inicial) = Reference Point − Opening Value. The participant with the highest Opening Value is placed at position 0 — closest to the marcador de flujo — and acts first. Rhythm costs stack on top from the first activation onward. Ties are resolved by raw Preparación; if that also ties, NPC vs. PC → Narrator decides; PC vs. PC → players decide.
+12. **Ciclos autónomos** are recognized as distinct ATB entries with their own ficha, their own rhythm cost, and their own activation timing — independent of the creature's main turn. Their next rhythm cost is hidden by default. All creature categories may have ciclos autónomos; type varies by category (biological / coordination / environmental). Reading difficulty scales with number of simultaneous active cycles. Full design authority: `docs/system/creature-cycles.md`.
 
 ---
 
