@@ -295,13 +295,17 @@ Ejemplos:
 
 ### 3 Desgaste
 
-Acciones extremas o de sobreextensión.
+Acciones que exigen compromiso físico, biológico o cognitivo extremo concentrado en un solo momento.
+
+No se limitan a actos suicidas o desesperados. Desgaste 3 aplica a cualquier activación cuyo costo biológico real en ese instante es genuinamente extremo — independientemente de si el resultado es ofensivo, defensivo o metabólico.
 
 Ejemplos:
-- empuje decisivo cuando el personaje ya está al límite
-- intervención heroica claramente por encima del ritmo normal
-- respuesta que fuerza al personaje a rendir más allá de su margen seguro
-- maniobra límite que el sistema quiera marcar como un esfuerzo extraordinario
+
+- sobreextensión ofensiva cuando el personaje ya está al límite
+- intervención heroica que ignora el margen de seguridad del cuerpo
+- respuesta biológica de emergencia que fuerza al organismo a rebasar su propio estado (purga metabólica, supresión de un estado alterado)
+- entrada en una configuración defensiva completa que exige máxima disposición física sostenida
+- coste de activación único de una Técnica cuyo efecto continuado justifica la carga inicial extrema
 
 ---
 
