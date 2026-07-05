@@ -190,9 +190,10 @@ Procedurally:
 
 ### Structural rule
 
-- Standard meaningful actions under pressure → **1 Desgaste**
 - Free or trivial actions → **0 Desgaste**
-- Advanced techniques may have Desgaste > 1; this is defined per technique, not per base action family
+- Standard meaningful actions under pressure → **1 Desgaste**
+- High-demand base actions → **2–3 Desgaste** (technique-defined)
+- Base actions never exceed **3 Desgaste**; values of 4–5 are reserved for techniques of Experto rank and above
 
 ---
 
