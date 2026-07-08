@@ -23,7 +23,7 @@ Estos dos documentos son la base de cualquier trabajo de módulo. Sin ellos, cua
 
 | Documento | Qué da |
 | --- | --- |
-| `docs/canon/world-foundations.md` | Qué es el Tauma, qué son los vestigos, qué son los Primordiales, qué son las ruinas humanas. La física del mundo. |
+| `docs/canon/world-foundations.md` | Fundamentos base. (Nota: Para reglas específicas de Vestigos y Entidades, ver la sección de Horror Cósmico abajo). |
 | `docs/canon/species-relations.md` | Cómo se relacionan las especies entre sí en 7 ejes + su posición frente al horror cósmico. Indispensable para cualquier PNJ o facción. |
 
 ---
@@ -41,7 +41,6 @@ La locación es el espacio donde ocurre el módulo: qué es el lugar, qué histo
 | `docs/system/cover-visibility-concealment.md` | Cobertura, visibilidad y ocultamiento — cómo el entorno afecta el combate |
 | `docs/system/difficulty-thresholds.md` | Cómo calibrar dificultad de tiradas según el entorno |
 | `docs/canon/vestigos/species-cultural-mapping.md` | Qué tipo de vestigos produce cada especie — útil si la locación tiene historia de ocupación |
-| `docs/system/tauma-cosmology.md` | Mecánicas de concentración de Tauma por zona geológica — para locaciones con actividad primordial |
 
 **Regla rápida de Tauma en locaciones:**
 - Zonas volcánicas, fallas tectónicas, cuencas sísmicas → alta concentración ambiental
@@ -50,90 +49,83 @@ La locación es el espacio donde ocurre el módulo: qué es el lugar, qué histo
 
 ---
 
-### Diseño de encuentros de combate
+### Diseño de encuentros de combate y *Ailments*
 
-Los ADRs de combate son los documentos más importantes para diseño de encuentros. Todos están en `docs/adr/`.
+Para la estructuración de la dificultad, daño y los estados alterados físicos que los jugadores pueden sufrir en combate o exploración. Los ADRs proveen las matemáticas del encuentro, pero la estructura final usa el *Corebook*.
 
 | Documento | Qué da |
 | --- | --- |
-| `docs/adr/combat-encounter-architecture.md` | Estructura general de un encuentro — cuántos enemigos, roles, escalada |
 | `docs/adr/combat-atb-timeline.md` | Cómo funciona la línea de tiempo ATB en un encuentro real |
 | `docs/adr/combat-atb-rhythm-costs.md` | Costos de Ritmo y cómo afectan el ritmo del combate |
-| `docs/adr/combat-champion-encounter.md` | Diseño de encuentros con campeón/jefe — cuándo y cómo |
-| `docs/adr/combat-enemy-readability.md` | Cómo hacer que los enemigos sean legibles para los jugadores |
 | `docs/system/atb-reference.md` | Referencia rápida del sistema ATB — fichas, Ritmo, orden de activación |
 | `docs/system/wounds-and-damage.md` | Daño, heridas y consecuencias — calibrar lethality del encuentro |
-| `docs/system/ailments.md` | Catálogo de Alteraciones — herramientas de presión táctica en encuentros |
-| `data/system/ailments.yaml` | Datos de Alteraciones (nombres canónicos, efectos, duración) |
+| `.../core-books/transcendence-corebook/14-adversaries-and-bestiary/es/05-construccion-encuentros.md` | **Reglas oficiales** de presupuestos de encuentro y letalidad. |
+| `.../core-books/transcendence-corebook/11-ailments/es/01-agravios.md` | **Ailments (Mecánica Core):** Escala de intensidad para estados alterados. |
+| `.../core-books/transcendence-corebook/11-ailments/es/02-alteraciones.md` | **Ailments (Combate):** Estados alterados cinéticos y de trauma. |
+| `.../core-books/transcendence-corebook/11-ailments/es/04-venenos.md` | **Ailments (Combate/Exploración):** Toxinas y venenos ambientales o de criaturas. |
+| `.../core-books/transcendence-corebook/11-ailments/es/05-infecciones.md` | **Ailments (Exploración/Combate):** Enfermedades biológicas no vinculadas al Limbo. |
 
 ---
 
-### Diseño de criaturas
+### Diseño de criaturas y adversarios (Bestiario Oficial)
 
-Criaturas hostiles (no humanoides, no armadas) son el tipo de enemigo más frecuente en este proyecto.
+Para diseñar monstruos, criaturas y antagonistas, **usar exclusivamente el Capítulo 14 del Corebook** en lugar de los documentos de diseño antiguos, ya que contienen la narrativa pulida y los ciclos autónomos oficiales. Además, apóyate en los datos crudos `.yaml` para matemáticas base.
 
 | Documento | Qué da |
 | --- | --- |
-| `docs/system/creatures.md` | Cómo construir una criatura: estadísticas, herencias, comportamiento en combate |
-| `docs/system/creature-cycles.md` | Ciclos de criatura — comportamientos por fase del encuentro |
-| `docs/system/natural-attack-forms.md` | Formas de ataque natural — perfiles disponibles para criaturas |
-| `data/system/natural-attack-forms.yaml` | Datos de formas de ataque natural |
-| `data/system/weapon-technique-profiles.yaml` | Perfiles de técnica por arma — si la criatura tiene técnicas propias |
-| `data/system/techniques.yaml` | Base de técnicas existentes — consultar antes de crear técnicas de criatura para evitar duplicados |
+| `.../core-books/transcendence-corebook/14-adversaries-and-bestiary/es/01-doctrina.md` | Filosofía de diseño de criaturas en Transcendence. |
+| `.../core-books/transcendence-corebook/14-adversaries-and-bestiary/es/02-zonas.md` | Arquitectura del adversario por partes/zonas atacables. |
+| `.../core-books/transcendence-corebook/14-adversaries-and-bestiary/es/03-rasgos.md` | Habilidades estáticas y pasivas de las criaturas. |
+| `.../core-books/transcendence-corebook/14-adversaries-and-bestiary/es/04-ciclos-autonomos.md` | Patrones de comportamiento en combate según el estrés/daño. |
+| `data/system/natural-attack-forms.yaml` | Datos crudos de armas naturales disponibles para criaturas. |
+| `data/system/weapon-technique-profiles.yaml` | Perfiles de técnica por arma — si la criatura tiene técnicas propias. |
 
 ---
 
-### Contenido Tauma, vestigos y lo sobrenatural
+### Contenido Tauma, Vestigos y lo Sobrenatural (Horror Cósmico)
 
-Para módulos donde los vestigos, la concentración de Tauma o los Primordiales son parte del contenido (exploración de ruinas, zonas primordiales, objetos cargados).
+Para módulos donde la corrupción, el Limbo o los objetos cargados son centrales, **usar exclusivamente los capítulos 11 y 12 del Corebook**. Estos archivos contienen el canon definitivo (NR, agotamiento, T.R. de Aflicción, etc.).
 
-| Documento | Qué da |
+| Documento (en `Transcendence-publications/...`) | Qué da |
 | --- | --- |
-| `docs/canon/world-foundations.md` | Mecanismo canónico de vestigos y Primordiales (si no se cargó ya) |
-| `docs/system/tauma-cosmology.md` | Profundidad en cosmología del Tauma — cómo se concentra, qué produce |
-| `docs/canon/vestigos/species-cultural-mapping.md` | Qué produce cada especie como vestigos, cómo los usan |
-| `docs/canon/species-relations.md` — Eje 6 | Relación de cada especie con vestigos y ruinas (sección directamente aplicable) |
+| `.../core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/01-el-limbo.md` | Reglas y lore de cómo opera la dimensión. |
+| `.../core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/02-el-descubrimiento.md` | Proceso de asimilación perceptual. |
+| `.../core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/03-vestigos.md` | **Reglas Definitivas:** Fatiga del patrón, NR, Categorías (Primordial, Fragmentario). |
+| `.../core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/04-vinculos-y-aspectos.md` | Mutaciones físicas de los personajes. |
+| `.../core-books/transcendence-corebook/12-cosmic-horror-and-corruption/es/05-entidades.md` | Comportamiento y lógica de los seres del Limbo. |
+| `.../core-books/transcendence-corebook/11-ailments/es/03-aflicciones.md` | **Ailments (Limbo):** Los peajes mentales y perceptuales del Horror Cósmico. |
 
-**Reglas rápidas de vestigos para módulos:**
-- Los vestigos se forman donde hay creencia colectiva sostenida operando a través del Tauma base
-- Un vestigo en una ruina interacciona con el campo de impronta previo de esa ruina — efectos posiblemente no documentados
-- Los Primordiales requieren dos condiciones simultáneas: alta concentración geológica de Tauma + conciencia colectiva sostenida
+**Reglas rápidas de Vestigos para módulos:**
+- Los vestigos se forman donde hay creencia colectiva sostenida operando a través del Tauma base.
+- Su duración y letalidad inversa: un Vestigo Primordial es devastador pero se agota rapidísimo, un Vestigo Fragmentario es débil pero dura mucho.
+- Los Primordiales biológicos requieren dos condiciones simultáneas: alta concentración geológica de Tauma + conciencia colectiva sostenida.
 
 ---
 
-### Entidades del Limbo
+### PNJs por especie (Lookup Table de Canon)
 
-Para módulos con presencia de entidades extranormales (no Primordiales, no criaturas ordinarias).
+Para diseñar PNJs con coherencia interna. Usa la siguiente tabla de enrutamiento para apuntar al archivo exacto de la especie en el **Corebook** (que incluye stats, biología y herencia auditada). 
 
-| Documento | Qué da |
-| --- | --- |
-| `docs/system/limbo-entities.md` | Qué son las entidades del Limbo, cómo se forman, cómo se comportan |
-| `docs/system/limbo-manifestations.md` | Tipos de manifestación — cómo se presentan en el mundo físico |
-| `data/system/limbo-entities.yaml` | Catálogo de entidades |
-| `data/system/limbo-manifestations.yaml` | Catálogo de manifestaciones |
+Ruta base: `Transcendence-publications/core-books/transcendence-corebook/06-species/es/`
 
----
+| Especie | Archivo Exacto | Especie | Archivo Exacto |
+| :--- | :--- | :--- | :--- |
+| **Naghii** | `01-naghii.md` | **Ursari** | `11-ursari.md` |
+| **Sauri** | `02-sauri.md` | **Luphran** | `12-luphran.md` |
+| **Zarnag** | `03-zarnag.md` | **Arakhel** | `13-arakhel.md` |
+| **Drakkai** | `04-drakkai.md` | **Bufoni** | `14-bufoni.md` |
+| **Rokhart** | `05-rokhart.md` | **Vesper** | `15-vesper.md` |
+| **Formix** | `06-formix.md` | **Lapinni** | `16-lapinni.md` |
+| **Loxod** | `07-loxod.md` | **Kesh** | `17-kesh.md` |
+| **Ceratox** | `08-ceratox.md` | **Talpan** | `18-talpan.md` |
+| **Chelicer** | `09-chelicer.md` | **Soricin** | `19-soricin.md` |
+| **Panin** | `10-panin.md` | **Yacani** | `20-yacani.md` |
 
-### PNJs por especie
-
-Para diseñar PNJs con coherencia interna de especie: motivaciones, comportamiento bajo presión, relación con otras especies.
-
-| Documento | Qué da |
-| --- | --- |
-| `docs/canon/species-relations.md` — Ejes 1–5 | Dinámicas territoriales, económicas, conflictos civilizacionales, alianzas, reputaciones |
-| `docs/canon/species-relations.md` — Eje 7 | Cómo cada especie se relaciona con el horror cósmico — informa motivaciones profundas |
-| `docs/canon/species/<especie>.md` | Canon de especie: identidad, biología, civilización |
-| `Transcendence-publications/core-books/transcendence-corebook/06-species/es/<especie>.md` | Stats, herencia, legados — lo que el PNJ puede hacer mecánicamente |
-
-**Eje de especies más útil para PNJs en combate/exploración:**
-
-| Si el PNJ es... | Leer en species-relations.md |
-| --- | --- |
-| Antagonista territorial | Eje 1 (nichos ecológicos) + Eje 5 (reputación como amenaza) |
-| Guía o aliado económico | Eje 2 (interdependencia económica) |
-| Obstáculo ideológico | Eje 3 (conflictos civilizacionales) |
-| Aliado natural | Eje 4 (convergencias naturales) |
-| Fanático o perturbado | Eje 7 (relación con horror cósmico) |
+Además, consultar el `Eje` correspondiente en `docs/canon/species-relations.md`:
+- Antagonista territorial → Eje 1 y 5
+- Guía o aliado → Eje 2
+- Obstáculo ideológico → Eje 3
+- Fanático del Limbo → Eje 7
 
 ---
 
@@ -166,9 +158,10 @@ Solo necesario cuando el módulo incluye política de facción activa o consecue
 
 ## Qué NO cargar para módulos
 
-Estos documentos son relevantes para trabajo de diseño del sistema, no para trabajo de módulo:
+Estos documentos son relevantes para trabajo de diseño del sistema (Reglamento Core y Expansiones), no para trabajo narrativo de módulo:
 
-- `docs/system/technique-*.md` / `data/system/techniques.yaml` — solo si diseñas técnicas de criatura
-- `docs/canon/species/*/technique-seeds.md` — solo si diseñas técnicas de especie
-- `docs/adr/system-*.md` — decisiones de arquitectura del sistema, no de módulo
-- `docs/knowledge/` — gobernanza interna del repo
+- `docs/system/technique-*.md` / `data/system/techniques.yaml` — solo si diseñas técnicas nuevas (las criaturas deberían usar habilidades simples, no técnicas complejas de jugador a menos que sean campeones).
+- `docs/canon/species/*/technique-seeds.md` — trabajo obsoleto o semilla, usar el *Corebook*.
+- Archivos `.md` de `docs/system/` que han sido superados por el *Corebook* (ej: `limbo-entities.md`, `creatures.md`, `ailments.md`).
+- `docs/adr/system-*.md` — decisiones de arquitectura del sistema.
+- `docs/knowledge/` — gobernanza interna del repo.

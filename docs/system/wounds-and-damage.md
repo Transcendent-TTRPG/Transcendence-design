@@ -270,7 +270,7 @@ Los valores concretos de Potencia y Durabilidad pertenecen al catálogo de mater
 Cuando un golpe conecta contra una zona protegida, esa zona aporta Bloqueo.
 
 ```text
-Bloqueo = BC + BM + CD + CO
+Bloqueo = BC + BM + CD
 ```
 
 Donde:
@@ -278,7 +278,8 @@ Donde:
 - `BC` = Bloqueo base por categoría de armadura.
 - `BM` = Bono de material.
 - `CD` = Competencia Defensiva con el tipo de armadura usado en la zona.
-- `CO` = Calidad o grado de la pieza.
+
+El grado de calidad de la pieza no es un componente separado — su efecto ya está capturado en el BM, porque la durabilidad de una pieza de grado superior es mayor.
 
 ### Bloqueo base
 
@@ -291,8 +292,19 @@ Donde:
 ### Bono de material
 
 ```text
-BM = floor(durabilidad / 10)
+BM = floor(durabilidad_real / 6)
 ```
+
+La durabilidad real de una pieza es su durabilidad base multiplicada por su grado (1, 2 o 3). El divisor 6 está calibrado para que materiales de diferente categoría produzcan BM distinguibles desde grado 1.
+
+Ejemplos con grado 1:
+
+| Material | D base | D real (G1) | BM |
+| --- | ---: | ---: | ---: |
+| Cuero | 10 | 10 | 1 |
+| Hierro | 14 | 14 | 2 |
+| Acero | 20 | 20 | 3 |
+| Titanio | 32 | 32 | 5 |
 
 ### Competencia Defensiva
 
@@ -303,10 +315,6 @@ BM = floor(durabilidad / 10)
 - Armadura pesada
 
 Solo se usa si esa armadura participa realmente en absorber el impacto.
-
-### Calidad de objeto
-
-`CO` es el grado de la pieza, normalmente de 1 a 3.
 
 ---
 

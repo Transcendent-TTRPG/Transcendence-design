@@ -160,18 +160,22 @@ creature_parts:
     catalog_dependency: "exact potency and durability values belong to material and equipment catalogs"
 
 block:
-  formula: "BC + BM + CD + CO"
+  formula: "BC + BM + CD"
   terms:
     BC: "Bloqueo base por categoria de armadura"
-    BM: "Bono de material"
+    BM: "Bono de material: floor(durabilidad_real / 6), where durabilidad_real = D_base * grade"
     CD: "Competencia Defensiva: armor competency level for the armor type in the resolved zone"
-    CO: "Calidad / grado de la pieza"
+  design_note: >
+    CO (piece quality/grade) was removed as a separate component. Grade is already
+    captured in BM because D_real = D_base * grade. The divisor was changed from 10
+    to 6 so that materials across armor categories produce distinguishable BM values
+    at grade 1 (e.g., Cuero G1 → BM 1, Hierro G1 → BM 2, Acero G1 → BM 3).
   base_block:
     light: 2
     medium: 4
     heavy: 6
-  material_bonus_formula: "floor(durability / 10)"
-  piece_grade_range: [1, 3]
+  material_bonus_formula: "floor((D_base * grade) / 6)"
+  material_bonus_divisor: 6
 
 damage_surfaces:
   pc_to_npc:

@@ -28,10 +28,10 @@ El problema central de su biología es su metabolismo nervioso. Si un Lapinni es
 
 ### Physical baseline
 
-- **Height:** 1.50 – 1.75 m
-- **Weight:** 45 – 65 kg
+- **Height:** 1.25 – 1.45 m
+- **Weight:** 35 – 50 kg
 - **Lifespan:** 50 – 60 años (la mayoría muere antes por su estilo de vida volátil)
-- **Size category:** Mediano
+- **Size category:** Pequeño
 
 ---
 
