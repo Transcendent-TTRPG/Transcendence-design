@@ -14573,3 +14573,157 @@ pilot_examples:
     - acecho
     - movement_denial
     - vesper
+
+- name: Lo Que Cedió Primero
+  name_en: What Gave First
+
+  id: 119
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Two-contact read — the first hit reveals where the second goes
+    focus: Second attack accuracy amplified by first-contact feedback
+    holder: Any practitioner with Flow weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Flow
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_flow_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_flow
+    effect_on_failure: technique_ends
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    First T.A. with Flow profile. On hit, resolves T.I., then immediately makes
+    a second T.A. against the same target. The second T.A. receives a bonus equal
+    to the practitioner's competence rank. On second hit, resolves T.I. normally.
+  effect: >
+    Make a T.A. with your Flow profile. If you miss, the technique ends. On hit,
+    resolve T.I. Immediately make a second T.A. against the same target. This
+    second T.A. receives a bonus equal to your competence rank — the first contact
+    revealed the target's response and the second strike knows where to go. If the
+    second T.A. also hits, resolve T.I. normally.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — an active two-hit Flow attack. Rhythm 5 reflects the
+    full two-hit chain without a persistent condition; the bonus on the second T.A.
+    is meaningful but not guaranteed. Attrition 2 reflects two functional surfaces:
+    the chain execution and the accuracy scaling. Below Cerrar la Salida (7/2) which
+    also chains but adds Lacerado on the second hit.
+  restrictions: []
+  tags:
+    - active
+    - attack
+    - flow
+    - fluidez
+    - chain_attack
+    - second_hit_bonus
+    - vesper
+
+- name: El Ángulo Entre
+  name_en: The Angle Between
+
+  id: 120
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Geometric repositioning — first hit opens a flank, second exploits it
+    focus: Mid-chain movement to reposition before second attack, no reactions from hit target
+    holder: Any practitioner with Flow weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Flow
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_flow_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_flow
+    effect_on_failure: technique_ends
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    First T.A. with Flow profile. On hit, resolves T.I. Before second T.A.,
+    practitioner may move up to competence rank in meters to a valid position
+    with no reactions from the target just hit. Then makes second T.A. from new
+    position. On second hit, resolves T.I. normally.
+  effect: >
+    Make a T.A. with your Flow profile. If you miss, the technique ends. On hit,
+    resolve T.I. Before the second T.A., you may move up to a number of meters
+    equal to your competence rank to a valid position. This movement does not
+    provoke reactions from the target you just hit. Then make a second T.A. against
+    the same target from your new position. If the second T.A. also hits, resolve
+    T.I. normally.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — an active two-hit Flow attack with mid-chain
+    repositioning. Rhythm 5 reflects the full chain plus the positional shift;
+    the repositioning creates a flanking opportunity but requires the first hit
+    to land. Attrition 2 reflects two functional surfaces: the chain execution
+    and the geometric repositioning window. Below Cerrar la Salida (7/2) which
+    chains with a persistent condition instead of positional advantage.
+  restrictions:
+    - mid_chain_movement_does_not_provoke_reactions_from_the_target_just_hit
+  tags:
+    - active
+    - attack
+    - flow
+    - fluidez
+    - chain_attack
+    - repositioning
+    - vesper
