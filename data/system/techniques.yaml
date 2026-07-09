@@ -4531,13 +4531,13 @@ pilot_examples:
       to non-weapon committed actions, or reduce the cost premium over a
       standard reactive defense.
     cost_note: >
-      Rhythm 5 / Attrition 1 is deliberate. The Technique is a reactive attack
-      that simultaneously defends and deals damage, with a condition surface on
-      top. The trigger is narrow (user must be the declared target), the
+      Rhythm 6 / Attrition 2. The Technique replaces defense, deals damage, and
+      can apply Impedido — three distinct outputs in a single reactive resolution.
+      The trigger is narrow (user must be the declared target within reach), the
       attacker has an R.R. window against Impedido, and the counter can still
-      fail if T.A. does not exceed the attacker's roll. These constraints
-      prevent the cost from rising above the standard anchor despite the dual
-      output.
+      fail if T.A. does not exceed the attacker's roll. These constraints are
+      real but do not reduce the total output width below the 6/2 benchmark for
+      full reactive interruption packages.
     restrictions:
       - user_must_be_the_declared_target_of_the_triggering_attack
       - attacker_must_be_within_weapon_reach
@@ -4772,7 +4772,7 @@ pilot_examples:
       sustain_rule: null
       end_rule: null
     cost:
-      rhythm_cost: 3
+      rhythm_cost: 4
       attrition_cost: 1
       other:
         - rhythm_and_attrition_apply_only_during_ATB_or_active_threat
@@ -4831,11 +4831,11 @@ pilot_examples:
       next activation only. At rank 2, two activations ahead; at rank 3, three;
       and so on for the same targeted cycle.
     cost_note: >
-      Rhythm 3 / Attrition 1 matches all Novice Naghii specialization
-      information Techniques. The output is immediate and combat-decisive: the
-      group knows exactly when the identified cycle will next fire, which
-      changes every subsequent decision in that ATB window. These costs apply
-      only during ATB or active-threat scenes.
+      Rhythm 4 / Attrition 1. The output exceeds a pure information read: the
+      user also receives a persistent bonus to all saving rolls against the
+      measured cycle's activations, scaling with Astronomía rank. That second
+      surface justifies a step above the Ritmo 3 band for narrow information
+      Techniques. Costs apply only during ATB or active-threat scenes.
     restrictions:
       - requires_at_least_one_ciclo_autonomo_visible_in_the_ATB
       - targets_one_ciclo_autonomo_only
@@ -12473,7 +12473,7 @@ pilot_examples:
       sustain_rule: null
       end_rule: null
     cost:
-      rhythm_cost: 3
+      rhythm_cost: 0
       attrition_cost: 1
       other: []
     saving_roll:
@@ -12491,10 +12491,11 @@ pilot_examples:
       attacker's token advances 1 position; at rank 6, 6 positions. Higher rank
       makes every landed hit increasingly costly for the attacker in tempo.
     cost_note: >
-      Rhythm 3 / Attrition 1 matches other reactive armor techniques (Volver la
-      Placa). The output is an immediate ATB cost on the attacker rather than a
-      benefit for the user — meaningful against all enemies since it fires in
-      combat, not at scene end.
+      Rhythm 0 / Attrition 1. The technique fires automatically when the user
+      fails T.D. and the hit resolves through functional armor — no player action
+      is required. Rhythm 0 because the trigger belongs to the opponent's action
+      window, not the user's own ATB slot. The ATB cost imposed on the attacker
+      is one output surface, keeping Attrition at 1.
     restrictions:
       - only_activates_on_failed_t_d_not_on_successful_defense
       - only_activates_when_hit_resolves_through_armor_not_bypassing_it
@@ -13056,7 +13057,7 @@ pilot_examples:
       end_rule: null
     cost:
       rhythm_cost: 3
-      attrition_cost: 2
+      attrition_cost: 1
       other: []
     saving_roll:
       model: none
@@ -13078,12 +13079,11 @@ pilot_examples:
       Natural scaling comes from Geografía rank growth: the bonus added to
       the substituted roll equals the current Geografía rank at time of use.
     cost_note: >
-      Rhythm 3 / Attrition 2. Rhythm 3 matches Cruzar la Punta (Evasión,
-      single-substitution reference at Ritmo 3 / Desgaste 1) and reflects
-      the time cost of the physical action being performed. Attrition raised
-      to 2 because this technique centralizes six distinct physical
-      specialization rolls into one mental one — a significant investment
-      consolidation that warrants higher permanent effort cost.
+      Rhythm 3 / Attrition 1. Rhythm 3 reflects the time cost of the physical
+      action being performed. Attrition 1 for a single compound output: skill
+      substitution plus rank bonus. Substituting into a better roll type is one
+      mechanical surface — the bonus is inherent to the substituted skill, not a
+      second independent axis.
     restrictions:
       - narrator_confirms_plausibility_before_roll
       - substitution_does_not_apply_in_completely_unknown_space
@@ -13153,7 +13153,7 @@ pilot_examples:
       end_rule: null
     cost:
       rhythm_cost: 3
-      attrition_cost: 2
+      attrition_cost: 1
       other: []
     saving_roll:
       model: none
@@ -13174,11 +13174,12 @@ pilot_examples:
       Natural scaling comes from Lingüística rank growth: the bonus added to
       the substituted roll equals the current Lingüística rank at time of use.
     cost_note: >
-      Rhythm 3 / Attrition 2. Parallel to El Cuello Que Todo Lo Atraviesa
-      (Geografía, Ritmo 3 / Desgaste 2). Rhythm 3 reflects the time cost of
-      the social action being performed — the substitution does not shorten
-      the action. Attrition 2 for consolidating four distinct social
-      specialization rolls into one mental one.
+      Rhythm 3 / Attrition 1. Parallel to El Cuello Que Todo Lo Atraviesa
+      (Geografía, now Ritmo 3 / Desgaste 1). Rhythm 3 reflects the time cost of
+      the social action. Attrition 1 for a single compound output: skill
+      substitution plus rank bonus. The number of skills consolidated does not
+      independently drive Attrition — output width (one surface) determines the
+      cost, not the breadth of the substitution list.
     restrictions:
       - narrator_confirms_plausibility_before_roll
       - substitution_does_not_apply_when_situation_has_no_linguistic_component
@@ -14187,7 +14188,7 @@ pilot_examples:
       end_rule: "until next extended rest, or until technique is used again"
     cost:
       rhythm_cost: 3
-      attrition_cost: 2
+      attrition_cost: 1
       other: []
     saving_roll: null
     roll:
@@ -14241,7 +14242,7 @@ pilot_examples:
       end_rule: "ends when the Trapped target succeeds on an opposed Strength C.R., or the Ursari voluntarily releases"
     cost:
       rhythm_cost: 4
-      attrition_cost: 1
+      attrition_cost: 2
       other:
         - "optional: pay 1 Attrition each own activation to apply garras I.R. without a new A.R."
     saving_roll:
@@ -14466,7 +14467,7 @@ pilot_examples:
       type: instantaneous
     cost:
       rhythm_cost: 2
-      attrition_cost: 3
+      attrition_cost: 1
     roll:
       model: characteristic_check
       characteristic: tenacity
@@ -14493,3 +14494,82 @@ pilot_examples:
       - alteration
       - metabolic
       - removal
+
+- name: Cobrar el Paso
+  name_en: Claiming the Step
+
+  id: 118
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic pre-positioning — the space is already read before the enemy arrives
+    focus: Movement denial through anticipatory strike
+    holder: Any practitioner with Shadow Pressure weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: utility
+  type: reactive
+  trigger: >
+    An enemy voluntarily moves into the user's weapon reach as part of their
+    movement this activation. Does not fire on forced movement caused by the
+    user's own technique.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Shadow Pressure
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_shadow_pressure_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 4
+    attrition_cost: 1
+    other: []
+  roll:
+    model: ta_shadow_pressure
+    effect_on_failure: no_additional_effect
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    When an enemy moves into reach, the practitioner fires a reactive Shadow
+    Pressure strike. On hit, deals Impact damage and cancels the target's
+    remaining movement this activation.
+  effect: >
+    When an enemy voluntarily moves into your weapon's reach, make a T.A. with
+    your Shadow Pressure profile. On failure, nothing additional occurs. On
+    success, resolve T.I. The target's remaining movement this activation is
+    cancelled.
+  cost_note: >
+    Rhythm 4 / Attrition 1 — a light-weapon reactive strike on enemy movement
+    entry. Rhythm 4 reflects that Shadow Pressure is a short/fast profile with
+    no inherited weapon effect; the output is narrow (damage + immediate movement
+    cancellation, no persistent condition) and comparable to active transit-denial
+    techniques at the same cost band. Attrition 1 reflects a single functional
+    surface.
+  restrictions:
+    - does_not_fire_on_forced_movement_from_user_techniques
+    - no_hereda_efectos
+  tags:
+    - reactive
+    - utility
+    - shadow_pressure
+    - acecho
+    - movement_denial
+    - vesper
