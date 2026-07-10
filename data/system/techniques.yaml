@@ -15034,3 +15034,84 @@ pilot_examples:
     - ti_advantage
     - damage_quality
     - vesper
+
+- name: La Salida que Cobra
+  name_en: The Exit That Charges
+
+  id: 125
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic zone control — echolocation detects voluntary exit before it completes; pair to Cobrar el Paso (#118)
+    focus: Reactive counter when enemy leaves reach; T.I. + attacker pursuit movement toward target
+    holder: Any practitioner with Shadow Pressure weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: reactive
+  trigger: >
+    An enemy within the user's weapon reach voluntarily moves out of it.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Shadow Pressure
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_shadow_pressure_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_shadow_pressure
+    effect_on_failure: no_additional_effect
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    Reactive Shadow Pressure attack triggered when an enemy voluntarily exits
+    the user's reach. On hit, resolves T.I. and the user immediately moves up
+    to competence rank meters toward the target without provoking reactions
+    from them.
+  effect: >
+    When an enemy within your reach voluntarily moves out of it, make a T.A.
+    with your Shadow Pressure profile against them. On failure, nothing
+    additional occurs. On hit, resolve T.I. Immediately move up to a number
+    of meters equal to your competence rank toward the target. This movement
+    does not provoke reactions from the target.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — reactive Shadow Pressure attack on enemy exit
+    from reach. Rhythm 5 is higher than Cobrar el Paso (4/1) because this
+    technique adds a second surface: pursuit movement toward the target after
+    the hit. Attrition 2 reflects two functional surfaces: the counter-attack
+    damage and the pursuit repositioning. Pair to Cobrar el Paso (#118) which
+    fires on enemy entry; together they create a zone-of-control pair that
+    charges both entry and exit.
+  restrictions:
+    - does_not_fire_on_forced_movement_caused_by_user_techniques
+  tags:
+    - reactive
+    - attack
+    - shadow_pressure
+    - acecho
+    - pursuit
+    - movement
+    - zone_control
+    - vesper
