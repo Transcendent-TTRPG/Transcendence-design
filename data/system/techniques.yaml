@@ -14727,3 +14727,78 @@ pilot_examples:
     - chain_attack
     - repositioning
     - vesper
+
+- name: Cortar el Ritmo
+  name_en: Cut the Rhythm
+
+  id: 121
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic timing — echolocation identifies the exact preparation moment to disrupt
+    focus: ATB displacement of the target on hit; tempo theft rather than attacker repositioning
+    holder: Any practitioner with Skirmish weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Skirmish
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_skirmish_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_skirmish
+    effect_on_failure: technique_ends
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    Active Skirmish attack. On hit, resolves T.I. and the target's ATB ficha
+    advances by a number of ticks equal to the practitioner's competence rank,
+    delaying their next activation.
+  effect: >
+    Make a T.A. with your Skirmish profile. If you miss, the technique ends.
+    On hit, resolve T.I. The target's ATB ficha advances by a number of ticks
+    equal to your competence rank — the strike interrupts their preparation at
+    the exact moment identified by acoustic pre-mapping.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — an active Skirmish attack with ATB displacement
+    output. Rhythm 5 matches existing Skirmish techniques at the same tier
+    (Touch and Yield, Steal the Edge, both 5/1). Attrition 2 reflects two
+    functional surfaces: the damage and the ATB displacement of the target.
+    The displacement is meaningful tactical output that neither existing
+    Skirmish technique produces.
+  restrictions: []
+  tags:
+    - active
+    - attack
+    - skirmish
+    - hostigamiento
+    - atb_disruption
+    - tempo_theft
+    - vesper
