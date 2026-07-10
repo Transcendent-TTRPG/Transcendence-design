@@ -14882,3 +14882,78 @@ pilot_examples:
     - critical_threshold
     - counter
     - vesper
+
+- name: La Brecha Contada
+  name_en: The Counted Breach
+
+  id: 123
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic gap mapping — echolocation identifies the precise angle where armor does not reach
+    focus: T.I. bypasses Bloqueo equal to competence rank; no movement, pure penetration
+    holder: Any practitioner with Perforation weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Perforation
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_perforation_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_perforation
+    effect_on_failure: technique_ends
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    Active Perforation attack. On hit, resolves T.I. that ignores Bloqueo
+    equal to the practitioner's competence rank — acoustic pre-mapping
+    identified the exact angle where protection did not reach.
+  effect: >
+    Make a T.A. with your Perforation profile. If you miss, the technique
+    ends. On hit, resolve T.I. This T.I. ignores a Bloqueo value equal to
+    your competence rank — acoustic pre-mapping of the target identified the
+    precise angle where protection does not reach before the strike began.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — active Perforation attack with armor bypass
+    output. Rhythm 5 matches existing Perforation techniques at the same tier
+    (Recuperar la Distancia, Clavar el Paso, both 5/1). Attrition 2 reflects
+    two functional surfaces: the attack damage and the Bloqueo bypass scaled
+    by rank. Neither existing Perforation technique modifies impact output;
+    this fills that gap with a precision penetration mechanic.
+  restrictions: []
+  tags:
+    - active
+    - attack
+    - perforation
+    - perforacion
+    - armor_bypass
+    - bloqueo
+    - vesper
