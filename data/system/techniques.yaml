@@ -14957,3 +14957,80 @@ pilot_examples:
     - armor_bypass
     - bloqueo
     - vesper
+
+- name: La Grieta Elegida
+  name_en: The Chosen Tear
+
+  id: 124
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic internal mapping — echolocation identifies most vulnerable internal structure before claws arrive
+    focus: T.I. rolled twice take higher; damage quality amplification rather than condition or armor bypass
+    holder: Any practitioner with Rend weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Rend
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_rend_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_rend
+    effect_on_failure: technique_ends
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    Active Rend attack. On hit, resolves T.I. rolled twice, taking the higher
+    result — acoustic pre-mapping identified the most vulnerable internal
+    structure before the claws arrived.
+  effect: >
+    Make a T.A. with your Rend profile. If you miss, the technique ends. On
+    hit, resolve T.I. For this T.I., roll twice and use the higher result —
+    acoustic pre-mapping of the target identified the most vulnerable internal
+    structure before the claws arrived.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — active Rend attack with T.I. advantage output.
+    Rhythm 5 matches existing Rend techniques at the same tier (Abrir la
+    Vasija 5/2, Abrir la Costura 5/1). Attrition 2 reflects two functional
+    surfaces: the attack and the precision internal routing that amplifies
+    damage quality. T.I. advantage is approximately 20-30% expected damage
+    increase. Fills the third distinct axis on the Rend profile: Abrir la
+    Vasija covers condition application (Lacerado), Abrir la Costura covers
+    Bloqueo bypass, this covers raw impact quality.
+  restrictions: []
+  tags:
+    - active
+    - attack
+    - rend
+    - desgarro
+    - ti_advantage
+    - damage_quality
+    - vesper
