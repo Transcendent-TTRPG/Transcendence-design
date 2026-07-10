@@ -14802,3 +14802,83 @@ pilot_examples:
     - atb_disruption
     - tempo_theft
     - vesper
+
+- name: La Falla Anuncia
+  name_en: The Failure Announces
+
+  id: 122
+  status: authored
+  origin:
+    main: Weapon Profile
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic failure-read — a missed attack acoustically announces the vital line it exposed
+    focus: Reactive counter on enemy miss; critical threshold reduction matching Encontrar la Parte Blanda
+    holder: Any practitioner with Lethality weapon access
+    transmission: weapon_profile_training
+    availability: Open
+  category: attack
+  type: reactive
+  trigger: >
+    An enemy's T.A. against the user fails (their attack roll misses).
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Lethality
+    armor_competency: null
+    support_specializations: []
+    equipment:
+      - any_weapon_natural_attack_or_item_with_lethality_access
+    states: []
+    prerequisite_techniques: []
+  target: 1_creature
+  range: weapon_reach
+  area: 1_creature
+  duration:
+    model: instantaneous
+    value: null
+    sustain_rule: null
+    end_rule: null
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  roll:
+    model: ta_lethality
+    effect_on_failure: no_additional_effect
+  saving_roll:
+    model: none
+    effect_on_success: null
+  description: >
+    Reactive Lethality counter triggered by an enemy miss. On hit, resolves
+    T.I. with Critical Impact threshold reduced by competence rank band:
+    ranks 1-2 reduce by 1, ranks 3-4 by 2, ranks 5-6 by 3.
+  effect: >
+    When an enemy's T.A. against you fails, make a T.A. with your Lethality
+    profile against that enemy. On hit, resolve T.I. The Critical Impact
+    threshold for this T.I. is reduced according to your competence rank:
+    ranks 1-2 reduce by 1, ranks 3-4 by 2, ranks 5-6 by 3.
+  cost_note: >
+    Rhythm 5 / Attrition 2 — reactive Lethality counter on enemy miss with
+    critical threshold reduction. Rhythm 5 reflects the reactive precision
+    strike fired in the enemy's action window. Attrition 2 reflects two
+    functional surfaces: the counter-attack damage and the critical threshold
+    reduction executed under reactive combat pressure. Counterpart to
+    Encontrar la Parte Blanda (4/1 active): this is more expensive because
+    it requires no pre-existing exposed vital — the enemy's miss creates the
+    opening — and fires from the enemy's action window without consuming the
+    user's activation.
+  restrictions:
+    - fires_only_when_enemy_ta_fails_against_user
+  tags:
+    - reactive
+    - attack
+    - lethality
+    - letalidad
+    - critical_threshold
+    - counter
+    - vesper
