@@ -42,7 +42,7 @@ concept_confirmed: true
 
 | T.A. | T.I. | Alcance | Dado | Perfiles |
 | --- | --- | --- | --- | --- |
-| Agilidad | Agilidad | 3 m | d6 | Torsión · Interrupción · Impredecibilidad · Corrosión |
+| Agilidad | Agilidad | 3 m | d6 | Torsión · Interrupción · Impredecible · Corrosión |
 
 **Efecto:** Si T.A. > T.D., el objetivo realiza T.R. Veneno. Si falla, queda afectado por el compuesto. Severidad escala por rango del portador: 1–2 Leve, 3–4 Moderado, 5–6 Grave. El efecto específico del compuesto varía por linaje — ver variantes de clan (pendiente de sesión de diseño).
 
@@ -206,7 +206,7 @@ The Bufoni that other species actually meet are neutral-site custodians (at aggr
 - *En cuerpo a cuerpo:* Reposicionamiento inmediato; si hay posición válida, Oculto se mantiene. Restringido a ataques con Lengua.
 
 **Armas Naturales:**
-- *Lengua (Todos los Bufoni)*: Principal. Agilidad/Agilidad. 3m alcance. Perfiles: Torsión, Interrupción, Impredecibilidad, Corrosión. Efecto: Si T.A. supera T.D., el objetivo hace T.R. Veneno o sufre el efecto de la neurotoxina de su linaje. Severidad escala con rango.
+- *Lengua (Todos los Bufoni)*: Principal. Agilidad/Agilidad. 3m alcance. Perfiles: Torsión, Interrupción, Impredecible, Corrosión. Efecto: Si T.A. supera T.D., el objetivo hace T.R. Veneno o sufre el efecto de la neurotoxina de su linaje. Severidad escala con rango.
 
 ### Combat identity
 

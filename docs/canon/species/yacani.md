@@ -90,7 +90,7 @@ Hablan el **Yakan**, un idioma profundo y de resonancias bajas, diseñado para e
 Expulsión a presión del fango cáustico acumulado en su cámara estomacal.
 - T.A.: Tenacidad | T.I.: Tenacidad | Daño: d6 | Alcance: 5m
 - Durabilidad: 3 × rango | Potencia: 4 × rango
-- Perfiles: Corrosión, Hostigamiento, Interrupción, Impredecibilidad
+- Perfiles: Corrosión, Hostigamiento, Interrupción, Impredecible
 - Efecto Sistémico: Si T.A. > T.D., el objetivo realiza T.R. Veneno. Si falla, sufre el estado **Erosionado**.
 
 **Herencia — Fisiología Divergente:**

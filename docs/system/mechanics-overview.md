@@ -23,6 +23,7 @@ Load only the sections relevant to the current task. Do not read the full docume
 | Technique authoring — interaction surfaces | §Ailments · §Wounds & Damage · §ATB Combat Timeline · §Environmental Conditions · §General Rules |
 | Creature design | §Creature System · §Ailments · §Size & Scale |
 | Limbo / vestigo design | §Limbo Manifestations · §Ailments |
+| Trap or alchemy Technique design | §Traps · §Alchemy · §Materials & Fabrication |
 
 ---
 
@@ -53,6 +54,9 @@ Load only the sections relevant to the current task. Do not read the full docume
 | Natural Attack Forms | `natural-attack-forms.yaml` | Anatomy contact logic, compatible profiles, restricted profiles, species-level combat expression |
 | Backgrounds | `backgrounds.md` | Starting specialization package, major affinity, creation-time Synapsis spread |
 | Technique Origins | `technique-origins.md` | Origin front, transmission, availability, world-grounded access to Techniques |
+| Economy & Shekels | `10-equipment-and-resources/es/03-economia-y-shekels.md` (corebook) | Cost baseline, income pressure, maintenance requirement, material value gate |
+| Alchemy | `10-equipment-and-resources/es/05-alquimia.md` (corebook) | Formula gate, reagent access, fabrication roll, administration route, compound effect delivery |
+| Traps | `10-equipment-and-resources/es/06-trampas.md` (corebook) | Diagram gate, fabrication roll, detection threshold, disarm roll, activation trigger |
 | Creature System | `docs/system/creatures.md` · `14-adversaries-and-bestiary/es/` (corebook) | Nature, Category, Role, Zone HP/Bloqueo, zone covering, NR offset, roll formulas, traits, autonomous cycles, Elite phases, natural weapon grade |
 
 ---
@@ -224,6 +228,34 @@ Do not overload this layer with:
 - or full fabrication/refinement procedures.
 
 Use it as the fast baseline for ordinary physical play, then hand off to the more specific system when the object becomes mechanically deeper.
+
+---
+
+## Economy & Shekels
+
+**Authority:** `core-books/transcendence-corebook/10-equipment-and-resources/es/03-economia-y-shekels.md`
+
+The Shekel is the universal currency — consensus-backed, not state-backed. Cost of living, wages, income from contracts, and inter-settlement surcharges are defined here. Equipment with living components requires periodic maintenance costs.
+
+Use this layer when an authored element needs to touch:
+
+- the cost of survival at specific comfort levels (Subsistencia / Cómodo / Próspero);
+- the value of specialization as a measurable wage (by rank);
+- income pressure from contracts, material sales, or field services;
+- maintenance requirements for living-component equipment.
+
+### Main ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Reduce maintenance cost of a living-component item | Upkeep pressure mitigation |
+| Gate a Technique on carrying a purchased compound or tool | Equipment dependency |
+| Shift income value of extracted materials | Exploration incentive framing |
+| Allow specialization service work in an encounter (triage, fabrication) | Scene-level economic action |
+
+### Design rule
+
+Economy is world context, not a primary Technique surface. Techniques should not generate or destroy Shekels directly. Use this layer only when the cost of a tool, compound, or maintenance requirement is the real access condition for a Technique.
 
 ---
 
@@ -852,6 +884,105 @@ preserved, transformed, and refined into authored outputs.
 Techniques may touch this layer, but they should not replace whole crafting,
 extraction, or production loops. They should usually set up, preserve, exploit,
 or accelerate one bounded interaction that the material system already owns.
+
+---
+
+## Alchemy
+
+**Authority:** `core-books/transcendence-corebook/10-equipment-and-resources/es/05-alquimia.md`
+
+Alchemy produces compounds — elixirs and venoms — from creature reagents (fluids, glands, organs, nervous system) combined with botanical reactants. It is not magic; it is biological chemistry applied to survival and combat delivery.
+
+### Fabrication structure
+
+Two-phase production: field preparation of **Índices Alquímicos** (possible in camp with a Kit Alquímico), then synthesis in a fixed installation. Each formula specifies reagents, required hours, difficulty, and dose yield.
+
+| Reagent type | Accessibility | Fabrication difficulty |
+| --- | --- | --- |
+| Fluidos | General | Desafiante |
+| Glándulas | Limitada | Exigente |
+| Órganos | Limitada | Exigente |
+| Sistema nervioso | Singular | Extremo |
+
+### Formula rarity
+
+| Rareza | Work hours | Doses | Base difficulty |
+| --- | --- | --- | --- |
+| Común | 12 h | 1d4 | Desafiante |
+| Rara | 24 h | 1d3 | Exigente |
+| Excepcional | 36 h | 1d2 | Extremo |
+
+A Formula is a prerequisite document consumed in use only by being owned — multiple batches can be run from the same formula indefinitely.
+
+### Administration routes
+
+| Route | Delivery condition |
+| --- | --- |
+| Ingestión | Target swallows voluntarily or is forced |
+| Inhalación | Inhaled gas, dust, or vapor — can affect an area |
+| Contacto | Contact with skin or mucous membranes |
+| Inoculación | Introduced directly into bloodstream via blade, needle, or coated claw |
+
+### Main ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Gate a Technique on carrying a specific compound | Tool dependency |
+| Reduce Alquimia fabrication roll difficulty | Specialist efficiency |
+| Deliver an Ailment via a compound instead of direct attack | Alternate delivery vector |
+| Reduce required work hours for a formula tier | Accelerated production |
+| Extend compound duration | Persistence modification |
+
+### Design rule
+
+Alchemy produces the compound; it does not resolve the delivery. The moment of combat delivery (coating a blade, dispersing a gas, forcing ingestion) is a separate action that may carry its own Technique interaction. Keep the fabrication layer and the delivery layer distinct.
+
+---
+
+## Traps
+
+**Authority:** `core-books/transcendence-corebook/10-equipment-and-resources/es/06-trampas.md`
+
+Traps are passive hostility embedded in terrain. They are authored objects with a trigger condition and an effect that fires without the fabricator's presence. Fabricating, detecting, and disarming traps all belong to the specialization **Trampas**; fabrication requires the specialization **Ingeniería** and a Diagram.
+
+### Trap types
+
+| Type | Principle | Additional cost |
+| --- | --- | --- |
+| Mecanismo | Springs, cables, counterweights, blades, projectiles | — |
+| Ilusorio | Perceptual deception — perspective, camouflage, shadow | +50 S |
+| Ambiental | Terrain manipulation — hidden pits, unstable surface, weight accumulation | +50 S |
+| Vivo | Armed ecosystem engineering — spore capsules, parasitic nests, manipulated flora | +100 S |
+| Umbral | Tauma-impregnated materials with fixed extranatural properties | +250 S (Rara or Excepcional only) |
+
+### Fabrication parameters
+
+| Rareza | Work hours | Fabrication difficulty | Detection difficulty | Disarm difficulty |
+| --- | --- | --- | --- | --- |
+| Común | 4 h | Desafiante | Desafiante | Desafiante |
+| Rara | 10 h | Exigente | Exigente | Exigente |
+| Excepcional | 24 h | Extremo | Exigente | Exigente |
+
+Field fabrication requires a Kit de Trampas of the appropriate grade. A workshop replaces the kit requirement.
+
+### Detection and disarming
+
+- **Detection**: `T.E. (Percepción)` or `T.E. (Ingeniería)` at the trap's difficulty, modified by environmental conditions. A character who declares cautious movement is considered to roll.
+- **Disarming**: `T.E. (Ingeniería)` at the trap's rarity difficulty. On failure, Narrator determines whether the trap fires, is damaged, or simply resists.
+
+### Main ability surfaces
+
+| Surface | Effect type |
+| --- | --- |
+| Reduce detection difficulty of a trap being searched | Concealment quality |
+| Reduce disarming difficulty for a specific trap type | Specialist access |
+| Reduce installation time for a rareza tier | Field deployment speed |
+| Gate trap access on Diagrama possession | Blueprint dependency |
+| Cause a trap to apply a named Alteración on activation | Ailment delivery via terrain object |
+
+### Design rule
+
+Traps activate without player action — do not design Techniques that require the trap to be active and the fabricator to also be acting in the same moment. The trap is the Technique; the player's role is setup, not trigger.
 
 ---
 

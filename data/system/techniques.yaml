@@ -6217,6 +6217,12 @@ pilot_examples:
       other:
         - activation_is_part_of_the_protected_action_and_does_not_advance_the_atb_marker
         - additional_attrition_may_be_paid_before_resolution_on_a_strict_1_to_1_mitigation_basis
+    activation_roll:
+      type: specialization_roll
+      specialization: Tolerancia
+      difficulty_model: severity_based
+      difficulty_table: {Leve: Fundamental, Moderada: Desafiante, Grave: Rigurosa}
+      on_failure: no_effect_produced_cost_still_paid
     saving_roll:
       model: none
       effect_on_success: null
@@ -6234,19 +6240,23 @@ pilot_examples:
       severity, wound pressure uses its already established execution burden,
       and Fatigue uses the concrete penalty currently defined in the scene.
       Guardar el Pulso does not invent a new burden and does not replace the
-      source's normal application, duration, recovery, or removal rules. For
-      this one resolution, pay the base Attrition 1. The user may then pay
-      additional Attrition before resolution, up to a maximum additional
-      amount equal to their Tolerancia competency rank. Each additional
-      1 Attrition increases the preserved mitigation by 1 on a strict 1:1
-      basis. Then choose one: reduce one stepped bodily penalty source by 1
-      plus extra Attrition paid steps for this action or duty, to a minimum of
-      none; if the source does not use severity steps, ignore up to 1 plus
-      extra Attrition paid points of one concrete penalty from that source for
-      this resolution; prevent one already declared physical action from being
-      interrupted by that bodily burden, as long as the action remains
-      physically possible; or maintain one held duty until the user's next
-      activation or until the immediate exploration beat resolves, such as
+      source's normal application, duration, recovery, or removal rules. Make
+      a T.E. (Tolerancia) roll; difficulty is determined by the severity of
+      the triggering bodily burden: Leve → Fundamental, Moderada → Desafiante,
+      Grave → Rigurosa. On failure, the base Attrition 1 cost is paid but no
+      effect occurs. On success, for this one resolution, pay the base
+      Attrition 1. The user may then pay additional Attrition before
+      resolution, up to a maximum additional amount equal to their Tolerancia
+      competency rank. Each additional 1 Attrition increases the preserved
+      mitigation by 1 on a strict 1:1 basis. Then choose one: reduce one
+      stepped bodily penalty source by 1 plus extra Attrition paid steps for
+      this action or duty, to a minimum of none; if the source does not use
+      severity steps, ignore up to 1 plus extra Attrition paid points of one
+      concrete penalty from that source for this resolution; prevent one
+      already declared physical action from being interrupted by that bodily
+      burden, as long as the action remains physically possible; or maintain
+      one held duty until the user's next activation or until the immediate
+      exploration beat resolves, such as
       carrying a body, holding a gate, keeping a grip, remaining standing,
       staying braced, or continuing a short forced movement. After the
       preserved function resolves, all wounds, Fatigue, Ailments, penalties,
@@ -12749,6 +12759,12 @@ pilot_examples:
       rhythm_cost: 0
       attrition_cost: 2
       other: []
+    activation_roll:
+      type: specialization_roll
+      specialization: Enfoque
+      difficulty_model: fundamental
+      difficulty_note: narrator_may_increase_for_severe_interruptions
+      on_failure: no_effect_produced_cost_still_paid
     saving_roll:
       model: none
       effect_on_success: null
@@ -15114,4 +15130,1539 @@ pilot_examples:
     - pursuit
     - movement
     - zone_control
+    - vesper
+
+- name: La Cuenta del Cuerpo
+  name_en: The Body's Account
+
+  id: 126
+  status: authored
+  origin:
+    main: Medicina
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Collapse Timing / Wound Reading
+    focus: Medicine / Anatomical Reading
+    holder: Vesper blood ritualists and line keepers
+    transmission: blood_ritual_practice_anatomical_reading_and_line_custodianship_knowledge
+    availability: Open
+    adaptation_notes: >
+      The Technique originates in Vesper blood ritual practice and acoustic
+      anatomical reading, where reading a body's current state is a core
+      discipline. Outsiders can learn an equivalent through any disciplined
+      medical training that teaches wound progression, collapse timing, and
+      how a compromised body performs under continued pressure.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Medicina
+    equipment: []
+    states:
+      - target_must_have_at_least_one_active_alteration
+    prerequisite_techniques: []
+  target: one_creature_within_personal_range
+  range: personal
+  area: one_creature
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_the_target_has_no_active_alterations
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Medicina
+    difficulty_model: nature_based
+    difficulty_table: {Mortal: Desafiante, Anomalía: Rigurosa, Primordial: Exigente}
+    on_failure: no_effect_produced
+  saving_roll: null
+  description: >
+    The body in a compromised state announces its next failure. A practitioner
+    who has learned to read that announcement does not need to search for the
+    opening — it is already declared.
+  effect: >
+    Choose one creature within personal range that has at least one active
+    Alteration. While that creature retains at least one active Alteration,
+    your T.I. against it carries a bonus equal to your competence rank in
+    Medicina. This effect ends immediately if the target loses all active
+    Alterations.
+  scaling: >
+    Higher competence rank in Medicina increases the T.I. bonus directly. At
+    higher ranks the technique also benefits from the broader Alteration
+    access that accompanies deeper combat experience.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique is a read, not a strike — it costs
+    attention and cognitive focus but no physical execution. The precondition
+    (target must have an active Alteration) is a real restriction: the
+    technique is unavailable against unmarked targets and ends the moment the
+    condition is resolved.
+  restrictions:
+    - requires_at_least_one_active_alteration_on_target_to_activate
+    - ends_immediately_if_all_alterations_on_target_are_removed_or_expire
+    - bonus_applies_only_to_user_ti_not_to_allies
+    - only_one_instance_of_this_technique_may_be_active_per_target
+  tags:
+    - utility
+    - setup
+    - medicina
+    - condition
+    - wound_reading
+    - permanente
+    - vesper
+
+- name: El Ángulo Estudiado
+  name_en: The Studied Angle
+
+  id: 127
+  status: authored
+  origin:
+    main: Alquimia
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Reaction Timing / Threshold Reading
+    focus: Alchemy / Reaction System Analysis
+    holder: Vesper blood ritualists and analytical practitioners
+    transmission: blood_ritual_process_analysis_and_compound_reaction_reading_applied_to_biological_systems
+    availability: Open
+    adaptation_notes: >
+      The Technique originates in Vesper alchemical practice, where reading
+      when a system will react — and when it will fail to react — is a core
+      analytical discipline. Outsiders can learn an equivalent through any
+      disciplined alchemy training that teaches reaction timing, threshold
+      identification, and dosage logic applied to living systems.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Alquimia
+    equipment: []
+    states: []
+    prerequisite_techniques: []
+  target: one_creature_within_personal_range
+  range: personal
+  area: one_creature
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_activated_against_a_different_target_or_when_the_encounter_ends
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Alquimia
+    difficulty_model: nature_based
+    difficulty_table: {Mortal: Desafiante, Anomalía: Rigurosa, Primordial: Exigente}
+    on_failure: no_effect_produced
+  saving_roll: null
+  description: >
+    A reaction system is predictable once you have studied its angle. The
+    practitioner does not wait for the target to react — they have already
+    mapped when and how that reaction will fire, and prepared their approach
+    to arrive before it closes.
+  effect: >
+    Choose one creature. While this effect is active, every T.R. that
+    creature makes in response to your actions is made at a penalty equal to
+    your competence rank in Alchemy. This effect ends if you activate this
+    technique against a different target, or when the encounter ends.
+  scaling: >
+    Higher competence rank in Alchemy increases the T.R. penalty directly.
+    The technique does not change structure at higher ranks — its value
+    scales through the deepening accuracy of the reaction read.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique is an analysis, not a strike.
+    Unlike La Cuenta del Cuerpo, it requires no active Alteration on the
+    target — any system under stress has readable reaction intervals. The
+    sustained duration without per-use cost reflects that the read, once
+    established, remains valid as long as the target's approach pattern does
+    not fundamentally change.
+  restrictions:
+    - only_one_target_may_be_analyzed_at_a_time
+    - penalty_applies_only_to_tr_made_in_response_to_the_users_actions_not_any_source
+    - ends_immediately_on_activation_against_a_new_target
+    - ends_when_encounter_ends
+  tags:
+    - utility
+    - setup
+    - alquimia
+    - reaction_reading
+    - tr_penalty
+    - permanente
+    - vesper
+
+- id: 128
+  status: authored
+  origin:
+    main: Herboristería
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Biological Contamination Reading / Living Source Discrimination
+    focus: Herboristería / Contamination Avoidance
+    holder: Vesper field herbalists and biological threat practitioners
+    transmission: herbalist_field_training_applied_to_biological_threat_recognition_in_hostile_contexts
+    availability: Open
+    adaptation_notes: >
+      The Technique originates in Vesper herbalist practice, where reading
+      the biological state of a living source — whether it is contaminated,
+      what it carries, and how that contamination spreads — is a foundational
+      field skill. Outsiders can learn an equivalent through any serious
+      herbalist training that teaches contamination recognition, vector
+      identification, and calibrated vigilance against biological threat.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Herboristería
+    equipment: []
+    states: []
+    prerequisite_techniques: []
+  target: one_creature_within_personal_range
+  range: personal
+  area: one_creature
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_activated_against_a_different_target_or_when_the_encounter_ends
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Herboristería
+    difficulty_model: nature_based
+    difficulty_table: {Mortal: Desafiante, Anomalía: Rigurosa, Primordial: Exigente}
+    on_failure: no_effect_produced
+  saving_roll: null
+  description: >
+    What is contaminated already shows it. The practitioner does not need
+    to examine the target in a controlled environment — years of reading
+    biological state in the field have built a pattern library that applies
+    to any living source under pressure. A successful read maps what the
+    organism carries and how it spreads; calibrated vigilance follows
+    naturally from knowing the route.
+  effect: >
+    Choose one creature and make a T.E. de Herboristería against Fundamental
+    difficulty (5 + NR of the target). On success: you know whether that
+    target carries any active Infection or Poison, including incubation
+    period, and what contact type activates its Contagio risk. In addition,
+    your T.R. against any Infection or Poison inflicted directly by that
+    target receives a bonus equal to your competence rank in Herboristería.
+    This effect ends if you activate this technique against a different
+    target, or when the encounter ends.
+  scaling: >
+    Higher competence rank in Herboristería increases the T.R. bonus
+    directly. The technique does not change structure at higher ranks —
+    its value scales through the deepening precision of the biological read.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The activation roll (T.E. Herboristería)
+    represents applying field-learned biological discrimination to a living
+    opponent under combat pressure — not a test of whether the practitioner
+    has the knowledge, but whether the read succeeds against this specific
+    organism in this specific moment.
+  restrictions:
+    - only_one_target_may_be_analyzed_at_a_time
+    - tr_bonus_applies_only_to_infection_or_poison_from_the_target_directly_not_any_source
+    - activation_roll_required_on_each_use_effect_does_not_persist_across_re_activations_against_new_targets
+    - ends_immediately_on_activation_against_a_new_target
+    - ends_when_encounter_ends
+  tags:
+    - utility
+    - setup
+    - herboristeria
+    - contamination_reading
+    - infection
+    - poison
+    - tr_bonus
+    - permanente
+    - vesper
+
+- id: 129
+  status: authored
+  origin:
+    main: Orientación
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Acoustic Spatial Reading / Enclosed Space Orientation
+    focus: Orientación / Spatial Reference Under Pressure
+    holder: Vesper outer gatherers and field readers trained in disorienting environments
+    transmission: acoustic_spatial_reasoning_applied_to_hostile_encounter_geometry
+    availability: Open
+    adaptation_notes: >
+      The Technique originates in Vesper acoustic orientation practice, where
+      reading a space through reflected sound builds a positional model
+      independent of visual reference. Outsiders can learn an equivalent
+      through any disciplined Orientation training that teaches spatial
+      anchoring, reference point selection, and positional continuity under
+      confusing or hostile conditions.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Orientación
+    equipment: []
+    states: []
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: 10_meters_times_orientacion_competence_rank
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_technique_is_reactivated_or_user_leaves_encounter
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Orientación
+    difficulty_model: narrator_set
+    difficulty_basis: environmental_conditions
+    on_failure: no_effect_produced
+  saving_roll: null
+  description: >
+    Space doesn't need to be visible to be known. A practitioner who has
+    built their spatial model from acoustic feedback, movement memory, and
+    reference anchoring does not lose their position when the room goes dark
+    or someone tries to move them. The reference was established before any
+    of that happened.
+  effect: >
+    Make a T.E. (Orientación). The Narrator sets the difficulty based on
+    environmental conditions. On failure, no effect. On success, establish
+    a spatial reference point with radius equal to 10 meters times the user's
+    competence rank in Orientación. While the effect is active, any forced
+    displacement suffered within the zone does not determine the user's
+    landing position — the user may redirect the displacement vector to any
+    direction within the distance indicated by the source. At the moment of
+    activation, the user registers a mental map of the area: positions of
+    creatures, objects, and terrain as they were at that instant. The user
+    may consult this map with the Narrator at any point during the encounter;
+    it provides activation-moment positions, not current positions. The effect
+    ends if the technique is reactivated or the user leaves the encounter.
+  scaling: >
+    The reference area scales directly with Orientación competence rank:
+    10 meters at Novice rank, up to 60 meters at maximum rank (equivalent
+    to normal sensory range). Both the displacement control and the mental
+    map snapshot scale with this area — at low ranks the reference covers
+    a single room or corridor; at high ranks it covers a full encounter zone.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique requires a deliberate moment of
+    spatial reading on the ATB track. Attrition 1 reflects the cost of
+    maintaining a reliable positional model under simultaneous combat
+    pressure — the reference does not hold itself.
+  restrictions:
+    - forced_displacement_redirection_applies_only_while_user_remains_within_the_reference_zone
+    - mental_map_provides_positions_at_time_of_activation_not_live_tracking
+    - only_one_reference_may_be_active_at_a_time
+    - reactivation_replaces_previous_reference
+    - ends_when_encounter_ends
+  tags:
+    - utility
+    - setup
+    - orientacion
+    - spatial_reference
+    - displacement_control
+    - mapping
+    - scaling_area
+    - permanente
+    - vesper
+
+- id: 130
+  status: authored
+  origin:
+    main: Identificación
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Biological Pre-Movement Reading / Anatomical Pattern Classification
+    focus: Identificación / Pre-Action Biological Pattern Recognition
+    holder: Vesper anatomists and biological specimen readers with combat field experience
+    transmission: anatomical_classification_of_pre_movement_biological_patterns_applied_to_combat_reading
+    availability: Open
+    adaptation_notes: >
+      The Technique originates in Vesper anatomical practice, where reading a
+      living specimen's biological state — muscle tension, respiratory shift,
+      circulatory distribution — builds a pattern library for predicting how
+      a body is about to act. Outsiders can learn an equivalent through any
+      disciplined Identification training that teaches classification of
+      biological pre-movement states rather than static category assignment.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Identificación
+    equipment: []
+    states:
+      - target_must_be_observable
+    prerequisite_techniques: []
+  target: one_creature_within_sensory_range
+  range: personal
+  area: one_creature
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_activated_against_a_different_target_or_when_the_encounter_ends
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Identificación
+    difficulty_model: nature_based
+    difficulty_table: {Mortal: Desafiante, Anomalía: Rigurosa, Primordial: Exigente}
+    on_failure: no_effect_produced
+  saving_roll: null
+  description: >
+    The body commits before the decision does. A practitioner who has
+    classified enough biological pre-movement states does not need to wait
+    for the action to arrive — the pattern was already visible in the
+    distribution of tension, breath, and weight that preceded it.
+  effect: >
+    Choose one observable creature and make a T.E. (Identificación) against
+    difficulty by target Nature: Mortal → Desafiante, Anomalía → Rigurosa,
+    Primordial → Exigente. On failure, no effect. On success, the user reads
+    the target's biological pre-movement patterns. While this effect is active,
+    the user's T.D. against any action from that target carries a bonus equal
+    to their competence rank in Identificación. In addition, any reaction that
+    target executes as a direct response to one of the user's activations
+    carries a Ritmo penalty equal to the user's competence rank in
+    Identificación. The effect ends if the technique is activated against a
+    different target or when the encounter ends.
+  scaling: >
+    Both effects scale directly with Identificación competence rank. The T.D.
+    bonus and the Ritmo penalty on the target's reactions each increase by 1
+    per rank. At Novice rank both values are 1; at maximum rank both values
+    are 6, making committed defensive reading a significant tactical pressure
+    against reactive opponents.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique requires a deliberate moment of
+    biological classification on the ATB track. Attrition 1 reflects the
+    sustained cognitive load of maintaining an active pre-movement read
+    under combat pressure — the pattern library does not run itself.
+  restrictions:
+    - target_must_be_observable_at_time_of_activation
+    - td_bonus_applies_only_to_actions_directed_at_the_user_not_all_actions_the_target_takes
+    - ritmo_penalty_applies_only_to_reactions_triggered_by_the_users_own_activations
+    - only_one_target_may_be_read_at_a_time
+    - switching_targets_ends_the_previous_effect_immediately
+    - ends_when_encounter_ends
+  tags:
+    - utility
+    - setup
+    - counter_read
+    - identificacion
+    - pre_movement_reading
+    - td_bonus
+    - ritmo_penalty
+    - reaction_disruption
+    - permanente
+    - vesper
+
+- name: Lo Que el Gesto Revela
+  id: 131
+  species: Vesper
+  specialization_domain: Interpretación
+  tier: Novice
+  flavor: >
+    No se lo propuso. El gesto lo dijo igual.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Interpretación
+    equipment: []
+    states:
+      - target_must_be_observable
+    prerequisite_techniques: []
+  target: one_creature_within_sensory_range
+  range: personal
+  area: one_creature
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_the_encounter_ends
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: opposed_roll
+    character_roll: specialization_roll
+    specialization: Interpretación
+    creature_roll: characteristic_roll
+    creature_characteristic: highest_of_Aura_Presencia
+    on_failure: no_effect_produced_cost_still_paid
+  saving_roll: null
+  description: >
+    Behavior is not neutral. A creature that projects itself forcefully —
+    through dominant posture, territorial signaling, or intentional
+    intimidation — obscures its actual trait triggers behind that projection.
+    A Vesper practitioner of Interpretación learns to read through the
+    projection to the underlying behavioral pattern: the trigger condition
+    that activates the creature's execution advantage.
+  effect: >
+    Choose one observable creature and make a T.E. (Interpretación). Difficulty
+    is determined by the higher of the target's Aura and Presencia: 0–1 →
+    Fundamental, 2–3 → Desafiante, 4–5 → Rigurosa, 6+ → Exigente. On failure,
+    no effect. On success, the user recognizes one or more hidden traits in the
+    target's behavior. Number of traits revealed by Interpretación competence
+    rank: rank 1–2 → 1 trait, rank 3–4 → 2 traits, rank 5–6 → 3 traits. For
+    each revealed trait, the Narrator discloses its name and which roll type
+    grants the creature Ventaja de Ejecución — the trigger condition is not
+    revealed; the player must deduce it by observing the creature during the
+    encounter. If the player identifies and neutralizes a trigger condition,
+    the target loses the corresponding Ventaja de Ejecución until the condition
+    is restored. Ends when the encounter ends.
+  scaling: >
+    Scales with Interpretación competence rank: rank 1–2 reveals 1 trait,
+    rank 3–4 reveals 2 traits, rank 5–6 reveals 3 traits. Higher rank also
+    improves the S.R. result, making it possible to read creatures with high
+    Aura or Presencia that would otherwise exceed the practitioner's difficulty
+    ceiling.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique requires deliberate behavioral
+    observation on the ATB track. Attrition 1 reflects the sustained
+    cognitive effort of pattern-reading under combat pressure — trait triggers
+    are not visible; they must be inferred from accumulated behavioral data
+    in real time.
+  restrictions:
+    - target_must_be_observable_at_time_of_activation
+    - difficulty_set_by_max_of_aura_and_presencia_not_by_nature
+    - number_of_traits_revealed_by_interpretacion_competence_rank_not_a_flat_value
+    - trigger_condition_is_not_revealed_player_must_deduce_it_through_observation
+    - revealed_traits_only_lose_execution_advantage_if_trigger_is_actively_neutralized
+    - ends_when_encounter_ends
+  tags:
+    - utility
+    - information
+    - trait_reveal
+    - behavioral_reading
+    - interpretacion
+    - rasgo
+    - scaling
+    - permanente
+    - vesper
+
+- name: El Ángulo Muerto
+  name_en: The Dead Angle
+
+  id: 132
+  status: authored
+  origin:
+    main: Sigilo
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Acoustic Masking / Sensory Suppression
+    focus: Exploit visual inattention through complete non-visual signal suppression
+    holder: Vesper practitioners of Sigilo
+    transmission: vesper_acoustic_training_applied_to_sensory_signal_suppression
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper echolocation discipline, where suppressing one's
+      own acoustic signature is a foundational skill. Any practitioner who
+      learns Vesper-style sensory masking can apply this Technique regardless
+      of species.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Sigilo
+    equipment: []
+    states:
+      - no_enemy_target_has_direct_line_of_sight_at_activation
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: personal
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_oculto_state_is_compromised_by_standard_concealment_rules
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Sigilo
+    difficulty_model: narrator_set_by_non_visual_signals_in_environment
+    on_failure: no_effect_produced_cost_still_paid
+  saving_roll: null
+  description: >
+    When an enemy's gaze is elsewhere, a Vesper practitioner exploits the gap
+    by suppressing every non-visual signal — sound, scent, vibration — in the
+    instant before that gaze returns. No physical cover is required; the body
+    is not hidden, only its sensory footprint is erased.
+  effect: >
+    Requires that no enemy target has direct line of sight on the user at the
+    moment of activation. Make a T.E. (Sigilo). Difficulty is set by the
+    Narrator based on non-visual signals present in the environment (ambient
+    sound, scent, vibration). On failure, no effect. On success, the user
+    gains the Oculto state against all enemies who lacked line of sight at
+    activation. The active Oculto value equals the T.E. (Sigilo) result. No
+    physical cover is required. The state is maintained and compromised
+    according to the standard rules of Concealment.
+  scaling: >
+    Scales naturally: higher Sigilo competence rank produces a higher T.E.
+    result, which becomes the active Oculto value, making detection harder
+    for enemies using Percepción.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique requires timed sensory suppression
+    coordinated with the enemy's visual gap — it occupies a real ATB window.
+    Attrition 1 reflects the effort of suppressing every non-visual channel
+    simultaneously under combat pressure.
+  restrictions:
+    - no_enemy_target_may_have_direct_line_of_sight_at_activation
+    - oculto_value_equals_te_sigilo_result
+    - no_physical_cover_required
+    - ends_when_oculto_is_compromised_by_standard_concealment_rules
+  tags:
+    - utility
+    - oculto
+    - concealment
+    - sensory_suppression
+    - acoustic_masking
+    - sigilo
+    - no_cover
+    - permanente
+    - vesper
+
+- name: La Señal Repetida
+  name_en: The Repeated Signal
+
+  id: 133
+  status: authored
+  origin:
+    main: Historia
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Collective Pattern Memory / Historical Behavioral Recognition
+    focus: Recognize enemy group behavior as a historical pattern; warn allies to react better
+    holder: Vesper practitioners who carry institutional acoustic pattern memory
+    transmission: vesper_collective_encounter_record_pattern_recognition_applied_in_combat
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper practice of encoding encounter patterns into
+      transmissible acoustic records across generations. Any practitioner who
+      develops Historia depth sufficient to recognize repeated behavioral
+      archetypes can apply this Technique regardless of species.
+  category: utility
+  type: active
+  trigger: null
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Historia
+    equipment: []
+    states: []
+    prerequisite_techniques: []
+  target: ally_group
+  range: personal
+  area: allies
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: ends_when_enemy_group_abandons_declared_pattern_or_encounter_ends
+  cost:
+    rhythm_cost: 2
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: specialization_roll
+    specialization: Historia
+    difficulty_model: narrator_set_by_age_and_obscurity_of_historical_analog
+    on_failure: no_effect_produced_cost_still_paid
+  saving_roll: null
+  description: >
+    A Vesper practitioner of Historia does not merely recall past events —
+    they recognize when the present is repeating one. Enemy group behavior
+    that follows an inherited pattern is legible to someone who carries
+    the right records. That legibility becomes a shared tactical warning.
+  effect: >
+    Make a T.E. (Historia). Difficulty is set by the Narrator based on the
+    age and obscurity of the historical analog. On failure, no effect. On
+    success, the Narrator confirms that the enemy group's behavior corresponds
+    to a known historical pattern. The user declares a behavior category —
+    offensive charge, flanking, terrain exploitation, or another the Narrator
+    approves — grounded in that analog. While the pattern persists, all allies
+    (including the user) who declare a T.R. against an enemy action the
+    Narrator confirms fits the declared category gain a bonus equal to the
+    user's Historia competence rank to that T.R. Ends when the enemy group
+    abandons the declared pattern or the encounter ends.
+  scaling: >
+    Scales naturally with Historia competence rank: higher rank produces a
+    higher T.E. result (improving success against obscure analogs) and a
+    larger T.R. bonus for all allies.
+  cost_note: >
+    Rhythm 2 / Attrition 1. Rhythm 2 reflects the recall and pattern
+    communication time the technique occupies on the ATB track. Attrition 1
+    matches the Historia domain's low-attrition profile. The group benefit
+    is offset by Narrator control over pattern confirmation — the bonus
+    applies only when the Narrator confirms an action matches the declared
+    pattern.
+  restrictions:
+    - pattern_category_must_be_confirmed_by_narrator_before_tr_bonus_applies
+    - bonus_applies_only_to_tr_not_to_other_roll_types
+    - ends_when_enemy_group_changes_strategy_or_encounter_ends
+    - narrator_confirms_each_individual_action_match_not_the_player
+  tags:
+    - utility
+    - group_support
+    - reaction_buff
+    - pattern_recognition
+    - historia
+    - tr_bonus
+    - ally_benefit
+    - permanente
+    - vesper
+
+- name: El Eje Sin Fisura
+  name_en: The Uncracked Axis
+
+  id: 134
+  status: authored
+  origin:
+    main: Armadura Ligera
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Acoustic Force Reading / Positional Stability Under Impact
+    focus: Read incoming force vector to hold spatial position despite hit connecting
+    holder: Vesper practitioners who wear light armor in interior close work
+    transmission: vesper_acoustic_impact_read_applied_to_positional_stability
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper close-space combat practice, where losing a
+      reading position after a hit costs more than the hit itself. Any
+      practitioner who develops Light Armor discipline with an acoustic or
+      body-read approach can apply this Technique regardless of species.
+  category: defense
+  type: reactive
+  trigger: >
+    A physical attack connects against the user — because the T.D. failed or
+    was not declared — and that hit generates a T.R. against involuntary
+    displacement, Derribado, or Desequilibrado.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    armor_competency: light_armor
+    support_specializations: []
+    equipment:
+      - functional_light_armor_on_struck_zone
+    states: []
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: personal
+  duration:
+    model: instant
+    value: null
+    sustain_rule: null
+    end_rule: resolves_with_the_triggering_tr
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: none
+    notes: >
+      No activation roll. The technique is declared when the trigger fires.
+      Cost is paid regardless of the T.R. outcome.
+  saving_roll: null
+  description: >
+    A Vesper practitioner does not leave the contact point when hit — they
+    stay because leaving would break the acoustic read they need. The light
+    armor is not there to absorb the hit; it is there to deny the force a
+    purchase that could move the body from its position.
+  effect: >
+    When a physical attack connects against the user and generates a T.R.
+    against involuntary displacement, Derribado, or Desequilibrado, the user
+    may declare this Technique. That T.R. gains a bonus equal to the user's
+    Light Armor competency rank. This Technique does not reduce the damage
+    of the hit and does not improve Bloqueo. It acts only on the positional
+    stability T.R. generated by the impact.
+  scaling: >
+    Scales naturally with Light Armor competency rank: higher rank produces a
+    larger bonus to the positional stability T.R.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The technique requires a deliberate reactive
+    body adjustment in the same instant the hit connects — it occupies the
+    reactive ATB window. Attrition 1 reflects the effort of holding position
+    under an impact that would otherwise move the body.
+  restrictions:
+    - fires_only_when_hit_connects_not_on_successful_dr
+    - only_applies_to_tr_against_involuntary_displacement_derribado_or_desequilibrado
+    - does_not_reduce_damage_or_improve_bloqueo
+    - requires_functional_light_armor_on_struck_zone
+    - cost_paid_regardless_of_tr_outcome
+  tags:
+    - defense
+    - reactive
+    - light_armor
+    - stability
+    - displacement_resistance
+    - tr_bonus
+    - instantaneo
+    - vesper
+
+- name: El Umbral Sin Quiebre
+  name_en: The Unbroken Threshold
+
+  id: 135
+  status: authored
+  origin:
+    main: Contención + Resistencia a Aterrorizado
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Ritual Silence / Threshold Conditioning
+    focus: Inner quiet under horror pressure built through repeated proximity to Consagrados and aberrations
+    holder: Vesper outer gatherers and aberration handlers who work near apex biological horrors
+    transmission: vesper_ritual_contencion_discipline_under_repeated_horror_proximity
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper outer-work conditioning where proximity to
+      Consagrados and aberrations is routine. Any practitioner who develops
+      genuine Contención discipline through repeated exposure to real horror
+      can acquire this resistance regardless of species.
+  category: utility
+  type: passive
+  trigger: >
+    The user makes a T.R. to resist Aterrorizado.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Contención
+    equipment: []
+    states:
+      - contencion_at_novice_or_higher
+      - aterrorizado_resistance_at_novice_or_higher
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: personal
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: while_both_prerequisites_remain_at_novice_or_higher
+    end_rule: null
+  cost:
+    rhythm_cost: 0
+    attrition_cost: 0
+    other: []
+  activation_roll:
+    type: none
+    notes: Passive. Fires automatically when qualifying T.R. is made.
+  saving_roll: null
+  description: >
+    The Vesper outer worker does not stop encountering horror — they practice
+    ritual silence so that the body's terror response no longer governs what
+    the practitioner can do. The threshold holds not because the horror is
+    less real, but because the rite was there first.
+  effect: >
+    When the user makes a T.R. to resist Aterrorizado, add a bonus equal to
+    the user's Contención competency rank to that T.R. This effect is
+    permanent while both Contención and Resistencia a Aterrorizado remain at
+    Novice or higher. No conscious activation is required.
+  scaling: >
+    Scales with Contención competency rank. Higher Contención rank produces
+    a larger bonus to qualifying T.R. against Aterrorizado.
+  cost_note: >
+    Rhythm 0 / Attrition 0 is correct and deliberate. This is a passive
+    hybrid. The cost was paid in ritual conditioning and repeated horror
+    proximity long before the scene began.
+  restrictions:
+    - applies_only_to_tr_against_aterrorizado
+    - requires_contencion_and_aterrorizado_resistance_both_at_novice_or_higher
+    - no_activation_cost_or_action_required
+  tags:
+    - passive
+    - resistance_hybrid
+    - terror_resistance
+    - contencion
+    - aterrorizado
+    - permanente
+    - vesper
+
+- name: El Eco Que Persiste
+  name_en: The Echo That Persists
+
+  id: 136
+  status: authored
+  origin:
+    main: Tolerancia + Resistencia a Ensordecido
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Acoustic Load Conditioning / Auditory Channel Resilience
+    focus: Sustained high-intensity acoustic use conditions the auditory system to resist shock deafening
+    holder: Vesper echolocation practitioners and acoustic readers who work under constant auditory load
+    transmission: vesper_continuous_acoustic_load_discipline_and_echo_channel_maintenance
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper echolocation practice where the auditory system is
+      under continuous high-intensity use. Any practitioner who develops both
+      genuine Tolerancia conditioning and real Ensordecido resistance through
+      sustained acoustic load can acquire this resistance regardless of species.
+  category: utility
+  type: passive
+  trigger: >
+    The user makes a T.R. to resist Ensordecido.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations:
+      - Tolerancia
+    equipment: []
+    states:
+      - tolerancia_at_novice_or_higher
+      - ensordecido_resistance_at_novice_or_higher
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: personal
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: while_both_prerequisites_remain_at_novice_or_higher
+    end_rule: null
+  cost:
+    rhythm_cost: 0
+    attrition_cost: 0
+    other: []
+  activation_roll:
+    type: none
+    notes: Passive. Fires automatically when qualifying T.R. is made.
+  saving_roll: null
+  description: >
+    A Vesper acoustic reader does not use hearing gently. The channel is
+    under load at all times. That load, sustained over training, teaches
+    the auditory system to remain open when a sonic shock would close it
+    in an untrained body.
+  effect: >
+    When the user makes a T.R. to resist Ensordecido, add a bonus equal to
+    the user's Tolerancia competency rank to that T.R. This effect is
+    permanent while both Tolerancia and Resistencia a Ensordecido remain at
+    Novice or higher. No conscious activation is required.
+  scaling: >
+    Scales with Tolerancia competency rank. Higher Tolerancia rank produces
+    a larger bonus to qualifying T.R. against Ensordecido.
+  cost_note: >
+    Rhythm 0 / Attrition 0 is correct and deliberate. This is a passive
+    hybrid. The cost was paid in sustained acoustic conditioning and
+    Tolerancia training long before the scene began.
+  restrictions:
+    - applies_only_to_tr_against_ensordecido
+    - requires_tolerancia_and_ensordecido_resistance_both_at_novice_or_higher
+    - no_activation_cost_or_action_required
+  tags:
+    - passive
+    - resistance_hybrid
+    - deafness_resistance
+    - tolerancia
+    - ensordecido
+    - permanente
+
+- name: La Brecha Sin Ruido
+  name_en: The Noiseless Gap
+
+  id: 137
+  status: authored
+  origin:
+    main: Evasion
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: null
+    source: Vesper
+    seed: Acoustic Force Read / Defensive Window After Evaded Strike
+    focus: Successful evasion leaves a spatial read the body carries into the next defensive moment
+    holder: Vesper interior fighters and acoustic practitioners who use evaded strikes to map attacker position
+    transmission: vesper_post-evasion_acoustic_mapping_and_defensive_carry
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper interior combat practice, where a successfully evaded
+      attack leaves an acoustic signature the practitioner can carry into their
+      next defensive moment. Any practitioner who develops genuine Evasion
+      discipline with a spatial or positional read component can access this
+      Technique regardless of species.
+  category: defense
+  type: reactive
+  trigger: >
+    An enemy declares a single-target physical attack against the user.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: null
+    support_specializations: []
+    equipment: []
+    states:
+      - user_must_have_evasion_defensive_competency
+      - user_is_not_fully_restrained_or_immobilized
+      - at_least_1m_of_open_space_available_for_reposition
+    prerequisite_techniques: []
+  target: self
+  range: personal
+  area: personal
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: >
+      Ends the first time the user declares a T.D. after this Technique resolves,
+      or when the encounter ends — whichever comes first.
+  cost:
+    rhythm_cost: 3
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: defense_roll
+    competency: Evasion
+    notes: >
+      The user makes a T.D. using Evasion against the triggering attack. If the
+      T.D. fails, the Technique fails and the attack resolves normally. Cost is
+      paid regardless of outcome.
+  saving_roll: null
+  description: >
+    A Vesper practitioner does not just escape an attack — they read it. The
+    acoustic shape of the strike that missed maps the attacker's force vector and
+    new position. That read stays in the body until the next blow arrives, and
+    the next defense is cleaner for it.
+  effect: >
+    When an enemy declares a single-target physical attack against the user,
+    declare this Technique and make a T.D. using Evasion against that attack.
+
+    If the T.D. fails, the Technique fails and the attack resolves normally.
+
+    If the T.D. succeeds, the user may immediately reposition up to 2m plus 1m
+    per Evasion competency rank in any physically plausible direction without
+    paying additional Rhythm. Additionally,
+    the first T.D. the user declares after this Technique resolves gains a bonus
+    equal to their Evasion competency rank: +1 at Novice, +2 at Adept, +3 at
+    Expert, +4 at Master, +5 at Consummate, +6 at Transcendent. That bonus ends
+    the moment that T.D. resolves, or when the encounter ends. The bonus applies
+    against any attacker, not only the one who triggered this Technique.
+  scaling: >
+    Scales with Evasion competency rank. Higher Evasion both improves the T.D.
+    that gates the Technique and increases the defensive carry bonus. Deeper
+    investment makes the evasion more reliable and the spatial read it leaves
+    behind sharper.
+  cost_note: >
+    Rhythm 3 / Attrition 1. The Technique is a reactive defense — one evaded
+    attack, one bounded reposition, one defensive window that closes on first
+    use. Attrition reflects the physical effort of committing to a full evasive
+    reposition under combat pressure.
+  restrictions:
+    - requires_enough_space_to_reposition_at_least_1m
+    - does_not_function_when_user_is_fully_restrained_or_immobilized
+    - defensive_carry_applies_to_first_td_only_then_closes
+    - does_not_reduce_damage_or_grant_an_attack
+    - reposition_must_be_physically_plausible_not_through_occupied_space
+  tags:
+    - defense
+    - evasion
+    - reactive
+    - reposition
+    - defensive_window
+    - acoustic_read
+    - vesper
+    - permanente
+
+- name: El Eje Que Cede
+  name_en: The Axis That Yields
+
+  id: 138
+  status: authored
+  origin:
+    main: Flexible Weapons
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic Axis Read / Balance Disruption Through Precise Rotation
+    focus: Acoustic identification of balance axis; rotational force applied to produce Desequilibrado
+    holder: Vesper flexible-weapon practitioners and close interior fighters
+    transmission: vesper_acoustic_balance_axis_read_applied_to_torsion_weapon_technique
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper practice of acoustically mapping a target's center
+      of balance before applying rotational force at the joint axis. Any
+      practitioner who develops Flexible Weapons discipline with an acoustic
+      or structural-read component can access this Technique regardless of
+      species.
+  category: attack
+  type: active
+  trigger: >
+    The user makes a Torsion-profile attack against a target within flexible
+    weapon reach.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Torsion
+    support_specializations: []
+    equipment:
+      - any_weapon_or_natural_attack_with_torsion_access
+    states:
+      - target_within_flexible_weapon_reach
+    prerequisite_techniques: []
+  target: enemy
+  range: weapon_reach
+  area: single
+  duration:
+    model: instant
+    value: null
+    sustain_rule: null
+    end_rule: on_resolution
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: attack_roll
+    competency: Flexible Weapons
+    notes: >
+      Standard T.A. with Torsion profile. If the attack fails to connect,
+      no additional effect is produced.
+  saving_roll:
+    model: alteration_resistance
+    effect_on_success: >
+      Target resists Desequilibrado. Normal T.I. still applies if the attack
+      connected.
+  description: >
+    A Vesper practitioner does not simply strike — they read the target's
+    balance axis acoustically before the weapon arrives, then apply rotational
+    force precisely at that point. The result is not a heavy blow but a
+    geometrically precise destabilization.
+  effect: >
+    Make a T.A. with your Torsion profile against the target. If the T.A.
+    fails to connect, nothing further happens.
+
+    If the T.A. connects, resolve T.I. normally. The target then makes a T.R.
+    de Alteraciones against Desequilibrado. Severity scales with the user's
+    competency rank: rank 1–2 Leve, rank 3–4 Moderado, rank 5–6 Grave.
+
+    This Technique does not reposition the target. The Desequilibrado
+    originates from precise rotational force applied at the acoustically-read
+    balance axis, not from raw impact displacement.
+  scaling: >
+    Scales through competency rank: higher rank improves the T.A. through
+    normal competency scaling and increases the severity of Desequilibrado
+    applied on a successful hit.
+  cost_note: >
+    Rhythm 5 / Attrition 1. The Technique combines a normal T.A. with an
+    alteration application on hit. The cost reflects the rotational setup
+    required beyond a standard attack, without the heavier commitment of
+    reposition or disarm techniques.
+  restrictions:
+    - requires_torsion_profile_access
+    - does_not_reposition_the_target
+    - desequilibrado_severity_scales_with_rank_not_flat
+    - alteration_resistance_applies_normally
+  tags:
+    - attack
+    - torsion
+    - balance_disruption
+    - desequilibrado
+    - acoustic_read
+    - vesper
+
+- name: El Golpe Sin Eco
+  name_en: The Strike Without Echo
+
+  id: 139
+  status: authored
+  origin:
+    main: Short Blades
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic Masking / Signal Suppression Before Commitment
+    focus: Suppress acoustic signature of attack path so target has no pre-read signal to act on
+    holder: Vesper short-blade practitioners and acoustic-suppression close fighters
+    transmission: vesper_acoustic_path_suppression_applied_to_unpredictability_attack
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper understanding that an attack generates acoustic
+      pre-signals before it commits. Any practitioner who develops
+      Unpredictability discipline with an acoustic or signal-suppression
+      component can access this Technique regardless of species.
+  category: attack
+  type: active
+  trigger: >
+    The user makes an Unpredictability-profile attack against a target that
+    relies on sensory signals to form a defensive response.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Unpredictability
+    support_specializations: []
+    equipment:
+      - any_weapon_or_natural_attack_with_unpredictability_access
+    states:
+      - target_relies_on_sensory_pre_read_for_defensive_response
+    prerequisite_techniques: []
+  target: enemy
+  range: weapon_reach
+  area: single
+  duration:
+    model: instant
+    value: null
+    sustain_rule: null
+    end_rule: on_resolution
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: attack_roll
+    competency: Short Blades
+    notes: >
+      Declare this Technique before making the T.A. The acoustic masking
+      applies to the T.D. resolution of the triggering attack only.
+  saving_roll: null
+  description: >
+    A Vesper practitioner does not present a false line — they suppress the
+    real one. The attack generates no acoustic pre-signal along its committed
+    path. The target's trained defensive response has nothing to key off.
+  effect: >
+    Declare this Technique before making the T.A. The user suppresses the
+    acoustic signature of the attack vector — the path generates no detectable
+    sonic cue before the strike commits.
+
+    Make the T.A. normally. The target's T.D. against this attack cannot
+    include rank bonuses from any defensive competency. The target still makes
+    the T.D., but without the competency rank bonus they would normally apply.
+
+    This Technique does not function against targets that do not rely on
+    sensory signals for their defensive response.
+  scaling: >
+    Scales through competency rank: higher rank improves the T.A. through
+    normal competency scaling. The acoustic suppression itself does not scale
+    — the target's rank bonus is always fully removed regardless of the user's
+    rank.
+  cost_note: >
+    Rhythm 5 / Attrition 1. The Technique removes the target's rank-scaling
+    defensive advantage for one attack — an asymmetric offensive setup that
+    justifies a moderate timing commitment.
+  restrictions:
+    - must_be_declared_before_the_ta_resolves
+    - does_not_function_against_targets_immune_to_sensory_disruption
+    - applies_to_the_triggering_attack_only
+    - target_still_makes_td_without_rank_bonus_not_unable_to_defend
+  tags:
+    - attack
+    - unpredictability
+    - acoustic_masking
+    - td_bypass
+    - signal_suppression
+    - vesper
+
+- name: La Capa Que Cede
+  name_en: The Layer That Yields
+
+  id: 140
+  status: authored
+  origin:
+    main: Short Blades
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Structural Angle Exploitation / Defensive Integrity Reduction
+    focus: Strike finds the angle where the defensive surface stops holding — no chemical delivery, pure geometry
+    holder: Vesper short-blade practitioners trained in acoustic structural read of defensive surfaces
+    transmission: vesper_acoustic_defensive_geometry_read_applied_to_corrosion_profile_attack
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper practice of acoustically reading the structural
+      geometry of a target's defensive surface to find the angle where it
+      stops being reliable. The Corrosion profile here does not involve
+      chemical delivery — the disadvantage comes from the precision of the
+      strike, not from what it deposits. Any practitioner who develops
+      Corrosion discipline through a structural-read or angle-exploitation
+      approach can access this Technique regardless of species.
+  category: attack
+  type: active
+  trigger: >
+    The user makes a Corrosion-profile attack against a target with a
+    treatable defensive surface (armor, weapon, or other external material).
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Corrosion
+    support_specializations: []
+    equipment:
+      - any_weapon_with_corrosion_access_and_alchemically_treated_edge
+    states:
+      - target_has_a_treatable_defensive_surface
+    prerequisite_techniques: []
+  target: enemy
+  range: weapon_reach
+  area: single
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: >
+      Ends when the target uses Interactuar to clear the residue from the
+      affected surface, or when the encounter ends.
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 1
+    other: []
+  activation_roll:
+    type: attack_roll
+    competency: Short Blades
+    notes: >
+      Standard T.A. with Corrosion profile. If the attack fails to connect,
+      no residue is deposited and no ongoing effect is produced.
+  saving_roll: null
+  description: >
+    The Vesper practitioner does not strike to injure — they strike to
+    degrade. The alchemically treated edge deposits a corrosive residue on
+    the target's defensive surface that slowly compromises its structural
+    integrity until the target stops to clear it.
+  effect: >
+    Make a T.A. with your Corrosion profile against the target. If the T.A.
+    fails to connect, nothing further happens.
+
+    If the T.A. connects, resolve T.I. normally. Additionally, the corrosive
+    residue deposited on the target's defensive surface reduces their T.D.
+    rank bonus by a value equal to the user's competency rank. This penalty
+    does not stack — if a stronger penalty already applies, use the larger
+    value.
+
+    This effect is Permanent until the target uses Interactuar to clear the
+    residue from the affected surface, or until the encounter ends.
+  scaling: >
+    Scales with competency rank: higher rank improves the T.A. through normal
+    competency scaling and increases the T.D. rank bonus reduction applied
+    on a successful hit.
+  cost_note: >
+    Rhythm 5 / Attrition 1. The Technique combines a normal T.A. with a
+    persistent defensive degradation. The ongoing effect is cleared by the
+    target's Interactuar action, so it does not create an inescapable state.
+  restrictions:
+    - requires_corrosion_profile_access_and_treated_edge
+    - target_must_have_a_treatable_defensive_surface
+    - td_penalty_does_not_stack_strongest_applies
+    - cleared_by_interactuar_not_passively
+    - does_not_apply_an_alteration_condition
+  tags:
+    - attack
+    - corrosion
+    - defensive_surface_degradation
+    - td_penalty
+    - alchemical_residue
+    - permanente
+    - vesper
+
+- name: El Ángulo Que Expone
+  name_en: The Angle That Exposes
+
+  id: 141
+  status: authored
+  origin:
+    main: Short Blades
+    secondary: []
+  world_origin:
+    primary_front: Species
+    secondary_front: Weapon
+    source: Vesper
+    seed: Acoustic Pre-Read of Attack Vector / Deflect and Over-Commitment Window
+    focus: Acoustic read of incoming attack vector before commitment; deflect creates over-extension window
+    holder: Vesper short-blade and long-blade practitioners trained in acoustic deflection timing
+    transmission: vesper_acoustic_attack_vector_pre_read_applied_to_deflection_technique
+    availability: Open
+    adaptation_notes: >
+      Originates in Vesper practice of reading an incoming attack acoustically
+      before it fully commits, then using a Deflection-profile surface to
+      redirect it rather than absorb it. Any practitioner who develops
+      Deflection discipline with an acoustic or timing-read component can
+      access this Technique regardless of species.
+  category: defense
+  type: reactive
+  trigger: >
+    An enemy within the user's weapon reach declares a physical attack against
+    the user.
+  requirements:
+    level: null
+    rank: Novice
+    technique_tier: 1
+    weapon_profile: Deflection
+    support_specializations: []
+    equipment:
+      - any_weapon_with_deflection_profile_access
+    states:
+      - attacker_within_deflection_surface_reach
+    prerequisite_techniques: []
+  target: attacking_enemy
+  range: weapon_reach
+  area: single_attacking_enemy
+  duration:
+    model: permanent
+    value: null
+    sustain_rule: null
+    end_rule: >
+      The carry-forward penalty ends when the attacker makes their next T.A.
+      against the user after this Technique resolves, or when the encounter
+      ends — whichever comes first.
+  cost:
+    rhythm_cost: 5
+    attrition_cost: 2
+    other: []
+  activation_roll:
+    type: opposed_attack_roll
+    competency: Deflection surface competency
+    notes: >
+      The user makes a reactive T.A. with their Deflection profile that
+      replaces the T.D. against the triggering attack. Compare T.A. values.
+      Cost is paid regardless of outcome.
+  saving_roll: null
+  description: >
+    A Vesper practitioner does not block the incoming attack — they redirect
+    it through an acoustically-read angle that forces the attacker to
+    overextend. The deflected line leaves the attacker committed past where
+    their recovery can cleanly start, creating a window before their next
+    strike arrives.
+  effect: >
+    When an enemy within reach declares a physical attack against the user,
+    declare this Technique before the attack resolves. Make a reactive T.A.
+    with your Deflection profile against the attacker. This T.A. replaces
+    your T.D. against the triggering attack.
+
+    Compare your T.A. to the attacker's T.A.:
+
+    If your T.A. equals or exceeds the attacker's T.A.: the attack fails.
+    Resolve your T.I. normally against the attacker. Additionally, the
+    attacker's next T.A. against the user receives a penalty equal to the
+    user's Deflection-surface competency rank: +1 at Novice, +2 at Adept,
+    +3 at Expert, +4 at Master, +5 at Consummate, +6 at Transcendent. This
+    penalty is Permanent until the attacker makes their next T.A. against
+    the user, or until the encounter ends.
+
+    If your T.A. falls short of the attacker's T.A.: the deflection fails
+    and the attack resolves as if the user's T.D. had failed.
+
+    This Technique does not produce a follow-up attack. The penalty does
+    not stack — if a larger penalty already applies, use the larger value.
+  scaling: >
+    Scales through competency rank: higher rank improves the reactive T.A.
+    through normal competency scaling and increases the carry-forward
+    penalty applied on a successful deflection.
+  cost_note: >
+    Rhythm 5 / Attrition 2. The Technique replaces T.D. with risk, deals
+    T.I. on success, and creates a carry-forward defensive window. The
+    absence of a follow-up attack (compared to Drak'kai El Ángulo Que Falla)
+    justifies the lower cost, while Attrition 2 reflects the physical
+    commitment of a full reactive deflection under combat pressure.
+  restrictions:
+    - reactive_ta_replaces_td_completely
+    - no_follow_up_attack_produced
+    - carry_forward_penalty_applies_to_next_ta_only_then_closes
+    - penalty_does_not_stack_strongest_applies
+    - does_not_function_against_non_physical_attacks
+  tags:
+    - defense
+    - attack
+    - deflection
+    - reactive
+    - carry_forward_penalty
+    - acoustic_read
+    - over_commitment_window
+    - permanente
+    - vesper
     - vesper
