@@ -1,3 +1,4 @@
+natural_weapon_swap: true                # any character may replace starting natural weapon competencies with crafted weapon competencies, regardless of background
 starting_specializations_count: 3        # from background
 total_starting_specializations: 4        # 3 from background + 1 universal (any Tenacity choice)
 starting_level: 1
@@ -28,7 +29,6 @@ backgrounds:
         count: 2
       - category: mental, social or lore
         count: 1
-    special_rule: May replace any starting natural weapon competencies with crafted weapon competencies
     description: Devoted to bodily perfection through combat schools, warrior clans, arenas, or discipline rituals
 
   - id: artisan

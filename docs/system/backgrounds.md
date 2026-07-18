@@ -18,7 +18,6 @@ Background represents the character's life before adventuring. It determines:
 
 ### Martial Artist
 Devoted to bodily perfection through combat schools, warrior clans, arenas, or discipline rituals.
-Additionally may replace any starting natural weapon competencies with crafted weapon competencies.
 
 ### Artisan
 Dedicated to transforming matter into useful, beautiful, or dangerous objects.
