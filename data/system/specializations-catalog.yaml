@@ -1411,6 +1411,15 @@ especializaciones:
       reintento: >
         Puede reevaluarse si cambia el ángulo, la exposición o el momento. Repetirla sin nueva
         información rara vez mejora la misma lectura estática.
+      umbral_pasivo:
+        aplica: true
+        formula: "5 + Sabiduría + nivel de competencia + rango de competencia"
+        detecta: >
+          Estímulos físicos presentes en el entorno: figuras ocultas, sonidos anómalos, detalles
+          relevantes. El personaje los registra sin buscarlos si el estímulo supera el umbral.
+        no_detecta: >
+          Señales extraídas por inferencia, huellas de paso, presencias no físicas o taumáticas.
+          Esas pertenecen a Intuición, Rastreo o Resonancia.
     contextos:
       combate: true
       exploración: true
@@ -3310,6 +3319,15 @@ especializaciones:
       reintento: >
         Instinto se reevalúa cuando cambia la presencia, surge una nueva amenaza o el personaje entra
         en otro estado de exposición. No se fuerza como serie de intentos limpios sobre la misma señal.
+      umbral_pasivo:
+        aplica: true
+        formula: "5 + Aura + nivel de competencia + rango de competencia"
+        detecta: >
+          Presencias amenazantes, señales de peligro sin forma visible, interpelaciones a la naturaleza
+          profunda del personaje. El personaje las registra sin buscarlas si la señal supera el umbral.
+        no_detecta: >
+          Estímulos físicos directos, inferencias analíticas, señales taumáticas estructuradas.
+          Esas pertenecen a Percepción, Intuición o Resonancia.
     contextos:
       combate: true
       exploración: true
@@ -3382,6 +3400,15 @@ especializaciones:
       reintento: >
         Puede reevaluarse cuando cambie la señal, la distancia o la disposición del personaje. Un
         fallo no implica que la presencia no exista, solo que el contacto no se logró en ese estado.
+      umbral_pasivo:
+        aplica: true
+        formula: "5 + Aura + nivel de competencia + rango de competencia"
+        detecta: >
+          Filtraciones taumáticas, vestigos activos o vínculos en proximidad. El aura del personaje
+          los registra sin que haya intención deliberada de contacto, si la señal supera el umbral.
+        no_detecta: >
+          Presencias físicas directas, peligros sin componente taumático, inferencias analíticas.
+          Esas pertenecen a Percepción, Instinto o Intuición.
     contextos:
       combate: true
       exploración: true
