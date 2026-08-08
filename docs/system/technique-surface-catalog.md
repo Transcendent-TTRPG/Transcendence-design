@@ -339,3 +339,52 @@ Una por especie. No tienen perfil de arma ni especialización — representan la
 - El catálogo refleja el estado al terminar el pase de Vesper (técnica #141).
 - La numeración de técnicas en §1-3 se completará en futuras actualizaciones.
 - `Rebote` y `Desvío` son dos perfiles distintos aunque ambos "desvían" fuerza. Rebote = tiro angulado/físico; Desvío = redirección de golpe cuerpo a cuerpo.
+- Las 5 resistencias del sistema son: **Veneno, Infección, Aflicción, Alteración, Maldiciones** (de `competencies.yaml`). Calor/Frío y Taumática son rasgos de daño elemental, no resistencias de personaje.
+
+---
+
+## 6. Análisis de Gaps
+
+Referencia para decidir qué diseñar a continuación. No es una cuota — es una lente de balanceo.
+
+### Arma — Perfiles mínimos
+
+Todos los perfiles tienen al menos 1 técnica. Los menos representados:
+
+| Perfil | Total | Nota |
+| --- | --- | --- |
+| Embestida | 1 | Solo entrada forzada; sin variante reactiva ni de postura |
+| Guarda | 1 | Solo zona de denegación estática |
+| Rebote | 1 | Solo geometría activa; sin variante reactiva ni de control |
+| Cadencia / Desvío / Imparable / Letalidad / Precisión / Ruptura | 2 c/u | Cubiertos mínimamente |
+
+### Armadura — Gaps por tier
+
+| Tier | Total | Gap |
+| --- | --- | --- |
+| **Intermedia** | **0 exclusivas** (1 compartida con Pesada) | Terreno virgen — ninguna técnica diseñada específicamente para este tier |
+| Ligera | 2 | Bajo — solo reposicionamiento reactivo y contraataque |
+| Pesada / Evasión | 4 c/u | Bien cubiertos |
+
+### Resistencias — Gaps por tipo
+
+Las 5 resistencias del sistema y su cobertura actual:
+
+| Resistencia | Total | Gap |
+| --- | --- | --- |
+| **Maldiciones** | **0** | Sin ninguna técnica híbrida |
+| Veneno | 1 | Solo Tolerancia; ninguna otra especialización |
+| Alteración | 2 | Cubre Ensordecido y Aterrorizado; otras alteraciones sin cubrir |
+| Aflicción | 2–3 | Razonablemente cubierta |
+| Infección | 2 | Razonablemente cubierta |
+
+### Especializaciones sin ninguna técnica (21 de 54)
+
+| Grupo | Especializaciones |
+| --- | --- |
+| Físicas | Acrobacias · Equitación · Marcha · Saltar · Trepar |
+| Sociales / Mentales | Engaño · Hurto · Imitación · Improvisación · Intuición · Liderazgo · Negociación |
+| Conocimiento | Belicología · Criptología · Ingeniería · Joyería · Sastrería |
+| Especialidades | Domesticación · Herrería · Instinto · Vínculo |
+
+Las de mayor potencial táctico sin explorar aún: **Engaño, Intuición, Liderazgo, Negociación, Imitación, Belicología, Instinto**.
