@@ -1411,15 +1411,6 @@ especializaciones:
       reintento: >
         Puede reevaluarse si cambia el ángulo, la exposición o el momento. Repetirla sin nueva
         información rara vez mejora la misma lectura estática.
-      umbral_pasivo:
-        aplica: true
-        formula: "5 + Sabiduría + nivel de competencia + rango de competencia"
-        detecta: >
-          Estímulos físicos presentes en el entorno: figuras ocultas, sonidos anómalos, detalles
-          relevantes. El personaje los registra sin buscarlos si el estímulo supera el umbral.
-        no_detecta: >
-          Señales extraídas por inferencia, huellas de paso, presencias no físicas o taumáticas.
-          Esas pertenecen a Intuición, Rastreo o Resonancia.
     contextos:
       combate: true
       exploración: true
@@ -3323,11 +3314,12 @@ especializaciones:
         aplica: true
         formula: "5 + Aura + nivel de competencia + rango de competencia"
         detecta: >
-          Presencias amenazantes, señales de peligro sin forma visible, interpelaciones a la naturaleza
-          profunda del personaje. El personaje las registra sin buscarlas si la señal supera el umbral.
+          Amenazas naturales antes de que sean visibles: peligro latente, presencias hostiles ocultas,
+          trampas, emboscadas. El personaje no ve — siente. Si la señal de amenaza supera el umbral,
+          el cuerpo reacciona sin que haya decisión consciente de prestar atención.
         no_detecta: >
-          Estímulos físicos directos, inferencias analíticas, señales taumáticas estructuradas.
-          Esas pertenecen a Percepción, Intuición o Resonancia.
+          Señales taumáticas, manifestaciones del Limbo o vestigos — esas pertenecen a Resonancia.
+          Tampoco reemplaza la lectura activa de huellas o inferencias analíticas (Rastreo, Intuición).
     contextos:
       combate: true
       exploración: true
