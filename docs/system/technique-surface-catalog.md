@@ -30,7 +30,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Acecho / Shadow Pressure (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Robar la Orilla | Activo - Ataque | Presión desde Oculto; penaliza T.D. |
 | — | Lo que Cedió Primero | Reactivo - Utilidad | Contraataque al mover; window post-oculto |
 | — | El Ángulo Muerto | Reactivo - Ataque | Pursecución desde Oculto; hereda Efectos |
@@ -38,7 +38,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Bastión (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Plantar la Guardia | Activo - Ataque | Postura; Derriba en contacto |
 | — | La Línea que No Se Rompe | Activo - Utilidad | Postura; eje de control con maza |
 | — | El Marco Antes del Paso | Activo - Utilidad | Postura; escudo + absorción de desplazamiento |
@@ -46,14 +46,14 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Cadencia / Volley (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Clavar la Cadencia | Reactivo - Utilidad | Control de movimiento al disparar; acumula presión |
 | — | Cobrar el Paso | Reactivo - Ataque | Presión de rango al avanzar enemigo |
 
 ### Control de Línea (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Cerrar la Línea | Reactivo - Utilidad | Anti-desplazamiento; estabilidad posicional |
 | — | La Masa Continúa | Activo - Ataque | Desplazamiento forzado con escudo |
 | — | [Naghii — lanza] | Reactivo - Ataque | Control de línea con asta |
@@ -61,7 +61,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Corrosión (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Ensuciar la Herida | Activo - Ataque | Residuo corrosivo; bloquea tratamiento |
 | — | Sostener el Canal | Activo - Utilidad | Residuo a distancia; aplicación preventiva |
 | — | La Capa que Cede | Activo - Ataque | Penaliza T.D. armadura; degrada superficie defensiva |
@@ -69,7 +69,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Desgarro / Rend (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Abrir la Costura | Activo - Ataque | Lacerado; presión de herida abierta |
 | — | Cortar la Mano Tarde | Activo - Ataque | Setup de desgarro; ventaja en seguimiento |
 | — | El Eje que Cede | Activo - Ataque | Ventaja en T.I.; precisión en zona expuesta |
@@ -77,20 +77,20 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Desvío / Deflection (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 78 | El Ángulo que Falla | Reactivo - Ataque | Desvío reactivo con arma natural; contraataque |
 | 141 | El Ángulo que Expone | Reactivo - Defensa | Desvío con hoja; penaliza ataque siguiente |
 
 ### Embestida / Charge (1)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | La Carga que No Acaba | Activo - Ataque | Entrada forzada; rompe línea defensiva |
 
 ### Fluidez / Flow (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Cobrar con la Otra | Activo - Ataque | Salida con lacerado; presión de secuencia |
 | — | Lo que Este Lugar Recuerda | Activo - Ataque | Cadena; reposicionamiento entre golpes |
 | — | Lo que Se Conoce No Sorprende | Activo - Ataque | Cadena; bonificador en segundo golpe |
@@ -98,7 +98,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Hostigamiento / Skirmish (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Robar el Ángulo | Activo - Ataque | Entrada-salida con movilidad |
 | — | Antes de que Cambie | Activo - Ataque | Disrupción de tempo; hurto de ATB |
 | — | [Naghii — flexible] | Activo - Ataque | Movilidad en hostigamiento ligero |
@@ -106,14 +106,14 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Imparable / Unstoppable (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | La Corriente No Retrocede | Activo - Ataque | Avance forzado; ignora bloqueo parcial |
 | — | El Peso que Gira | Activo - Ataque | Bloqueo convertido en empuje; desplaza defensor |
 
 ### Impacto / Impact (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Anclar el Contrapeso | Activo - Ataque | Valida ruptura de material |
 | — | Romper el Caudal | Activo - Ataque | Desequilibrado; disruption de guardia |
 | — | El Peso que Planta | Activo - Ataque | Derriba con mazo |
@@ -121,24 +121,25 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Impredecible / Unpredictability (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Nublar la Señal | Activo - Utilidad | Rompe lectura; Desequilibrado sin T.A. |
 | — | La Vuelta que Suelta | Activo - Ataque | Secuencia de cierre con Desequilibrado |
 | — | El Golpe sin Eco | Activo - Ataque | Enmascaramiento acústico; bypass T.D. |
 
-### Intercepción / Interception (4)
+### Intercepción / Interception (5)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
-| — | Tomar el Resguardo | Reactivo - Utilidad | Cubre a aliado; intercepta golpe entrante |
-| — | Anudar la Vasija | Reactivo - Ataque | Escolta; escudo contra atacante de aliado |
-| — | El Tránsito que No Llega | Reactivo - Utilidad | Deniega movimiento con Impedido |
-| — | La Base que Falta | Reactivo - Utilidad | Cierre posicional; deniega posición |
+| --- | --- | --- | --- |
+| 27 | Levantar el Dique | Reactivo - Utilidad | Cubre a aliado; redirige ataque a propia T.D. |
+| 33 | Cerrar el Flanco | Reactivo - Ataque | T.A. reemplaza T.D.; éxito = bloqueo + T.I. |
+| 74 | Cierre en el Umbral | Reactivo - Ataque | T.A. reemplaza T.D.; éxito = ataque falla + Impedido |
+| 81 | El Tránsito que No Llega | Reactivo - Utilidad | Deniega movimiento enemigo |
+| 142 | Leer la Entrada | Reactivo - Utilidad | T.A. reemplaza T.D.; éxito = ataque falla + desplazamiento (2 + rango) m |
 
 ### Interrupción / Interruption (5)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Trabar el Gesto | Reactivo - Utilidad | Atrapa; deniega movimiento |
 | — | Clavar el Paso | Reactivo - Ataque | Interrumpe acción; Desequilibrado |
 | — | Anudar el Paso | Reactivo - Ataque | Interrumpe; cuarentena de efecto |
@@ -148,14 +149,14 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Letalidad / Lethality (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Encontrar la Parte Blanda | Activo - Ataque | Finalización; explota zona expuesta |
 | — | La Salida que Cobra | Reactivo - Ataque | Contraataque en crítico; letalidad reactiva |
 
 ### Perforación / Perforation (3)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Sentar el Tercer Punto | Activo - Ataque | Perforación; presión de entrada |
 | — | Cerrar la Compuerta | Activo - Ataque | Perforación; deniega avance |
 | — | La Posición que Se Hunde | Activo - Ataque | Bypass de armadura; precisión de línea |
@@ -163,27 +164,27 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Precisión / Precision (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Marcar la Lectura | Activo - Ataque | Marcado a distancia; penaliza siguiente acción |
 | — | La Brecha Contada | Activo - Ataque | Perjuicio de ataque ranged del objetivo |
 
 ### Rebote / Ricochet (1)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 9 | Doblar el Tiro | Activo - Ataque | Tiro angulado; geometría de rebote |
 
 ### Ruptura / Sunder (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Quebrar la Vuelta | Activo - Ataque | Rompe protección; abre zona |
 | — | El Cierre que No Se Negocia | Activo - Ataque | Ruptura de armadura con maza |
 
 ### Torsión (4)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Tocar y Ceder | Reactivo - Utilidad | Redirección angular; control con flexible |
 | — | Barrer la Orilla | Activo - Ataque | Reposicionamiento forzado con giro |
 | — | Devolver al Cauce | Activo - Utilidad | Desarme; alteración de control |
@@ -192,7 +193,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 ### Guarda / Ward (1)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | — | Sellar la Presa | Activo - Utilidad | Postura; control de zona con asta |
 
 ---
@@ -204,7 +205,7 @@ Una técnica puede cubrir más de un tier (e.g. Intermedia + Pesada simultáneam
 ### Armadura Pesada (4)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 46 | Cerrar la Coraza | Activo - Utilidad | Postura de bloqueo; 3 piezas requeridas |
 | 47 | Volver la Placa | Reactivo - Utilidad | Evita chequeo de ruptura en crítico |
 | 86 | El Golpe que Cobra | Reactivo - Utilidad | Presión ATB reactiva; contraataque posicional |
@@ -213,20 +214,20 @@ Una técnica puede cubrir más de un tier (e.g. Intermedia + Pesada simultáneam
 ### Armadura Intermedia (1)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 47 | Volver la Placa | Reactivo - Utilidad | Evita chequeo de ruptura en crítico (compartida con Pesada) |
 
 ### Armadura Ligera (2)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 58 | Soltar la Capa Muerta | Reactivo - Utilidad | Reposicionamiento reactivo; deniega contacto |
 | 134 | El Eje sin Fisura | Reactivo - Ataque | Contraataque desde lectura acústica; hereda Efectos |
 
 ### Evasión (4)
 
 | # | Título | Tipo | Salida principal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 19 | Cruzar la Punta | Reactivo - Utilidad | Reposicionamiento; evade y recupera ángulo |
 | 20 | Vaciar el Blanco | Reactivo - Utilidad | Quiebra continuidad; ventana de supervivencia |
 | 57 | Quebrar la Vuelta | Reactivo - Utilidad | Quiebra ángulo; repositioning post-contacto |
@@ -240,7 +241,7 @@ Listado de especializaciones con al menos 1 técnica activa o reactiva publicada
 Las resistencias híbridas (pasivas) están en la sección 4.
 
 | Especialización | Cantidad | Técnica(s) |
-|---|---|---|
+| --- | --- | --- |
 | Agarre | 1 | Sellar la Grieta |
 | Alquimia | 1 | Guardar el Pulso |
 | Aplomo | 1 | Asentar la Piedra |
@@ -288,7 +289,7 @@ Siempre: tipo `Pasivo - Resistencia`, coste Ritmo 0 / Desgaste 0.
 Las 5 resistencias del sistema: Veneno, Infección, Aflicción, Calor/Frío, Taumática.
 
 | # | Título | Resistencia | Especialización | Origen de lore |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | — | Templar el Veneno | Veneno | Tolerancia | Naghii |
 | — | Atajar el Brote | Infección | Tolerancia | Zarnag |
 | — | Mantener Cerrada la Línea de Contagio | Infección | Medicina | Zarnag |
@@ -309,7 +310,7 @@ Las 5 resistencias del sistema: Veneno, Infección, Aflicción, Calor/Frío, Tau
 Una por especie. No tienen perfil de arma ni especialización — representan la capacidad biológica propia de cada especie.
 
 | # | Título | Especie |
-|---|---|---|
+| --- | --- | --- |
 | 98 | La Carcajada | Zarnag |
 | 99 | Protección Natural | Sauri |
 | 100 | Piel de Sombra | Naghii |
