@@ -814,7 +814,7 @@ domains:
   - specialization: Belicología
     specialization_en: Belicology
     associated_characteristic: Intelecto
-    fantasy_core: understanding conflict as doctrine, deployment, logistics, and war-system rather than isolated combat moments
+    fantasy_core: understanding the logic of martial traditions, defensive methods, doctrine, deployment, and combat organization rather than merely executing a movement
     primary_tags: [utility, setup, pattern_exploitation]
     secondary_tags: [control, pressure, counter_read]
     rare_or_limited_tags: [recovery, mobility, attack]
@@ -822,9 +822,11 @@ domains:
     typical_types: [active, passive]
     usual_cost_profile: low-to-moderate rhythm, low Attrition, usually paid through information gaps and scale complexity
     identity_notes: >
-      Belicology Techniques should feel like formal war literacy becoming tactical leverage:
-      reading deployment, anticipating doctrine, understanding logistical posture, or identifying
-      systemic weakness in organized conflict. They should not become live leadership or raw weapon execution.
+      Belicology Techniques transfer understanding of combat methods into tactical leverage:
+      reading defensive arrangements, anticipating known doctrine, understanding logistical posture,
+      or identifying systemic weakness. The threat need not be an army; defense against beasts
+      also belongs to the domain. They should not become live leadership, raw weapon execution,
+      general survival, or infallible prediction of intentions.
     should_not_do:
       - real_time_command_as_primary
       - direct_weapon_mastery

@@ -365,6 +365,27 @@ forms:
       - "Ricochet"
       - "Shadow Pressure"
     identity_notes: "Trunks excel at spatial authority and manipulative contact. They are poor fits for stealthy or ballistic profiles."
+    species_profile_expressions:
+      - species: "Loxod"
+        expression_id: "loxod_growth_scaled_trunk"
+        availability: "All Loxod"
+        contact_logic: "Prehensile push, sweep, wrap, and redirection whose reach and impact grow with the body"
+        stat_block:
+          assignment: "Auxiliary"
+          attack_characteristic: "Tenacity"
+          impact_characteristic: "Tenacity"
+          durability_formula: "5 per competency rank"
+          potency_formula: "6 per competency rank"
+          progression_by_size:
+            mediano:
+              reach: "2 m"
+              damage_die: "d6"
+            grande:
+              reach: "3 m"
+              damage_die: "d8"
+            enorme:
+              reach: "4 m"
+              damage_die: "d10"
 
   - id: tusk
     name: "Tusk"
@@ -384,6 +405,27 @@ forms:
       - "Ricochet"
       - "Bastion"
     identity_notes: "Tusks are excellent at forcing entry and breaking resistant lines, but they do not support flexible or ranged logic well."
+    species_profile_expressions:
+      - species: "Loxod"
+        expression_id: "loxod_growth_scaled_tusk"
+        availability: "All Loxod"
+        contact_logic: "Committed forward puncture with body follow-through; reach and impact grow with the body"
+        stat_block:
+          assignment: "Primary"
+          attack_characteristic: "Tenacity"
+          impact_characteristic: "Tenacity"
+          durability_formula: "7 per competency rank"
+          potency_formula: "9 per competency rank"
+          progression_by_size:
+            mediano:
+              reach: "1 m"
+              damage_die: "d8"
+            grande:
+              reach: "2 m"
+              damage_die: "d10"
+            enorme:
+              reach: "3 m"
+              damage_die: "d12"
 
   - id: horn
     name: "Horn"

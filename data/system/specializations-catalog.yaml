@@ -2883,36 +2883,39 @@ especializaciones:
     nombre_en: Belicology
     categoría: conocimiento
     característica_asociada: Intelecto
-    descripción_breve: comprender formalmente la guerra, sistemas de conflicto, doctrina militar y organización del combate
+    descripción_breve: comprender los principios técnicos, tácticos, estratégicos, psicológicos y organizativos del combate
     descripción_completa: >
-      Belicología representa el conocimiento organizado de la guerra como disciplina: cómo se
-      estructuran los ejércitos, qué doctrinas guían las decisiones militares, qué patrones siguen
-      los conflictos, cómo se organiza el combate a escala. No es el uso bruto de armas ni la
-      improvisación táctica — es el conocimiento formal que permite leer un conflicto como si fuera
-      un texto y entender sus implicaciones antes de que se desarrollen. Existe para distinguir al
-      personaje que puede pensar la guerra del que solo puede participar en ella.
+      Belicología estudia los principios técnicos, tácticos, estratégicos, psicológicos y
+      organizativos del combate. Permite comprender cómo una cultura afronta amenazas y por qué
+      desarrolla determinadas formas de combatir: qué papel cumplen sus armas, cómo aprovecha
+      el terreno, cómo coordina a sus combatientes y qué respuestas busca provocar en el adversario.
+      Abarca conflictos entre especies, defensa frente a bestias y protección de comunidades ante
+      amenazas del entorno. No exige que exista una guerra o un ejército. Analizar una práctica
+      no concede la capacidad de ejecutarla ni permite predecir perfectamente al adversario.
     fantasía_de_uso: >
-      Permite personajes que entienden conflictos desde una perspectiva estratégica, anticipan
-      movimientos de fuerzas organizadas, leen el terreno militar, y tienen autoridad doctrinal
-      en situaciones de guerra.
-    dominio_central: comprensión formal de la guerra, sistemas de conflicto, doctrina militar y organización del combate
-    cubre: estructura de batalla, lógica militar, patrones de guerra, método de conflicto
-    no_cubre: liderazgo como comando social en tiempo real, uso bruto de armas, improvisación táctica directa
+      Permite personajes que relacionan una tradición marcial con las amenazas que afronta,
+      reconocen la función de armas y posiciones, e interpretan métodos de defensa y combate
+      a partir de información disponible y prácticas conocidas.
+    dominio_central: comprensión de los principios técnicos, tácticos, estratégicos, psicológicos y organizativos del combate
+    cubre: lógica de tradiciones marciales, función de armas y posiciones, métodos de defensa, doctrina, coordinación y organización del combate
+    no_cubre: liderazgo como comando social en tiempo real, ejecución con armas, improvisación táctica directa, supervivencia general, lectura infalible de intenciones
     taxonomía:
       familia: conocimiento organizado
-      subfamilia: doctrina militar y sistemas de conflicto
-      etiquetas: [belicología, guerra, doctrina-militar, conflicto, estrategia]
+      subfamilia: métodos de combate y sistemas de conflicto
+      etiquetas: [belicología, combate, tradiciones-marciales, conflicto, estrategia]
       modo_primario: acción
       objeto_de_interacción: conocimiento
     relación_con_otros_dominios: >
       Se distingue de Liderazgo — Liderazgo es el ejercicio del mando en tiempo real, Belicología es
-      el conocimiento formal de cómo funciona la guerra como sistema. Se complementa con Historia
-      cuando los conflictos pasados son relevantes para entender el presente, y con Geografía cuando
-      el espacio define la estrategia.
+      el estudio de cómo y por qué se combate. Se separa de las competencias de arma y de las
+      Técnicas, que permiten ejecutar prácticas concretas, y de Supervivencia, que resuelve
+      necesidades generales de subsistencia. Se complementa con Historia cuando los conflictos
+      pasados son relevantes, y con Geografía cuando el espacio define la estrategia.
     criterio_de_uso: >
-      Debe pedirse cuando el personaje necesite aplicar conocimiento formal sobre la guerra para
-      analizar, anticipar o entender una situación militar. No corresponde a comando táctico en
-      tiempo real, uso de armas o improvisación bajo fuego.
+      Debe pedirse cuando el personaje analice métodos de combate, disposiciones o tradiciones
+      marciales a partir de información suficiente y conocimientos pertinentes. La amenaza puede
+      ser una especie inteligente o una bestia. No corresponde a comando táctico en tiempo real,
+      ejecución con armas, improvisación bajo fuego ni conocimiento general del entorno.
     procedimiento_base:
       tipo_de_prueba: tirada de especialización de Belicología
       oposición: umbral
@@ -2920,11 +2923,11 @@ especializaciones:
         combate: activa
         exploración: no_aplica
       requisitos:
-        - una situación militar, doctrina o despliegue susceptible de análisis formal
+        - un método de combate, tradición marcial o disposición defensiva susceptible de análisis
         - suficiente información para comparar la escena con patrones de conflicto conocidos
       criterio_de_umbral: >
         La condición del entorno o de la escena establece el umbral base. Escala del conflicto,
-        claridad del despliegue, rareza doctrinal y presión del momento ajustan ese valor.
+        claridad de la disposición, familiaridad con el método y presión del momento ajustan ese valor.
       penalizadores_comunes:
         - situación: información fragmentaria sobre fuerzas o posiciones
           modificador: "-1"
@@ -2935,7 +2938,7 @@ especializaciones:
         - situación: fatiga
           modificador: "-1 por nivel de Fatiga"
       reintento: >
-        Puede reevaluarse si el despliegue se aclara, aparecen nuevas fuerzas o cambia la situación.
+        Puede reevaluarse si la disposición se aclara, aparecen nuevas amenazas o cambia la situación.
         Sin nueva información táctica, repetir el mismo análisis rara vez mejora.
     contextos:
       combate: true
@@ -2944,6 +2947,8 @@ especializaciones:
     tipo_en_combate: activa
     tipo_en_exploración: no_aplica
     ejemplos_de_uso:
+      - comprender por qué una comunidad emplea armas largas y relevos para contener a una bestia en un paso estrecho
+      - relacionar el alcance y las restricciones de un arma con el método de combate de una tradición marcial
       - identificar la doctrina que está siguiendo una fuerza enemiga a partir de su disposición
       - anticipar dónde colocará el enemigo su reserva basándose en patrones doctrinales conocidos
       - entender las implicaciones estratégicas de perder un punto clave sin necesidad de combatirlo
@@ -3589,7 +3594,7 @@ especializaciones:
     relación_con_otros_dominios: >
       Se distingue de Intimidación en que Liderazgo produce seguimiento voluntario, no sumisión por
       miedo. Se separa de Belicología en que Liderazgo es el ejercicio del mando en tiempo real, no
-      el conocimiento formal de la guerra como sistema. También puede incorporar el discurso como
+      el estudio de cómo y por qué se combate. También puede incorporar el discurso como
       instrumento, pero su núcleo sigue siendo la autoridad que organiza y dirige a otros.
     criterio_de_uso: >
       Debe pedirse cuando el personaje intente dirigir, coordinar o mantener cohesionado a un grupo

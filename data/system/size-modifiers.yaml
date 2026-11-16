@@ -24,17 +24,18 @@ size_categories:
 
 endurance_base:
   # Base constant in Aguante = base_tamaño + (TEN × 2)
-  # Only Pequeño, Mediano, Grande are player-relevant (player species size categories)
+  # Enorme is player-relevant for late-life Loxod. Gigantesco remains creature-facing.
   # NPCs and creatures do not track Endurance
   player_categories:
     pequeño: 2
     mediano: 4
     grande: 6
+    enorme: 8
   rationale: >
     Option B: symmetric ±2 gaps per size step. Mediano base shifts from 3 to 4.
     Tenacidad×2 dominates at higher levels; the base constant matters mainly at
     level 1. A Pequeño character with Tenacidad 2 gets 6; a Grande character with
-    Tenacidad 2 gets 10.
+    Tenacidad 2 gets 10; an Enorme Loxod with Tenacidad 2 gets 12.
 
 physical_modifiers:
   # Inversely proportional: small = better T.E. físicas propias, worse T.R. físicas.

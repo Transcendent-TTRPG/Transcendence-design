@@ -891,6 +891,9 @@ or accelerate one bounded interaction that the material system already owns.
 
 **Authority:** `core-books/transcendence-corebook/10-equipment-and-resources/es/05-alquimia.md`
 
+**Specific neutralizer authority:** `data/system/materials-and-fabrication.yaml`,
+`alchemy.poison_neutralizers`, and `docs/adr/alchemy-poison-neutralizers.md`.
+
 Alchemy produces compounds — elixirs and venoms — from creature reagents (fluids, glands, organs, nervous system) combined with botanical reactants. It is not magic; it is biological chemistry applied to survival and combat delivery.
 
 ### Fabrication structure
@@ -932,6 +935,8 @@ A Formula is a prerequisite document consumed in use only by being owned — mul
 | Deliver an Ailment via a compound instead of direct attack | Alternate delivery vector |
 | Reduce required work hours for a formula tier | Accelerated production |
 | Extend compound duration | Persistence modification |
+| Supply a compatible poison neutralizer | Prepared consumable for Medicine, not automatic healing |
+| Authorize reactive external use of that neutralizer | Technique-specific delivery permission, not a product mode |
 
 ### Design rule
 
@@ -1104,6 +1109,12 @@ player pick list.
 ---
 
 ## Competencies & Progression
+
+### Starting weapon competencies
+
+Every character starts with two distinct weapon competencies at Level 1 / Novice, independent of species, background, or natural-weapon count. Choose anatomically available natural weapons or manufactured weapon types supported by prior experience. Choices cannot stack into one Level 2 competency; unselected weapons start at Level 0, with natural anatomy still available under the untrained rules.
+
+This allocation grants neither equipment nor Synapsis and is separate from the starting specialization package. See `competencies.yaml` → `character_creation.starting_weapon_competencies` and `docs/system/competencies.md` for examples.
 
 ### Rank structure
 
@@ -1506,6 +1517,7 @@ Abilities should cross systems where it serves the thematic concept. A bonus tha
 | Reduce rhythm cost of action X | ATB | Tempo control | ATB timeline position after action |
 | Enable or reduce cost of specific reaction | ATB | Reactive access | ATB position + Attrition |
 | Unlock maneuver or technique | Competencies | Access | New action available |
+| Supply a poison-specific treatment compound | Alchemy + Medicine | Compatibility, quality and dose expenditure; treatment still requires Medicine |
 | +effective level in competency X | Competencies | Training bonus | A.R. / D.R. / S.R. depending on type |
 
 ### Cross-system surfaces (higher design value)
@@ -1811,20 +1823,20 @@ Species traits may declare a creature treated as a different size for specific c
 
 ### Loxod
 
-**Size:** Grande · **Speed:** 8 m · **Longevity:** 200–300 years
+**Size:** Progressive: Mediano → Grande → Enorme · **Speed:** 5–8 m by life stage · **Longevity:** 200–300 years
 
 **Characteristics:** +1 TEN, INT, CMP
 
-**Herencia — Firma Sísmica:** −3 to all T.E. Sigilo in environments where Tauma is active or boundaries are diffuse (continuous involuntary infrasonido emission, not suppressable). Not a condition.
+**Herencia — Crecimiento Incesante:** on each life-stage Size transition, recalculate the applicable size rules: Endurance base, Carrying Capacity, physical T.E. modifier, physical T.R. modifier, visual range, and natural-weapon expression. Growth is mandatory and carries both benefits and constraints.
 
-**Legado:** Archivo Viviente (+1/4 NR Historia, Geografía, Lingüística) · Olfato Profundo (Active tech #104; T.C. Compostura vs environment threshold; reveals Alteraciones+severity of visible creatures; detects Aflicción presence without detail; detects hidden creatures with active states by chemical signal without breaking Oculto) · Trompa Versátil (passive mechanic: trunk as independent limb — hold additional item without weapon slot; interact with environment without free hands; +1/4 NR Trepar y Agarre; +1/4 NR Percepción for vibration through solid surfaces; does NOT apply to weapon T.A. or hand-specific structure tasks)
+**Legado:** Archivo Viviente (+1/4 NR to Conocimiento T.E. only when the Loxod previously studied or experienced the relevant source; no unseen facts or automatic certainty) · Olfato Profundo (Active tech #104; T.C. Compostura vs material-trace conditions; reads blood, smoke, damp, carrion, acid, known venoms, illness, metabolic stress, and recent animal presence; does not diagnose Alteraciones, Aflicciones, severity, or intent; strong trace gives only approximate position without breaking Ocultación) · Trompa Versátil (passive: hold an additional non-weapon object; +1/4 NR Agarre and Percepción using touch, smell, or solid-ground vibration; moving water, fractured stone, storms, and saturated architecture can prevent the reading)
 
 **Natural weapons:**
 
 | Weapon | T.A. | T.I. | Range | Die | Profiles |
 | --- | --- | --- | --- | --- | --- |
-| Colmillos | TEN | TEN | 2 m | d10 | Carga · Perforación · Ruptura · Intercepción |
-| Trompa | TEN | TEN | 3 m | d8 | Control de Línea · Torsión · Bastión · Ruptura |
+| Colmillos | TEN | TEN | Mediano: 1 m · Grande: 2 m · Enorme: 3 m | Mediano: d8 · Grande: d10 · Enorme: d12 | Carga · Perforación · Ruptura · Intercepción |
+| Trompa | TEN | TEN | Mediano: 2 m · Grande: 3 m · Enorme: 4 m | Mediano: d6 · Grande: d8 · Enorme: d10 | Control de Línea · Torsión · Bastión · Ruptura |
 
 ---
 
@@ -1871,7 +1883,7 @@ Species traits may declare a creature treated as a different size for specific c
 
 **Herencia — Instinto Caótico:** Permanent −3 to all T.R. and T.E. de Compostura (Enfoque, Contención, Meditación, Aplomo) and to T.R. against ailments.
 
-**Legado:** Adaptabilidad (Active-Utility tech #107; swap up to X major affinity specializations for different ones; permanent until next extended rest or next use; X = 1 at NR 1–4, 2 at NR 5–8, 3 at NR 9+; Ritmo 3 / Desgaste 2) · Curiosidad (use CUN instead of INT for T.E. Identificación and Interpretación; +1/4 NR to T.E. Identificación, Interpretación, Intuición) · Agilidad Superior (Aguante = 3 + AGI × 2 instead of 2 + TEN × 2)
+**Legado:** Adaptabilidad (Active-Utility #107; same-characteristic source/target S.R. support: max(target level + rank, actual current source rank); 1/2/3 simultaneous pairs at NR 1–4/5–8/9+; 3/1 adds or replaces one pair, no rest expiry or lost competency; may arise spontaneously, not an always-on bonus; balance pending; see `technique-adaptabilidad.md`) · Curiosidad (use CUN instead of INT for T.E. Identificación and Interpretación; +1/4 NR to T.E. Identificación, Interpretación, Intuición) · Agilidad Superior (Aguante = 3 + AGI × 2 instead of 2 + TEN × 2)
 
 **Natural weapons:**
 

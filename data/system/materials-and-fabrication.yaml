@@ -773,6 +773,136 @@ alchemy:
     - alchemical_index_or_complexity_measure
     - delivery_route_if_relevant
   qualifying_roll: Alquimia
+  poison_neutralizers:
+    status: authored
+    decision_ref: docs/adr/alchemy-poison-neutralizers.md
+    definition: >
+      Prepared alchemical consumables for treating one explicitly compatible
+      poison. The product supplies chemical capacity; Medicine resolves treatment.
+      An application to an attacking weapon requires a separate Technique permission.
+    compatibility:
+      matching_field: compatible_poison_formula_id
+      supported_poison_qualities:
+        common: [common]
+        rare: [common, rare]
+        exceptional: [common, rare, exceptional]
+      do_not_infer_from: [delivery_route, symptoms, ailment_severity]
+      unknown_poison_quality: requires_authored_source_definition
+      higher_neutralizer_quality:
+        reduces_treatment_difficulty: false
+        replaces_medical_kit: false
+        raises_kit_required_for_same_poison: false
+        treats_additional_poison_types: false
+    clinical_use:
+      administration_route: ingestion
+      presentation: sealed_container_of_liquid_doses
+      prerequisites:
+        - known_compatible_poison_type
+        - sufficient_neutralizer_quality
+        - required_medical_kit_and_poison_specific_procedure
+        - sufficient_patient_access_and_valid_ingestion
+      roll: "S.R. (Medicine)"
+      dose_consumption:
+        administered_doses_per_attempt: 1
+        consumed_on_success: true
+        consumed_on_failure: true
+        invalid_prerequisites_do_not_automatically_consume_dose: true
+      success: ends_one_compatible_active_poison_and_only_its_ongoing_effects
+      failure: poison_unchanged
+      retry_rule: inherit_Medicine_changed_state_resources_or_treatment_window
+      does_not:
+        - automatically_heal_wounds_or_prior_damage
+        - remove_similar_effects_from_other_sources
+        - confer_immunity_or_prevent_new_exposure
+        - replace_other_explicitly_authorized_treatment_methods
+      external_weapon_application_granted_by_product: false
+    conservation:
+      finished_product_class: stable
+      conditions: [sealed_container, uncontaminated, normal_storage_conditions]
+      raw_inputs_keep_their_own_conservation_rules: true
+      invulnerable_to_environment_or_container_damage: false
+    manufacturing:
+      formula_required: true
+      qualifying_roll: "S.R. (Alchemy)"
+      required_infrastructure: fixed_alembic_or_furnace
+      field_kit_finishes_compound: false
+      progress_interval_hours: 1
+      successful_interval_progress_hours: 1
+      failed_interval: time_lost_without_progress_reagents_remain_intact
+      botanical_index_rule: sum_of_botanical_input_indices_must_meet_formula_minimum
+    authored_poison_references:
+      confusion_poison:
+        name: Confusion Poison
+        verified_preparation_qualities: [common]
+        publication_source: core-books/transcendence-corebook/10-equipment-and-resources/es/05-alquimia.md
+        note: >
+          This is the named formula, not every cause of disorientation. No rare
+          or exceptional preparation of this poison is created by this registration.
+    treatment_profiles:
+      common_confusion_poison:
+        poison_formula_id: confusion_poison
+        poison_quality: common
+        minimum_medical_kit: basic
+        roll: "S.R. (Medicine)"
+        difficulty_band: Challenging
+        situational_modifiers: inherit_Medicine_scene_modifiers
+        atb:
+          action_type: active
+          rhythm_cost: 6
+          attrition_cost: 1
+          paid_on_failure: true
+        outside_atb: ordinary_Medicine_access_and_intervention_time_without_automatic_stress_cost
+        note: >
+          This profile is specific to the published common Confusion Poison.
+          Other poisons keep their own kit, difficulty, and recovery exceptions.
+    formula_catalog:
+      - id: confusion_poison_neutralizer_common
+        name: Confusion Poison Neutralizer - Common
+        output_family: poison_neutralizer
+        compatible_poison_formula_id: confusion_poison
+        quality: common
+        formula_rarity: common
+        creature_reagent: {type: fluid, units: 1}
+        botanical_units: 2
+        minimum_botanical_index: 8
+        progress_hours: 12
+        dose_yield: 1d4
+        fabrication_difficulty: Challenging
+      - id: confusion_poison_neutralizer_rare
+        name: Confusion Poison Neutralizer - Rare
+        output_family: poison_neutralizer
+        compatible_poison_formula_id: confusion_poison
+        quality: rare
+        formula_rarity: rare
+        creature_reagent: {type: gland, units: 1}
+        botanical_units: 3
+        minimum_botanical_index: 15
+        progress_hours: 24
+        dose_yield: 1d3
+        fabrication_difficulty: Demanding
+      - id: confusion_poison_neutralizer_exceptional
+        name: Confusion Poison Neutralizer - Exceptional
+        output_family: poison_neutralizer
+        compatible_poison_formula_id: confusion_poison
+        quality: exceptional
+        formula_rarity: exceptional
+        creature_reagent: {type: nervous_system, units: 1}
+        botanical_units: 4
+        minimum_botanical_index: 24
+        progress_hours: 36
+        dose_yield: 1d2
+        fabrication_difficulty: Extreme
+    integration:
+      runtime_supported: false
+      runtime_gap_classification: new_subsystem
+      runtime_gap_note: >
+        Typed compound inventory, formula compatibility, dose consumption, and
+        Medicine treatment resolution are not implemented by this data registration.
+      publication_languages:
+        es: registered
+        en: deferred_existing_chapter_has_only_README
+      fixed_product_prices: not_authored
+      formula_market_surcharge: not_authored_for_this_output_family
 
 plants:
   role: sourcing_inputs

@@ -167,7 +167,7 @@ Decorative practice is immediate and perishable: body paint, woven materials att
 
 **Instinto Caótico (Herencia)** — The Panin nervous system lacks the executive filter that other hominids developed. The impulse arrives and the response arrives with it. Resisting requires active effort that biology penalizes. Mechanically: Permanent -3 penalty to all T.R. and T.E. of Compostura (Enfoque, Contención, Meditación, Aplomo) and to T.R. against afflictions.
 
-**Adaptabilidad (Legado)** — Mechanically: Active technique. Temporarily trade a number of your major affinities (based on NR) for different ones. The new configuration lasts until the next long rest or until used again.
+**Adaptabilidad (Legado)** — Innate spontaneous association of practiced principles. Mechanically, Active Utility #107 selects a trained source/different target specialization pair sharing one characteristic. Target S.R. competency contribution is the greater of its actual level + rank and the actual current source rank, not their sum. Maintain 1/2/3 pairs at NR 1–4/5–8/9+; each own-activation use adds or replaces one pair for 3/1 under pressure. No rest expiry, upkeep, lost competencies or unknown knowledge. Mechanical selection need not be consciously planned or named in fiction. See `docs/adr/panin-adaptability-transfer.md`; empirical balance pending.
 
 **Curiosidad (Legado)** — Mechanically: They can use Astucia instead of Intelecto for T.E. of Identificación and Interpretación. They gain +1 per 4 NR to Identificación, Interpretación, and Intuición, reflecting their hyper-attention to present detail.
 
@@ -178,7 +178,7 @@ Decorative practice is immediate and perishable: body paint, woven materials att
 
 ### Combat identity
 
-The Panin combat identity is extreme mobility and real-time tactical genius without long-term commitment. Their Adaptabilidad means they can re-spec their combat role daily based on whatever inspires them right now. They don't block; they dodge (Agilidad Superior). They don't use heavy weapons; they strike fast, exploiting structural weaknesses they identified instantly (Curiosidad).
+The Panin combat identity emphasizes mobility and associative responses to immediate problems. Adaptabilidad redirects the application of practiced principles without erasing prior training or granting a complete new combat role. An association can arise before the individual can explain it. Agilidad Superior favors movement-based endurance; Curiosidad supports attention to present detail. Neither makes success automatic or substitutes for unknown knowledge.
 
 ---
 

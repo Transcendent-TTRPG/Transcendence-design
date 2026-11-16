@@ -58,13 +58,14 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | — | La Masa Continúa | Activo - Ataque | Desplazamiento forzado con escudo |
 | — | [Naghii — lanza] | Reactivo - Ataque | Control de línea con asta |
 
-### Corrosión (3)
+### Corrosión (4)
 
 | # | Título | Tipo | Salida principal |
 | --- | --- | --- | --- |
 | — | Ensuciar la Herida | Activo - Ataque | Residuo corrosivo; bloquea tratamiento |
 | — | Sostener el Canal | Activo - Utilidad | Residuo a distancia; aplicación preventiva |
 | — | La Capa que Cede | Activo - Ataque | Penaliza T.D. armadura; degrada superficie defensiva |
+| 165 | La mancha que vuelve | Reactivo - Utilidad | Reaplica residuo tras una retirada |
 
 ### Desgarro / Rend (3)
 
@@ -118,13 +119,14 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | — | Romper el Caudal | Activo - Ataque | Desequilibrado; disruption de guardia |
 | — | El Peso que Planta | Activo - Ataque | Derriba con mazo |
 
-### Impredecible / Unpredictability (3)
+### Impredecible / Unpredictability (4)
 
 | # | Título | Tipo | Salida principal |
 | --- | --- | --- | --- |
 | — | Nublar la Señal | Activo - Utilidad | Rompe lectura; Desequilibrado sin T.A. |
 | — | La Vuelta que Suelta | Activo - Ataque | Secuencia de cierre con Desequilibrado |
 | — | El Golpe sin Eco | Activo - Ataque | Enmascaramiento acústico; bypass T.D. |
+| 164 | El rastro ofrecido | Reactivo - Utilidad | Dirige una pista de posición falsa |
 
 ### Intercepción / Interception (5)
 
@@ -136,7 +138,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | 81 | El Tránsito que No Llega | Reactivo - Utilidad | Deniega movimiento enemigo |
 | 142 | Leer la Entrada | Reactivo - Utilidad | T.A. reemplaza T.D.; éxito = ataque falla + desplazamiento (2 + rango) m |
 
-### Interrupción / Interruption (5)
+### Interrupción / Interruption (6)
 
 | # | Título | Tipo | Salida principal |
 | --- | --- | --- | --- |
@@ -145,6 +147,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | — | Anudar el Paso | Reactivo - Ataque | Interrumpe; cuarentena de efecto |
 | — | Leer el Calor del Paso | Reactivo - Ataque | Interrupción flexible; contraataque |
 | — | [Drak'kai] | Reactivo - Ataque | Desequilibrado; alteración en interrupción |
+| 162 | La respuesta que no llega | Reactivo - Utilidad | Cancela una Reacción física de un objetivo con Entorpecido; sin daño |
 
 ### Letalidad / Lethality (2)
 
@@ -181,7 +184,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | — | Quebrar la Vuelta | Activo - Ataque | Rompe protección; abre zona |
 | — | El Cierre que No Se Negocia | Activo - Ataque | Ruptura de armadura con maza |
 
-### Torsión (4)
+### Torsión (5)
 
 | # | Título | Tipo | Salida principal |
 | --- | --- | --- | --- |
@@ -189,6 +192,7 @@ Antes de diseñar: leer la columna completa del perfil y mapear gaps reales.
 | — | Barrer la Orilla | Activo - Ataque | Reposicionamiento forzado con giro |
 | — | Devolver al Cauce | Activo - Utilidad | Desarme; alteración de control |
 | — | La Cuenta del Cuerpo | Activo - Ataque | Desequilibrado por eje de torsión acústica |
+| 163 | La fuerza prestada | Reactivo - Utilidad | Redirige golpe hacia otra criatura |
 
 ### Guarda / Ward (1)
 
@@ -243,7 +247,7 @@ Las resistencias híbridas (pasivas) están en la sección 4.
 | Especialización | Cantidad | Técnica(s) |
 | --- | --- | --- |
 | Agarre | 1 | Sellar la Grieta |
-| Alquimia | 1 | Guardar el Pulso |
+| Alquimia | 2 | El Ángulo Estudiado (#127) · La dosis perdida (#167) |
 | Aplomo | 1 | Asentar la Piedra |
 | Arquitectura | 1 | Sentar el Tercer Punto *(arquitectura táctica)* |
 | Arqueología | 1 | Leer la Línea Ausente |
@@ -263,12 +267,12 @@ Las resistencias híbridas (pasivas) están en la sección 4.
 | Medicina | 2 | Levantar el Dique · La Señal Repetida |
 | Meditación | 1 | Sostener la Mano Necesaria *(activa; la resistencia híbrida está en §4)* |
 | Minería | 1 | Tomar la Secuencia |
-| Nadar | 1 | Sellar la Presa |
+| Nadar | 2 | Tomar la Corriente (#38) · El aliento reservado (#168; requiere también Resistencia al Veneno) |
 | Orientación | 2 | Pasar Como Parte del Fondo · El Ángulo Estudiado |
 | Percepción | 2 | Leer lo que Siguió · La Grieta Elegida |
 | Rastreo | 2 | Lo que el Cuerpo Delata · El Margen que Quedó Abierto |
 | Resonancia | 2 | Marcar la Grieta · Nombrar el Umbral |
-| Sigilo | 3 | Pesar el Umbral · Reír Donde Más Suena · El Eco que Persiste |
+| Sigilo | 4 | Pesar el Umbral · Pasar Como Parte del Fondo · El Ángulo Muerto · El gesto inadvertido (#166) |
 | Supervivencia | 1 | Tomar la Costura |
 | Taumaturgia | 1 | Fijar el Umbral *(activa; la resistencia híbrida está en §4)* |
 | Tolerancia | 1 | Darle a la Pieza Útil *(activa; las resistencias híbridas están en §4)* |
@@ -320,7 +324,7 @@ Una por especie. No tienen perfil de arma ni especialización — representan la
 | 104 | Olfato Profundo | Loxod |
 | 105 | Integridad de la Señal | Ceratox |
 | 106 | El Veredicto | Chelicer |
-| 107 | Adaptabilidad | Panin |
+| 107 | [Adaptabilidad](technique-adaptabilidad.md) | Panin |
 | 108 | La Presa del Oso | Ursari |
 | 109 | El Ancestro Despierta | Luphran |
 | 110 | Urdimbre | Arakhel |

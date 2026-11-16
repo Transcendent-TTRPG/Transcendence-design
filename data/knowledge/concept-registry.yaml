@@ -1,4 +1,24 @@
 concepts:
+  - id: specific_poison_neutralizer
+    label: Specific Poison Neutralizer
+    family: alchemical_consumable
+    canonical_terms:
+      en: Specific Poison Neutralizer
+      es: Neutralizador específico
+    summary: >
+      Prepared treatment resource with explicit poison-formula compatibility,
+      quality coverage, and dose expenditure. Medicine and the poison's kit
+      resolve clinical use; reactive weapon application needs a Technique.
+    authority_paths:
+      - Transcendence-design/data/system/materials-and-fabrication.yaml
+      - Transcendence-design/docs/system/materials-and-fabrication.md
+      - Transcendence-design/docs/adr/alchemy-poison-neutralizers.md
+    key_notes:
+      - Quality is not Ailment severity and compatibility is not symptom similarity.
+      - One administered dose is consumed on a valid treatment attempt, including failure.
+      - Three Confusion Poison Neutralizer formulas are authored; only the Common poison preparation is currently published.
+      - Registration grants neither reactive delivery nor simulator support.
+
   - id: hidden_state
     label: Hidden
     family: concealment_state

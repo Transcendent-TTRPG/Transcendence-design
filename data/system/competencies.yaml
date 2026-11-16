@@ -62,6 +62,27 @@ ranks:
 
 levels_per_rank: 2
 
+character_creation:
+  starting_weapon_competencies:
+    count: 2
+    level: 1
+    rank: novice
+    distinct: true
+    independent_of: [species, background, natural_weapon_count]
+    choices:
+      - anatomically_available_natural_weapon
+      - manufactured_weapon_type
+    justification: prior_character_experience
+    unselected_weapon_level: 0
+    unselected_natural_weapons_remain_available: true
+    grants_equipment: false
+    grants_synapsis: false
+    note: >
+      The two choices must be different weapon competencies. They cannot be combined
+      to start one competency at level 2. Natural anatomy does not grant extra trained
+      weapon competencies. Choosing a manufactured weapon competency does not grant
+      possession of that weapon.
+
 synapsis:
   trigger: entering_new_rank   # +1 to associated characteristic on reaching threshold_level
   effect: "+1 to the characteristic associated with the specialization"

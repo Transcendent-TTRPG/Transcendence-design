@@ -1,5 +1,18 @@
 knowledge_manifest:
   domains:
+    - id: alchemy_poison_neutralizers
+      concepts:
+        - specific_poison_neutralizer
+      decisions:
+        - poison_neutralizer_product_technique_boundary
+      preferred_sources:
+        - Transcendence-design/data/system/materials-and-fabrication.yaml
+        - Transcendence-design/docs/system/materials-and-fabrication.md
+        - Transcendence-design/docs/adr/alchemy-poison-neutralizers.md
+      fallback_sources:
+        - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/05-alquimia.md
+        - Transcendence-publications/core-books/transcendence-corebook/11-ailments/es/04-venenos.md
+
     - id: concealment
       concepts:
         - hidden_state

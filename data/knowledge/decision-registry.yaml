@@ -1,4 +1,38 @@
 decisions:
+  - id: poison_neutralizer_product_technique_boundary
+    title: Neutralizer products supply capacity while Techniques grant reactive delivery
+    status: accepted
+    summary: >
+      Creator-approved on 2026-10-15: products define compatible poison formula,
+      three-quality coverage, clinical dose consumption, and ordinary Medicine
+      treatment. They grant no autonomous external or reactive weapon use.
+      La dosis perdida owns that exceptional application. Common Confusion Poison
+      treatment uses a Basic medical kit, Challenging Medicine, and active ATB
+      cost 6/1; other poisons keep their own exceptions. No simulator port is implied.
+    related_concepts:
+      - specific_poison_neutralizer
+    authority_paths:
+      - Transcendence-design/data/system/materials-and-fabrication.yaml
+      - Transcendence-design/docs/system/materials-and-fabrication.md
+      - Transcendence-design/docs/adr/alchemy-poison-neutralizers.md
+      - Transcendence-publications/core-books/transcendence-corebook/10-equipment-and-resources/es/05-alquimia.md
+
+  - id: two_distinct_starting_weapon_competencies
+    title: Every character starts with two distinct weapon competencies
+    status: accepted
+    summary: >
+      Creator-approved on 2026-10-07: each character chooses two distinct weapon
+      competencies at level 1 / Novice, regardless of species, background, or
+      natural-weapon count. Choices are anatomically available natural weapons or
+      manufactured weapon types supported by prior experience. Choices cannot stack;
+      unselected weapons start at level 0, with natural anatomy still available.
+      The allocation grants neither equipment nor Synapsis.
+    authority_paths:
+      - Transcendence-design/data/system/competencies.yaml
+      - Transcendence-design/docs/system/competencies.md
+      - Transcendence-design/docs/adr/system-initial-weapon-competencies.md
+      - Transcendence-publications/core-books/transcendence-corebook/05-character-creation/es/character-creation.md
+
   - id: concealment_hidden_state_split
     title: Hidden is the state, Concealment is the subsystem
     status: accepted

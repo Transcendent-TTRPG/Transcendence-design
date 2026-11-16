@@ -417,6 +417,20 @@ Manipulating poisons should usually require the proper kit, tools, or trained
 procedure. Identification, application, neutralization, and contamination risk
 belong to the Poison's handling logic, not to generic freeform narration.
 
+### Specific neutralizer treatments
+
+Prepared neutralizer products are owned by
+`data/system/materials-and-fabrication.yaml`, `alchemy.poison_neutralizers`, and
+[Materials & Fabrication](materials-and-fabrication.md#specific-poison-neutralizers).
+They require explicit poison compatibility and sufficient product quality;
+quality is not Ailment severity. One administered dose is consumed per valid
+Medicine treatment attempt, including failure. Successful treatment ends only
+the compatible poison and its ongoing effects, not wounds or other sources.
+The poison's medical kit, treatment exceptions, and authorized alternative
+methods remain in force. The published Common Confusion Poison has a local
+Basic-kit / Challenging-Medicine / active-6/1 treatment profile; this is not a
+new default for every Poison. A product grants no reactive weapon application.
+
 ---
 
 ## Curses

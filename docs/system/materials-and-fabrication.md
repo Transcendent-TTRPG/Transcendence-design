@@ -1538,6 +1538,75 @@ When formulas are traded as authored documents, their market value should usuall
 
 Use the same availability surcharge table defined for plans unless a later subsystem says otherwise.
 
+### Specific poison neutralizers
+
+**Authority:** `data/system/materials-and-fabrication.yaml`,
+`alchemy.poison_neutralizers`; decision: [Poison Neutralizers](../adr/alchemy-poison-neutralizers.md).
+
+A neutralizer is a prepared treatment resource, not a new reaction. Each product
+names its compatible poison formula. Sharing symptoms, severity, or delivery
+route does not establish compatibility. Quality and Ailment severity remain
+separate fields.
+
+| Neutralizer quality | Compatible poison preparation qualities |
+| --- | --- |
+| Common | Common |
+| Rare | Common, Rare |
+| Exceptional | Common, Rare, Exceptional |
+
+Medicine and the poison's required medical kit resolve clinical treatment. One
+administered dose supports one attempt against one compatible poison in one
+creature and is consumed on success or failure. Missing prerequisites do not
+create a valid attempt or automatically spend a dose. Success ends that poison
+and only its ongoing effects; failure leaves it unchanged. Wounds, prior damage,
+and effects from other sources remain. Medicine's retry rules still apply.
+Other expressly authorized treatments remain available.
+
+The product grants no ordinary or reactive application to an attacking weapon.
+An authored Technique must grant that application. Higher neutralizer quality
+does not lower Medicine difficulty, replace the kit, raise the kit needed for
+the same poison, or cover unrelated poison types.
+
+#### Confusion Poison Neutralizer
+
+All three products are ingested liquids in sealed containers. Finished products
+are **stable** under normal, sealed, uncontaminated storage. Raw inputs retain
+their own conservation requirements. Stability does not protect containers or
+contents against damage, contamination, or destructive environmental exposure.
+
+| Quality / formula rarity | Creature reagent | Botanical units | Minimum total botanical index | Progress hours | Doses | Fabrication difficulty |
+| --- | --- | --- | --- | --- | --- | --- |
+| Common | Fluid ×1 | 2 | 8 | 12 | 1d4 | Challenging |
+| Rare | Gland ×1 | 3 | 15 | 24 | 1d3 | Demanding |
+| Exceptional | Nervous system ×1 | 4 | 24 | 36 | 1d2 | Extreme |
+
+Each product requires its formula and a fixed alembic or furnace. For these
+formulas, each successful hourly Alchemy S.R. adds one progress hour; failure
+spends the hour without progress and leaves reagents intact. A field kit can
+prepare inputs but cannot finish synthesis. The botanical index is an input sum,
+not the poison's identification index or the patient's treatment difficulty.
+
+Only the **Common Confusion Poison** preparation is currently published. Its
+treatment profile uses a **Basic medical kit**, a **Challenging Medicine S.R.**,
+and ordinary Medicine scene modifiers. Under ATB pressure, this is an **active
+technical treatment costing Rhythm 6 / Attrition 1**, paid even on failure.
+Ingestion and access to the patient must be possible. Outside ATB, use ordinary
+Medicine access and intervention time without inventing stress costs for a
+calm scene. A Rare or Exceptional neutralizer used on that same Common poison
+does not change this profile.
+
+The superior neutralizer formulas do not create Rare or Exceptional versions of
+the poison. Sources lacking an authored poison quality need an explicit quality
+definition, not a conversion from severity. Other poisons retain their own
+recovery exceptions. Product prices and a neutralizer-specific formula market
+surcharge are not authored; formula-document prices are not dose prices.
+
+**Example:** a creature has the published Common Confusion Poison. A compatible
+Rare neutralizer still uses the Basic kit and Challenging Medicine profile. A
+successful treatment consumes one dose and ends that poisoning. A failed
+treatment also consumes one dose and leaves the poison active; it does not
+permit an unchanged immediate retry. Neither result grants a weapon reaction.
+
 ### Authoring rule
 
 Use:

@@ -196,6 +196,7 @@ Examples:
 - **Compatible profiles:** `Line Control`, `Torsion`, `Interruption`, `Bastion`
 - **Restricted profiles:** `Precision`, `Ricochet`, `Shadow Pressure`
 - **Identity notes:** Trunks excel at spatial authority and manipulative contact. They are poor fits for stealthy or ballistic profiles.
+- **Loxod growth expression:** Auxiliary weapon. `Mediano`: 2 m, d6. `Grande`: 3 m, d8. `Enorme`: 4 m, d10. All sizes use Tenacity for T.A. and T.I.; Durability is 5 per competency rank and Potency is 6 per competency rank.
 
 ### Tusk
 
@@ -207,6 +208,7 @@ Examples:
 - **Compatible profiles:** `Perforation`, `Charge`, `Sunder`, `Unstoppable`
 - **Restricted profiles:** `Torsion`, `Ricochet`, `Bastion`
 - **Identity notes:** Tusks are excellent at forcing entry and breaking resistant lines, but they do not support flexible or ranged logic well.
+- **Loxod growth expression:** Primary weapon. `Mediano`: 1 m, d8. `Grande`: 2 m, d10. `Enorme`: 3 m, d12. All sizes use Tenacity for T.A. and T.I.; Durability is 7 per competency rank and Potency is 9 per competency rank.
 
 ### Horn
 

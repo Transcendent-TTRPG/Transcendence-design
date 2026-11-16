@@ -1745,16 +1745,16 @@ Instead, each technique should express a transferable formal process developed b
 
 ### Belicology
 
-- **Base specialization:** formal study of war, doctrine, deployment, logistics, formations, campaigns, force posture, military systems, and organized conflict.
-- **Transferable capabilities:** doctrine reading, deployment analysis, logistics inference, formation weakness recognition, escalation framing, command-pattern prediction, systemic conflict modeling.
-- **Technique identity:** Belicology Techniques should not simply make the character better at fighting. They should express formal war literacy: reading organized violence as a system, identifying doctrine, predicting deployment logic, or exposing logistical and formation weaknesses.
+- **Base specialization:** study of the technical, tactical, strategic, psychological, and organizational principles of combat; martial traditions, defensive methods, doctrine, deployment, logistics, and formations. War is one context, not a requirement; defense against beasts also belongs to the domain.
+- **Transferable capabilities:** combat-method comparison, weapon-role analysis, doctrine reading, deployment analysis, logistics inference, formation weakness recognition, escalation framing, and systemic conflict modeling.
+- **Technique identity:** Belicology Techniques should not simply make the character better at fighting. They transfer understanding of combat methods to a different problem: reading defensive arrangements, identifying doctrine, predicting deployment logic, or exposing logistical and formation weaknesses. Understanding a martial tradition does not grant its weapon execution or Techniques.
 - **Primary tags:** `utility`, `setup`, `pattern_exploitation`
 - **Secondary tags:** `control`, `pressure`, `counter_read`
 - **Rare or limited tags:** `recovery`, `mobility`, `attack`
 - **Typical targets:** `enemy`, `group`, `zone`, `formation`
 - **Typical types:** `active`, sometimes `passive`
 - **Usual cost profile:** low-to-moderate Rhythm, low Attrition; paid through information gaps, scale complexity, fog of war, and doctrine familiarity.
-- **Design boundary:** A Belicology Technique should not become live leadership, weapon mastery, stealth infiltration, or healing. It studies conflict as doctrine and system, not individual combat execution.
+- **Design boundary:** A Belicology Technique should not become live leadership, weapon mastery, general survival, stealth infiltration, or healing. It studies how and why combat methods work, not individual combat execution or infallible knowledge of intentions.
 
 #### Valid derived techniques
 

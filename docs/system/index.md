@@ -9,16 +9,17 @@ All content here is extracted from and must remain consistent with `transcendenc
 | --- | --- |
 | [characteristics.md](characteristics.md) | All 9 characteristics, groups, abbreviations, derived attributes, Synapsis rule |
 | [roll-types.md](roll-types.md) | All 7 roll types with formulas, Evolutionary Advantage, roll→competency map |
-| [competencies.md](competencies.md) | Ranks, progression requirements, all competency types and bonuses |
+| [competencies.md](competencies.md) | Ranks, two starting weapon competencies, progression requirements, all competency types and bonuses |
 | [difficulty-thresholds.md](difficulty-thresholds.md) | 5 universal difficulty tiers (Fundamentos–Extrema), base values, formula (Base + NR), opposed roll vs. fixed threshold distinction |
 | [ailments.md](ailments.md) | Agravios framework: universal severity model, duration doctrine, and initial Alteration entries |
 | [environmental-conditions.md](environmental-conditions.md) | Two condition types (natural/extranatural), 6 elements + combinations, 5 severity levels with examples, Hinder/Restrict/Accelerate model, Narrator NR guidance |
 | [cover-visibility-concealment.md](cover-visibility-concealment.md) | Cobertura, Visibilidad y Ocultación — physical cover, visual range, light sources, hidden state, active/passive detection |
 | [limbo-manifestations.md](limbo-manifestations.md) | Three Limbo manifestation types (ambient flow / vestige / link), detection methods, relationships between types, open design questions (D-09–D-11) |
 | [specializations.md](specializations.md) | Full specialization framework: definition, four design clauses, structural relationship (attribute→specialization→technique), S.R. formula, starting specs, distribution notes per attribute |
-| [materials-and-fabrication.md](materials-and-fabrication.md) | Materials framework: families, grade, accessibility, extraction, conservation, fabrication, refinement, and related tool/plan logic |
+| [materials-and-fabrication.md](materials-and-fabrication.md) | Materials framework: families, grade, accessibility, extraction, conservation, fabrication, refinement, tool/plan logic, and specific poison neutralizer formulas |
 | [faction-reputation-and-alliances.md](faction-reputation-and-alliances.md) | Social-world framework: faction standing, public renown, alliances, and commerce/availability |
 | [techniques.md](techniques.md) | Technique taxonomy: canonical fields, cost model, timing, duration, resistance, scaling, and authoring rules |
+| [technique-adaptabilidad.md](technique-adaptabilidad.md) | Panin #107: partial competency transfer, persistent pair limits and spontaneous fictional expression; balance pending |
 | [technique-interaction-framework.md](technique-interaction-framework.md) | Cross-system doctrine for Techniques — what systems they should touch, how they should touch them, and how to avoid arbitrary bonus-stacking |
 | [technique-origins.md](technique-origins.md) | World-grounding framework for Techniques — origin fronts (Species, Doctrine, Region), transmission logic, access levels, and design checklist |
 | [weapon-technique-profiles.md](weapon-technique-profiles.md) | Combat profile layer between weapon competency and concrete Techniques — shared by weapon families and natural attack forms |
@@ -42,7 +43,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | --- | --- |
 | `characteristics.yaml` | Characteristic definitions, derived attribute formulas |
 | `roll-types.yaml` | Roll formulas, Evolutionary Advantage, roll→competency map |
-| `competencies.yaml` | Ranks, progression costs, competency type bonuses |
+| `competencies.yaml` | Ranks, starting weapon allocation, progression costs, competency type bonuses |
 | `backgrounds.yaml` | Background definitions with affinity and specialization rules |
 | `attrition-fatigue.yaml` | Endurance formula, Fatigue thresholds, Attrition cost scale, Tenacity-specialization interaction model |
 | `atb-combat.yaml` | Rhythm scale (0/3/5/7/9), base action families with rhythm and Attrition costs, initial position formula and situational modifiers, competency-rhythm interaction model |
@@ -55,7 +56,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | `environmental-conditions.yaml` | Two condition types, 6 elements and combinations, 5 severity levels with NR guidance |
 | `cover-visibility-concealment.yaml` | Cover levels, reduced visibility ranges, light sources, concealment state, detection rules |
 | `limbo-manifestations.yaml` | El Limbo definition, three manifestation types with characteristics and detection, inter-manifestation relationships |
-| `materials-and-fabrication.yaml` | Materials framework — families, accessibility, extraction domains, conservation classes, fabrication, refinement, and related authored loops |
+| `materials-and-fabrication.yaml` | Materials framework — families, accessibility, extraction, conservation, fabrication, refinement, and poison-neutralizer quality, formula and treatment data |
 | `faction-reputation-and-alliances.yaml` | Social-world framework — faction standing, public renown, alliance status, settlement availability, and trade-access logic |
 | `techniques.yaml` | Technique taxonomy, template, cost fields, duration models, and competency-domain matrix |
 | `technique-interaction-surfaces.yaml` | Catalog of mechanical surfaces Techniques can touch — roll, timing, attrition, damage, wounds, cover, concealment, equipment, recovery, information, and encounter parts |
@@ -70,6 +71,7 @@ All content here is extracted from and must remain consistent with `transcendenc
 | Base die | d10 |
 | Characteristics start at | 0 |
 | Levels per competency rank | 2 |
+| Starting weapon competencies | 2 distinct at Level 1 / Novice; natural or manufactured, independent of species and background |
 | Difficulty tier 1 — Fundamentos | 5 + NR |
 | Difficulty tier 2 — Desafiante | 8 + NR |
 | Difficulty tier 3 — Rigurosa | 11 + NR |

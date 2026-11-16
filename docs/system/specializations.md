@@ -624,9 +624,11 @@ This catalog establishes working identities and design boundaries. Full player-f
 
 **Belicología** · Knowledge
 
-- **Core domain:** formal understanding of war, conflict systems, military doctrine, and combat organization
-- **Covers:** battle structure, military logic, war patterns, conflict method
-- **Does not cover:** leadership as social command, raw weapon use, direct tactical improvisation
+- **Core domain:** understanding the technical, tactical, strategic, psychological, and organizational principles of combat
+- **Covers:** martial traditions, weapon and position roles, defensive methods, doctrine, coordination, and combat organization; conflicts between species and defense against beasts or environmental threats
+- **Does not cover:** leadership as live social command, weapon execution, direct tactical improvisation, general survival, or infallible knowledge of intentions
+
+Belicology relates a culture's methods of combat to the threats it faces. It does not require a war or an army. Understanding a practice does not grant its weapon competency or Techniques. See `docs/adr/system-belicology-scope.md`.
 
 ---
 

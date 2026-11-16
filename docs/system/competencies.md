@@ -11,12 +11,24 @@ A new rank is gained every 2 competency levels.
 | Rank        | Level Range | Notes |
 |---|---|---|
 | Untrained   | 0           | Starting level for most competencies |
-| Novice      | 1–2         | Granted by background specializations at creation |
+| Novice      | 1–2         | Starting trained competencies begin at level 1 |
 | Adept       | 3–4         | |
 | Expert      | 5–6         | |
 | Master      | 7–8         | |
 | Consummate  | 9–10        | |
 | Transcendent| 11+         | |
+
+## Starting Weapon Competencies
+
+Every character begins with **two distinct weapon competencies at level 1 / Novice**, regardless of species, background, or the number of natural weapons. Choose from the character's anatomically available natural weapons and manufactured weapon types, justified by prior experience.
+
+The two choices cannot be combined to start one competency at level 2. Weapon competencies not chosen begin at level 0. An untrained natural weapon remains anatomically available and follows the untrained weapon rules; anatomy does not grant additional trained competencies.
+
+This allocation is separate from starting specializations. Weapon competencies do not grant Synapsis or equipment. Armor, shield, and Evasion competencies are separate types and do not consume these two weapon choices.
+
+Example: a Panin can start with Bite 1 and one manufactured weapon competency 1, or with two distinct manufactured weapon competencies 1 and Bite 0. A character with two natural weapons can choose both at level 1, choose one natural and one manufactured weapon competency, or choose two manufactured weapon competencies. None of these choices grants carried weapons.
+
+Authority: `data/system/competencies.yaml` → `character_creation.starting_weapon_competencies`; decision: `docs/adr/system-initial-weapon-competencies.md`.
 
 ## Progression Requirements
 

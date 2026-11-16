@@ -6393,6 +6393,89 @@ The target still makes its normal `D.R.`. This Technique does not remove `Defens
 - ends unused at the end of the user's next activation
 
 
+## Authored Bufoni Technique — 162
+
+`La respuesta que no llega` is a reactive utility originating in Bufoni practice, not a species-restricted ability. It requires Novice weapon competency, Interruption access and the exact active Poison Entorpecido (any severity and source). Before a physical-attack or movement Reaction within weapon reach resolves, oppose weapon A.R. with the target's D.R. Strict success cancels the entire Reaction while retaining its Rhythm and Attrition costs; failure or tie leaves it intact.
+
+Rhythm 4 / Attrition 1; instantaneous; no damage, inherited weapon effects or poison modification. One attempt per declared Reaction; no targeting itself, Active Actions or ordinary D.R. Third-party intervention is permitted.
+
+See `data/system/techniques.yaml`, ID 162, and [the technique reference](technique-la-respuesta-que-no-llega.md) for the approved rule, comparison, integration audit and runtime gaps. State: `authored`; not runtime-supported or balance-closed. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 163
+
+`La fuerza prestada` / `Borrowed Force` is a reactive Torsion utility, Novice weapon competency, originating in Bufoni practice without a species restriction. Before one physical attack's original defense resolves, contact its attacking weapon or limb within the practitioner's weapon reach and choose another recipient legally reachable by that same attack. Oppose the aggressor's A.R. with weapon A.R.; strict success redirects the attack, failure or tie retains the original recipient's normal defense.
+
+Preserve the aggressor's attack die, adjusting only recipient-dependent modifiers; resolve the new recipient's D.R., protection and conditional contact effects normally. Rhythm 3 / Attrition 1 even on failure; no own impact or weapon effects. No projectiles, areas, reach extension or obstacle bypass. One attack per use and one attempt per practitioner/attack; no second successful redirection through this same Technique. Other permitted reactions remain available.
+
+See `data/system/techniques.yaml`, ID 163, and [the technique reference](technique-la-fuerza-prestada.md). State: `authored`; runtime extension, empirical balance and visual card QA remain pending. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 164
+
+`El rastro ofrecido` / `The Offered Trail` is a reactive Unpredictability utility, Novice weapon competency, without a species restriction. While Hidden from one detector, declare a plausible false signal point within weapon reach before learning their Perception result. Oppose weapon A.R. by that Perception; also use the same Perception against the unchanged active Hidden value. No extra Perception roll or Hidden reroll occurs.
+
+Successful real detection always wins. If it fails and A.R. strictly exceeds Perception, supply the chosen point instead of the normal 1d8 false clue; otherwise use ordinary false localization. One detector/localization/intervention; instant; Rhythm 2 / Attrition 1 even without clue control. No own impact, forced behavior, Opening Advantage, automatic-detection denial or protection from areas. Other observers and senses resolve normally.
+
+See `data/system/techniques.yaml`, ID 164, and [the technique reference](technique-el-rastro-ofrecido.md). State: `authored`; localization runtime pipeline, empirical balance and visual QA remain pending. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 165
+
+`La mancha que vuelve` / `The Returning Stain` is a reactive Corrosion utility, Novice weapon competency, without a species restriction. Declare before a deliberate action removes an external chemical residue from a creature within weapon reach; self-cleanup and help from another creature both qualify. Resolve cleanup normally, then make a new weapon A.R. against that target's current D.R. to reapply the same residue at the same affected point.
+
+The practitioner must know the application procedure (and its Technique when applicable), possess fresh compatible material and meet its original requirements. Preserve application modifiers, resistances, severity, persistence, consumption and removal rules, using the current practitioner's applicable competency rather than the prior applicator's. Removed residue does not penalize the new defense. Failure or tie does not reapply; remaining residue does not stack or automatically worsen.
+
+Rhythm 3 / Attrition 2 for this reaction, without additionally charging the originating Technique's activation; no damage or weapon effects. One attempt per practitioner/removal action. No internal poison, infection or wound treatment, material-damage repair or purely environmental removal triggers. Instantaneous reaction; any reapplied residue retains its own duration.
+
+See `data/system/techniques.yaml`, ID 165, and [the technique reference](technique-la-mancha-que-vuelve.md). State: `authored`; runtime residue provenance/cleanup-reaction support, empirical balance and visual QA remain pending. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 166
+
+`El gesto inadvertido` / `The Unnoticed Gesture` is an active Stealth utility, Novice specialization, without a species restriction. While Hidden from at least one observer, declare one brief operation eligible for Interact and a physically plausible way to reduce its execution signals. The Narrator identifies controllable signals and declares the task/environment difficulty before the Stealth S.R.
+
+The operation occurs in the same execution even if Stealth fails. Success suppresses provoked detection opportunities caused solely by those controlled signals for observers from whom the practitioner was already Hidden. Failure uses ordinary signal/detection rules rather than automatic revelation. Preserve the existing active Hidden value; do not grant Hidden or erase prior localization.
+
+Object changes, alarms, light, independent signals, special senses, active searches and loss of physical concealment support remain effective. Rhythm 3 / Attrition 1 includes the operation, with no additional Interact charge, even on failure. Instantaneous, no attack, displacement, extra interaction or replacement of another specialization.
+
+See `data/system/techniques.yaml`, ID 166, and [the technique reference](technique-el-gesto-inadvertido.md). State: `authored`; signal/detection runtime pipeline, empirical balance and visual QA remain pending. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 167
+
+`La dosis perdida` / `The Lost Dose` is a reactive Alchemy utility, Novice specialization, without a species restriction. Before defense against a poisoned-weapon attack, choose one known external poison dose physically accessible within 1 meter and use a ready compatible neutralizer of sufficient quality. An Alchemy S.R. must strictly exceed the original attacker's A.R.; failure and tie leave the dose intact.
+
+Success neutralizes only that dose. The incoming attack keeps its A.R., defense, impact and other normal effects. Alchemy supplies this exceptional external application without Medicine or a Medical Kit; poison-handling and self-contamination rules remain. Spend one neutralizer dose and 3/1 even on failure. One attempt per practitioner per attack; third-party protection is allowed within the same access/reach, without movement, projectiles, internal treatment or protection against fresh doses.
+
+See `data/system/techniques.yaml`, ID 167, and [the technique reference](technique-la-dosis-perdida.md). Products are registered separately in `materials-and-fabrication.yaml`, `alchemy.poison_neutralizers`. State: `authored`; consumable/delivery runtime, empirical balance and visual QA remain pending. No assignment to Chei is made.
+
+## Authored Bufoni Technique — 168
+
+`El aliento reservado` / `The Reserved Breath` is a reactive utility requiring
+Novice Swimming and Poison Resistance, without a species gate. Before inhaling
+a perceived imminent discrete poison application and before its R.R., make a
+Swimming S.R. against difficulty declared by the Narrator based on execution
+speed and respiratory-control circumstances. Poison Resistance is a prerequisite,
+not an added roll bonus or chemical identification.
+
+Success prevents only that inhaled application. Failure preserves normal
+exposure and its R.R. One attempt per practitioner/application; 0/1 even on
+failure; instantaneous. No continuous exposure, other entry routes, treatment
+of active poison, Suffocation protection or later-application protection.
+
+See `data/system/techniques.yaml`, ID 168, and [the technique reference](technique-el-aliento-reservado.md).
+State: `authored`; exposure-pipeline runtime, empirical balance and visual QA
+remain pending. No assignment to Chei is made.
+
+## Revised Panin innate — 107
+
+`Adaptabilidad` / `Adaptability` now transfers partial practiced principles rather
+than swapping specializations. For a selected same-characteristic source/target
+pair, target S.R. competency contribution is `max(target_level + target_rank,
+source_rank)` using actual current training. Maintain 1/2/3 pairs at NR 1–4/5–8/9+;
+each own-activation 3/1 use adds or replaces one pair, without a roll, rest expiry,
+upkeep, stacked support or lost competencies. Selection can express spontaneous
+association in fiction and grants no learning, unknown knowledge or blocked memories.
+
+See [the reference](technique-adaptabilidad.md) and [the ADR](../adr/panin-adaptability-transfer.md).
+Rule authored; empirical balance, runtime support and visual print QA remain pending.
+
 ## Next Design Layer
 
 This document defines the Technique skeleton.
